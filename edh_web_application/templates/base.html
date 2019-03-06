@@ -4,14 +4,17 @@
 
 {% block head %}
 {{super()}}
-    <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-	<link href="{{url_for('static', filename='edh_style.css')}}" rel="stylesheet"> 
+    <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Yrsa" rel="stylesheet">
+	<link href="{{url_for('static', filename='css/edh_styles.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block title %} Epigraphic Database Heidelberg {% endblock %}
 
 {% block navbar %}
+    <div class="wrapper head">
+        <div class="container head"><a href="/">{{_("Epigraphic Database Heidelberg")}}</a></div>
+    </div>
     <nav class="navbar navbar-light" style="background-color: #d4f6d4;">
         <div class="container">
             <div class="navbar-header">
