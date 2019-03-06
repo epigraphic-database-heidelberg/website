@@ -39,3 +39,6 @@ a {
 .navbar-toggle .icon-bar {
 	background-color: #1F6B3B;
 }
+.navbar-brand {
+    font-size: 1em;
+}
