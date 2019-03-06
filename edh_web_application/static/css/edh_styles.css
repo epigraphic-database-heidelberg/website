@@ -61,10 +61,12 @@ a {
     background-color: #1F6B3B;
     color:#fff;
 }
-
-.container.head > a{
+.container.head > a {
     color:#fff;
     text-decoration:none;
+}
+#beta-banner {
+    height: 50px;
 }
 
 @media (min-width: 768px) {
@@ -77,5 +79,8 @@ a {
     }
     .wrapper.head {
         background-color: #1F6B3B;
+    }
+    #beta-banner {
+        height: 120px;
     }
 }
