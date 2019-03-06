@@ -1,0 +1,148 @@
+# Translations template for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-03-05 16:14+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: edh_web_application/data.py:11
+msgid "Open Data Repository"
+msgstr ""
+
+#: edh_web_application/links.py:11 edh_web_application/templates/base.html:49
+msgid "Links"
+msgstr ""
+
+#: edh_web_application/project.py:11
+msgid "Project - Concept"
+msgstr ""
+
+#: edh_web_application/project.py:16
+msgid "Project - History"
+msgstr ""
+
+#: edh_web_application/project.py:21
+msgid "Project - Cooperations"
+msgstr ""
+
+#: edh_web_application/project.py:26
+msgid "Project - Research Team Members"
+msgstr ""
+
+#: edh_web_application/project.py:31
+msgid "Project - Events and Presentations"
+msgstr ""
+
+#: edh_web_application/search_bibliography.py:11
+msgid "Bibliographic Database: Search"
+msgstr ""
+
+#: edh_web_application/search_fotos.py:11
+msgid "Photographic Database: Search"
+msgstr ""
+
+#: edh_web_application/search_inscriptions.py:11
+msgid "Epigraphic Text Database: Simple Search"
+msgstr ""
+
+#: edh_web_application/search_inscriptions.py:17
+msgid "Epigraphic Text Database: Extended Search"
+msgstr ""
+
+#: edh_web_application/search_inscriptions.py:22
+msgid "Epigraphic Text Database: Browse Inscriptions"
+msgstr ""
+
+#: edh_web_application/templates/base.html:29
+msgid "Project..."
+msgstr ""
+
+#: edh_web_application/templates/base.html:31
+msgid "Concept"
+msgstr ""
+
+#: edh_web_application/templates/base.html:32
+msgid "History"
+msgstr ""
+
+#: edh_web_application/templates/base.html:33
+#: edh_web_application/templates/project/project_cooperations.html:9
+msgid "Cooperations"
+msgstr ""
+
+#: edh_web_application/templates/base.html:34
+msgid "Research Team Members"
+msgstr ""
+
+#: edh_web_application/templates/base.html:35
+msgid "Events and Presentations"
+msgstr ""
+
+#: edh_web_application/templates/base.html:39
+msgid "Inscriptions..."
+msgstr ""
+
+#: edh_web_application/templates/base.html:41
+msgid "Simple Search"
+msgstr ""
+
+#: edh_web_application/templates/base.html:42
+msgid "Extended Search"
+msgstr ""
+
+#: edh_web_application/templates/base.html:43
+msgid "Browse..."
+msgstr ""
+
+#: edh_web_application/templates/base.html:46
+msgid "Photos"
+msgstr ""
+
+#: edh_web_application/templates/base.html:47
+msgid "Bibliography"
+msgstr ""
+
+#: edh_web_application/templates/base.html:48
+msgid "Data"
+msgstr ""
+
+#: edh_web_application/templates/home.html:9
+msgid "Home"
+msgstr ""
+
+#: edh_web_application/templates/data/index.html:9
+msgid "data page"
+msgstr ""
+
+#: edh_web_application/templates/links/index.html:9
+msgid "links page"
+msgstr ""
+
+#: edh_web_application/templates/project/project_concept.html:9
+msgid "Concept page"
+msgstr ""
+
+#: edh_web_application/templates/project/project_history.html:9
+msgid "History page"
+msgstr ""
+
+#: edh_web_application/templates/project/project_presentations.html:9
+msgid "Presentations page"
+msgstr ""
+
+#: edh_web_application/templates/project/project_team_members.html:9
+msgid "Research Team Members page"
+msgstr ""
+
