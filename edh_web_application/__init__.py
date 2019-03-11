@@ -1,5 +1,3 @@
-import os
-
 from flask import Flask, render_template, request
 from config import Config
 from flask_bootstrap import Bootstrap
@@ -7,12 +5,13 @@ from flask_babel import Babel
 
 
 def create_app(test_config=None):
+    #
     # create and configure the app
+    #
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_object(Config)
     bootstrap = Bootstrap(app)
     babel = Babel(app)
-
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('config.py', silent=True)
@@ -20,11 +19,9 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
-    # EDH start page
-    @app.route('/home')
-    def home():
-        return render_template('home.html', title="Home")
-
+    #
+    # Blueprints
+    #
     from edh_web_application import project
     app.register_blueprint(project.bp)
 
@@ -43,8 +40,17 @@ def create_app(test_config=None):
     from edh_web_application import links
     app.register_blueprint(links.bp)
 
+    #
+    # Routes: EDH start page
+    #
+    @app.route('/home')
+    def home():
+        return render_template('home.html', title="Home")
     app.add_url_rule('/', endpoint='home')
 
+    #
+    # i18n
+    #
     @babel.localeselector
     def get_locale():
         return request.accept_languages.best_match(app.config['LANGUAGES'])
