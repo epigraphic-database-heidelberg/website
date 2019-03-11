@@ -2,7 +2,7 @@ html {
     position: relative;
     min-height: 100%;
     min-width: 100%;
-    overflow-y:scroll;
+
 }
 body {
     /* Margin bottom by footer height */
@@ -79,6 +79,9 @@ a:hover {
 }
 
 @media (min-width: 768px) {
+    html {
+        overflow-y:scroll;
+    }
     .container.head {
         font-size:2em;
         height:120px;
