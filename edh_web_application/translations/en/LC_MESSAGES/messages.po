@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-03-06 11:17+0100\n"
+"POT-Creation-Date: 2019-03-12 14:52+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Open Data Repository"
 msgstr "Open Data Repository"
 
-#: edh_web_application/links.py:11 edh_web_application/templates/base.html:50
+#: edh_web_application/links.py:11 edh_web_application/templates/base.html:53
 msgid "Links"
 msgstr "Links"
 
@@ -46,6 +46,10 @@ msgstr "Project - Research Team Members"
 msgid "Project - Events and Presentations"
 msgstr "Project - Events and Presentations"
 
+#: edh_web_application/project.py:36
+msgid "Project - Contact"
+msgstr "Project - Contact"
+
 #: edh_web_application/search_bibliography.py:11
 msgid "Bibliographic Database: Search"
 msgstr "Bibliographic Database: Search"
@@ -66,62 +70,74 @@ msgstr "Epigraphic Text Database: Extended Search"
 msgid "Epigraphic Text Database: Browse Inscriptions"
 msgstr "Epigraphic Text Database: Browse Inscriptions"
 
-#: edh_web_application/templates/base.html:15
+#: edh_web_application/templates/base.html:17
 msgid "Epigraphic Database Heidelberg"
 msgstr ""
 
-#: edh_web_application/templates/base.html:30
+#: edh_web_application/templates/base.html:33
 msgid "Project..."
 msgstr "Project..."
 
-#: edh_web_application/templates/base.html:32
+#: edh_web_application/templates/base.html:35
 msgid "Concept"
 msgstr "Concept"
 
-#: edh_web_application/templates/base.html:33
+#: edh_web_application/templates/base.html:36
 msgid "History"
 msgstr "History"
 
-#: edh_web_application/templates/base.html:34
+#: edh_web_application/templates/base.html:37
 #: edh_web_application/templates/project/project_cooperations.html:9
 msgid "Cooperations"
 msgstr "Cooperations"
 
-#: edh_web_application/templates/base.html:35
+#: edh_web_application/templates/base.html:38
 msgid "Research Team Members"
 msgstr "Research Team Members"
 
-#: edh_web_application/templates/base.html:36
+#: edh_web_application/templates/base.html:39
 msgid "Events and Presentations"
 msgstr "Events and Presentations"
 
-#: edh_web_application/templates/base.html:40
+#: edh_web_application/templates/base.html:43
 msgid "Inscriptions..."
 msgstr "Inscriptions..."
 
-#: edh_web_application/templates/base.html:42
+#: edh_web_application/templates/base.html:45
 msgid "Simple Search"
 msgstr "Simple Search"
 
-#: edh_web_application/templates/base.html:43
+#: edh_web_application/templates/base.html:46
 msgid "Extended Search"
 msgstr "Extended Search"
 
-#: edh_web_application/templates/base.html:44
+#: edh_web_application/templates/base.html:47
 msgid "Browse..."
 msgstr "Browse..."
 
-#: edh_web_application/templates/base.html:47
+#: edh_web_application/templates/base.html:50
 msgid "Photos"
 msgstr "Photos"
 
-#: edh_web_application/templates/base.html:48
+#: edh_web_application/templates/base.html:51
 msgid "Bibliography"
 msgstr "Bibliography"
 
-#: edh_web_application/templates/base.html:49
+#: edh_web_application/templates/base.html:52
 msgid "Data"
 msgstr "Data"
+
+#: edh_web_application/templates/base.html:65
+msgid "Contact"
+msgstr ""
+
+#: edh_web_application/templates/base.html:65
+msgid "Imprint"
+msgstr ""
+
+#: edh_web_application/templates/base.html:65
+msgid "Data Privacy Statement"
+msgstr ""
 
 #: edh_web_application/templates/home.html:9
 msgid "Home"
@@ -223,10 +239,8 @@ msgstr ""
 "per lo sviluppo e la diffusione degli studi sull'Italia romana</a><br "
 "/></p><h2>Congresses / Meetings / Workshops</h2><p><a "
 "href=\"http://ciegl.classics.ox.ac.uk/\">XIIIth International Congress of"
-" Greek and Latin Epigraphy (2007, Oxford)</a><br /><a "
-"href=\"http://congressus2012.de/\">XIVth Congressus Internationalis "
-"Epigraphiae Graecae et Latinae (2012, Berlin)</a><br /><a "
-"href=\"http://www.uni-heidelberg.de/institute/sonst/adw/edh/alle/EAGLE-"
+" Greek and Latin Epigraphy (2007, Oxford)</a><br /><a href=\"http://www"
+".uni-heidelberg.de/institute/sonst/adw/edh/alle/EAGLE-"
 "Convegno_Nov2008-programma.pdf\">Convegno Internazionale EAGLE (2008, "
 "Roma)</a><br /><a "
 "href=\"https://epicongr2017.univie.ac.at/en/home/\">XVth International "
@@ -235,8 +249,6 @@ msgstr ""
 "Workshop (2018, Heidelberg)</a><br /><a "
 "href=\"http://epigraphy.info/workshop_2.html\">2nd epigraphy.info "
 "Workshop (2018, Zadar)</a><br /></p><h2>Resources</h2><p><a "
-"href=\"http://odur.let.rug.nl/~vannijf/epigraphy1.htm\">Introduction to "
-"Greek and Latin epigraphy: an absolute beginners' guide</a><br /><a "
 "href=\"http://www.bbaw.de/bbaw/Forschung/Forschungsprojekte/pir/de/Startseite\">Prosopographia"
 " Imperii Romani (PIR)</a><br /><a "
 "href=\"http://www.rgzm.de/samian\">Sigillata Database</a><br "
@@ -262,10 +274,7 @@ msgstr ""
 "href=\"http://pleiades.stoa.org/\">Pleiades - historical geographic "
 "information about the Greek and Roman World in digital form</a><br /><a "
 "href=\"http://commons.pelagios.org/\">Pelagios Commons. Linking the "
-"places of our past</a><br /><a "
-"href=\"https://www1.rgzm.de/samian/home/frames.htm\">Terra-Sigillata-"
-"Forschungen (Forschungsdatenbanken zu gestempelter und reliefverzierter "
-"Terra Sigillata)</a><br /></p>"
+"places of our past</a><br /></p>"
 
 #: edh_web_application/templates/project/project_concept.html:9
 msgid "Concept page"
@@ -330,6 +339,21 @@ msgstr ""
 "include their specialist and regionally founded profile in the data "
 "presented by <em>EDH</em>.</p>"
 
+#: edh_web_application/templates/project/project_contact.html:9
+msgid "Contact page"
+msgstr ""
+"<h2>Address</h2>"
+"<p>Epigraphische Datenbank Heidelberg (EDH)<br />"
+"Seminar für Alte Geschichte und Epigraphik<br />"
+"Marstallhof 4<br />"
+"69117 Heidelberg<br />Germany</p>"
+"<h2>Phone</h2>"
+"<p>+49 (0) 62 21 / 54 22 39</p>"
+"<h2>Fax</h2>"
+"<p>+49 (0) 62 21 / 54 22 34</p>"
+"<h2>Email</h2>"
+"<p><a href="mailto:epigraphische.datenbank@zaw.uni-heidelberg.de">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
+
 #: edh_web_application/templates/project/project_history.html:9
 msgid "History page"
 msgstr ""
@@ -344,4 +368,7 @@ msgstr ""
 
 #~ msgid "Presentations"
 #~ msgstr ""
+
+#~ msgid "Contact / Imprint / Data Privacy Statement"
+#~ msgstr "Contact | Imprint | Data Privacy Statement"
 

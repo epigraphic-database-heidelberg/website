@@ -37,6 +37,7 @@
                             <li><a href="/projekt/kooperationen">{{ _('Cooperations') }}</a></li>
                             <li><a href="/projekt/mitarbeiter">{{ _('Research Team Members') }}</a></li>
                             <li><a href="/projekt/veranstaltungen">{{ _('Events and Presentations') }}</a></li>
+                            <li><a href="/projekt/kontakt">{{ _('Contact') }}</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -62,7 +63,7 @@
     </div>
     <footer class="footer">
 		<div class="container">
-			<p class="text-muted"><a href="{{ url_for('home') }}">Epigraphic Database Heidelberg</a></p>
+			<p class="text-muted"><a href="{{ url_for('project.show_project_contact_page') }}">{{ _("Contact") }}</a> | <a href="https://www.hadw-bw.de/impressum">{{ _("Imprint") }}</a> | <a href="https://www.hadw-bw.de/datenschutzerklaerung">{{ _("Data Privacy Statement") }}</a></p>
 		</div>
     </footer>
 {% endblock %}

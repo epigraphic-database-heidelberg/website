@@ -29,3 +29,8 @@ def show_project_team_members_page():
 @bp.route('/projekt/veranstaltungen')
 def show_project_presentations_page():
     return render_template('project/project_presentations.html', title=_("Project - Events and Presentations"))
+
+
+@bp.route('/projekt/kontakt')
+def show_project_contact_page():
+    return render_template('project/project_contact.html', title=_("Project - Contact"))

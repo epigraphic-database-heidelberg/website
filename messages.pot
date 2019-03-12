@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-03-06 11:17+0100\n"
+"POT-Creation-Date: 2019-03-12 14:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Open Data Repository"
 msgstr ""
 
-#: edh_web_application/links.py:11 edh_web_application/templates/base.html:50
+#: edh_web_application/links.py:11 edh_web_application/templates/base.html:53
 msgid "Links"
 msgstr ""
 
@@ -45,6 +45,10 @@ msgstr ""
 msgid "Project - Events and Presentations"
 msgstr ""
 
+#: edh_web_application/project.py:36
+msgid "Project - Contact"
+msgstr ""
+
 #: edh_web_application/search_bibliography.py:11
 msgid "Bibliographic Database: Search"
 msgstr ""
@@ -65,61 +69,73 @@ msgstr ""
 msgid "Epigraphic Text Database: Browse Inscriptions"
 msgstr ""
 
-#: edh_web_application/templates/base.html:15
+#: edh_web_application/templates/base.html:17
 msgid "Epigraphic Database Heidelberg"
 msgstr ""
 
-#: edh_web_application/templates/base.html:30
+#: edh_web_application/templates/base.html:33
 msgid "Project..."
 msgstr ""
 
-#: edh_web_application/templates/base.html:32
+#: edh_web_application/templates/base.html:35
 msgid "Concept"
 msgstr ""
 
-#: edh_web_application/templates/base.html:33
+#: edh_web_application/templates/base.html:36
 msgid "History"
 msgstr ""
 
-#: edh_web_application/templates/base.html:34
+#: edh_web_application/templates/base.html:37
 #: edh_web_application/templates/project/project_cooperations.html:9
 msgid "Cooperations"
 msgstr ""
 
-#: edh_web_application/templates/base.html:35
+#: edh_web_application/templates/base.html:38
 msgid "Research Team Members"
 msgstr ""
 
-#: edh_web_application/templates/base.html:36
+#: edh_web_application/templates/base.html:39
 msgid "Events and Presentations"
 msgstr ""
 
-#: edh_web_application/templates/base.html:40
+#: edh_web_application/templates/base.html:43
 msgid "Inscriptions..."
 msgstr ""
 
-#: edh_web_application/templates/base.html:42
+#: edh_web_application/templates/base.html:45
 msgid "Simple Search"
 msgstr ""
 
-#: edh_web_application/templates/base.html:43
+#: edh_web_application/templates/base.html:46
 msgid "Extended Search"
 msgstr ""
 
-#: edh_web_application/templates/base.html:44
+#: edh_web_application/templates/base.html:47
 msgid "Browse..."
 msgstr ""
 
-#: edh_web_application/templates/base.html:47
+#: edh_web_application/templates/base.html:50
 msgid "Photos"
 msgstr ""
 
-#: edh_web_application/templates/base.html:48
+#: edh_web_application/templates/base.html:51
 msgid "Bibliography"
 msgstr ""
 
-#: edh_web_application/templates/base.html:49
+#: edh_web_application/templates/base.html:52
 msgid "Data"
+msgstr ""
+
+#: edh_web_application/templates/base.html:65
+msgid "Contact"
+msgstr ""
+
+#: edh_web_application/templates/base.html:65
+msgid "Imprint"
+msgstr ""
+
+#: edh_web_application/templates/base.html:65
+msgid "Data Privacy Statement"
 msgstr ""
 
 #: edh_web_application/templates/home.html:9
@@ -136,6 +152,10 @@ msgstr ""
 
 #: edh_web_application/templates/project/project_concept.html:9
 msgid "Concept page"
+msgstr ""
+
+#: edh_web_application/templates/project/project_contact.html:9
+msgid "Contact page"
 msgstr ""
 
 #: edh_web_application/templates/project/project_history.html:9
