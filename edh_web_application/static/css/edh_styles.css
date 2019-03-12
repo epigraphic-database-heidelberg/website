@@ -1,3 +1,6 @@
+/*
+ * mobile style sheets
+*/
 html {
     position: relative;
     min-height: 100%;
@@ -74,10 +77,18 @@ a:hover {
     color:#fff;
     text-decoration:none;
 }
+.dropdown-menu>li {
+    font-size: 1.2em;
+}
 #beta-banner {
     height: 50px;
 }
 
+
+
+/*
+ * wide screen style sheets
+*/
 @media (min-width: 768px) {
     html {
         overflow-y:scroll;
