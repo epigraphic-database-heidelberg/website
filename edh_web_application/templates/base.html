@@ -9,14 +9,14 @@
 	<link href="{{url_for('static', filename='css/edh_styles.css')}}" rel="stylesheet">
 {% endblock %}
 
-{% block title %} Epigraphic Database Heidelberg {% endblock %}
+{% block title %} {{_("Epigraphic Database Heidelberg")}} {% endblock %}
 
 {% block navbar %}
-    <div style="position:absolute;right:0;top:0;"><img id="beta-banner" src="{{url_for('static', filename='img/beta-banner_600.png')}}" /></div>
+    <div id="beta-banner-wrapper"><img id="beta-banner" src="{{url_for('static', filename='img/beta-banner_600.png')}}" /></div>
     <div class="wrapper head">
         <div class="container head"><a href="/">{{_("Epigraphic Database Heidelberg")}}</a></div>
     </div>
-    <nav class="navbar navbar-light" style="background-color: #d4f6d4;">
+    <nav class="navbar navbar-light">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

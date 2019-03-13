@@ -56,6 +56,7 @@ a:hover {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+    background-color: #d4f6d4;
 }
 .navbar-toggle {
     border-color: #1F6B3B;
@@ -79,6 +80,9 @@ a:hover {
 }
 .dropdown-menu>li {
     font-size: 1.2em;
+}
+#beta-banner-wrapper{
+    position:absolute;right:0;top:0;
 }
 #beta-banner {
     height: 50px;
