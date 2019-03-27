@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_header">Allgemeine Angaben</div>
+        <div class="detail_block_content">
+            <p>HD-Nr: {{data['hd_nr']}}</p>
+            <p>{% if data['gdb_id']  %}GDB_ID: {{data['gdb_id']}}{% endif %}</p>
+            <p>Bearbeitungsstand: {{data['beleg']}}</p>
+            <p>Bearbeiter: {{data['bearbeiter']}}</p>
+            <p>letzte Änderung: {{data['datum']}}</p>
+        </div>
+    </div>
+    <div class="detail_block">
+        <div class="detail_block_header">Transcription</div>
+        <div class="detail_block_content">
+            <p>{{ data['atext'] }}</p>
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock %}
