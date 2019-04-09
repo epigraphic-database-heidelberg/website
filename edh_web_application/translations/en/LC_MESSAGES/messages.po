@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-03-12 14:52+0100\n"
+"POT-Creation-Date: 2019-04-09 11:28+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Open Data Repository"
 msgstr "Open Data Repository"
 
-#: edh_web_application/links.py:11 edh_web_application/templates/base.html:53
+#: edh_web_application/links.py:11 edh_web_application/templates/base.html:55
 msgid "Links"
 msgstr "Links"
 
@@ -58,84 +58,113 @@ msgstr "Bibliographic Database: Search"
 msgid "Photographic Database: Search"
 msgstr "Photographic Database: Search"
 
-#: edh_web_application/search_inscriptions.py:11
+#: edh_web_application/search_inscriptions.py:13
 msgid "Epigraphic Text Database: Simple Search"
 msgstr "Epigraphic Text Database: Simple Search"
 
-#: edh_web_application/search_inscriptions.py:17
+#: edh_web_application/search_inscriptions.py:19
 msgid "Epigraphic Text Database: Extended Search"
 msgstr "Epigraphic Text Database: Extended Search"
 
-#: edh_web_application/search_inscriptions.py:22
+#: edh_web_application/search_inscriptions.py:24
 msgid "Epigraphic Text Database: Browse Inscriptions"
 msgstr "Epigraphic Text Database: Browse Inscriptions"
 
-#: edh_web_application/templates/base.html:17
+#: edh_web_application/search_inscriptions.py:31
+#: edh_web_application/search_inscriptions.py:33
+msgid "Epigraphic Text Database: Detail View"
+msgstr ""
+
+#: edh_web_application/templates/404.html:4
+#: edh_web_application/templates/404.html:8
+msgid "Page not found"
+msgstr "CDIV &ndash; Page not found"
+
+#: edh_web_application/templates/404.html:9
+msgid "404"
+msgstr ""
+"<p>The requested page coud not be found..</p>"
+"<p>What should I do now?</p>"
+"<p>If you are searching for inscriptions, please use either <a href="/inschrift/suche">Simple Search</a>"
+" or <a href=\"/inschrift/erweiterteSuche\">Complex Search</a>.</p>"
+"<p>If you are searching for photos, please click on <a href=\"/foto/suche\">Photos</a>.</p>"
+"<p>If you are searching for publications concerning inscriptions please use <a href=\"/bibliographie/suche\">Bibliography</a>.</p>"
+"<p>If you want to inform yourself about the project, the following links are at your disposal:</p>"
+"<ul><li><a href=\"projekt/konzept\">Conzept</a></li>"
+"<li><a href=\"projekt/geschichte\">History</a></li>"
+"<li><a href=\"projekt/kooperationen\">Cooperations</a></li>"
+"<li><a href=\"projekt/mitarbeiter\">Research Team Members</a></li>"
+"<li><a href=\"projekt/veranstaltungen\">Events and Presentations</a></li></ul>"
+"<p>Under <a href=\"/links\">Links</a> you will find directions to further epigrahic projects.</p>"
+
+#: edh_web_application/templates/base.html:13
+#: edh_web_application/templates/base.html:18
 msgid "Epigraphic Database Heidelberg"
 msgstr ""
 
-#: edh_web_application/templates/base.html:33
+#: edh_web_application/templates/base.html:34
 msgid "Project..."
 msgstr "Project..."
 
-#: edh_web_application/templates/base.html:35
+#: edh_web_application/templates/base.html:36
 msgid "Concept"
 msgstr "Concept"
 
-#: edh_web_application/templates/base.html:36
+#: edh_web_application/templates/base.html:37
 msgid "History"
 msgstr "History"
 
-#: edh_web_application/templates/base.html:37
+#: edh_web_application/templates/base.html:38
 #: edh_web_application/templates/project/project_cooperations.html:9
 msgid "Cooperations"
 msgstr "Cooperations"
 
-#: edh_web_application/templates/base.html:38
+#: edh_web_application/templates/base.html:39
 msgid "Research Team Members"
 msgstr "Research Team Members"
 
-#: edh_web_application/templates/base.html:39
+#: edh_web_application/templates/base.html:40
 msgid "Events and Presentations"
 msgstr "Events and Presentations"
 
-#: edh_web_application/templates/base.html:43
-msgid "Inscriptions..."
-msgstr "Inscriptions..."
-
-#: edh_web_application/templates/base.html:45
-msgid "Simple Search"
-msgstr "Simple Search"
-
-#: edh_web_application/templates/base.html:46
-msgid "Extended Search"
-msgstr "Extended Search"
-
-#: edh_web_application/templates/base.html:47
-msgid "Browse..."
-msgstr "Browse..."
-
-#: edh_web_application/templates/base.html:50
-msgid "Photos"
-msgstr "Photos"
-
-#: edh_web_application/templates/base.html:51
-msgid "Bibliography"
-msgstr "Bibliography"
-
-#: edh_web_application/templates/base.html:52
-msgid "Data"
-msgstr "Data"
-
-#: edh_web_application/templates/base.html:65
+#: edh_web_application/templates/base.html:41
+#: edh_web_application/templates/base.html:68
 msgid "Contact"
 msgstr ""
 
-#: edh_web_application/templates/base.html:65
+#: edh_web_application/templates/base.html:45
+msgid "Inscriptions..."
+msgstr "Inscriptions..."
+
+#: edh_web_application/templates/base.html:47
+msgid "Simple Search"
+msgstr "Simple Search"
+
+#: edh_web_application/templates/base.html:48
+msgid "Extended Search"
+msgstr "Extended Search"
+
+#: edh_web_application/templates/base.html:49
+msgid "Browse..."
+msgstr "Browse..."
+
+#: edh_web_application/templates/base.html:52
+msgid "Photos"
+msgstr "Photos"
+
+#: edh_web_application/templates/base.html:53
+msgid "Bibliography"
+msgstr "Bibliography"
+
+#: edh_web_application/templates/base.html:54
+msgid "Data"
+msgstr "Data"
+
+#: edh_web_application/templates/base.html:68
 msgid "Imprint"
 msgstr ""
 
-#: edh_web_application/templates/base.html:65
+#: edh_web_application/templates/base.html:68
 msgid "Data Privacy Statement"
 msgstr ""
 
@@ -342,17 +371,12 @@ msgstr ""
 #: edh_web_application/templates/project/project_contact.html:9
 msgid "Contact page"
 msgstr ""
-"<h2>Address</h2>"
-"<p>Epigraphische Datenbank Heidelberg (EDH)<br />"
-"Seminar für Alte Geschichte und Epigraphik<br />"
-"Marstallhof 4<br />"
-"69117 Heidelberg<br />Germany</p>"
-"<h2>Phone</h2>"
-"<p>+49 (0) 62 21 / 54 22 39</p>"
-"<h2>Fax</h2>"
-"<p>+49 (0) 62 21 / 54 22 34</p>"
-"<h2>Email</h2>"
-"<p><a href="mailto:epigraphische.datenbank@zaw.uni-heidelberg.de">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
+"<h2>Address</h2><p>Epigraphische Datenbank Heidelberg (EDH)<br />Seminar "
+"für Alte Geschichte und Epigraphik<br />Marstallhof 4<br />69117 "
+"Heidelberg<br />Germany</p><h2>Phone</h2><p>+49 (0) 62 21 / 54 22 "
+"39</p><h2>Fax</h2><p>+49 (0) 62 21 / 54 22 34</p><h2>Email</h2><p><a "
+"href=\"mailto:epigraphische.datenbank@zaw.uni-"
+"heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
 
 #: edh_web_application/templates/project/project_history.html:9
 msgid "History page"
@@ -365,31 +389,29 @@ msgstr ""
 #: edh_web_application/templates/project/project_team_members.html:9
 msgid "Research Team Members page"
 msgstr ""
-"<h2>Director of the Research Center</h2>"
-"<p><a href="mailto:christian.witschel@urz.uni-heidelberg.de">Prof. Dr. Christian Witschel</a> (since 2007)"
-"<br /><a href="http://www.uni-heidelberg.de/fakultaeten/philosophie/zaw/sag/alfoeldy.html">Prof. Dr. Dr. h.c. mult. Géza Alföldy</a> † (1986–2006)</p>"
-"<h2>Research Team Members</h2>"
-"<p><a href="mailto:james.cowey@urz.uni-heidelberg.de">Dr. James M.S. Cowey</a><br />"
-"<a href="mailto:francisca.feraudi-gruenais@zaw.uni-heidelberg.de">Dr. Francisca Feraudi-Gruénais</a><br />"
-"<a href="mailto:brigitte.graef@zaw.uni-heidelberg.de">Dr. Brigitte Gräf</a><br />"
-"<a href="mailto:frank.grieshaber@zaw.uni-heidelberg.de">Dr. Frank Grieshaber</a> (IT)<br />"
-"<a href="mailto:regine.klar@urz.uni-heidelberg.de">Regine Klar</a><br />"
-"<a href="mailto:Jonas.Osnabruegge@adw.uni-heidelberg.de">Jonas Osnabrügge</a>"
-"</p>"
-"<h2>Address</h2>"
-"<p>Epigraphische Datenbank Heidelberg (EDH)<br />"
-"Seminar für Alte Geschichte und Epigraphik<br />"
-"Marstallhof 4<br />"
-"69117 Heidelberg<br /> Germany</p>"
-"<h2>Phon</h2>"
-"<p>+49 (0) 62 21 / 54 22 39</p>"
-"<h2>Fax</h2>"
-"<p>+49 (0) 62 21 / 54 22 34</p>"
-"<h2>Email</h2>"
-"<p><a href="mailto:epigraphische.datenbank@zaw.uni-heidelberg.de">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
+"<h2>Director of the Research Center</h2><p><a "
+"href=\"mailto:christian.witschel@urz.uni-heidelberg.de\">Prof. Dr. "
+"Christian Witschel</a> (since 2007)<br /><a href=\"http://www.uni-"
+"heidelberg.de/fakultaeten/philosophie/zaw/sag/alfoeldy.html\">Prof. Dr. "
+"Dr. h.c. mult. Géza Alföldy</a> † (1986–2006)</p><h2>Research Team "
+"Members</h2><p><a href=\"mailto:james.cowey@urz.uni-heidelberg.de\">Dr. "
+"James M.S. Cowey</a><br /><a href=\"mailto:francisca.feraudi-gruenais@zaw"
+".uni-heidelberg.de\">Dr. Francisca Feraudi-Gruénais</a><br /><a "
+"href=\"mailto:brigitte.graef@zaw.uni-heidelberg.de\">Dr. Brigitte "
+"Gräf</a><br /><a href=\"mailto:frank.grieshaber@zaw.uni-"
+"heidelberg.de\">Dr. Frank Grieshaber</a> (IT)<br /><a "
+"href=\"mailto:regine.klar@urz.uni-heidelberg.de\">Regine Klar</a><br /><a"
+" href=\"mailto:Jonas.Osnabruegge@adw.uni-heidelberg.de\">Jonas "
+"Osnabrügge</a></p><h2>Address</h2><p>Epigraphische Datenbank Heidelberg "
+"(EDH)<br />Seminar für Alte Geschichte und Epigraphik<br />Marstallhof "
+"4<br />69117 Heidelberg<br /> Germany</p><h2>Phon</h2><p>+49 (0) 62 21 / "
+"54 22 39</p><h2>Fax</h2><p>+49 (0) 62 21 / 54 22 "
+"34</p><h2>Email</h2><p><a href=\"mailto:epigraphische.datenbank@zaw.uni-"
+"heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
 
 #~ msgid "Presentations"
 #~ msgstr ""
 
 #~ msgid "Contact / Imprint / Data Privacy Statement"
 #~ msgstr "Contact | Imprint | Data Privacy Statement"
+

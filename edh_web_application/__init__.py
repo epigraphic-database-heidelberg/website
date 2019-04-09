@@ -55,4 +55,11 @@ def create_app(test_config=None):
     def get_locale():
         return request.accept_languages.best_match(app.config['LANGUAGES'])
 
+    #
+    # 404 page
+    #
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('404.html'), 404
+
     return app
