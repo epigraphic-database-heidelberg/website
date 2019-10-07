@@ -8,24 +8,65 @@
 <h1>{{ title }}</h1>
 <div>
     <div class="detail_block">
-        <div class="detail_block_header">Allgemeine Angaben</div>
+        <div class="detail_block_header">
+            <span class="detail_block_header_text">Allgemeine Angaben</span>
+        </div>
         <div class="detail_block_content">
-            <p>HD-Nr: {{data['hd_nr']}}</p>
-            <p>{% if data['gdb_id']  %}GDB_ID: {{data['gdb_id']}}{% endif %}</p>
-            <p>Bearbeitungsstand: {{data['beleg']}}</p>
-            <p>Bearbeiter: {{data['bearbeiter']}}</p>
-            <p>letzte Änderung: {{data['datum']}}</p>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">HD-Nr:</div>
+                <div class="detail_block_content_row_text">{{data['hd_nr']}}</div>
+            </section>
+            {% if data['gdb_id']  %}
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">GDB_ID:</div>
+                <div class="detail_block_content_row_text">{{data['gdb_id']}}</div>
+            </section>
+            {% endif %}
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">Bearbeitungsstand:</div>
+                <div class="detail_block_content_row_text">{{data['beleg']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">Bearbeiter:</div>
+                <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">letzte Änderung:</div>
+                <div class="detail_block_content_row_text">{{data['datum']}}</div>
+            </section>
         </div>
     </div>
     <div class="detail_block">
-        <div class="detail_block_header">Transcription</div>
+        <div class="detail_block_header">
+            <span class="detail_block_header_text">Transcription (<span id="toggleLinebreaks" onClick="toggleLinebreaks()">Show Linebreaks</span>)</span>
+        </div>
         <div class="detail_block_content">
-            <p>{{ data['atext'] }}</p>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">Majuscle:</div>
+                <div id="btext" class="detail_block_content_row_text">{{data['btext']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">Edition:</div>
+                <div id="atext" class="detail_block_content_row_text">{{data['atext']}}</div>
+            </section>
         </div>
     </div>
 
 
 </div>
-
+<script>
+    function toggleLinebreaks() {
+        status = document.getElementById("toggleLinebreaks").innerHTML
+        if (status == "Show Linebreaks"){
+            document.getElementById("atext").innerHTML = "{{data['atext_br']}}"
+            document.getElementById("btext").innerHTML = "{{data['btext_br']}}"
+            document.getElementById("toggleLinebreaks").innerHTML = "Remove Linebreaks"
+        } else {
+            document.getElementById("atext").innerHTML = "{{data['atext']}}"
+            document.getElementById("btext").innerHTML = "{{data['btext']}}"
+            document.getElementById("toggleLinebreaks").innerHTML = "Show Linebreaks"
+        }
+    }
+</script>
 
 {% endblock %}

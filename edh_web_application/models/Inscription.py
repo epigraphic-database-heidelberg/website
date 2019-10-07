@@ -1,4 +1,7 @@
 import pysolr
+import re
+from flask import Markup
+from flask import current_app
 
 
 class Inscription:
@@ -45,7 +48,9 @@ class Inscription:
             "literatur": None,
             "kommentar": None,
             "atext": None,
+            "atext_br": None,
             "btext": None,
+            "btext_br": None,
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
@@ -56,14 +61,13 @@ class Inscription:
         self.datum = datum
         self.beleg = beleg
 
-
     @classmethod
     def query(cls, query_string):
         """
         queries Solr core
         :return: list of Inscription instances
         """
-        solr = pysolr.Solr('http://localhost:8080/solr/edhText')
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
         results = solr.search(query_string, **{'rows': '20'})
         if len(results) == 0:
             return None
@@ -74,6 +78,11 @@ class Inscription:
                 for key in result:
                     if key not in ('hd_nr', 'provinz', 'land', 'bearbeiter', 'datum', 'beleg'):
                         props[key] = result[key]
+                        print(key + " => " + result[key])
+                atext_br = result['atext']
+                props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
+                btext_br = result['btext']
+                props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
                 inscr = Inscription(result['hd_nr'],
                                     result['provinz'],
                                     result['land'],
