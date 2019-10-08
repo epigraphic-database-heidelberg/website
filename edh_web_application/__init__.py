@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from config import Config
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel
@@ -53,7 +53,9 @@ def create_app(test_config=None):
     #
     @babel.localeselector
     def get_locale():
-        return request.accept_languages.best_match(app.config['LANGUAGES'])
+        if request.args.get('lang'):
+            session['lang'] = request.args.get('lang')
+        return session.get('lang', 'en')
 
     #
     # 404 page
