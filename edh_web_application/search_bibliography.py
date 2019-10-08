@@ -3,6 +3,7 @@ from flask import (
 )
 from flask_babel import _
 from edh_web_application.models.Publication import Publication
+from flask import session
 
 bp = Blueprint('search_bibliography', __name__)
 
@@ -16,7 +17,9 @@ def search_bibliography():
 def detail_view(b_nr):
     results = Publication.query("b_nr:" + b_nr)
     if results is None:
-        return render_template('search_bibliography/detail_view.html', title=_("Epigraphic Bibliography Database: Detail View"))
+        return render_template('search_bibliography/no_hits.html',
+                               title=_("Epigraphic Bibliography Database: Detail View"))
     else:
-        return render_template('search_bibliography/detail_view.html', title=_("Epigraphic Bibliography Database: Detail View"),
+        return render_template('search_bibliography/detail_view.html',
+                               title=_("Epigraphic Bibliography Database: Detail View"),
                                data=results[0])

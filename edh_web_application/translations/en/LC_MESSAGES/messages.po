@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-04-09 11:28+0200\n"
+"POT-Creation-Date: 2019-10-08 12:56+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -50,9 +50,13 @@ msgstr "Project - Events and Presentations"
 msgid "Project - Contact"
 msgstr "Project - Contact"
 
-#: edh_web_application/search_bibliography.py:11
+#: edh_web_application/search_bibliography.py:12
 msgid "Bibliographic Database: Search"
 msgstr "Bibliographic Database: Search"
+
+#: edh_web_application/search_bibliography.py:23
+msgid "Epigraphic Bibliography Database: Detail View"
+msgstr ""
 
 #: edh_web_application/search_fotos.py:11
 msgid "Photographic Database: Search"
@@ -83,19 +87,22 @@ msgstr "CDIV &ndash; Page not found"
 #: edh_web_application/templates/404.html:9
 msgid "404"
 msgstr ""
-"<p>The requested page coud not be found..</p>"
-"<p>What should I do now?</p>"
-"<p>If you are searching for inscriptions, please use either <a href="/inschrift/suche">Simple Search</a>"
-" or <a href=\"/inschrift/erweiterteSuche\">Complex Search</a>.</p>"
-"<p>If you are searching for photos, please click on <a href=\"/foto/suche\">Photos</a>.</p>"
-"<p>If you are searching for publications concerning inscriptions please use <a href=\"/bibliographie/suche\">Bibliography</a>.</p>"
-"<p>If you want to inform yourself about the project, the following links are at your disposal:</p>"
-"<ul><li><a href=\"projekt/konzept\">Conzept</a></li>"
-"<li><a href=\"projekt/geschichte\">History</a></li>"
-"<li><a href=\"projekt/kooperationen\">Cooperations</a></li>"
-"<li><a href=\"projekt/mitarbeiter\">Research Team Members</a></li>"
-"<li><a href=\"projekt/veranstaltungen\">Events and Presentations</a></li></ul>"
-"<p>Under <a href=\"/links\">Links</a> you will find directions to further epigrahic projects.</p>"
+"<p>The requested page coud not be found..</p><p>What should I do "
+"now?</p><p>If you are searching for inscriptions, please use either <a "
+"href=\"/inschrift/suche\">Simple Search</a> or <a "
+"href=\"/inschrift/erweiterteSuche\">Complex Search</a>.</p><p>If you are "
+"searching for photos, please click on <a "
+"href=\"/foto/suche\">Photos</a>.</p><p>If you are searching for "
+"publications concerning inscriptions please use <a "
+"href=\"/bibliographie/suche\">Bibliography</a>.</p><p>If you want to "
+"inform yourself about the project, the following links are at your "
+"disposal:</p><ul><li><a href=\"projekt/konzept\">Conzept</a></li><li><a "
+"href=\"projekt/geschichte\">History</a></li><li><a "
+"href=\"projekt/kooperationen\">Cooperations</a></li><li><a "
+"href=\"projekt/mitarbeiter\">Research Team Members</a></li><li><a "
+"href=\"projekt/veranstaltungen\">Events and "
+"Presentations</a></li></ul><p>Under <a href=\"/links\">Links</a> you will"
+" find directions to further epigrahic projects.</p>"
 
 #: edh_web_application/templates/base.html:13
 #: edh_web_application/templates/base.html:18
@@ -408,6 +415,74 @@ msgstr ""
 "54 22 39</p><h2>Fax</h2><p>+49 (0) 62 21 / 54 22 "
 "34</p><h2>Email</h2><p><a href=\"mailto:epigraphische.datenbank@zaw.uni-"
 "heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:8
+msgid "title"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:12
+msgid "Generic data"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:16
+msgid "B-number:"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:20
+msgid "responsible individual:"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:24
+msgid "last update:"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:31
+msgid "Work / contribution"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:35
+msgid "author:"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:39
+msgid "title:"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:43
+msgid "publication:"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:47
+msgid "Volume:"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:51
+msgid "year(s):"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:55
+msgid "pages:"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:62
+msgid "Cited in AE"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:73
+msgid "Also concerns the inscriptions"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/detail_view.html:89
+msgid "other corpora"
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/no_hits.html:9
+msgid "The search resulted in no hits."
+msgstr ""
+
+#: edh_web_application/templates/search_bibliography/no_hits.html:10
+msgid "Start new search"
+msgstr ""
 
 #~ msgid "Presentations"
 #~ msgstr ""
