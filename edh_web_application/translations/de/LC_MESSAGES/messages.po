@@ -79,7 +79,7 @@ msgstr "Epigraphische Bibliographie: Detailansicht"
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:12
 #: edh_web_application/foto/templates/foto/detail_view.html:12
 msgid "Generic data"
-msgstr ""
+msgstr "Allgemeine Angaben"
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:16
 msgid "B-number:"
