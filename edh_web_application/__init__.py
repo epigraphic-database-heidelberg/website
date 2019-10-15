@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session
 from config import Config
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel
+from edh_web_application.models import Publication
 
 
 def create_app(test_config=None):
@@ -22,23 +23,7 @@ def create_app(test_config=None):
     #
     # Blueprints
     #
-    from edh_web_application import project
-    app.register_blueprint(project.bp)
-
-    from edh_web_application import search_inscriptions
-    app.register_blueprint(search_inscriptions.bp)
-
-    from edh_web_application import search_fotos
-    app.register_blueprint(search_fotos.bp)
-
-    from edh_web_application import search_bibliography
-    app.register_blueprint(search_bibliography.bp)
-
-    from edh_web_application import data
-    app.register_blueprint(data.bp)
-
-    from edh_web_application import links
-    app.register_blueprint(links.bp)
+    register_blueprints(app)
 
     #
     # Routes: EDH start page
@@ -65,3 +50,21 @@ def create_app(test_config=None):
         return render_template('404.html'), 404
 
     return app
+
+
+def register_blueprints(app):
+    from edh_web_application.bibliography import bp_bibliography
+
+    from edh_web_application import project
+    from edh_web_application import search_inscriptions
+    from edh_web_application import search_fotos
+    from edh_web_application import data
+    from edh_web_application import links
+
+    app.register_blueprint(bp_bibliography)
+
+    app.register_blueprint(project.bp)
+    app.register_blueprint(search_inscriptions.bp)
+    app.register_blueprint(search_fotos.bp)
+    app.register_blueprint(data.bp)
+    app.register_blueprint(links.bp)
