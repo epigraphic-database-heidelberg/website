@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-08 12:56+0200\n"
+"POT-Creation-Date: 2019-10-15 15:29+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -50,18 +50,6 @@ msgstr "Projekt - Veranstaltungen & Öffentlichkeitsarbeit"
 msgid "Project - Contact"
 msgstr "Projekt - Kontakt"
 
-#: edh_web_application/search_bibliography.py:12
-msgid "Bibliographic Database: Search"
-msgstr "Epigraphische Bibliographie: Suche"
-
-#: edh_web_application/search_bibliography.py:23
-msgid "Epigraphic Bibliography Database: Detail View"
-msgstr "Epigraphische Bibliographie: Detailansicht"
-
-#: edh_web_application/search_fotos.py:11
-msgid "Photographic Database: Search"
-msgstr "Epigraphische Fotothek: Suche"
-
 #: edh_web_application/search_inscriptions.py:13
 msgid "Epigraphic Text Database: Simple Search"
 msgstr "Epigraphische Text-Datenbank: Einfache Suche"
@@ -78,6 +66,141 @@ msgstr "Epigraphische Text-Datenbank: Inschriften durchblättern"
 #: edh_web_application/search_inscriptions.py:33
 msgid "Epigraphic Text Database: Detail View"
 msgstr "Epigraphische Text-Datenbank: Detailansicht"
+
+#: edh_web_application/bibliography/routes.py:10
+msgid "Bibliographic Database: Search"
+msgstr "Epigraphische Bibliographie: Suche"
+
+#: edh_web_application/bibliography/routes.py:18
+#: edh_web_application/bibliography/routes.py:21
+msgid "Epigraphic Bibliography Database: Detail View"
+msgstr "Epigraphische Bibliographie: Detailansicht"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:12
+#: edh_web_application/foto/templates/foto/detail_view.html:12
+msgid "Generic data"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:16
+msgid "B-number:"
+msgstr "B-Nummer:"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:20
+#: edh_web_application/foto/templates/foto/detail_view.html:20
+msgid "responsible individual:"
+msgstr "Bearbeiter:"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:24
+#: edh_web_application/foto/templates/foto/detail_view.html:24
+msgid "last update:"
+msgstr "letzte Änderungen"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:31
+msgid "Work / contribution"
+msgstr "Werk / Beitrag:"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:35
+msgid "author:"
+msgstr "Autor"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:39
+msgid "title:"
+msgstr "Titel:"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:43
+msgid "publication:"
+msgstr "Publikation:"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:47
+msgid "Volume:"
+msgstr "Band:"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:51
+msgid "year(s):"
+msgstr "Jahr(e):"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:55
+msgid "pages:"
+msgstr "Seiten"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:62
+msgid "Cited in AE"
+msgstr "Zitiert in AE"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:73
+msgid "Also concerns the inscriptions"
+msgstr "Betrifft außerdem die Inschriften"
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:89
+#: edh_web_application/foto/templates/foto/detail_view.html:97
+msgid "other corpora"
+msgstr "andere Corpora"
+
+#: edh_web_application/bibliography/templates/bibliography/no_hits.html:9
+#: edh_web_application/foto/templates/foto/no_hits.html:9
+msgid "The search resulted in no hits."
+msgstr "Die Suche ergab keine Treffer."
+
+#: edh_web_application/bibliography/templates/bibliography/no_hits.html:10
+#: edh_web_application/foto/templates/foto/no_hits.html:10
+msgid "Start new search"
+msgstr "Neue Suche starten"
+
+#: edh_web_application/foto/routes.py:10
+msgid "Foto Database: Search"
+msgstr "Epigraphische Fotothek: Suche"
+
+#: edh_web_application/foto/routes.py:18 edh_web_application/foto/routes.py:21
+msgid "Epigraphic Foto Database: Detail View"
+msgstr "Epigraphische Fotothek: Detailansicht"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:16
+msgid "F-number:"
+msgstr "F-Nummer:"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:31
+msgid "Find circumstances / present location"
+msgstr "Fundumstände / Aufbewahrung"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:35
+msgid "province:"
+msgstr "Provinz:"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:39
+msgid "country:"
+msgstr "Land:"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:43
+msgid "ancient find spot:"
+msgstr "Fundort antik:"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:47
+msgid "modern find spot:"
+msgstr "Fundort modern:"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:51
+msgid "present location:"
+msgstr "Aufbewahrung"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:58
+msgid "Picture"
+msgstr "Aufnahme"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:62
+msgid "original image"
+msgstr "Vorlage"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:68
+msgid "date of photograph"
+msgstr "Aufnahme-Jahr	"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:74
+msgid "quality"
+msgstr "Qualität"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:81
+msgid "Literature"
+msgstr "Literatur"
 
 #: edh_web_application/templates/404.html:4
 #: edh_web_application/templates/404.html:8
@@ -436,78 +559,3 @@ msgstr ""
 "39</p><h2>Fax</h2><p>+49 (0) 62 21 / 54 22 34</p><h2>Email</h2><p><a "
 "href=\"mailto:epigraphische.datenbank@zaw.uni-"
 "heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:8
-msgid "title"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:12
-msgid "Generic data"
-msgstr "Allgemeine Angaben"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:16
-msgid "B-number:"
-msgstr "B-Nr.:"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:20
-msgid "responsible individual:"
-msgstr "Bearbeiter:"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:24
-msgid "last update:"
-msgstr "letzte Änderungen:"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:31
-msgid "Work / contribution"
-msgstr "Werk / Beitrag"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:35
-msgid "author:"
-msgstr "Autor:"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:39
-msgid "title:"
-msgstr "Titel:"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:43
-msgid "publication:"
-msgstr "Publikation:"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:47
-msgid "Volume:"
-msgstr "Band:"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:51
-msgid "year(s):"
-msgstr "Jahr(e):"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:55
-msgid "pages:"
-msgstr "Seiten:"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:62
-msgid "Cited in AE"
-msgstr "Zitiert in AE"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:73
-msgid "Also concerns the inscriptions"
-msgstr "Betrifft außerdem die Inschriften"
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:89
-msgid "other corpora"
-msgstr "sonstige Corpora"
-
-#: edh_web_application/templates/search_bibliography/no_hits.html:9
-msgid "The search resulted in no hits."
-msgstr "Die Suche ergab keine Treffer."
-
-#: edh_web_application/templates/search_bibliography/no_hits.html:10
-msgid "Start new search"
-msgstr "Neue Suche starten"
-
-#~ msgid "Presentations"
-#~ msgstr "Veranstaltungen & Öffentlichkeitsarbeit"
-
-#~ msgid "Contact / Imprint / Data Privacy Statement"
-#~ msgstr "Kontakt | Impressum | Datenschutzerklärung"
-

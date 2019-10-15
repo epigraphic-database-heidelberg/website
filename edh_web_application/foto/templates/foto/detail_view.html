@@ -13,64 +13,72 @@
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('B-number:') }}</div>
-                <div class="detail_block_content_row_text">{{data['b_nr']}}</div>
+                <div class="detail_block_content_row_header">{{ _("F-number:") }}</div>
+                <div class="detail_block_content_row_text">{{data['f_nr']}}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('responsible individual:') }}</div>
+                <div class="detail_block_content_row_header">{{ _("responsible individual:") }}</div>
                 <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('last update:') }}</div>
+                <div class="detail_block_content_row_header">{{ _("last update:") }}</div>
                 <div class="detail_block_content_row_text">{{data['datum']}}</div>
             </section>
         </div>
     </div>
     <div class="detail_block">
         <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _('Work / contribution') }}</span>
+            <span class="detail_block_header_text">{{ _("Find circumstances / present location") }}</span>
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('author:') }}</div>
-                <div class="detail_block_content_row_text">{{data['autor']}}</div>
+                <div class="detail_block_content_row_header">{{ _("province:") }}</div>
+                <div class="detail_block_content_row_text">{{data['provinz']}}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('title:') }}</div>
-                <div class="detail_block_content_row_text">{{data['titel']}}</div>
+                <div class="detail_block_content_row_header">{{ _("country:") }}</div>
+                <div class="detail_block_content_row_text">{{data['land']}}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('publication:') }}</div>
-                <div class="detail_block_content_row_text">{{data['publikation']}}</div>
+                <div class="detail_block_content_row_header">{{ _("ancient find spot:") }}</div>
+                <div class="detail_block_content_row_text">{{data['fo_antik']}}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('Volume:') }}</div>
-                <div class="detail_block_content_row_text">{{data['band']}}</div>
+                <div class="detail_block_content_row_header">{{ _("modern find spot:") }}</div>
+                <div class="detail_block_content_row_text">{{data['fo_modern']}}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('year(s):') }}</div>
-                <div class="detail_block_content_row_text">{{data['jahr']}}</div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('pages:') }}</div>
-                <div class="detail_block_content_row_text">{{data['seiten']}}</div>
+                <div class="detail_block_content_row_header">{{ _("present location:") }}</div>
+                <div class="detail_block_content_row_text">{{data['aufbewahrung']}}</div>
             </section>
         </div>
     </div>
     <div class="detail_block">
         <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _('Cited in AE') }}</span>
+            <span class="detail_block_header_text">{{ _("Picture") }}</span>
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">&nbsp;</div>
-                <div class="detail_block_content_row_text">{{data['ae']}}</div>
+                <div class="detail_block_content_row_header">{{ _("original image") }}</div>
+                <div class="detail_block_content_row_text">{{data['neg_nr']}}</div>
+            </section>
+        </div>
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _("date of photograph") }}</div>
+                <div class="detail_block_content_row_text">{{data['aufnahme_jahr']}}</div>
+            </section>
+        </div>
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _("quality") }}</div>
+                <div class="detail_block_content_row_text">{{data['qualitaet']}}</div>
             </section>
         </div>
     </div>
     <div class="detail_block" style="margin-bottom:2em;">
         <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _('Also concerns the inscriptions') }}</span>
+            <span class="detail_block_header_text">{{ _("Literature") }}</span>
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
@@ -86,7 +94,7 @@
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('other corpora') }}</div>
+                <div class="detail_block_content_row_header">{{ _("other corpora") }}</div>
                 <div class="detail_block_content_row_text">{{data['sonstigeCorpora']}}</div>
             </section>
         </div>

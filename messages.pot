@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-08 12:56+0200\n"
+"POT-Creation-Date: 2019-10-15 15:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,18 +49,6 @@ msgstr ""
 msgid "Project - Contact"
 msgstr ""
 
-#: edh_web_application/search_bibliography.py:12
-msgid "Bibliographic Database: Search"
-msgstr ""
-
-#: edh_web_application/search_bibliography.py:23
-msgid "Epigraphic Bibliography Database: Detail View"
-msgstr ""
-
-#: edh_web_application/search_fotos.py:11
-msgid "Photographic Database: Search"
-msgstr ""
-
 #: edh_web_application/search_inscriptions.py:13
 msgid "Epigraphic Text Database: Simple Search"
 msgstr ""
@@ -76,6 +64,141 @@ msgstr ""
 #: edh_web_application/search_inscriptions.py:31
 #: edh_web_application/search_inscriptions.py:33
 msgid "Epigraphic Text Database: Detail View"
+msgstr ""
+
+#: edh_web_application/bibliography/routes.py:10
+msgid "Bibliographic Database: Search"
+msgstr ""
+
+#: edh_web_application/bibliography/routes.py:18
+#: edh_web_application/bibliography/routes.py:21
+msgid "Epigraphic Bibliography Database: Detail View"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:12
+#: edh_web_application/foto/templates/foto/detail_view.html:12
+msgid "Generic data"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:16
+msgid "B-number:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:20
+#: edh_web_application/foto/templates/foto/detail_view.html:20
+msgid "responsible individual:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:24
+#: edh_web_application/foto/templates/foto/detail_view.html:24
+msgid "last update:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:31
+msgid "Work / contribution"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:35
+msgid "author:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:39
+msgid "title:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:43
+msgid "publication:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:47
+msgid "Volume:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:51
+msgid "year(s):"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:55
+msgid "pages:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:62
+msgid "Cited in AE"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:73
+msgid "Also concerns the inscriptions"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:89
+#: edh_web_application/foto/templates/foto/detail_view.html:97
+msgid "other corpora"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/no_hits.html:9
+#: edh_web_application/foto/templates/foto/no_hits.html:9
+msgid "The search resulted in no hits."
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/no_hits.html:10
+#: edh_web_application/foto/templates/foto/no_hits.html:10
+msgid "Start new search"
+msgstr ""
+
+#: edh_web_application/foto/routes.py:10
+msgid "Foto Database: Search"
+msgstr ""
+
+#: edh_web_application/foto/routes.py:18 edh_web_application/foto/routes.py:21
+msgid "Epigraphic Foto Database: Detail View"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:16
+msgid "F-number:"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:31
+msgid "Find circumstances / present location"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:35
+msgid "province:"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:39
+msgid "country:"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:43
+msgid "ancient find spot:"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:47
+msgid "modern find spot:"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:51
+msgid "present location:"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:58
+msgid "Picture"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:62
+msgid "original image"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:68
+msgid "date of photograph"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:74
+msgid "quality"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:81
+msgid "Literature"
 msgstr ""
 
 #: edh_web_application/templates/404.html:4
@@ -188,73 +311,5 @@ msgstr ""
 
 #: edh_web_application/templates/project/project_team_members.html:9
 msgid "Research Team Members page"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:8
-msgid "title"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:12
-msgid "Generic data"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:16
-msgid "B-number:"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:20
-msgid "responsible individual:"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:24
-msgid "last update:"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:31
-msgid "Work / contribution"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:35
-msgid "author:"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:39
-msgid "title:"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:43
-msgid "publication:"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:47
-msgid "Volume:"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:51
-msgid "year(s):"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:55
-msgid "pages:"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:62
-msgid "Cited in AE"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:73
-msgid "Also concerns the inscriptions"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/detail_view.html:89
-msgid "other corpora"
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/no_hits.html:9
-msgid "The search resulted in no hits."
-msgstr ""
-
-#: edh_web_application/templates/search_bibliography/no_hits.html:10
-msgid "Start new search"
 msgstr ""
 

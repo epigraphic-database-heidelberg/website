@@ -54,17 +54,17 @@ def create_app(test_config=None):
 
 def register_blueprints(app):
     from edh_web_application.bibliography import bp_bibliography
+    from edh_web_application.foto import bp_foto
 
     from edh_web_application import project
     from edh_web_application import search_inscriptions
-    from edh_web_application import search_fotos
     from edh_web_application import data
     from edh_web_application import links
 
     app.register_blueprint(bp_bibliography)
+    app.register_blueprint(bp_foto)
 
     app.register_blueprint(project.bp)
     app.register_blueprint(search_inscriptions.bp)
-    app.register_blueprint(search_fotos.bp)
     app.register_blueprint(data.bp)
     app.register_blueprint(links.bp)
