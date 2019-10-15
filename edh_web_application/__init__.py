@@ -3,6 +3,7 @@ from config import Config
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel
 from edh_web_application.models import Publication
+import os
 
 
 def create_app(test_config=None):
@@ -10,7 +11,7 @@ def create_app(test_config=None):
     # create and configure the app
     #
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_object(Config)
+    app.config.from_object(os.environ['APP_SETTINGS'])
     bootstrap = Bootstrap(app)
     babel = Babel(app)
     if test_config is None:
