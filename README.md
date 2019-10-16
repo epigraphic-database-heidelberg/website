@@ -3,6 +3,6 @@ This is the source code for the next version of the Epigraphic Database Heidelbe
 
 The new version is built on the [Python Flask web framework](https://flask.palletsprojects.com), data is hold in an [Apache Solr index](https://lucene.apache.org/solr/).
 
-Code and data can be resued under the [CC BY_SA 4.0 licence](https://creativecommons.org/licenses/by-sa/4.0/).
+Code and data can be reused under the [CC BY_SA 4.0 licence](https://creativecommons.org/licenses/by-sa/4.0/).
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
