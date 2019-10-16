@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, session
 from config import Config
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel
-from edh_web_application.models import Publication
 import os
 
 
