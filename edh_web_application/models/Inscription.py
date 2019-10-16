@@ -78,7 +78,6 @@ class Inscription:
                 for key in result:
                     if key not in ('hd_nr', 'provinz', 'land', 'bearbeiter', 'datum', 'beleg'):
                         props[key] = result[key]
-                        print(key + " => " + result[key])
                 atext_br = result['atext']
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
                 btext_br = result['btext']
