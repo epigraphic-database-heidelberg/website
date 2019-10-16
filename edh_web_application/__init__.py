@@ -57,15 +57,15 @@ def register_blueprints(app):
     from edh_web_application.bibliography import bp_bibliography
     from edh_web_application.foto import bp_foto
     from edh_web_application.inscription import bp_inscription
+    from edh_web_application.data import bp_data
 
     from edh_web_application import project
-    from edh_web_application import data
     from edh_web_application import links
 
     app.register_blueprint(bp_bibliography)
     app.register_blueprint(bp_foto)
     app.register_blueprint(bp_inscription)
+    app.register_blueprint(bp_data)
 
     app.register_blueprint(project.bp)
-    app.register_blueprint(data.bp)
     app.register_blueprint(links.bp)

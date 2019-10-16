@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-15 15:29+0200\n"
+"POT-Creation-Date: 2019-10-16 11:28+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -17,10 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
-
-#: edh_web_application/data.py:11
-msgid "Open Data Repository"
-msgstr ""
 
 #: edh_web_application/links.py:11 edh_web_application/templates/base.html:55
 msgid "Links"
@@ -49,23 +45,6 @@ msgstr "Projekt - Veranstaltungen & Öffentlichkeitsarbeit"
 #: edh_web_application/project.py:36
 msgid "Project - Contact"
 msgstr "Projekt - Kontakt"
-
-#: edh_web_application/search_inscriptions.py:13
-msgid "Epigraphic Text Database: Simple Search"
-msgstr "Epigraphische Text-Datenbank: Einfache Suche"
-
-#: edh_web_application/search_inscriptions.py:19
-msgid "Epigraphic Text Database: Extended Search"
-msgstr "Epigraphische Text-Datenbank: Erweiterte Suche"
-
-#: edh_web_application/search_inscriptions.py:24
-msgid "Epigraphic Text Database: Browse Inscriptions"
-msgstr "Epigraphische Text-Datenbank: Inschriften durchblättern"
-
-#: edh_web_application/search_inscriptions.py:31
-#: edh_web_application/search_inscriptions.py:33
-msgid "Epigraphic Text Database: Detail View"
-msgstr "Epigraphische Text-Datenbank: Detailansicht"
 
 #: edh_web_application/bibliography/routes.py:10
 msgid "Bibliographic Database: Search"
@@ -146,6 +125,36 @@ msgstr "Die Suche ergab keine Treffer."
 msgid "Start new search"
 msgstr "Neue Suche starten"
 
+#: edh_web_application/data/routes.py:9
+msgid "Epigraphic Database Heidelberg: Data"
+msgstr "Open Data Repository"
+
+#: edh_web_application/data/templates/data/index.html:9
+msgid "data page"
+msgstr ""
+"<p>Alle Daten des Open Data Repository der Epigraphischen Datenbank "
+"Heidelberg stehen unter der <a href=\"http://creativecommons.org/licenses"
+"/by-sa/4.0/\"> CC BY-SA 4.0 Lizenz</a>.</p><p>Es stehen grundsätzlich "
+"drei Optionen bereit: Download statischer, periodisch aktualisierter "
+"Dateien (Data Dumps) oder dynamische Abfragen über eine öffentliche "
+"Programmierschnittstelle (API) oder Abfragen an einen SPARQL "
+"Endpunkt:</p><h2>Download Data Dumps</h2><p>Die Daten der Teildatenbanken"
+" der Epigraphischen Datenbank Heidelberg stehen in den folgenden Formaten"
+" für den Download bereit:</p><ul><li>EpiDoc XML (Inschriften und "
+"Metadaten)</li><li>CIDOC CRM XML (Foto Metadaten)</li><li>BibTeX "
+"(Bibliographie)</li><li>RDF (Inschriften einschließlich "
+"Prosopographie)</li><li>GeoJSON (Geographie)</li></ul><p>Zur "
+"detaillierten Auflistung aller Daten und Download-Links geht es <a "
+"href=\"./data/export\">hier</a>.</p><h2>Öffentliche "
+"Programmierschnittstellen (API)</h2><p>Über die EDH API besteht Live-"
+"Zugriff auf die Daten der Epigraphischen Datenbank Heidelberg; die "
+"Resultate werden im JSON Format zurückgeliefert. Eine Anleitung und "
+"Beschreibung der Parameter findet sich <a "
+"href=\"./data/api\">hier</a>.</p><h2>SPARQL Endpunkt</h2><p>Darüber "
+"hinaus werden die Daten der Epigraphischen Datenbank Heidelberg "
+"sukzessive im RDF Format angeboten; ein SPARQL Endpunkt findet sich <a "
+"href=\"./data/sparql\">hier</a>.</p>"
+
 #: edh_web_application/foto/routes.py:10
 msgid "Foto Database: Search"
 msgstr "Epigraphische Fotothek: Suche"
@@ -192,7 +201,7 @@ msgstr "Vorlage"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:68
 msgid "date of photograph"
-msgstr "Aufnahme-Jahr	"
+msgstr "Aufnahme-Jahr\t"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:74
 msgid "quality"
@@ -201,6 +210,23 @@ msgstr "Qualität"
 #: edh_web_application/foto/templates/foto/detail_view.html:81
 msgid "Literature"
 msgstr "Literatur"
+
+#: edh_web_application/inscription/routes.py:10
+msgid "Epigraphic Text Database: Simple Search"
+msgstr "Epigraphische Text-Datenbank: Einfache Suche"
+
+#: edh_web_application/inscription/routes.py:16
+msgid "Epigraphic Text Database: Extended Search"
+msgstr "Epigraphische Text-Datenbank: Erweiterte Suche"
+
+#: edh_web_application/inscription/routes.py:21
+msgid "Epigraphic Text Database: Browse Inscriptions"
+msgstr "Epigraphische Text-Datenbank: Inschriften durchblättern"
+
+#: edh_web_application/inscription/routes.py:28
+#: edh_web_application/inscription/routes.py:30
+msgid "Epigraphic Text Database: Detail View"
+msgstr "Epigraphische Text-Datenbank: Detailansicht"
 
 #: edh_web_application/templates/404.html:4
 #: edh_web_application/templates/404.html:8
@@ -334,32 +360,6 @@ msgstr ""
 "ein Projektpartner von <a href=\"http://www.eagle-network.eu/about/who-"
 "we-are/\"><b>EAGLE</b></a> (Europeana network of Ancient Greek and Latin "
 "Epigraphy) und <a href=\"http://commons.pelagios.org/\">PELAGIOS</a>.</p>"
-
-#: edh_web_application/templates/data/index.html:9
-msgid "data page"
-msgstr ""
-"<p>Alle Daten des Open Data Repository der Epigraphischen Datenbank "
-"Heidelberg stehen unter der <a href=\"http://creativecommons.org/licenses"
-"/by-sa/4.0/\"> CC BY-SA 4.0 Lizenz</a>.</p><p>Es stehen grundsätzlich "
-"drei Optionen bereit: Download statischer, periodisch aktualisierter "
-"Dateien (Data Dumps) oder dynamische Abfragen über eine öffentliche "
-"Programmierschnittstelle (API) oder Abfragen an einen SPARQL "
-"Endpunkt:</p><h2>Download Data Dumps</h2><p>Die Daten der Teildatenbanken"
-" der Epigraphischen Datenbank Heidelberg stehen in den folgenden Formaten"
-" für den Download bereit:</p><ul><li>EpiDoc XML (Inschriften und "
-"Metadaten)</li><li>CIDOC CRM XML (Foto Metadaten)</li><li>BibTeX "
-"(Bibliographie)</li><li>RDF (Inschriften einschließlich "
-"Prosopographie)</li><li>GeoJSON (Geographie)</li></ul><p>Zur "
-"detaillierten Auflistung aller Daten und Download-Links geht es <a "
-"href=\"./data/export\">hier</a>.</p><h2>Öffentliche "
-"Programmierschnittstellen (API)</h2><p>Über die EDH API besteht Live-"
-"Zugriff auf die Daten der Epigraphischen Datenbank Heidelberg; die "
-"Resultate werden im JSON Format zurückgeliefert. Eine Anleitung und "
-"Beschreibung der Parameter findet sich <a "
-"href=\"./data/api\">hier</a>.</p><h2>SPARQL Endpunkt</h2><p>Darüber "
-"hinaus werden die Daten der Epigraphischen Datenbank Heidelberg "
-"sukzessive im RDF Format angeboten; ein SPARQL Endpunkt findet sich <a "
-"href=\"./data/sparql\">hier</a>.</p>"
 
 #: edh_web_application/templates/links/index.html:9
 msgid "links page"
@@ -559,3 +559,7 @@ msgstr ""
 "39</p><h2>Fax</h2><p>+49 (0) 62 21 / 54 22 34</p><h2>Email</h2><p><a "
 "href=\"mailto:epigraphische.datenbank@zaw.uni-"
 "heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
+
+#~ msgid "Open Data Repository"
+#~ msgstr ""
+
