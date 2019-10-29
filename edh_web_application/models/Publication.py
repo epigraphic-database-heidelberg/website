@@ -1,8 +1,8 @@
 import pysolr
 import re
 from flask import Markup
-from flask import current_app
-
+from flask import current_app, request
+from pprint import pprint
 
 class Publication:
 
@@ -37,7 +37,7 @@ class Publication:
         :return: list of Publication instances
         """
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        results = solr.search(query_string, **{'rows': '20'})
+        results = solr.search(query_string, **{'rows': '99999'})
         if len(results) == 0:
             return None
         else:
@@ -54,3 +54,55 @@ class Publication:
                                     )
                 query_result.append(publ)
             return query_result
+
+    @classmethod
+    def create_query_string(cls, form):
+        """
+        creates solr query based on user data entered into search mask
+        :param form: ImmutableMultiDict of GET params
+        :return: query_string
+        """
+        logical_operater = "AND"
+        query_string = ""
+        #pprint("b_nr: " + str(form['b_nr']))
+
+        if form['b_nr'] != "":
+            b_nr = form['b_nr']
+            # check if b_nr is valid pattern
+            # correct if neccessary/possible
+            query_string = "b_nr:" + b_nr + " " + logical_operater + " "
+        if form['author'] != "":
+            query_string += "autor:" + form['author'] + " " + logical_operater + " "
+
+        if form['title'] != "":
+            query_string += "titel:" + form['title'] + " " + logical_operater + " "
+
+        if form['publication'] != "":
+            query_string += "publikation:" + form['publication'] + " " + logical_operater + " "
+
+        if form['volume'] != "":
+            query_string += "band:" + form['volume'] + " " + logical_operater + " "
+
+        if form['years'] != "":
+            query_string += "jahr:" + form.years.data + " " + logical_operater + " "
+
+        if form['pages'] != "":
+            query_string += "seiten:" + form['pages'] + " " + logical_operater + " "
+
+        if form['town'] != "":
+            query_string += "ort:" + form['town'] + " " + logical_operater + " "
+
+        if form['ae'] != "":
+            query_string += "ae:" + form['ae'] + " " + logical_operater + " "
+
+        if form['on_ae'] != "":
+            query_string += "zu_ae:" + form['on_ae'] + " " + logical_operater + " "
+
+        if form['cil'] != "":
+            query_string += "cil:" + form['cil'] + " " + logical_operater + " "
+
+        if form['other_corpora'] != "":
+            query_string += " sonstigeCorpora:" + form['other_corpora'] + " " + logical_operater + " "
+        # remove last " AND"
+        query_string = re.sub(" " + logical_operater,"",query_string)
+        return query_string

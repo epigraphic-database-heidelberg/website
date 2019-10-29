@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+
+<form action="" method="get">
+
+    <p>
+        {{ form.b_nr.label }}:
+        {{ form.b_nr(style='') }}
+    </p>
+    <p>
+        {{ form.author.label }}:
+        {{ form.author(style='') }}
+    </p>
+    <p>
+        {{ form.title.label }}:
+        {{ form.title(style='') }}
+    </p>
+    <p>
+        {{ form.publication.label }}:
+        {{ form.publication(style='') }}
+    </p>
+    <p>
+        {{ form.volume.label }}:
+        {{ form.volume(style='') }}
+    </p>
+    <p>
+        {{ form.years.label }}:
+        {{ form.years(style='') }}
+    </p>
+    <p>
+        {{ form.pages.label }}:
+        {{ form.pages(style='') }}
+    </p>
+    <p>
+        {{ form.town.label }}:
+        {{ form.town(style='') }}
+    </p>
+    <p>
+        {{ form.ae.label }}:
+        {{ form.ae(style='') }}
+    </p>
+    <p>
+        {{ form.on_ae.label }}:
+        {{ form.on_ae(style='') }}
+    </p>
+    <p>
+        {{ form.cil.label }}:
+        {{ form.cil(style='') }}
+    </p>
+    <p>
+        {{ form.other_corpora.label }}:
+        {{ form.other_corpora(style='') }}
+    </p>
+
+    <p>{{ form.submit(class='btn btn-sm', type="submit") }} {{ form.reset(class='btn btn-sm', type="reset") }}</p>
+
+</form>
+{% endblock %}

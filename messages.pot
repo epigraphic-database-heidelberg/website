@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-16 11:28+0200\n"
+"POT-Creation-Date: 2019-10-29 16:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,40 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: edh_web_application/links.py:11 edh_web_application/templates/base.html:55
-msgid "Links"
-msgstr ""
-
-#: edh_web_application/project.py:11
-msgid "Project - Concept"
-msgstr ""
-
-#: edh_web_application/project.py:16
-msgid "Project - History"
-msgstr ""
-
-#: edh_web_application/project.py:21
-msgid "Project - Cooperations"
-msgstr ""
-
-#: edh_web_application/project.py:26
-msgid "Project - Research Team Members"
-msgstr ""
-
-#: edh_web_application/project.py:31
-msgid "Project - Events and Presentations"
-msgstr ""
-
-#: edh_web_application/project.py:36
-msgid "Project - Contact"
-msgstr ""
-
-#: edh_web_application/bibliography/routes.py:10
+#: edh_web_application/bibliography/routes.py:18
+#: edh_web_application/bibliography/routes.py:20
+#: edh_web_application/bibliography/routes.py:22
 msgid "Bibliographic Database: Search"
 msgstr ""
 
-#: edh_web_application/bibliography/routes.py:18
-#: edh_web_application/bibliography/routes.py:21
+#: edh_web_application/bibliography/routes.py:30
+#: edh_web_application/bibliography/routes.py:33
 msgid "Epigraphic Bibliography Database: Detail View"
 msgstr ""
 
@@ -78,14 +52,17 @@ msgid "Work / contribution"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:35
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:17
 msgid "author:"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:39
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:21
 msgid "title:"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:43
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:25
 msgid "publication:"
 msgstr ""
 
@@ -98,6 +75,7 @@ msgid "year(s):"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:55
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:37
 msgid "pages:"
 msgstr ""
 
@@ -124,8 +102,20 @@ msgstr ""
 msgid "Start new search"
 msgstr ""
 
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:13
+msgid "&ndash; open detailed view..."
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:29
+msgid "volume:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:33
+msgid "years:"
+msgstr ""
+
 #: edh_web_application/data/routes.py:9
-msgid "Epigraphic Database Heidelberg: Data"
+msgid "Open Data Repository"
 msgstr ""
 
 #: edh_web_application/data/templates/data/index.html:9
@@ -205,6 +195,64 @@ msgstr ""
 msgid "Epigraphic Text Database: Detail View"
 msgstr ""
 
+#: edh_web_application/project/routes.py:9
+msgid "Project - Concept"
+msgstr ""
+
+#: edh_web_application/project/routes.py:14
+msgid "Project - History"
+msgstr ""
+
+#: edh_web_application/project/routes.py:19
+msgid "Project - Cooperations"
+msgstr ""
+
+#: edh_web_application/project/routes.py:24
+msgid "Project - Research Team Members"
+msgstr ""
+
+#: edh_web_application/project/routes.py:29
+msgid "Project - Events and Presentations"
+msgstr ""
+
+#: edh_web_application/project/routes.py:34
+msgid "Project - Contact"
+msgstr ""
+
+#: edh_web_application/project/routes.py:39
+#: edh_web_application/templates/base.html:55
+msgid "Links"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:9
+msgid "links page"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_concept.html:9
+msgid "Concept page"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_contact.html:9
+msgid "Contact page"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_cooperations.html:9
+#: edh_web_application/templates/base.html:38
+msgid "Cooperations"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_history.html:9
+msgid "History page"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_presentations.html:9
+msgid "Presentations page"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_team_members.html:9
+msgid "Research Team Members page"
+msgstr ""
+
 #: edh_web_application/templates/404.html:4
 #: edh_web_application/templates/404.html:8
 msgid "Page not found"
@@ -229,11 +277,6 @@ msgstr ""
 
 #: edh_web_application/templates/base.html:37
 msgid "History"
-msgstr ""
-
-#: edh_web_application/templates/base.html:38
-#: edh_web_application/templates/project/project_cooperations.html:9
-msgid "Cooperations"
 msgstr ""
 
 #: edh_web_application/templates/base.html:39
@@ -287,29 +330,5 @@ msgstr ""
 
 #: edh_web_application/templates/home.html:9
 msgid "Home"
-msgstr ""
-
-#: edh_web_application/templates/links/index.html:9
-msgid "links page"
-msgstr ""
-
-#: edh_web_application/templates/project/project_concept.html:9
-msgid "Concept page"
-msgstr ""
-
-#: edh_web_application/templates/project/project_contact.html:9
-msgid "Contact page"
-msgstr ""
-
-#: edh_web_application/templates/project/project_history.html:9
-msgid "History page"
-msgstr ""
-
-#: edh_web_application/templates/project/project_presentations.html:9
-msgid "Presentations page"
-msgstr ""
-
-#: edh_web_application/templates/project/project_team_members.html:9
-msgid "Research Team Members page"
 msgstr ""
 
