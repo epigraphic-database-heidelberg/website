@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-29 16:47+0100\n"
+"POT-Creation-Date: 2019-10-31 11:39+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -17,6 +17,63 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
+
+#: edh_web_application/bibliography/forms.py:7
+#: edh_web_application/bibliography/templates/bibliography/search.html:97
+msgid "Reset..."
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:8
+msgid "Submit..."
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:9
+msgid "B-No"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:10
+msgid "author"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:11
+msgid "title"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:12
+msgid "publication"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:13
+msgid "volume"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:14
+msgid "year(s)"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:15
+msgid "pages"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:16
+msgid "town"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:17
+msgid "ae"
+msgstr "AE"
+
+#: edh_web_application/bibliography/forms.py:18
+msgid "cil"
+msgstr "CIL"
+
+#: edh_web_application/bibliography/forms.py:19
+msgid "on_ae"
+msgstr "on AE"
+
+#: edh_web_application/bibliography/forms.py:20
+msgid "other_corpora"
+msgstr "other corpora"
 
 #: edh_web_application/bibliography/routes.py:18
 #: edh_web_application/bibliography/routes.py:20
@@ -101,6 +158,10 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/no_hits.html:10
 #: edh_web_application/foto/templates/foto/no_hits.html:10
 msgid "Start new search"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/search.html:97
+msgid "Search..."
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:13

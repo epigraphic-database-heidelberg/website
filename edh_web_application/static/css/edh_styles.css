@@ -149,4 +149,9 @@ a:hover {
     #beta-banner {
         height: 120px;
     }
+
+    .col-sm-2.col-form-label {
+        text-align: right;
+    }
+
 }

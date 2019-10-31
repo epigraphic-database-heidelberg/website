@@ -1,20 +1,20 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, SelectField, SubmitField, SelectMultipleField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Optional, Regexp, URL
-
+from flask_babel import lazy_gettext as _l
 
 class BibliographySearch(FlaskForm):
-    reset = SubmitField('Reset...')
-    submit = SubmitField('Submit...')
-    b_nr = StringField('B-No', validators=[Optional(), Regexp('^B*[0-9]{1,6}$')])
-    author = StringField('author')
-    title = StringField('title')
-    publication = StringField('publication')
-    volume = StringField('volume')
-    years = StringField('year(s)')
-    pages = StringField('pages')
-    town = StringField('town')
-    ae = StringField('ae')
-    cil = StringField('cil')
-    on_ae = StringField('on_ae')
-    other_corpora = StringField('other_corpora')
+    reset = SubmitField(_l('Reset...'))
+    submit = SubmitField(_l('Submit...'))
+    b_nr = StringField(_l('B-No'), validators=[Optional(), Regexp('^B*[0-9]{1,6}$')])
+    author = StringField(_l('author'))
+    title = StringField(_l('title'))
+    publication = StringField(_l('publication'))
+    volume = StringField(_l('volume'))
+    years = StringField(_l('year(s)'))
+    pages = StringField(_l('pages'))
+    town = StringField(_l('town'))
+    ae = StringField(_l('ae'))
+    cil = StringField(_l('cil'))
+    on_ae = StringField(_l('on_ae'))
+    other_corpora = StringField(_l('other_corpora'))

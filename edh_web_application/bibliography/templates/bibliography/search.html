@@ -5,56 +5,98 @@
 
 <form action="" method="get">
 
-    <p>
-        {{ form.b_nr.label }}:
-        {{ form.b_nr(style='') }}
-    </p>
-    <p>
-        {{ form.author.label }}:
-        {{ form.author(style='') }}
-    </p>
-    <p>
-        {{ form.title.label }}:
-        {{ form.title(style='') }}
-    </p>
-    <p>
-        {{ form.publication.label }}:
-        {{ form.publication(style='') }}
-    </p>
-    <p>
-        {{ form.volume.label }}:
-        {{ form.volume(style='') }}
-    </p>
-    <p>
-        {{ form.years.label }}:
-        {{ form.years(style='') }}
-    </p>
-    <p>
-        {{ form.pages.label }}:
-        {{ form.pages(style='') }}
-    </p>
-    <p>
-        {{ form.town.label }}:
-        {{ form.town(style='') }}
-    </p>
-    <p>
-        {{ form.ae.label }}:
-        {{ form.ae(style='') }}
-    </p>
-    <p>
-        {{ form.on_ae.label }}:
-        {{ form.on_ae(style='') }}
-    </p>
-    <p>
-        {{ form.cil.label }}:
-        {{ form.cil(style='') }}
-    </p>
-    <p>
-        {{ form.other_corpora.label }}:
-        {{ form.other_corpora(style='') }}
-    </p>
+    <div class="form-group row">
+        {{ form.b_nr.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.b_nr(class='form-control') }}
+        </div>
+    </div>
 
-    <p>{{ form.submit(class='btn btn-sm', type="submit") }} {{ form.reset(class='btn btn-sm', type="reset") }}</p>
+    <div class="form-group row">
+        {{ form.author.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.author(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.title.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.title(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.publication.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.publication(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.volume.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.volume(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.years.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.years(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.pages.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.pages(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.town.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.town(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.ae.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.ae(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.on_ae.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.on_ae(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.cil.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.cil(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        {{ form.other_corpora.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.other_corpora(class='form-control') }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-10">
+            <button type="submit" class="btn">{{ _('Search...') }}</button> <button type="reset" class="btn">{{ _('Reset...') }}</button>
+        </div>
+    </div>
 
 </form>
 {% endblock %}
