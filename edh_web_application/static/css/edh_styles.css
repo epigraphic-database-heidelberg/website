@@ -120,6 +120,10 @@ a:hover {
     font-weight: normal;
     padding-left: 10em;
 }
+.btn {
+    color: #1F6B3B;
+    border: 1px solid #1F6B3B;
+}
 #beta-banner-wrapper{
     position:absolute;right:0;top:0;
 }
