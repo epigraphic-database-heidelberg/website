@@ -32,65 +32,111 @@
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('author:') }}</div>
-                <div class="detail_block_content_row_text">{{data['autor']}}</div>
+                <div class="detail_block_content_row_header">{{ _('author') }}:</div>
+                <div class="detail_block_content_row_text"><a href="/bibliographie/suche?author={{ data['autor'] }}" class="pfeil">{{data['autor']}}</a></div>
             </section>
+            {% if data['titel'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('title:') }}</div>
                 <div class="detail_block_content_row_text">{{data['titel']}}</div>
             </section>
+            {% endif %}
+            {% if data['publikation'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('publication:') }}</div>
-                <div class="detail_block_content_row_text">{{data['publikation']}}</div>
+                <div class="detail_block_content_row_text"><a href="/bibliographie/suche?publication={{ data['publikation'] }}" class="pfeil">{{data['publikation']}}</a></div>
             </section>
+            {% endif %}
+            {% if data['band'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('Volume:') }}</div>
                 <div class="detail_block_content_row_text">{{data['band']}}</div>
             </section>
+            {% endif %}
+            {% if data['jahr'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('year(s):') }}</div>
                 <div class="detail_block_content_row_text">{{data['jahr']}}</div>
             </section>
+            {% endif %}
+            {% if data['seiten'] %}
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('pages:') }}</div>
+                <div class="detail_block_content_row_header">{{ _('pages') }}:</div>
                 <div class="detail_block_content_row_text">{{data['seiten']}}</div>
             </section>
+            {% endif %}
+            {% if data['ort'] %}
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('town') }}:</div>
+                <div class="detail_block_content_row_text">{{data['ort']}}</div>
+            </section>
+            {% endif %}
         </div>
     </div>
+    {% if data['ae'] %}
     <div class="detail_block">
         <div class="detail_block_header">
             <span class="detail_block_header_text">{{ _('Cited in AE') }}</span>
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">&nbsp;</div>
-                <div class="detail_block_content_row_text">{{data['ae']}}</div>
+                <div class="detail_block_content_row_text" style="colspan=2">
+                    {% set ae_list = data['ae'].split(';') %}
+                    {% for entry in ae_list %}
+                    <a href="/bibliographie/suche?ae={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
+                    {% endfor %}
+                </div>
+
             </section>
         </div>
     </div>
+    {% endif %}
+    {% if data['zu_ae'] or data['cil'] or data['sonstigeCorpora'] %}
     <div class="detail_block" style="margin-bottom:2em;">
         <div class="detail_block_header">
             <span class="detail_block_header_text">{{ _('Also concerns the inscriptions') }}</span>
         </div>
+        {% if data['zu_ae'] %}
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">AE</div>
-                <div class="detail_block_content_row_text">{{data['zu_ae']}}</div>
+                <div class="detail_block_content_row_header">AE:</div>
+                <div class="detail_block_content_row_text">
+                {% set ae_list = data['zu_ae'].split(';') %}
+                {% for entry in ae_list %}
+                <a href="/bibliographie/suche?on_ae={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
+                {% endfor %}
+                </div>
             </section>
         </div>
+        {% endif %}
+        {% if data['cil'] %}
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">CIL</div>
-                <div class="detail_block_content_row_text">{{data['cil']}}</div>
+                <div class="detail_block_content_row_header">CIL:</div>
+                <div class="detail_block_content_row_text">
+                    {% set cil_list = data['cil'].split(';') %}
+                    {% for entry in cil_list %}
+                    <a href="/bibliographie/suche?cil={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
+                    {% endfor %}
+                </div>
             </section>
         </div>
+        {% endif %}
+        {% if data['sonstigeCorpora'] %}
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('other corpora') }}</div>
-                <div class="detail_block_content_row_text">{{data['sonstigeCorpora']}}</div>
+                <div class="detail_block_content_row_header">{{ _('other corpora') }}:</div>
+                <div class="detail_block_content_row_text">
+                    {% set corpora_list = data['sonstigeCorpora'].split(';') %}
+                    {% for entry in corpora_list %}
+                    <a href="/bibliographie/suche?other_corpora={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
+                    {% endfor %}
+                </div>
             </section>
         </div>
+        {% endif %}
     </div>
+    {% endif %}
 </div>
 
 {% endblock %}

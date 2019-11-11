@@ -1,8 +1,8 @@
 import pysolr
 import re
 from flask import Markup
-from flask import current_app, request
-from pprint import pprint
+from flask import current_app, session
+
 
 class Publication:
 
@@ -64,44 +64,43 @@ class Publication:
         """
         logical_operater = "AND"
         query_string = ""
-        #pprint("b_nr: " + str(form['b_nr']))
 
-        if form['b_nr'] != "":
+        if 'b_nr' in form and form['b_nr'] != "":
             b_nr = form['b_nr']
             # check if b_nr is valid pattern
             # correct if neccessary/possible
             query_string = "b_nr:" + b_nr + " " + logical_operater + " "
-        if form['author'] != "":
+        if 'author' in form and form['author'] != "":
             query_string += "autor:" + form['author'] + " " + logical_operater + " "
 
-        if form['title'] != "":
+        if 'title' in form and form['title'] != "":
             query_string += "titel:" + form['title'] + " " + logical_operater + " "
 
-        if form['publication'] != "":
+        if 'publication' in form and form['publication'] != "":
             query_string += "publikation:" + form['publication'] + " " + logical_operater + " "
 
-        if form['volume'] != "":
+        if 'volume' in form and form['volume'] != "":
             query_string += "band:" + form['volume'] + " " + logical_operater + " "
 
-        if form['years'] != "":
-            query_string += "jahr:" + form.years.data + " " + logical_operater + " "
+        if 'years' in form and form['years'] != "":
+            query_string += "jahr:" + form['years'] + " " + logical_operater + " "
 
-        if form['pages'] != "":
+        if 'pages' in form and form['pages'] != "":
             query_string += "seiten:" + form['pages'] + " " + logical_operater + " "
 
-        if form['town'] != "":
+        if 'town' in form and form['town'] != "":
             query_string += "ort:" + form['town'] + " " + logical_operater + " "
 
-        if form['ae'] != "":
+        if 'ae' in form and form['ae'] != "":
             query_string += "ae:" + form['ae'] + " " + logical_operater + " "
 
-        if form['on_ae'] != "":
+        if 'on_ae' in form and form['on_ae'] != "":
             query_string += "zu_ae:" + form['on_ae'] + " " + logical_operater + " "
 
-        if form['cil'] != "":
+        if 'cil' in form and form['cil'] != "":
             query_string += "cil:" + form['cil'] + " " + logical_operater + " "
 
-        if form['other_corpora'] != "":
+        if 'other_corpora' in form and form['other_corpora'] != "":
             query_string += " sonstigeCorpora:" + form['other_corpora'] + " " + logical_operater + " "
         # remove last " AND"
         query_string = re.sub(" " + logical_operater,"",query_string)
