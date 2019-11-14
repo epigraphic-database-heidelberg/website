@@ -1,0 +1,437 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<p>{{_("This is a list of the most important Corpora, Journals, and other Literatur used for entering data for completed provinces")}}:</p>
+<p>
+    <a href="#Achaia">Achaia</a><br />
+    <a href="#Alpes">Alpes Graiae / Poeninae / Cottiae / Maritimae</a><br />
+    <a href="#Britannia">Britannia ({{_("work in progress")}})</a><br />
+    <a href="#Dacia">Dacia</a><br />
+    <a href="#Dalmatia">Dalmatia</a><br />
+    <a href="#Epirus">Epirus</a><br />
+    <a href="#Germania">Germania Inferior ({{_("work in progress")}})</a><br />
+    <a href="#Macedonia">Macedonia</a><br />
+    <a href="#Moesia Inferior">Moesia Inferior</a><br />
+    <a href="#Moesia Superior">Moesia Superior</a><br />
+    <a href="#Noricum">Noricum</a><br />
+    <a href="#Pannonia Inferior">Pannonia Inferior</a><br />
+    <a href="#Pannonia Superior">Pannonia Superior</a><br />
+    <a href="#Raetia">Raetia</a><br />
+    <a href="#Thracia">Thracia</a>
+</p>
+<hr />
+
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Achaia">Achaia</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2008 {{_("entered completely")}})</li>
+            <li>CIL III</li>
+            <li>IG II (2. Aufl.)</li>
+            <li>IG XII</li>
+            <li>ID</li>
+            <li>W. Dittenberger - K. Purgold, Die Inschriften von Olympia, Berlin (1896)</li>
+            <li>A.B. West, Corinth. Results of excavations conducted by The American School of Classical Studies at Athens 8, 2. Latin inscriptions 1896-1926 (Cambridge [Mass.] 1931)</li>
+            <li>J.H. Kent, Corinth. Results of excavations conducted by The American School of Classical Studies at Athens 8, 3. The inscriptions 1926-1950 (Princeton 1966)</li>
+            <li>M. Šašel Kos, Inscriptiones Latinae in Graecia repertae. Additamenta ad CIL III (Faenza 1979)</li>
+            <li>M.C.J. Miller, Inscriptiones Atticae. Supplementum inscriptionum Atticarum 6 (Chicago 1992)</li>
+            <li>A.D. Rizakis, Achaïe II. La cité de Patras: épigraphie et histoire (Athènes 1998)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Alpes">Alpes Graiae / Poeninae / Cottiae / Maritimae</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2008 {{_("entered completely")}})</li>
+            <li>CIL V</li>
+            <li>CIL XII</li>
+            <li>CIL XVII 2</li>
+            <li>InscrIt XI 1</li>
+            <li>E. Howald - E. Mayer, Die römische Schweiz (Zürich 1940)</li>
+            <li>M.-R. Sauter, Préhistoire du Valais. Des origines aux temps mérovingiens (Sion 1950)</li>
+            <li>G. Walser, Die römischen Straßen in der Schweiz. 1. Teil. Die Meilensteine (Bern 1967)</li>
+            <li>G. Laguerre, Inscriptions antiques de Nice-Cimiez (Cemenelum, ager Cemenelensis) (Paris 1975)</li>
+            <li>G. Walser, Römische Inschriften in der Schweiz 3 (Bern 1980)</li>
+            <li>G. Walser, Summus Poeninus (Wiesbaden 1984)</li>
+            <li>G. Walser, Via per Alpes Graias (Stuttgart 1986)</li>
+            <li>B. Rémy, Inscriptions latines des Alpes (I.L.Alpes) 1. Alpes Graies (Chambéry - Grenoble 1998)</li>
+            <li>M. Bossert - C. Neukom, Gallia Narbonensis: Colonia Iulia Vienna: Genava. Vallis Poenina - Raetia - Italia, CSIR Schweiz 2 (Basel 2004)</li>
+            <li>E. Cimarosti, Testimonianze di età romana. Guida alla lettura delle epigrafi della Valle di Susa (Susa 2008)</li>
+            <li>F. Wiblé, Martigny la Romaine (Lausanne 2008)</li>
+            <li>S. Morabito, Inscriptions latines des Alpes Maritimes (Nice - Montpellier 2010)</li>
+            <li>E. Cimarosti, Le iscrizioni di età romana sul versante italiano delle Alpes Cottiae (Barcelona 2012)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Britannia">Britannia ({{_("work in progress")}})</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2011 {{_("entered completely")}})</li>
+            <li>CIL VII</li>
+            <li>RIB I, III</li>
+            <li>CIMRM</li>
+            <li>L. Bricault, Recueil des inscriptions concernant les cultes Isiaques (RICIS) (Paris 2005)</li>
+            <li>E.J. Phillips, Corbridge, Hadrian’s Wall East of the North Tyne, CSIR Great Britain 1, 1 (Oxford 1977)</li>
+            <li>B.W. Cunliffe - M.G. Fulford, Bath and the Rest of Wessex, CSIR Great Britain 1, 2 (Oxford 1982)</li>
+            <li>S. Rinaldi Tufi, Yorkshire, CSIR Great Britain 1, 3 (Oxford 1983)</li>
+            <li>L.J.F. Keppie - B.J Arnold, Scotland, CSIR Great Britain 1, 4 (Oxford 1984)</li>
+            <li>R.J. Brewer, Wales, CSIR Great Britain 1, 5 (Oxford 1986)</li>
+            <li>J.C. Coulston - E.J. Phillips, Hadrian’s Wall West of the North Tyne, and Carlisle, CSIR Great Britain 1, 6 (Oxford 1988)</li>
+            <li>M. Henig, Roman Sculpture from the Cotswold Region, with Devon and Cornwall, CSIR Great Britain 1, 7 (Oxford 1993)</li>
+            <li>J. Huskinson, Roman Sculpture from Eastern England, CSIR Great Britain 1, 8 (Oxford 1994)</li>
+            <li>M. Henig, Roman Sculpture from the North West Midlands, CSIR Great Britain 1, 9 (Oxford 2004)</li>
+            <li>P. Coombe - F. Grew - K. Hayward - M. Henig, Roman Sculpture from London and the South-East, CSIR Great Britain 1, 10 (Oxford 2015)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Dacia">Dacia</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2010 {{_("entered completely")}})</li>
+            <li>CCID</li>
+            <li>CIL III</li>
+            <li>CIMRM</li>
+            <li>IDR</li>
+            <li>ILD</li>
+            <li>EphNapocensis</li>
+            <li>N. Gudea - V. Lucăcel, Inscripţii şi monumente sculpturale în Muzeul de Istorie şi Artă Zalău (Zalău 1975)</li>
+            <li>E. Popescu, Inscripţiile greceşti şi latine din secolele IV-XIII descoperite în România (Bucureşti 1976)</li>
+            <li>I. Barnea, Les monuments paléochrétiens de Roumanie (Città del Vaticano 1977)</li>
+            <li>E. Schallmayer - K. Eibl - J. Ott - G. Preuß - E. Wittkopf, Der römische Weihebezirk von Osterburken 1 (Stuttgart 1990)</li>
+            <li>L. Bricault, Recueil des inscriptions concernant les cultes Isiaques (RICIS) (Paris 2005)</li>
+            <li>I. Piso, in: I. Piso (Hrsg.), Le forum vetus de Sarmizegetusa 1 (Bucureşti 2006)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Dalmatia">Dalmatia</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2010 {{_("entered completely")}})</li>
+            <li>CIL III</li>
+            <li>CIMRM</li>
+            <li>IDRE</li>
+            <li>ILJug</li>
+            <li>Forschungen in Salona 1-3 (Wien 1917-1939)</li>
+            <li>Recherches à Salone 1/2 (Copenhague 1928/33)</li>
+            <li>AArchSlov</li>
+            <li>Asseria</li>
+            <li>BAHD</li>
+            <li>Diadora</li>
+            <li>GlasSarajevo</li>
+            <li>GodAkSarajevo</li>
+            <li>JŒAI</li>
+            <li>OpusArchZagreb</li>
+            <li>Starinar</li>
+            <li>VAHD</li>
+            <li>VjesAMuzZagreb</li>
+            <li>WMBH</li>
+            <li>ZAnt</li>
+            <li>P. Ballif, Römische Straßen in Bosnien und der Hercegovina (Wien 1893)</li>
+            <li>J. Brunšmid, div. VHAD 1, 1895 - 11, 1910/11</li>
+            <li>P. Sticotti, Die römische Stadt Doclea in Montenegro (Wien 1913)</li>
+            <li>A. Jagenteufel, Die Statthalter der römischen Provinz Dalmatia von Augustus bis Diokletian (Wien 1958)</li>
+            <li>E. Imamović, Antički kultni i votivni spomenici na području Bosne i Hercegovine (Sarajevo 1977)</li>
+            <li>R. Noll, Die griechischen und lateinischen Inschriften der Wiener Antikensammlung (2. Aufl. Wien 1986)</li>
+            <li>E. Schallmayer - K. Eibl - J. Ott - G. Preuß - E. Wittkopf, Der römische Weihebezirk von Osterburken 1 (Stuttgart 1990)</li>
+            <li>E. Marin - M. Mayer - G. Paci - I. Rodà, Corpus Inscriptionum Naronitanarum 1 (Tivoli 1999)</li>
+            <li>A. Škegro, VjesAMuzZagreb 36, 2003, 135-164</li>
+            <li>L. Bricault, Recueil des inscriptions concernant les cultes Isiaques (RICIS) (Paris 2005)</li>
+            <li>E. Marin u. a., Salona 4. Inscriptions de Salone chrétienne, IVe-VIIe siècles (Rome - Split 2010)</li>
+            <li>J.J. Martinović, Antički natpisi u Crnoj Gori. Corpus inscriptionum Latinarum et Graecarum Montenegri (Kotor 2011)</li>
+            <li>U. Ehmig - R. Haensch, Die lateinischen Inschriften aus Albanien (LIA) (Bonn 2012)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Epirus">Epirus</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2009 {{_("entered completely")}})</li>
+            <li>CIL III</li>
+            <li>IG IX</li>
+            <li>L.M. Ugolini, L’acropoli di Butrinto (Roma 1942)</li>
+            <li>N.G.L. Hammond, Epirus (Oxford 1967)</li>
+            <li>M. Šašel Kos, Inscriptiones Latinae in Graecia repertae. Additamenta ad CIL III (Faenza 1979)</li>
+            <li>D.K. Samsari, I romaiki apoikia tis Photikis sti Thesprotia tis Ipeirou (Ioannina 1994)</li>
+            <li>S. Anamali - H. Ceka - É. Deniaux, Corpus des inscriptions latines d’Albanie (Rome 2009)</li>
+            <li>U. Ehmig - R. Haensch, Die lateinischen Inschriften aus Albanien (LIA) (Bonn 2012)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Germania">Germania Inferior ({{_("work in progress")}})</a></div>
+    <div class="panel-body">
+        {{_("except civitas Tungrorum ==> Belgica")}}
+
+        <ul>
+            <li>AE ({{_("until")}} 2016) [{{_("under progress")}}]</li>
+            <li>CIL XIII [{{_("under progress")}}]</li>
+        </ul>
+
+
+        <ul>
+            <li>ArchRhein 1987-2015 [{{_("under progress")}}]; 2016; 2017</li>
+            <li>BJ 217, 2017 (216, 2016: {{_("no inscriptions from Germania inferior")}})</li>
+            <li>CF-GeI</li>
+            <li>FeRA 22, 2013; 23, 2014; 24, 2014; 26, 2015; 27, 2015; 28, 2015; 29, 2016; 30, 2016; 31, 2016; 32, 2017; 33, 2017; 34, 2017; 37, 2018; 38, 2019</li>
+            <li>ZPE 2016; 2017; (2018-2019: {{_("no inscriptions from Germania inferior")}})</li>
+        </ul>
+
+
+        <ul>
+            <li>H. Lehner, Die antiken Steindenkmäler des Provinzialmuseums Bonn (Bonn 1918) [{{_("under progress")}}]</li>
+            <li>H. Finke, Neue Inschriften, BRGK 17, 1927, 85-105</li>
+            <li>H. Finke, Nachträge zu den neun Inschriften, BRGK 17, 1927, 210-214</li>
+            <li>H. Nesselhauf, Neue Inschriften aus dem römischen Germanien und den angrenzenden Provinzen. Germania inferior, BRGK 27, 1937, 93-123</li>
+            <li>H. Nesselhauf - H. Lieb, Dritter Nachtrag zu CIL XIII. Inschriften aus den germanischen Provinzen und dem Treverergebiet, BRGK 40, 1959, 192-216</li>
+            <li>H.-G. Kolbe, Die neuen Matroneninschriften von Morken-Harff, Kreis Bergheim, BJ 160, 1960, 50-124</li>
+            <li>H.-G. Kolbe, Neue Inschriften aus Bonn, BJ 161, 1961, 85-107</li>
+            <li>G. Alföldy, Epigraphisches aus dem Rheinland I, BJ 165, 1965, 176-191</li>
+            <li>G. Alföldy, Epigraphisches aus dem Rheinland II, in: EpStud 4 (Köln 1967) 1-43</li>
+            <li>G. Alföldy, Epigraphisches aus dem Rheinland III, in: EpStud 5 (Düsseldorf 1968) 1-98</li>
+            <li>G. Alföldy, Die Hilfstruppen der römischen Provinz Germania inferior (Epigraphischer Anhang), EpStud 6 (Düsseldorf 1968) 164-224</li>
+            <li>E. Schwertheim, Die Denkmäler orientalischer Gottheiten im römischen Deutschland (Leiden 1974)</li>
+            <li>M. Clauss, Neue Inschriften im Rheinischen Landesmuseum Bonn, in: EpStud 11 (Köln 1976) 1-39</li>
+            <li>U. Schillinger-Häfele, Vierter Nachtrag zu CIL XIII und zweiter Nachtrag zu Fr. Vollmer, Inscriptiones Baivariae Romanae. Inschriften aus dem deutschen Anteil der germanischen Provinzen und des Treverergebietes sowie Rätiens und Noricums, BRGK 58, 1977, 527-561</li>
+            <li>G. Bauchhenß, Germania inferior. Bonn und Umgebung. Militärische Grabdenkmäler, CSIR Deutschland 3, 1 (Bonn 1978)</li>
+            <li>G. Bauchhenß, Germania inferior. Bonn und Umgebung. Zivile Grabdenkmäler, CSIR Deutschland 3, 2 (Bonn 1979)</li>
+            <li>P. Noelke, Die Iupitersäulen und -pfeiler in der römischen Provinz Germania inferior, in: G. Bauchhenß - P. Noelke, Die Iupitersäulen in den germanischen Provinzen (Köln - Bonn 1981) 413-501</li>
+            <li>C.B. Rüger, Inschriftenfunde der Jahre 1975-1979 aus dem Rheinland, in: EpStud 12 (Köln 1981) 287-307</li>
+            <li>C.B. Rüger, Römische Inschriftenfunde aus dem Rheinland 1978-1982, in: EpStud 13 (Köln 1983) 111-166</li>
+            <li>M. Sommer, Das Heiligtum der Matronae Veteranehae bei Abenden. Inschriften, BJ 185, 1985, 334-342</li>
+            <li>E. Schallmayer - K. Eibl - J. Ott - G. Preuß - E. Wittkopf, Der römische Weihebezirk von Osterburken 1. Corpus der griechischen und lateinischen Beneficiarier-Inschriften des Römischen Reiches (Stuttgart 1990) 50-87</li>
+            <li>W. Faust, Die Grabstelen des 2. und 3. Jahrhunderts im Rheingebiet (Köln 1998)</li>
+            <li>A. Kakoschke, Ortsfremde in den römischen Provinzen Germania inferior und Germania superior (Möhnesee 2002)</li>
+            <li>S. Willer, Römische Grabbauten des 2. und 3. Jahrhunderts nach Christus im Rheingebiet (Mainz 2005)</li>
+            <li>U. Ehmig, Tituli picti auf Amphoren in Köln, KJ 40, 2007, 215-322 [in Arb.]</li>
+            <li>M.-P. Terrien, La christianisation de la région rhénane du IVe au milieu du VIIIe siècle. Corpus (Besançon 2007)</li>
+            <li>A.G. Garman, The cult of the matronae in the Roman Rhineland. An Historical Evaluation of the Archaeological Evidence (Lewiston 2008)</li>
+            <li>U. Ehmig, Tituli picti auf Amphoren in Köln, KJ 42, 2009, 393-445 [in Arb.]</li>
+            <li>W. Oenbrink, Die Grabdenkmäler der Südnekropole in Köln, KJ 42, 2009, 545-591</li>
+            <li>W.J.H. Willems u. a., Ulpia Noviomagus. Roman Nijmegen. The Batavian capital at the imperial frontier, JRA (Suppl.) 73 (Portsmouth (Rhode Island) 2009)</li>
+            <li>F. Biller, Kultische Zentren und Matronenverehrung in der südlichen Germania inferior (Rahden 2010)</li>
+            <li>B. Galsterer - H. Galsterer, Die römischen Steininschriften aus Köln, IKöln2 (Mainz 2010)</li>
+            <li>M. Reuter, Legio XXX Ulpia victrix. Ihre Geschichte, ihre Soldaten, ihre Denkmäler (Darmstadt - Mainz 2012)</li>
+            <li>U. Ehmig, Tituli picti auf Amphoren in Köln, KJ 51, 2018, 399-405</li>
+        </ul>
+
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Macedonia">Macedonia</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2008 {{_("entered completely")}})</li>
+            <li>CIL III</li>
+            <li>M. Šašel Kos, Inscriptiones Latinae in Graecia repertae. Additamenta ad CIL III (Faenza 1979)</li>
+            <li>IG X</li>
+            <li>L. Gounaropoulou - M.B. Hatzopoulos, Les milliaires de la voie Egnatienne entre Heraclée des Lyncestes et Thessalonique (Athen 1985)</li>
+            <li>A.D. Rizakes - I.P. Touratsglou, Epigrafes Ano Makedonias (Athen 1985)</li>
+            <li>L. Gounaropoulou - M.B. Hatzopoulos, Epigraphes Kato Makedonias (Athen 1998)</li>
+            <li>P. Pilhofer, Philippi II. Katalog der Inschriften von Philippi (Tübingen 2000)</li>
+            <li>U. Ehmig - R. Haensch, Die lateinischen Inschriften aus Albanien (LIA) (Bonn 2012)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Moesia Inferior">Moesia Inferior</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2009 {{_("entered completely")}})</li>
+            <li>CCID</li>
+            <li>CIL III</li>
+            <li>ILBulg</li>
+            <li>IScM</li>
+            <li>IGLNovae</li>
+            <li>ILNovae</li>
+            <li>E. Kalinka, Antike Denkmäler in Bulgarien (Wien 1906)</li>
+            <li>V. Beševliev, Spätgriechische und spätlateinische Inschriften aus Bulgarien (Berlin 1964)</li>
+            <li>E. Popescu, Inscripţiile greceşti şi latine din secolele IV-XIII descoperite în România (Bucureşti 1976)</li>
+            <li>I. Barnea, Les monuments paléochrétiens de Roumanie (Città del Vaticano 1977)</li>
+            <li>V. Božilova, Montana 1, 1987, 20-36</li>
+            <li>S. Conrad, Die Grabstelen aus Moesia inferior. Untersuchungen zu Chronologie, Typologie und Ikonographie (Leipzig 2004)</li>
+            <li>L. Bricault, Recueil des inscriptions concernant les cultes Isiaques (RICIS) (Paris 2005)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Moesia Superior">Moesia Superior</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2011 {{_("entered completely")}})</li>
+            <li>CCID</li>
+            <li>CIL III</li>
+            <li>IMS</li>
+            <li>ILJug</li>
+            <li>E. Kalinka, Antike Denkmäler in Bulgarien (Wien 1906)</li>
+            <li>V. Beševliev, Spätgriechische und spätlateinische Inschriften aus Bulgarien (Berlin 1964)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Noricum">Noricum</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2011 {{_("entered completely")}})</li>
+            <li>AIJ</li>
+            <li>CCID</li>
+            <li>CIL III</li>
+            <li>CSIR Österreich</li>
+            <li>ILJug</li>
+            <li>ILLPRON</li>
+            <li>A. Gerstl, Supplementum epigraphicum zu CIL III für Kärnten und Osttirol 1902-1961 (Diss. Wien 1961)</li>
+            <li>E. Weber, Die römerzeitlichen Inschriften der Steiermark (Graz 1969)</li>
+            <li>P.S. Leber, Die in Kärnten seit 1902 gefundenen römischen Steininschriften (Klagenfurt 1972)</li>
+            <li>A. Obermayr, Römersteine zwischen Inn und Salzach (Freilassing 1974)</li>
+            <li>G. Piccottini, Die Römersteinsammlung des Landesmuseums für Kärnten (Klagenfurt 1996)</li>
+            <li>M. Šašel Kos, The Roman inscriptions in the National Museum of Slovenia (Ljubljana 1997)</li>
+            <li>M. Šašel Kos, Pre-Roman Divinities of the Eastern Alps and Adriatic (Ljubljana 1999)</li>
+            <li>G. Kremer, Antike Grabbauten in Noricum (Wien 2001)</li>
+            <li>E. Hudeczek, Die Römersteinsammlung des Landesmuseums Joanneum (Graz 2004)</li>
+            <li>H. Petrovitsch, Legio II Italica (Linz 2006)</li>
+            <li>S. Groh - H. Sedlmayer (Hrsg.), Forschungen im römischen Heiligtum am Burgstall bei St. Margarethen im Lavanttal (Noricum) (Wien 2011)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Pannonia Inferior">Pannonia Inferior</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2013 {{_("entered completely")}})</li>
+            <li>CCID</li>
+            <li>CIL III</li>
+            <li>CIMRM</li>
+            <li>CLEPann</li>
+            <li>IDRE</li>
+            <li>ILJug</li>
+            <li>RIU (Bde. 1-4 [sofern Pann. Inf. betreffend]. 5 u. 6)</li>
+            <li>SIRIS</li>
+            <li>TitAq</li>
+            <li>TRHR (Suppl.)</li>
+        </ul>
+        <ul>
+            <li>Fontes Pannoniae Antiquae 1 (2004), 2 (2003), 3 (2006), 4 (2007), 5 (2008)</li>
+            <li>HPS 3 (1998) [= CIGPannon; partielle Aufnahme], 6 (2000), 8 (2001) [= CIGPannon (2. Aufl.); partielle Aufnahme], 13 (2006), 15 (2007) [= CIGPannon (3. Aufl.); partielle Aufnahme], 19 (2010/11), 22 (2016)</li>
+            <li>Studia Epigraphica Pannonica (SEP) 1 (2008), 2 (2010), 3 (2011), 4 (2012), 5 (2013), 6 (2014), 7 (2015)</li>
+        </ul>
+        <ul>
+            <li>A. Schober, Die römischen Grabsteine von Noricum und Pannonien (Wien 1923)</li>
+            <li>G. Erdélyi - F. Fülep, in: L. Barkóczi u. a., Intercisa I. (Dunapentele - Sztálinváros). Geschichte der Stadt in der Römerzeit (Budapest 1954)</li>
+            <li>M. Mirković, in: V. Popović (Hrsg.), Archaeological investigations in Syrmian Pannonia. To the memory of Miodrag Grbić, Sirmium (Beograd 1971) 60-90 [= The inscriptions from Sirmium and its territory]</li>
+            <li>V. Dautova-Ruševljan, Rimska kamena plastika u jugoslovenskom delu provincije Donje Panonije (Novi Sad 1983)</li>
+            <li>A.S. Burger, Die Skulpturen des Stadtgebietes von Sopianae und des Gebietes zwischen der Drau und der Limesstrecke Lussonium - Altinum, CSIR Ungarn 7 (Budapest 1991)</li>
+            <li>Z. Visy, Die Wagendarstellungen der pannonischen Grabsteine (Pécs 1996)</li>
+            <li>J. Fitz, Religions and cults in Pannonia (Székesfehérvár 1998)</li>
+            <li>B. Lőrincz, Die römischen Hilfstruppen in Pannonien während der Prinzipatszeit 1. Die Inschriften (Wien 2001)</li>
+            <li>É. Maróti, Die römischen Steindenkmäler von Szentendre - Ulcisia Castra (Szentendre 2003)</li>
+            <li>M. Šašel Kos - P. Scherrer (Hrsg.), The autonomous towns of Noricum and Pannonia. Die autonomen Städte in Noricum und Pannonien. Pannonia 2 (Ljubljana 2004)</li>
+            <li>L. Bricault, Recueil des inscriptions concernant les cultes Isiaques (RICIS) (Paris 2005)</li>
+            <li>C. Ertel - M. Németh, Bestandteile von römischen Grabbauten aus Aquincum und dem Limesabschnitt im Stadtgebiet von Budapest, CSIR Ungarn 9 (Budapest 2010)</li>
+            <li>M. Nagy, Guide to the Archaeological Exhibitions in the Hungarian National Museum. Roman Stones. Lapidarium (Budapest 2012)</li>
+            <li>J. Mander, Portraits of children on Roman funerary monuments (Cambridge 2013)</li>
+            <li>H. Ubl, Waffen und Uniform des römischen Heeres der Prinzipatsepoche nach den Grabreliefs Noricums und Pannoniens (Wien 2013)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Pannonia Superior">Pannonia Superior</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2013 {{_("entered completely")}})</li>
+            <li>AIJ</li>
+            <li>CCID</li>
+            <li>CIL III</li>
+            <li>CIMRM</li>
+            <li>CLEPann</li>
+            <li>IDRE</li>
+            <li>ILCV</li>
+            <li>ILJug</li>
+            <li>ILSl 1</li>
+            <li>RIU (Bde. 1-2, 3-4 u. 6 [sofern Pann. Sup. betreffend])</li>
+            <li>SIRIS</li>
+            <li>TRHR (Suppl.)</li>
+            <li>HPS 3 (1998) [= CIGPannon], 8 (2001) [= CIGPannon (2. Aufl.), 15 (2007) [= CIGPannon (3. Aufl.)</li>
+            <li>Studia Epigraphica Pannonica (SEP) 1 (2008), 2 (2010), 3 (2011), 4 (2012), 5 (2013), 6 (2014), 7 (2015)</li>
+        </ul>
+        <ul>
+            <li>W. Kubitschek, Römerfunde von Eisenstadt (Wien 1926)</li>
+            <li>J. Klemenc - B. Saria, Archäologische Karte von Jugoslavien: Blatt Ptuj (Beograd - Zagreb 1936)</li>
+            <li>A. Neumann, Die Skulpturen des Stadtgebietes von Vindobona, CSIR Österreich 1, 1 (Wien 1967)</li>
+            <li>F. Hild, Supplementum epigraphicum zu CIL III. Das pannonische Niederösterreich, Burgenland und Wien 1902-1968 (Diss. Wien 1968)</li>
+            <li>E. Weber, Die römischen Meilensteine aus dem österreichischen Pannonien, JŒAI 49, 1968-1971, 121-145</li>
+            <li>E. Weber, Die römerzeitlichen Inschriften der Steiermark (Graz 1969)</li>
+            <li>M.-L. Krüger, Die Reliefs des Stadtgebietes von Carnuntum 1. Die figürlichen Reliefs, CSIR Österreich 1, 3 (Wien 1970)</li>
+            <li>M.-L. Krüger, Die Reliefs des Stadtgebietes von Carnuntum 2. Die dekorativen Reliefs, CSIR Österreich 1, 4 (Wien 1972)</li>
+            <li>L. Balla - T.P. Buocz - Z. Kádár - A. Mócsy - T. Szentléleky, Die römischen Steindenkmäler von Savaria (Amsterdam 1971)</li>
+            <li>C. Farka u. a., in: Vindobona - die Römer im Wiener Raum. 52. Sonderausstellung des Historischen Museums der Stadt Wien, Karlsplatz (Wien 1977)</li>
+            <li>E. Vorbeck, Militärinschriften aus Carnuntum (2. Aufl. Wien 1980)</li>
+            <li>E. Vorbeck, Zivilinschriften aus Carnuntum (Wien 1980</li>
+            <li>B. Jevremov, Vodnik po lapidariju (Ptuj 1988)</li>
+            <li>E. Schallmayer - K. Eibl - J. Ott - G. Preuß - E. Wittkopf, Der römische Weihebezirk von Osterburken 1 (Stuttgart 1990)</li>
+            <li>H. Ubl, Das römische Lapidarium (Klosterneuburg 1991)</li>
+            <li>A. Diebold, Die römerzeitlichen Steindenkmäler des Eisenstädter Landesmuseums und ihre Bedeutung für den nordwestpannonischen Raum 1. Katalog (Diss. Wien 1993)</li>
+            <li>Z. Farkas - D. Gabler, Die Skulpturen des Stadtgebietes von Scarbantia und der Limesstrecke Ad Flexum - Arrabona, CSIR Ungarn 2 (Budapest 1994)</li>
+            <li>M. Šašel Kos, The Roman inscriptions in the National Museum of Slovenia (Ljubljana 1997)</li>
+            <li>C. Ertel - S. Palágyi - F. Redő, Die Skulpturen des Stadtgebietes von Salla und Mogetiana sowie des Balaton- (Plattensee-) Oberlandes in den Komitaten Zala und Vesprém, CSIR Ungarn 8 (Budapest 1999)</li>
+            <li>B. Lőrincz, Die römischen Hilfstruppen in Pannonien während der Prinzipatszeit 1. Die Inschriften (Wien 2001)</li>
+            <li>F. Harl – B. Lőrincz, Führer zum römischen Lapidarium in Bastion VI der Festung Komárno (Komárno – Wien 2002) (Komárno – Wien 2002)</li>
+            <li>M. Mosser, Die Steindenkmäler der legio XV Apollinaris (Wien 2003)</li>
+            <li>S.K. Palágyi, Veszprém megye római kori kőfaragványainak gyűjteménye. Baláca, Római kori villagazdaság. Katalógus. Sammlung der römerzeitlichen Steindenkmäler im Komitat Veszprém. Baláca, Römerzeitlicher Gutshof. Katalog (Veszprém 2004).</li>
+            <li>M. Šašel Kos - P. Scherrer (Hrsg.), The autonomous towns of Noricum and Pannonia. Die autonomen Städte von Noricum und Pannonien. Pannonia 2 (Ljubljana 2004)</li>
+            <li>L. Bricault, Recueil des inscriptions concernant les cultes Isiaques (RICIS) (Paris 2005)</li>
+            <li>L. Borhy, Vizető Komárom város római kori kőemlékeihez [Acta Archaeologica Brigetionensia 1, 5)] (Komárom 2006)</li>
+            <li>E. Tóth, Lapidarium Savariense. Savaria római feliratos köemlékei (Szombathely 2011)</li>
+            <li>C. Hemmers - S. Traxler, in: Festschrift für Walter Aspernig zum 70. Geburtstag, JbWels 36 (Linz 2012)</li>
+            <li>G. Kremer, Götterdarstellungen, Kult- und Weihedenkmäler aus Carnuntum, CSIR Österreich Carnuntum (Suppl.) 1 (Wien 2012)</li>
+            <li>M. Nagy, Guide to the archaeological exhibitions in the Hungarian National Museum. Roman Stones. Lapidarium (Budapest 2012)</li>
+            <li>J. Mander, Portraits of children on Roman funerary monuments (Cambridge 2013)</li>
+            <li>H. Ubl, Waffen und Uniform des römischen Heeres der Prinzipatsepoche nach den Grabreliefs Noricums und Pannoniens (Wien 2013)</li>
+            <li>N. Pirnat-Spahić, Aquae Iasae. Nova otkrića iz rimskog razdoblja na području Varaždinskih Toplica (Zagreb 2015)</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Raetia">Raetia</a></div>
+    <div class="panel-body">
+        <ul>
+            <li>AE ({{_("until")}} 2013 {{_("entered completely")}})</li>
+            <li>AJahrBay</li>
+            <li>BVBl</li>
+            <li>CIL III</li>
+            <li>CCID</li>
+            <li>CIMRM</li>
+            <li>IBR</li>
+        </ul>
+        <ul>
+            <li>K. Dietz - U. Osterhaus - S. Rieckhoff-Pauli - K. Spindler, Regensburg zur Römerzeit (Regensburg 1979)</li>
+            <li>K. Dietz - T. Fischer, Die Römer in Regensburg (Regensburg 1996)</li>
+            <li>F. Haug - G. Sixt, Die römischen Inschriften und Bildwerke Württembergs (Stuttgart 1900)</li>
+            <li>G. Gamer - A. Rüsch, Raetia (Bayern südlich des Limes) und Noricum (Chiemseegebiet), CSIR Deutschland 1, 1 (Bonn 1973)</li>
+            <li>S.F. Pfahl, Instrumenta Latina et Graeca Inscripta des Limesgebietes von 200 v. Chr. bis 600 n. Chr. (Weinstadt 2012)</li>
+            <li>U. Schillinger Häfele, Vierter Nachtrag zu CIL XIII und zweiter Nachtrag zu Fr. Vollmer, Inscriptiones Baivariae Romanae, BRGK 58, 1977, 447-603</li>
+            <li>F. Wagner, Neue Inschriften aus Raetien, BRGK 37/38, 1956/57, 215-264</li>
+        </ul>
+    </div>
+</div>
+<div class="panel panel-default provinz">
+    <div class="panel-heading"><a id="Thracia">Thracia</a></div>
+    <div class="panel-body"><ul>
+        <li>AE ({{_("until")}} 2010 {{_("entered completely")}})</li>
+        <li>CIL III</li>
+        <li>M. Šašel Kos, Inscriptiones Latinae in Graecia repertae. Additamenta ad CIL III (Faenza 1979)</li>
+        <li>ILBulg</li>
+        <li>E. Kalinka, Antike Denkmäler in Bulgarien (Wien 1906)</li>
+        <li>V. Beševliev, Spätgriechische und spätlateinische Inschriften aus Bulgarien (Berlin 1964)</li>
+    </ul></div>
+</div>
+
+{% endblock %}

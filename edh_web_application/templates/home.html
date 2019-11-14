@@ -8,3 +8,191 @@
     <h1>{{ title }}</h1>
     <p>{{ _('Home') }}</p>
 {% endblock %}
+
+{% block home_content %}
+<div class="row" style="padding-top:1em;">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <a href="/inschrift/suche">
+                <div style="background: url('/static/img/edh_textdatenbank.png') no-repeat;background-size: 100%;height:200px"></div>
+                <div class="panel-heading" style="text-align:center;font-size:20px;background-color: #d4f6d4; color: #1F6B3B;">{{_("Epigraphic Text Database")}}</div>
+                <div class="panel-body" style="font-size:16px;">
+                    {{ _("EDH Text-DB") }}
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <a href="/foto/suche">
+                <div style="background: url('/static/img/edh_fotothek.png') no-repeat;background-size: 100%;height:200px"></div>
+                <div class="panel-heading" style="text-align:center;font-size:20px;background-color: #d4f6d4; color: #1F6B3B;">{{_("Photographic Database")}}</div>
+                <div class="panel-body" style="font-size:16px;">
+                    {{ _("EDH Fotothek") }}
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <a href="/bibliographie/suche">
+                <div style="background: url('/static/img/edh_bibliothek.png') no-repeat;background-size: 100%;height:200px"></div>
+                <div class="panel-heading" style="text-align:center;font-size:20px;background-color: #d4f6d4; color: #1F6B3B;">{{_("Epigraphic Bibliography")}}</div>
+                <div class="panel-body" style="font-size:16px;">
+                    {{ _("EDH Biblio-DB") }}
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block data_content %}
+    <h2>{{_("Data")}}</h2>
+    <h3>{{_("Work Status")}}</h3>
+    <p>{{_("Geographic Focus")}}:</p>
+    <p><div id="mapid" style="width: 100%; height: 400px;border: 1px solid #ccc;"></div></p>
+    <h3>{{_("Last Updates")}}</h3>
+    <p><a href="#">{{_("Epigraphic Text Database")}} (11.11.2019; XX.XXX {{_("records")}})</a></p>
+    <p><a href="#">{{_("Photographic Database")}} (11.11.2019; XX.XXX {{_("records")}})</a></p>
+    <p><a href="#">{{_("Epigraphic Bibliography")}} (11.11.2019; XX.XXX {{_("records")}})</a></p>
+    <p><a href="#">{{_("Geographic Database")}} (11.11.2019; XX.XXX {{_("records")}})</a></p>
+    <h3>Open Data Repository</h3>
+    <p>{{_("ODR")}}</p>
+    <p><a href="http://creativecommons.org/licenses/by-sa/4.0/deed.de"><img src="/static/img/CC-BY-SA_icon.png" style="margin-bottom:2em;" /></a></p>
+    <h2>{{_("Partners")}}</h2>
+    <div class="row" style="padding-top:1em;">
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="http://www.edb.uniba.it/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Epigraphic Database Bari
+                    </div>
+                    <div class="panel-body">
+                        {{_("Inscriptions by Christians in Rome")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="http://www.edr-edr.it/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Epigraphic Database Rome
+                    </div>
+                    <div class="panel-body">
+                        {{_("Epigraphic documents from Italic Regions")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="http://eda-bea.es/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Hispania Epigraphica Online
+                    </div>
+                    <div class="panel-body">
+                        {{_("Epigraphic patrimony of Portugal and Spain")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="http://db.edcs.eu/epigr/epi.php?s_sprache=en">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Epigraphic Database Clauss Slaby
+                    </div>
+                    <div class="panel-body">
+                        {{_("Database of Latin inscriptions")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:1em;">
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="https://romaninscriptionsofbritain.org/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Roman Inscriptions of Britain
+                    </div>
+                    <div class="panel-body">
+                        {{_("Epigraphic patrimony of Britain")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="http://lupa.at/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Ubi Erat Lupa
+                    </div>
+                    <div class="panel-body">
+                        {{_("Images of stone monuments")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="https://www.eagle-network.eu/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Europeana EAGLE
+                    </div>
+                    <div class="panel-body">
+                        {{_("Europeana network of Ancient Greek and Latin Epigraphy")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="https://www.eagle-network.eu/about/who-we-are/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        IDEA
+                    </div>
+                    <div class="panel-body">
+                        {{_("International Digital Epigraphy Association")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top:1em;">
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="https://www.trismegistos.org/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Trismegistos
+                    </div>
+                    <div class="panel-body">
+                        {{_("Portal of papyrological and epigraphical resources")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default partner">
+                <a href="https://www.epigraphik.uni-hamburg.de/">
+                    <div class="panel-heading" style="text-align:center;font-size:18px;background-color: #d4f6d4; color: #1F6B3B;">
+                        Epigraphische Datenbank zum antiken Kleinasien
+                    </div>
+                    <div class="panel-body">
+                        {{_("Greek & Latin inscriptions from Turkey")}}
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="/static/js/home.map.js"></script>
+{% endblock %}

@@ -34,6 +34,11 @@ def show_project_contact_page():
     return render_template('project/project_contact.html', title=_("Project - Contact"))
 
 
+@bp_project.route('/projekt/provinzen')
+def show_project_provinces_page():
+    return render_template('project/project_provinces.html', title=_("Project - Provinces"))
+
 @bp_project.route('/links')
 def links():
     return render_template('project/links.html', title=_("Links"))
+

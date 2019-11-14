@@ -23,6 +23,11 @@ h2 {
     font-family: 'Arvo', serif;
     font-size: 1.5em;
 }
+h3 {
+    font-family: 'Arvo', serif;
+    font-size: 1.2em;
+    margin-top: 2em;
+}
 .footer {
     position: absolute;
     bottom: 0;
@@ -43,6 +48,27 @@ h2 {
     text-align: center;
     color: #777;
 }
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    min-width:200px;
+}
+.legend {
+    text-align: left;
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
 a {
     color: #1F6B3B;
 }
@@ -58,6 +84,10 @@ a.pfeil::before {
 a.pfeil.break {
     display: block;
 }
+p {
+    text-align: justify;
+}
+
 .navbar {
     border-top: 1px solid #fff;
     border-bottom: 1px solid #333;
@@ -65,7 +95,7 @@ a.pfeil.break {
     -moz-border-radius: 0;
     border-radius: 0;
     background-color: #d4f6d4;
-    font-size: 1.25em;
+    font-size: 1.15em;
 }
 .navbar-toggle {
     border-color: #1F6B3B;
@@ -82,6 +112,7 @@ a.pfeil.break {
     line-height:50px;
     background-color: #1F6B3B;
     color:#fff;
+    text-align: center;
 }
 .container.head > a {
     color:#fff;
@@ -136,6 +167,18 @@ a.pfeil.break {
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(31,107,59,.6);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(31,107,59,.6);
+}
+.panel-body {
+    color: #333;
+}
+.panel.panel-default {
+    height: 100%;
+}
+.panel.panel-default.partner {
+    height: 100%;
+}
+.panel.panel-default.provinz {
+    height: 100%;
 }
 /*
  * Timeline
@@ -444,19 +487,19 @@ a.pfeil.break {
     text-align: left;
   }
 }
-
-
-
-
-
-
+#hadw-banner-wrapper{
+    position:absolute;left:5px;top:0;
+}
+#hadw-banner{
+    z-index:1;
+    height:50px;
+}
 #beta-banner-wrapper{
     position:absolute;right:0;top:0;
 }
 #beta-banner {
     height: 50px;
 }
-
 
 
 /*
@@ -501,5 +544,23 @@ a.pfeil.break {
     }
     a.pfeil.break:hover {
         text-decoration: underline;
+    }
+    #hadw-banner{
+        height:120px;
+    }
+    p {
+        font-size: 1.25em;
+    }
+    div.panel-heading {
+        font-size: 1.25em;
+    }
+    div.panel-body {
+        font-size: 1.25em;
+    }
+    .panel.panel-default {
+            height: 375px;
+    }
+    .panel.panel-default.partner {
+        height: 150px;
     }
 }

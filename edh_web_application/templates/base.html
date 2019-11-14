@@ -14,6 +14,7 @@
 
 {% block navbar %}
     <div id="beta-banner-wrapper"><img id="beta-banner" src="{{url_for('static', filename='img/beta-banner_600.png')}}" /></div>
+    <div id="hadw-banner-wrapper"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src="{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
     <div class="wrapper head">
         <div class="container head"><a href="/">{{_("Epigraphic Database Heidelberg")}}</a></div>
     </div>
@@ -63,6 +64,15 @@
 	<div class="container">
         {% block app_content %}{% endblock %}
     </div>
+    {% if request.endpoint == 'home' %}
+        <div class="container">
+            {% block home_content %}{% endblock %}
+        </div>
+        <div class="container">
+            {% block data_content %}{% endblock %}
+        </div>
+    {% endif %}
+
     <footer class="footer">
 		<div class="container">
 			<p class="text-muted"><a href="{{ url_for('project.show_project_contact_page') }}">{{ _("Contact") }}</a> | <a href="https://www.hadw-bw.de/impressum">{{ _("Imprint") }}</a> | <a href="https://www.hadw-bw.de/datenschutzerklaerung">{{ _("Data Privacy Statement") }}</a></p>

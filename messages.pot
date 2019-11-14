@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-31 11:39+0100\n"
+"POT-Creation-Date: 2019-11-13 15:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +31,7 @@ msgid "B-No"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:10
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:35
 msgid "author"
 msgstr ""
 
@@ -51,10 +52,12 @@ msgid "year(s)"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:15
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:64
 msgid "pages"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:16
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:70
 msgid "town"
 msgstr ""
 
@@ -108,43 +111,33 @@ msgstr ""
 msgid "Work / contribution"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:35
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:17
-msgid "author:"
-msgstr ""
-
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:39
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:21
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:40
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:22
 msgid "title:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:43
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:25
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:46
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:28
 msgid "publication:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:47
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:52
 msgid "Volume:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:51
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:58
 msgid "year(s):"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:55
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:37
-msgid "pages:"
-msgstr ""
-
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:62
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:79
 msgid "Cited in AE"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:73
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:97
 msgid "Also concerns the inscriptions"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:89
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:128
 #: edh_web_application/foto/templates/foto/detail_view.html:97
 msgid "other corpora"
 msgstr ""
@@ -167,12 +160,20 @@ msgstr ""
 msgid "&ndash; open detailed view..."
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:29
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:17
+msgid "author:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:34
 msgid "volume:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:33
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:40
 msgid "years:"
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:46
+msgid "pages:"
 msgstr ""
 
 #: edh_web_application/data/routes.py:9
@@ -281,7 +282,11 @@ msgid "Project - Contact"
 msgstr ""
 
 #: edh_web_application/project/routes.py:39
-#: edh_web_application/templates/base.html:55
+msgid "Project - Provinces"
+msgstr ""
+
+#: edh_web_application/project/routes.py:43
+#: edh_web_application/templates/base.html:56
 msgid "Links"
 msgstr ""
 
@@ -298,7 +303,7 @@ msgid "Contact page"
 msgstr ""
 
 #: edh_web_application/project/templates/project/project_cooperations.html:9
-#: edh_web_application/templates/base.html:38
+#: edh_web_application/templates/base.html:39
 msgid "Cooperations"
 msgstr ""
 
@@ -308,6 +313,70 @@ msgstr ""
 
 #: edh_web_application/project/templates/project/project_presentations.html:9
 msgid "Presentations page"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_provinces.html:9
+msgid ""
+"This is a list of the most important Corpora, Journals, and other "
+"Literatur used for entering data for completed provinces"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_provinces.html:13
+#: edh_web_application/project/templates/project/project_provinces.html:17
+#: edh_web_application/project/templates/project/project_provinces.html:67
+#: edh_web_application/project/templates/project/project_provinces.html:157
+msgid "work in progress"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_provinces.html:31
+#: edh_web_application/project/templates/project/project_provinces.html:47
+#: edh_web_application/project/templates/project/project_provinces.html:70
+#: edh_web_application/project/templates/project/project_provinces.html:90
+#: edh_web_application/project/templates/project/project_provinces.html:108
+#: edh_web_application/project/templates/project/project_provinces.html:146
+#: edh_web_application/project/templates/project/project_provinces.html:161
+#: edh_web_application/project/templates/project/project_provinces.html:215
+#: edh_web_application/project/templates/project/project_provinces.html:229
+#: edh_web_application/project/templates/project/project_provinces.html:248
+#: edh_web_application/project/templates/project/project_provinces.html:260
+#: edh_web_application/project/templates/project/project_provinces.html:283
+#: edh_web_application/project/templates/project/project_provinces.html:325
+#: edh_web_application/project/templates/project/project_provinces.html:382
+#: edh_web_application/project/templates/project/project_provinces.html:405
+msgid "until"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_provinces.html:31
+#: edh_web_application/project/templates/project/project_provinces.html:47
+#: edh_web_application/project/templates/project/project_provinces.html:70
+#: edh_web_application/project/templates/project/project_provinces.html:90
+#: edh_web_application/project/templates/project/project_provinces.html:108
+#: edh_web_application/project/templates/project/project_provinces.html:146
+#: edh_web_application/project/templates/project/project_provinces.html:215
+#: edh_web_application/project/templates/project/project_provinces.html:229
+#: edh_web_application/project/templates/project/project_provinces.html:248
+#: edh_web_application/project/templates/project/project_provinces.html:260
+#: edh_web_application/project/templates/project/project_provinces.html:283
+#: edh_web_application/project/templates/project/project_provinces.html:325
+#: edh_web_application/project/templates/project/project_provinces.html:382
+#: edh_web_application/project/templates/project/project_provinces.html:405
+msgid "entered completely"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_provinces.html:158
+msgid "except civitas Tungrorum ==> Belgica"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_provinces.html:161
+#: edh_web_application/project/templates/project/project_provinces.html:162
+#: edh_web_application/project/templates/project/project_provinces.html:167
+#: edh_web_application/project/templates/project/project_provinces.html:176
+msgid "under progress"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_provinces.html:168
+#: edh_web_application/project/templates/project/project_provinces.html:171
+msgid "no inscriptions from Germania inferior"
 msgstr ""
 
 #: edh_web_application/project/templates/project/project_team_members.html:9
@@ -324,72 +393,171 @@ msgid "404"
 msgstr ""
 
 #: edh_web_application/templates/base.html:13
-#: edh_web_application/templates/base.html:18
+#: edh_web_application/templates/base.html:19
 msgid "Epigraphic Database Heidelberg"
 msgstr ""
 
-#: edh_web_application/templates/base.html:34
+#: edh_web_application/templates/base.html:35
 msgid "Project..."
 msgstr ""
 
-#: edh_web_application/templates/base.html:36
+#: edh_web_application/templates/base.html:37
 msgid "Concept"
 msgstr ""
 
-#: edh_web_application/templates/base.html:37
+#: edh_web_application/templates/base.html:38
 msgid "History"
 msgstr ""
 
-#: edh_web_application/templates/base.html:39
+#: edh_web_application/templates/base.html:40
 msgid "Research Team Members"
 msgstr ""
 
-#: edh_web_application/templates/base.html:40
+#: edh_web_application/templates/base.html:41
 msgid "Events and Presentations"
 msgstr ""
 
-#: edh_web_application/templates/base.html:41
-#: edh_web_application/templates/base.html:68
+#: edh_web_application/templates/base.html:42
+#: edh_web_application/templates/base.html:78
 msgid "Contact"
 msgstr ""
 
-#: edh_web_application/templates/base.html:45
+#: edh_web_application/templates/base.html:46
 msgid "Inscriptions..."
 msgstr ""
 
-#: edh_web_application/templates/base.html:47
+#: edh_web_application/templates/base.html:48
 msgid "Simple Search"
 msgstr ""
 
-#: edh_web_application/templates/base.html:48
+#: edh_web_application/templates/base.html:49
 msgid "Extended Search"
 msgstr ""
 
-#: edh_web_application/templates/base.html:49
+#: edh_web_application/templates/base.html:50
 msgid "Browse..."
 msgstr ""
 
-#: edh_web_application/templates/base.html:52
+#: edh_web_application/templates/base.html:53
 msgid "Photos"
 msgstr ""
 
-#: edh_web_application/templates/base.html:53
+#: edh_web_application/templates/base.html:54
 msgid "Bibliography"
 msgstr ""
 
-#: edh_web_application/templates/base.html:54
+#: edh_web_application/templates/base.html:55
+#: edh_web_application/templates/home.html:50
 msgid "Data"
 msgstr ""
 
-#: edh_web_application/templates/base.html:68
+#: edh_web_application/templates/base.html:78
 msgid "Imprint"
 msgstr ""
 
-#: edh_web_application/templates/base.html:68
+#: edh_web_application/templates/base.html:78
 msgid "Data Privacy Statement"
 msgstr ""
 
 #: edh_web_application/templates/home.html:9
 msgid "Home"
+msgstr ""
+
+#: edh_web_application/templates/home.html:18
+#: edh_web_application/templates/home.html:55
+msgid "Epigraphic Text Database"
+msgstr ""
+
+#: edh_web_application/templates/home.html:20
+msgid "EDH Text-DB"
+msgstr ""
+
+#: edh_web_application/templates/home.html:29
+#: edh_web_application/templates/home.html:56
+msgid "Photographic Database"
+msgstr ""
+
+#: edh_web_application/templates/home.html:31
+msgid "EDH Fotothek"
+msgstr ""
+
+#: edh_web_application/templates/home.html:40
+#: edh_web_application/templates/home.html:57
+msgid "Epigraphic Bibliography"
+msgstr ""
+
+#: edh_web_application/templates/home.html:42
+msgid "EDH Biblio-DB"
+msgstr ""
+
+#: edh_web_application/templates/home.html:51
+msgid "Work Status"
+msgstr ""
+
+#: edh_web_application/templates/home.html:52
+msgid "Geographic Focus"
+msgstr ""
+
+#: edh_web_application/templates/home.html:54
+msgid "Last Updates"
+msgstr ""
+
+#: edh_web_application/templates/home.html:55
+#: edh_web_application/templates/home.html:56
+#: edh_web_application/templates/home.html:57
+#: edh_web_application/templates/home.html:58
+msgid "records"
+msgstr ""
+
+#: edh_web_application/templates/home.html:58
+msgid "Geographic Database"
+msgstr ""
+
+#: edh_web_application/templates/home.html:60
+msgid "ODR"
+msgstr ""
+
+#: edh_web_application/templates/home.html:62
+msgid "Partners"
+msgstr ""
+
+#: edh_web_application/templates/home.html:71
+msgid "Inscriptions by Christians in Rome"
+msgstr ""
+
+#: edh_web_application/templates/home.html:83
+msgid "Epigraphic documents from Italic Regions"
+msgstr ""
+
+#: edh_web_application/templates/home.html:95
+msgid "Epigraphic patrimony of Portugal and Spain"
+msgstr ""
+
+#: edh_web_application/templates/home.html:107
+msgid "Database of Latin inscriptions"
+msgstr ""
+
+#: edh_web_application/templates/home.html:122
+msgid "Epigraphic patrimony of Britain"
+msgstr ""
+
+#: edh_web_application/templates/home.html:134
+msgid "Images of stone monuments"
+msgstr ""
+
+#: edh_web_application/templates/home.html:146
+msgid "Europeana network of Ancient Greek and Latin Epigraphy"
+msgstr ""
+
+#: edh_web_application/templates/home.html:158
+msgid "International Digital Epigraphy Association"
+msgstr ""
+
+#: edh_web_application/templates/home.html:173
+msgid "Portal of papyrological and epigraphical resources"
+msgstr ""
+
+#: edh_web_application/templates/home.html:185
+msgid "Greek & Latin inscriptions from Turkey"
 msgstr ""
 
