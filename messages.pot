@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-13 15:28+0100\n"
+"POT-Creation-Date: 2019-11-19 09:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -323,59 +323,59 @@ msgstr ""
 
 #: edh_web_application/project/templates/project/project_provinces.html:13
 #: edh_web_application/project/templates/project/project_provinces.html:17
-#: edh_web_application/project/templates/project/project_provinces.html:67
-#: edh_web_application/project/templates/project/project_provinces.html:157
+#: edh_web_application/project/templates/project/project_provinces.html:73
+#: edh_web_application/project/templates/project/project_provinces.html:171
 msgid "work in progress"
 msgstr ""
 
-#: edh_web_application/project/templates/project/project_provinces.html:31
-#: edh_web_application/project/templates/project/project_provinces.html:47
-#: edh_web_application/project/templates/project/project_provinces.html:70
-#: edh_web_application/project/templates/project/project_provinces.html:90
-#: edh_web_application/project/templates/project/project_provinces.html:108
-#: edh_web_application/project/templates/project/project_provinces.html:146
-#: edh_web_application/project/templates/project/project_provinces.html:161
-#: edh_web_application/project/templates/project/project_provinces.html:215
-#: edh_web_application/project/templates/project/project_provinces.html:229
-#: edh_web_application/project/templates/project/project_provinces.html:248
-#: edh_web_application/project/templates/project/project_provinces.html:260
-#: edh_web_application/project/templates/project/project_provinces.html:283
-#: edh_web_application/project/templates/project/project_provinces.html:325
-#: edh_web_application/project/templates/project/project_provinces.html:382
-#: edh_web_application/project/templates/project/project_provinces.html:405
+#: edh_web_application/project/templates/project/project_provinces.html:33
+#: edh_web_application/project/templates/project/project_provinces.html:51
+#: edh_web_application/project/templates/project/project_provinces.html:76
+#: edh_web_application/project/templates/project/project_provinces.html:98
+#: edh_web_application/project/templates/project/project_provinces.html:118
+#: edh_web_application/project/templates/project/project_provinces.html:158
+#: edh_web_application/project/templates/project/project_provinces.html:176
+#: edh_web_application/project/templates/project/project_provinces.html:233
+#: edh_web_application/project/templates/project/project_provinces.html:249
+#: edh_web_application/project/templates/project/project_provinces.html:270
+#: edh_web_application/project/templates/project/project_provinces.html:284
+#: edh_web_application/project/templates/project/project_provinces.html:309
+#: edh_web_application/project/templates/project/project_provinces.html:349
+#: edh_web_application/project/templates/project/project_provinces.html:406
+#: edh_web_application/project/templates/project/project_provinces.html:428
 msgid "until"
 msgstr ""
 
-#: edh_web_application/project/templates/project/project_provinces.html:31
-#: edh_web_application/project/templates/project/project_provinces.html:47
-#: edh_web_application/project/templates/project/project_provinces.html:70
-#: edh_web_application/project/templates/project/project_provinces.html:90
-#: edh_web_application/project/templates/project/project_provinces.html:108
-#: edh_web_application/project/templates/project/project_provinces.html:146
-#: edh_web_application/project/templates/project/project_provinces.html:215
-#: edh_web_application/project/templates/project/project_provinces.html:229
-#: edh_web_application/project/templates/project/project_provinces.html:248
-#: edh_web_application/project/templates/project/project_provinces.html:260
-#: edh_web_application/project/templates/project/project_provinces.html:283
-#: edh_web_application/project/templates/project/project_provinces.html:325
-#: edh_web_application/project/templates/project/project_provinces.html:382
-#: edh_web_application/project/templates/project/project_provinces.html:405
+#: edh_web_application/project/templates/project/project_provinces.html:33
+#: edh_web_application/project/templates/project/project_provinces.html:51
+#: edh_web_application/project/templates/project/project_provinces.html:76
+#: edh_web_application/project/templates/project/project_provinces.html:98
+#: edh_web_application/project/templates/project/project_provinces.html:118
+#: edh_web_application/project/templates/project/project_provinces.html:158
+#: edh_web_application/project/templates/project/project_provinces.html:233
+#: edh_web_application/project/templates/project/project_provinces.html:249
+#: edh_web_application/project/templates/project/project_provinces.html:270
+#: edh_web_application/project/templates/project/project_provinces.html:284
+#: edh_web_application/project/templates/project/project_provinces.html:309
+#: edh_web_application/project/templates/project/project_provinces.html:349
+#: edh_web_application/project/templates/project/project_provinces.html:406
+#: edh_web_application/project/templates/project/project_provinces.html:428
 msgid "entered completely"
 msgstr ""
 
-#: edh_web_application/project/templates/project/project_provinces.html:158
+#: edh_web_application/project/templates/project/project_provinces.html:173
 msgid "except civitas Tungrorum ==> Belgica"
 msgstr ""
 
-#: edh_web_application/project/templates/project/project_provinces.html:161
-#: edh_web_application/project/templates/project/project_provinces.html:162
-#: edh_web_application/project/templates/project/project_provinces.html:167
 #: edh_web_application/project/templates/project/project_provinces.html:176
+#: edh_web_application/project/templates/project/project_provinces.html:177
+#: edh_web_application/project/templates/project/project_provinces.html:182
+#: edh_web_application/project/templates/project/project_provinces.html:191
 msgid "under progress"
 msgstr ""
 
-#: edh_web_application/project/templates/project/project_provinces.html:168
-#: edh_web_application/project/templates/project/project_provinces.html:171
+#: edh_web_application/project/templates/project/project_provinces.html:183
+#: edh_web_application/project/templates/project/project_provinces.html:186
 msgid "no inscriptions from Germania inferior"
 msgstr ""
 
@@ -559,5 +559,9 @@ msgstr ""
 
 #: edh_web_application/templates/home.html:185
 msgid "Greek & Latin inscriptions from Turkey"
+msgstr ""
+
+#: edh_web_application/templates/home.html:197
+msgid "Linked Open Data methods & tools for exploring historical places"
 msgstr ""
 

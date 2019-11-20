@@ -22,6 +22,7 @@ h1 {
 h2 {
     font-family: 'Arvo', serif;
     font-size: 1.5em;
+    border-bottom: 1px solid #ccc;
 }
 h3 {
     font-family: 'Arvo', serif;
@@ -107,7 +108,7 @@ p {
     font-size: 1em;
 }
 .container.head {
-    font-size:1.1em;
+    font-size:0.7em;
     height:50px;
     line-height:50px;
     background-color: #1F6B3B;
@@ -485,6 +486,13 @@ p {
     width: 380px;
     float: right;
     text-align: left;
+  }
+
+  div.panel.panel-default:hover {
+    #border-color: #1F6B3B;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(31,107,59,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(31,107,59,.6);
   }
 }
 #hadw-banner-wrapper{
