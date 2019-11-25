@@ -235,9 +235,9 @@ p {
   top: 0;
   content: ' ';
   display: block;
-  width: 2px;
+  width: 6px;
   height: 100%;
-  margin-left: -1px;
+  margin-left: -3px;
   background: rgb(213,213,213);
   background: -moz-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(100%,rgba(125,185,232,1)));
