@@ -2,6 +2,9 @@ import pysolr
 import re
 from flask import Markup
 from flask import current_app, session
+from babel.numbers import format_decimal
+from babel.dates import format_date
+from datetime import datetime
 
 
 class Publication:
@@ -105,3 +108,25 @@ class Publication:
         # remove last " AND"
         query_string = re.sub(" " + logical_operater,"",query_string)
         return query_string
+
+    @classmethod
+    def get_number_of_records(cls):
+        """
+        returns number of bibliographical records from Solr Core edhBiblio
+        :return: number of bibliographical records (str)
+        """
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
+        results = solr.search("*:*")
+        return format_decimal(results.hits, locale='de_DE')
+
+    @classmethod
+    def get_date_of_last_update(cls):
+        """
+        returns date of latest update to Solr Core edhBiblio
+        :return: date of latest update
+        """
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
+        results = solr.search("*:*", sort="datum desc", rows=1)
+        for res in results:
+            dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
+            return format_date(dt, 'd. MMM YYYY', locale='de_DE')

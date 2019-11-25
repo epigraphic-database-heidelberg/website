@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session
 from config import Config
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel
+from .models.Publication import Publication
 import os
 
 
@@ -30,7 +31,12 @@ def create_app(test_config=None):
     #
     @app.route('/home')
     def home():
-        return render_template('home.html', title="Home")
+        number_of_biblio_records = Publication.get_number_of_records()
+        date_of_last_biblio_update = Publication.get_date_of_last_update()
+        return render_template('home.html', title="Home",
+                               number_of_biblio_records=number_of_biblio_records,
+                               date_of_last_biblio_update=date_of_last_biblio_update
+                               )
     app.add_url_rule('/', endpoint='home')
 
     #
