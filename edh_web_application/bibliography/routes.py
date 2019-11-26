@@ -18,9 +18,10 @@ def search_bibliography():
         query_string = Publication.create_query_string(request.args)
         # run query
         results = Publication.query(query_string)
+        number_of_hits = Publication.get_number_of_hits_for_query(query_string)
         # return results to client
         if results:
-            return render_template('bibliography/search_results.html', title=_("Bibliographic Database: Search"), form=form, data=results)
+            return render_template('bibliography/search_results.html', title=_("Bibliographic Database: Search"), form=form, data=results, number_of_hits=number_of_hits)
         else:
             return render_template('bibliography/no_hits.html', title=_("Bibliographic Database: Search"), form=form)
     else:
