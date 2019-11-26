@@ -162,5 +162,19 @@ class Publication:
 
 
 def _escape_value(val):
+    """
+    escape user entered value for solr query
+    :param val: string value entered by user to be escaped
+    :return: escaped string ready for solr query
+    """
     val = re.sub("\s", "\ ", val)
+    val = re.sub(":", "\:", val)
+    val = re.sub("\(", "\(", val)
+    val = re.sub("\)", "\)", val)
+    val = re.sub("\]", "\]", val)
+    val = re.sub("\[", "\[", val)
+    val = re.sub("\{", "\{", val)
+    val = re.sub("\}", "\}", val)
+    val = re.sub("/", "\/", val)
+    val = re.sub("\?", "\?", val)
     return val
