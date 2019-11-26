@@ -40,7 +40,6 @@ class Publication:
         :return: list of Publication instances
         """
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        query_string = re.sub("\s", "\ ", query_string)
         results = solr.search(query_string, **{'rows': '99999', 'sort': 'b_nr asc'})
         if len(results) == 0:
             return None
@@ -75,39 +74,39 @@ class Publication:
             # correct if neccessary/possible
             query_string = "b_nr:" + b_nr + " " + logical_operater + " "
         if 'author' in form and form['author'] != "":
-            query_string += "autor:" + form['author'] + " " + logical_operater + " "
+            query_string += "autor:" + _escape_value(form['author']) + " " + logical_operater + " "
 
         if 'title' in form and form['title'] != "":
-            query_string += "titel:" + form['title'] + " " + logical_operater + " "
+            query_string += "titel:" + _escape_value(form['title']) + " " + logical_operater + " "
 
         if 'publication' in form and form['publication'] != "":
-            query_string += "publikation:" + form['publication'] + " " + logical_operater + " "
+            query_string += "publikation:" + _escape_value(form['publication']) + " " + logical_operater + " "
 
         if 'volume' in form and form['volume'] != "":
-            query_string += "band:" + form['volume'] + " " + logical_operater + " "
+            query_string += "band:" + _escape_value(form['volume']) + " " + logical_operater + " "
 
         if 'years' in form and form['years'] != "":
-            query_string += "jahr:" + form['years'] + " " + logical_operater + " "
+            query_string += "jahr:" + _escape_value(form['years']) + " " + logical_operater + " "
 
         if 'pages' in form and form['pages'] != "":
-            query_string += "seiten:" + form['pages'] + " " + logical_operater + " "
+            query_string += "seiten:" + _escape_value(form['pages']) + " " + logical_operater + " "
 
         if 'town' in form and form['town'] != "":
-            query_string += "ort:" + form['town'] + " " + logical_operater + " "
+            query_string += "ort:" + _escape_value(form['town']) + " " + logical_operater + " "
 
         if 'ae' in form and form['ae'] != "":
-            query_string += "ae:" + form['ae'] + " " + logical_operater + " "
+            query_string += "ae:" + _escape_value(form['ae']) + " " + logical_operater + " "
 
         if 'on_ae' in form and form['on_ae'] != "":
-            query_string += "zu_ae:" + form['on_ae'] + " " + logical_operater + " "
+            query_string += "zu_ae:" + _escape_value(form['on_ae']) + " " + logical_operater + " "
 
         if 'cil' in form and form['cil'] != "":
-            query_string += "cil:" + form['cil'] + " " + logical_operater + " "
+            query_string += "cil:" + _escape_value(form['cil']) + " " + logical_operater + " "
 
         if 'other_corpora' in form and form['other_corpora'] != "":
-            query_string += " sonstigeCorpora:" + form['other_corpora'] + " " + logical_operater + " "
+            query_string += " sonstigeCorpora:" + _escape_value(form['other_corpora']) + " " + logical_operater + " "
         # remove last " AND"
-        query_string = re.sub(" " + logical_operater,"",query_string)
+        query_string = re.sub(" " + logical_operater + " $","",query_string)
         return query_string
 
     @classmethod
@@ -154,3 +153,8 @@ class Publication:
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
         results = solr.search(query, **params)
         return results.facets['facet_fields'][ac_field+'_ac'][::2]
+
+
+def _escape_value(val):
+    val = re.sub("\s", "\ ", val)
+    return val
