@@ -40,7 +40,8 @@ class Publication:
         :return: list of Publication instances
         """
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        results = solr.search(query_string, **{'rows': '99999'})
+        query_string = re.sub("\s", "\ ", query_string)
+        results = solr.search(query_string, **{'rows': '99999', 'sort': 'b_nr asc'})
         if len(results) == 0:
             return None
         else:
@@ -130,3 +131,26 @@ class Publication:
         for res in results:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             return format_date(dt, 'd. MMM YYYY', locale='de_DE')
+
+    @classmethod
+    def get_autocomplete_entries(cls, ac_field, term):
+        """
+        queries Splor core edhBiblio for list of entries displayed in
+        autocomplete fields of Biblio form
+        :param ac_field: field to facet
+        :param term: querystring
+        :return: list of relevant field values
+        """
+        params = {
+            'facet': 'on',
+            'facet.field': ac_field+'_ac',
+            'facet.sort': 'index',
+            'facet.mincount': 1,
+            'facet.limit': '20',
+            'rows': '0',
+        }
+        query = ac_field+":"+term
+        query = re.sub("\s", "\ ", query)
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
+        results = solr.search(query, **params)
+        return results.facets['facet_fields'][ac_field+'_ac'][::2]

@@ -3,10 +3,15 @@ from flask_babel import _
 from ..models.Publication import Publication
 from . import bp_bibliography
 from .forms import BibliographySearch
+import json
 
 
 @bp_bibliography.route('/bibliographie/suche', methods=['GET', 'POST'])
 def search_bibliography():
+    """
+    route for bibliographical search mask
+    :return: html template of bibliographical search mask
+    """
     form = BibliographySearch()
     if len(request.args) > 0:
         # create query string
@@ -24,6 +29,11 @@ def search_bibliography():
 
 @bp_bibliography.route('/edh/bibliographie/<b_nr>')
 def detail_view(b_nr):
+    """
+    route for displaying detail view of bibliographical record
+    :param b_nr: identifier of bibliographical record
+    :return: html template
+    """
     results = Publication.query("b_nr:" + b_nr)
     if results is None:
         return render_template('bibliography/no_hits.html',
@@ -32,3 +42,21 @@ def detail_view(b_nr):
         return render_template('bibliography/detail_view.html',
                                title=_("Epigraphic Bibliography Database: Detail View"),
                                data=results[0])
+
+
+@bp_bibliography.route('/bibliographie/ac/autor', methods=['GET', 'POST'])
+def autocomplete_autor():
+    """
+    route for retrieving autocomplete entries for field autor
+    :return: list of entries for autocomplete
+    """
+    return json.dumps(Publication.get_autocomplete_entries("autor", request.args['term']))
+
+
+@bp_bibliography.route('/bibliographie/ac/publikation', methods=['GET', 'POST'])
+def autocomplete_publikation():
+    """
+    route for retrieving autocomplete entries for field publikation
+    :return: list of entries for autocomplete
+    """
+    return json.dumps(Publication.get_autocomplete_entries("publikation", request.args['term']))

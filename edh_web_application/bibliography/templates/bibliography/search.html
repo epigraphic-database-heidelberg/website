@@ -15,7 +15,7 @@
     <div class="form-group row">
         {{ form.author.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.author(class='form-control') }}
+            {{ form.author(class='form-control autocomplete ui-autocomplete-input', id='autor') }}
         </div>
     </div>
 
@@ -29,7 +29,7 @@
     <div class="form-group row">
         {{ form.publication.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.publication(class='form-control') }}
+            {{ form.publication(class='form-control autocomplete ui-autocomplete-input', id='publikation') }}
         </div>
     </div>
 
@@ -99,4 +99,11 @@
     </div>
 
 </form>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script>
+    $("input#autor").autocomplete({source:"/bibliographie/ac/autor",minLength:3,delay:0})
+    $("input#publikation").autocomplete({source:"/bibliographie/ac/publikation",minLength:3,delay:0})
+</script>
 {% endblock %}

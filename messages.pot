@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-19 09:50+0100\n"
+"POT-Creation-Date: 2019-11-26 09:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,18 +32,22 @@ msgstr ""
 
 #: edh_web_application/bibliography/forms.py:10
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:35
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:17
 msgid "author"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:11
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:22
 msgid "title"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:12
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:28
 msgid "publication"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:13
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:34
 msgid "volume"
 msgstr ""
 
@@ -53,6 +57,7 @@ msgstr ""
 
 #: edh_web_application/bibliography/forms.py:15
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:64
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:46
 msgid "pages"
 msgstr ""
 
@@ -112,12 +117,10 @@ msgid "Work / contribution"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:40
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:22
 msgid "title:"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:46
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:28
 msgid "publication:"
 msgstr ""
 
@@ -160,20 +163,8 @@ msgstr ""
 msgid "&ndash; open detailed view..."
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:17
-msgid "author:"
-msgstr ""
-
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:34
-msgid "volume:"
-msgstr ""
-
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:40
-msgid "years:"
-msgstr ""
-
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:46
-msgid "pages:"
+msgid "years"
 msgstr ""
 
 #: edh_web_application/data/routes.py:9
@@ -291,7 +282,217 @@ msgid "Links"
 msgstr ""
 
 #: edh_web_application/project/templates/project/links.html:9
-msgid "links page"
+msgid "Epigraphic Links"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:15
+msgid "CIL II2 Conventus Astigitanus and Cordubensis (photos)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:23
+msgid "Current Epigraphy"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:31
+msgid "Ductus - Association internationale pour l'étude des inscriptions mineures"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:39
+msgid "Electronic Archive of Greek and Latin Epigraphy (EAGLE)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:50
+msgid "Epigraphic Database Bari (EDB)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:58
+msgid "Epigraphic Database Rome (EDR)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:66
+msgid "Epigraphik-Datenbank Clauss/Slaby (EDCS)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:74
+msgid "Epigraphica Romana (EpRom)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:85
+msgid "Epigraphic database for ancient Asia Minor"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:93
+msgid "Ubi erat Lupa / Bilddatenbank zu antiken Steindenkmälern"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:101
+msgid "Hispania Epigraphica Online (HEpOnl)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:109
+msgid "Inschriften von Philippi im Bild"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:120
+msgid "Inscriptions of Aphrodisias Project"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:128
+msgid ""
+"Inscriptions of Greek Cyrenaica (IGCyr) / Greek Verse Inscriptions of "
+"Cyrenaica (GVCyr)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:136
+msgid "Inscriptions of Roman Tripolitania"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:144
+msgid ""
+"Onlineportal Alte Geschichte und Altertumskunde Graz (epigraphic "
+"collection, squeezes)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:155
+msgid "PHI Greek Inscriptions"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:163
+msgid "US Epigraphy Project"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:171
+msgid "Roman Inscriptions of Britain (RIB)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:179
+msgid "Vindolanda Tablets Online"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:185
+msgid "Institutions"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:191
+msgid "American Society of Greek and Latin Epigraphy (ASGLE)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:199
+msgid "Association Internationale d'Épigraphie Grecque et Latine (AIEGL)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:207
+msgid "British Epigraphy Society"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:215
+msgid "Center for Epigraphical and Palaeographical Studies"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:226
+msgid ""
+"Terra Italia. Associazione per lo sviluppo e la diffusione degli studi "
+"sull'Italia romana"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:232
+msgid "Congresses / Meetings / Workshops"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:238
+msgid "XIIIth International Congress of Greek and Latin Epigraphy (2007, Oxford)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:246
+msgid "Convegno Internazionale EAGLE (2008, Roma)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:254
+msgid "XVth International Congress of Greek and Latin Epigraphy (2017, Vienna)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:262
+msgid "Ist epigraphy.info Workshop (2018, Heidelberg)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:273
+msgid "2nd epigraphy.info Workshop (2018, Zadar)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:281
+msgid "3rd epigraphy.info Workshop (2018, Vienna)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:288
+msgid "Resources"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:294
+msgid "Prosopographia Imperii Romani (PIR)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:302
+msgid "Sigillata Database"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:310
+msgid "Trismegistos"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:318
+msgid "GODOT (Graph of Dated Objects and Texts)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:324
+msgid "Classical Antiquity Links"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:330
+msgid ""
+"Blick in die Historikerwerkstatt: Die Epigraphische Datenbank Heidelberg "
+"(EDH) - lateinische Inschriften der römischen Antike online"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:338
+msgid ""
+"Epigraphic Database Heidelberg (EDH). - Or: The challenge of getting all "
+"Latin inscriptions outside Rome available 'by one click'."
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:346
+msgid "Digital Epigraphy am Scheideweg? / Digital Epigraphy at a crossroads?"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:354
+msgid ""
+"Report on the first epigraphy.info workshop in Heidelberg, March 21st-"
+"23rd, 2018"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:364
+msgid ""
+"CONCORDIA - an interoperability framework for research materials related "
+"to ancient history"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:372
+msgid ""
+"Eichstätter Informationssystem für die Klassische Altertumswissenschaft "
+"(Gnomon online)"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:380
+msgid "KIRKE"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:388
+msgid ""
+"Pleiades - historical geographic information about the Greek and Roman "
+"World in digital form"
+msgstr ""
+
+#: edh_web_application/project/templates/project/links.html:398
+msgid "Pelagios Commons. Linking the places of our past"
 msgstr ""
 
 #: edh_web_application/project/templates/project/project_concept.html:9

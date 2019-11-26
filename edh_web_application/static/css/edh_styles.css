@@ -220,7 +220,11 @@ p {
   border-top: 15px solid #f0f0f0;
   bottom: -15px;
 }
-
+.ui-menu .ui-menu-item-wrapper:hover, .ui-menu .ui-menu-item-wrapper.ui-state-active {
+  color: #fff;
+  background-color: #1F6B3B;
+  border: #fff 1px solid;
+}
 .timeline {
   position: relative;
   padding: 0;
