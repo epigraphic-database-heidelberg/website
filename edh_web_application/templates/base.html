@@ -76,7 +76,13 @@
 
     <footer class="footer">
 		<div class="container">
-			<p class="text-muted"><a href="{{ url_for('project.show_project_contact_page') }}">{{ _("Contact") }}</a> | <a href="https://www.hadw-bw.de/impressum">{{ _("Imprint") }}</a> | <a href="https://www.hadw-bw.de/datenschutzerklaerung">{{ _("Data Privacy Statement") }}</a></p>
+			<p class="text-muted">
+                <a href="{{ url_for('project.show_project_contact_page') }}">{{ _("Contact") }}</a> |
+                <a href="https://www.hadw-bw.de/impressum">{{ _("Imprint") }}</a> |
+                <a href="https://www.hadw-bw.de/datenschutzerklaerung">{{ _("Data Privacy Statement") }}</a> |
+                <a href="/home?lang=de"><img src="/static/img/germany-flag-icon-16.png" style="height:12px" /></a>
+                <a href="/home?lang=en"><img src="/static/img/united-kingdom-flag-icon-16.png" style="margin-left:0.75em;height:12px"/></a>
+            </p>
 		</div>
     </footer>
 {% endblock %}

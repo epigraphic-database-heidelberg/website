@@ -106,7 +106,7 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:20
 #: edh_web_application/foto/templates/foto/detail_view.html:20
 msgid "responsible individual:"
-msgstr ""
+msgstr "contributor:"
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:24
 #: edh_web_application/foto/templates/foto/detail_view.html:24
