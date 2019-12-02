@@ -38,6 +38,7 @@ def show_project_contact_page():
 def show_project_provinces_page():
     return render_template('project/project_provinces.html', title=_("Project - Provinces"))
 
+
 @bp_project.route('/links')
 def links():
     return render_template('project/links.html', title=_("Links"))

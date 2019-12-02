@@ -4,6 +4,7 @@ from flask_bootstrap import Bootstrap
 from flask_babel import Babel
 from .models.Publication import Publication
 from .models.Foto import Foto
+from .models.Place import Place
 import os
 
 
@@ -34,14 +35,18 @@ def create_app(test_config=None):
     def home():
         number_of_biblio_records = Publication.get_number_of_records()
         number_of_foto_records = Foto.get_number_of_records()
+        number_of_geo_records = Place.get_number_of_records()
         date_of_last_biblio_update = Publication.get_date_of_last_update()
         date_of_last_foto_update = Foto.get_date_of_last_update()
+        date_of_last_geo_update = Place.get_date_of_last_update()
 
         return render_template('home.html', title="Home",
                                number_of_biblio_records=number_of_biblio_records,
                                date_of_last_biblio_update=date_of_last_biblio_update,
                                number_of_foto_records=number_of_foto_records,
-                               date_of_last_foto_update=date_of_last_foto_update
+                               date_of_last_foto_update=date_of_last_foto_update,
+                               number_of_geo_records=number_of_geo_records,
+                               date_of_last_geo_update=date_of_last_geo_update
                                )
     app.add_url_rule('/', endpoint='home')
 
