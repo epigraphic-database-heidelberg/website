@@ -2,6 +2,9 @@ import pysolr
 import re
 from flask import Markup
 from flask import current_app
+from babel.numbers import format_decimal
+from babel.dates import format_date
+from datetime import datetime
 
 
 class Inscription:
@@ -92,3 +95,29 @@ class Inscription:
                                     )
                 query_result.append(inscr)
             return query_result
+
+    @classmethod
+    def get_number_of_records(cls):
+        """
+        returns number of inscription records from Solr Core edhText
+        :return: number of inscription records (str)
+        """
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
+        results = solr.search("*:*")
+        return format_decimal(results.hits, locale='de_DE')
+
+
+    @classmethod
+    def get_date_of_last_update(cls):
+        """
+        returns date of latest update to Solr Core edhText
+        :return: date of latest update
+        """
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
+        results = solr.search("*:*", sort="datum desc", rows=1)
+        for res in results:
+            dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
+            return format_date(dt, 'd. MMM YYYY', locale='de_DE')
+
+
+
