@@ -7,4 +7,4 @@ Code and data can be reused under the [CC BY_SA 4.0 licence](https://creativecom
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-![huhu](edh_web_application/static/img/screenshot_website.png)
+![EDH](edh_web_application/static/img/screenshot_website.png)
