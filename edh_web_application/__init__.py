@@ -76,12 +76,14 @@ def create_app(test_config=None):
 
 def register_blueprints(app):
     from edh_web_application.bibliography import bp_bibliography
+    from edh_web_application.geography import bp_geography
     from edh_web_application.foto import bp_foto
     from edh_web_application.inscription import bp_inscription
     from edh_web_application.data import bp_data
     from edh_web_application.project import bp_project
 
     app.register_blueprint(bp_bibliography)
+    app.register_blueprint(bp_geography)
     app.register_blueprint(bp_foto)
     app.register_blueprint(bp_inscription)
     app.register_blueprint(bp_data)
