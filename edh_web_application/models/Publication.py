@@ -5,6 +5,7 @@ from flask import current_app, session
 from babel.numbers import format_decimal
 from babel.dates import format_date
 from datetime import datetime
+import collections
 
 
 class Publication:
@@ -136,6 +137,36 @@ class Publication:
         for res in results:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             return format_date(dt, 'd. MMM YYYY', locale='de_DE')
+
+    @classmethod
+    def last_updates(cls):
+        """
+        return last 50 entries that have been updated
+        :return: list of 50 entries
+        """
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
+        results = solr.search("*:*", sort="datum desc", rows=50)
+        for res in results:
+            dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
+            res['datum'] = format_date(dt, 'd. MMM YYYY', locale='de_DE')
+        return results
+
+    @classmethod
+    def group_results_by_date(cls, results):
+        """
+        groups last 50 entries in bibliographic database by date
+        :param results: list of bibliographic entries
+        :return: orderedDict with date as keys, and list of entries as values
+        """
+        last_date = ""
+        grouped_result = collections.OrderedDict()
+        for res in results:
+            current_date = res['datum']
+            if current_date != last_date:
+                grouped_result[current_date] = []
+                last_date = current_date
+            grouped_result[current_date].append(res)
+        return grouped_result
 
     @classmethod
     def get_autocomplete_entries(cls, ac_field, term):

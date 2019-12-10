@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<div>
+    {% for d in data %}
+    <h2>{{d}}</h2>
+    {% for entry in data[d] %}
+    <div class="detail_block">
+        <div class="detail_block_header">
+            <span class="detail_block_header_text"><a href="/edh/bibliographie/{{ entry['b_nr'] }}">{{ entry['b_nr'] }} {{ _('&ndash; open detailed view...') }}</a></span>
+        </div>
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('author') }}:</div>
+                <div class="detail_block_content_row_text">{{ entry['autor'] }}</div>
+            </section>
+            {% if entry['titel'] %}
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('title') }}:</div>
+                <div class="detail_block_content_row_text">{{ entry['titel'] }}</div>
+            </section>
+            {% endif %}
+            {% if entry['jahr'] %}
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('years') }}:</div>
+                <div class="detail_block_content_row_text">{{ entry['jahr'] }}</div>
+            </section>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+</div>
+
+{% endblock %}

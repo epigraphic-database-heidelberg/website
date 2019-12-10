@@ -4,6 +4,7 @@ from ..models.Publication import Publication
 from . import bp_bibliography
 from .forms import BibliographySearch
 import json
+import collections
 
 
 @bp_bibliography.route('/bibliographie/suche', methods=['GET', 'POST'])
@@ -43,6 +44,19 @@ def detail_view(b_nr):
         return render_template('bibliography/detail_view.html',
                                title=_("Epigraphic Bibliography Database: Detail View"),
                                data=results[0])
+
+
+@bp_bibliography.route('/bibliographie/lastUpdates', methods=['GET', 'POST'])
+def last_updates():
+    """
+    route for displaying last updates in bibliographic database
+    :return: orderedDictionary of bibliographic entries grouped by date
+    """
+    results = Publication.last_updates()
+    results_grouped_by_date = Publication.group_results_by_date(results)
+    return render_template('bibliography/last_updates.html',
+                           title=_("Epigraphic Bibliography Database: Last Updates"),
+                           data=results_grouped_by_date)
 
 
 @bp_bibliography.route('/bibliographie/ac/autor', methods=['GET', 'POST'])
