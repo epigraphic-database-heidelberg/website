@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, SelectField, SubmitField, SelectMultipleField, BooleanField, TextAreaField
-from wtforms.validators import DataRequired, Optional, Regexp, URL
+from wtforms import StringField, SubmitField
+from wtforms.validators import Optional, Regexp
 from flask_babel import lazy_gettext as _l
+
 
 class BibliographySearch(FlaskForm):
     reset = SubmitField(_l('Reset...'))

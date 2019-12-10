@@ -1,6 +1,4 @@
 import pysolr
-import re
-from flask import Markup
 from flask import current_app
 from babel.numbers import format_decimal
 from babel.dates import format_date
