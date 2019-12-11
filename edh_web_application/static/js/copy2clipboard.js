@@ -1,4 +1,5 @@
-function copy2clipboard() {
+function copy2clipboard(note) {
+    console.log(note)
     let textarea = document.createElement('textarea')
     textarea.id = 't'
     textarea.style.height = 0
@@ -8,7 +9,7 @@ function copy2clipboard() {
     selector.select()
     document.execCommand('copy')
     document.body.removeChild(textarea)
-    document.getElementById("copy_button").innerText = "Copied!"
+    document.getElementById("copy_button").innerText = note
     setTimeout(function() {
         document.getElementById("copy_button").innerText = ""
     }, 1000);

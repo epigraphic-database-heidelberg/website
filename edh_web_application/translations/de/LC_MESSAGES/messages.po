@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-11 15:34+0100\n"
+"POT-Creation-Date: 2019-12-11 16:46+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -260,7 +260,7 @@ msgid "ancient find spot"
 msgstr "Fundort antik"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:47
-#: edh_web_application/geography/templates/geography/detail_view.html:75
+#: edh_web_application/geography/templates/geography/detail_view.html:81
 #: edh_web_application/geography/templates/geography/last_updates.html:41
 msgid "modern find spot"
 msgstr "Fundort modern"
@@ -302,6 +302,10 @@ msgstr "Epigraphische Geographie Datenbank: Detailansicht"
 msgid "Canonical URI"
 msgstr "Zitierweise"
 
+#: edh_web_application/geography/templates/geography/detail_view.html:15
+msgid "copied!"
+msgstr "kopiert!"
+
 #: edh_web_application/geography/templates/geography/detail_view.html:25
 msgid "Pleiades-ID"
 msgstr ""
@@ -314,17 +318,17 @@ msgstr "TM Geo-ID"
 msgid "Geonames ID"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:79
+#: edh_web_application/geography/templates/geography/detail_view.html:91
 #: edh_web_application/geography/templates/geography/last_updates.html:45
 msgid "find spot"
 msgstr "Fundstelle"
 
-#: edh_web_application/geography/templates/geography/detail_view.html:83
+#: edh_web_application/geography/templates/geography/detail_view.html:101
 #: edh_web_application/geography/templates/geography/last_updates.html:49
 msgid "verw_bezirk"
 msgstr "Region"
 
-#: edh_web_application/geography/templates/geography/detail_view.html:87
+#: edh_web_application/geography/templates/geography/detail_view.html:111
 msgid "comment"
 msgstr "Kommentar"
 
