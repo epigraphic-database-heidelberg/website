@@ -4,6 +4,8 @@ EDH geographic data.
 """
 from flask import Blueprint
 
-bp_geography = Blueprint('geography', __name__, template_folder='templates')
+bp_geography = Blueprint('geography', __name__,
+                         template_folder='templates',
+                         static_folder='static_geo')
 
 from . import routes

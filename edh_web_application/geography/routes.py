@@ -15,3 +15,23 @@ def last_updates():
     return render_template('geography/last_updates.html',
                            title=_("Epigraphic Geographic Database: Last Updates"),
                            data=results_grouped_by_date)
+
+
+@bp_geography.route('/edh/geographie/<geo_id>')
+def detail_view(geo_id):
+    """
+    route for displaying detail view of geographical record
+    :param geo_id: identifier of geographical record
+    :return: html template
+    """
+    results = Place.query("id:" + geo_id)
+    if results is None:
+        return render_template('geography/no_hits.html',
+                               title=_("Epigraphic Geography Database: Detail View"))
+    else:
+        return render_template('geography/detail_view.html',
+                               title=_("Epigraphic Geography Database: Detail View"),
+                               data=results[0])
+
+
+

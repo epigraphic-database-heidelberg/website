@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-10 16:09+0100\n"
+"POT-Creation-Date: 2019-12-11 15:34+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -98,7 +98,7 @@ msgstr "Epigraphische Bibliographie: Detailansicht"
 
 #: edh_web_application/bibliography/routes.py:57
 msgid "Epigraphic Bibliography Database: Last Updates"
-msgstr ""
+msgstr "Epigraphische Bibliographie Datenbank: Letzte Änderungen"
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:12
 #: edh_web_application/foto/templates/foto/detail_view.html:12
@@ -163,11 +163,13 @@ msgstr "Jahre"
 
 #: edh_web_application/bibliography/templates/bibliography/no_hits.html:9
 #: edh_web_application/foto/templates/foto/no_hits.html:9
+#: edh_web_application/geography/templates/geography/no_hits.html:9
 msgid "The search resulted in no hits."
 msgstr "Die Suche ergab keine Treffer."
 
 #: edh_web_application/bibliography/templates/bibliography/no_hits.html:10
 #: edh_web_application/foto/templates/foto/no_hits.html:10
+#: edh_web_application/geography/templates/geography/no_hits.html:10
 msgid "Start new search"
 msgstr "Neue Suche starten"
 
@@ -177,11 +179,11 @@ msgstr "suchen..."
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:9
 msgid "The search resulted in "
-msgstr ""
+msgstr "Die Suche ergab"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:9
 msgid "hits."
-msgstr ""
+msgstr "Treffer"
 
 #: edh_web_application/data/routes.py:9
 msgid "Open Data Repository"
@@ -226,10 +228,12 @@ msgid "F-number"
 msgstr "F-Nummer"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:20
+#: edh_web_application/geography/templates/geography/detail_view.html:55
 msgid "responsible individual"
 msgstr "Bearbeiter"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:24
+#: edh_web_application/geography/templates/geography/detail_view.html:59
 msgid "last update"
 msgstr "Letzte Änderung"
 
@@ -238,22 +242,26 @@ msgid "Find circumstances / present location"
 msgstr "Fundumstände / Aufbewahrung"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:35
-#: edh_web_application/geography/templates/geography/last_updates.html:25
+#: edh_web_application/geography/templates/geography/detail_view.html:63
+#: edh_web_application/geography/templates/geography/last_updates.html:27
 msgid "province"
 msgstr "Provinz"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:39
-#: edh_web_application/geography/templates/geography/last_updates.html:30
+#: edh_web_application/geography/templates/geography/detail_view.html:67
+#: edh_web_application/geography/templates/geography/last_updates.html:32
 msgid "country"
 msgstr "Land"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:43
-#: edh_web_application/geography/templates/geography/last_updates.html:35
+#: edh_web_application/geography/templates/geography/detail_view.html:71
+#: edh_web_application/geography/templates/geography/last_updates.html:37
 msgid "ancient find spot"
 msgstr "Fundort antik"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:47
-#: edh_web_application/geography/templates/geography/last_updates.html:39
+#: edh_web_application/geography/templates/geography/detail_view.html:75
+#: edh_web_application/geography/templates/geography/last_updates.html:41
 msgid "modern find spot"
 msgstr "Fundort modern"
 
@@ -285,13 +293,40 @@ msgstr "Literatur"
 msgid "Epigraphic Geographic Database: Last Updates"
 msgstr "Geographie-Datenbank: Letzte Änderungen"
 
-#: edh_web_application/geography/templates/geography/last_updates.html:43
+#: edh_web_application/geography/routes.py:30
+#: edh_web_application/geography/routes.py:33
+msgid "Epigraphic Geography Database: Detail View"
+msgstr "Epigraphische Geographie Datenbank: Detailansicht"
+
+#: edh_web_application/geography/templates/geography/detail_view.html:12
+msgid "Canonical URI"
+msgstr "Zitierweise"
+
+#: edh_web_application/geography/templates/geography/detail_view.html:25
+msgid "Pleiades-ID"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view.html:35
+msgid "Trismegistos Geo-ID"
+msgstr "TM Geo-ID"
+
+#: edh_web_application/geography/templates/geography/detail_view.html:45
+msgid "Geonames ID"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view.html:79
+#: edh_web_application/geography/templates/geography/last_updates.html:45
 msgid "find spot"
 msgstr "Fundstelle"
 
-#: edh_web_application/geography/templates/geography/last_updates.html:47
+#: edh_web_application/geography/templates/geography/detail_view.html:83
+#: edh_web_application/geography/templates/geography/last_updates.html:49
 msgid "verw_bezirk"
 msgstr "Region"
+
+#: edh_web_application/geography/templates/geography/detail_view.html:87
+msgid "comment"
+msgstr "Kommentar"
 
 #: edh_web_application/inscription/routes.py:10
 msgid "Epigraphic Text Database: Simple Search"

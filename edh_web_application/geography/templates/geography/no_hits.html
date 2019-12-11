@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<p>{{ _("The search resulted in no hits.") }}</p>
+<p><a href="/geographie/suche">{{ _("Start new search") }}</a></p>
+{% endblock %}

@@ -156,6 +156,8 @@ class Place:
             "verw_bezirk": None,
             "pleiades_id_1": None,
             "pleiades_id_2": None,
+            "geonames_id_1": None,
+            "geonames_id_2": None,
             "koordinaten_1": None,
             "koordinaten_2": None,
             "provinz": None,
@@ -167,8 +169,8 @@ class Place:
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
         self.id = id
-        self.bearbeiter = bearbeiter
         self.datum = datum
+        self.bearbeiter = bearbeiter
 
     @classmethod
     def query(cls, query_string):
@@ -186,16 +188,17 @@ class Place:
             for result in results:
                 props = {}
                 for key in result:
-                    if key not in ('id', 'bearbeiter', 'datum', 'land'):
+                    if key not in ('id', 'bearbeiter', 'datum', 'land', 'provinz'):
                         props[key] = result[key]
                     if key == 'land':
                         props[key] = Place.country[result[key]]
+                    if key == 'provinz':
+                        props[key] = Place.province[result[key]]
                 pl = Place(result['id'],
-                                   result['bearbeiter'],
                                    result['datum'],
+                                   result['bearbeiter'],
                                    **props
                                    )
-                pl['land'] = Place.country[pl['land']]
                 query_result.append(pl)
             return query_result
 
