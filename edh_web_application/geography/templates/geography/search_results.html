@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<p>{{_("The search resulted in ")}} {{number_of_hits}} {{_("hits.")}}</p>
+<div>
+    {% set count = namespace(value=0) %}
+    {% for d in data %}
+    {% set count.value = count.value + 1 %}
+    <div class="detail_block">
+        <div class="detail_block_header">
+            <span class="detail_block_header_text"><a href="/edh/geographie/{{ d['id'] }}">{{ d['id'] }} {{ _('&ndash; open detailed view...') }}</a></span>
+        </div>
+        <div class="wrapper_geo_last_updates" style="padding:10px">
+            <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;">
+                <a href="/edh/geographie/{{ d['id'] }}">
+                    <div id="map_canvas_{{ count.value }}" style="width:200px;height:200px;border: 1px solid #ccc"></div>
+                </a>
+            </div>
+            <div class="detail_block_content" style="display: inline-block; vertical-align: top;">
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('province') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['provinz'] }}</div>
+                </section>
+                {% if d['land'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('country') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['land'] }}</div>
+                </section>
+                {% endif %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('ancient find spot') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['fo_antik'] }}&nbsp;</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('modern find spot') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['fo_modern'] }}&nbsp;</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>
+                    <div class="detail_block_content_row_text">
+                        {% if d['fundstelle'] %}
+                            {{d['fundstelle']|replace("{","<span style='color:red'>")|replace("}","</span>")|safe}}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('verw_bezirk') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['verw_bezirk'] }}&nbsp;</div>
+                </section>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script type="text/javascript">
+    {% set count = namespace(value=0) %}
+    {% for d in data %}
+        {% set count.value = count.value + 1 %}
+        {% if d['koordinaten_1'] %}
+            var pelagiosMap = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png');
+            var map = L.map('map_canvas_{{count.value}}', {
+                center: [{{d['koordinaten_1']}}],
+                zoom: 4,
+                zoomControl:false,
+                layers: [pelagiosMap]
+            });
+            map.dragging.disable();
+            map.touchZoom.disable();
+            map.doubleClickZoom.disable();
+            map.scrollWheelZoom.disable();
+            map.keyboard.disable();
+            var marker{{count.value}} = L.marker([{{d['koordinaten_1']}}]).addTo(map);
+        {% endif %}
+    {% endfor %}
+</script>
+{% endblock %}

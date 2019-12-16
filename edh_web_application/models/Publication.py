@@ -186,6 +186,7 @@ class Publication:
         }
         query = ac_field+":"+term
         query = re.sub("\s", "\ ", query)
+        print(query)
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
         results = solr.search(query, **params)
         return results.facets['facet_fields'][ac_field+'_ac'][::2]

@@ -1,7 +1,9 @@
 from flask import render_template, request
 from flask_babel import _
+import json
 from ..models.Place import Place
 from . import bp_geography
+from .forms import GeographySearch
 
 
 @bp_geography.route('/geographie/lastUpdates', methods=['GET', 'POST'])
@@ -34,4 +36,50 @@ def detail_view(geo_id):
                                data=results[0])
 
 
+@bp_geography.route('/geographie/suche', methods=['GET', 'POST'])
+def search_geography():
+    """
+    route for geographical search mask
+    :return: html template of geographical search mask
+    """
+    form = GeographySearch()
+    if len(request.args) > 0:
+        # create query string
+        query_string = Place.create_query_string(request.args)
+        # run query
+        results = Place.query(query_string)
+        number_of_hits = Place.get_number_of_hits_for_query(query_string)
+        # return results to client
+        if results:
+            return render_template('geography/search_results.html', title=_("Geographic Database: Search"), form=form, data=results, number_of_hits=number_of_hits)
+        else:
+            return render_template('geography/no_hits.html', title=_("Geographic Database: Search"), form=form)
+    else:
+        return render_template('geography/search.html', title=_("Geographic Database: Search"), form=form)
 
+
+@bp_geography.route('/geographie/ac/fo_modern', methods=['GET', 'POST'])
+def autocomplete_fo_modern():
+    """
+    route for retrieving autocomplete entries for field fo_modern
+    :return: list of entries for autocomplete
+    """
+    return json.dumps(Place.get_autocomplete_entries("fo_modern", request.args['term']))
+
+
+@bp_geography.route('/geographie/ac/fo_antik', methods=['GET', 'POST'])
+def autocomplete_fo_antik():
+    """
+    route for retrieving autocomplete entries for field fo_antik
+    :return: list of entries for autocomplete
+    """
+    return json.dumps(Place.get_autocomplete_entries("fo_antik", request.args['term']))
+
+
+@bp_geography.route('/geographie/ac/fundstelle', methods=['GET', 'POST'])
+def autocomplete_fundstelle():
+    """
+    route for retrieving autocomplete entries for field fundstelle
+    :return: list of entries for autocomplete
+    """
+    return json.dumps(Place.get_autocomplete_entries("fundstelle", request.args['term']))

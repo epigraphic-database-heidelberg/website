@@ -9,7 +9,9 @@ import re
 
 class Place:
     # dict of localized country names
+    country = collections.OrderedDict()
     country = {
+        "": "",
         "ad": _l("land-ad"),
         "al": _l("land-al"),
         "am": _l("land-am"),
@@ -173,6 +175,62 @@ class Place:
         self.bearbeiter = bearbeiter
 
     @classmethod
+    def create_query_string(cls, form):
+        """
+        creates solr query based on user data entered into search mask
+        :param form: ImmutableMultiDict of GET params
+        :return: query_string
+        """
+        logical_operater = "AND"
+        query_string = ""
+
+        if 'geo_id' in form and form['geo_id'] != "":
+            geo_id = form['geo_id']
+            # check if b_nr is valid pattern
+            # correct if neccessary/possible
+            query_string = "id:" + geo_id + " " + logical_operater + " "
+
+        if 'pleiades_id_1' in form and form['pleiades_id_1'] != "":
+            query_string += "pleiades_id_1:" + _escape_value(form['pleiades_id_1']) + " " + logical_operater + " "
+
+        if 'pleiades_id_2' in form and form['pleiades_id_2'] != "":
+            query_string += "pleiades_id_2:" + _escape_value(form['pleiades_id_2']) + " " + logical_operater + " "
+
+        if 'geonames_id_1' in form and form['geonames_id_1'] != "":
+            query_string += "geonames_id_1:" + _escape_value(form['geonames_id_1']) + " " + logical_operater + " "
+
+        if 'geonames_id_2' in form and form['geonames_id_2'] != "":
+            query_string += "geonames_id_2:" + _escape_value(form['geonames_id_2']) + " " + logical_operater + " "
+
+        if 'tm_geo_id' in form and form['tm_geo_id'] != "":
+            query_string += "trismegistos_geo_id:" + _escape_value(form['tm_geo_id']) + " " + logical_operater + " "
+
+        if 'province' in form and form['province'] != "":
+            query_string += "provinz:" + _escape_value(form['province']) + " " + logical_operater + " "
+
+        if 'country' in form and form['country'] != "":
+            query_string += "land:" + _escape_value(form['country']) + " " + logical_operater + " "
+
+        if 'region' in form and form['region'] != "":
+            query_string += "verw_bezirk:" + _escape_value(form['region']) + " " + logical_operater + " "
+
+        if 'ancient_find_spot' in form and form['ancient_find_spot'] != "":
+            query_string += "fo_antik:" + _escape_value(form['ancient_find_spot']) + " " + logical_operater + " "
+
+        if 'modern_find_spot' in form and form['modern_find_spot'] != "":
+            query_string += "fo_modern:" + _escape_value(form['modern_find_spot']) + " " + logical_operater + " "
+
+        if 'find_spot' in form and form['find_spot'] != "":
+            query_string += "fundstelle:" + _escape_value(form['find_spot']) + " " + logical_operater + " "
+
+        if 'comment' in form and form['comment'] != "":
+            query_string += "kommentar:" + _escape_value(form['comment']) + " " + logical_operater + " "
+
+        # remove last " AND"
+        query_string = re.sub(" " + logical_operater + " $", "", query_string)
+        return query_string
+
+    @classmethod
     def query(cls, query_string):
         """
         queries Solr core
@@ -268,3 +326,51 @@ class Place:
                 last_date = current_date
             grouped_result[current_date].append(res)
         return grouped_result
+
+    @classmethod
+    def get_autocomplete_entries(cls, ac_field, term):
+        """
+        queries Splor core edhGeo for list of entries displayed in
+        autocomplete fields of Geo form
+        :param ac_field: field to facet
+        :param term: querystring
+        :return: list of relevant field values
+        """
+        params = {
+            'facet': 'on',
+            'facet.field': ac_field + '_ac',
+            'facet.sort': 'index',
+            'facet.mincount': 1,
+            'facet.limit': '20',
+            'rows': '0',
+        }
+        query = ac_field + ":" + term
+        query = re.sub("\s", "\ ", query)
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhGeo')
+        results = solr.search(query, **params)
+        result_list = results.facets['facet_fields'][ac_field + '_ac'][::2]
+        return_list = []
+        # remove curley brackets from field 'fundstelle
+        for res in result_list:
+            res = re.sub(r'[\{\}]','',res)
+            return_list.append(res)
+        return return_list
+
+
+def _escape_value(val):
+    """
+    escape user entered value for solr query
+    :param val: string value entered by user to be escaped
+    :return: escaped string ready for solr query
+    """
+    val = re.sub("\s", "\ ", val)
+    val = re.sub(":", "\:", val)
+    val = re.sub("\(", "\(", val)
+    val = re.sub("\)", "\)", val)
+    val = re.sub("\]", "\]", val)
+    val = re.sub("\[", "\[", val)
+    val = re.sub("\{", "\{", val)
+    val = re.sub("\}", "\}", val)
+    val = re.sub("/", "\/", val)
+    val = re.sub("\?", "\?", val)
+    return val
