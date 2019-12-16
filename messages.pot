@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-16 16:15+0100\n"
+"POT-Creation-Date: 2019-12-16 16:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1040,7 +1040,7 @@ msgid "Geography"
 msgstr ""
 
 #: edh_web_application/templates/base.html:57
-#: edh_web_application/templates/home.html:50
+#: edh_web_application/templates/home.html:61
 msgid "Data"
 msgstr ""
 
@@ -1057,7 +1057,7 @@ msgid "Home"
 msgstr ""
 
 #: edh_web_application/templates/home.html:18
-#: edh_web_application/templates/home.html:55
+#: edh_web_application/templates/home.html:66
 msgid "Epigraphic Text Database"
 msgstr ""
 
@@ -1066,7 +1066,7 @@ msgid "EDH Text-DB"
 msgstr ""
 
 #: edh_web_application/templates/home.html:29
-#: edh_web_application/templates/home.html:56
+#: edh_web_application/templates/home.html:67
 msgid "Photographic Database"
 msgstr ""
 
@@ -1075,7 +1075,7 @@ msgid "EDH Fotothek"
 msgstr ""
 
 #: edh_web_application/templates/home.html:40
-#: edh_web_application/templates/home.html:57
+#: edh_web_application/templates/home.html:68
 msgid "Epigraphic Bibliography"
 msgstr ""
 
@@ -1084,77 +1084,85 @@ msgid "EDH Biblio-DB"
 msgstr ""
 
 #: edh_web_application/templates/home.html:51
-msgid "Work Status"
+msgid "Epigraphic Geography"
 msgstr ""
 
-#: edh_web_application/templates/home.html:52
-msgid "Geographic Focus"
-msgstr ""
-
-#: edh_web_application/templates/home.html:54
-msgid "Last Updates"
-msgstr ""
-
-#: edh_web_application/templates/home.html:55
-#: edh_web_application/templates/home.html:56
-#: edh_web_application/templates/home.html:57
-#: edh_web_application/templates/home.html:58
-msgid "records"
-msgstr ""
-
-#: edh_web_application/templates/home.html:58
-msgid "Geographic Database"
-msgstr ""
-
-#: edh_web_application/templates/home.html:60
-msgid "ODR"
+#: edh_web_application/templates/home.html:53
+msgid "EDH Geo-DB"
 msgstr ""
 
 #: edh_web_application/templates/home.html:62
-msgid "Partners"
+msgid "Work Status"
+msgstr ""
+
+#: edh_web_application/templates/home.html:63
+msgid "Geographic Focus"
+msgstr ""
+
+#: edh_web_application/templates/home.html:65
+msgid "Last Updates"
+msgstr ""
+
+#: edh_web_application/templates/home.html:66
+#: edh_web_application/templates/home.html:67
+#: edh_web_application/templates/home.html:68
+#: edh_web_application/templates/home.html:69
+msgid "records"
+msgstr ""
+
+#: edh_web_application/templates/home.html:69
+msgid "Geographic Database"
 msgstr ""
 
 #: edh_web_application/templates/home.html:71
+msgid "ODR"
+msgstr ""
+
+#: edh_web_application/templates/home.html:73
+msgid "Partners"
+msgstr ""
+
+#: edh_web_application/templates/home.html:82
 msgid "Inscriptions by Christians in Rome"
 msgstr ""
 
-#: edh_web_application/templates/home.html:83
+#: edh_web_application/templates/home.html:94
 msgid "Epigraphic documents from Italic Regions"
 msgstr ""
 
-#: edh_web_application/templates/home.html:95
+#: edh_web_application/templates/home.html:106
 msgid "Epigraphic patrimony of Portugal and Spain"
 msgstr ""
 
-#: edh_web_application/templates/home.html:107
+#: edh_web_application/templates/home.html:118
 msgid "Database of Latin inscriptions"
 msgstr ""
 
-#: edh_web_application/templates/home.html:122
+#: edh_web_application/templates/home.html:133
 msgid "Epigraphic patrimony of Britain"
 msgstr ""
 
-#: edh_web_application/templates/home.html:134
+#: edh_web_application/templates/home.html:145
 msgid "Images of stone monuments"
 msgstr ""
 
-#: edh_web_application/templates/home.html:146
+#: edh_web_application/templates/home.html:157
 msgid "Europeana network of Ancient Greek and Latin Epigraphy"
 msgstr ""
 
-#: edh_web_application/templates/home.html:158
+#: edh_web_application/templates/home.html:169
 msgid "International Digital Epigraphy Association"
 msgstr ""
 
-#: edh_web_application/templates/home.html:173
+#: edh_web_application/templates/home.html:184
 msgid "Portal of papyrological and epigraphical resources"
 msgstr ""
 
-#: edh_web_application/templates/home.html:185
+#: edh_web_application/templates/home.html:196
 msgid "Greek & Latin inscriptions from Turkey"
 msgstr ""
 
-#: edh_web_application/templates/home.html:197
+#: edh_web_application/templates/home.html:208
 msgid "Linked Open Data methods & tools for exploring historical places"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-16 16:15+0100\n"
+"POT-Creation-Date: 2019-12-16 16:24+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -1567,7 +1567,7 @@ msgid "Geography"
 msgstr "Geographie"
 
 #: edh_web_application/templates/base.html:57
-#: edh_web_application/templates/home.html:50
+#: edh_web_application/templates/home.html:61
 msgid "Data"
 msgstr "Daten"
 
@@ -1596,20 +1596,20 @@ msgstr ""
 "bw.de/\">Heidelberger Akademie der Wissenschaften</a>.</p>"
 
 #: edh_web_application/templates/home.html:18
-#: edh_web_application/templates/home.html:55
+#: edh_web_application/templates/home.html:66
 msgid "Epigraphic Text Database"
-msgstr "Epigraphische Text Datenbank"
+msgstr "Inschriften"
 
 #: edh_web_application/templates/home.html:20
 msgid "EDH Text-DB"
 msgstr ""
-"Suchen Sie nach Inschriften gemäß selbst gewählter Suchkriterien "
-"(Transkription und Metadaten)..."
+"Suchen Sie nach Inschriften gemäß selbst gewählter "
+"Suchkriterien (Transkription und Metadaten)..."
 
 #: edh_web_application/templates/home.html:29
-#: edh_web_application/templates/home.html:56
+#: edh_web_application/templates/home.html:67
 msgid "Photographic Database"
-msgstr "Epigraphische Fotothek"
+msgstr "Fotos"
 
 #: edh_web_application/templates/home.html:31
 msgid "EDH Fotothek"
@@ -1618,9 +1618,9 @@ msgstr ""
 "Römischen Reiches..."
 
 #: edh_web_application/templates/home.html:40
-#: edh_web_application/templates/home.html:57
+#: edh_web_application/templates/home.html:68
 msgid "Epigraphic Bibliography"
-msgstr "Epigraphische Bibliographie"
+msgstr "Bibliographie"
 
 #: edh_web_application/templates/home.html:42
 msgid "EDH Biblio-DB"
@@ -1629,10 +1629,19 @@ msgstr ""
 "Forschungsliteratur..."
 
 #: edh_web_application/templates/home.html:51
+msgid "Epigraphic Geography"
+msgstr "Geographie"
+
+#: edh_web_application/templates/home.html:53
+msgid "EDH Geo-DB"
+msgstr ""
+"Suche nach geographischen Entitäten wie bspw. Provinz, Fundort und Region..."
+
+#: edh_web_application/templates/home.html:62
 msgid "Work Status"
 msgstr "Stand der Bearbeitung"
 
-#: edh_web_application/templates/home.html:52
+#: edh_web_application/templates/home.html:63
 msgid "Geographic Focus"
 msgstr ""
 "Der geographische Fokus liegt auf den Provinzen des römischen Reiches. "
@@ -1640,22 +1649,22 @@ msgstr ""
 "über alle <a href=\"/projekt/provinzen\">abgeschlossenen und derzeit "
 "bearbeiteten Provinzen</a> kann der Karte entnommen werden"
 
-#: edh_web_application/templates/home.html:54
+#: edh_web_application/templates/home.html:65
 msgid "Last Updates"
 msgstr "Letzte Änderungen"
 
-#: edh_web_application/templates/home.html:55
-#: edh_web_application/templates/home.html:56
-#: edh_web_application/templates/home.html:57
-#: edh_web_application/templates/home.html:58
+#: edh_web_application/templates/home.html:66
+#: edh_web_application/templates/home.html:67
+#: edh_web_application/templates/home.html:68
+#: edh_web_application/templates/home.html:69
 msgid "records"
 msgstr "Datensätze"
 
-#: edh_web_application/templates/home.html:58
+#: edh_web_application/templates/home.html:69
 msgid "Geographic Database"
 msgstr "Geographische Datenbank"
 
-#: edh_web_application/templates/home.html:60
+#: edh_web_application/templates/home.html:71
 msgid "ODR"
 msgstr ""
 "Die in den Teildatenbanken erfassten Daten können in unterschiedlichen "
@@ -1665,51 +1674,51 @@ msgstr ""
 "Heidelberg stehen unter der <a href=\"http://creativecommons.org/licenses"
 "/by-sa/4.0/deed.de\">CC BY-SA 4.0 Lizenz</a> zur Nachnutzung bereit."
 
-#: edh_web_application/templates/home.html:62
+#: edh_web_application/templates/home.html:73
 msgid "Partners"
 msgstr "Partner"
 
-#: edh_web_application/templates/home.html:71
+#: edh_web_application/templates/home.html:82
 msgid "Inscriptions by Christians in Rome"
 msgstr "Christliche Inschriften aus Rom (3. - 8. Jh. n. Chr.)"
 
-#: edh_web_application/templates/home.html:83
+#: edh_web_application/templates/home.html:94
 msgid "Epigraphic documents from Italic Regions"
 msgstr "Epigraphische Dokumente aus den Italischen Regionen"
 
-#: edh_web_application/templates/home.html:95
+#: edh_web_application/templates/home.html:106
 msgid "Epigraphic patrimony of Portugal and Spain"
 msgstr "Epigraphisches Erbe Portugals und Spaniens"
 
-#: edh_web_application/templates/home.html:107
+#: edh_web_application/templates/home.html:118
 msgid "Database of Latin inscriptions"
 msgstr "Datenbank Lateinischer Inschriften"
 
-#: edh_web_application/templates/home.html:122
+#: edh_web_application/templates/home.html:133
 msgid "Epigraphic patrimony of Britain"
 msgstr "Epigraphische Erbe Bitanniens"
 
-#: edh_web_application/templates/home.html:134
+#: edh_web_application/templates/home.html:145
 msgid "Images of stone monuments"
 msgstr "Fotos von antiken Inschriften"
 
-#: edh_web_application/templates/home.html:146
+#: edh_web_application/templates/home.html:157
 msgid "Europeana network of Ancient Greek and Latin Epigraphy"
 msgstr "Europäisches Netzwerk Griechischer und Lateinischer Epigraphik"
 
-#: edh_web_application/templates/home.html:158
+#: edh_web_application/templates/home.html:169
 msgid "International Digital Epigraphy Association"
 msgstr "Internationaler Verbund für Digitale Epigraphik"
 
-#: edh_web_application/templates/home.html:173
+#: edh_web_application/templates/home.html:184
 msgid "Portal of papyrological and epigraphical resources"
 msgstr "Portal für papyrologische und epigraphische Ressourcen"
 
-#: edh_web_application/templates/home.html:185
+#: edh_web_application/templates/home.html:196
 msgid "Greek & Latin inscriptions from Turkey"
 msgstr "Griechische &amp; Lateinische Inschriften der Türkei"
 
-#: edh_web_application/templates/home.html:197
+#: edh_web_application/templates/home.html:208
 msgid "Linked Open Data methods & tools for exploring historical places"
 msgstr "Linked Open Data Methoden und Tools für historische Orte"
 
