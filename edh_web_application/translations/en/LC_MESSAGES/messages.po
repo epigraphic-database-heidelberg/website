@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-11 16:46+0100\n"
+"POT-Creation-Date: 2019-12-16 11:21+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -239,25 +239,25 @@ msgid "Find circumstances / present location"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:35
-#: edh_web_application/geography/templates/geography/detail_view.html:63
+#: edh_web_application/geography/templates/geography/detail_view.html:71
 #: edh_web_application/geography/templates/geography/last_updates.html:27
 msgid "province"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:39
-#: edh_web_application/geography/templates/geography/detail_view.html:67
+#: edh_web_application/geography/templates/geography/detail_view.html:75
 #: edh_web_application/geography/templates/geography/last_updates.html:32
 msgid "country"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:43
-#: edh_web_application/geography/templates/geography/detail_view.html:71
+#: edh_web_application/geography/templates/geography/detail_view.html:79
 #: edh_web_application/geography/templates/geography/last_updates.html:37
 msgid "ancient find spot"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:47
-#: edh_web_application/geography/templates/geography/detail_view.html:81
+#: edh_web_application/geography/templates/geography/detail_view.html:89
 #: edh_web_application/geography/templates/geography/last_updates.html:41
 msgid "modern find spot"
 msgstr ""
@@ -315,17 +315,29 @@ msgstr "TM Geo-ID"
 msgid "Geonames ID"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:91
+#: edh_web_application/geography/templates/geography/detail_view.html:63
+msgid "finished"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view.html:65
+msgid "Yes"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view.html:66
+msgid "No"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view.html:99
 #: edh_web_application/geography/templates/geography/last_updates.html:45
 msgid "find spot"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:101
+#: edh_web_application/geography/templates/geography/detail_view.html:109
 #: edh_web_application/geography/templates/geography/last_updates.html:49
 msgid "verw_bezirk"
 msgstr "region"
 
-#: edh_web_application/geography/templates/geography/detail_view.html:111
+#: edh_web_application/geography/templates/geography/detail_view.html:119
 msgid "comment"
 msgstr ""
 

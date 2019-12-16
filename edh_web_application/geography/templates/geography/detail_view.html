@@ -60,6 +60,14 @@
                 <div class="detail_block_content_row_text">{{data['datum']}}</div>
             </section>
             <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('finished') }}:</div>
+                <div class="detail_block_content_row_text">
+                    {% if data['bearbeitet'] %}{{_('Yes')}}
+                    {% else %}{{_('No')}}
+                    {% endif %}
+                </div>
+            </section>
+            <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('province') }}:</div>
                 <div class="detail_block_content_row_text">{{data['provinz']}}</div>
             </section>
@@ -110,7 +118,7 @@
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('comment') }}:</div>
                 <div class="detail_block_content_row_text">
-                    {% if data['kommentar'] %}
+                    {% if data['kommentar'] and data['bearbeitet'] %}
                         {{data['kommentar']|safe}}
                     {% else %}
                         &nbsp;
