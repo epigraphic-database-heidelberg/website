@@ -79,6 +79,7 @@ def register_blueprints(app):
     from edh_web_application.geography import bp_geography
     from edh_web_application.foto import bp_foto
     from edh_web_application.inscription import bp_inscription
+    from edh_web_application.person import bp_people
     from edh_web_application.data import bp_data
     from edh_web_application.project import bp_project
 
@@ -86,5 +87,6 @@ def register_blueprints(app):
     app.register_blueprint(bp_geography)
     app.register_blueprint(bp_foto)
     app.register_blueprint(bp_inscription)
+    app.register_blueprint(bp_people)
     app.register_blueprint(bp_data)
     app.register_blueprint(bp_project)

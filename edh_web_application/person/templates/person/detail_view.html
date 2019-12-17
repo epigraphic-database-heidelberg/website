@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_header">
+            <span class="detail_block_header_text">{{ _("Canonical URI") }}:
+                <span id="geo_uri">
+                    <a href="https://edh-www.adw.uni-heidelberg.de/edh/person/{{data['id']}}">https://edh-www.adw.uni-heidelberg.de/edh/person/{{data['id']}}</a>
+                    <img src="{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
+                </span>
+                <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
+            </span>
+        </div>
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('Name') }}:</div>
+                <div class="detail_block_content_row_text">{{data['name']}}</div>
+            </section>
+            {% if data['praenomen'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Praenomen') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['praenomen']}}</div>
+                </section>
+            {% endif %}
+            {% if data['nomen'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Nomen') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['nomen']}}</div>
+                </section>
+            {% endif %}
+            {% if data['cognomen'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Cognomen') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['cognomen']}}</div>
+                </section>
+            {% endif %}
+            {% if data['supernomen'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Supernomen') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['supernomen']}}</div>
+                </section>
+            {% endif %}
+            {% if data['filiation'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Filiation') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['filiation']}}</div>
+                </section>
+            {% endif %}
+            {% if data['tribus'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Tribus') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['tribus']}}</div>
+                </section>
+            {% endif %}
+            {% if data['origo'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Origo') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['origo']}}</div>
+                </section>
+            {% endif %}
+            {% if data['geschlecht'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Gender') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['geschlecht']}}</div>
+                </section>
+            {% endif %}
+            {% if data['status'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Status') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['status']}}</div>
+                </section>
+            {% endif %}
+            {% if data['beruf'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Beruf') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['beruf']}}</div>
+                </section>
+            {% endif %}
+            {% if data['l_jahre'] or data['l_monate'] or data['l_tage'] or data['l_stunden'] %}
+                {% if data['l_jahre'] %}
+                    <section class="detail_block_content_row">
+                        <div class="detail_block_content_row_header">{{ _('Age: Years') }}:</div>
+                        <div class="detail_block_content_row_text">{{data['l_jahre']}}</div>
+                    </section>
+                {% endif %}
+                {% if data['l_monate'] %}
+                    <section class="detail_block_content_row">
+                        <div class="detail_block_content_row_header">{{ _('Age: Months') }}:</div>
+                        <div class="detail_block_content_row_text">{{data['l_monate']}}</div>
+                    </section>
+                {% endif %}
+                {% if data['l_tage'] %}
+                    <section class="detail_block_content_row">
+                        <div class="detail_block_content_row_header">{{ _('Age: Days') }}:</div>
+                        <div class="detail_block_content_row_text">{{data['l_tage']}}</div>
+                    </section>
+                {% endif %}
+                {% if data['l_stunden'] %}
+                    <section class="detail_block_content_row">
+                        <div class="detail_block_content_row_header">{{ _('Age: Hours') }}:</div>
+                        <div class="detail_block_content_row_text">{{data['l_stunden']}}</div>
+                    </section>
+                {% endif %}
+            {% endif %}
+            {% if data['uri'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('External IDs') }}:</div>
+                    <div class="detail_block_content_row_text">
+                        {% for uri in data['uri'] %}
+                            <a href="{{uri}}">{{uri}}</a>
+                        {% endfor %}
+                    </div>
+                </section>
+            {% endif %}
+            {% if data['pir'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('PIR') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['pir']}}</div>
+                </section>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src="{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
+{% endblock %}

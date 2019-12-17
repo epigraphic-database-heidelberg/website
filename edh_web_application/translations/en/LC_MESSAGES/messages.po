@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-16 16:24+0100\n"
+"POT-Creation-Date: 2019-12-17 15:50+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -360,10 +360,12 @@ msgid "Geographic Database: Search"
 msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view.html:12
+#: edh_web_application/person/templates/person/detail_view.html:12
 msgid "Canonical URI"
 msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view.html:15
+#: edh_web_application/person/templates/person/detail_view.html:15
 msgid "copied!"
 msgstr ""
 
@@ -655,6 +657,86 @@ msgstr "Kosovo"
 #: edh_web_application/models/Place.py:113
 msgid "unknown"
 msgstr "unknown"
+
+#: edh_web_application/person/routes.py:18
+msgid "Epigraphic People Database: Detail View"
+msgstr ""
+
+#: edh_web_application/person/routes.py:21
+msgid "Epigraphic Person Database: Detail View"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:22
+msgid "Pers-ID"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:26
+msgid "Name"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:31
+msgid "Praenomen"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:37
+msgid "Nomen"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:43
+msgid "Cognomen"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:49
+msgid "Supernomen"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:55
+msgid "Filiation"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:61
+msgid "Tribus"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:67
+msgid "Origo"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:73
+msgid "Gender"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:79
+msgid "Status"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:85
+msgid "Beruf"
+msgstr "Occupation"
+
+#: edh_web_application/person/templates/person/detail_view.html:92
+msgid "Age: Years"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:98
+msgid "Age: Months"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:104
+msgid "Age: Days"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:110
+msgid "Age: Hours"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:117
+msgid "External IDs"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:127
+msgid "PIR"
+msgstr ""
 
 #: edh_web_application/project/routes.py:9
 msgid "Project - Concept"
@@ -1575,7 +1657,7 @@ msgstr ""
 #: edh_web_application/templates/home.html:29
 #: edh_web_application/templates/home.html:67
 msgid "Photographic Database"
-msgstr "Fotos"
+msgstr "Photos"
 
 #: edh_web_application/templates/home.html:31
 msgid "EDH Fotothek"
@@ -1598,8 +1680,9 @@ msgstr "Geography"
 
 #: edh_web_application/templates/home.html:53
 msgid "EDH Geo-DB"
-msgstr "Geography"
-"Search for any geographic entity like e.g. province, find spot or region..."
+msgstr ""
+"GeographySearch for any geographic entity like e.g. province, find spot "
+"or region..."
 
 #: edh_web_application/templates/home.html:62
 msgid "Work Status"
