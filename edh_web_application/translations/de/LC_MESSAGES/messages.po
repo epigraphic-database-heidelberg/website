@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-17 15:50+0100\n"
+"POT-Creation-Date: 2019-12-18 16:48+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -35,7 +35,7 @@ msgid "B-No"
 msgstr "B-Nr."
 
 #: edh_web_application/bibliography/forms.py:11
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:35
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:37
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:19
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:18
 msgid "author"
@@ -62,13 +62,13 @@ msgid "year(s)"
 msgstr "Jahr"
 
 #: edh_web_application/bibliography/forms.py:16
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:64
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:66
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:47
 msgid "pages"
 msgstr "Seiten"
 
 #: edh_web_application/bibliography/forms.py:17
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:70
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:72
 msgid "town"
 msgstr "Ort"
 
@@ -88,67 +88,70 @@ msgstr "Zu AE"
 msgid "other_corpora"
 msgstr "sonstige Corpora"
 
-#: edh_web_application/bibliography/routes.py:24
-#: edh_web_application/bibliography/routes.py:26
-#: edh_web_application/bibliography/routes.py:28
+#: edh_web_application/bibliography/routes.py:25
+#: edh_web_application/bibliography/routes.py:27
+#: edh_web_application/bibliography/routes.py:29
 msgid "Bibliographic Database: Search"
 msgstr "Epigraphische Bibliographie: Suche"
 
-#: edh_web_application/bibliography/routes.py:41
-#: edh_web_application/bibliography/routes.py:44
+#: edh_web_application/bibliography/routes.py:43
+#: edh_web_application/bibliography/routes.py:46
 msgid "Epigraphic Bibliography Database: Detail View"
 msgstr "Epigraphische Bibliographie: Detailansicht"
 
-#: edh_web_application/bibliography/routes.py:57
+#: edh_web_application/bibliography/routes.py:59
 msgid "Epigraphic Bibliography Database: Last Updates"
 msgstr "Epigraphische Bibliographie Datenbank: Letzte Änderungen"
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:12
-#: edh_web_application/foto/templates/foto/detail_view.html:12
-msgid "Generic data"
-msgstr "Allgemeine Angaben"
+#: edh_web_application/geography/templates/geography/detail_view.html:12
+#: edh_web_application/person/templates/person/detail_view.html:12
+msgid "Canonical URI"
+msgstr "Zitierweise"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:16
-msgid "B-number:"
-msgstr "B-Nummer:"
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:15
+#: edh_web_application/geography/templates/geography/detail_view.html:15
+#: edh_web_application/person/templates/person/detail_view.html:15
+msgid "copied!"
+msgstr "kopiert!"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:20
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:22
 msgid "responsible individual:"
 msgstr "Bearbeiter:"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:24
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:26
 msgid "last update:"
 msgstr "letzte Änderungen"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:31
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:33
 msgid "Work / contribution"
 msgstr "Werk / Beitrag:"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:40
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:42
 msgid "title:"
 msgstr "Titel:"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:46
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:48
 msgid "publication:"
 msgstr "Publikation:"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:52
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:54
 msgid "Volume:"
 msgstr "Band:"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:58
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:60
 msgid "year(s):"
 msgstr "Jahr(e):"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:79
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:81
 msgid "Cited in AE"
 msgstr "Zitiert in AE"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:97
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:99
 msgid "Also concerns the inscriptions"
 msgstr "Betrifft außerdem die Inschriften"
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:128
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:130
 #: edh_web_application/foto/templates/foto/detail_view.html:97
 msgid "other corpora"
 msgstr "andere Corpora"
@@ -229,6 +232,10 @@ msgstr "Epigraphische Fotothek: Suche"
 #: edh_web_application/foto/routes.py:18 edh_web_application/foto/routes.py:21
 msgid "Epigraphic Foto Database: Detail View"
 msgstr "Epigraphische Fotothek: Detailansicht"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:12
+msgid "Generic data"
+msgstr "Allgemeine Angaben"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:16
 msgid "F-number"
@@ -361,16 +368,6 @@ msgstr "Epigraphische Geographie Datenbank: Detailansicht"
 #: edh_web_application/geography/routes.py:58
 msgid "Geographic Database: Search"
 msgstr "Geographie-Datenbank: Suche"
-
-#: edh_web_application/geography/templates/geography/detail_view.html:12
-#: edh_web_application/person/templates/person/detail_view.html:12
-msgid "Canonical URI"
-msgstr "Zitierweise"
-
-#: edh_web_application/geography/templates/geography/detail_view.html:15
-#: edh_web_application/person/templates/person/detail_view.html:15
-msgid "copied!"
-msgstr "kopiert!"
 
 #: edh_web_application/geography/templates/geography/detail_view.html:25
 msgid "Pleiades-ID"
@@ -670,74 +667,70 @@ msgid "Epigraphic Person Database: Detail View"
 msgstr ""
 
 #: edh_web_application/person/templates/person/detail_view.html:22
-msgid "Pers-ID"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:26
 msgid "Name"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:31
+#: edh_web_application/person/templates/person/detail_view.html:27
 msgid "Praenomen"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:37
+#: edh_web_application/person/templates/person/detail_view.html:33
 msgid "Nomen"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:43
+#: edh_web_application/person/templates/person/detail_view.html:39
 msgid "Cognomen"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:49
+#: edh_web_application/person/templates/person/detail_view.html:45
 msgid "Supernomen"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:55
+#: edh_web_application/person/templates/person/detail_view.html:51
 msgid "Filiation"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:61
+#: edh_web_application/person/templates/person/detail_view.html:57
 msgid "Tribus"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:67
+#: edh_web_application/person/templates/person/detail_view.html:63
 msgid "Origo"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:73
+#: edh_web_application/person/templates/person/detail_view.html:69
 msgid "Gender"
 msgstr "Geschlecht"
 
-#: edh_web_application/person/templates/person/detail_view.html:79
+#: edh_web_application/person/templates/person/detail_view.html:75
 msgid "Status"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:85
+#: edh_web_application/person/templates/person/detail_view.html:81
 msgid "Beruf"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:92
+#: edh_web_application/person/templates/person/detail_view.html:88
 msgid "Age: Years"
 msgstr "Lebenszeit: Jahre"
 
-#: edh_web_application/person/templates/person/detail_view.html:98
+#: edh_web_application/person/templates/person/detail_view.html:94
 msgid "Age: Months"
 msgstr "Lebenszeit: Monate"
 
-#: edh_web_application/person/templates/person/detail_view.html:104
+#: edh_web_application/person/templates/person/detail_view.html:100
 msgid "Age: Days"
 msgstr "Lebenszeit: Tage"
 
-#: edh_web_application/person/templates/person/detail_view.html:110
+#: edh_web_application/person/templates/person/detail_view.html:106
 msgid "Age: Hours"
 msgstr "Lebenszeit: Stunden"
 
-#: edh_web_application/person/templates/person/detail_view.html:117
+#: edh_web_application/person/templates/person/detail_view.html:113
 msgid "External IDs"
 msgstr "Externe IDs"
 
-#: edh_web_application/person/templates/person/detail_view.html:127
+#: edh_web_application/person/templates/person/detail_view.html:123
 msgid "PIR"
 msgstr ""
 
@@ -1006,7 +999,7 @@ msgstr ""
 "Datenbank</i></a>&nbsp; mit den drei weiteren Teildatenbanken der "
 "<i>EDH</i>, der <a href=\"/inhalt/bibliographie\"><i>Epigraphischen "
 "Bibliographie</i></a>, der <a href=\"/inhalt/fotos\"><i>Epigraphischen "
-"Fotothek</i></a>. und der <em>Epigraphischen "
+"Fotothek</i></a> und der <em>Epigraphischen "
 "Geographiedatenbank.</em></p><p>Ihr <strong>Ziel</strong> liegt darin, "
 "die epigraphische Dokumentation der Provinzen des römischen Reiches bis "
 "zum Jahr 2020 (vorgesehenem Laufzeitende) so vollständig und zuverlässig "
@@ -1023,33 +1016,34 @@ msgstr ""
 "</span></em><em><i>EDH</i></em><em><span style=\"font-style: normal;\"> "
 "bereits erfaßten Inschriften Italiens</span></em><em><span style=\"font-"
 "style: normal;\"> </span></em><em><span style=\"font-style: normal;\">der"
-" </span></em><em><i>Epigraphic Database Rome (EDR)</i></em><em><span "
-"style=\"font-style: normal;\"> </span></em><em><span style=\"font-style: "
-"normal;\">zur weiteren Bearbeitung und Vervollständigung des "
-"Datenbestandes durch letztere </span></em><em><span style=\"font-style: "
-"normal;\">überlassen worden sind. </span></em>Zweck der "
-"<em>EAGLE</em>-Föderation ist es, möglichst alle lateinischen und "
-"griechischen Inschriften der Antike nach einheitlichen Kriterien im "
-"Internet zugänglich zu machen.<em><span style=\"font-style: normal;\"> "
-"Die Gründung von</span></em><em><i> EDR</i></em><em><span style=\"font-"
-"style: normal;\"> </span></em><em><span style=\"font-style: "
-"normal;\">erfolgte zu diesem Zweck </span></em><em><span style=\"font-"
-"style: normal;\"> in enger Kooperation mit der "
-"</span></em><em><i>EDH</i></em><em><span style=\"font-style: normal;\"> "
-"und na</span></em><em><span style=\"font-style: normal;\">ch deren "
-"Modell</span></em>.</p><p><strong>Konzept</strong>: Die <em>Epigraphische"
-" Text-Datenbank</em> ist das Herzstück der <i>EDH</i> und umfaßt derzeit "
-"rund 78.000 Inschriften. Es handelt sich fast ausschließlich um bereits "
-"publizierte Texte, welche nicht nur in den großen - vielfach noch "
-"gültigen, aber modernen textkritischen Standards häufig nicht mehr "
-"genügenden - Inschriftencorpora ediert, sondern insbesondere auch in "
-"Tausenden von Fachartikeln veröffentlicht, revidiert und diskutiert "
-"worden sind. Texte und Metadaten der Inschriften werden somit vor dem "
-"Hintergrund des aktuellen Forschungsstandes präsentiert. Zu den "
-"Grundprinzipien der Arbeitsweise der <i>EDH</i> zählt es, Lesungen nicht "
-"ungeprüft aus Editionen und anderer Sekundärliteratur zu übernehmen. "
-"Soweit möglich werden diese vielmehr mindestens anhand von Zeichnungen "
-"oder Fotos - letztere weitgehend auch aus den Beständen der "
+" </span></em><em><i><a href=\"http://www.edr-"
+"edr.it/default/index.php\">Epigraphic Database Rome "
+"(EDR)</a></i></em><em><span style=\"font-style: normal;\"> "
+"</span></em><em><span style=\"font-style: normal;\">zur weiteren "
+"Bearbeitung und Vervollständigung des Datenbestandes durch letztere "
+"</span></em><em><span style=\"font-style: normal;\">überlassen worden "
+"sind. </span></em>Zweck der <em>EAGLE</em>-Föderation ist es, möglichst "
+"alle lateinischen und griechischen Inschriften der Antike nach "
+"einheitlichen Kriterien im Internet zugänglich zu machen.<em><span style"
+"=\"font-style: normal;\"> Die Gründung von</span></em><em><i> "
+"EDR</i></em><em><span style=\"font-style: normal;\"> "
+"</span></em><em><span style=\"font-style: normal;\">erfolgte zu diesem "
+"Zweck </span></em><em><span style=\"font-style: normal;\"> in enger "
+"Kooperation mit der </span></em><em><i>EDH</i></em><em><span style"
+"=\"font-style: normal;\"> und na</span></em><em><span style=\"font-style:"
+" normal;\">ch deren Modell</span></em>.</p><p><strong>Konzept</strong>: "
+"Die <em>Epigraphische Text-Datenbank</em> ist das Herzstück der "
+"<i>EDH</i> und umfaßt derzeit rund 80.000 Inschriften. Es handelt sich "
+"fast ausschließlich um bereits publizierte Texte, welche nicht nur in den"
+" großen - vielfach noch gültigen, aber modernen textkritischen Standards "
+"häufig nicht mehr genügenden - Inschriftencorpora ediert, sondern "
+"insbesondere auch in Tausenden von Fachartikeln veröffentlicht, revidiert"
+" und diskutiert worden sind. Texte und Metadaten der Inschriften werden "
+"somit vor dem Hintergrund des aktuellen Forschungsstandes präsentiert. Zu"
+" den Grundprinzipien der Arbeitsweise der <i>EDH</i> zählt es, Lesungen "
+"nicht ungeprüft aus Editionen und anderer Sekundärliteratur zu "
+"übernehmen. Soweit möglich werden diese vielmehr mindestens anhand von "
+"Zeichnungen oder Fotos - letztere weitgehend auch aus den Beständen der "
 "<em>Epigraphischen Fotothek</em> -, idealerweise auch per Autopsie "
 "verifiziert und dem Nutzer über das Feld \"Bearbeitungsstand\" die genaue"
 " Verifikationsgrundlage angezeigt.</p><p>Die Bearbeitung der Inschriften "
@@ -1077,9 +1071,72 @@ msgstr ""
 "heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
 
 #: edh_web_application/project/templates/project/project_cooperations.html:9
-#: edh_web_application/templates/base.html:40
-msgid "Cooperations"
-msgstr "Kooperationen"
+msgid "Cooperations Description"
+msgstr ""
+"<p>Die Qualität der Datenbank und ihrer Präsenz im Internet ist auch das "
+"Ergebnis zahlreicher Hinweise und Hilfestellungen aus dem In- und "
+"Ausland. Neben den externen Mitarbeitern seien daher dankbar die "
+"folgenden Damen und Herren sowie Institutionen erwähnt:</p><p>Prof. Dr. "
+"Juan Manuel Abascal (Alicante), Prof. Dr. Francisco Javier Andreu Pintado"
+" (Madrid), Momchil Banev, Prof. Dr. Konstantin Boshnakov (Sofia), Prof. "
+"Dr. Alfredo Buonopane (Verona), Dr. Rosario Cebrián (Valencia), Prof. Dr."
+" Mireille Corbier (Paris), Prof. Dr. Josep Corell Vicent (Valencia), Dr. "
+"Dan Dana (Paris), Dr. Mihály Loránd Dészpa (Heidelberg),  Prof. Dr. Ivan "
+"Di Stefano (Viterbo), Dr. Tom Elliott (Columbus, Ohio), Dr. Ivo Facić "
+"(Zadar), Or Fialkov (Israel), Prof. Dr. Ileana Ghemes (Alba Iulia), Prof."
+" Dr. Helena Gimeno (Alcalá de Henares), Prof. Dr. Xavier Gómez Font "
+"(Valencia), Dr. Markus Gschwind (München), Prof. Dr. Amílcar M. R. Guerra"
+" (Lisboa), Dr. Luca Guido (Düsseldorf), Lucius Hartmann (Zürich), Azemine"
+" Istogu (Oberhausen), Dr. Christina Kokkinia (Athen), Dr. Klaus Kortüm "
+"(Stuttgart), Dr. Péter Kovács (Piliscsaba), Friedrich Krämer+ (Lobbach-"
+"Lobenfeld), Katharina Krügel (Weimar), Dr. Anamarija Kurilić (Zadar), "
+"Carmen Lanz (Heidelberg), Prof. Gaetano Lena (Cassino), Prof. Dr. "
+"Barnabás Lőrincz (Budapest), Felix Marcu (Cluj-Napoca), Valeria Mare M.A."
+" (Heidelberg), Dr. Ivan Matijević (Split), PD Dr. Krešimir Matijević "
+"(Trier), Marko Matijević (Split), Prof. Dr. Giovanni Mennella (Genova), "
+"Prof. Miroslava Mirković (Beograd), Dr. Eduard Németh (Cluj-Napoca), "
+"Prof. Dr. György Németh (Debrecen), Dr. Gabriela Nutz (Rastatt), Prof. "
+"Dr. Michael Peachin (Princeton-Junction), Prof. Dr. Ioan Piso (Cluj-"
+"Napoca), Corina Pop (Cluj-Napoca), Dr. Betsy Roeben (Cambridge, MA), "
+"Raimund Rosch (Baden-Baden), Prof. Dr. Marjeta Šašel Kos (Ljubljana), "
+"Prof. Dr. Egon Schallmayer (Wiesbaden), Dr. Roswitha Schmickl "
+"(Heidelberg), Dr. Armin Stylow (Alcalá de Henares), Dr. Ádám Szabó "
+"(Budapest), Dr. Ingrid Weber-Hiden (Wien), Prof. Dr. Gabriele Wesch-Klein"
+" (Heidelberg), Dr. Günther Wüst (Wiesenbach), Marenne Zandstra MA "
+"(Nijmegen), Prof. Dr. Gerhard Zimmer (Eichstätt).</p><p>Komitate Baranya "
+"/ Győr - Sopron / Fejér / Komárom / Pest / Tolna / Vas / Veszprém / Zala "
+"(Ungarn), Ministero per i Beni e le Attività Culturali "
+"(Italien).</p><h2>National</h2><p>Augsburg, <a href=\"http://www"
+".roemisches-museum.de/\">Römisches Museum</a> - Berlin, <a "
+"href=\"http://cil.bbaw.de/\">Corpus Inscriptionum Latinarum</a> Berlin, "
+"<a href=\"http://pir.bbaw.de/\">Prosopographia Imperii Romani</a> - "
+"Eichstätt, <a "
+"href=\"http://www.museumfuerurundfruehgeschichte.de/\">Museum für Ur- und"
+" Frühgeschichte Eichstätt</a>, s. auch Externe Mitarbeiter - Erlangen, <a"
+" href=\"http://www.philippoi.de/\">Die Inschriften von Philippi im "
+"Bild</a> - Heidelberg, <a href=\"https://www.museum-"
+"heidelberg.de/1360820.html\">Kurpfälzisches Museum</a> - Karlsruhe, <a "
+"href=\"http://www.landesmuseum.de/\">Badisches Landesmuseum</a> Karlsruhe"
+" - Mainz, <a href=\"http://www.landesmuseum-mainz.de/\">Landesmuseum "
+"Mainz</a> - Osnabrück, <a "
+"href=\"https://www.hist.uzh.ch/de/fachbereiche/altegeschichte/lehrstuehle/kolb/forschung/projekte/roemischeinschriftenschweiz.html\">Supplementum"
+" zu CIL XIII</a> - Seebruck, <a "
+"href=\"http://www.bedaium.de/\">Römermuseum Bedaium</a> - Speyer, <a "
+"href=\"http://museum.speyer.de/de/histmus/\">Historisches Museum der "
+"Pfalz</a>.</p><h2>International</h2><p>Alcalá (E), <a "
+"href=\"http://www3.uah.es/imagines_cilii/\">CIL II</a> - Augst (CH), <a "
+"href=\"http://www.augusta-raurica.ch/\">Museum Augusta Raurica</a> - "
+"Barcelona (E) s. Externe Mitarbeiter - Bari (I), <a href=\"https://www"
+".eagle-network.eu/\">EAGLE</a> - Cluj-Napoca (Ro), <a "
+"href=\"http://romans1by1.com/\">Romans1by1</a> - Graz (A) s. Externe "
+"Mitarbeiter - Ljubljana (SLO), <a "
+"href=\"https://www.nms.si/en/\">Slowenisches Nationalmuseum "
+"Ljubljana</a>, s. auch Externe Mitarbeiter - Providence (USA, RI), <a "
+"href=\"https://usepigraphy.brown.edu/projects/usep/collections/\">U.S. "
+"Epigraphy Project</a> - Roma (I), EAGLE - Wien (A) s. Externe Mitarbeiter"
+" - Wien (A), <a href=\"http://lupa.at/\">UBI ERAT LUPA</a> - Zürich (CH),"
+" <a href=\"https://www.hist.uzh.ch/de.html\">Historisches Seminar</a> der"
+" Universität Zürich.</p>"
 
 #: edh_web_application/project/templates/project/project_history.html:9
 msgid "History page"
@@ -1607,6 +1664,10 @@ msgstr "Konzept"
 msgid "History"
 msgstr "Geschichte"
 
+#: edh_web_application/templates/base.html:40
+msgid "Cooperations"
+msgstr "Kooperationen"
+
 #: edh_web_application/templates/base.html:41
 msgid "Research Team Members"
 msgstr "Mitarbeiter"
@@ -1804,4 +1865,10 @@ msgstr "Griechische &amp; Lateinische Inschriften der Türkei"
 #: edh_web_application/templates/home.html:208
 msgid "Linked Open Data methods & tools for exploring historical places"
 msgstr "Linked Open Data Methoden und Tools für historische Orte"
+
+#~ msgid "B-number:"
+#~ msgstr "B-Nummer:"
+
+#~ msgid "Pers-ID"
+#~ msgstr ""
 

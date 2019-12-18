@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-17 15:50+0100\n"
+"POT-Creation-Date: 2019-12-18 16:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "B-No"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:11
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:35
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:37
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:19
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:18
 msgid "author"
@@ -61,13 +61,13 @@ msgid "year(s)"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:16
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:64
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:66
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:47
 msgid "pages"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:17
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:70
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:72
 msgid "town"
 msgstr ""
 
@@ -87,67 +87,70 @@ msgstr ""
 msgid "other_corpora"
 msgstr ""
 
-#: edh_web_application/bibliography/routes.py:24
-#: edh_web_application/bibliography/routes.py:26
-#: edh_web_application/bibliography/routes.py:28
+#: edh_web_application/bibliography/routes.py:25
+#: edh_web_application/bibliography/routes.py:27
+#: edh_web_application/bibliography/routes.py:29
 msgid "Bibliographic Database: Search"
 msgstr ""
 
-#: edh_web_application/bibliography/routes.py:41
-#: edh_web_application/bibliography/routes.py:44
+#: edh_web_application/bibliography/routes.py:43
+#: edh_web_application/bibliography/routes.py:46
 msgid "Epigraphic Bibliography Database: Detail View"
 msgstr ""
 
-#: edh_web_application/bibliography/routes.py:57
+#: edh_web_application/bibliography/routes.py:59
 msgid "Epigraphic Bibliography Database: Last Updates"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:12
-#: edh_web_application/foto/templates/foto/detail_view.html:12
-msgid "Generic data"
+#: edh_web_application/geography/templates/geography/detail_view.html:12
+#: edh_web_application/person/templates/person/detail_view.html:12
+msgid "Canonical URI"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:16
-msgid "B-number:"
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:15
+#: edh_web_application/geography/templates/geography/detail_view.html:15
+#: edh_web_application/person/templates/person/detail_view.html:15
+msgid "copied!"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:20
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:22
 msgid "responsible individual:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:24
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:26
 msgid "last update:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:31
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:33
 msgid "Work / contribution"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:40
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:42
 msgid "title:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:46
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:48
 msgid "publication:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:52
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:54
 msgid "Volume:"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:58
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:60
 msgid "year(s):"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:79
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:81
 msgid "Cited in AE"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:97
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:99
 msgid "Also concerns the inscriptions"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/detail_view.html:128
+#: edh_web_application/bibliography/templates/bibliography/detail_view.html:130
 #: edh_web_application/foto/templates/foto/detail_view.html:97
 msgid "other corpora"
 msgstr ""
@@ -205,6 +208,10 @@ msgstr ""
 
 #: edh_web_application/foto/routes.py:18 edh_web_application/foto/routes.py:21
 msgid "Epigraphic Foto Database: Detail View"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:12
+msgid "Generic data"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:16
@@ -337,16 +344,6 @@ msgstr ""
 #: edh_web_application/geography/routes.py:56
 #: edh_web_application/geography/routes.py:58
 msgid "Geographic Database: Search"
-msgstr ""
-
-#: edh_web_application/geography/templates/geography/detail_view.html:12
-#: edh_web_application/person/templates/person/detail_view.html:12
-msgid "Canonical URI"
-msgstr ""
-
-#: edh_web_application/geography/templates/geography/detail_view.html:15
-#: edh_web_application/person/templates/person/detail_view.html:15
-msgid "copied!"
 msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view.html:25
@@ -647,74 +644,70 @@ msgid "Epigraphic Person Database: Detail View"
 msgstr ""
 
 #: edh_web_application/person/templates/person/detail_view.html:22
-msgid "Pers-ID"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:26
 msgid "Name"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:31
+#: edh_web_application/person/templates/person/detail_view.html:27
 msgid "Praenomen"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:37
+#: edh_web_application/person/templates/person/detail_view.html:33
 msgid "Nomen"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:43
+#: edh_web_application/person/templates/person/detail_view.html:39
 msgid "Cognomen"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:49
+#: edh_web_application/person/templates/person/detail_view.html:45
 msgid "Supernomen"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:55
+#: edh_web_application/person/templates/person/detail_view.html:51
 msgid "Filiation"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:61
+#: edh_web_application/person/templates/person/detail_view.html:57
 msgid "Tribus"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:67
+#: edh_web_application/person/templates/person/detail_view.html:63
 msgid "Origo"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:73
+#: edh_web_application/person/templates/person/detail_view.html:69
 msgid "Gender"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:79
+#: edh_web_application/person/templates/person/detail_view.html:75
 msgid "Status"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:85
+#: edh_web_application/person/templates/person/detail_view.html:81
 msgid "Beruf"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:92
+#: edh_web_application/person/templates/person/detail_view.html:88
 msgid "Age: Years"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:98
+#: edh_web_application/person/templates/person/detail_view.html:94
 msgid "Age: Months"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:104
+#: edh_web_application/person/templates/person/detail_view.html:100
 msgid "Age: Days"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:110
+#: edh_web_application/person/templates/person/detail_view.html:106
 msgid "Age: Hours"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:117
+#: edh_web_application/person/templates/person/detail_view.html:113
 msgid "External IDs"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:127
+#: edh_web_application/person/templates/person/detail_view.html:123
 msgid "PIR"
 msgstr ""
 
@@ -974,8 +967,7 @@ msgid "Contact page"
 msgstr ""
 
 #: edh_web_application/project/templates/project/project_cooperations.html:9
-#: edh_web_application/templates/base.html:40
-msgid "Cooperations"
+msgid "Cooperations Description"
 msgstr ""
 
 #: edh_web_application/project/templates/project/project_history.html:9
@@ -1078,6 +1070,10 @@ msgstr ""
 
 #: edh_web_application/templates/base.html:39
 msgid "History"
+msgstr ""
+
+#: edh_web_application/templates/base.html:40
+msgid "Cooperations"
 msgstr ""
 
 #: edh_web_application/templates/base.html:41
