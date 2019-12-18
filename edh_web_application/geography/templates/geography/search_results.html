@@ -52,7 +52,13 @@
                 </section>
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('verw_bezirk') }}:</div>
-                    <div class="detail_block_content_row_text">{{ d['verw_bezirk'] }}&nbsp;</div>
+                    <div class="detail_block_content_row_text">
+                        {% if d['verw_bezirk'] %}
+                            {{ d['verw_bezirk'] }}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </div>
                 </section>
             </div>
         </div>
