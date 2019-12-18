@@ -9,7 +9,13 @@
 <div>
     <div class="detail_block">
         <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _('Generic data') }}</span>
+            <span class="detail_block_header_text">{{ _("Canonical URI") }}:
+                <span id="geo_uri">
+                    <a href="https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}">https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}</a>
+                    <img src="{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
+                </span>
+                <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
+            </span>
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
@@ -139,4 +145,8 @@
     {% endif %}
 </div>
 
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src="{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
 {% endblock %}
