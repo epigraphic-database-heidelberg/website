@@ -72,6 +72,7 @@ class Publication:
             b_nr = form['b_nr']
             # check if b_nr is valid pattern
             # correct if neccessary/possible
+            b_nr = Publication.format_b_nr(b_nr)
             query_string = "b_nr:" + b_nr + " " + logical_operater + " "
         if 'author' in form and form['author'] != "":
             query_string += "autor:" + _escape_value(form['author']) + " " + logical_operater + " "
@@ -185,11 +186,25 @@ class Publication:
             'rows': '0',
         }
         query = ac_field+":"+term
-        query = re.sub("\s", "\ ", query)
-        print(query)
+        query = re.sub(r"\s", r"\ ", query)
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
         results = solr.search(query, **params)
         return results.facets['facet_fields'][ac_field+'_ac'][::2]
+
+    @classmethod
+    def format_b_nr(cls, b_nr):
+        """
+        formats user entered b_nr string into valid B-No like 'B004711'
+        :param b_nr: user entered string of B-No
+        :return: string of valid B-No, like 'B004711'
+        """
+        b_no_pattern = re.compile(r"^B\d{6}$")
+        if b_no_pattern.match(b_nr):
+            return b_nr
+        b_nr = re.sub("^[Bb]", "", b_nr, re.IGNORECASE)
+        b_nr = b_nr.lstrip("0")
+        b_nr = b_nr.zfill(6)
+        return "B" + b_nr
 
 
 def _escape_value(val):

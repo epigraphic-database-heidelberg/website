@@ -36,7 +36,7 @@ def detail_view(b_nr):
     :param b_nr: identifier of bibliographical record
     :return: html template
     """
-    b_nr = format_b_nr(b_nr)
+    b_nr = Publication.format_b_nr(b_nr)
     results = Publication.query("b_nr:" + b_nr)
     if results is None:
         return render_template('bibliography/no_hits.html',
@@ -77,17 +77,3 @@ def autocomplete_publikation():
     """
     return json.dumps(Publication.get_autocomplete_entries("publikation", request.args['term']))
 
-
-def format_b_nr(b_nr):
-    """
-    formats user entered b_nr string into valid B-No like 'B004711'
-    :param b_nr: user entered string of B-No
-    :return: string of valid B-No, like 'B004711'
-    """
-    b_no_pattern = re.compile("^B\d\d\d\d\d\d$")
-    if b_no_pattern.match(b_nr):
-        return b_nr
-    b_nr = re.sub("^[Bb]","",b_nr, re.IGNORECASE)
-    b_nr = b_nr.lstrip("0")
-    b_nr = b_nr.zfill(6)
-    return "B"+b_nr
