@@ -51,10 +51,12 @@
                     {% endif %}
                 </div>
             </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('responsible individual') }}:</div>
-                <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
-            </section>
+            {% if data['bearbeiter'] != "Db2inst1" %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('responsible individual') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
+                </section>
+            {% endif %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('last update') }}:</div>
                 <div class="detail_block_content_row_text">{{data['datum']}}</div>
