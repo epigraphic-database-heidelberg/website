@@ -349,7 +349,7 @@ msgstr ""
 
 #: edh_web_application/geography/forms.py:33
 msgid "Trismegistos Geo ID"
-msgstr ""
+msgstr "TM Geo ID"
 
 #: edh_web_application/geography/routes.py:18
 msgid "Epigraphic Geographic Database: Last Updates"
@@ -1788,7 +1788,7 @@ msgstr "Geography"
 #: edh_web_application/templates/home.html:53
 msgid "EDH Geo-DB"
 msgstr ""
-"GeographySearch for any geographic entity like e.g. province, find spot "
+"Search for any geographic entity like e.g. province, find spot "
 "or region..."
 
 #: edh_web_application/templates/home.html:62

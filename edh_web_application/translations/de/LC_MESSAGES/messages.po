@@ -352,7 +352,7 @@ msgstr ""
 
 #: edh_web_application/geography/forms.py:33
 msgid "Trismegistos Geo ID"
-msgstr ""
+msgstr "TM Geo ID"
 
 #: edh_web_application/geography/routes.py:18
 msgid "Epigraphic Geographic Database: Last Updates"
