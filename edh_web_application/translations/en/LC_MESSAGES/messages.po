@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-01-07 11:52+0100\n"
+"POT-Creation-Date: 2020-01-07 12:25+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -405,6 +405,46 @@ msgstr "Epigraphic Text Database: Browse Inscriptions"
 #: edh_web_application/inscription/routes.py:28
 #: edh_web_application/inscription/routes.py:30
 msgid "Epigraphic Text Database: Detail View"
+msgstr ""
+
+#: edh_web_application/models/Person.py:14
+msgid "senatorial order"
+msgstr ""
+
+#: edh_web_application/models/Person.py:15
+msgid "equestrian order"
+msgstr ""
+
+#: edh_web_application/models/Person.py:16
+msgid "decurial order, higher local offices"
+msgstr ""
+
+#: edh_web_application/models/Person.py:17
+msgid "lower local offices, administration of imperial estates"
+msgstr ""
+
+#: edh_web_application/models/Person.py:18
+msgid "Augustales"
+msgstr ""
+
+#: edh_web_application/models/Person.py:19
+msgid "freedmen / freedwomen"
+msgstr ""
+
+#: edh_web_application/models/Person.py:20
+msgid "slaves"
+msgstr ""
+
+#: edh_web_application/models/Person.py:21
+msgid "rulers (foreign)"
+msgstr ""
+
+#: edh_web_application/models/Person.py:22
+msgid "military personnel"
+msgstr ""
+
+#: edh_web_application/models/Person.py:23
+msgid "emperor / imperial household"
 msgstr ""
 
 #: edh_web_application/models/Place.py:15

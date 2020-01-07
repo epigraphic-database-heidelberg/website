@@ -9,6 +9,19 @@ import re
 
 
 class Person:
+    # dict of localized status names
+    localized_status = {
+        "1": _l("senatorial order"),
+        "2": _l("equestrian order"),
+        "3": _l("decurial order, higher local offices"),
+        "4": _l("lower local offices, administration of imperial estates"),
+        "5": _l("Augustales"),
+        "6": _l("freedmen / freedwomen"),
+        "7": _l("slaves"),
+        "8": _l("rulers (foreign)"),
+        "9": _l("military personnel"),
+        "0": _l("emperor / imperial household"),
+    }
 
     def __init__(self,
                  id,
@@ -39,6 +52,8 @@ class Person:
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
+        # get localized string for status property
+        self.status = Person.localized_status[self.status]
         self.id = id
         self.hd_nr = hd_nr
         self.pers_no = pers_no
