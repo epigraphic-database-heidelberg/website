@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-12-24 07:54+0100\n"
+"POT-Creation-Date: 2020-01-07 11:52+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: edh_web_application/bibliography/forms.py:8
 #: edh_web_application/bibliography/templates/bibliography/search.html:97
 #: edh_web_application/geography/forms.py:19
-#: edh_web_application/geography/templates/geography/search.html:91
+#: edh_web_application/geography/templates/geography/search.html:90
 msgid "Reset..."
 msgstr ""
 
@@ -181,7 +181,7 @@ msgid "Start new search"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search.html:97
-#: edh_web_application/geography/templates/geography/search.html:91
+#: edh_web_application/geography/templates/geography/search.html:90
 msgid "Search..."
 msgstr ""
 
@@ -239,12 +239,12 @@ msgid "F-number"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:20
-#: edh_web_application/geography/templates/geography/detail_view.html:55
+#: edh_web_application/geography/templates/geography/detail_view.html:56
 msgid "responsible individual"
 msgstr "contributor"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:24
-#: edh_web_application/geography/templates/geography/detail_view.html:59
+#: edh_web_application/geography/templates/geography/detail_view.html:61
 msgid "last update"
 msgstr ""
 
@@ -254,7 +254,7 @@ msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:35
 #: edh_web_application/geography/forms.py:22
-#: edh_web_application/geography/templates/geography/detail_view.html:71
+#: edh_web_application/geography/templates/geography/detail_view.html:73
 #: edh_web_application/geography/templates/geography/last_updates.html:27
 #: edh_web_application/geography/templates/geography/search_results.html:26
 msgid "province"
@@ -262,7 +262,7 @@ msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:39
 #: edh_web_application/geography/forms.py:23
-#: edh_web_application/geography/templates/geography/detail_view.html:75
+#: edh_web_application/geography/templates/geography/detail_view.html:77
 #: edh_web_application/geography/templates/geography/last_updates.html:32
 #: edh_web_application/geography/templates/geography/search_results.html:31
 msgid "country"
@@ -270,7 +270,7 @@ msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:43
 #: edh_web_application/geography/forms.py:24
-#: edh_web_application/geography/templates/geography/detail_view.html:79
+#: edh_web_application/geography/templates/geography/detail_view.html:81
 #: edh_web_application/geography/templates/geography/last_updates.html:37
 #: edh_web_application/geography/templates/geography/search_results.html:36
 msgid "ancient find spot"
@@ -278,7 +278,7 @@ msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:47
 #: edh_web_application/geography/forms.py:25
-#: edh_web_application/geography/templates/geography/detail_view.html:89
+#: edh_web_application/geography/templates/geography/detail_view.html:91
 #: edh_web_application/geography/templates/geography/last_updates.html:41
 #: edh_web_application/geography/templates/geography/search_results.html:40
 msgid "modern find spot"
@@ -313,21 +313,21 @@ msgid "Geo-ID"
 msgstr ""
 
 #: edh_web_application/geography/forms.py:26
-#: edh_web_application/geography/templates/geography/detail_view.html:99
+#: edh_web_application/geography/templates/geography/detail_view.html:101
 #: edh_web_application/geography/templates/geography/last_updates.html:45
 #: edh_web_application/geography/templates/geography/search_results.html:44
 msgid "find spot"
 msgstr ""
 
 #: edh_web_application/geography/forms.py:27
-#: edh_web_application/geography/templates/geography/detail_view.html:109
+#: edh_web_application/geography/templates/geography/detail_view.html:111
 #: edh_web_application/geography/templates/geography/last_updates.html:49
 #: edh_web_application/geography/templates/geography/search_results.html:54
 msgid "verw_bezirk"
 msgstr "region"
 
 #: edh_web_application/geography/forms.py:28
-#: edh_web_application/geography/templates/geography/detail_view.html:119
+#: edh_web_application/geography/templates/geography/detail_view.html:121
 msgid "comment"
 msgstr ""
 
@@ -378,15 +378,15 @@ msgstr "TM Geo-ID"
 msgid "Geonames ID"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:63
+#: edh_web_application/geography/templates/geography/detail_view.html:65
 msgid "finished"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:67
 msgid "Yes"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:66
+#: edh_web_application/geography/templates/geography/detail_view.html:68
 msgid "No"
 msgstr ""
 
@@ -699,35 +699,43 @@ msgstr ""
 msgid "Gender"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:75
-msgid "Status"
+#: edh_web_application/person/templates/person/detail_view.html:72
+msgid "female"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:74
+msgid "male"
 msgstr ""
 
 #: edh_web_application/person/templates/person/detail_view.html:81
-msgid "Beruf"
-msgstr "Occupation"
+msgid "Status"
+msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:88
-msgid "Age: Years"
+#: edh_web_application/person/templates/person/detail_view.html:87
+msgid "Beruf"
 msgstr ""
 
 #: edh_web_application/person/templates/person/detail_view.html:94
-msgid "Age: Months"
+msgid "Age: Years"
 msgstr ""
 
 #: edh_web_application/person/templates/person/detail_view.html:100
-msgid "Age: Days"
+msgid "Age: Months"
 msgstr ""
 
 #: edh_web_application/person/templates/person/detail_view.html:106
+msgid "Age: Days"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:112
 msgid "Age: Hours"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:113
+#: edh_web_application/person/templates/person/detail_view.html:119
 msgid "External IDs"
 msgstr ""
 
-#: edh_web_application/person/templates/person/detail_view.html:123
+#: edh_web_application/person/templates/person/detail_view.html:129
 msgid "PIR"
 msgstr ""
 
@@ -1788,8 +1796,8 @@ msgstr "Geography"
 #: edh_web_application/templates/home.html:53
 msgid "EDH Geo-DB"
 msgstr ""
-"Search for any geographic entity like e.g. province, find spot "
-"or region..."
+"Search for any geographic entity like e.g. province, find spot or "
+"region..."
 
 #: edh_web_application/templates/home.html:62
 msgid "Work Status"
@@ -1880,5 +1888,56 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Pers-ID"
+#~ msgstr ""
+
+#~ msgid "Name"
+#~ msgstr ""
+
+#~ msgid "Praenomen"
+#~ msgstr ""
+
+#~ msgid "Nomen"
+#~ msgstr ""
+
+#~ msgid "Cognomen"
+#~ msgstr ""
+
+#~ msgid "Supernomen"
+#~ msgstr ""
+
+#~ msgid "Filiation"
+#~ msgstr ""
+
+#~ msgid "Tribus"
+#~ msgstr ""
+
+#~ msgid "Origo"
+#~ msgstr ""
+
+#~ msgid "Gender"
+#~ msgstr ""
+
+#~ msgid "Status"
+#~ msgstr ""
+
+#~ msgid "Beruf"
+#~ msgstr "Occupation"
+
+#~ msgid "Age: Years"
+#~ msgstr ""
+
+#~ msgid "Age: Months"
+#~ msgstr ""
+
+#~ msgid "Age: Days"
+#~ msgstr ""
+
+#~ msgid "Age: Hours"
+#~ msgstr ""
+
+#~ msgid "External IDs"
+#~ msgstr ""
+
+#~ msgid "PIR"
 #~ msgstr ""
 

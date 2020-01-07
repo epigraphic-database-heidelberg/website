@@ -67,7 +67,13 @@
             {% if data['geschlecht'] %}
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('Gender') }}:</div>
-                    <div class="detail_block_content_row_text">{{data['geschlecht']}}</div>
+                    <div class="detail_block_content_row_text">
+                        {% if data['geschlecht'] == "W" %}
+                            {{ _('female') }}
+                        {% else %}
+                            {{ _('male') }}
+                        {% endif %}
+                    </div>
                 </section>
             {% endif %}
             {% if data['status'] %}
