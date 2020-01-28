@@ -249,9 +249,18 @@ class Place:
                     if key not in ('id', 'bearbeiter', 'datum', 'land', 'provinz'):
                         props[key] = result[key]
                     if key == 'land':
-                        props[key] = Place.country[result[key]]
+                        if re.search("\?$", result[key]):
+                            key_without_trailing_questionmark = re.sub("\?$", "", result[key])
+                            props[key] = Place.country[key_without_trailing_questionmark] + "?"
+                        else:
+                            props[key] = Place.country[result[key]]
                     if key == 'provinz':
-                        props[key] = Place.province[result[key]]
+                        if re.search("\?$", result[key]):
+                            key_without_trailing_questionmark = re.sub("\?$", "", result[key])
+                            props[key] = Place.province[key_without_trailing_questionmark] + "?"
+                        else:
+                            props[key] = Place.province[result[key]]
+
                 pl = Place(result['id'],
                                    result['datum'],
                                    result['bearbeiter'],
