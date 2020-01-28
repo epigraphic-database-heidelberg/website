@@ -9,5 +9,5 @@ class Config(object):
 
 
 class DevelopmentConfig(Config):
-    SOLR_BASE_URL = 'http://147.142.226.106:8983/solr/'
+    SOLR_BASE_URL = 'http://147.142.112.176:8983/solr/'
 
