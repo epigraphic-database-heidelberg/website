@@ -7,9 +7,42 @@
 {% block app_content %}
 <h1>{{ title }}</h1>
 <p>{{_("The search resulted in ")}} {{number_of_hits}} {{_("hits.")}}</p>
+<div style="text-align:center">
+    <nav aria-label="Search results pages">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="
+                    {% if (data['metadata']['start']|int - data['metadata']['rows']|int) > 0 %}
+                        {{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int - data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                    {% else %}
+                        {{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}
+                    {% endif %}
+                    " aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            {% for hit in range((data['metadata']['number_of_hits']|int / data['metadata']['rows'])|int + 1) %}
+            <li class="page-item">
+                <a class="page-link" href="{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+            </li>
+            {% endfor%}
+            <li class="page-item">
+                <a class="page-link" href="
+                {% if (data['metadata']['start']|int + data['metadata']['rows']|int)<= data['metadata']['number_of_hits']|int %}
+                    {{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                {% endif %}
+                " aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 <div>
     {% set count = namespace(value=0) %}
-    {% for d in data %}
+    {% for d in data['items'] %}
     {% set count.value = count.value + 1 %}
     <div class="detail_block">
         <div class="detail_block_header">
@@ -65,6 +98,39 @@
     </div>
     {% endfor %}
 </div>
+<div style="text-align:center">
+    <nav aria-label="Search results pages">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="
+                    {% if (data['metadata']['start']|int - data['metadata']['rows']|int) > 0 %}
+                        {{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int - data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                    {% else %}
+                        {{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}
+                    {% endif %}
+                    " aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            {% for hit in range((data['metadata']['number_of_hits']|int / data['metadata']['rows'])|int + 1) %}
+                <li class="page-item">
+                    <a class="page-link" href="{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+                </li>
+            {% endfor%}
+            <li class="page-item">
+                <a class="page-link" href="
+                {% if (data['metadata']['start']|int + data['metadata']['rows']|int)<= data['metadata']['number_of_hits']|int %}
+                    {{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                {% endif %}
+                " aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
 {% endblock %}
 {% block scripts %}
@@ -73,7 +139,7 @@
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 <script type="text/javascript">
     {% set count = namespace(value=0) %}
-    {% for d in data %}
+    {% for d in data['items'] %}
         {% set count.value = count.value + 1 %}
         {% if d['koordinaten_1'] %}
             var pelagiosMap = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png');

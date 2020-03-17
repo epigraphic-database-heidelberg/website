@@ -1,11 +1,13 @@
 import pysolr
 from flask import current_app
+from flask import request
 from babel.numbers import format_decimal
 from babel.dates import format_date
 from datetime import datetime
 import collections
 from flask_babel import lazy_gettext as _l
 import re
+
 
 class Place:
     # dict of localized country names
@@ -237,11 +239,18 @@ class Place:
         :param query_string: Solr query string
         :return: list of Place instances
         """
+        start = 0  # index number of first record to retrieve
+        rows = 20  # number of receords to retrieve
+        if request.args.get('start'):
+            start = request.args.get('start')
+        if request.args.get('anzahl'):
+            rows = int(request.args.get('anzahl'))
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhGeo')
-        results = solr.search(query_string, **{'rows': '99999', 'sort': 'id asc'})
+        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': 'id asc'})
         if len(results) == 0:
             return None
         else:
+            number_of_hits = format_decimal(results.hits, locale='de_DE')
             query_result = []
             for result in results:
                 props = {}
@@ -262,12 +271,14 @@ class Place:
                             props[key] = Place.province[result[key]]
 
                 pl = Place(result['id'],
-                                   result['datum'],
-                                   result['bearbeiter'],
-                                   **props
-                                   )
+                           result['datum'],
+                           result['bearbeiter'],
+                           **props
+                           )
                 query_result.append(pl)
-            return query_result
+            return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(request.url)},
+                    "items": query_result}
 
     @classmethod
     def get_number_of_records(cls):
@@ -316,7 +327,7 @@ class Place:
             res['land'] = Place.country[res['land']]
             res['provinz'] = Place.province[res['provinz']]
             if 'fundstelle' in res:
-                res['fundstelle'] = re.sub("[\{\}]","",res['fundstelle'])
+                res['fundstelle'] = re.sub("[\{\}]", "", res['fundstelle'])
         return results
 
     @classmethod
@@ -361,7 +372,7 @@ class Place:
         return_list = []
         # remove curley brackets from field 'fundstelle
         for res in result_list:
-            res = re.sub(r'[\{\}]','',res)
+            res = re.sub(r'[\{\}]', '', res)
             return_list.append(res)
         return return_list
 
@@ -383,3 +394,15 @@ def _escape_value(val):
     val = re.sub("/", "\/", val)
     val = re.sub("\?", "\?", val)
     return val
+
+
+def _get_url_without_pagination_parameters(url):
+    """
+    removes URL parameters anzahl and start; these get added later in the template again
+    with values for pagination
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("start=[0-9]*&*", "", url)
+    url = re.sub("anzahl=[0-9]*&*", "", url)
+    return url
