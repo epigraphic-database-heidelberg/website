@@ -250,7 +250,7 @@ class Place:
         if len(results) == 0:
             return None
         else:
-            number_of_hits = format_decimal(results.hits, locale='de_DE')
+            number_of_hits = results.hits
             query_result = []
             for result in results:
                 props = {}
@@ -405,4 +405,5 @@ def _get_url_without_pagination_parameters(url):
     """
     url = re.sub("start=[0-9]*&*", "", url)
     url = re.sub("anzahl=[0-9]*&*", "", url)
+    url = re.sub("&&", "&", url)
     return url

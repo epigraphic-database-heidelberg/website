@@ -23,13 +23,19 @@
                 </a>
             </li>
             {% for hit in range((data['metadata']['number_of_hits']|int / data['metadata']['rows'])|int + 1) %}
-            <li class="page-item">
-                <a class="page-link" href="{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
-            </li>
+                {% if (data['metadata']['start']|int ) / data['metadata']['rows']|int == hit %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">{{ hit + 1 }}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+                </li>
+                {% endif %}
             {% endfor%}
             <li class="page-item">
                 <a class="page-link" href="
-                {% if (data['metadata']['start']|int + data['metadata']['rows']|int)<= data['metadata']['number_of_hits']|int %}
+                {% if (data['metadata']['start']|int + data['metadata']['rows']|int) <= data['metadata']['number_of_hits']|int %}
                     {{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
                 {% endif %}
                 " aria-label="Next">
@@ -46,7 +52,7 @@
     {% set count.value = count.value + 1 %}
     <div class="detail_block">
         <div class="detail_block_header">
-            <span class="detail_block_header_text"><a href="/edh/geographie/{{ d['id'] }}">{{ d['id'] }} {{ _('&ndash; open detailed view...') }}</a></span>
+            <span class="detail_block_header_text"><a href="/edh/geographie/{{ d['id'] }}">{{_('Number')}} {{count.value + data['metadata']['start']|int}}: {{ d['id'] }} {{ _('&ndash; open detailed view...') }}</a></span>
         </div>
         <div class="wrapper_geo_last_updates" style="padding:10px">
             <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;">
@@ -114,13 +120,19 @@
                 </a>
             </li>
             {% for hit in range((data['metadata']['number_of_hits']|int / data['metadata']['rows'])|int + 1) %}
-                <li class="page-item">
-                    <a class="page-link" href="{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
-                </li>
+            {% if (data['metadata']['start']|int ) / data['metadata']['rows']|int == hit %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#">{{ hit + 1 }}</a>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a class="page-link" href="{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+            </li>
+            {% endif %}
             {% endfor%}
             <li class="page-item">
                 <a class="page-link" href="
-                {% if (data['metadata']['start']|int + data['metadata']['rows']|int)<= data['metadata']['number_of_hits']|int %}
+                {% if (data['metadata']['start']|int + data['metadata']['rows']|int) <= data['metadata']['number_of_hits']|int %}
                     {{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
                 {% endif %}
                 " aria-label="Next">

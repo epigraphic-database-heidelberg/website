@@ -284,6 +284,20 @@ p {
   border-top: 4px solid #1F6B3B;
   bottom: -4px;
 }
+/*
+ * pagination of search results
+*/
+.pagination>li>a, .pagination>li>span{
+  color: #1F6B3B;
+}
+.pagination>.disabled>a,
+.pagination>.disabled>a:focus,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>span,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>span:hover {
+  background-color: #d4f6d4;
+}
 
 .direction-l,
 .direction-r {
