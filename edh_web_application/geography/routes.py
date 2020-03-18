@@ -33,7 +33,7 @@ def detail_view(geo_id):
     else:
         return render_template('geography/detail_view.html',
                                title=_("Epigraphic Geography Database: Detail View"),
-                               data=results[0])
+                               data=results['items'][0])
 
 
 @bp_geography.route('/geographie/suche', methods=['GET', 'POST'])
