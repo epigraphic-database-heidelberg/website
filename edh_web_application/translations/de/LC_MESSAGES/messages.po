@@ -1709,7 +1709,7 @@ msgstr ""
 "<span class=\"hexa\"></span><span class=\"flag\">September "
 "2003</span></div> <div class=\"desc\">Beteiligung der EDH am \"Tag des Offenen Denkmals\" Heidelberg<br /><img src=\"/static/img/tod_2003_3.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
 "<li><div class=\"direction-r\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">jUNI "
+"<span class=\"hexa\"></span><span class=\"flag\">Juni "
 "2002</span></div> <div class=\"desc\">Beteiligung der EDH am \"Wissenschaftsmarkt\" der Universität Heidelberg<br /><img src=\"/static/img/wissmarkt_klinger_2.jpg\" style=\"width:200px\" /><img src=\"/static/img/wiss-markt_flyer.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
 "</ul>"
 
