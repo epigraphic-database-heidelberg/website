@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+
+<form action="" method="get">
+    <div class="form-group row">
+        {{ form.province.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.province(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.country.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.country(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.ancient_find_spot.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.ancient_find_spot(class='form-control autocomplete ui-autocomplete-input', id='ancient_find_spot') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.modern_find_spot.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.modern_find_spot(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.present_location.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.present_location(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.original_image.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.original_image(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.date_of_photograph.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.date_of_photograph(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.quality.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.quality(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.cil.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.cil(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.ae.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.ae(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.other_literature.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.other_literature(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.commentary.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.commentary(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.hd_nr.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.hd_nr(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.f_id.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.f_id(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-10">
+            <button type="submit" class="btn">{{ _('Search...') }}</button> <button type="reset" class="btn" style="margin-left:1em;">{{ _('Reset...') }}</button>
+        </div>
+    </div>
+
+</form>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script>
+    $("input#modern_find_spot").autocomplete({source:"/geographie/ac/fo_modern",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"/geographie/ac/fo_antik",minLength:3,delay:0})
+    $("input#find_spot").autocomplete({source:"/geographie/ac/fundstelle",minLength:3,delay:0})
+</script>
+{% endblock %}

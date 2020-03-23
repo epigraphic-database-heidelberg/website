@@ -1,5 +1,5 @@
 from flask import render_template
-
+from .forms import FotoSearch
 from . import bp_foto
 from ..models.Foto import Foto
 from flask_babel import _
@@ -7,7 +7,8 @@ from flask_babel import _
 
 @bp_foto.route('/foto/suche')
 def search_bibliography():
-    return render_template('foto/index.html', title=_("Foto Database: Search"))
+    form = FotoSearch()
+    return render_template('foto/search.html', title=_("Foto Database: Search"), form=form)
 
 
 @bp_foto.route('/edh/foto/<f_nr>')
