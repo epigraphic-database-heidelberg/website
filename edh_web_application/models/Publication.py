@@ -47,7 +47,7 @@ class Publication:
         if request.args.get('anzahl'):
             rows = int(request.args.get('anzahl'))
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        results = solr.search(query_string, **{'rows': '99999', 'sort': 'b_nr asc'})
+        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': 'b_nr asc'})
         if len(results) == 0:
             return None
         else:
