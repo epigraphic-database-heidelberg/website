@@ -1,6 +1,7 @@
 import pysolr
 import re
 from flask import current_app
+from flask import request
 from babel.numbers import format_decimal
 from babel.dates import format_date
 from datetime import datetime
@@ -39,11 +40,18 @@ class Publication:
         queries Solr core
         :return: list of Publication instances
         """
+        start = 0  # index number of first record to retrieve
+        rows = 20  # number of records to retrieve
+        if request.args.get('start'):
+            start = request.args.get('start')
+        if request.args.get('anzahl'):
+            rows = int(request.args.get('anzahl'))
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
         results = solr.search(query_string, **{'rows': '99999', 'sort': 'b_nr asc'})
         if len(results) == 0:
             return None
         else:
+            number_of_hits = results.hits
             query_result = []
             for result in results:
                 props = {}
@@ -56,7 +64,10 @@ class Publication:
                                     **props
                                     )
                 query_result.append(publ)
-            return query_result
+            return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(
+                                     request.url)},
+                    "items": query_result}
 
     @classmethod
     def create_query_string(cls, form):
@@ -224,3 +235,16 @@ def _escape_value(val):
     val = re.sub("/", "\/", val)
     val = re.sub("\?", "\?", val)
     return val
+
+
+def _get_url_without_pagination_parameters(url):
+    """
+    removes URL parameters anzahl and start; these get added later in the template again
+    with values for pagination
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("start=[0-9]*&*", "", url)
+    url = re.sub("anzahl=[0-9]*&*", "", url)
+    url = re.sub("&&", "&", url)
+    return url

@@ -44,7 +44,7 @@ def detail_view(b_nr):
     else:
         return render_template('bibliography/detail_view.html',
                                title=_("Epigraphic Bibliography Database: Detail View"),
-                               data=results[0])
+                               data=results['items'][0])
 
 
 @bp_bibliography.route('/bibliographie/lastUpdates', methods=['GET', 'POST'])

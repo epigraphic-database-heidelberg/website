@@ -8,7 +8,7 @@
 <h1>{{ title }}</h1>
 <p>{{_("The search resulted in ")}} {{number_of_hits}} {{_("hits.")}}</p>
 <div>
-    {% for d in data %}
+    {% for d in data['items'] %}
     <div class="detail_block">
         <div class="detail_block_header">
             <span class="detail_block_header_text"><a href="/edh/bibliographie/{{ d['b_nr'] }}">{{ d['b_nr'] }} {{ _('&ndash; open detailed view...') }}</a></span>
