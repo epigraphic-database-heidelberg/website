@@ -47,7 +47,7 @@ class Publication:
         if request.args.get('anzahl'):
             rows = int(request.args.get('anzahl'))
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': 'b_nr asc'})
+        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': 'b_nr asc', 'defType': 'edismax'})
         if len(results) == 0:
             return None
         else:
@@ -94,7 +94,7 @@ class Publication:
                 query_string += "autor:" + (form['author']) + " " + logical_operater + " "
 
         if 'title' in form and form['title'] != "":
-            query_string += "titel:" + _escape_value(form['title']) + " " + logical_operater + " "
+            query_string += "titel:\"" + form['title'] + "\" " + logical_operater + " "
 
         if 'publication' in form and form['publication'] != "":
             query_string += "publikation:" + _escape_value(form['publication']) + " " + logical_operater + " "
