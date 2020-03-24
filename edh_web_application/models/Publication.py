@@ -59,10 +59,10 @@ class Publication:
                     if key not in ('b_nr', 'bearbeiter', 'datum'):
                         props[key] = result[key]
                 publ = Publication(result['b_nr'],
-                                    result['bearbeiter'],
-                                    result['datum'],
-                                    **props
-                                    )
+                                   result['bearbeiter'],
+                                   result['datum'],
+                                   **props
+                                   )
                 query_result.append(publ)
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(
@@ -82,11 +82,16 @@ class Publication:
         if 'b_nr' in form and form['b_nr'] != "":
             b_nr = form['b_nr']
             # check if b_nr is valid pattern
-            # correct if neccessary/possible
+            # correct if necessary/possible
             b_nr = Publication.format_b_nr(b_nr)
             query_string = "b_nr:" + b_nr + " " + logical_operater + " "
+
         if 'author' in form and form['author'] != "":
-            query_string += "autor:" + _escape_value(form['author']) + " " + logical_operater + " "
+            if re.search("\([0-9]*\)$", form['author']):
+                query_string += "autor_ac:" + _escape_value(
+                    _remove_number_of_hits_from_autocomplete(form['author'])) + " " + logical_operater + " "
+            else:
+                query_string += "autor:" + (form['author']) + " " + logical_operater + " "
 
         if 'title' in form and form['title'] != "":
             query_string += "titel:" + _escape_value(form['title']) + " " + logical_operater + " "
@@ -118,7 +123,7 @@ class Publication:
         if 'other_corpora' in form and form['other_corpora'] != "":
             query_string += " sonstigeCorpora:" + _escape_value(form['other_corpora']) + " " + logical_operater + " "
         # remove last " AND"
-        query_string = re.sub(" " + logical_operater + " $","",query_string)
+        query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
 
     @classmethod
@@ -190,17 +195,30 @@ class Publication:
         """
         params = {
             'facet': 'on',
-            'facet.field': ac_field+'_ac',
-            'facet.sort': 'index',
+            'facet.field': ac_field + '_ac',
+            'facet.sort': 'count',
             'facet.mincount': 1,
             'facet.limit': '20',
             'rows': '0',
         }
-        query = ac_field+":"+term
-        query = re.sub(r"\s", r"\ ", query)
+        query = ac_field + ":" + term
+        # query = re.sub(r"\s", r"\ ", query)
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
         results = solr.search(query, **params)
-        return results.facets['facet_fields'][ac_field+'_ac'][::2]
+        # concat results and counts as string
+        return_list = []
+        is_first_element = True
+        first_item = ""
+        for entry in results.facets['facet_fields'][ac_field + "_ac"]:
+            if is_first_element:
+                first_item = entry
+                is_first_element = False
+                continue
+            else:
+                is_first_element = True
+                return_list.append(first_item + " (" + str(entry) + ")")
+        return return_list
+        # return results.facets['facet_fields'][ac_field+"_ac"][::2]
 
     @classmethod
     def format_b_nr(cls, b_nr):
@@ -234,6 +252,7 @@ def _escape_value(val):
     val = re.sub("\}", "\}", val)
     val = re.sub("/", "\/", val)
     val = re.sub("\?", "\?", val)
+    val = re.sub("\.", "\.", val)
     return val
 
 
@@ -248,3 +267,13 @@ def _get_url_without_pagination_parameters(url):
     url = re.sub("anzahl=[0-9]*&*", "", url)
     url = re.sub("&&", "&", url)
     return url
+
+
+def _remove_number_of_hits_from_autocomplete(user_entry):
+    """
+    removes number of hits from entry string that has been added by autocomplete
+    :param user_entry: user entry string with number of hits in parenthesis
+    :return: user_entry without number of hits
+    """
+    user_entry = re.sub("\([0-9]*\)$", "", user_entry).strip()
+    return user_entry

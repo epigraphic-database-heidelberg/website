@@ -33,6 +33,8 @@ class GeographySearch(FlaskForm):
     tm_geo_id = IntegerField(_l('Trismegistos Geo ID'))
     sort = SelectField(_l('sort by'),
                        choices=[('geo_id', ('Geo-ID')), ('province', _l('province')), ('country', _l('country')),
-                                ('ancient_find_spot', _l('ancient find spot')), ('modern_find_spot', _l('modern find spot')), ('find_spot', _l('find spot')), ('region', _l('verw_bezirk'))])
+                                ('ancient_find_spot', _l('ancient find spot')),
+                                ('modern_find_spot', _l('modern find spot')), ('find_spot', _l('find spot')),
+                                ('region', _l('verw_bezirk'))])
     anzahl = SelectField(_l('number of results/page'),
                          choices=[('20', '20'), ('50', '50'), ('100', '100'), ('200', '200')])
