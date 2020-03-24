@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import Optional, Regexp
 from flask_babel import lazy_gettext as _l
 
@@ -19,3 +19,8 @@ class BibliographySearch(FlaskForm):
     cil = StringField(_l('cil'))
     on_ae = StringField(_l('on_ae'))
     other_corpora = StringField(_l('other_corpora'))
+    sort = SelectField(_l('sort by'),
+                       choices=[('b_nr', _l('B-No')), ('author', _l('author')), ('publication', _l('publication')),
+                                ('years', _l('year(s)'))])
+    anzahl = SelectField(_l('number of results/page'),
+                       choices=[('20', '20'), ('50', '50'), ('100', '100'), ('200', '200')])

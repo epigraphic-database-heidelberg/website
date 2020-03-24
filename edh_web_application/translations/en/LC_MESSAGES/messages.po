@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-18 11:42+0100\n"
+"POT-Creation-Date: 2020-03-24 09:47+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -19,51 +19,58 @@ msgstr ""
 "Generated-By: Babel 2.6.0\n"
 
 #: edh_web_application/bibliography/forms.py:8
-#: edh_web_application/bibliography/templates/bibliography/search.html:97
+#: edh_web_application/bibliography/templates/bibliography/search.html:108
+#: edh_web_application/foto/forms.py:19
+#: edh_web_application/foto/templates/foto/search.html:96
 #: edh_web_application/geography/forms.py:19
 #: edh_web_application/geography/templates/geography/search.html:90
 msgid "Reset..."
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:9
+#: edh_web_application/foto/forms.py:20
 #: edh_web_application/geography/forms.py:20
 msgid "Submit..."
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:10
+#: edh_web_application/bibliography/forms.py:23
 msgid "B-No"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:11
+#: edh_web_application/bibliography/forms.py:23
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:37
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:19
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:18
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:59
 msgid "author"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:12
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:24
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:23
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:64
 msgid "title"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:13
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:29
+#: edh_web_application/bibliography/forms.py:23
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:70
 msgid "publication"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:14
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:35
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:76
 msgid "volume"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:15
+#: edh_web_application/bibliography/forms.py:24
 msgid "year(s)"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:16
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:66
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:47
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:88
 msgid "pages"
 msgstr ""
 
@@ -73,10 +80,12 @@ msgid "town"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:18
+#: edh_web_application/foto/forms.py:31
 msgid "ae"
 msgstr "AE"
 
 #: edh_web_application/bibliography/forms.py:19
+#: edh_web_application/foto/forms.py:30
 msgid "cil"
 msgstr "CIL"
 
@@ -87,6 +96,14 @@ msgstr "on AE"
 #: edh_web_application/bibliography/forms.py:21
 msgid "other_corpora"
 msgstr "other corpora"
+
+#: edh_web_application/bibliography/forms.py:22
+msgid "sort by"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:25
+msgid "number of results/page"
+msgstr ""
 
 #: edh_web_application/bibliography/routes.py:25
 #: edh_web_application/bibliography/routes.py:27
@@ -157,14 +174,14 @@ msgid "other corpora"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:15
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:14
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:55
 #: edh_web_application/geography/templates/geography/last_updates.html:17
 #: edh_web_application/geography/templates/geography/search_results.html:55
 msgid "&ndash; open detailed view..."
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:30
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:41
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:82
 msgid "years"
 msgstr ""
 
@@ -180,7 +197,8 @@ msgstr ""
 msgid "Start new search"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search.html:97
+#: edh_web_application/bibliography/templates/bibliography/search.html:108
+#: edh_web_application/foto/templates/foto/search.html:96
 #: edh_web_application/geography/templates/geography/search.html:90
 msgid "Search..."
 msgstr ""
@@ -193,6 +211,11 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:9
 #: edh_web_application/geography/templates/geography/search_results.html:9
 msgid "hits."
+msgstr ""
+
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:55
+#: edh_web_application/geography/templates/geography/search_results.html:55
+msgid "Number"
 msgstr ""
 
 #: edh_web_application/data/routes.py:9
@@ -222,20 +245,89 @@ msgstr ""
 "available in RDF format as well; you can find the SPARQL endpoint <a "
 "href=\"./data/sparql\">here</a>.</p>"
 
-#: edh_web_application/foto/routes.py:10
+#: edh_web_application/foto/forms.py:21
+#: edh_web_application/foto/templates/foto/detail_view.html:16
+msgid "F-number"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:22
+#: edh_web_application/foto/templates/foto/detail_view.html:35
+#: edh_web_application/geography/forms.py:22
+#: edh_web_application/geography/templates/geography/detail_view.html:73
+#: edh_web_application/geography/templates/geography/last_updates.html:27
+#: edh_web_application/geography/templates/geography/search_results.html:65
+msgid "province"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:23
+#: edh_web_application/foto/templates/foto/detail_view.html:39
+#: edh_web_application/geography/forms.py:23
+#: edh_web_application/geography/templates/geography/detail_view.html:77
+#: edh_web_application/geography/templates/geography/last_updates.html:32
+#: edh_web_application/geography/templates/geography/search_results.html:70
+msgid "country"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:24
+#: edh_web_application/foto/templates/foto/detail_view.html:43
+#: edh_web_application/geography/forms.py:24
+#: edh_web_application/geography/templates/geography/detail_view.html:81
+#: edh_web_application/geography/templates/geography/last_updates.html:37
+#: edh_web_application/geography/templates/geography/search_results.html:75
+msgid "ancient find spot"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:25
+#: edh_web_application/foto/templates/foto/detail_view.html:47
+#: edh_web_application/geography/forms.py:25
+#: edh_web_application/geography/templates/geography/detail_view.html:91
+#: edh_web_application/geography/templates/geography/last_updates.html:41
+#: edh_web_application/geography/templates/geography/search_results.html:79
+msgid "modern find spot"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:26
+#: edh_web_application/foto/templates/foto/detail_view.html:51
+msgid "present location"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:27
+#: edh_web_application/foto/templates/foto/detail_view.html:62
+msgid "original image"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:28
+#: edh_web_application/foto/templates/foto/detail_view.html:68
+msgid "date of photograph"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:29
+#: edh_web_application/foto/templates/foto/detail_view.html:74
+msgid "quality"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:32
+msgid "other literature"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:33
+msgid "commentary"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:34
+msgid "HD-No."
+msgstr ""
+
+#: edh_web_application/foto/routes.py:11
 msgid "Foto Database: Search"
 msgstr ""
 
-#: edh_web_application/foto/routes.py:18 edh_web_application/foto/routes.py:21
+#: edh_web_application/foto/routes.py:19 edh_web_application/foto/routes.py:22
 msgid "Epigraphic Foto Database: Detail View"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:12
 msgid "Generic data"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:16
-msgid "F-number"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:20
@@ -252,56 +344,8 @@ msgstr ""
 msgid "Find circumstances / present location"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:35
-#: edh_web_application/geography/forms.py:22
-#: edh_web_application/geography/templates/geography/detail_view.html:73
-#: edh_web_application/geography/templates/geography/last_updates.html:27
-#: edh_web_application/geography/templates/geography/search_results.html:65
-msgid "province"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:39
-#: edh_web_application/geography/forms.py:23
-#: edh_web_application/geography/templates/geography/detail_view.html:77
-#: edh_web_application/geography/templates/geography/last_updates.html:32
-#: edh_web_application/geography/templates/geography/search_results.html:70
-msgid "country"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:43
-#: edh_web_application/geography/forms.py:24
-#: edh_web_application/geography/templates/geography/detail_view.html:81
-#: edh_web_application/geography/templates/geography/last_updates.html:37
-#: edh_web_application/geography/templates/geography/search_results.html:75
-msgid "ancient find spot"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:47
-#: edh_web_application/geography/forms.py:25
-#: edh_web_application/geography/templates/geography/detail_view.html:91
-#: edh_web_application/geography/templates/geography/last_updates.html:41
-#: edh_web_application/geography/templates/geography/search_results.html:79
-msgid "modern find spot"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:51
-msgid "present location"
-msgstr ""
-
 #: edh_web_application/foto/templates/foto/detail_view.html:58
 msgid "Picture"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:62
-msgid "original image"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:68
-msgid "date of photograph"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:74
-msgid "quality"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:81
@@ -390,10 +434,6 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/search_results.html:55
-msgid "Number"
-msgstr ""
-
 #: edh_web_application/inscription/routes.py:10
 msgid "Epigraphic Text Database: Simple Search"
 msgstr "Epigraphic Text Database: Simple Search"
@@ -410,6 +450,255 @@ msgstr "Epigraphic Text Database: Browse Inscriptions"
 #: edh_web_application/inscription/routes.py:30
 msgid "Epigraphic Text Database: Detail View"
 msgstr ""
+
+#: edh_web_application/models/Foto.py:17 edh_web_application/models/Place.py:17
+msgid "land-ad"
+msgstr "Andorra"
+
+#: edh_web_application/models/Foto.py:18 edh_web_application/models/Place.py:18
+msgid "land-al"
+msgstr "Albania"
+
+#: edh_web_application/models/Foto.py:19 edh_web_application/models/Place.py:19
+msgid "land-am"
+msgstr "Armenia"
+
+#: edh_web_application/models/Foto.py:20 edh_web_application/models/Place.py:20
+msgid "land-at"
+msgstr "Austria"
+
+#: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:21
+msgid "land-az"
+msgstr "Azerbaijan"
+
+#: edh_web_application/models/Foto.py:22 edh_web_application/models/Place.py:22
+msgid "land-ba"
+msgstr "Bosnia and Herzegovina"
+
+#: edh_web_application/models/Foto.py:23 edh_web_application/models/Place.py:23
+msgid "land-be"
+msgstr "Belgium"
+
+#: edh_web_application/models/Foto.py:24 edh_web_application/models/Place.py:24
+msgid "land-bg"
+msgstr "Bulgaria"
+
+#: edh_web_application/models/Foto.py:25 edh_web_application/models/Place.py:25
+msgid "land-ch"
+msgstr "Switzerland"
+
+#: edh_web_application/models/Foto.py:26 edh_web_application/models/Place.py:26
+msgid "land-cy"
+msgstr "Cyprus"
+
+#: edh_web_application/models/Foto.py:27 edh_web_application/models/Place.py:27
+msgid "land-cz"
+msgstr "Czech Republic"
+
+#: edh_web_application/models/Foto.py:28 edh_web_application/models/Place.py:28
+msgid "land-de"
+msgstr "Germany"
+
+#: edh_web_application/models/Foto.py:29 edh_web_application/models/Place.py:29
+msgid "land-dk"
+msgstr "Denmark"
+
+#: edh_web_application/models/Foto.py:30 edh_web_application/models/Place.py:30
+msgid "land-dz"
+msgstr "Algeria"
+
+#: edh_web_application/models/Foto.py:31 edh_web_application/models/Place.py:31
+msgid "land-eg"
+msgstr "Egypt"
+
+#: edh_web_application/models/Foto.py:32 edh_web_application/models/Place.py:32
+msgid "land-es"
+msgstr "Spain"
+
+#: edh_web_application/models/Foto.py:33 edh_web_application/models/Place.py:33
+msgid "land-fr"
+msgstr "France"
+
+#: edh_web_application/models/Foto.py:34 edh_web_application/models/Place.py:34
+msgid "land-gb"
+msgstr "United Kingdom"
+
+#: edh_web_application/models/Foto.py:35 edh_web_application/models/Place.py:35
+msgid "land-ge"
+msgstr "Georgia"
+
+#: edh_web_application/models/Foto.py:36 edh_web_application/models/Place.py:36
+msgid "land-gi"
+msgstr "Gibraltar"
+
+#: edh_web_application/models/Foto.py:37 edh_web_application/models/Place.py:37
+msgid "land-gr"
+msgstr "Greece"
+
+#: edh_web_application/models/Foto.py:38 edh_web_application/models/Place.py:38
+msgid "land-hr"
+msgstr "Croatia"
+
+#: edh_web_application/models/Foto.py:39 edh_web_application/models/Place.py:39
+msgid "land-hu"
+msgstr "Hungary"
+
+#: edh_web_application/models/Foto.py:40 edh_web_application/models/Place.py:40
+msgid "land-il"
+msgstr "Isreal"
+
+#: edh_web_application/models/Foto.py:41 edh_web_application/models/Place.py:41
+msgid "land-iq"
+msgstr "Iraq"
+
+#: edh_web_application/models/Foto.py:42 edh_web_application/models/Place.py:42
+msgid "land-it"
+msgstr "Italy"
+
+#: edh_web_application/models/Foto.py:43 edh_web_application/models/Place.py:43
+msgid "land-jo"
+msgstr "Jordan"
+
+#: edh_web_application/models/Foto.py:44 edh_web_application/models/Place.py:44
+msgid "land-kg"
+msgstr "Kyrgyzstan"
+
+#: edh_web_application/models/Foto.py:45 edh_web_application/models/Place.py:45
+msgid "land-kz"
+msgstr "Kazakhstan"
+
+#: edh_web_application/models/Foto.py:46 edh_web_application/models/Place.py:46
+msgid "land-lb"
+msgstr "Lebanon"
+
+#: edh_web_application/models/Foto.py:47 edh_web_application/models/Place.py:47
+msgid "land-li"
+msgstr "Liechtenstein"
+
+#: edh_web_application/models/Foto.py:48 edh_web_application/models/Place.py:48
+msgid "land-lu"
+msgstr "Luxembourg"
+
+#: edh_web_application/models/Foto.py:49 edh_web_application/models/Place.py:49
+msgid "land-ly"
+msgstr "Lybia"
+
+#: edh_web_application/models/Foto.py:50 edh_web_application/models/Place.py:50
+msgid "land-ma"
+msgstr "Morocco"
+
+#: edh_web_application/models/Foto.py:51 edh_web_application/models/Place.py:51
+msgid "land-mc"
+msgstr "Monaco"
+
+#: edh_web_application/models/Foto.py:52 edh_web_application/models/Place.py:52
+msgid "land-md"
+msgstr "Moldova"
+
+#: edh_web_application/models/Foto.py:53 edh_web_application/models/Place.py:53
+msgid "land-me"
+msgstr "Montenegro"
+
+#: edh_web_application/models/Foto.py:54 edh_web_application/models/Place.py:54
+msgid "land-mk"
+msgstr "Macedonia"
+
+#: edh_web_application/models/Foto.py:55 edh_web_application/models/Place.py:55
+msgid "land-mt"
+msgstr "Malta"
+
+#: edh_web_application/models/Foto.py:56 edh_web_application/models/Place.py:56
+msgid "land-nl"
+msgstr "Netherlands"
+
+#: edh_web_application/models/Foto.py:57 edh_web_application/models/Place.py:57
+msgid "land-pl"
+msgstr "Poland"
+
+#: edh_web_application/models/Foto.py:58 edh_web_application/models/Place.py:58
+msgid "land-pt"
+msgstr "Portugal"
+
+#: edh_web_application/models/Foto.py:59 edh_web_application/models/Place.py:59
+msgid "land-ro"
+msgstr "Romania"
+
+#: edh_web_application/models/Foto.py:60 edh_web_application/models/Place.py:60
+msgid "land-rs"
+msgstr "Serbia"
+
+#: edh_web_application/models/Foto.py:61 edh_web_application/models/Place.py:61
+msgid "land-ru"
+msgstr "Russia"
+
+#: edh_web_application/models/Foto.py:62 edh_web_application/models/Place.py:62
+msgid "land-sd"
+msgstr "Sudan"
+
+#: edh_web_application/models/Foto.py:63 edh_web_application/models/Place.py:63
+msgid "land-se"
+msgstr "Sweden"
+
+#: edh_web_application/models/Foto.py:64 edh_web_application/models/Place.py:64
+msgid "land-si"
+msgstr "Slovenia"
+
+#: edh_web_application/models/Foto.py:65 edh_web_application/models/Place.py:65
+msgid "land-sk"
+msgstr "Slovakia"
+
+#: edh_web_application/models/Foto.py:66 edh_web_application/models/Place.py:66
+msgid "land-sm"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:67 edh_web_application/models/Place.py:67
+msgid "land-sa"
+msgstr "San Marino"
+
+#: edh_web_application/models/Foto.py:68 edh_web_application/models/Place.py:68
+msgid "land-sy"
+msgstr "Syrian Arab Republic"
+
+#: edh_web_application/models/Foto.py:69 edh_web_application/models/Place.py:69
+msgid "land-tj"
+msgstr "Tajikistan"
+
+#: edh_web_application/models/Foto.py:70 edh_web_application/models/Place.py:70
+msgid "land-tn"
+msgstr "Tunisia"
+
+#: edh_web_application/models/Foto.py:71 edh_web_application/models/Place.py:71
+msgid "land-tr"
+msgstr "Turkey"
+
+#: edh_web_application/models/Foto.py:72 edh_web_application/models/Place.py:72
+msgid "land-ua"
+msgstr "Ukraine"
+
+#: edh_web_application/models/Foto.py:73 edh_web_application/models/Place.py:73
+msgid "land-?"
+msgstr "unknown"
+
+#: edh_web_application/models/Foto.py:74 edh_web_application/models/Place.py:74
+msgid "land-uz"
+msgstr "Uzbekistan"
+
+#: edh_web_application/models/Foto.py:75 edh_web_application/models/Place.py:75
+msgid "land-va"
+msgstr "Vatican City State"
+
+#: edh_web_application/models/Foto.py:76 edh_web_application/models/Place.py:76
+msgid "land-ye"
+msgstr "Yemen"
+
+#: edh_web_application/models/Foto.py:77 edh_web_application/models/Place.py:77
+msgid "land-rks"
+msgstr "Kosovo"
+
+#: edh_web_application/models/Foto.py:115
+#: edh_web_application/models/Place.py:115
+msgid "unknown"
+msgstr "unknown"
 
 #: edh_web_application/models/Person.py:14
 msgid "senatorial order"
@@ -450,254 +739,6 @@ msgstr ""
 #: edh_web_application/models/Person.py:23
 msgid "emperor / imperial household"
 msgstr ""
-
-#: edh_web_application/models/Place.py:17
-msgid "land-ad"
-msgstr "Andorra"
-
-#: edh_web_application/models/Place.py:18
-msgid "land-al"
-msgstr "Albania"
-
-#: edh_web_application/models/Place.py:19
-msgid "land-am"
-msgstr "Armenia"
-
-#: edh_web_application/models/Place.py:20
-msgid "land-at"
-msgstr "Austria"
-
-#: edh_web_application/models/Place.py:21
-msgid "land-az"
-msgstr "Azerbaijan"
-
-#: edh_web_application/models/Place.py:22
-msgid "land-ba"
-msgstr "Bosnia and Herzegovina"
-
-#: edh_web_application/models/Place.py:23
-msgid "land-be"
-msgstr "Belgium"
-
-#: edh_web_application/models/Place.py:24
-msgid "land-bg"
-msgstr "Bulgaria"
-
-#: edh_web_application/models/Place.py:25
-msgid "land-ch"
-msgstr "Switzerland"
-
-#: edh_web_application/models/Place.py:26
-msgid "land-cy"
-msgstr "Cyprus"
-
-#: edh_web_application/models/Place.py:27
-msgid "land-cz"
-msgstr "Czech Republic"
-
-#: edh_web_application/models/Place.py:28
-msgid "land-de"
-msgstr "Germany"
-
-#: edh_web_application/models/Place.py:29
-msgid "land-dk"
-msgstr "Denmark"
-
-#: edh_web_application/models/Place.py:30
-msgid "land-dz"
-msgstr "Algeria"
-
-#: edh_web_application/models/Place.py:31
-msgid "land-eg"
-msgstr "Egypt"
-
-#: edh_web_application/models/Place.py:32
-msgid "land-es"
-msgstr "Spain"
-
-#: edh_web_application/models/Place.py:33
-msgid "land-fr"
-msgstr "France"
-
-#: edh_web_application/models/Place.py:34
-msgid "land-gb"
-msgstr "United Kingdom"
-
-#: edh_web_application/models/Place.py:35
-msgid "land-ge"
-msgstr "Georgia"
-
-#: edh_web_application/models/Place.py:36
-msgid "land-gi"
-msgstr "Gibraltar"
-
-#: edh_web_application/models/Place.py:37
-msgid "land-gr"
-msgstr "Greece"
-
-#: edh_web_application/models/Place.py:38
-msgid "land-hr"
-msgstr "Croatia"
-
-#: edh_web_application/models/Place.py:39
-msgid "land-hu"
-msgstr "Hungary"
-
-#: edh_web_application/models/Place.py:40
-msgid "land-il"
-msgstr "Isreal"
-
-#: edh_web_application/models/Place.py:41
-msgid "land-iq"
-msgstr "Iraq"
-
-#: edh_web_application/models/Place.py:42
-msgid "land-it"
-msgstr "Italy"
-
-#: edh_web_application/models/Place.py:43
-msgid "land-jo"
-msgstr "Jordan"
-
-#: edh_web_application/models/Place.py:44
-msgid "land-kg"
-msgstr "Kyrgyzstan"
-
-#: edh_web_application/models/Place.py:45
-msgid "land-kz"
-msgstr "Kazakhstan"
-
-#: edh_web_application/models/Place.py:46
-msgid "land-lb"
-msgstr "Lebanon"
-
-#: edh_web_application/models/Place.py:47
-msgid "land-li"
-msgstr "Liechtenstein"
-
-#: edh_web_application/models/Place.py:48
-msgid "land-lu"
-msgstr "Luxembourg"
-
-#: edh_web_application/models/Place.py:49
-msgid "land-ly"
-msgstr "Lybia"
-
-#: edh_web_application/models/Place.py:50
-msgid "land-ma"
-msgstr "Morocco"
-
-#: edh_web_application/models/Place.py:51
-msgid "land-mc"
-msgstr "Monaco"
-
-#: edh_web_application/models/Place.py:52
-msgid "land-md"
-msgstr "Moldova"
-
-#: edh_web_application/models/Place.py:53
-msgid "land-me"
-msgstr "Montenegro"
-
-#: edh_web_application/models/Place.py:54
-msgid "land-mk"
-msgstr "Macedonia"
-
-#: edh_web_application/models/Place.py:55
-msgid "land-mt"
-msgstr "Malta"
-
-#: edh_web_application/models/Place.py:56
-msgid "land-nl"
-msgstr "Netherlands"
-
-#: edh_web_application/models/Place.py:57
-msgid "land-pl"
-msgstr "Poland"
-
-#: edh_web_application/models/Place.py:58
-msgid "land-pt"
-msgstr "Portugal"
-
-#: edh_web_application/models/Place.py:59
-msgid "land-ro"
-msgstr "Romania"
-
-#: edh_web_application/models/Place.py:60
-msgid "land-rs"
-msgstr "Serbia"
-
-#: edh_web_application/models/Place.py:61
-msgid "land-ru"
-msgstr "Russia"
-
-#: edh_web_application/models/Place.py:62
-msgid "land-sd"
-msgstr "Sudan"
-
-#: edh_web_application/models/Place.py:63
-msgid "land-se"
-msgstr "Sweden"
-
-#: edh_web_application/models/Place.py:64
-msgid "land-si"
-msgstr "Slovenia"
-
-#: edh_web_application/models/Place.py:65
-msgid "land-sk"
-msgstr "Slovakia"
-
-#: edh_web_application/models/Place.py:66
-msgid "land-sm"
-msgstr ""
-
-#: edh_web_application/models/Place.py:67
-msgid "land-sa"
-msgstr "San Marino"
-
-#: edh_web_application/models/Place.py:68
-msgid "land-sy"
-msgstr "Syrian Arab Republic"
-
-#: edh_web_application/models/Place.py:69
-msgid "land-tj"
-msgstr "Tajikistan"
-
-#: edh_web_application/models/Place.py:70
-msgid "land-tn"
-msgstr "Tunisia"
-
-#: edh_web_application/models/Place.py:71
-msgid "land-tr"
-msgstr "Turkey"
-
-#: edh_web_application/models/Place.py:72
-msgid "land-ua"
-msgstr "Ukraine"
-
-#: edh_web_application/models/Place.py:73
-msgid "land-?"
-msgstr "unknown"
-
-#: edh_web_application/models/Place.py:74
-msgid "land-uz"
-msgstr "Uzbekistan"
-
-#: edh_web_application/models/Place.py:75
-msgid "land-va"
-msgstr "Vatican City State"
-
-#: edh_web_application/models/Place.py:76
-msgid "land-ye"
-msgstr "Yemen"
-
-#: edh_web_application/models/Place.py:77
-msgid "land-rks"
-msgstr "Kosovo"
-
-#: edh_web_application/models/Place.py:115
-msgid "unknown"
-msgstr "unknown"
 
 #: edh_web_application/person/routes.py:18
 msgid "Epigraphic People Database: Detail View"
@@ -1600,86 +1641,149 @@ msgstr ""
 #: edh_web_application/project/templates/project/project_presentations.html:9
 msgid "Presentations page"
 msgstr ""
-"<ul class=\"timeline\">  "
-"<li><div class=\"direction-l\"><div class=\"flag-wrapper\"><span class=\"hexa\"></span><span class=\"flag\">February 2020</span>      </div>      <div class=\"desc\">Contribution of EDH to <a href=\"http://epigraphy.info/workshop_4.html\">4. epigraphy.info Workshop</a>, Hamburg (Dr. F. Feraudi-Gruénais, Dr. F. Grieshaber)</div>    </div>  </li>"
-"<li><div "
-"class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
-"class=\"hexa\"></span>        <span class=\"flag\">June 2019</span>      "
-"</div>      <div class=\"desc\">Contribution of EDH to <a "
+"<ul class=\"timeline\">  <li><div class=\"direction-l\"><div class"
+"=\"flag-wrapper\"><span class=\"hexa\"></span><span "
+"class=\"flag\">February 2020</span>      </div>      <div "
+"class=\"desc\">Contribution of EDH to <a "
+"href=\"http://epigraphy.info/workshop_4.html\">4. epigraphy.info "
+"Workshop</a>, Hamburg (Dr. F. Feraudi-Gruénais, Dr. F. Grieshaber)</div>"
+"    </div>  </li><li><div class=\"direction-r\">      <div class=\"flag-"
+"wrapper\">        <span class=\"hexa\"></span>        <span "
+"class=\"flag\">June 2019</span>      </div>      <div "
+"class=\"desc\">Contribution of EDH to <a "
 "href=\"http://epigraphy.info/workshop_3.html\">3. epigraphy.info "
-"Workshop</a>, Wien (Dr. B. Gräf, Dr. J. Cowey, J. Osnabrügge)</div>    </div>  </li> "
-"<li>    <div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">March "
-"2019</span>      </div>      <div class=\"desc\">Heidelberger Life Science Lab, Presentation: \"Heidelberger Römersteine\" (Dr. Francisca Feraudi-Gruénais)</div>    </div>  </li>"
-"<li><div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">February/March 2019</span>"
-"      </div>      <div class=\"desc\">'BOGY' Internships"
-"</div>    </div>  </li>"
-"<li>    <div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">December "
-"2018</span>      </div>      <div class=\"desc\">Contribution of EDH to <a "
+"Workshop</a>, Wien (Dr. B. Gräf, Dr. J. Cowey, J. Osnabrügge)</div>    "
+"</div>  </li> <li>    <div class=\"direction-l\">      <div class=\"flag-"
+"wrapper\">        <span class=\"hexa\"></span>        <span "
+"class=\"flag\">March 2019</span>      </div>      <div "
+"class=\"desc\">Heidelberger Life Science Lab, Presentation: "
+"\"Heidelberger Römersteine\" (Dr. Francisca Feraudi-Gruénais)</div>    "
+"</div>  </li><li><div class=\"direction-r\">      <div class=\"flag-"
+"wrapper\">        <span class=\"hexa\"></span>        <span "
+"class=\"flag\">February/March 2019</span>      </div>      <div "
+"class=\"desc\">'BOGY' Internships</div>    </div>  </li><li>    <div "
+"class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
+"class=\"hexa\"></span>        <span class=\"flag\">December 2018</span>"
+"      </div>      <div class=\"desc\">Contribution of EDH to <a "
 "href=\"http://epigraphy.info/workshop_2.html\">2. epigraphy.info "
-"Workshop</a>, Zadar (Dr. F. Feraudi-Gruénais, Dr. F. Grieshaber)</div>    </div>  </li>"
-"<li><div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">April 2018</span>"
-"      </div>      <div class=\"desc\">'BOGY' internships</div>    </div>  </li>"
-"<li><div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">March 2018</span>"
-"      </div>      <div class=\"desc\">Organisation of the <a href=\"https://www.hadw-"
-"bw.de/news/events/epigraphyinfo\">1. epigraphy.info Workshop</a>, "
-"Heidelberg</div>    </div>  </li>"
-"<li><div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">Autumn 2017</span>"
-"      </div>      <div class=\"desc\">Adding online links to inscriptions hold in the <a href=\"https://www.museum-heidelberg.de/1360676.html\">Archäologischen Abteilung des Kurpfälzischen Museums Heidelberg</a> by QR-Codes,  based on the publication:  F. Feraudi-Gruénais / R. Ludwig, Die Heidelberger Römersteine. Bildwerke, Architekturteile und Inschriften im Kurpfälzischen Museum Heidelberg (Heidelberg 2017)</div>    </div>  </li>"
-"<li>    <div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">August "
-"2017</span></div> <div class=\"desc\">XVth International Congress of Greek and Latin Epigraphy (Wien): epigraphy.info: A new Collaborative Platform for Digital Epigraphy under construction (Dr. Francisca Feraudi-Gruénais / Dr. Frank Grieshaber)<br /><img src=\"/static/img/2017_epi_kongress_wien_plakat.jpg\" style=\"width:200px\"></div>    </div>  </li>"
-"<li><div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">July 2017</span>"
-"      </div>      <div class=\"desc\">Presentation: \"Latein auf Stein. Inschriften in Heidelberg entdecken\" during the presentation series \"Wir forschen für Sie\" of the Heidelberg Academy of Sciences and Humanities and the VHS (Dr. Francisca Feraudi-Gruénais)</div>    </div>  </li>"
-"<li>    <div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">May "
-"2015</span></div> <div class=\"desc\">\"Akademientag\" in Berlin: Organization of an epigraphic workshop for school children and presentation of EDH on the \"Projektstraße\" (Dr. Brigitte Gräf, Dr. Frank Grieshaber)<br /><img src=\"/static/img/akademientag_berlin_litfass.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"<li><div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">July 2011</span>"
-"      </div>      <div class=\"desc\">Contribution of EDH to the \"Unimeile\" during the 625 anniversary of Heidelberg University <img src=\"/static/img/3D-scan.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"<li>    <div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">January "
-"2011</span></div> <div class=\"desc\">Organization of an epigraphic workshop  \"Epidoc/SoSOL training workshop\" Dr. James Cowey, Dr. Francisca Feraudi-Gruénais (Università di Bologna/Italien)<br /><img src=\"/static/img/epidoc_bologna_gruppe.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"<li><div class=\"direction-r\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">November 2011</span>"
-"</div><div class=\"desc\">Convegno Internazionale EAGLE in Rom on initiative of EDH: Discussion and decission about optimizing functionalities of the common EAGLE search masks (Dr. James Cowey, Dr. Francisca Feraudi-Gruénais, Dr. Frank Grieshaber)</div></div></li>"
-"<li><div class=\"direction-l\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">May "
-"2010</span></div> <div class=\"desc\">\"Epigrafista in azione: analisi e interpretazione di un recentissimo reperto epigrafico della Germania superior\": Workshop organized by Dr. Francisca Feraudi-Gruénais (Università degli Studi Udine/Italien)<br /><img src=\"/static/img/abklatsch_uebung.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"<li><div class=\"direction-r\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">October 2010</span>"
-"</div><div class=\"desc\">Contribution of EDH to \"Nacht der Wissenschaften\" in Heidelberg</div></div></li>"
-"<li><div class=\"direction-l\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">November 2008</span>"
-"</div><div class=\"desc\">Participation of EDH at Convegno Internazionale EAGLE in Rom: Presentation of status quo of EDH (Prof. Dr. Christian Witschel, Dr. Francisca Feraudi-Gruénais)</div></div></li>"
-"<li><div class=\"direction-r\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">November "
-"2007</span></div> <div class=\"desc\">Contribution of EDH to \"Nacht der Wissenschaften\" in Heidelberg<br /><img src=\"/static/img/nact_der_wissenschaften_banner.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"<li><div class=\"direction-l\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">September 2007</span>"
-"</div><div class=\"desc\">Presentation of EDH during the 13th International Congress of Greek and Latin Epigraphy in Oxford: Report about \"Work & Progress and Perspectives of EDH\" im Rahmen des Thematic Panel 1.VI. Epigraphy and Information Technology (Dr. Francisca Feraudi-Gruénais)</div></div></li>"
-"<li><div class=\"direction-r\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">July 2006</span>"
-"</div><div class=\"desc\">Introduction to Latin Epigraphy during the \"Römertag\" of the Kurfürst-Friedrich-Gymnasium Heidelberg (Dr. Francisca Feraudi-Gruénais)</div></div></li>"
-"<li><div class=\"direction-l\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">July "
-"2006</span></div> <div class=\"desc\">Contribution of EDH to the \"Wissenschaftssommer 2006\" in Munich ('Wissenschaft im Dialog' / Union der Akademien) Andreas Dafferner, Dr. Francisca Feraudi-Gruénais<br /><img src=\"/static/img/wisso_1.jpg\" style=\"width:200px\" /><img src=\"/static/img/wisso_2.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"<li><div class=\"direction-r\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">April/May "
-"2005</span></div> <div class=\"desc\">Workshop: \"Epigraphik und elektronische Medien\" Dr. Francisca Feraudi-Gruénais (Péter-Pázmány-Universität Piliscsaba/Ungarn)<br /><img src=\"/static/img/sched_adorjani1.jpg\" style=\"width:200px\" /><img src=\"/static/img/sched_adorjani2.jpg\" style=\"width:200px\" /><img src=\"/static/img/2005-budapest08.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"<li><div class=\"direction-l\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">September "
-"2003</span></div> <div class=\"desc\">Contribution of EDH to \"Tag des Offenen Denkmals\" Heidelberg<br /><img src=\"/static/img/tod_2003_3.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"<li><div class=\"direction-r\"><div class=\"flag-wrapper\">"
-"<span class=\"hexa\"></span><span class=\"flag\">June "
-"2002</span></div> <div class=\"desc\">Contribution of EDH to \"Wissenschaftsmarkt\" of Heidelberg University<br /><img src=\"/static/img/wissmarkt_klinger_2.jpg\" style=\"width:200px\" /><img src=\"/static/img/wiss-markt_flyer.jpg\" style=\"width:200px\" /></div>    </div>  </li>"
-"</ul>"
+"Workshop</a>, Zadar (Dr. F. Feraudi-Gruénais, Dr. F. Grieshaber)</div>"
+"    </div>  </li><li><div class=\"direction-r\">      <div class=\"flag-"
+"wrapper\">        <span class=\"hexa\"></span>        <span "
+"class=\"flag\">April 2018</span>      </div>      <div "
+"class=\"desc\">'BOGY' internships</div>    </div>  </li><li><div "
+"class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
+"class=\"hexa\"></span>        <span class=\"flag\">March 2018</span>"
+"      </div>      <div class=\"desc\">Organisation of the <a "
+"href=\"https://www.hadw-bw.de/news/events/epigraphyinfo\">1. "
+"epigraphy.info Workshop</a>, Heidelberg</div>    </div>  </li><li><div "
+"class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
+"class=\"hexa\"></span>        <span class=\"flag\">Autumn 2017</span>"
+"      </div>      <div class=\"desc\">Adding online links to inscriptions"
+" hold in the <a href=\"https://www.museum-"
+"heidelberg.de/1360676.html\">Archäologischen Abteilung des Kurpfälzischen"
+" Museums Heidelberg</a> by QR-Codes,  based on the publication:  F. "
+"Feraudi-Gruénais / R. Ludwig, Die Heidelberger Römersteine. Bildwerke, "
+"Architekturteile und Inschriften im Kurpfälzischen Museum Heidelberg "
+"(Heidelberg 2017)</div>    </div>  </li><li>    <div "
+"class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
+"class=\"hexa\"></span>        <span class=\"flag\">August "
+"2017</span></div> <div class=\"desc\">XVth International Congress of "
+"Greek and Latin Epigraphy (Wien): epigraphy.info: A new Collaborative "
+"Platform for Digital Epigraphy under construction (Dr. Francisca Feraudi-"
+"Gruénais / Dr. Frank Grieshaber)<br /><img "
+"src=\"/static/img/2017_epi_kongress_wien_plakat.jpg\" "
+"style=\"width:200px\"></div>    </div>  </li><li><div "
+"class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
+"class=\"hexa\"></span>        <span class=\"flag\">July 2017</span>      "
+"</div>      <div class=\"desc\">Presentation: \"Latein auf Stein. "
+"Inschriften in Heidelberg entdecken\" during the presentation series "
+"\"Wir forschen für Sie\" of the Heidelberg Academy of Sciences and "
+"Humanities and the VHS (Dr. Francisca Feraudi-Gruénais)</div>    </div>  "
+"</li><li>    <div class=\"direction-l\">      <div class=\"flag-"
+"wrapper\">        <span class=\"hexa\"></span>        <span "
+"class=\"flag\">May 2015</span></div> <div class=\"desc\">\"Akademientag\""
+" in Berlin: Organization of an epigraphic workshop for school children "
+"and presentation of EDH on the \"Projektstraße\" (Dr. Brigitte Gräf, Dr. "
+"Frank Grieshaber)<br /><img "
+"src=\"/static/img/akademientag_berlin_litfass.jpg\" style=\"width:200px\""
+" /></div>    </div>  </li><li><div class=\"direction-r\">      <div class"
+"=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
+"class=\"flag\">July 2011</span>      </div>      <div "
+"class=\"desc\">Contribution of EDH to the \"Unimeile\" during the 625 "
+"anniversary of Heidelberg University <img src=\"/static/img/3D-scan.jpg\""
+" style=\"width:200px\" /></div>    </div>  </li><li>    <div "
+"class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
+"class=\"hexa\"></span>        <span class=\"flag\">January "
+"2011</span></div> <div class=\"desc\">Organization of an epigraphic "
+"workshop  \"Epidoc/SoSOL training workshop\" Dr. James Cowey, Dr. "
+"Francisca Feraudi-Gruénais (Università di Bologna/Italien)<br /><img "
+"src=\"/static/img/epidoc_bologna_gruppe.jpg\" style=\"width:200px\" "
+"/></div>    </div>  </li><li><div class=\"direction-r\"><div class"
+"=\"flag-wrapper\"><span class=\"hexa\"></span><span "
+"class=\"flag\">November 2011</span></div><div class=\"desc\">Convegno "
+"Internazionale EAGLE in Rom on initiative of EDH: Discussion and "
+"decission about optimizing functionalities of the common EAGLE search "
+"masks (Dr. James Cowey, Dr. Francisca Feraudi-Gruénais, Dr. Frank "
+"Grieshaber)</div></div></li><li><div class=\"direction-l\"><div class"
+"=\"flag-wrapper\"><span class=\"hexa\"></span><span class=\"flag\">May "
+"2010</span></div> <div class=\"desc\">\"Epigrafista in azione: analisi e "
+"interpretazione di un recentissimo reperto epigrafico della Germania "
+"superior\": Workshop organized by Dr. Francisca Feraudi-Gruénais "
+"(Università degli Studi Udine/Italien)<br /><img "
+"src=\"/static/img/abklatsch_uebung.jpg\" style=\"width:200px\" /></div>"
+"    </div>  </li><li><div class=\"direction-r\"><div class=\"flag-"
+"wrapper\"><span class=\"hexa\"></span><span class=\"flag\">October "
+"2010</span></div><div class=\"desc\">Contribution of EDH to \"Nacht der "
+"Wissenschaften\" in Heidelberg</div></div></li><li><div "
+"class=\"direction-l\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">November 2008</span></div><div"
+" class=\"desc\">Participation of EDH at Convegno Internazionale EAGLE in "
+"Rom: Presentation of status quo of EDH (Prof. Dr. Christian Witschel, Dr."
+" Francisca Feraudi-Gruénais)</div></div></li><li><div "
+"class=\"direction-r\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">November 2007</span></div> "
+"<div class=\"desc\">Contribution of EDH to \"Nacht der Wissenschaften\" "
+"in Heidelberg<br /><img "
+"src=\"/static/img/nact_der_wissenschaften_banner.jpg\" "
+"style=\"width:200px\" /></div>    </div>  </li><li><div "
+"class=\"direction-l\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">September "
+"2007</span></div><div class=\"desc\">Presentation of EDH during the 13th "
+"International Congress of Greek and Latin Epigraphy in Oxford: Report "
+"about \"Work & Progress and Perspectives of EDH\" im Rahmen des Thematic "
+"Panel 1.VI. Epigraphy and Information Technology (Dr. Francisca Feraudi-"
+"Gruénais)</div></div></li><li><div class=\"direction-r\"><div class"
+"=\"flag-wrapper\"><span class=\"hexa\"></span><span class=\"flag\">July "
+"2006</span></div><div class=\"desc\">Introduction to Latin Epigraphy "
+"during the \"Römertag\" of the Kurfürst-Friedrich-Gymnasium Heidelberg "
+"(Dr. Francisca Feraudi-Gruénais)</div></div></li><li><div "
+"class=\"direction-l\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">July 2006</span></div> <div "
+"class=\"desc\">Contribution of EDH to the \"Wissenschaftssommer 2006\" in"
+" Munich ('Wissenschaft im Dialog' / Union der Akademien) Andreas "
+"Dafferner, Dr. Francisca Feraudi-Gruénais<br /><img "
+"src=\"/static/img/wisso_1.jpg\" style=\"width:200px\" /><img "
+"src=\"/static/img/wisso_2.jpg\" style=\"width:200px\" /></div>    </div>"
+"  </li><li><div class=\"direction-r\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">April/May 2005</span></div> "
+"<div class=\"desc\">Workshop: \"Epigraphik und elektronische Medien\" Dr."
+" Francisca Feraudi-Gruénais (Péter-Pázmány-Universität "
+"Piliscsaba/Ungarn)<br /><img src=\"/static/img/sched_adorjani1.jpg\" "
+"style=\"width:200px\" /><img src=\"/static/img/sched_adorjani2.jpg\" "
+"style=\"width:200px\" /><img src=\"/static/img/2005-budapest08.jpg\" "
+"style=\"width:200px\" /></div>    </div>  </li><li><div "
+"class=\"direction-l\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">September 2003</span></div> "
+"<div class=\"desc\">Contribution of EDH to \"Tag des Offenen Denkmals\" "
+"Heidelberg<br /><img src=\"/static/img/tod_2003_3.jpg\" "
+"style=\"width:200px\" /></div>    </div>  </li><li><div "
+"class=\"direction-r\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">June 2002</span></div> <div "
+"class=\"desc\">Contribution of EDH to \"Wissenschaftsmarkt\" of "
+"Heidelberg University<br /><img "
+"src=\"/static/img/wissmarkt_klinger_2.jpg\" style=\"width:200px\" /><img "
+"src=\"/static/img/wiss-markt_flyer.jpg\" style=\"width:200px\" /></div>"
+"    </div>  </li></ul>"
 
 #: edh_web_application/project/templates/project/project_provinces.html:9
 msgid ""

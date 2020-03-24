@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-18 11:42+0100\n"
+"POT-Creation-Date: 2020-03-24 09:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,51 +18,58 @@ msgstr ""
 "Generated-By: Babel 2.6.0\n"
 
 #: edh_web_application/bibliography/forms.py:8
-#: edh_web_application/bibliography/templates/bibliography/search.html:97
+#: edh_web_application/bibliography/templates/bibliography/search.html:108
+#: edh_web_application/foto/forms.py:19
+#: edh_web_application/foto/templates/foto/search.html:96
 #: edh_web_application/geography/forms.py:19
 #: edh_web_application/geography/templates/geography/search.html:90
 msgid "Reset..."
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:9
+#: edh_web_application/foto/forms.py:20
 #: edh_web_application/geography/forms.py:20
 msgid "Submit..."
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:10
+#: edh_web_application/bibliography/forms.py:23
 msgid "B-No"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:11
+#: edh_web_application/bibliography/forms.py:23
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:37
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:19
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:18
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:59
 msgid "author"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:12
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:24
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:23
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:64
 msgid "title"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:13
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:29
+#: edh_web_application/bibliography/forms.py:23
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:70
 msgid "publication"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:14
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:35
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:76
 msgid "volume"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:15
+#: edh_web_application/bibliography/forms.py:24
 msgid "year(s)"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:16
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:66
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:47
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:88
 msgid "pages"
 msgstr ""
 
@@ -72,10 +79,12 @@ msgid "town"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:18
+#: edh_web_application/foto/forms.py:31
 msgid "ae"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:19
+#: edh_web_application/foto/forms.py:30
 msgid "cil"
 msgstr ""
 
@@ -85,6 +94,14 @@ msgstr ""
 
 #: edh_web_application/bibliography/forms.py:21
 msgid "other_corpora"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:22
+msgid "sort by"
+msgstr ""
+
+#: edh_web_application/bibliography/forms.py:25
+msgid "number of results/page"
 msgstr ""
 
 #: edh_web_application/bibliography/routes.py:25
@@ -156,14 +173,14 @@ msgid "other corpora"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:15
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:14
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:55
 #: edh_web_application/geography/templates/geography/last_updates.html:17
 #: edh_web_application/geography/templates/geography/search_results.html:55
 msgid "&ndash; open detailed view..."
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:30
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:41
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:82
 msgid "years"
 msgstr ""
 
@@ -179,7 +196,8 @@ msgstr ""
 msgid "Start new search"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search.html:97
+#: edh_web_application/bibliography/templates/bibliography/search.html:108
+#: edh_web_application/foto/templates/foto/search.html:96
 #: edh_web_application/geography/templates/geography/search.html:90
 msgid "Search..."
 msgstr ""
@@ -194,6 +212,11 @@ msgstr ""
 msgid "hits."
 msgstr ""
 
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:55
+#: edh_web_application/geography/templates/geography/search_results.html:55
+msgid "Number"
+msgstr ""
+
 #: edh_web_application/data/routes.py:9
 msgid "Open Data Repository"
 msgstr ""
@@ -202,20 +225,89 @@ msgstr ""
 msgid "data page"
 msgstr ""
 
-#: edh_web_application/foto/routes.py:10
+#: edh_web_application/foto/forms.py:21
+#: edh_web_application/foto/templates/foto/detail_view.html:16
+msgid "F-number"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:22
+#: edh_web_application/foto/templates/foto/detail_view.html:35
+#: edh_web_application/geography/forms.py:22
+#: edh_web_application/geography/templates/geography/detail_view.html:73
+#: edh_web_application/geography/templates/geography/last_updates.html:27
+#: edh_web_application/geography/templates/geography/search_results.html:65
+msgid "province"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:23
+#: edh_web_application/foto/templates/foto/detail_view.html:39
+#: edh_web_application/geography/forms.py:23
+#: edh_web_application/geography/templates/geography/detail_view.html:77
+#: edh_web_application/geography/templates/geography/last_updates.html:32
+#: edh_web_application/geography/templates/geography/search_results.html:70
+msgid "country"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:24
+#: edh_web_application/foto/templates/foto/detail_view.html:43
+#: edh_web_application/geography/forms.py:24
+#: edh_web_application/geography/templates/geography/detail_view.html:81
+#: edh_web_application/geography/templates/geography/last_updates.html:37
+#: edh_web_application/geography/templates/geography/search_results.html:75
+msgid "ancient find spot"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:25
+#: edh_web_application/foto/templates/foto/detail_view.html:47
+#: edh_web_application/geography/forms.py:25
+#: edh_web_application/geography/templates/geography/detail_view.html:91
+#: edh_web_application/geography/templates/geography/last_updates.html:41
+#: edh_web_application/geography/templates/geography/search_results.html:79
+msgid "modern find spot"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:26
+#: edh_web_application/foto/templates/foto/detail_view.html:51
+msgid "present location"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:27
+#: edh_web_application/foto/templates/foto/detail_view.html:62
+msgid "original image"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:28
+#: edh_web_application/foto/templates/foto/detail_view.html:68
+msgid "date of photograph"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:29
+#: edh_web_application/foto/templates/foto/detail_view.html:74
+msgid "quality"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:32
+msgid "other literature"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:33
+msgid "commentary"
+msgstr ""
+
+#: edh_web_application/foto/forms.py:34
+msgid "HD-No."
+msgstr ""
+
+#: edh_web_application/foto/routes.py:11
 msgid "Foto Database: Search"
 msgstr ""
 
-#: edh_web_application/foto/routes.py:18 edh_web_application/foto/routes.py:21
+#: edh_web_application/foto/routes.py:19 edh_web_application/foto/routes.py:22
 msgid "Epigraphic Foto Database: Detail View"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:12
 msgid "Generic data"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:16
-msgid "F-number"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:20
@@ -232,56 +324,8 @@ msgstr ""
 msgid "Find circumstances / present location"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:35
-#: edh_web_application/geography/forms.py:22
-#: edh_web_application/geography/templates/geography/detail_view.html:73
-#: edh_web_application/geography/templates/geography/last_updates.html:27
-#: edh_web_application/geography/templates/geography/search_results.html:65
-msgid "province"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:39
-#: edh_web_application/geography/forms.py:23
-#: edh_web_application/geography/templates/geography/detail_view.html:77
-#: edh_web_application/geography/templates/geography/last_updates.html:32
-#: edh_web_application/geography/templates/geography/search_results.html:70
-msgid "country"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:43
-#: edh_web_application/geography/forms.py:24
-#: edh_web_application/geography/templates/geography/detail_view.html:81
-#: edh_web_application/geography/templates/geography/last_updates.html:37
-#: edh_web_application/geography/templates/geography/search_results.html:75
-msgid "ancient find spot"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:47
-#: edh_web_application/geography/forms.py:25
-#: edh_web_application/geography/templates/geography/detail_view.html:91
-#: edh_web_application/geography/templates/geography/last_updates.html:41
-#: edh_web_application/geography/templates/geography/search_results.html:79
-msgid "modern find spot"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:51
-msgid "present location"
-msgstr ""
-
 #: edh_web_application/foto/templates/foto/detail_view.html:58
 msgid "Picture"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:62
-msgid "original image"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:68
-msgid "date of photograph"
-msgstr ""
-
-#: edh_web_application/foto/templates/foto/detail_view.html:74
-msgid "quality"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:81
@@ -370,10 +414,6 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/search_results.html:55
-msgid "Number"
-msgstr ""
-
 #: edh_web_application/inscription/routes.py:10
 msgid "Epigraphic Text Database: Simple Search"
 msgstr ""
@@ -389,6 +429,255 @@ msgstr ""
 #: edh_web_application/inscription/routes.py:28
 #: edh_web_application/inscription/routes.py:30
 msgid "Epigraphic Text Database: Detail View"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:17 edh_web_application/models/Place.py:17
+msgid "land-ad"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:18 edh_web_application/models/Place.py:18
+msgid "land-al"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:19 edh_web_application/models/Place.py:19
+msgid "land-am"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:20 edh_web_application/models/Place.py:20
+msgid "land-at"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:21
+msgid "land-az"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:22 edh_web_application/models/Place.py:22
+msgid "land-ba"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:23 edh_web_application/models/Place.py:23
+msgid "land-be"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:24 edh_web_application/models/Place.py:24
+msgid "land-bg"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:25 edh_web_application/models/Place.py:25
+msgid "land-ch"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:26 edh_web_application/models/Place.py:26
+msgid "land-cy"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:27 edh_web_application/models/Place.py:27
+msgid "land-cz"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:28 edh_web_application/models/Place.py:28
+msgid "land-de"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:29 edh_web_application/models/Place.py:29
+msgid "land-dk"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:30 edh_web_application/models/Place.py:30
+msgid "land-dz"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:31 edh_web_application/models/Place.py:31
+msgid "land-eg"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:32 edh_web_application/models/Place.py:32
+msgid "land-es"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:33 edh_web_application/models/Place.py:33
+msgid "land-fr"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:34 edh_web_application/models/Place.py:34
+msgid "land-gb"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:35 edh_web_application/models/Place.py:35
+msgid "land-ge"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:36 edh_web_application/models/Place.py:36
+msgid "land-gi"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:37 edh_web_application/models/Place.py:37
+msgid "land-gr"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:38 edh_web_application/models/Place.py:38
+msgid "land-hr"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:39 edh_web_application/models/Place.py:39
+msgid "land-hu"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:40 edh_web_application/models/Place.py:40
+msgid "land-il"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:41 edh_web_application/models/Place.py:41
+msgid "land-iq"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:42 edh_web_application/models/Place.py:42
+msgid "land-it"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:43 edh_web_application/models/Place.py:43
+msgid "land-jo"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:44 edh_web_application/models/Place.py:44
+msgid "land-kg"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:45 edh_web_application/models/Place.py:45
+msgid "land-kz"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:46 edh_web_application/models/Place.py:46
+msgid "land-lb"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:47 edh_web_application/models/Place.py:47
+msgid "land-li"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:48 edh_web_application/models/Place.py:48
+msgid "land-lu"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:49 edh_web_application/models/Place.py:49
+msgid "land-ly"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:50 edh_web_application/models/Place.py:50
+msgid "land-ma"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:51 edh_web_application/models/Place.py:51
+msgid "land-mc"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:52 edh_web_application/models/Place.py:52
+msgid "land-md"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:53 edh_web_application/models/Place.py:53
+msgid "land-me"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:54 edh_web_application/models/Place.py:54
+msgid "land-mk"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:55 edh_web_application/models/Place.py:55
+msgid "land-mt"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:56 edh_web_application/models/Place.py:56
+msgid "land-nl"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:57 edh_web_application/models/Place.py:57
+msgid "land-pl"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:58 edh_web_application/models/Place.py:58
+msgid "land-pt"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:59 edh_web_application/models/Place.py:59
+msgid "land-ro"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:60 edh_web_application/models/Place.py:60
+msgid "land-rs"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:61 edh_web_application/models/Place.py:61
+msgid "land-ru"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:62 edh_web_application/models/Place.py:62
+msgid "land-sd"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:63 edh_web_application/models/Place.py:63
+msgid "land-se"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:64 edh_web_application/models/Place.py:64
+msgid "land-si"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:65 edh_web_application/models/Place.py:65
+msgid "land-sk"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:66 edh_web_application/models/Place.py:66
+msgid "land-sm"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:67 edh_web_application/models/Place.py:67
+msgid "land-sa"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:68 edh_web_application/models/Place.py:68
+msgid "land-sy"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:69 edh_web_application/models/Place.py:69
+msgid "land-tj"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:70 edh_web_application/models/Place.py:70
+msgid "land-tn"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:71 edh_web_application/models/Place.py:71
+msgid "land-tr"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:72 edh_web_application/models/Place.py:72
+msgid "land-ua"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:73 edh_web_application/models/Place.py:73
+msgid "land-?"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:74 edh_web_application/models/Place.py:74
+msgid "land-uz"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:75 edh_web_application/models/Place.py:75
+msgid "land-va"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:76 edh_web_application/models/Place.py:76
+msgid "land-ye"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:77 edh_web_application/models/Place.py:77
+msgid "land-rks"
+msgstr ""
+
+#: edh_web_application/models/Foto.py:115
+#: edh_web_application/models/Place.py:115
+msgid "unknown"
 msgstr ""
 
 #: edh_web_application/models/Person.py:14
@@ -429,254 +718,6 @@ msgstr ""
 
 #: edh_web_application/models/Person.py:23
 msgid "emperor / imperial household"
-msgstr ""
-
-#: edh_web_application/models/Place.py:17
-msgid "land-ad"
-msgstr ""
-
-#: edh_web_application/models/Place.py:18
-msgid "land-al"
-msgstr ""
-
-#: edh_web_application/models/Place.py:19
-msgid "land-am"
-msgstr ""
-
-#: edh_web_application/models/Place.py:20
-msgid "land-at"
-msgstr ""
-
-#: edh_web_application/models/Place.py:21
-msgid "land-az"
-msgstr ""
-
-#: edh_web_application/models/Place.py:22
-msgid "land-ba"
-msgstr ""
-
-#: edh_web_application/models/Place.py:23
-msgid "land-be"
-msgstr ""
-
-#: edh_web_application/models/Place.py:24
-msgid "land-bg"
-msgstr ""
-
-#: edh_web_application/models/Place.py:25
-msgid "land-ch"
-msgstr ""
-
-#: edh_web_application/models/Place.py:26
-msgid "land-cy"
-msgstr ""
-
-#: edh_web_application/models/Place.py:27
-msgid "land-cz"
-msgstr ""
-
-#: edh_web_application/models/Place.py:28
-msgid "land-de"
-msgstr ""
-
-#: edh_web_application/models/Place.py:29
-msgid "land-dk"
-msgstr ""
-
-#: edh_web_application/models/Place.py:30
-msgid "land-dz"
-msgstr ""
-
-#: edh_web_application/models/Place.py:31
-msgid "land-eg"
-msgstr ""
-
-#: edh_web_application/models/Place.py:32
-msgid "land-es"
-msgstr ""
-
-#: edh_web_application/models/Place.py:33
-msgid "land-fr"
-msgstr ""
-
-#: edh_web_application/models/Place.py:34
-msgid "land-gb"
-msgstr ""
-
-#: edh_web_application/models/Place.py:35
-msgid "land-ge"
-msgstr ""
-
-#: edh_web_application/models/Place.py:36
-msgid "land-gi"
-msgstr ""
-
-#: edh_web_application/models/Place.py:37
-msgid "land-gr"
-msgstr ""
-
-#: edh_web_application/models/Place.py:38
-msgid "land-hr"
-msgstr ""
-
-#: edh_web_application/models/Place.py:39
-msgid "land-hu"
-msgstr ""
-
-#: edh_web_application/models/Place.py:40
-msgid "land-il"
-msgstr ""
-
-#: edh_web_application/models/Place.py:41
-msgid "land-iq"
-msgstr ""
-
-#: edh_web_application/models/Place.py:42
-msgid "land-it"
-msgstr ""
-
-#: edh_web_application/models/Place.py:43
-msgid "land-jo"
-msgstr ""
-
-#: edh_web_application/models/Place.py:44
-msgid "land-kg"
-msgstr ""
-
-#: edh_web_application/models/Place.py:45
-msgid "land-kz"
-msgstr ""
-
-#: edh_web_application/models/Place.py:46
-msgid "land-lb"
-msgstr ""
-
-#: edh_web_application/models/Place.py:47
-msgid "land-li"
-msgstr ""
-
-#: edh_web_application/models/Place.py:48
-msgid "land-lu"
-msgstr ""
-
-#: edh_web_application/models/Place.py:49
-msgid "land-ly"
-msgstr ""
-
-#: edh_web_application/models/Place.py:50
-msgid "land-ma"
-msgstr ""
-
-#: edh_web_application/models/Place.py:51
-msgid "land-mc"
-msgstr ""
-
-#: edh_web_application/models/Place.py:52
-msgid "land-md"
-msgstr ""
-
-#: edh_web_application/models/Place.py:53
-msgid "land-me"
-msgstr ""
-
-#: edh_web_application/models/Place.py:54
-msgid "land-mk"
-msgstr ""
-
-#: edh_web_application/models/Place.py:55
-msgid "land-mt"
-msgstr ""
-
-#: edh_web_application/models/Place.py:56
-msgid "land-nl"
-msgstr ""
-
-#: edh_web_application/models/Place.py:57
-msgid "land-pl"
-msgstr ""
-
-#: edh_web_application/models/Place.py:58
-msgid "land-pt"
-msgstr ""
-
-#: edh_web_application/models/Place.py:59
-msgid "land-ro"
-msgstr ""
-
-#: edh_web_application/models/Place.py:60
-msgid "land-rs"
-msgstr ""
-
-#: edh_web_application/models/Place.py:61
-msgid "land-ru"
-msgstr ""
-
-#: edh_web_application/models/Place.py:62
-msgid "land-sd"
-msgstr ""
-
-#: edh_web_application/models/Place.py:63
-msgid "land-se"
-msgstr ""
-
-#: edh_web_application/models/Place.py:64
-msgid "land-si"
-msgstr ""
-
-#: edh_web_application/models/Place.py:65
-msgid "land-sk"
-msgstr ""
-
-#: edh_web_application/models/Place.py:66
-msgid "land-sm"
-msgstr ""
-
-#: edh_web_application/models/Place.py:67
-msgid "land-sa"
-msgstr ""
-
-#: edh_web_application/models/Place.py:68
-msgid "land-sy"
-msgstr ""
-
-#: edh_web_application/models/Place.py:69
-msgid "land-tj"
-msgstr ""
-
-#: edh_web_application/models/Place.py:70
-msgid "land-tn"
-msgstr ""
-
-#: edh_web_application/models/Place.py:71
-msgid "land-tr"
-msgstr ""
-
-#: edh_web_application/models/Place.py:72
-msgid "land-ua"
-msgstr ""
-
-#: edh_web_application/models/Place.py:73
-msgid "land-?"
-msgstr ""
-
-#: edh_web_application/models/Place.py:74
-msgid "land-uz"
-msgstr ""
-
-#: edh_web_application/models/Place.py:75
-msgid "land-va"
-msgstr ""
-
-#: edh_web_application/models/Place.py:76
-msgid "land-ye"
-msgstr ""
-
-#: edh_web_application/models/Place.py:77
-msgid "land-rks"
-msgstr ""
-
-#: edh_web_application/models/Place.py:115
-msgid "unknown"
 msgstr ""
 
 #: edh_web_application/person/routes.py:18
