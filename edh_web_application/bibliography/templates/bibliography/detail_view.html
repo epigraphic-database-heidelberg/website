@@ -35,7 +35,12 @@
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('author') }}:</div>
-                <div class="detail_block_content_row_text"><a href="/bibliographie/suche?author={{ data['autor'] }}" class="pfeil">{{data['autor']}}</a></div>
+                <div class="detail_block_content_row_text">
+                    {% set author_list = data['autor'].split(' - ') %}
+                    {% for author in author_list %}
+                        <a href="/bibliographie/suche?author={{ author }}" class="pfeil">{{ author }}</a> &nbsp;
+                    {% endfor %}
+                </div>
             </section>
             {% if data['titel'] %}
             <section class="detail_block_content_row">
