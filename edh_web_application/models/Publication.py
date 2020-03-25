@@ -94,10 +94,10 @@ class Publication:
                 query_string += "autor:" + (form['author']) + " " + logical_operater + " "
 
         if 'title' in form and form['title'] != "":
-            query_string += "titel:\"" + form['title'] + "\" " + logical_operater + " "
+            query_string += "titel_str_ci:*" + re.sub(" ","\ ",form['title']) + "* " + logical_operater + " "
 
         if 'publication' in form and form['publication'] != "":
-            query_string += "publikation:" + _escape_value(form['publication']) + " " + logical_operater + " "
+            query_string += "publikation_str_ci:*" + _escape_value(_remove_number_of_hits_from_autocomplete(form['publication'])) + "* " + logical_operater + " "
 
         if 'volume' in form and form['volume'] != "":
             query_string += "band:" + _escape_value(form['volume']) + " " + logical_operater + " "
@@ -109,19 +109,19 @@ class Publication:
             query_string += "seiten:" + _escape_value(form['pages']) + " " + logical_operater + " "
 
         if 'town' in form and form['town'] != "":
-            query_string += "ort:" + _escape_value(form['town']) + " " + logical_operater + " "
+            query_string += "ort:*" + re.sub(" ", "\ ", form['town']) + "* " + logical_operater + " "
 
         if 'ae' in form and form['ae'] != "":
-            query_string += "ae:" + _escape_value(form['ae']) + " " + logical_operater + " "
+            query_string += "ae:*" + _escape_value(form['ae']) + "* " + logical_operater + " "
 
         if 'on_ae' in form and form['on_ae'] != "":
-            query_string += "zu_ae:" + _escape_value(form['on_ae']) + " " + logical_operater + " "
+            query_string += "zu_ae:*" + _escape_value(form['on_ae']) + "* " + logical_operater + " "
 
         if 'cil' in form and form['cil'] != "":
-            query_string += "cil:" + _escape_value(form['cil']) + " " + logical_operater + " "
+            query_string += "cil:*" + _escape_value(form['cil']) + "* " + logical_operater + " "
 
         if 'other_corpora' in form and form['other_corpora'] != "":
-            query_string += " sonstigeCorpora:" + _escape_value(form['other_corpora']) + " " + logical_operater + " "
+            query_string += " sonstigeCorpora:*" + _escape_value(form['other_corpora']) + "* " + logical_operater + " "
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
@@ -193,32 +193,31 @@ class Publication:
         :param term: querystring
         :return: list of relevant field values
         """
-        params = {
-            'facet': 'on',
-            'facet.field': ac_field + '_ac',
-            'facet.sort': 'count',
-            'facet.mincount': 1,
-            'facet.limit': '20',
-            'rows': '0',
-        }
-        query = ac_field + ":" + term
-        # query = re.sub(r"\s", r"\ ", query)
-        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        results = solr.search(query, **params)
-        # concat results and counts as string
-        return_list = []
-        is_first_element = True
-        first_item = ""
-        for entry in results.facets['facet_fields'][ac_field + "_ac"]:
-            if is_first_element:
-                first_item = entry
-                is_first_element = False
-                continue
-            else:
-                is_first_element = True
-                return_list.append(first_item + " (" + str(entry) + ")")
-        return return_list
-        # return results.facets['facet_fields'][ac_field+"_ac"][::2]
+        if re.match("[a-zA-Z]+",term):
+            params = {
+                'facet': 'on',
+                'facet.field': ac_field + '_ac',
+                'facet.sort': 'count',
+                'facet.mincount': 1,
+                'facet.limit': '20',
+                'rows': '0',
+            }
+            query = ac_field + ":" + term
+            solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
+            results = solr.search(query, **params)
+            # concat results and counts as string
+            return_list = []
+            is_first_element = True
+            first_item = ""
+            for entry in results.facets['facet_fields'][ac_field + "_ac"]:
+                if is_first_element:
+                    first_item = entry
+                    is_first_element = False
+                    continue
+                else:
+                    is_first_element = True
+                    return_list.append(first_item + " (" + str(entry) + ")")
+            return return_list
 
     @classmethod
     def format_b_nr(cls, b_nr):
