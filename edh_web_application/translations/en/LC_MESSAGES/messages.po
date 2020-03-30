@@ -754,7 +754,7 @@ msgstr ""
 
 #: edh_web_application/models/Place.py:81
 msgid "Inc"
-msgstr "unbekannt"
+msgstr "unknown"
 
 #: edh_web_application/models/Place.py:81
 msgid "Ach"
