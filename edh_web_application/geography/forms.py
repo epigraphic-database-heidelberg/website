@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, IntegerField, SelectField
+from wtforms import StringField, SubmitField, IntegerField, SelectField, SelectMultipleField
 from wtforms.validators import Optional, Regexp
 from flask_babel import lazy_gettext as _l
 from ..models.Place import Place
@@ -15,12 +15,21 @@ def get_option_list_values_country():
     return countries_list
 
 
+def get_option_list_values_province():
+    province_list = Place.province
+    province_list_return = []
+    for prov in province_list:
+        prov_name = _l(str(prov))
+        province_list_return.append((prov, prov_name))
+    return province_list_return
+
+
 class GeographySearch(FlaskForm):
     reset = SubmitField(_l('Reset...'))
     submit = SubmitField(_l('Submit...'))
     geo_id = StringField(_l('Geo-ID'), validators=[Optional(), Regexp('^[0-9]{1,6}$')])
-    province = StringField(_l('province'))
-    country = SelectField(_l('country'), choices=get_option_list_values_country())
+    province = SelectMultipleField(_l('province'), choices=get_option_list_values_province())
+    country = SelectMultipleField(_l('country'), choices=get_option_list_values_country())
     ancient_find_spot = StringField(_l('ancient find spot'))
     modern_find_spot = StringField(_l('modern find spot'))
     find_spot = StringField(_l('find spot'))

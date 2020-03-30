@@ -182,6 +182,10 @@ p {
 .panel.panel-default.provinz {
     height: 100%;
 }
+.bootstrap-select>.dropdown-toggle {
+    margin-bottom: 0px;
+}
+
 /*
  * Timeline
 */

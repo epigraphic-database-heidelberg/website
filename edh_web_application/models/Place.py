@@ -76,77 +76,15 @@ class Place:
         "ye": _l("land-ye"),
         "rks": _l("land-rks")
     }
-    # dict of province names
-    province = {
-        "Ach": "Achaia",
-        "Aeg": "Aegyptus",
-        "Aem": "Aemilia (Regio VIII)",
-        "Afr": "Africa Proconsularis",
-        "AlC": "Alpes Cottiae",
-        "AlG": "Alpes Graiae",
-        "AlM": "Alpes Maritimae",
-        "AlP": "Alpes Poeninae",
-        "ApC": "Apulia et Calabria (Regio II)",
-        "Aqu": "Aquitania",
-        "Ara": "Arabia",
-        "Arm": "Armenia",
-        "Asi": "Asia",
-        "Ass": "Assyria",
-        "Bae": "Baetica",
-        "Bar": "Barbaricum",
-        "Bel": "Belgica",
-        "BiP": "Bithynia et Pontus",
-        "BrL": "Bruttium et Lucania (Regio III)",
-        "Bri": "Britannia",
-        "Cap": "Cappadocia",
-        "Cil": "Cilicia",
-        "Cor": "Corsica",
-        "Cre": "Creta",
-        "Cyp": "Cyprus",
-        "Cyr": "Cyrene",
-        "Dac": "Dacia",
-        "Dal": "Dalmatia",
-        "Epi": "Epirus",
-        "Etr": "Etruria (Regio VII)",
-        "Gal": "Galatia",
-        "GeI": "Germania inferior",
-        "GeS": "Germania superior",
-        "HiC": "Hispania citerior",
-        "Inc": _l("unknown"),
-        "Iud": "Iudaea",
-        "LaC": "Latium et Campania (Regio I)",
-        "Lig": "Liguria (Regio IX)",
-        "Lug": "Lugdunensis",
-        "Lus": "Lusitania",
-        "LyP": "Lycia et Pamphylia",
-        "Mak": "Macedonia",
-        "MaC": "Mauretania Caesariensis",
-        "MaE": "Macedonia, Epirus",
-        "MaT": "Mauretania Tingitana",
-        "Mes": "Mesopotamia",
-        "MoI": "Moesia inferior",
-        "MoS": "Moesia superior",
-        "Nar": "Narbonensis",
-        "Nor": "Noricum",
-        "Num": "Numidia",
-        "PaI": "Pannonia inferior",
-        "PaS": "Pannonia superior",
-        "Pic": "Picenum (Regio V)",
-        "Rae": "Raetia",
-        "ReB": "Regnum Bospori",
-        "Rom": "Roma",
-        "Sam": "Samnium (Regio IV)",
-        "Sar": "Sardinia",
-        "Sic": "Sicilia, Melita",
-        "Syr": "Syria",
-        "Thr": "Thracia",
-        "Tra": "Transpadana (Regio XI)",
-        "Tri": "Tripolitania",
-        "TuU": "Tuscia et Umbria",
-        "Umb": "Umbria (Regio VI)",
-        "Val": "Valeria",
-        "VeH": "Venetia et Histria (Regio X)",
-    }
+    # list of province names
+    province = (
+        'Inc', 'Ach', 'Aeg', 'Aem', 'Afr', 'AlC', 'AlG', 'AlM', 'AlP', 'ApC',
+        'Aqu', 'Ara', 'Arm', 'Asi', 'Ass', 'Bae', 'Bar', 'Bel', 'BiP', 'BrL',
+        'Bri', 'Cap', 'Cil', 'Cor', 'Cre', 'Cyp', 'Cyr', 'Dac', 'Dal', 'Epi',
+        'Etr', 'Gal', 'GeI', 'GeS', 'HiC', 'Iud', 'LaC', 'Lig', 'Lug', 'Lus',
+        'LyP', 'Mak', 'MaC', 'MaT', 'Mes', 'MoI', 'MoS', 'Nar', 'Nor', 'Num',
+        'PaI', 'PaS', 'Pic', 'Rae', 'ReB', 'Rom', 'Sam', 'Sar', 'Sic', 'Syr',
+        'Thr', 'Tra', 'Umb', 'VeH')
 
     def __init__(self,
                  id,
@@ -208,8 +146,13 @@ class Place:
             query_string += "trismegistos_geo_id:" + _escape_value(form['tm_geo_id']) + " " + logical_operater + " "
 
         if 'province' in form and form['province'] != "":
-            query_string += "provinz:" + _escape_value(form['province']) + " " + logical_operater + " "
-
+            # province is a multi value field
+            query_string += "("
+            for prov in form.getlist('province'):
+                query_string += "provinz:" + prov + " OR "
+            # remove trailing OR
+            query_string = re.sub(" OR $", "", query_string)
+            query_string += ") " + logical_operater + " "
         if 'country' in form and form['country'] != "":
             query_string += "land:" + _escape_value(form['country']) + " " + logical_operater + " "
 
@@ -266,9 +209,9 @@ class Place:
                     if key == 'provinz':
                         if re.search("\?$", result[key]):
                             key_without_trailing_questionmark = re.sub("\?$", "", result[key])
-                            props[key] = Place.province[key_without_trailing_questionmark] + "?"
+                            props[key] = _l(key_without_trailing_questionmark) + "?"
                         else:
-                            props[key] = Place.province[result[key]]
+                            props[key] = _l(result[key])
 
                 pl = Place(result['id'],
                            result['datum'],
@@ -277,7 +220,8 @@ class Place:
                            )
                 query_result.append(pl)
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
-                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(request.url)},
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(
+                                     request.url)},
                     "items": query_result}
 
     @classmethod
