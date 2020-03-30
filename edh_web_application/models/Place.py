@@ -149,7 +149,7 @@ class Place:
             # province is a multi value field
             query_string += "("
             for prov in form.getlist('province'):
-                query_string += "provinz:" + prov + " OR "
+                query_string += "provinz:" + prov + "* OR "
             # remove trailing OR
             query_string = re.sub(" OR $", "", query_string)
             query_string += ") " + logical_operater + " "
