@@ -251,7 +251,11 @@ class Place:
             query_string += ") " + logical_operater + " "
 
         if 'region' in form and form['region'] != "":
-            query_string += "verw_bezirk:" + _escape_value(form['region']) + " " + logical_operater + " "
+            if re.search("\([0-9]*\)$", form['region']):
+                query_string += 'verw_bezirk_ci:"' + _escape_value(
+                    _remove_number_of_hits_from_autocomplete(form['region'])) + '" ' + logical_operater + ' '
+            else:
+                query_string += "verw_bezirk_ci:*" + re.sub(" ","\ ",form['region']) + "* " + logical_operater + " "
 
         if 'ancient_find_spot' in form and form['ancient_find_spot'] != "":
             if re.search("\([0-9]*\)$", form['ancient_find_spot']):
