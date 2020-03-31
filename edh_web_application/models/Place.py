@@ -234,15 +234,18 @@ class Place:
             # province is a multi value field
             query_string += "("
             for prov in form.getlist('province'):
-                query_string += "provinz:" + prov + "* OR "
+                if prov != "":
+                    query_string += "provinz:" + prov + "* OR "
             # remove trailing OR
             query_string = re.sub(" OR $", "", query_string)
             query_string += ") " + logical_operater + " "
+
         if 'country' in form and form['country'] != "":
             # country is a multi value field
             query_string += "("
-            for prov in form.getlist('country'):
-                query_string += "land:" + prov + "* OR "
+            for c in form.getlist('country'):
+                if c != "":
+                    query_string += "land:" + c + "* OR "
             # remove trailing OR
             query_string = re.sub(" OR $", "", query_string)
             query_string += ") " + logical_operater + " "
