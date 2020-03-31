@@ -255,6 +255,11 @@ class Place:
 
         if 'ancient_find_spot' in form and form['ancient_find_spot'] != "":
             query_string += "fo_antik:" + _escape_value(form['ancient_find_spot']) + " " + logical_operater + " "
+            if re.search("\([0-9]*\)$", form['ancient_find_spot']):
+                query_string += 'fo_antik_ci:"' + _escape_value(
+                    _remove_number_of_hits_from_autocomplete(form['ancient_find_spot'])) + '" ' + logical_operater + ' '
+            else:
+                query_string += "fo_antik_ci:*" + re.sub(" ","\ ",form['ancient_find_spot']) + "* " + logical_operater + " "
 
         if 'modern_find_spot' in form and form['modern_find_spot'] != "":
             query_string += "fo_modern:" + _escape_value(form['modern_find_spot']) + " " + logical_operater + " "
@@ -388,6 +393,49 @@ class Place:
     @classmethod
     def get_autocomplete_entries(cls, ac_field, term):
         """
+        queries Splor core edhBiblio for list of entries displayed in
+        autocomplete fields of Biblio form
+        :param ac_field: field to facet
+        :param term: querystring
+        :return: list of relevant field values
+        """
+        if re.match("[a-zA-Z]+", term):
+            params = {
+                'facet': 'on',
+                'facet.field': ac_field + '_str',
+                'facet.sort': 'count',
+                'facet.mincount': 1,
+                'facet.limit': '20',
+                'rows': '0',
+            }
+            query = ac_field + '_ac:"' + term + '"'
+            solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhGeo')
+            results = solr.search(query, **params)
+            # concat results and counts as string
+            return_list = []
+            is_first_element = True
+            first_item = ""
+            for entry in results.facets['facet_fields'][ac_field + "_str"]:
+                if is_first_element:
+                    first_item = entry
+                    is_first_element = False
+                    continue
+                else:
+                    is_first_element = True
+                    return_list.append(first_item + " (" + str(entry) + ")")
+            return return_list
+
+
+
+
+
+
+
+
+
+    @classmethod
+    def get_autocomplete_entries_old(cls, ac_field, term):
+        """
         queries Splor core edhGeo for list of entries displayed in
         autocomplete fields of Geo form
         :param ac_field: field to facet
@@ -445,3 +493,13 @@ def _get_url_without_pagination_parameters(url):
     url = re.sub("anzahl=[0-9]*&*", "", url)
     url = re.sub("&&", "&", url)
     return url
+
+
+def _remove_number_of_hits_from_autocomplete(user_entry):
+    """
+    removes number of hits from entry string that has been added by autocomplete
+    :param user_entry: user entry string with number of hits in parenthesis
+    :return: user_entry without number of hits
+    """
+    user_entry = re.sub("\([0-9]*\)$", "", user_entry).strip()
+    return user_entry
