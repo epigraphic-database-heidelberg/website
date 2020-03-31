@@ -73,11 +73,11 @@
                 {% endif %}
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('ancient find spot') }}:</div>
-                    <div class="detail_block_content_row_text">{{ d['fo_antik'] }}&nbsp;</div>
+                    <div class="detail_block_content_row_text">{% if d['fo_antik'] %}{{ d['fo_antik'] }}{% else %}&nbsp;{% endif %}</div>
                 </section>
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('modern find spot') }}:</div>
-                    <div class="detail_block_content_row_text">{{ d['fo_modern'] }}&nbsp;</div>
+                    <div class="detail_block_content_row_text">{% if d['fo_modern'] %}{{ d['fo_modern'] }}{% else %}&nbsp;{% endif %}</div>
                 </section>
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>

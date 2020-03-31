@@ -120,7 +120,11 @@
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('comment') }}:</div>
                 <div class="detail_block_content_row_text">
-                        {{data['kommentar']|safe}}
+                    {% if data['kommentar'] %}
+                        {{ data['kommentar']|safe }}
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
                 </div>
             </section>
         </div>
