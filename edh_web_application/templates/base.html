@@ -28,11 +28,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('home') }}">Home</a>
+                <a class="navbar-brand {% if '/home' in request.path %} active {% endif %}" href="{{ url_for('home') }}">Home</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
+                    <li class="dropdown {% if '/projekt' in request.path %} active {% endif %}" >
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ _('Project...') }}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/projekt/konzept">{{ _('Concept') }}</a></li>
@@ -43,7 +43,7 @@
                             <li><a href="/projekt/kontakt">{{ _('Contact') }}</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown {% if '/inschrift' in request.path %} active {% endif %}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ _('Inscriptions...') }}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/inschrift/suche">{{ _('Simple Search') }}</a></li>
@@ -51,11 +51,11 @@
                             <li><a href="/inschrift/browse">{{ _('Browse...') }}</a></li>
                         </ul>
                     </li>
-                    <li><a href="/foto/suche">{{ _('Photos') }}</a></li>
-                    <li><a href="/bibliographie/suche">{{ _('Bibliography') }}</a></li>
-                    <li><a href="/geographie/suche">{{ _('Geography') }}</a></li>
-                    <li><a href="/data">{{ _('Data') }}</a></li>
-                    <li><a href="/links">{{ _('Links') }}</a></li>
+                    <li {% if '/foto' in request.path %} class="active" {% endif %}><a href="/foto/suche">{{ _('Photos') }}</a></li>
+                    <li {% if '/bibliographie' in request.path %} class="active" {% endif %}><a href="/bibliographie/suche">{{ _('Bibliography') }}</a></li>
+                    <li {% if '/geographie' in request.path %} class="active" {% endif %}><a href="/geographie/suche">{{ _('Geography') }}</a></li>
+                    <li {% if '/data' in request.path %} class="active" {% endif %}><a href="/data">{{ _('Data') }}</a></li>
+                    <li {% if '/links' in request.path %} class="active" {% endif %}><a href="/links">{{ _('Links') }}</a></li>
                 </ul>
             </div>
         </div>

@@ -30,6 +30,9 @@ h3 {
     font-size: 1.2em;
     margin-top: 2em;
 }
+li.active {
+    background-color: #eee;
+}
 .footer {
     position: absolute;
     bottom: 0;
@@ -107,6 +110,9 @@ p {
 }
 .navbar-brand {
     font-size: 1em;
+}
+.navbar-brand.active {
+    background-color: #eee;
 }
 .container.head {
     font-size:0.7em;
