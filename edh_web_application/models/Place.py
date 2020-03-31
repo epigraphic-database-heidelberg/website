@@ -10,10 +10,23 @@ import re
 
 
 class Place:
+    # list of countries (de)
+    country_de = (
+        'eg', 'al', 'dz', 'ad', 'am', 'az', 'be', 'ba', 'bg', 'dk', 'de', 'fr', 'ge', 'gi', 'gr',
+        'gb', 'iq', 'il', 'it', 'ye', 'jo', 'kz', 'kg', 'hr', 'lb', 'ly', 'li', 'lu', 'mt', 'ma', 'mk', 'md', 'mc',
+        'me', 'nl', 'at', 'pl', 'pt', 'ro', 'ru', 'sm', 'se', 'ch', 'rs', 'sk', 'si', 'es', 'sd', 'sy', 'tj', 'cz',
+        'tn', 'tr', 'ua', '?', 'hu', 'uz', 'va', 'cy'
+    )
+    country_en = (
+        'al', 'dz', 'ad', 'am', 'at', 'az', 'be', 'ba', 'bg', 'hr', 'cy', 'cz', 'dk', 'eg', 'fr', 'ge',
+        'de', 'gi', 'gr', 'va', 'hu', 'iq', 'il', 'it', 'jo', 'kz', 'kg', 'lb', 'ly', 'li', 'lu', 'mk', 'mt', 'md',
+        'mc', 'me', 'ma', 'nl', 'pl', 'pt', 'ro', 'ru', 'sm', 'sa', 'rs', 'sk', 'si', 'es', 'sd', 'se', 'ch', 'sy',
+        'tj', 'tn', 'tr', 'ua', 'gb', '?', 'uz', 'ye'
+    )
+
     # dict of localized country names
     country = collections.OrderedDict()
     country = {
-        "": "",
         "ad": _l("land-ad"),
         "al": _l("land-al"),
         "am": _l("land-am"),
@@ -86,6 +99,78 @@ class Place:
         'PaI', 'PaS', 'Pic', 'Rae', 'ReB', 'Rom', 'Sam', 'Sar', 'Sic', 'Syr',
         'Thr', 'Tra', 'Umb', 'VeH')
 
+    province_dict = {
+        "Inc": _l("Inc"),
+        "Ach": _l("Ach"),
+        "Aeg": _l("Aeg"),
+        "Aem": _l("Aem"),
+        "Afr": _l("Afr"),
+        "AlC": _l("AlC"),
+        "AlG": _l("AlG"),
+        "AlM": _l("AlM"),
+        "AlP": _l("AlP"),
+        "ApC": _l("ApC"),
+        "Aqu": _l("Aqu"),
+        "Ara": _l("Ara"),
+        "Arm": _l("Arm"),
+        "Asi": _l("Asi"),
+        "Ass": _l("Ass"),
+        "Bae": _l("Bae"),
+        "Bar": _l("Bar"),
+        "Bel": _l("Bel"),
+        "BiP": _l("BiP"),
+        "BrL": _l("BrL"),
+        "Bri": _l("Bri"),
+        "Cap": _l("Cap"),
+        "Cil": _l("Cil"),
+        "Cor": _l("Cor"),
+        "Cre": _l("Cre"),
+        "Cyp": _l("Cyp"),
+        "Cyr": _l("Cyr"),
+        "Dac": _l("Dac"),
+        "Dal": _l("Dal"),
+        "Epi": _l("Epi"),
+        "Etr": _l("Etr"),
+        "Gal": _l("Gal"),
+        "GeI": _l("GeI"),
+        "GeS": _l("GeS"),
+        "HiC": _l("HiC"),
+        "Inc": _l("unknown"),
+        "Iud": _l("Iud"),
+        "LaC": _l("LaC"),
+        "Lig": _l("Lig"),
+        "Lug": _l("Lug"),
+        "Lus": _l("Lus"),
+        "LyP": _l("LyP"),
+        "Mak": _l("Mak"),
+        "MaC": _l("MaC"),
+        "MaE": _l("MaE"),
+        "MaT": _l("MaT"),
+        "Mes": _l("Mes"),
+        "MoI": _l("MoI"),
+        "MoS": _l("MoS"),
+        "Nar": _l("Nar"),
+        "Nor": _l("Nor"),
+        "Num": _l("Num"),
+        "PaI": _l("PaI"),
+        "PaS": _l("PaS"),
+        "Pic": _l("Pic"),
+        "Rae": _l("Rae"),
+        "ReB": _l("ReB"),
+        "Rom": _l("Rom"),
+        "Sam": _l("Sam"),
+        "Sar": _l("Sar"),
+        "Sic": _l("Sic"),
+        "Syr": _l("Syr"),
+        "Thr": _l("Thr"),
+        "Tra": _l("Tra"),
+        "Tri": _l("Tri"),
+        "TuU": _l("TuU"),
+        "Umb": _l("Umb"),
+        "Val": _l("Val"),
+        "VeH": _l("VeH"),
+    }
+
     def __init__(self,
                  id,
                  datum,
@@ -154,7 +239,13 @@ class Place:
             query_string = re.sub(" OR $", "", query_string)
             query_string += ") " + logical_operater + " "
         if 'country' in form and form['country'] != "":
-            query_string += "land:" + _escape_value(form['country']) + " " + logical_operater + " "
+            # country is a multi value field
+            query_string += "("
+            for prov in form.getlist('country'):
+                query_string += "land:" + prov + "* OR "
+            # remove trailing OR
+            query_string = re.sub(" OR $", "", query_string)
+            query_string += ") " + logical_operater + " "
 
         if 'region' in form and form['region'] != "":
             query_string += "verw_bezirk:" + _escape_value(form['region']) + " " + logical_operater + " "

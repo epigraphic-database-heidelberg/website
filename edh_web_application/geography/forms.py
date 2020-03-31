@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, IntegerField, SelectField, SelectMultipleField
 from wtforms.validators import Optional, Regexp
 from flask_babel import lazy_gettext as _l
+from flask import request, session
 from ..models.Place import Place
 import collections
 
@@ -13,6 +14,24 @@ def get_option_list_values_country():
     for k, v in countries_dict.items():
         countries_list.append((k, v))
     return countries_list
+
+
+def get_option_list_values_country_de():
+    country_de_list = Place.country_de
+    country_de_list_return = []
+    for c in country_de_list:
+        c_name = _l(str("land-"+c))
+        country_de_list_return.append((c, c_name))
+    return country_de_list_return
+
+
+def get_option_list_values_country_en():
+    country_de_list = Place.country_en
+    country_de_list_return = []
+    for c in country_de_list:
+        c_name = _l(str("land-"+c))
+        country_de_list_return.append((c, c_name))
+    return country_de_list_return
 
 
 def get_option_list_values_province():
@@ -29,7 +48,7 @@ class GeographySearch(FlaskForm):
     submit = SubmitField(_l('Submit...'))
     geo_id = StringField(_l('Geo-ID'), validators=[Optional(), Regexp('^[0-9]{1,6}$')])
     province = SelectMultipleField(_l('province'), choices=get_option_list_values_province())
-    country = SelectMultipleField(_l('country'), choices=get_option_list_values_country())
+    country = SelectMultipleField(_l('country'), choices=get_option_list_values_country_de())
     ancient_find_spot = StringField(_l('ancient find spot'))
     modern_find_spot = StringField(_l('modern find spot'))
     find_spot = StringField(_l('find spot'))
