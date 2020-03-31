@@ -280,7 +280,7 @@ class Place:
                 query_string += "fundstelle_ci:*" + re.sub(" ","\ ",form['find_spot']) + "* " + logical_operater + " "
 
         if 'comment' in form and form['comment'] != "":
-            query_string += "kommentar:" + _escape_value(form['comment']) + " " + logical_operater + " "
+            query_string += "kommentar:*" + re.sub(" ", "\ ", form['comment']) + "* " + logical_operater + " "
 
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
