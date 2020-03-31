@@ -254,7 +254,6 @@ class Place:
             query_string += "verw_bezirk:" + _escape_value(form['region']) + " " + logical_operater + " "
 
         if 'ancient_find_spot' in form and form['ancient_find_spot'] != "":
-            query_string += "fo_antik:" + _escape_value(form['ancient_find_spot']) + " " + logical_operater + " "
             if re.search("\([0-9]*\)$", form['ancient_find_spot']):
                 query_string += 'fo_antik_ci:"' + _escape_value(
                     _remove_number_of_hits_from_autocomplete(form['ancient_find_spot'])) + '" ' + logical_operater + ' '
@@ -263,6 +262,11 @@ class Place:
 
         if 'modern_find_spot' in form and form['modern_find_spot'] != "":
             query_string += "fo_modern:" + _escape_value(form['modern_find_spot']) + " " + logical_operater + " "
+            if re.search("\([0-9]*\)$", form['modern_find_spot']):
+                query_string += 'fo_modern_ci:"' + _escape_value(
+                    _remove_number_of_hits_from_autocomplete(form['modern_find_spot'])) + '" ' + logical_operater + ' '
+            else:
+                query_string += "fo_modern_ci:*" + re.sub(" ","\ ",form['modern_find_spot']) + "* " + logical_operater + " "
 
         if 'find_spot' in form and form['find_spot'] != "":
             query_string += "fundstelle:" + _escape_value(form['find_spot']) + " " + logical_operater + " "
