@@ -83,3 +83,12 @@ def autocomplete_fundstelle():
     :return: list of entries for autocomplete
     """
     return json.dumps(Place.get_autocomplete_entries("fundstelle", request.args['term']))
+
+
+@bp_geography.route('/geographie/ac/region', methods=['GET', 'POST'])
+def autocomplete_region():
+    """
+    route for retrieving autocomplete entries for field verw_bezirk/region
+    :return: list of entries for autocomplete
+    """
+    return json.dumps(Place.get_autocomplete_entries("verw_bezirk", request.args['term']))
