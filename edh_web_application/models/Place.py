@@ -269,7 +269,11 @@ class Place:
                 query_string += "fo_modern_ci:*" + re.sub(" ","\ ",form['modern_find_spot']) + "* " + logical_operater + " "
 
         if 'find_spot' in form and form['find_spot'] != "":
-            query_string += "fundstelle:" + _escape_value(form['find_spot']) + " " + logical_operater + " "
+            if re.search("\([0-9]*\)$", form['find_spot']):
+                query_string += 'fundstelle_ci:"' + _escape_value(
+                    _remove_number_of_hits_from_autocomplete(form['find_spot'])) + '" ' + logical_operater + ' '
+            else:
+                query_string += "fundstelle_ci:*" + re.sub(" ","\ ",form['find_spot']) + "* " + logical_operater + " "
 
         if 'comment' in form and form['comment'] != "":
             query_string += "kommentar:" + _escape_value(form['comment']) + " " + logical_operater + " "
@@ -397,8 +401,8 @@ class Place:
     @classmethod
     def get_autocomplete_entries(cls, ac_field, term):
         """
-        queries Splor core edhBiblio for list of entries displayed in
-        autocomplete fields of Biblio form
+        queries Splor core edhGeo for list of entries displayed in
+        autocomplete fields of Geo form
         :param ac_field: field to facet
         :param term: querystring
         :return: list of relevant field values
@@ -426,45 +430,8 @@ class Place:
                     continue
                 else:
                     is_first_element = True
-                    return_list.append(first_item + " (" + str(entry) + ")")
+                    return_list.append(re.sub("[\{\}]*", '', first_item) + " (" + str(entry) + ")")
             return return_list
-
-
-
-
-
-
-
-
-
-    @classmethod
-    def get_autocomplete_entries_old(cls, ac_field, term):
-        """
-        queries Splor core edhGeo for list of entries displayed in
-        autocomplete fields of Geo form
-        :param ac_field: field to facet
-        :param term: querystring
-        :return: list of relevant field values
-        """
-        params = {
-            'facet': 'on',
-            'facet.field': ac_field + '_ac',
-            'facet.sort': 'index',
-            'facet.mincount': 1,
-            'facet.limit': '20',
-            'rows': '0',
-        }
-        query = ac_field + ":" + term
-        query = re.sub("\s", "\ ", query)
-        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhGeo')
-        results = solr.search(query, **params)
-        result_list = results.facets['facet_fields'][ac_field + '_ac'][::2]
-        return_list = []
-        # remove curley brackets from field 'fundstelle
-        for res in result_list:
-            res = re.sub(r'[\{\}]', '', res)
-            return_list.append(res)
-        return return_list
 
 
 def _escape_value(val):
