@@ -406,6 +406,10 @@ p {
   z-index: 15;
 }
 
+.bootstrap-select>.dropdown-toggle {
+    border: 1px solid #ccc;
+}
+
 @media(min-width: 768px){
   .timeline {
     width: 660px;

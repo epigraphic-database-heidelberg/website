@@ -295,12 +295,20 @@ class Place:
         """
         start = 0  # index number of first record to retrieve
         rows = 20  # number of receords to retrieve
+        sort = "id asc" # default
         if request.args.get('start'):
             start = request.args.get('start')
         if request.args.get('anzahl'):
             rows = int(request.args.get('anzahl'))
+        if request.args.get('sort') in ['fo_antik', 'fo_modern', 'fundstelle', 'verw_bezirk']:
+            sort = request.args.get('sort') + "_str asc"
+        elif request.args.get('sort') == "provinz":
+            sort = "provinz asc"
+        elif request.args.get('sort') == "land":
+            sort = "land asc"
+        from flask import session
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhGeo')
-        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': 'id asc'})
+        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
             return None
         else:
