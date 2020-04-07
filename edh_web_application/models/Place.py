@@ -300,10 +300,12 @@ class Place:
             start = request.args.get('start')
         if request.args.get('anzahl'):
             rows = int(request.args.get('anzahl'))
-        if request.args.get('sort') in ['fo_antik', 'fo_modern', 'fundstelle', 'verw_bezirk']:
+        if request.args.get('sort') in ['fo_antik', 'fo_modern', 'verw_bezirk']:
             sort = request.args.get('sort') + "_str asc"
         elif request.args.get('sort') == "provinz":
             sort = "provinz asc"
+        elif request.args.get('sort') == "fundstelle":
+            sort = "fundstelle_sort asc"
         elif request.args.get('sort') == "land":
             from flask import session
             if session.get('lang'):
