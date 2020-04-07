@@ -305,8 +305,11 @@ class Place:
         elif request.args.get('sort') == "provinz":
             sort = "provinz asc"
         elif request.args.get('sort') == "land":
-            sort = "land asc"
-        from flask import session
+            from flask import session
+            if session.get('lang'):
+                sort = "land_sort_" + session.get('lang') + " asc"
+            else:
+                sort = "land_sort_en asc"
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhGeo')
         results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
