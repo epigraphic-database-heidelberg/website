@@ -34,7 +34,7 @@ var map = L.map('mapid', { zoomControl:false }).setView([43.105, 11.49], 4);
                     fillColor: getColorBearbeitung(feature.properties.numberOfInscriptions)
             };
         }
-        $.getJSON("/static/data/provinceBearbeitung.edh.geojson", function(data) {
+        $.getJSON("./static/data/provinceBearbeitung.edh.geojson", function(data) {
                     geoJsonBearbeitung = L.geoJson(data, {
                     style: styleBearbeitung
                     });
@@ -45,11 +45,11 @@ var map = L.map('mapid', { zoomControl:false }).setView([43.105, 11.49], 4);
                 legendBearbeitung.onAdd = function (mapBearbeitung) {
                         var div = L.DomUtil.create('div', 'info legend');
                         var legendBearbeitung = "";
-                        legendBearbeitung += '<a href="/inschrift/suche?provinz=Rae&provinz=PaS&provinz=PaI&provinz=Ach&provinz=Epi&provinz=Mak&provinz=Thr&provinz=MoI&provinz=MoS&provinz=Dac&provinz=Dal&provinz=Nor&provinz=AlP&provinz=AlG&provinz=AlC&provinz=AlM" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(1) + '"></i> EDH vollständig bearbeitet</a><br>';
-                        legendBearbeitung += '<a href="/inschrift/suche?provinz=Bri&provinz=GeS&provinz=GeI&provinz=Bel" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(2) + '"></i> EDH in Arbeit</a><br>';
-                        legendBearbeitung += '<a href="/inschrift/suche?provinz=Asi&provinz=Cre&provinz=GeS&provinz=Bel&provinz=Nar&provinz=Aqu&provinz=Lug&provinz=GeI&provinz=Ass&provinz=Arm&provinz=LyP&provinz=BiP&provinz=Mes&provinz=Gal&provinz=Cap&provinz=Cil&provinz=Cyr&provinz=Aeg&provinz=MaC&provinz=Num&provinz=Afr&provinz=MaT&provinz=Ara&provinz=Syr&provinz=Iud" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(0) + '"></i> EDH provisorisch bearbeitet</a><br>';
-                        legendBearbeitung += '<a href="/inschrift/suche?provinz=Umb&provinz=Pic&provinz=Sam&provinz=LaC&provinz=Etr&provinz=Tra&provinz=Lig&provinz=Aem&provinz=VeH&provinz=BrL&provinz=Sic&provinz=Sar&provinz=Cor&provinz=ApC&provinz=Rom" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(3) + '"></i> EDR</a><br>';
-                        legendBearbeitung += '<a href="/inschrift/suche?provinz=Bae&provinz=Lus&provinz=HiC" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(4) + '"></i> HEpOnl</a>';
+                        legendBearbeitung += '<a href="./inschrift/suche?provinz=Rae&provinz=PaS&provinz=PaI&provinz=Ach&provinz=Epi&provinz=Mak&provinz=Thr&provinz=MoI&provinz=MoS&provinz=Dac&provinz=Dal&provinz=Nor&provinz=AlP&provinz=AlG&provinz=AlC&provinz=AlM" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(1) + '"></i> EDH vollständig bearbeitet</a><br>';
+                        legendBearbeitung += '<a href="./inschrift/suche?provinz=Bri&provinz=GeS&provinz=GeI&provinz=Bel" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(2) + '"></i> EDH in Arbeit</a><br>';
+                        legendBearbeitung += '<a href="./inschrift/suche?provinz=Asi&provinz=Cre&provinz=GeS&provinz=Bel&provinz=Nar&provinz=Aqu&provinz=Lug&provinz=GeI&provinz=Ass&provinz=Arm&provinz=LyP&provinz=BiP&provinz=Mes&provinz=Gal&provinz=Cap&provinz=Cil&provinz=Cyr&provinz=Aeg&provinz=MaC&provinz=Num&provinz=Afr&provinz=MaT&provinz=Ara&provinz=Syr&provinz=Iud" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(0) + '"></i> EDH provisorisch bearbeitet</a><br>';
+                        legendBearbeitung += '<a href="./inschrift/suche?provinz=Umb&provinz=Pic&provinz=Sam&provinz=LaC&provinz=Etr&provinz=Tra&provinz=Lig&provinz=Aem&provinz=VeH&provinz=BrL&provinz=Sic&provinz=Sar&provinz=Cor&provinz=ApC&provinz=Rom" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(3) + '"></i> EDR</a><br>';
+                        legendBearbeitung += '<a href="./inschrift/suche?provinz=Bae&provinz=Lus&provinz=HiC" style="text-decoration:none;color:#333" target="_parent"><i style="background:' + getColorBearbeitung(4) + '"></i> HEpOnl</a>';
                         div.innerHTML = legendBearbeitung;
                         return div;
                 };
