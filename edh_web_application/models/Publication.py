@@ -265,7 +265,8 @@ def _get_url_without_pagination_parameters(url):
     url = re.sub("start=[0-9]*&*", "", url)
     url = re.sub("anzahl=[0-9]*&*", "", url)
     url = re.sub("&&", "&", url)
-    return url
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
 
 
 def _remove_number_of_hits_from_autocomplete(user_entry):
