@@ -114,7 +114,7 @@
 {% block scripts %}
 {{ super() }}
 <script>
-    $("input#autor").autocomplete({source:"/bibliographie/ac/autor",minLength:3,delay:0})
-    $("input#publikation").autocomplete({source:"/bibliographie/ac/publikation",minLength:0,selectFirst:true,delay:0, select: function( event, ui ) {}})
+    $("input#autor").autocomplete({source:"./bibliographie/ac/autor",minLength:3,delay:0})
+    $("input#publikation").autocomplete({source:"./bibliographie/ac/publikation",minLength:0,selectFirst:true,delay:0, select: function( event, ui ) {}})
 </script>
 {% endblock %}

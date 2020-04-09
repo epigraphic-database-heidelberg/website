@@ -109,10 +109,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
 <script>
-    $("input#modern_find_spot").autocomplete({source:"/geographie/ac/fo_modern",minLength:3,delay:0})
-    $("input#ancient_find_spot").autocomplete({source:"/geographie/ac/fo_antik",minLength:3,delay:0})
-    $("input#find_spot").autocomplete({source:"/geographie/ac/fundstelle",minLength:3,delay:0})
-    $("input#region").autocomplete({source:"/geographie/ac/region",minLength:3,delay:0})
+    $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik",minLength:3,delay:0})
+    $("input#find_spot").autocomplete({source:"./geographie/ac/fundstelle",minLength:3,delay:0})
+    $("input#region").autocomplete({source:"./geographie/ac/region",minLength:3,delay:0})
     $('select').selectpicker();
 </script>
 {% endblock %}

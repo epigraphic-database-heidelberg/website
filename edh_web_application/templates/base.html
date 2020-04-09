@@ -4,20 +4,21 @@
 
 {% block head %}
 {{super()}}
+    <base href="/">
     <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-    <link href="{{url_for('static', filename='img/favicon.ico')}}" rel="shortcut icon">
+    <link href=".{{url_for('static', filename='img/favicon.ico')}}" rel="shortcut icon">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css" rel="stylesheet">
-    <link href="{{url_for('static', filename='css/edh_styles.css')}}" rel="stylesheet">
+    <link href=".{{url_for('static', filename='css/edh_styles.css')}}" rel="stylesheet">
 {% endblock %}
 
 {% block title %} {{_("Epigraphic Database Heidelberg")}} {% endblock %}
 
 {% block navbar %}
-    <div id="beta-banner-wrapper"><img id="beta-banner" src="{{url_for('static', filename='img/beta-banner_600.png')}}" /></div>
-    <div id="hadw-banner-wrapper"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src="{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
+    <div id="beta-banner-wrapper"><img id="beta-banner" src=".{{url_for('static', filename='img/beta-banner_600.png')}}" /></div>
+    <div id="hadw-banner-wrapper"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
     <div class="wrapper head">
-        <div class="container head"><a href="/">{{_("Epigraphic Database Heidelberg")}}</a></div>
+        <div class="container head"><a href="./">{{_("Epigraphic Database Heidelberg")}}</a></div>
     </div>
     <nav class="navbar navbar-light">
         <div class="container">
@@ -28,34 +29,34 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand {% if '/home' in request.path %} active {% endif %}" href="{{ url_for('home') }}">Home</a>
+                <a class="navbar-brand {% if '/home' in request.path %} active {% endif %}" href=".{{ url_for('home') }}">Home</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown {% if '/projekt' in request.path %} active {% endif %}" >
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ _('Project...') }}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/projekt/konzept">{{ _('Concept') }}</a></li>
-                            <li><a href="/projekt/geschichte">{{ _('History') }}</a></li>
-                            <li><a href="/projekt/kooperationen">{{ _('Cooperations') }}</a></li>
-                            <li><a href="/projekt/mitarbeiter">{{ _('Research Team Members') }}</a></li>
-                            <li><a href="/projekt/veranstaltungen">{{ _('Events and Presentations') }}</a></li>
-                            <li><a href="/projekt/kontakt">{{ _('Contact') }}</a></li>
+                            <li><a href="./projekt/konzept">{{ _('Concept') }}</a></li>
+                            <li><a href="./projekt/geschichte">{{ _('History') }}</a></li>
+                            <li><a href="./projekt/kooperationen">{{ _('Cooperations') }}</a></li>
+                            <li><a href="./projekt/mitarbeiter">{{ _('Research Team Members') }}</a></li>
+                            <li><a href="./projekt/veranstaltungen">{{ _('Events and Presentations') }}</a></li>
+                            <li><a href="./projekt/kontakt">{{ _('Contact') }}</a></li>
                         </ul>
                     </li>
                     <li class="dropdown {% if '/inschrift' in request.path %} active {% endif %}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ _('Inscriptions...') }}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/inschrift/suche">{{ _('Simple Search') }}</a></li>
-                            <li><a href="/inschrift/erweiterteSuche">{{ _('Extended Search') }}</a></li>
-                            <li><a href="/inschrift/browse">{{ _('Browse...') }}</a></li>
+                            <li><a href="./inschrift/suche">{{ _('Simple Search') }}</a></li>
+                            <li><a href="./inschrift/erweiterteSuche">{{ _('Extended Search') }}</a></li>
+                            <li><a href="./inschrift/browse">{{ _('Browse...') }}</a></li>
                         </ul>
                     </li>
-                    <li {% if '/foto' in request.path %} class="active" {% endif %}><a href="/foto/suche">{{ _('Photos') }}</a></li>
-                    <li {% if '/bibliographie' in request.path %} class="active" {% endif %}><a href="/bibliographie/suche">{{ _('Bibliography') }}</a></li>
-                    <li {% if '/geographie' in request.path %} class="active" {% endif %}><a href="/geographie/suche">{{ _('Geography') }}</a></li>
-                    <li {% if '/data' in request.path %} class="active" {% endif %}><a href="/data">{{ _('Data') }}</a></li>
-                    <li {% if '/links' in request.path %} class="active" {% endif %}><a href="/links">{{ _('Links') }}</a></li>
+                    <li {% if '/foto' in request.path %} class="active" {% endif %}><a href="./foto/suche">{{ _('Photos') }}</a></li>
+                    <li {% if '/bibliographie' in request.path %} class="active" {% endif %}><a href="./bibliographie/suche">{{ _('Bibliography') }}</a></li>
+                    <li {% if '/geographie' in request.path %} class="active" {% endif %}><a href="./geographie/suche">{{ _('Geography') }}</a></li>
+                    <li {% if '/data' in request.path %} class="active" {% endif %}><a href="./data">{{ _('Data') }}</a></li>
+                    <li {% if '/links' in request.path %} class="active" {% endif %}><a href="./links">{{ _('Links') }}</a></li>
                 </ul>
             </div>
         </div>
@@ -78,11 +79,11 @@
     <footer class="footer">
 		<div class="container">
 			<p class="text-muted">
-                <a href="{{ url_for('project.show_project_contact_page') }}">{{ _("Contact") }}</a> |
+                <a href=".{{ url_for('project.show_project_contact_page') }}">{{ _("Contact") }}</a> |
                 <a href="https://www.hadw-bw.de/impressum">{{ _("Imprint") }}</a> |
                 <a href="https://www.hadw-bw.de/datenschutzerklaerung">{{ _("Data Privacy Statement") }}</a> |
-                <a href="/home?lang=de"><img src="/static/img/germany-flag-icon-16.png" style="height:12px" /></a>
-                <a href="/home?lang=en"><img src="/static/img/united-kingdom-flag-icon-16.png" style="margin-left:0.75em;height:12px"/></a>
+                <a href="./home?lang=de"><img src="/static/img/germany-flag-icon-16.png" style="height:12px" /></a>
+                <a href="./home?lang=en"><img src="/static/img/united-kingdom-flag-icon-16.png" style="margin-left:0.75em;height:12px"/></a>
             </p>
 		</div>
     </footer>

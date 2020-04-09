@@ -12,7 +12,7 @@
             <span class="detail_block_header_text">{{ _("Canonical URI") }}:
                 <span id="geo_uri">
                     <a href="https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}">https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}</a>
-                    <img src="{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
+                    <img src=".{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
                 </span>
                 <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
             </span>
@@ -38,7 +38,7 @@
                 <div class="detail_block_content_row_text">
                     {% set author_list = data['autor'].split(' - ') %}
                     {% for author in author_list %}
-                        <a href="/bibliographie/suche?author={{ author }}" class="pfeil">{{ author }}</a> &nbsp;
+                        <a href="./bibliographie/suche?author={{ author }}" class="pfeil">{{ author }}</a> &nbsp;
                     {% endfor %}
                 </div>
             </section>
@@ -51,7 +51,7 @@
             {% if data['publikation'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('publication:') }}</div>
-                <div class="detail_block_content_row_text"><a href="/bibliographie/suche?publication={{ data['publikation'] }}" class="pfeil">{{data['publikation']}}</a></div>
+                <div class="detail_block_content_row_text"><a href="./bibliographie/suche?publication={{ data['publikation'] }}" class="pfeil">{{data['publikation']}}</a></div>
             </section>
             {% endif %}
             {% if data['band'] %}
@@ -90,7 +90,7 @@
                 <div class="detail_block_content_row_text" style="colspan=2">
                     {% set ae_list = data['ae'].split(';') %}
                     {% for entry in ae_list %}
-                    <a href="/bibliographie/suche?ae={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
+                    <a href="./bibliographie/suche?ae={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
                     {% endfor %}
                 </div>
 
@@ -110,7 +110,7 @@
                 <div class="detail_block_content_row_text">
                 {% set ae_list = data['zu_ae'].split(';') %}
                 {% for entry in ae_list %}
-                <a href="/bibliographie/suche?on_ae={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
+                <a href="./bibliographie/suche?on_ae={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
                 {% endfor %}
                 </div>
             </section>
@@ -123,7 +123,7 @@
                 <div class="detail_block_content_row_text">
                     {% set cil_list = data['cil'].split(';') %}
                     {% for entry in cil_list %}
-                    <a href="/bibliographie/suche?cil={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
+                    <a href="./bibliographie/suche?cil={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
                     {% endfor %}
                 </div>
             </section>
@@ -136,7 +136,7 @@
                 <div class="detail_block_content_row_text">
                     {% set corpora_list = data['sonstigeCorpora'].split(';') %}
                     {% for entry in corpora_list %}
-                    <a href="/bibliographie/suche?other_corpora={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
+                    <a href="./bibliographie/suche?other_corpora={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
                     {% endfor %}
                 </div>
             </section>
@@ -149,5 +149,5 @@
 {% endblock %}
 {% block scripts %}
 {{ super() }}
-<script src="{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
+<script src=".{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
 {% endblock %}

@@ -12,7 +12,7 @@
             <span class="detail_block_header_text">{{ _("Canonical URI") }}:
                 <span id="geo_uri">
                     <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}">https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}</a>
-                    <img src="{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
+                    <img src=".{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
                 </span>
                 <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
             </span>
@@ -136,8 +136,8 @@
 {{ super() }}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-<script src="{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
-<script src="{{url_for('geography.static', filename='js/bing.js')}}"></script>
+<script src=".{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
+<script src=".{{url_for('geography.static', filename='js/bing.js')}}"></script>
 <script type="text/javascript">
     var BING_KEY = 'AhpTG22M_rzQEp8Q4c4edHpmIWXhwrQE65lztW3S7MsvB4cpUuya0fUgJscUfXMa'
     var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +

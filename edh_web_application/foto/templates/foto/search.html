@@ -102,8 +102,8 @@
 {% block scripts %}
 {{ super() }}
 <script>
-    $("input#modern_find_spot").autocomplete({source:"/geographie/ac/fo_modern",minLength:3,delay:0})
-    $("input#ancient_find_spot").autocomplete({source:"/geographie/ac/fo_antik",minLength:3,delay:0})
-    $("input#find_spot").autocomplete({source:"/geographie/ac/fundstelle",minLength:3,delay:0})
+    $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik",minLength:3,delay:0})
+    $("input#find_spot").autocomplete({source:"./geographie/ac/fundstelle",minLength:3,delay:0})
 </script>
 {% endblock %}
