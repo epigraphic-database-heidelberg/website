@@ -1,5 +1,4 @@
 #EDH Infrastructure
-
 The EDH web application is built around an Apache Solr search index. Here's everything to set up the EDH backend:
 
 * data: CSV files with textual data from all EDH databases (inscription, foto, bibliography, geography)
