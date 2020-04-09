@@ -104,9 +104,9 @@
             <li class="page-item">
                 <a class="page-link" href="
                     {% if (data['metadata']['start']|int - data['metadata']['rows']|int) > 0 %}
-                        {{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int - data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int - data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
                     {% else %}
-                        {{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}
                     {% endif %}
                     " aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
@@ -120,14 +120,14 @@
                 </li>
                 {% else %}
                 <li class="page-item">
-                    <a class="page-link" href="{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+                    <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
                 </li>
                 {% endif %}
             {% endfor%}
             <li class="page-item">
                 <a class="page-link" href="
                 {% if (data['metadata']['start']|int + data['metadata']['rows']|int) <= data['metadata']['number_of_hits']|int %}
-                    {{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
                 {% endif %}
                 " aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -137,4 +137,5 @@
         </ul>
     </nav>
 </div>
+<div>
 {% endblock %}
