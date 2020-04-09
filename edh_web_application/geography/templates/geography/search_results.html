@@ -52,11 +52,11 @@
     {% set count.value = count.value + 1 %}
     <div class="detail_block">
         <div class="detail_block_header">
-            <span class="detail_block_header_text"><a href="/edh/geographie/{{ d['id'] }}">{{_('Number')}} {{count.value + data['metadata']['start']|int}}: {{ d['id'] }} {{ _('&ndash; open detailed view...') }}</a></span>
+            <span class="detail_block_header_text"><a href="./edh/geographie/{{ d['id'] }}">{{_('Number')}} {{count.value + data['metadata']['start']|int}}: {{ d['id'] }} {{ _('&ndash; open detailed view...') }}</a></span>
         </div>
         <div class="wrapper_geo_last_updates" style="padding:10px">
             <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;">
-                <a href="/edh/geographie/{{ d['id'] }}">
+                <a href="./edh/geographie/{{ d['id'] }}">
                     <div id="map_canvas_{{ count.value }}" style="width:200px;height:200px;border: 1px solid #ccc"></div>
                 </a>
             </div>

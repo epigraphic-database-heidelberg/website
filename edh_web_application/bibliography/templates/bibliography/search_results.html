@@ -52,7 +52,7 @@
     {% set count.value = count.value + 1 %}
     <div class="detail_block">
         <div class="detail_block_header">
-            <span class="detail_block_header_text"><a href="/edh/bibliographie/{{ d['b_nr'] }}">{{_('Number')}} {{count.value + data['metadata']['start']|int}}: {{ d['b_nr'] }} {{ _('&ndash; open detailed view...') }}</a></span>
+            <span class="detail_block_header_text"><a href="./edh/bibliographie/{{ d['b_nr'] }}">{{_('Number')}} {{count.value + data['metadata']['start']|int}}: {{ d['b_nr'] }} {{ _('&ndash; open detailed view...') }}</a></span>
         </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
@@ -60,7 +60,7 @@
                 <div class="detail_block_content_row_text">
                     {% set author_list = d['autor'].split(' - ') %}
                     {% for author in author_list %}
-                        <a href="/bibliographie/suche?author={{ author }}" class="pfeil">{{ author }}</a> &nbsp;
+                        <a href="./bibliographie/suche?author={{ author }}" class="pfeil">{{ author }}</a> &nbsp;
                     {% endfor %}
                 </div>
             </section>
@@ -73,7 +73,7 @@
             {% if d['publikation'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('publication') }}</div>
-                <div class="detail_block_content_row_text"><a href="/bibliographie/suche?publication={{ d['publikation'] }}" class="pfeil">{{ d['publikation'] }}</a></div>
+                <div class="detail_block_content_row_text"><a href="./bibliographie/suche?publication={{ d['publikation'] }}" class="pfeil">{{ d['publikation'] }}</a></div>
             </section>
             {% endif %}
             {% if d['band'] %}
