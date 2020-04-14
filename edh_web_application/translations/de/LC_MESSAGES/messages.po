@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-30 19:11+0200\n"
+"POT-Creation-Date: 2020-04-14 11:05+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -178,7 +178,7 @@ msgstr "andere Corpora"
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:15
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:55
 #: edh_web_application/geography/templates/geography/last_updates.html:17
-#: edh_web_application/geography/templates/geography/search_results.html:55
+#: edh_web_application/geography/templates/geography/search_results.html:57
 msgid "&ndash; open detailed view..."
 msgstr "&ndash; Detailansicht öffnen..."
 
@@ -206,17 +206,16 @@ msgid "Search..."
 msgstr "suchen..."
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:9
-#: edh_web_application/geography/templates/geography/search_results.html:9
 msgid "The search resulted in "
 msgstr "Die Suche ergab"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:9
-#: edh_web_application/geography/templates/geography/search_results.html:9
+#: edh_web_application/geography/templates/geography/search_results.html:11
 msgid "hits."
-msgstr "Treffer"
+msgstr "Treffer."
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:55
-#: edh_web_application/geography/templates/geography/search_results.html:55
+#: edh_web_application/geography/templates/geography/search_results.html:57
 msgid "Number"
 msgstr "Suchtreffer"
 
@@ -261,7 +260,7 @@ msgstr "F-Nummer"
 #: edh_web_application/geography/forms.py:63
 #: edh_web_application/geography/templates/geography/detail_view.html:73
 #: edh_web_application/geography/templates/geography/last_updates.html:27
-#: edh_web_application/geography/templates/geography/search_results.html:65
+#: edh_web_application/geography/templates/geography/search_results.html:67
 msgid "province"
 msgstr "Provinz"
 
@@ -271,7 +270,7 @@ msgstr "Provinz"
 #: edh_web_application/geography/forms.py:63
 #: edh_web_application/geography/templates/geography/detail_view.html:77
 #: edh_web_application/geography/templates/geography/last_updates.html:32
-#: edh_web_application/geography/templates/geography/search_results.html:70
+#: edh_web_application/geography/templates/geography/search_results.html:72
 msgid "country"
 msgstr "Land"
 
@@ -281,7 +280,7 @@ msgstr "Land"
 #: edh_web_application/geography/forms.py:64
 #: edh_web_application/geography/templates/geography/detail_view.html:81
 #: edh_web_application/geography/templates/geography/last_updates.html:37
-#: edh_web_application/geography/templates/geography/search_results.html:75
+#: edh_web_application/geography/templates/geography/search_results.html:77
 msgid "ancient find spot"
 msgstr "Fundort antik"
 
@@ -291,7 +290,7 @@ msgstr "Fundort antik"
 #: edh_web_application/geography/forms.py:65
 #: edh_web_application/geography/templates/geography/detail_view.html:91
 #: edh_web_application/geography/templates/geography/last_updates.html:41
-#: edh_web_application/geography/templates/geography/search_results.html:79
+#: edh_web_application/geography/templates/geography/search_results.html:81
 msgid "modern find spot"
 msgstr "Fundort modern"
 
@@ -369,7 +368,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:65
 #: edh_web_application/geography/templates/geography/detail_view.html:101
 #: edh_web_application/geography/templates/geography/last_updates.html:45
-#: edh_web_application/geography/templates/geography/search_results.html:83
+#: edh_web_application/geography/templates/geography/search_results.html:85
 msgid "find spot"
 msgstr "Fundstelle"
 
@@ -377,7 +376,7 @@ msgstr "Fundstelle"
 #: edh_web_application/geography/forms.py:66
 #: edh_web_application/geography/templates/geography/detail_view.html:111
 #: edh_web_application/geography/templates/geography/last_updates.html:49
-#: edh_web_application/geography/templates/geography/search_results.html:93
+#: edh_web_application/geography/templates/geography/search_results.html:95
 msgid "verw_bezirk"
 msgstr "Region"
 
@@ -449,6 +448,14 @@ msgstr "Nein"
 #: edh_web_application/geography/templates/geography/search.html:16
 msgid "select one or more entries..."
 msgstr "einen oder mehrere Einträge auswählen..."
+
+#: edh_web_application/geography/templates/geography/search_results.html:9
+msgid "The search for:"
+msgstr "Die Suche nach:"
+
+#: edh_web_application/geography/templates/geography/search_results.html:11
+msgid "resulted in"
+msgstr "ergab"
 
 #: edh_web_application/inscription/routes.py:10
 msgid "Epigraphic Text Database: Simple Search"
@@ -1141,7 +1148,7 @@ msgid "Project - Provinces"
 msgstr "Projekt - Provinzen"
 
 #: edh_web_application/project/routes.py:44
-#: edh_web_application/templates/base.html:58
+#: edh_web_application/templates/base.html:59
 msgid "Links"
 msgstr ""
 
@@ -1370,8 +1377,8 @@ msgstr ""
 "führenden Datenbankvorhaben zur raschen Sammlung und zuverlässigen "
 "historischen Auswertung epigraphischer Zeugnisse. Die besonderen Merkmale"
 " der <i>EDH</i> liegen auf der <a "
-"href=\"./hilfe/liste/provinzen\">regionalen Systematik</a>, der beliebigen"
-" Kombinierbarkeit der gespeicherten Metainformationen und der "
+"href=\"./hilfe/liste/provinzen\">regionalen Systematik</a>, der "
+"beliebigen Kombinierbarkeit der gespeicherten Metainformationen und der "
 "wechselseitigen Verknüpfung der <a "
 "href=\"./inhalt/einfacheSuche\"><i>Epigraphischen Text-"
 "Datenbank</i></a>&nbsp; mit den drei weiteren Teildatenbanken der "
@@ -1435,8 +1442,8 @@ msgstr ""
 "Austausch mit in- und ausländischen Forschern und "
 "Forschungseinrichtungen, um gerade deren spezielles, auch regional "
 "ausgeprägtes Profil im Rahmen <a "
-"href=\"./hilfe/liste/externeMitarbeiter\">externer Kooperation</a> in die "
-"<i>EDH</i> einzubringen.</p>"
+"href=\"./hilfe/liste/externeMitarbeiter\">externer Kooperation</a> in die"
+" <i>EDH</i> einzubringen.</p>"
 
 #: edh_web_application/project/templates/project/project_contact.html:9
 msgid "Contact page"
@@ -1875,8 +1882,8 @@ msgstr ""
 "Geographie, Literatur, Transkription):<br /><img src=\"./static/img"
 "/einfache-suche_geschichte.jpg\" /><br />Die Suchergebnisse werden ebenso"
 " gruppiert angezeigt:<br /><img "
-"src=\"./static/img/edh_ergebnis_kleinansicht_geschichte.jpg\" /></div>    "
-"</div>  </li>  <li>    <div class=\"direction-l\">      <div class"
+"src=\"./static/img/edh_ergebnis_kleinansicht_geschichte.jpg\" /></div>"
+"    </div>  </li>  <li>    <div class=\"direction-l\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">1995</span>      </div>      <div class=\"desc\">Aufnahme "
 "in und Förderung durch das Akademien-Programm der Bund-Länder-Kommission "
@@ -1901,14 +1908,14 @@ msgstr ""
 "Bearbeitung antiker lateinischer Inschriften in einer umfassenden "
 "Epigraphischen Datenbank.      <img "
 "src=\"./static/img/bildschirm_1.jpg\"><br /><br /><img "
-"src=\"./static/img/bildschirm_2.jpg\"><br />Eingabemaske Textdatenbank im "
-"Jahr 1986<br />       Parallel dazu Aufbau einer epigraphischen "
+"src=\"./static/img/bildschirm_2.jpg\"><br />Eingabemaske Textdatenbank im"
+" Jahr 1986<br />       Parallel dazu Aufbau einer epigraphischen "
 "Bibliographie<br /><img "
-"src=\"./static/img/ebh_kartei_ausschnitt_geschichte.jpg\"><br />und eines "
-"eines epigraphischen Fotoarchivs,<br />      <img src=\"./static/img/foto-"
-"blatt_geschichte.jpg\"><br /><img "
-"src=\"./static/img/fotothek_utensilien_geschichte.jpg\"><br />deren Daten "
-"zugleich auch in den seit Beginn des Projekts angelegen Teildatenbanken "
+"src=\"./static/img/ebh_kartei_ausschnitt_geschichte.jpg\"><br />und eines"
+" eines epigraphischen Fotoarchivs,<br />      <img src=\"./static/img"
+"/foto-blatt_geschichte.jpg\"><br /><img "
+"src=\"./static/img/fotothek_utensilien_geschichte.jpg\"><br />deren Daten"
+" zugleich auch in den seit Beginn des Projekts angelegen Teildatenbanken "
 "Bibliographische und Fototheks-Datenbank erfasst werden (s. im Vergleich "
 "<a href=\"http://www.skriptum-geschichte.de/2015/heft-1/blick-in-die-"
 "historikerwerkstatt-die-epigraphische-datenbank-heidelberg-edh-"
@@ -2097,8 +2104,8 @@ msgstr ""
 "class=\"hexa\"></span><span class=\"flag\">Juni 2002</span></div> <div "
 "class=\"desc\">Beteiligung der EDH am \"Wissenschaftsmarkt\" der "
 "Universität Heidelberg<br /><img "
-"src=\"./static/img/wissmarkt_klinger_2.jpg\" style=\"width:200px\" /><img "
-"src=\"./static/img/wiss-markt_flyer.jpg\" style=\"width:200px\" /></div>"
+"src=\"./static/img/wissmarkt_klinger_2.jpg\" style=\"width:200px\" /><img"
+" src=\"./static/img/wiss-markt_flyer.jpg\" style=\"width:200px\" /></div>"
 "    </div>  </li></ul>"
 
 #: edh_web_application/project/templates/project/project_provinces.html:9
@@ -2202,11 +2209,11 @@ msgid "404"
 msgstr ""
 "<p>Die gewünschte Seite kann nicht gefunden werden.</p><p>Was "
 "nun?</p><p>Wenn Sie nach Inschriften suchen möchten, benutzen Sie bitte "
-"entweder die <a href=\"./inschrift/suche\">einfache Suche</a> oder die <a "
-"href=\"./inschrift/erweiterteSuche\">erweiterte Suche</a>.</p><p>Wenn Sie "
-"nach Fotos suchen möchten, klicken Sie bitte auf <a "
-"href=\"./foto/suche\">Fotos</a>.</p><p>Für die Suche nach Publikationen zu"
-" Inschriften benutzen Sie bitte die <a href=\"./bibliographie/suche"
+"entweder die <a href=\"./inschrift/suche\">einfache Suche</a> oder die <a"
+" href=\"./inschrift/erweiterteSuche\">erweiterte Suche</a>.</p><p>Wenn "
+"Sie nach Fotos suchen möchten, klicken Sie bitte auf <a "
+"href=\"./foto/suche\">Fotos</a>.</p><p>Für die Suche nach Publikationen "
+"zu Inschriften benutzen Sie bitte die <a href=\"./bibliographie/suche"
 "\">Bibliographie-Datenbank</a>.</p><p>Möchten Sie sich über das Projekt "
 "informieren, stehen Ihnen die folgenden Links zur "
 "Verfügung:</p><ul><li><a href=\"projekt/konzept\">Konzept</a></li><li><a "
@@ -2214,81 +2221,81 @@ msgstr ""
 "href=\"projekt/kooperationen\">Kooperationen</a></li><li><a "
 "href=\"projekt/mitarbeiter\">Mitarbeiter</a></li><li><a "
 "href=\"projekt/veranstaltungen\">Veranstaltungen & "
-"Öffentlichkeitsarbeit</a></li></ul><p>Unter <a href=\"./links\">Links</a> "
-"finden Sie Hinweise zu weiteren epigraphischen Projekten.</p>"
+"Öffentlichkeitsarbeit</a></li></ul><p>Unter <a href=\"./links\">Links</a>"
+" finden Sie Hinweise zu weiteren epigraphischen Projekten.</p>"
 
-#: edh_web_application/templates/base.html:14
-#: edh_web_application/templates/base.html:20
+#: edh_web_application/templates/base.html:15
+#: edh_web_application/templates/base.html:21
 msgid "Epigraphic Database Heidelberg"
 msgstr "Epigraphische Datenbank Heidelberg"
 
-#: edh_web_application/templates/base.html:36
+#: edh_web_application/templates/base.html:37
 msgid "Project..."
 msgstr "Projekt..."
 
-#: edh_web_application/templates/base.html:38
+#: edh_web_application/templates/base.html:39
 msgid "Concept"
 msgstr "Konzept"
 
-#: edh_web_application/templates/base.html:39
+#: edh_web_application/templates/base.html:40
 msgid "History"
 msgstr "Geschichte"
 
-#: edh_web_application/templates/base.html:40
+#: edh_web_application/templates/base.html:41
 msgid "Cooperations"
 msgstr "Kooperationen"
 
-#: edh_web_application/templates/base.html:41
+#: edh_web_application/templates/base.html:42
 msgid "Research Team Members"
 msgstr "Mitarbeiter"
 
-#: edh_web_application/templates/base.html:42
+#: edh_web_application/templates/base.html:43
 msgid "Events and Presentations"
 msgstr "Veranstaltungen & Öffentlichkeitsarbeit"
 
-#: edh_web_application/templates/base.html:43
-#: edh_web_application/templates/base.html:81
+#: edh_web_application/templates/base.html:44
+#: edh_web_application/templates/base.html:82
 msgid "Contact"
 msgstr "Kontakt"
 
-#: edh_web_application/templates/base.html:47
+#: edh_web_application/templates/base.html:48
 msgid "Inscriptions..."
 msgstr "Inschriften..."
 
-#: edh_web_application/templates/base.html:49
+#: edh_web_application/templates/base.html:50
 msgid "Simple Search"
 msgstr "Einfache Suche"
 
-#: edh_web_application/templates/base.html:50
+#: edh_web_application/templates/base.html:51
 msgid "Extended Search"
 msgstr "Erweiterte Suche"
 
-#: edh_web_application/templates/base.html:51
+#: edh_web_application/templates/base.html:52
 msgid "Browse..."
 msgstr "Durchblättern..."
 
-#: edh_web_application/templates/base.html:54
+#: edh_web_application/templates/base.html:55
 msgid "Photos"
 msgstr "Fotos"
 
-#: edh_web_application/templates/base.html:55
+#: edh_web_application/templates/base.html:56
 msgid "Bibliography"
 msgstr "Bibliographie"
 
-#: edh_web_application/templates/base.html:56
+#: edh_web_application/templates/base.html:57
 msgid "Geography"
 msgstr "Geographie"
 
-#: edh_web_application/templates/base.html:57
+#: edh_web_application/templates/base.html:58
 #: edh_web_application/templates/home.html:61
 msgid "Data"
 msgstr "Daten"
 
-#: edh_web_application/templates/base.html:82
+#: edh_web_application/templates/base.html:83
 msgid "Imprint"
 msgstr "Impressum"
 
-#: edh_web_application/templates/base.html:83
+#: edh_web_application/templates/base.html:84
 msgid "Data Privacy Statement"
 msgstr "Datenschutzerklärung"
 

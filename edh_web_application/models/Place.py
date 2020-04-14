@@ -318,6 +318,7 @@ class Place:
             return None
         else:
             number_of_hits = results.hits
+            query_params = _get_query_params(request.args)
             query_result = []
             for result in results:
                 props = {}
@@ -345,7 +346,7 @@ class Place:
                 query_result.append(pl)
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(
-                                     request.url)},
+                                     request.url), "query_params": query_params},
                     "items": query_result}
 
     @classmethod
@@ -492,3 +493,33 @@ def _remove_number_of_hits_from_autocomplete(user_entry):
     """
     user_entry = re.sub("\([0-9]*\)$", "", user_entry).strip()
     return user_entry
+
+
+def _get_query_params(args):
+    """
+    creates dictionary of search params for displaying on
+    search result page
+    :param args: request.args
+    :return: dictionary with all params of query
+    """
+    result_dict = {}
+    for key in args:
+        if key == 'province' and args['province'] != "":
+            # multidict
+            result_dict['province'] = ""
+            params_list = args.getlist('province')
+            for prov in params_list:
+                result_dict['province'] = result_dict['province'] + _l(prov) + ", "
+        elif key == 'country' and args['country'] != "":
+            # multidict
+            result_dict['country'] = ""
+            params_list = args.getlist('country')
+            for c in params_list:
+                result_dict['country'] = result_dict['country'] + Place.country[c] + ", "
+        elif key not in ('anzahl', 'sort') and args[key] != "":
+            result_dict[key] = args[key]
+    if 'province' in result_dict:
+        result_dict['province'] = re.sub(", $", "", result_dict['province'])
+    if 'country' in result_dict:
+        result_dict['country'] = re.sub(", $", "", result_dict['country'])
+    return result_dict

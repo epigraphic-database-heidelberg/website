@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-30 19:11+0200\n"
+"POT-Creation-Date: 2020-04-14 11:05+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -178,7 +178,7 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:15
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:55
 #: edh_web_application/geography/templates/geography/last_updates.html:17
-#: edh_web_application/geography/templates/geography/search_results.html:55
+#: edh_web_application/geography/templates/geography/search_results.html:57
 msgid "&ndash; open detailed view..."
 msgstr ""
 
@@ -206,17 +206,16 @@ msgid "Search..."
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:9
-#: edh_web_application/geography/templates/geography/search_results.html:9
 msgid "The search resulted in "
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:9
-#: edh_web_application/geography/templates/geography/search_results.html:9
+#: edh_web_application/geography/templates/geography/search_results.html:11
 msgid "hits."
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:55
-#: edh_web_application/geography/templates/geography/search_results.html:55
+#: edh_web_application/geography/templates/geography/search_results.html:57
 msgid "Number"
 msgstr ""
 
@@ -258,7 +257,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:63
 #: edh_web_application/geography/templates/geography/detail_view.html:73
 #: edh_web_application/geography/templates/geography/last_updates.html:27
-#: edh_web_application/geography/templates/geography/search_results.html:65
+#: edh_web_application/geography/templates/geography/search_results.html:67
 msgid "province"
 msgstr ""
 
@@ -268,7 +267,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:63
 #: edh_web_application/geography/templates/geography/detail_view.html:77
 #: edh_web_application/geography/templates/geography/last_updates.html:32
-#: edh_web_application/geography/templates/geography/search_results.html:70
+#: edh_web_application/geography/templates/geography/search_results.html:72
 msgid "country"
 msgstr ""
 
@@ -278,7 +277,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:64
 #: edh_web_application/geography/templates/geography/detail_view.html:81
 #: edh_web_application/geography/templates/geography/last_updates.html:37
-#: edh_web_application/geography/templates/geography/search_results.html:75
+#: edh_web_application/geography/templates/geography/search_results.html:77
 msgid "ancient find spot"
 msgstr ""
 
@@ -288,7 +287,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:65
 #: edh_web_application/geography/templates/geography/detail_view.html:91
 #: edh_web_application/geography/templates/geography/last_updates.html:41
-#: edh_web_application/geography/templates/geography/search_results.html:79
+#: edh_web_application/geography/templates/geography/search_results.html:81
 msgid "modern find spot"
 msgstr ""
 
@@ -366,7 +365,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:65
 #: edh_web_application/geography/templates/geography/detail_view.html:101
 #: edh_web_application/geography/templates/geography/last_updates.html:45
-#: edh_web_application/geography/templates/geography/search_results.html:83
+#: edh_web_application/geography/templates/geography/search_results.html:85
 msgid "find spot"
 msgstr ""
 
@@ -374,7 +373,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:66
 #: edh_web_application/geography/templates/geography/detail_view.html:111
 #: edh_web_application/geography/templates/geography/last_updates.html:49
-#: edh_web_application/geography/templates/geography/search_results.html:93
+#: edh_web_application/geography/templates/geography/search_results.html:95
 msgid "verw_bezirk"
 msgstr "region"
 
@@ -445,6 +444,14 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search.html:10
 #: edh_web_application/geography/templates/geography/search.html:16
 msgid "select one or more entries..."
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/search_results.html:9
+msgid "The search for:"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/search_results.html:11
+msgid "resulted in"
 msgstr ""
 
 #: edh_web_application/inscription/routes.py:10
@@ -1138,7 +1145,7 @@ msgid "Project - Provinces"
 msgstr ""
 
 #: edh_web_application/project/routes.py:44
-#: edh_web_application/templates/base.html:58
+#: edh_web_application/templates/base.html:59
 msgid "Links"
 msgstr "Links"
 
@@ -1370,15 +1377,15 @@ msgstr ""
 "combining the stored metadata as freely as possible and the reciprocal "
 "linking of the <a href=\"./inhalt/einfacheSuche\"><i><em>Epigraphic Text "
 "Database</em></i></a>&nbsp;with three of the constituent databases of "
-"<em>EDH</em>, the <a href=\"./inhalt/bibliographie\"><i><em>Bibliographic "
-"Database</em></i></a>, the <a href=\"./inhalt/fotos\"><i><em>Photographic "
-"Database</em></i></a> and the <em>Epigraphic Geographic "
-"Database.</em></p><p>Its <strong>aim</strong> is to render the epigraphic"
-" documentation of the provinces of the Roman Empire as completely and "
-"reliably as possible for online research work. Under the leadership of "
-"the <em>Commissione epigrafia e informatica of the AIEGL</em> a decision "
-"was made in 2003 to create an international epigraphic database "
-"confederation <a "
+"<em>EDH</em>, the <a href=\"./inhalt/bibliographie\"><i><em>Bibliographic"
+" Database</em></i></a>, the <a "
+"href=\"./inhalt/fotos\"><i><em>Photographic Database</em></i></a> and the"
+" <em>Epigraphic Geographic Database.</em></p><p>Its <strong>aim</strong> "
+"is to render the epigraphic documentation of the provinces of the Roman "
+"Empire as completely and reliably as possible for online research work. "
+"Under the leadership of the <em>Commissione epigrafia e informatica of "
+"the AIEGL</em> a decision was made in 2003 to create an international "
+"epigraphic database confederation <a "
 "href=\"./projekt/geschichte#anker11/2003\"><em>EAGLE</em></a> "
 "<em>(Electronic Archives of Greek and Latin Epigraphy)</em>. Since then "
 "<em>EDH</em> is responsible for the inscriptions of the <strong>Roman "
@@ -1658,10 +1665,10 @@ msgstr ""
 "        <span class=\"flag\">July 2007</span>      </div>      <div "
 "class=\"desc\">The EDH Photographic database goes online with some  "
 "16.000 records (digital images and metadata).<br /><br />      <img "
-"src=\"./static/img/efh_suche_geschichte.jpg\" /><br />Search mask<br /><br"
-" /><img src=\"./static/img/efh_ergebnis_geschichte.jpg\" /><br />Result "
-"page<br /><br /><img src=\"./static/img/rimini_geschichte.jpg\" /><br "
-"/>Detail view of image </div>    </div>  </li>  <li>    <div "
+"src=\"./static/img/efh_suche_geschichte.jpg\" /><br />Search mask<br "
+"/><br /><img src=\"./static/img/efh_ergebnis_geschichte.jpg\" /><br "
+"/>Result page<br /><br /><img src=\"./static/img/rimini_geschichte.jpg\" "
+"/><br />Detail view of image </div>    </div>  </li>  <li>    <div "
 "class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">since April "
 "2007</span>      </div>      <div class=\"desc\">Cooperation with project"
@@ -1788,8 +1795,8 @@ msgstr ""
 "class=\"desc\">Presentation of all inscriptions entered up to this point "
 "(ca. 33.000) together with all supplementary information concerning the "
 "monuments and the content of the Latin texts (see Searching):<br />      "
-"<img src=\"./static/img/erweiterte-suche.jpg\" /></div>    </div>  </li>  "
-"<li>    <div class=\"direction-r\">      <div class=\"flag-wrapper\">"
+"<img src=\"./static/img/erweiterte-suche.jpg\" /></div>    </div>  </li>"
+"  <li>    <div class=\"direction-r\">      <div class=\"flag-wrapper\">"
 "        <span class=\"hexa\"></span>        <span class=\"flag\">March "
 "2000</span>      </div>      <div class=\"desc\"><a href=\"http://www.ub"
 ".uni-heidelberg.de/archiv/607\">Campus-TV Programme (Rhein-Neckar-"
@@ -1846,8 +1853,8 @@ msgstr ""
 "geography, literature and transcription):<br /><img src=\"./static/img"
 "/einfache-suche_geschichte.jpg\" /><br />Search results are presented "
 "likewise:<br /><img "
-"src=\"./static/img/edh_ergebnis_kleinansicht_geschichte.jpg\" /></div>    "
-"</div>  </li>  <li>    <div class=\"direction-l\">      <div class"
+"src=\"./static/img/edh_ergebnis_kleinansicht_geschichte.jpg\" /></div>"
+"    </div>  </li>  <li>    <div class=\"direction-l\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">1995</span>      </div>      <div class=\"desc\">Admission"
 " to Programme of the Academies of the Bund-Länder Commission under the "
@@ -1990,39 +1997,40 @@ msgstr ""
 " in Berlin: Organization of an epigraphic workshop for school children "
 "and presentation of EDH on the \"Projektstraße\" (Dr. Brigitte Gräf, Dr. "
 "Frank Grieshaber)<br /><img "
-"src=\"./static/img/akademientag_berlin_litfass.jpg\" style=\"width:200px\""
-" /></div>    </div>  </li><li><div class=\"direction-r\">      <div class"
-"=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
-"class=\"flag\">July 2011</span>      </div>      <div "
-"class=\"desc\">Contribution of EDH to the \"Unimeile\" during the 625 "
-"anniversary of Heidelberg University <img src=\"./static/img/3D-scan.jpg\""
-" style=\"width:200px\" /></div>    </div>  </li><li>    <div "
-"class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
-"class=\"hexa\"></span>        <span class=\"flag\">January "
-"2011</span></div> <div class=\"desc\">Organization of an epigraphic "
-"workshop  \"Epidoc/SoSOL training workshop\" Dr. James Cowey, Dr. "
-"Francisca Feraudi-Gruénais (Università di Bologna/Italien)<br /><img "
-"src=\"./static/img/epidoc_bologna_gruppe.jpg\" style=\"width:200px\" "
-"/></div>    </div>  </li><li><div class=\"direction-r\"><div class"
-"=\"flag-wrapper\"><span class=\"hexa\"></span><span "
-"class=\"flag\">November 2011</span></div><div class=\"desc\">Convegno "
-"Internazionale EAGLE in Rom on initiative of EDH: Discussion and "
-"decission about optimizing functionalities of the common EAGLE search "
-"masks (Dr. James Cowey, Dr. Francisca Feraudi-Gruénais, Dr. Frank "
-"Grieshaber)</div></div></li><li><div class=\"direction-l\"><div class"
-"=\"flag-wrapper\"><span class=\"hexa\"></span><span class=\"flag\">May "
-"2010</span></div> <div class=\"desc\">\"Epigrafista in azione: analisi e "
-"interpretazione di un recentissimo reperto epigrafico della Germania "
-"superior\": Workshop organized by Dr. Francisca Feraudi-Gruénais "
-"(Università degli Studi Udine/Italien)<br /><img "
-"src=\"./static/img/abklatsch_uebung.jpg\" style=\"width:200px\" /></div>"
-"    </div>  </li><li><div class=\"direction-r\"><div class=\"flag-"
-"wrapper\"><span class=\"hexa\"></span><span class=\"flag\">October "
-"2010</span></div><div class=\"desc\">Contribution of EDH to \"Nacht der "
-"Wissenschaften\" in Heidelberg</div></div></li><li><div "
+"src=\"./static/img/akademientag_berlin_litfass.jpg\" "
+"style=\"width:200px\" /></div>    </div>  </li><li><div "
+"class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
+"class=\"hexa\"></span>        <span class=\"flag\">July 2011</span>      "
+"</div>      <div class=\"desc\">Contribution of EDH to the \"Unimeile\" "
+"during the 625 anniversary of Heidelberg University <img "
+"src=\"./static/img/3D-scan.jpg\" style=\"width:200px\" /></div>    </div>"
+"  </li><li>    <div class=\"direction-l\">      <div class=\"flag-"
+"wrapper\">        <span class=\"hexa\"></span>        <span "
+"class=\"flag\">January 2011</span></div> <div class=\"desc\">Organization"
+" of an epigraphic workshop  \"Epidoc/SoSOL training workshop\" Dr. James "
+"Cowey, Dr. Francisca Feraudi-Gruénais (Università di Bologna/Italien)<br "
+"/><img src=\"./static/img/epidoc_bologna_gruppe.jpg\" "
+"style=\"width:200px\" /></div>    </div>  </li><li><div "
+"class=\"direction-r\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">November 2011</span></div><div"
+" class=\"desc\">Convegno Internazionale EAGLE in Rom on initiative of "
+"EDH: Discussion and decission about optimizing functionalities of the "
+"common EAGLE search masks (Dr. James Cowey, Dr. Francisca Feraudi-"
+"Gruénais, Dr. Frank Grieshaber)</div></div></li><li><div "
 "class=\"direction-l\"><div class=\"flag-wrapper\"><span "
-"class=\"hexa\"></span><span class=\"flag\">November 2008</span></div><div"
-" class=\"desc\">Participation of EDH at Convegno Internazionale EAGLE in "
+"class=\"hexa\"></span><span class=\"flag\">May 2010</span></div> <div "
+"class=\"desc\">\"Epigrafista in azione: analisi e interpretazione di un "
+"recentissimo reperto epigrafico della Germania superior\": Workshop "
+"organized by Dr. Francisca Feraudi-Gruénais (Università degli Studi "
+"Udine/Italien)<br /><img src=\"./static/img/abklatsch_uebung.jpg\" "
+"style=\"width:200px\" /></div>    </div>  </li><li><div "
+"class=\"direction-r\"><div class=\"flag-wrapper\"><span "
+"class=\"hexa\"></span><span class=\"flag\">October 2010</span></div><div "
+"class=\"desc\">Contribution of EDH to \"Nacht der Wissenschaften\" in "
+"Heidelberg</div></div></li><li><div class=\"direction-l\"><div class"
+"=\"flag-wrapper\"><span class=\"hexa\"></span><span "
+"class=\"flag\">November 2008</span></div><div "
+"class=\"desc\">Participation of EDH at Convegno Internazionale EAGLE in "
 "Rom: Presentation of status quo of EDH (Prof. Dr. Christian Witschel, Dr."
 " Francisca Feraudi-Gruénais)</div></div></li><li><div "
 "class=\"direction-r\"><div class=\"flag-wrapper\"><span "
@@ -2066,8 +2074,8 @@ msgstr ""
 "class=\"hexa\"></span><span class=\"flag\">June 2002</span></div> <div "
 "class=\"desc\">Contribution of EDH to \"Wissenschaftsmarkt\" of "
 "Heidelberg University<br /><img "
-"src=\"./static/img/wissmarkt_klinger_2.jpg\" style=\"width:200px\" /><img "
-"src=\"./static/img/wiss-markt_flyer.jpg\" style=\"width:200px\" /></div>"
+"src=\"./static/img/wissmarkt_klinger_2.jpg\" style=\"width:200px\" /><img"
+" src=\"./static/img/wiss-markt_flyer.jpg\" style=\"width:200px\" /></div>"
 "    </div>  </li></ul>"
 
 #: edh_web_application/project/templates/project/project_provinces.html:9
@@ -2168,8 +2176,8 @@ msgstr ""
 "<p>The requested page coud not be found..</p><p>What should I do "
 "now?</p><p>If you are searching for inscriptions, please use either <a "
 "href=\"./inschrift/suche\">Simple Search</a> or <a "
-"href=\"./inschrift/erweiterteSuche\">Complex Search</a>.</p><p>If you are "
-"searching for photos, please click on <a "
+"href=\"./inschrift/erweiterteSuche\">Complex Search</a>.</p><p>If you are"
+" searching for photos, please click on <a "
 "href=\"./foto/suche\">Photos</a>.</p><p>If you are searching for "
 "publications concerning inscriptions please use <a "
 "href=\"./bibliographie/suche\">Bibliography</a>.</p><p>If you want to "
@@ -2179,81 +2187,81 @@ msgstr ""
 "href=\"projekt/kooperationen\">Cooperations</a></li><li><a "
 "href=\"projekt/mitarbeiter\">Research Team Members</a></li><li><a "
 "href=\"projekt/veranstaltungen\">Events and "
-"Presentations</a></li></ul><p>Under <a href=\"./links\">Links</a> you will"
-" find directions to further epigrahic projects.</p>"
+"Presentations</a></li></ul><p>Under <a href=\"./links\">Links</a> you "
+"will find directions to further epigrahic projects.</p>"
 
-#: edh_web_application/templates/base.html:14
-#: edh_web_application/templates/base.html:20
+#: edh_web_application/templates/base.html:15
+#: edh_web_application/templates/base.html:21
 msgid "Epigraphic Database Heidelberg"
 msgstr "Epigraphic Database Heidelberg"
 
-#: edh_web_application/templates/base.html:36
+#: edh_web_application/templates/base.html:37
 msgid "Project..."
 msgstr "Project..."
 
-#: edh_web_application/templates/base.html:38
+#: edh_web_application/templates/base.html:39
 msgid "Concept"
 msgstr "Concept"
 
-#: edh_web_application/templates/base.html:39
+#: edh_web_application/templates/base.html:40
 msgid "History"
 msgstr "History"
 
-#: edh_web_application/templates/base.html:40
+#: edh_web_application/templates/base.html:41
 msgid "Cooperations"
 msgstr "Cooperations"
 
-#: edh_web_application/templates/base.html:41
+#: edh_web_application/templates/base.html:42
 msgid "Research Team Members"
 msgstr "Research Team Members"
 
-#: edh_web_application/templates/base.html:42
+#: edh_web_application/templates/base.html:43
 msgid "Events and Presentations"
 msgstr "Events and Presentations"
 
-#: edh_web_application/templates/base.html:43
-#: edh_web_application/templates/base.html:81
+#: edh_web_application/templates/base.html:44
+#: edh_web_application/templates/base.html:82
 msgid "Contact"
 msgstr ""
 
-#: edh_web_application/templates/base.html:47
+#: edh_web_application/templates/base.html:48
 msgid "Inscriptions..."
 msgstr "Inscriptions..."
 
-#: edh_web_application/templates/base.html:49
+#: edh_web_application/templates/base.html:50
 msgid "Simple Search"
 msgstr "Simple Search"
 
-#: edh_web_application/templates/base.html:50
+#: edh_web_application/templates/base.html:51
 msgid "Extended Search"
 msgstr "Extended Search"
 
-#: edh_web_application/templates/base.html:51
+#: edh_web_application/templates/base.html:52
 msgid "Browse..."
 msgstr "Browse..."
 
-#: edh_web_application/templates/base.html:54
+#: edh_web_application/templates/base.html:55
 msgid "Photos"
 msgstr "Photos"
 
-#: edh_web_application/templates/base.html:55
+#: edh_web_application/templates/base.html:56
 msgid "Bibliography"
 msgstr "Bibliography"
 
-#: edh_web_application/templates/base.html:56
+#: edh_web_application/templates/base.html:57
 msgid "Geography"
 msgstr ""
 
-#: edh_web_application/templates/base.html:57
+#: edh_web_application/templates/base.html:58
 #: edh_web_application/templates/home.html:61
 msgid "Data"
 msgstr "Data"
 
-#: edh_web_application/templates/base.html:82
+#: edh_web_application/templates/base.html:83
 msgid "Imprint"
 msgstr ""
 
-#: edh_web_application/templates/base.html:83
+#: edh_web_application/templates/base.html:84
 msgid "Data Privacy Statement"
 msgstr ""
 
