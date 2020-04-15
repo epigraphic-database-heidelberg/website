@@ -170,6 +170,19 @@ p {
     border: 1px solid #1F6B3B;
     margin-bottom: 2em;
 }
+.btn-primary {
+    color: #fff;
+    background-color: #1F6B3B;
+    border-color: #ddd;
+    margin-top: 1em;
+}
+.btn-secondary {
+    color: #1F6B3B;
+    border: 1px solid #1F6B3B;
+    background-color: #ddd;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
 .form-control:focus {
     border-color: #1F6B3B;
     outline: 0;
