@@ -1,0 +1,10 @@
+{
+    "type": "Feature",
+    "properties": {
+        "province": "Barbaricum"
+    },
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": []
+    }
+}
