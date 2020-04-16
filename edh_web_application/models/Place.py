@@ -732,6 +732,7 @@ class Place:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             res['datum'] = format_date(dt, 'd. MMM YYYY', locale='de_DE')
             res['land'] = Place.country[res['land']]
+            res['provinz_id'] = Place.get_province_id_from_code(res['provinz'])
             res['provinz'] = Place.province_dict[res['provinz']]
             if 'fundstelle' in res:
                 res['fundstelle'] = re.sub("[\{\}]", "", res['fundstelle'])
