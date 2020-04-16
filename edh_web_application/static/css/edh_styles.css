@@ -23,12 +23,23 @@ h2 {
     font-family: 'Arvo', serif;
     font-size: 1.5em;
     border-bottom: 1px solid #ccc;
-    margin-top: 2em;}
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 h3 {
     font-family: 'Arvo', serif;
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-top: 2em;
+}
+th {
+    text-align: left;
+    background-color: #1F6B3B;
+    color: #ddd;
+    padding: 5px;
+    font-weight: 900;
+}
+td {
+    padding: 5px;
 }
 li.active {
     background-color: #eee;

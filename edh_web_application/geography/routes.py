@@ -1,6 +1,7 @@
 from flask import render_template, request
 from flask_babel import _
 import json
+import re
 from ..models.Place import Place
 from . import bp_geography
 from .forms import GeographySearch
@@ -26,14 +27,33 @@ def detail_view(geo_id):
     :param geo_id: identifier of geographical record
     :return: html template
     """
-    results = Place.query("id:" + geo_id)
-    if results is None:
-        return render_template('geography/no_hits.html',
-                               title=_("Epigraphic Geography Database: Detail View"))
+    query = ""
+    if re.match("^[0-9]*$", geo_id) and int(geo_id) >= 900000 and int(geo_id) <= 900061:
+        # province detail view
+        prov_data = {}
+        prov_data['province_name'] = _(Place.province_id_dict[geo_id])
+        prov_data['province_id'] = geo_id
+        prov_data['province_pleiades_id'] = Place.province_pleiades_dict[Place.province_id_dict[geo_id]]
+        prov_data['province_wikidata_id'] = Place.province_wikidata_dict[Place.province_id_dict[geo_id]]
+        prov_data['province_tm_id'] = Place.province_tm_dict[Place.province_id_dict[geo_id]]
+        prov_status = Place.province_status_dict[Place.province_id_dict[geo_id]]
+        prov_data['province_status'] = _(prov_status)
+        prov_data['findspots'] = Place.get_findspots_for_province(Place.province_id_dict[geo_id])
+        prov_data['polygon'] = Place.get_polygon_for_province(Place.province_id_dict[geo_id])
+        prov_data['polygon_center'] = Place.get_center_of_polygon(prov_data['polygon'])
+
+        return render_template('geography/detail_view_province.html',
+                                   title=_("Detail View") + ": " + prov_data['province_name'],
+                                   data=prov_data)
     else:
-        return render_template('geography/detail_view.html',
-                               title=_("Epigraphic Geography Database: Detail View"),
-                               data=results['items'][0])
+        results = Place.query("id:" + geo_id)
+        if results is None:
+            return render_template('geography/no_hits.html',
+                                   title=_("Epigraphic Geography Database: Detail View"))
+        else:
+            return render_template('geography/detail_view.html',
+                                   title=_("Epigraphic Geography Database: Detail View"),
+                                   data=results['items'][0])
 
 
 @bp_geography.route('/geographie/suche', methods=['GET', 'POST'])

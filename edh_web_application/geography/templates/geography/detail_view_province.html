@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<div>
+    <div class="detail_block" style="margin-bottom:2em;">
+        <div class="detail_block_header">
+            <span class="detail_block_header_text">{{ _("Canonical URI") }}:
+                <span id="geo_uri">
+                    <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['province_id']}}">https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['province_id']}}</a>
+                    <img src=".{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
+                </span>
+                <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
+            </span>
+        </div>
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div id="map_canvas" style="width:100%;height:350px;border: 1px solid #ccc;margin-bottom:1.5em"></div>
+            </section>
+
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('Province Status') }}:</div>
+                <div class="detail_block_content_row_text">
+                    {% if data['province_status'] %}
+                        {{data['province_status']}}
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                </div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">Pleiades ID:</div>
+                <div class="detail_block_content_row_text">
+                    <a href="{{data['province_pleiades_id']}}">{{data['province_pleiades_id']|replace("https://pleiades.stoa.org/places/", "")}}</a>
+                </div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">Wikidata ID:</div>
+                <div class="detail_block_content_row_text">
+                    {% if data['province_wikidata_id'] %}
+                    <a href="{{data['province_wikidata_id']}}">{{data['province_wikidata_id']|replace("https://www.wikidata.org/entity/", "")}}</a>
+                    {% else %}
+                    &nbsp;
+                    {% endif %}
+                </div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">TM Geo ID:</div>
+                <div class="detail_block_content_row_text">
+                    {% if data['province_tm_id'] %}
+                    <a href="{{data['province_tm_id']}}">{{data['province_tm_id']|replace("https://www.trismegistos.org/place/", "")}}</a>
+                    {% else %}
+                    &nbsp;
+                    {% endif %}
+                </div>
+            </section>
+        </div>
+    </div>
+    <div><h2>{{ _('Findspots linked to this province')}}</h2></div>
+    <div class="table-responsive" style="100%; margin-bottom: 4rem;">
+        <table id="tbl_findspot"  class="table-striped">
+            <thead><th>ID</th><th>{{_('ancient find spot')}}</th><th>{{_('modern find spot')}}</th><th>{{_('find spot')}}</th><th>{{_('verw_bezirk')}}</th><th>{{_('country')}}</th></thead>
+            <tbody>
+            {% for place in data['findspots'] %}
+            <tr>
+                <td><a href="./edh/geographie/{{ place['id']}}">{{ place['id']}}</a></td>
+                <td>{% if place['fo_antik'] %}{{place['fo_antik']}}{% else %}{% endif %}</td>
+                <td>{% if place['fo_modern'] %}{{place['fo_modern']}}{% else %}{% endif %}</td>
+                <td>{% if place['fundstelle'] %}{{place['fundstelle']}}{% else %}{% endif %}</td>
+                <td>{% if place['verw_bezirk'] %}{{place['verw_bezirk']}}{% else %}{% endif %}</td>
+                <td>{% if place['land'] %}{{place['land']}}{% else %}{% endif %}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" />
+<link rel="stylesheet" href=".{{url_for('geography.static', filename='css/geography.css')}}" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script src=".{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
+<script src=".{{url_for('geography.static', filename='js/bing.js')}}"></script>
+
+<script type="text/javascript">
+    var BING_KEY = 'AhpTG22M_rzQEp8Q4c4edHpmIWXhwrQE65lztW3S7MsvB4cpUuya0fUgJscUfXMa'
+    var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid2VuYW11biIsImEiOiJCcUl0ZWRzIn0.zxs-a0hWY3La5kF4CWAVug';
+    var streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets', minZoom:3, attribution: mbAttr}),
+        sat = L.tileLayer(mbUrl, {id: 'mapbox.streets-satellite', minZoom:3, attribution: mbAttr}),
+        pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:3, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'}),
+        bing_satellite = new L.BingLayer(BING_KEY, {'type': 'AerialWithLabels'}),
+        openTopoMap = Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://www.thunderforest.com/">Thunderforest</a>',
+            apikey: 'aaeccd3a44a74ce58324c2a455c58a98',
+            minZoom: 5});
+    var map = L.map('map_canvas', {
+        center: [{{ data['polygon_center'] }}],
+        zoom: 5,
+        layers: [streets],
+        zoomControl: false,
+        preferCanvas: true,
+        scrollWheelZoom: false
+    });
+    var baseLayers = {
+        "Streets": streets,
+        "Mapbox Satellite": sat,
+        "Bing Satellite": bing_satellite,
+        "Pelagios": pelagios,
+        "Topo": openTopoMap
+    };
+    var geojson = {{ data['polygon'] | safe  }}
+    var overlays = {};
+    //L.control.layers(baseLayers, overlays, {position: 'topleft'}).addTo(map);
+    function polystyle(feature) {
+        return {
+            fillColor: '#1F6B3B',
+            weight: 2,
+            opacity: 1,
+            color: '#f00',
+            fillOpacity: 0.7
+        };
+    }
+    L.geoJSON(geojson, {style: polystyle}).addTo(map);
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#tbl_findspot').DataTable({
+        pageLength: 50,
+        language: {
+            search: "{{ _("dtbl_search") }}",
+            info: "{{ _("dtbl_info") }}",
+            lengthMenu: "{{ _("dtbl_menu") }}",
+            infoFiltered: "{{ _("dtbl_filter") }}",
+            zeroRecords:  "{{ _("dtbl_zero") }}",
+            paginate: {
+                previous: "{{ _("dtbl_previous") }}",
+                next: "{{ _("dtbl_next") }}"
+            }
+        }
+    });
+} );
+</script>
+{% endblock %}

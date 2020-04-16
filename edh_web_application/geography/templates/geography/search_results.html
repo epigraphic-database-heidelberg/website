@@ -65,7 +65,7 @@
             <div class="detail_block_content" style="display: inline-block; vertical-align: top;">
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('province') }}:</div>
-                    <div class="detail_block_content_row_text">{{ d['provinz'] }}</div>
+                    <div class="detail_block_content_row_text"><a href="./edh/geographie/{{ d['provinz_id'] }}">{{ d['provinz'] }}</a></div>
                 </section>
                 {% if d['land'] %}
                 <section class="detail_block_content_row">

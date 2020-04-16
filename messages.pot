@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-14 11:05+0200\n"
+"POT-Creation-Date: 2020-04-16 18:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,12 +123,14 @@ msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:12
 #: edh_web_application/geography/templates/geography/detail_view.html:12
+#: edh_web_application/geography/templates/geography/detail_view_province.html:12
 #: edh_web_application/person/templates/person/detail_view.html:12
 msgid "Canonical URI"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:15
 #: edh_web_application/geography/templates/geography/detail_view.html:15
+#: edh_web_application/geography/templates/geography/detail_view_province.html:15
 #: edh_web_application/person/templates/person/detail_view.html:15
 msgid "copied!"
 msgstr ""
@@ -246,6 +248,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:51
 #: edh_web_application/geography/forms.py:63
 #: edh_web_application/geography/templates/geography/detail_view.html:77
+#: edh_web_application/geography/templates/geography/detail_view_province.html:76
 #: edh_web_application/geography/templates/geography/last_updates.html:32
 #: edh_web_application/geography/templates/geography/search_results.html:72
 msgid "country"
@@ -256,6 +259,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:52
 #: edh_web_application/geography/forms.py:64
 #: edh_web_application/geography/templates/geography/detail_view.html:81
+#: edh_web_application/geography/templates/geography/detail_view_province.html:76
 #: edh_web_application/geography/templates/geography/last_updates.html:37
 #: edh_web_application/geography/templates/geography/search_results.html:77
 msgid "ancient find spot"
@@ -266,6 +270,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:53
 #: edh_web_application/geography/forms.py:65
 #: edh_web_application/geography/templates/geography/detail_view.html:91
+#: edh_web_application/geography/templates/geography/detail_view_province.html:76
 #: edh_web_application/geography/templates/geography/last_updates.html:41
 #: edh_web_application/geography/templates/geography/search_results.html:81
 msgid "modern find spot"
@@ -344,6 +349,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:54
 #: edh_web_application/geography/forms.py:65
 #: edh_web_application/geography/templates/geography/detail_view.html:101
+#: edh_web_application/geography/templates/geography/detail_view_province.html:76
 #: edh_web_application/geography/templates/geography/last_updates.html:45
 #: edh_web_application/geography/templates/geography/search_results.html:85
 msgid "find spot"
@@ -352,6 +358,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:55
 #: edh_web_application/geography/forms.py:66
 #: edh_web_application/geography/templates/geography/detail_view.html:111
+#: edh_web_application/geography/templates/geography/detail_view_province.html:76
 #: edh_web_application/geography/templates/geography/last_updates.html:49
 #: edh_web_application/geography/templates/geography/search_results.html:95
 msgid "verw_bezirk"
@@ -382,18 +389,22 @@ msgstr ""
 msgid "Trismegistos Geo ID"
 msgstr ""
 
-#: edh_web_application/geography/routes.py:18
+#: edh_web_application/geography/routes.py:19
 msgid "Epigraphic Geographic Database: Last Updates"
 msgstr ""
 
-#: edh_web_application/geography/routes.py:32
-#: edh_web_application/geography/routes.py:35
+#: edh_web_application/geography/routes.py:46
+msgid "Detail View"
+msgstr ""
+
+#: edh_web_application/geography/routes.py:52
+#: edh_web_application/geography/routes.py:55
 msgid "Epigraphic Geography Database: Detail View"
 msgstr ""
 
-#: edh_web_application/geography/routes.py:54
-#: edh_web_application/geography/routes.py:56
-#: edh_web_application/geography/routes.py:58
+#: edh_web_application/geography/routes.py:74
+#: edh_web_application/geography/routes.py:76
+#: edh_web_application/geography/routes.py:78
 msgid "Geographic Database: Search"
 msgstr ""
 
@@ -419,6 +430,47 @@ msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view.html:68
 msgid "No"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:26
+#: edh_web_application/person/templates/person/detail_view.html:22
+msgid "Name"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:36
+msgid "Province Status"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:73
+msgid "Findspots linked to this province"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:153
+msgid "dtbl_search"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:154
+msgid "dtbl_info"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:155
+msgid "dtbl_menu"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:156
+msgid "dtbl_filter"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:157
+msgid "dtbl_zero"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:159
+msgid "dtbl_previous"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:160
+msgid "dtbl_next"
 msgstr ""
 
 #: edh_web_application/geography/templates/geography/search.html:10
@@ -451,252 +503,252 @@ msgstr ""
 msgid "Epigraphic Text Database: Detail View"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:17 edh_web_application/models/Place.py:30
+#: edh_web_application/models/Foto.py:17 edh_web_application/models/Place.py:32
 msgid "land-ad"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:18 edh_web_application/models/Place.py:31
+#: edh_web_application/models/Foto.py:18 edh_web_application/models/Place.py:33
 msgid "land-al"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:19 edh_web_application/models/Place.py:32
+#: edh_web_application/models/Foto.py:19 edh_web_application/models/Place.py:34
 msgid "land-am"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:20 edh_web_application/models/Place.py:33
+#: edh_web_application/models/Foto.py:20 edh_web_application/models/Place.py:35
 msgid "land-at"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:34
+#: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:36
 msgid "land-az"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:22 edh_web_application/models/Place.py:35
+#: edh_web_application/models/Foto.py:22 edh_web_application/models/Place.py:37
 msgid "land-ba"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:23 edh_web_application/models/Place.py:36
+#: edh_web_application/models/Foto.py:23 edh_web_application/models/Place.py:38
 msgid "land-be"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:24 edh_web_application/models/Place.py:37
+#: edh_web_application/models/Foto.py:24 edh_web_application/models/Place.py:39
 msgid "land-bg"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:25 edh_web_application/models/Place.py:38
+#: edh_web_application/models/Foto.py:25 edh_web_application/models/Place.py:40
 msgid "land-ch"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:26 edh_web_application/models/Place.py:39
+#: edh_web_application/models/Foto.py:26 edh_web_application/models/Place.py:41
 msgid "land-cy"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:27 edh_web_application/models/Place.py:40
+#: edh_web_application/models/Foto.py:27 edh_web_application/models/Place.py:42
 msgid "land-cz"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:28 edh_web_application/models/Place.py:41
+#: edh_web_application/models/Foto.py:28 edh_web_application/models/Place.py:43
 msgid "land-de"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:29 edh_web_application/models/Place.py:42
+#: edh_web_application/models/Foto.py:29 edh_web_application/models/Place.py:44
 msgid "land-dk"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:30 edh_web_application/models/Place.py:43
+#: edh_web_application/models/Foto.py:30 edh_web_application/models/Place.py:45
 msgid "land-dz"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:31 edh_web_application/models/Place.py:44
+#: edh_web_application/models/Foto.py:31 edh_web_application/models/Place.py:46
 msgid "land-eg"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:32 edh_web_application/models/Place.py:45
+#: edh_web_application/models/Foto.py:32 edh_web_application/models/Place.py:47
 msgid "land-es"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:33 edh_web_application/models/Place.py:46
+#: edh_web_application/models/Foto.py:33 edh_web_application/models/Place.py:48
 msgid "land-fr"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:34 edh_web_application/models/Place.py:47
+#: edh_web_application/models/Foto.py:34 edh_web_application/models/Place.py:49
 msgid "land-gb"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:35 edh_web_application/models/Place.py:48
+#: edh_web_application/models/Foto.py:35 edh_web_application/models/Place.py:50
 msgid "land-ge"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:36 edh_web_application/models/Place.py:49
+#: edh_web_application/models/Foto.py:36 edh_web_application/models/Place.py:51
 msgid "land-gi"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:37 edh_web_application/models/Place.py:50
+#: edh_web_application/models/Foto.py:37 edh_web_application/models/Place.py:52
 msgid "land-gr"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:38 edh_web_application/models/Place.py:51
+#: edh_web_application/models/Foto.py:38 edh_web_application/models/Place.py:53
 msgid "land-hr"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:39 edh_web_application/models/Place.py:52
+#: edh_web_application/models/Foto.py:39 edh_web_application/models/Place.py:54
 msgid "land-hu"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:40 edh_web_application/models/Place.py:53
+#: edh_web_application/models/Foto.py:40 edh_web_application/models/Place.py:55
 msgid "land-il"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:41 edh_web_application/models/Place.py:54
+#: edh_web_application/models/Foto.py:41 edh_web_application/models/Place.py:56
 msgid "land-iq"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:42 edh_web_application/models/Place.py:55
+#: edh_web_application/models/Foto.py:42 edh_web_application/models/Place.py:57
 msgid "land-it"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:43 edh_web_application/models/Place.py:56
+#: edh_web_application/models/Foto.py:43 edh_web_application/models/Place.py:58
 msgid "land-jo"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:44 edh_web_application/models/Place.py:57
+#: edh_web_application/models/Foto.py:44 edh_web_application/models/Place.py:59
 msgid "land-kg"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:45 edh_web_application/models/Place.py:58
+#: edh_web_application/models/Foto.py:45 edh_web_application/models/Place.py:60
 msgid "land-kz"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:46 edh_web_application/models/Place.py:59
+#: edh_web_application/models/Foto.py:46 edh_web_application/models/Place.py:61
 msgid "land-lb"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:47 edh_web_application/models/Place.py:60
+#: edh_web_application/models/Foto.py:47 edh_web_application/models/Place.py:62
 msgid "land-li"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:48 edh_web_application/models/Place.py:61
+#: edh_web_application/models/Foto.py:48 edh_web_application/models/Place.py:63
 msgid "land-lu"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:49 edh_web_application/models/Place.py:62
+#: edh_web_application/models/Foto.py:49 edh_web_application/models/Place.py:64
 msgid "land-ly"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:50 edh_web_application/models/Place.py:63
+#: edh_web_application/models/Foto.py:50 edh_web_application/models/Place.py:65
 msgid "land-ma"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:51 edh_web_application/models/Place.py:64
+#: edh_web_application/models/Foto.py:51 edh_web_application/models/Place.py:66
 msgid "land-mc"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:52 edh_web_application/models/Place.py:65
+#: edh_web_application/models/Foto.py:52 edh_web_application/models/Place.py:67
 msgid "land-md"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:53 edh_web_application/models/Place.py:66
+#: edh_web_application/models/Foto.py:53 edh_web_application/models/Place.py:68
 msgid "land-me"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:54 edh_web_application/models/Place.py:67
+#: edh_web_application/models/Foto.py:54 edh_web_application/models/Place.py:69
 msgid "land-mk"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:55 edh_web_application/models/Place.py:68
+#: edh_web_application/models/Foto.py:55 edh_web_application/models/Place.py:70
 msgid "land-mt"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:56 edh_web_application/models/Place.py:69
+#: edh_web_application/models/Foto.py:56 edh_web_application/models/Place.py:71
 msgid "land-nl"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:57 edh_web_application/models/Place.py:70
+#: edh_web_application/models/Foto.py:57 edh_web_application/models/Place.py:72
 msgid "land-pl"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:58 edh_web_application/models/Place.py:71
+#: edh_web_application/models/Foto.py:58 edh_web_application/models/Place.py:73
 msgid "land-pt"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:59 edh_web_application/models/Place.py:72
+#: edh_web_application/models/Foto.py:59 edh_web_application/models/Place.py:74
 msgid "land-ro"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:60 edh_web_application/models/Place.py:73
+#: edh_web_application/models/Foto.py:60 edh_web_application/models/Place.py:75
 msgid "land-rs"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:61 edh_web_application/models/Place.py:74
+#: edh_web_application/models/Foto.py:61 edh_web_application/models/Place.py:76
 msgid "land-ru"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:62 edh_web_application/models/Place.py:75
+#: edh_web_application/models/Foto.py:62 edh_web_application/models/Place.py:77
 msgid "land-sd"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:63 edh_web_application/models/Place.py:76
+#: edh_web_application/models/Foto.py:63 edh_web_application/models/Place.py:78
 msgid "land-se"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:64 edh_web_application/models/Place.py:77
+#: edh_web_application/models/Foto.py:64 edh_web_application/models/Place.py:79
 msgid "land-si"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:65 edh_web_application/models/Place.py:78
+#: edh_web_application/models/Foto.py:65 edh_web_application/models/Place.py:80
 msgid "land-sk"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:66 edh_web_application/models/Place.py:79
+#: edh_web_application/models/Foto.py:66 edh_web_application/models/Place.py:81
 msgid "land-sm"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:67 edh_web_application/models/Place.py:80
+#: edh_web_application/models/Foto.py:67 edh_web_application/models/Place.py:82
 msgid "land-sa"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:68 edh_web_application/models/Place.py:81
+#: edh_web_application/models/Foto.py:68 edh_web_application/models/Place.py:83
 msgid "land-sy"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:69 edh_web_application/models/Place.py:82
+#: edh_web_application/models/Foto.py:69 edh_web_application/models/Place.py:84
 msgid "land-tj"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:70 edh_web_application/models/Place.py:83
+#: edh_web_application/models/Foto.py:70 edh_web_application/models/Place.py:85
 msgid "land-tn"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:71 edh_web_application/models/Place.py:84
+#: edh_web_application/models/Foto.py:71 edh_web_application/models/Place.py:86
 msgid "land-tr"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:72 edh_web_application/models/Place.py:85
+#: edh_web_application/models/Foto.py:72 edh_web_application/models/Place.py:87
 msgid "land-ua"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:73 edh_web_application/models/Place.py:86
+#: edh_web_application/models/Foto.py:73 edh_web_application/models/Place.py:88
 msgid "land-?"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:74 edh_web_application/models/Place.py:87
+#: edh_web_application/models/Foto.py:74 edh_web_application/models/Place.py:89
 msgid "land-uz"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:75 edh_web_application/models/Place.py:88
+#: edh_web_application/models/Foto.py:75 edh_web_application/models/Place.py:90
 msgid "land-va"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:76 edh_web_application/models/Place.py:89
+#: edh_web_application/models/Foto.py:76 edh_web_application/models/Place.py:91
 msgid "land-ye"
 msgstr ""
 
-#: edh_web_application/models/Foto.py:77 edh_web_application/models/Place.py:90
+#: edh_web_application/models/Foto.py:77 edh_web_application/models/Place.py:92
 msgid "land-rks"
 msgstr ""
 
 #: edh_web_application/models/Foto.py:115
-#: edh_web_application/models/Place.py:138
+#: edh_web_application/models/Place.py:141
 msgid "unknown"
 msgstr ""
 
@@ -740,276 +792,354 @@ msgstr ""
 msgid "emperor / imperial household"
 msgstr ""
 
-#: edh_web_application/models/Place.py:103
+#: edh_web_application/models/Place.py:106
 msgid "Inc"
 msgstr ""
 
-#: edh_web_application/models/Place.py:104
+#: edh_web_application/models/Place.py:107
 msgid "Ach"
 msgstr ""
 
-#: edh_web_application/models/Place.py:105
+#: edh_web_application/models/Place.py:108
 msgid "Aeg"
 msgstr ""
 
-#: edh_web_application/models/Place.py:106
+#: edh_web_application/models/Place.py:109
 msgid "Aem"
 msgstr ""
 
-#: edh_web_application/models/Place.py:107
+#: edh_web_application/models/Place.py:110
 msgid "Afr"
 msgstr ""
 
-#: edh_web_application/models/Place.py:108
+#: edh_web_application/models/Place.py:111
 msgid "AlC"
 msgstr ""
 
-#: edh_web_application/models/Place.py:109
+#: edh_web_application/models/Place.py:112
 msgid "AlG"
 msgstr ""
 
-#: edh_web_application/models/Place.py:110
+#: edh_web_application/models/Place.py:113
 msgid "AlM"
 msgstr ""
 
-#: edh_web_application/models/Place.py:111
+#: edh_web_application/models/Place.py:114
 msgid "AlP"
 msgstr ""
 
-#: edh_web_application/models/Place.py:112
+#: edh_web_application/models/Place.py:115
 msgid "ApC"
 msgstr ""
 
-#: edh_web_application/models/Place.py:113
+#: edh_web_application/models/Place.py:116
 msgid "Aqu"
 msgstr ""
 
-#: edh_web_application/models/Place.py:114
+#: edh_web_application/models/Place.py:117
 msgid "Ara"
 msgstr ""
 
-#: edh_web_application/models/Place.py:115
+#: edh_web_application/models/Place.py:118
 msgid "Arm"
 msgstr ""
 
-#: edh_web_application/models/Place.py:116
+#: edh_web_application/models/Place.py:119
 msgid "Asi"
 msgstr ""
 
-#: edh_web_application/models/Place.py:117
+#: edh_web_application/models/Place.py:120
 msgid "Ass"
 msgstr ""
 
-#: edh_web_application/models/Place.py:118
+#: edh_web_application/models/Place.py:121
 msgid "Bae"
 msgstr ""
 
-#: edh_web_application/models/Place.py:119
+#: edh_web_application/models/Place.py:122
 msgid "Bar"
 msgstr ""
 
-#: edh_web_application/models/Place.py:120
+#: edh_web_application/models/Place.py:123
 msgid "Bel"
 msgstr ""
 
-#: edh_web_application/models/Place.py:121
+#: edh_web_application/models/Place.py:124
 msgid "BiP"
 msgstr ""
 
-#: edh_web_application/models/Place.py:122
+#: edh_web_application/models/Place.py:125
 msgid "BrL"
 msgstr ""
 
-#: edh_web_application/models/Place.py:123
+#: edh_web_application/models/Place.py:126
 msgid "Bri"
 msgstr ""
 
-#: edh_web_application/models/Place.py:124
+#: edh_web_application/models/Place.py:127
 msgid "Cap"
 msgstr ""
 
-#: edh_web_application/models/Place.py:125
+#: edh_web_application/models/Place.py:128
 msgid "Cil"
 msgstr ""
 
-#: edh_web_application/models/Place.py:126
+#: edh_web_application/models/Place.py:129
 msgid "Cor"
 msgstr ""
 
-#: edh_web_application/models/Place.py:127
+#: edh_web_application/models/Place.py:130
 msgid "Cre"
 msgstr ""
 
-#: edh_web_application/models/Place.py:128
+#: edh_web_application/models/Place.py:131
 msgid "Cyp"
 msgstr ""
 
-#: edh_web_application/models/Place.py:129
+#: edh_web_application/models/Place.py:132
 msgid "Cyr"
 msgstr ""
 
-#: edh_web_application/models/Place.py:130
+#: edh_web_application/models/Place.py:133
 msgid "Dac"
 msgstr ""
 
-#: edh_web_application/models/Place.py:131
+#: edh_web_application/models/Place.py:134
 msgid "Dal"
 msgstr ""
 
-#: edh_web_application/models/Place.py:132
+#: edh_web_application/models/Place.py:135
 msgid "Epi"
 msgstr ""
 
-#: edh_web_application/models/Place.py:133
+#: edh_web_application/models/Place.py:136
 msgid "Etr"
 msgstr ""
 
-#: edh_web_application/models/Place.py:134
+#: edh_web_application/models/Place.py:137
 msgid "Gal"
 msgstr ""
 
-#: edh_web_application/models/Place.py:135
+#: edh_web_application/models/Place.py:138
 msgid "GeI"
 msgstr ""
 
-#: edh_web_application/models/Place.py:136
+#: edh_web_application/models/Place.py:139
 msgid "GeS"
 msgstr ""
 
-#: edh_web_application/models/Place.py:137
+#: edh_web_application/models/Place.py:140
 msgid "HiC"
 msgstr ""
 
-#: edh_web_application/models/Place.py:139
+#: edh_web_application/models/Place.py:142
 msgid "Iud"
 msgstr ""
 
-#: edh_web_application/models/Place.py:140
+#: edh_web_application/models/Place.py:143
 msgid "LaC"
 msgstr ""
 
-#: edh_web_application/models/Place.py:141
+#: edh_web_application/models/Place.py:144
 msgid "Lig"
 msgstr ""
 
-#: edh_web_application/models/Place.py:142
+#: edh_web_application/models/Place.py:145
 msgid "Lug"
 msgstr ""
 
-#: edh_web_application/models/Place.py:143
+#: edh_web_application/models/Place.py:146
 msgid "Lus"
 msgstr ""
 
-#: edh_web_application/models/Place.py:144
+#: edh_web_application/models/Place.py:147
 msgid "LyP"
 msgstr ""
 
-#: edh_web_application/models/Place.py:145
+#: edh_web_application/models/Place.py:148
 msgid "Mak"
 msgstr ""
 
-#: edh_web_application/models/Place.py:146
+#: edh_web_application/models/Place.py:149
 msgid "MaC"
 msgstr ""
 
-#: edh_web_application/models/Place.py:147
+#: edh_web_application/models/Place.py:150
 msgid "MaE"
 msgstr ""
 
-#: edh_web_application/models/Place.py:148
+#: edh_web_application/models/Place.py:151
 msgid "MaT"
 msgstr ""
 
-#: edh_web_application/models/Place.py:149
+#: edh_web_application/models/Place.py:152
 msgid "Mes"
 msgstr ""
 
-#: edh_web_application/models/Place.py:150
+#: edh_web_application/models/Place.py:153
 msgid "MoI"
 msgstr ""
 
-#: edh_web_application/models/Place.py:151
+#: edh_web_application/models/Place.py:154
 msgid "MoS"
 msgstr ""
 
-#: edh_web_application/models/Place.py:152
+#: edh_web_application/models/Place.py:155
 msgid "Nar"
 msgstr ""
 
-#: edh_web_application/models/Place.py:153
+#: edh_web_application/models/Place.py:156
 msgid "Nor"
 msgstr ""
 
-#: edh_web_application/models/Place.py:154
+#: edh_web_application/models/Place.py:157
 msgid "Num"
 msgstr ""
 
-#: edh_web_application/models/Place.py:155
+#: edh_web_application/models/Place.py:158
 msgid "PaI"
 msgstr ""
 
-#: edh_web_application/models/Place.py:156
+#: edh_web_application/models/Place.py:159
 msgid "PaS"
 msgstr ""
 
-#: edh_web_application/models/Place.py:157
+#: edh_web_application/models/Place.py:160
 msgid "Pic"
 msgstr ""
 
-#: edh_web_application/models/Place.py:158
+#: edh_web_application/models/Place.py:161
 msgid "Rae"
 msgstr ""
 
-#: edh_web_application/models/Place.py:159
+#: edh_web_application/models/Place.py:162
 msgid "ReB"
 msgstr ""
 
-#: edh_web_application/models/Place.py:160
+#: edh_web_application/models/Place.py:163
 msgid "Rom"
 msgstr ""
 
-#: edh_web_application/models/Place.py:161
+#: edh_web_application/models/Place.py:164
 msgid "Sam"
 msgstr ""
 
-#: edh_web_application/models/Place.py:162
+#: edh_web_application/models/Place.py:165
 msgid "Sar"
 msgstr ""
 
-#: edh_web_application/models/Place.py:163
+#: edh_web_application/models/Place.py:166
 msgid "Sic"
 msgstr ""
 
-#: edh_web_application/models/Place.py:164
+#: edh_web_application/models/Place.py:167
 msgid "Syr"
 msgstr ""
 
-#: edh_web_application/models/Place.py:165
+#: edh_web_application/models/Place.py:168
 msgid "Thr"
 msgstr ""
 
-#: edh_web_application/models/Place.py:166
+#: edh_web_application/models/Place.py:169
 msgid "Tra"
 msgstr ""
 
-#: edh_web_application/models/Place.py:167
+#: edh_web_application/models/Place.py:170
 msgid "Tri"
 msgstr ""
 
-#: edh_web_application/models/Place.py:168
+#: edh_web_application/models/Place.py:171
 msgid "TuU"
 msgstr ""
 
-#: edh_web_application/models/Place.py:169
+#: edh_web_application/models/Place.py:172
 msgid "Umb"
 msgstr ""
 
-#: edh_web_application/models/Place.py:170
+#: edh_web_application/models/Place.py:173
 msgid "Val"
 msgstr ""
 
-#: edh_web_application/models/Place.py:171
+#: edh_web_application/models/Place.py:174
 msgid "VeH"
+msgstr ""
+
+#: edh_web_application/models/Place.py:445
+#: edh_web_application/models/Place.py:446
+#: edh_web_application/models/Place.py:447
+#: edh_web_application/models/Place.py:456
+#: edh_web_application/models/Place.py:457
+#: edh_web_application/models/Place.py:465
+#: edh_web_application/models/Place.py:484
+#: edh_web_application/models/Place.py:485
+#: edh_web_application/models/Place.py:487
+#: edh_web_application/models/Place.py:488
+#: edh_web_application/models/Place.py:489
+#: edh_web_application/models/Place.py:496
+#: edh_web_application/models/Place.py:497
+#: edh_web_application/models/Place.py:501
+#: edh_web_application/models/Place.py:502
+#: edh_web_application/models/Place.py:503
+#: edh_web_application/models/Place.py:504
+msgid "provStatus-1"
+msgstr ""
+
+#: edh_web_application/models/Place.py:448
+#: edh_web_application/models/Place.py:449
+#: edh_web_application/models/Place.py:450
+#: edh_web_application/models/Place.py:451
+#: edh_web_application/models/Place.py:452
+#: edh_web_application/models/Place.py:453
+#: edh_web_application/models/Place.py:454
+#: edh_web_application/models/Place.py:455
+#: edh_web_application/models/Place.py:458
+#: edh_web_application/models/Place.py:459
+#: edh_web_application/models/Place.py:460
+#: edh_web_application/models/Place.py:461
+#: edh_web_application/models/Place.py:462
+#: edh_web_application/models/Place.py:463
+#: edh_web_application/models/Place.py:505
+msgid "provStatus-3"
+msgstr ""
+
+#: edh_web_application/models/Place.py:464
+#: edh_web_application/models/Place.py:466
+#: edh_web_application/models/Place.py:467
+#: edh_web_application/models/Place.py:470
+#: edh_web_application/models/Place.py:471
+#: edh_web_application/models/Place.py:472
+#: edh_web_application/models/Place.py:476
+#: edh_web_application/models/Place.py:477
+#: edh_web_application/models/Place.py:478
+#: edh_web_application/models/Place.py:479
+#: edh_web_application/models/Place.py:480
+#: edh_web_application/models/Place.py:481
+#: edh_web_application/models/Place.py:482
+#: edh_web_application/models/Place.py:483
+#: edh_web_application/models/Place.py:490
+#: edh_web_application/models/Place.py:491
+#: edh_web_application/models/Place.py:492
+#: edh_web_application/models/Place.py:493
+#: edh_web_application/models/Place.py:494
+#: edh_web_application/models/Place.py:495
+#: edh_web_application/models/Place.py:498
+#: edh_web_application/models/Place.py:499
+#: edh_web_application/models/Place.py:500
+#: edh_web_application/models/Place.py:506
+#: edh_web_application/models/Place.py:507
+msgid "provStatus-0"
+msgstr ""
+
+#: edh_web_application/models/Place.py:468
+#: edh_web_application/models/Place.py:469
+#: edh_web_application/models/Place.py:473
+msgid "provStatus-2"
+msgstr ""
+
+#: edh_web_application/models/Place.py:474
+#: edh_web_application/models/Place.py:475
+#: edh_web_application/models/Place.py:486
+msgid "provStatus-4"
 msgstr ""
 
 #: edh_web_application/person/routes.py:18
@@ -1018,10 +1148,6 @@ msgstr ""
 
 #: edh_web_application/person/routes.py:21
 msgid "Epigraphic Person Database: Detail View"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:22
-msgid "Name"
 msgstr ""
 
 #: edh_web_application/person/templates/person/detail_view.html:27
