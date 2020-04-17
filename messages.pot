@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-16 18:40+0200\n"
+"POT-Creation-Date: 2020-04-17 06:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -248,8 +248,8 @@ msgstr ""
 #: edh_web_application/geography/forms.py:51
 #: edh_web_application/geography/forms.py:63
 #: edh_web_application/geography/templates/geography/detail_view.html:77
-#: edh_web_application/geography/templates/geography/detail_view_province.html:76
-#: edh_web_application/geography/templates/geography/last_updates.html:32
+#: edh_web_application/geography/templates/geography/detail_view_province.html:69
+#: edh_web_application/geography/templates/geography/last_updates.html:34
 #: edh_web_application/geography/templates/geography/search_results.html:72
 msgid "country"
 msgstr ""
@@ -259,8 +259,8 @@ msgstr ""
 #: edh_web_application/geography/forms.py:52
 #: edh_web_application/geography/forms.py:64
 #: edh_web_application/geography/templates/geography/detail_view.html:81
-#: edh_web_application/geography/templates/geography/detail_view_province.html:76
-#: edh_web_application/geography/templates/geography/last_updates.html:37
+#: edh_web_application/geography/templates/geography/detail_view_province.html:69
+#: edh_web_application/geography/templates/geography/last_updates.html:39
 #: edh_web_application/geography/templates/geography/search_results.html:77
 msgid "ancient find spot"
 msgstr ""
@@ -270,8 +270,8 @@ msgstr ""
 #: edh_web_application/geography/forms.py:53
 #: edh_web_application/geography/forms.py:65
 #: edh_web_application/geography/templates/geography/detail_view.html:91
-#: edh_web_application/geography/templates/geography/detail_view_province.html:76
-#: edh_web_application/geography/templates/geography/last_updates.html:41
+#: edh_web_application/geography/templates/geography/detail_view_province.html:69
+#: edh_web_application/geography/templates/geography/last_updates.html:43
 #: edh_web_application/geography/templates/geography/search_results.html:81
 msgid "modern find spot"
 msgstr ""
@@ -349,8 +349,8 @@ msgstr ""
 #: edh_web_application/geography/forms.py:54
 #: edh_web_application/geography/forms.py:65
 #: edh_web_application/geography/templates/geography/detail_view.html:101
-#: edh_web_application/geography/templates/geography/detail_view_province.html:76
-#: edh_web_application/geography/templates/geography/last_updates.html:45
+#: edh_web_application/geography/templates/geography/detail_view_province.html:69
+#: edh_web_application/geography/templates/geography/last_updates.html:47
 #: edh_web_application/geography/templates/geography/search_results.html:85
 msgid "find spot"
 msgstr ""
@@ -358,8 +358,8 @@ msgstr ""
 #: edh_web_application/geography/forms.py:55
 #: edh_web_application/geography/forms.py:66
 #: edh_web_application/geography/templates/geography/detail_view.html:111
-#: edh_web_application/geography/templates/geography/detail_view_province.html:76
-#: edh_web_application/geography/templates/geography/last_updates.html:49
+#: edh_web_application/geography/templates/geography/detail_view_province.html:69
+#: edh_web_application/geography/templates/geography/last_updates.html:51
 #: edh_web_application/geography/templates/geography/search_results.html:95
 msgid "verw_bezirk"
 msgstr ""
@@ -397,14 +397,14 @@ msgstr ""
 msgid "Detail View"
 msgstr ""
 
-#: edh_web_application/geography/routes.py:52
-#: edh_web_application/geography/routes.py:55
+#: edh_web_application/geography/routes.py:53
+#: edh_web_application/geography/routes.py:56
 msgid "Epigraphic Geography Database: Detail View"
 msgstr ""
 
-#: edh_web_application/geography/routes.py:74
-#: edh_web_application/geography/routes.py:76
-#: edh_web_application/geography/routes.py:78
+#: edh_web_application/geography/routes.py:75
+#: edh_web_application/geography/routes.py:77
+#: edh_web_application/geography/routes.py:79
 msgid "Geographic Database: Search"
 msgstr ""
 
@@ -433,43 +433,42 @@ msgid "No"
 msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view_province.html:26
-#: edh_web_application/person/templates/person/detail_view.html:22
-msgid "Name"
-msgstr ""
-
-#: edh_web_application/geography/templates/geography/detail_view_province.html:36
 msgid "Province Status"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:73
+#: edh_web_application/geography/templates/geography/detail_view_province.html:62
+msgid "List of Provinces"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:66
 msgid "Findspots linked to this province"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:153
+#: edh_web_application/geography/templates/geography/detail_view_province.html:133
 msgid "dtbl_search"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:154
+#: edh_web_application/geography/templates/geography/detail_view_province.html:134
 msgid "dtbl_info"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:155
+#: edh_web_application/geography/templates/geography/detail_view_province.html:135
 msgid "dtbl_menu"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:156
+#: edh_web_application/geography/templates/geography/detail_view_province.html:136
 msgid "dtbl_filter"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:157
+#: edh_web_application/geography/templates/geography/detail_view_province.html:137
 msgid "dtbl_zero"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:159
+#: edh_web_application/geography/templates/geography/detail_view_province.html:139
 msgid "dtbl_previous"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:160
+#: edh_web_application/geography/templates/geography/detail_view_province.html:140
 msgid "dtbl_next"
 msgstr ""
 
@@ -1148,6 +1147,10 @@ msgstr ""
 
 #: edh_web_application/person/routes.py:21
 msgid "Epigraphic Person Database: Detail View"
+msgstr ""
+
+#: edh_web_application/person/templates/person/detail_view.html:22
+msgid "Name"
 msgstr ""
 
 #: edh_web_application/person/templates/person/detail_view.html:27

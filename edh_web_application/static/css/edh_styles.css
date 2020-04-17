@@ -215,7 +215,9 @@ p {
 .bootstrap-select>.dropdown-toggle {
     margin-bottom: 0px;
 }
-
+.province_disclaimer {
+    margin-left: 12px;
+}
 /*
  * Timeline
 */
