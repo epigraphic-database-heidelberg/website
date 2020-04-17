@@ -46,6 +46,7 @@ def detail_view(geo_id):
                                    title=_("Detail View") + ": " + prov_data['province_name'],
                                    data=prov_data)
     else:
+        # find spot detail view
         results = Place.query("id:" + geo_id)
         if results is None:
             return render_template('geography/no_hits.html',
