@@ -93,19 +93,11 @@
 <script src=".{{url_for('geography.static', filename='js/bing.js')}}"></script>
 
 <script type="text/javascript">
-    var BING_KEY = 'AhpTG22M_rzQEp8Q4c4edHpmIWXhwrQE65lztW3S7MsvB4cpUuya0fUgJscUfXMa'
     var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
             '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid2VuYW11biIsImEiOiJCcUl0ZWRzIn0.zxs-a0hWY3La5kF4CWAVug';
-    var streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets', minZoom:3, attribution: mbAttr}),
-        sat = L.tileLayer(mbUrl, {id: 'mapbox.streets-satellite', minZoom:3, attribution: mbAttr}),
-        pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:3, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'}),
-        bing_satellite = new L.BingLayer(BING_KEY, {'type': 'AerialWithLabels'}),
-        openTopoMap = Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://www.thunderforest.com/">Thunderforest</a>',
-            apikey: 'aaeccd3a44a74ce58324c2a455c58a98',
-            minZoom: 5});
+    var streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets', minZoom:3, attribution: mbAttr});
     var map = L.map('map_canvas', {
         center: [{{ data['polygon_center'] }}],
         zoom: 5,
@@ -115,15 +107,10 @@
         scrollWheelZoom: false
     });
     var baseLayers = {
-        "Streets": streets,
-        "Mapbox Satellite": sat,
-        "Bing Satellite": bing_satellite,
-        "Pelagios": pelagios,
-        "Topo": openTopoMap
+        "Streets": streets
     };
     var geojson = {{ data['polygon'] | safe  }}
     var overlays = {};
-    //L.control.layers(baseLayers, overlays, {position: 'topleft'}).addTo(map);
     function polystyle(feature) {
         return {
             fillColor: '#1F6B3B',
