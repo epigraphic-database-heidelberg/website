@@ -525,6 +525,7 @@ class Place:
             "koordinaten_2": None,
             "provinz": None,
             "provinz_id": None,
+            "name": None,
             "land": None,
             "trismegistos_geo_id": None,
             "bearbeitet": None,
@@ -660,7 +661,7 @@ class Place:
             for result in results:
                 props = {}
                 for key in result:
-                    if key not in ('id', 'bearbeiter', 'datum', 'land', 'provinz'):
+                    if key not in ('id', 'bearbeiter', 'datum', 'land', 'provinz', 'name'):
                         props[key] = result[key]
                     if key == 'land':
                         if re.search("\?$", result[key]):
@@ -668,13 +669,23 @@ class Place:
                             props[key] = Place.country[key_without_trailing_questionmark] + "?"
                         else:
                             props[key] = Place.country[result[key]]
-                    if key == 'provinz':
+                    elif key == 'provinz':
                         if re.search("\?$", result[key]):
                             key_without_trailing_questionmark = re.sub("\?$", "", result[key])
                             props[key] = _l(key_without_trailing_questionmark) + "?"
                         else:
                             props[key] = _l(result[key])
                         props['provinz_id'] = Place.get_province_id_from_code(re.sub("\?$", "", result[key]))
+                fo_antik = ""
+                fo_modern = ""
+                fundstelle = ""
+                if 'fundstelle' in result:
+                    fundstelle = re.sub("[\{\}]", "", result['fundstelle'])
+                if 'fo_antik' in result:
+                    fo_antik = result['fo_antik']
+                if 'fo_modern' in result:
+                    fo_modern = result['fo_modern']
+                props['name'] = Place.get_find_spot_name(fo_antik, fo_modern, fundstelle)
 
                 pl = Place(result['id'],
                            result['datum'],
@@ -686,6 +697,31 @@ class Place:
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(
                                      request.url), "query_params": query_params},
                     "items": query_result}
+
+    @classmethod
+    def get_find_spot_name(cls, fo_antik, fo_modern, fundstelle):
+        """
+        returns a placename for findspot detail views,
+        will be displayed as h1
+        param fo_antik: ancient find spot string
+        param fo_modern: modern find spot string
+        param fundstelle: find spot string
+        return: name string
+        """
+        name = ""
+        if fo_antik != "" and fo_modern != "":
+            name = fo_antik + " &ndash; " + fo_modern
+        elif fo_antik != "":
+            name = fo_antik
+        else:
+            name = fo_modern
+        if fundstelle == "":
+            return name
+        if name != "":
+            name += " (" + fundstelle + ")"
+        else:
+            name = fundstelle
+        return name
 
     @classmethod
     def get_number_of_records(cls):

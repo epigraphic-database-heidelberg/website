@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block app_content %}
-<h1>{{ title }}</h1>
+<h1>{{ _('Detail View') }}: {{ data['name'] | safe }}</h1>
 <div>
     <div class="detail_block" style="margin-bottom:2em;">
         <div class="detail_block_header">
