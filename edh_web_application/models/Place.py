@@ -686,7 +686,8 @@ class Place:
                 if 'fo_modern' in result:
                     fo_modern = result['fo_modern']
                 props['name'] = Place.get_find_spot_name(fo_antik, fo_modern, fundstelle)
-                props['kommentar'] = _encode_string_with_links(props['kommentar'])
+                if 'kommentar' in props:
+                    props['kommentar'] = _encode_string_with_links(props['kommentar'])
                 pl = Place(result['id'],
                            result['datum'],
                            result['bearbeiter'],

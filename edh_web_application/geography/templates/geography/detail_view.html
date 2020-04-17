@@ -156,8 +156,9 @@
         center: [{{data['koordinaten_1']}}],
         zoom: 9,
         layers: [streets],
-        zoomControl: false,
-        preferCanvas: true
+        zoomControl: true,
+        preferCanvas: true,
+        scrollWheelZoom: false
     });
     var baseLayers = {
         "Streets": streets,
@@ -166,6 +167,7 @@
         "Pelagios": pelagios,
         "Topo": openTopoMap
     };
+    map.zoomControl.setPosition('topright');
     var overlays = {};
     L.control.layers(baseLayers, overlays, {position: 'topleft'}).addTo(map);
     var marker = L.marker([{{data['koordinaten_1']}}]).addTo(map);
