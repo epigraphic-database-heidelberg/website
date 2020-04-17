@@ -686,7 +686,7 @@ class Place:
                 if 'fo_modern' in result:
                     fo_modern = result['fo_modern']
                 props['name'] = Place.get_find_spot_name(fo_antik, fo_modern, fundstelle)
-
+                props['kommentar'] = _encode_string_with_links(props['kommentar'])
                 pl = Place(result['id'],
                            result['datum'],
                            result['bearbeiter'],
@@ -986,3 +986,12 @@ def _get_query_params(args):
     if 'country' in result_dict:
         result_dict['country'] = re.sub(", $", "", result_dict['country'])
     return result_dict
+
+def _encode_string_with_links(unencoded_string):
+    """
+    returns string with encode url links
+    param unencoded_string: string which contains URLs
+    return: string with encoded URLs
+    """
+    URL_REGEX = re.compile(r'''((http://|https://)[^ <>'"{}|\\^`[\]]*)''')
+    return URL_REGEX.sub(r'<a href="\1">\1</a>', unencoded_string)
