@@ -441,6 +441,7 @@ class Place:
         "province": _l('provinz'),
         "ancient_find_spot": _l('fo_antik'),
         "modern_find_spot": _l('fo_modern'),
+        "find_spot": _l('fundstelle'),
         "region": _l('region'),
         "pleiades_id_1": _l('pleiades_id_1'),
         "pleiades_id_2": _l('pleiades_id_2'),
@@ -641,12 +642,13 @@ class Place:
         return query_string
 
     @classmethod
-    def query(cls, query_string):
+    def query(cls, query_string, *args, **kwargs):
         """
         queries Solr core
         :param query_string: Solr query string
         :return: list of Place instances
         """
+        hits = kwargs.get('hits', None)
         start = 0  # index number of first record to retrieve
         rows = 20  # number of receords to retrieve
         sort = "id asc"  # default
@@ -658,6 +660,9 @@ class Place:
             # show all hits on one page if start < rows
             if int(start) < rows:
                 start = 0
+        if hits:
+            rows = hits
+        print(rows)
         if request.args.get('sort') in ['fo_antik', 'fo_modern', 'verw_bezirk']:
             sort = request.args.get('sort') + "_str asc"
         elif request.args.get('sort') == "provinz":
@@ -717,6 +722,7 @@ class Place:
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(
                                      request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "url_without_view_parameter": _get_url_without_view_parameter(
                     request.url), "query_params": query_params},
                     "items": query_result}
 
@@ -977,6 +983,19 @@ def _get_url_without_sort_parameter(url):
     :return: shortened URL as string
     """
     url = re.sub("sort=.*&*", "", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
+
+
+def _get_url_without_view_parameter(url):
+    """
+    removes URL parameter view; these get added later in the template again
+    in dialog "view"
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("view=.*&*", "", url)
     url = re.sub("&{2,}", "&", url)
     url = re.sub(request.url_root, "", url)
     return "/" + url

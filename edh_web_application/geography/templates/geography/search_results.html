@@ -182,9 +182,9 @@
 </div>
 <div id="dialog-view" title = "{{_('view')}}:">
     <ul>
-    <li><a href="">{{_('list')}}</a></li>
-    <li><a href="">{{_('table')}}</a></li>
-    <li><a href="">{{_('map')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=list">{{_('list')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=table">{{_('table')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=map">{{_('map')}}</a></li>
     </ul>
 </div>
 {% endblock %}

@@ -66,12 +66,23 @@ def search_geography():
     if len(request.args) > 0:
         # create query string
         query_string = Place.create_query_string(request.args)
-        # run query
-        results = Place.query(query_string)
+        if request.args.get('view') == 'table' or request.args.get('view') == 'map':
+            results = Place.query(query_string, hits=10000)
+        else:
+            results = Place.query(query_string)
         number_of_hits = Place.get_number_of_hits_for_query(query_string)
         # return results to client
         if results:
-            return render_template('geography/search_results.html', title=_("Geographic Database"),
+            if request.args.get('view') == 'table':
+                return render_template('geography/search_results_table.html', title=_("Geographic Database"),
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits)
+            elif request.args.get('view') == 'map':
+                return render_template('geography/search_results.html', title=_("Geographic Database"),
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits)
+            else:
+                return render_template('geography/search_results.html', title=_("Geographic Database"),
                                    subtitle=_("Search results"), data=results,
                                    number_of_hits=number_of_hits)
         else:
