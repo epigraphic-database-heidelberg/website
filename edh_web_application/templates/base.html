@@ -5,8 +5,8 @@
 {% block head %}
 {{super()}}
     <base href="/">
-    <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     <link href=".{{url_for('static', filename='img/favicon.ico')}}" rel="shortcut icon">
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css" rel="stylesheet">
     <link href=".{{url_for('static', filename='css/edh_styles.css')}}" rel="stylesheet">
@@ -18,7 +18,8 @@
     <div id="beta-banner-wrapper"><img id="beta-banner" src=".{{url_for('static', filename='img/beta-banner_600.png')}}" /></div>
     <div id="hadw-banner-wrapper"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
     <div class="wrapper head">
-        <div class="container head"><a href="./">{{_("Epigraphic Database Heidelberg")}}</a></div>
+        <div class="container head visible-xs-block"><a href="./">EDH</a></div>
+        <div class="container head visible-sm-block visible-md-block visible-lg-block"><a href="./">{{_("Epigraphic Database Heidelberg")}}</a></div>
     </div>
     <nav class="navbar navbar-light">
         <div class="container">

@@ -5,69 +5,18 @@
 {% endblock %}
 
 {% block app_content %}
-<h1>{{ _('Detail View') }}: {{ data['name'] | safe }}</h1>
-<div>
-    <div class="detail_block" style="margin-bottom:2em;">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _("Canonical URI") }}:
-                <span id="geo_uri">
+<h1>{{ title }}</h1>
+<h2>{{ data['name'] | safe }}</h2>
+<h3 class="uri">{{ _("Canonical URI") }}: <span id="canonical_uri">
                     <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}">https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}</a>
                     <img src=".{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
-                </span>
-                <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
-            </span>
-        </div>
+                </span><span id="copy_button" style="color:#aa2222; font-size:0.7em"></span></h3>
+<div>
+    <div class="detail_block" style="margin-bottom:2em;">
+
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div id="map_canvas" style="width:100%;height:350px;border: 1px solid #ccc;margin-bottom:1.5em"></div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('Pleiades-ID') }}:</div>
-                <div class="detail_block_content_row_text">
-                    {% if data['pleiades_id_1'] %}
-                        <a href="https://pleiades.stoa.org/places/{{data['pleiades_id_1']}}">{{data['pleiades_id_1']}}</a>
-                    {% else %}
-                        &nbsp;
-                    {% endif %}
-                </div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('Trismegistos Geo-ID') }}:</div>
-                <div class="detail_block_content_row_text">
-                    {% if data['trismegistos_geo_id'] %}
-                        <a href="https://www.trismegistos.org/place/{{data['trismegistos_geo_id']}}">{{data['trismegistos_geo_id']}}</a>
-                    {% else %}
-                        &nbsp;
-                    {% endif %}
-                </div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('Geonames ID') }}:</div>
-                <div class="detail_block_content_row_text">
-                    {% if data['geonames_id_1'] %}
-                        <a href="https://www.geonames.org/{{data['geonames_id_1']}}">{{data['geonames_id_1']}}</a>
-                    {% else %}
-                        &nbsp;
-                    {% endif %}
-                </div>
-            </section>
-            {% if data['bearbeiter'] != "Db2inst1" %}
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{ _('responsible individual') }}:</div>
-                    <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
-                </section>
-            {% endif %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('last update') }}:</div>
-                <div class="detail_block_content_row_text">{{data['datum']}}</div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('finished') }}:</div>
-                <div class="detail_block_content_row_text">
-                    {% if data['bearbeitet'] %}{{_('Yes')}}
-                    {% else %}{{_('No')}}
-                    {% endif %}
-                </div>
+                <div id="map_canvas" style="width:100%;height:350px;border: 1px solid #ccc;margin-bottom:1.5em; margin-left:8px"></div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('province') }}:</div>
@@ -127,8 +76,58 @@
                     {% endif %}
                 </div>
             </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('Pleiades-ID') }}:</div>
+                <div class="detail_block_content_row_text">
+                    {% if data['pleiades_id_1'] %}
+                        <a href="https://pleiades.stoa.org/places/{{data['pleiades_id_1']}}">{{data['pleiades_id_1']}}</a>
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                </div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('Trismegistos Geo-ID') }}:</div>
+                <div class="detail_block_content_row_text">
+                    {% if data['trismegistos_geo_id'] %}
+                        <a href="https://www.trismegistos.org/place/{{data['trismegistos_geo_id']}}">{{data['trismegistos_geo_id']}}</a>
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                </div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('Geonames ID') }}:</div>
+                <div class="detail_block_content_row_text">
+                    {% if data['geonames_id_1'] %}
+                        <a href="https://www.geonames.org/{{data['geonames_id_1']}}">{{data['geonames_id_1']}}</a>
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                </div>
+            </section>
+            {% if data['bearbeiter'] != "Db2inst1" %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('responsible individual') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
+                </section>
+            {% endif %}
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('last update') }}:</div>
+                <div class="detail_block_content_row_text">{{data['datum']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('finished') }}:</div>
+                <div class="detail_block_content_row_text">
+                    {% if data['bearbeitet'] %}{{_('Yes')}}
+                    {% else %}{{_('No')}}
+                    {% endif %}
+                </div>
+            </section>
         </div>
     </div>
+    <div><h3>{{ _('Inscriptions linked to this findspot')}}</h3></div>
+
 </div>
 
 {% endblock %}

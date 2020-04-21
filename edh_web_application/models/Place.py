@@ -434,6 +434,21 @@ class Place:
         "Bar": "",
     }
 
+    # dict of localized sort paramter values
+    sort_param_values = {
+        "geo_id": _l('geo_id'),
+        "country": _l('land'),
+        "province": _l('provinz'),
+        "ancient_find_spot": _l('fo_antik'),
+        "modern_find_spot": _l('fo_modern'),
+        "region": _l('region'),
+        "pleiades_id_1": _l('pleiades_id_1'),
+        "pleiades_id_2": _l('pleiades_id_2'),
+        "geonames_id_1": _l('geonames_id_1'),
+        "geonames_id_2": _l('geonames_id_2'),
+        "tm_geo_id": _l('tm_geo_id'),
+    }
+
     # defines current EDH working status of province:
     # 0: EDH provisional
     # 1: EDH fully entered
@@ -568,20 +583,20 @@ class Place:
         if 'tm_geo_id' in form and form['tm_geo_id'] != "":
             query_string += "trismegistos_geo_id:" + _escape_value(form['tm_geo_id']) + " " + logical_operater + " "
 
-        if 'province' in form and form['province'] != "":
+        if 'provinz' in form and form['provinz'] != "":
             # province is a multi value field
             query_string += "("
-            for prov in form.getlist('province'):
+            for prov in form.getlist('provinz'):
                 if prov != "":
                     query_string += "provinz:" + prov + "* OR "
             # remove trailing OR
             query_string = re.sub(" OR $", "", query_string)
             query_string += ") " + logical_operater + " "
 
-        if 'country' in form and form['country'] != "":
+        if 'land' in form and form['land'] != "":
             # country is a multi value field
             query_string += "("
-            for c in form.getlist('country'):
+            for c in form.getlist('land'):
                 if c != "":
                     query_string += "land:" + c + "* OR "
             # remove trailing OR
@@ -593,32 +608,33 @@ class Place:
                 query_string += 'verw_bezirk_ci:"' + _escape_value(
                     _remove_number_of_hits_from_autocomplete(form['region'])) + '" ' + logical_operater + ' '
             else:
-                query_string += "verw_bezirk_ci:*" + re.sub(" ","\ ",form['region']) + "* " + logical_operater + " "
+                query_string += "verw_bezirk_ci:*" + _escape_value(form['region']) + "* " + logical_operater + " "
 
-        if 'ancient_find_spot' in form and form['ancient_find_spot'] != "":
-            if re.search("\([0-9]*\)$", form['ancient_find_spot']):
+        if 'fo_antik' in form and form['fo_antik'] != "":
+            if re.search("\([0-9]*\)$", form['fo_antik']):
+                print("trallala")
                 query_string += 'fo_antik_ci:"' + _escape_value(
-                    _remove_number_of_hits_from_autocomplete(form['ancient_find_spot'])) + '" ' + logical_operater + ' '
+                    _remove_number_of_hits_from_autocomplete(form['fo_antik'])) + '" ' + logical_operater + ' '
             else:
-                query_string += "fo_antik_ci:*" + re.sub(" ","\ ",form['ancient_find_spot']) + "* " + logical_operater + " "
+                query_string += "fo_antik_ci:*" + _escape_value(form['fo_antik']) + "* " + logical_operater + " "
 
-        if 'modern_find_spot' in form and form['modern_find_spot'] != "":
-            query_string += "fo_modern:" + _escape_value(form['modern_find_spot']) + " " + logical_operater + " "
-            if re.search("\([0-9]*\)$", form['modern_find_spot']):
+        if 'fo_modern' in form and form['fo_modern'] != "":
+            query_string += "fo_modern:" + _escape_value(form['fo_modern']) + " " + logical_operater + " "
+            if re.search("\([0-9]*\)$", form['fo_modern']):
                 query_string += 'fo_modern_ci:"' + _escape_value(
-                    _remove_number_of_hits_from_autocomplete(form['modern_find_spot'])) + '" ' + logical_operater + ' '
+                    _remove_number_of_hits_from_autocomplete(form['fo_modern'])) + '" ' + logical_operater + ' '
             else:
-                query_string += "fo_modern_ci:*" + re.sub(" ","\ ",form['modern_find_spot']) + "* " + logical_operater + " "
+                query_string += "fo_modern_ci:*" + _escape_value(form['fo_modern']) + "* " + logical_operater + " "
 
-        if 'find_spot' in form and form['find_spot'] != "":
-            if re.search("\([0-9]*\)$", form['find_spot']):
+        if 'fundstelle' in form and form['fundstelle'] != "":
+            if re.search("\([0-9]*\)$", form['fundstelle']):
                 query_string += 'fundstelle_ci:"' + _escape_value(
-                    _remove_number_of_hits_from_autocomplete(form['find_spot'])) + '" ' + logical_operater + ' '
+                    _remove_number_of_hits_from_autocomplete(form['fundstelle'])) + '" ' + logical_operater + ' '
             else:
-                query_string += "fundstelle_ci:*" + re.sub(" ","\ ",form['find_spot']) + "* " + logical_operater + " "
+                query_string += "fundstelle_ci:*" + _escape_value(form['fundstelle']) + "* " + logical_operater + " "
 
-        if 'comment' in form and form['comment'] != "":
-            query_string += "kommentar:*" + re.sub(" ", "\ ", form['comment']) + "* " + logical_operater + " "
+        if 'kommentar' in form and form['kommentar'] != "":
+            query_string += "kommentar:*" + _escape_value(form['kommentar']) + "* " + logical_operater + " "
 
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
@@ -633,11 +649,15 @@ class Place:
         """
         start = 0  # index number of first record to retrieve
         rows = 20  # number of receords to retrieve
-        sort = "id asc" # default
+        sort = "id asc"  # default
         if request.args.get('start'):
             start = request.args.get('start')
         if request.args.get('anzahl'):
             rows = int(request.args.get('anzahl'))
+            # if user changes number of hits/page in result page
+            # show all hits on one page if start < rows
+            if int(start) < rows:
+                start = 0
         if request.args.get('sort') in ['fo_antik', 'fo_modern', 'verw_bezirk']:
             sort = request.args.get('sort') + "_str asc"
         elif request.args.get('sort') == "provinz":
@@ -696,7 +716,8 @@ class Place:
                 query_result.append(pl)
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(
-                                     request.url), "query_params": query_params},
+                                     request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "query_params": query_params},
                     "items": query_result}
 
     @classmethod
@@ -915,7 +936,6 @@ class Place:
             return "47, 11"
 
 
-
 def _escape_value(val):
     """
     escape user entered value for solr query
@@ -944,7 +964,20 @@ def _get_url_without_pagination_parameters(url):
     """
     url = re.sub("start=[0-9]*&*", "", url)
     url = re.sub("anzahl=[0-9]*&*", "", url)
-    url = re.sub("&&", "&", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
+
+
+def _get_url_without_sort_parameter(url):
+    """
+    removes URL parameter sort; these get added later in the template again
+    in dialog "sort by"
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("sort=.*&*", "", url)
+    url = re.sub("&{2,}", "&", url)
     url = re.sub(request.url_root, "", url)
     return "/" + url
 
@@ -968,25 +1001,26 @@ def _get_query_params(args):
     """
     result_dict = {}
     for key in args:
-        if key == 'province' and args['province'] != "":
+        if key == 'provinz' and args['provinz'] != "":
             # multidict
-            result_dict['province'] = ""
-            params_list = args.getlist('province')
+            result_dict['provinz'] = ""
+            params_list = args.getlist('provinz')
             for prov in params_list:
-                result_dict['province'] = result_dict['province'] + _l(prov) + ", "
-        elif key == 'country' and args['country'] != "":
+                result_dict['provinz'] = result_dict['provinz'] + _l(prov) + ", "
+        elif key == 'land' and args['land'] != "":
             # multidict
-            result_dict['country'] = ""
-            params_list = args.getlist('country')
+            result_dict['land'] = ""
+            params_list = args.getlist('land')
             for c in params_list:
-                result_dict['country'] = result_dict['country'] + Place.country[c] + ", "
+                result_dict['land'] = result_dict['land'] + Place.country[c] + ", "
         elif key not in ('anzahl', 'sort', 'start') and args[key] != "":
             result_dict[key] = args[key]
-    if 'province' in result_dict:
-        result_dict['province'] = re.sub(", $", "", result_dict['province'])
-    if 'country' in result_dict:
-        result_dict['country'] = re.sub(", $", "", result_dict['country'])
+    if 'provinz' in result_dict:
+        result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])
+    if 'land' in result_dict:
+        result_dict['land'] = re.sub(", $", "", result_dict['land'])
     return result_dict
+
 
 def _encode_string_with_links(unencoded_string):
     """

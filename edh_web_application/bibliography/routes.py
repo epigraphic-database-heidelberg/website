@@ -22,11 +22,11 @@ def search_bibliography():
         number_of_hits = Publication.get_number_of_hits_for_query(query_string)
         # return results to client
         if results:
-            return render_template('bibliography/search_results.html', title=_("Bibliographic Database: Search"), form=form, data=results, number_of_hits=number_of_hits)
+            return render_template('bibliography/search_results.html', title=_("Bibliographic Database"), subtitle=_("Search results"), form=form, data=results, number_of_hits=number_of_hits)
         else:
-            return render_template('bibliography/no_hits.html', title=_("Bibliographic Database: Search"), form=form)
+            return render_template('bibliography/no_hits.html', title=_("Bibliographic Database"), subtitle=_("Search results"), form=form)
     else:
-        return render_template('bibliography/search.html', title=_("Bibliographic Database: Search"), form=form)
+        return render_template('bibliography/search.html', title=_("Bibliographic Database"), subtitle=_("Search"), form=form)
 
 
 @bp_bibliography.route('/edh/bibliographie/<b_nr>')
@@ -40,10 +40,10 @@ def detail_view(b_nr):
     results = Publication.query("b_nr:" + b_nr)
     if results is None:
         return render_template('bibliography/no_hits.html',
-                               title=_("Epigraphic Bibliography Database: Detail View"))
+                               title=_("Bibliographic Database"), subtitle=_("Detail View"))
     else:
         return render_template('bibliography/detail_view.html',
-                               title=_("Epigraphic Bibliography Database: Detail View"),
+                               title=_("Bibliographic Database"), subtitle=_("Detail View"),
                                data=results['items'][0])
 
 

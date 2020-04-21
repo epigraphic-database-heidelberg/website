@@ -2,6 +2,7 @@
 
 {% block app_content %}
 <h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
 
 <form action="" method="get">
 
@@ -113,8 +114,11 @@
 {% endblock %}
 {% block scripts %}
 {{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
 <script>
     $("input#autor").autocomplete({source:"./bibliographie/ac/autor",minLength:3,delay:0})
     $("input#publikation").autocomplete({source:"./bibliographie/ac/publikation",minLength:0,selectFirst:true,delay:0, select: function( event, ui ) {}})
+    $('select').selectpicker();
 </script>
 {% endblock %}

@@ -41,19 +41,18 @@ def detail_view(geo_id):
         prov_data['findspots'] = Place.get_findspots_for_province(Place.province_id_dict[geo_id])
         prov_data['polygon'] = Place.get_polygon_for_province(Place.province_id_dict[geo_id])
         prov_data['polygon_center'] = Place.get_center_of_polygon(prov_data['polygon'])
-
         return render_template('geography/detail_view_province.html',
-                                   title=_("Detail View") + ": " + prov_data['province_name'],
-                                   data=prov_data)
+                               title=_("Geographic Database"), subtitle=prov_data['province_name'],
+                               data=prov_data)
     else:
         # find spot detail view
         results = Place.query("id:" + geo_id)
         if results is None:
             return render_template('geography/no_hits.html',
-                                   title=_("Epigraphic Geography Database: Detail View"))
+                                   title=_("Geographic Database"), subtitle=_("Detail View"))
         else:
             return render_template('geography/detail_view.html',
-                                   title=_("Epigraphic Geography Database: Detail View"),
+                                   title=_("Geographic Database"), subtitle=_("Detail View"),
                                    data=results['items'][0])
 
 
@@ -72,11 +71,14 @@ def search_geography():
         number_of_hits = Place.get_number_of_hits_for_query(query_string)
         # return results to client
         if results:
-            return render_template('geography/search_results.html', title=_("Geographic Database: Search"), form=form, data=results, number_of_hits=number_of_hits)
+            return render_template('geography/search_results.html', title=_("Geographic Database"),
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits)
         else:
-            return render_template('geography/no_hits.html', title=_("Geographic Database: Search"), form=form)
+            return render_template('geography/no_hits.html', title=_("Geographic Database"),
+                                   subtitle=_("Search results"), form=form)
     else:
-        return render_template('geography/search.html', title=_("Geographic Database: Search"), form=form)
+        return render_template('geography/search.html', title=_("Geographic Database"), subtitle=_("Search"), form=form)
 
 
 @bp_geography.route('/geographie/ac/fo_modern', methods=['GET', 'POST'])

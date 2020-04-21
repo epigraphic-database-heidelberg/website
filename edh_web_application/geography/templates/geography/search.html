@@ -2,36 +2,43 @@
 
 {% block app_content %}
 <h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
 
 <form action="" method="get">
     <div class="form-group row">
-        {{ form.province.label(class='col-sm-2 col-form-label') }}
+        {{ form.geo_id.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.province(class='form-control selectpicker', title=_('select one or more entries...')) }}
+            {{ form.geo_id(class='form-control') }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.country.label(class='col-sm-2 col-form-label') }}
+        {{ form.provinz.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.country(class='form-control', title=_('select one or more entries...')) }}
+            {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.ancient_find_spot.label(class='col-sm-2 col-form-label') }}
+        {{ form.land.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.ancient_find_spot(class='form-control autocomplete ui-autocomplete-input', id='ancient_find_spot') }}
+            {{ form.land(class='form-control', title=_('select one or more entries...')) }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.modern_find_spot.label(class='col-sm-2 col-form-label') }}
+        {{ form.fo_antik.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.modern_find_spot(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+            {{ form.fo_antik(class='form-control autocomplete ui-autocomplete-input', id='ancient_find_spot') }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.find_spot.label(class='col-sm-2 col-form-label') }}
+        {{ form.fo_modern.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.find_spot(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
+            {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.fundstelle.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.fundstelle(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
         </div>
     </div>
     <div class="form-group row">
@@ -41,15 +48,9 @@
         </div>
     </div>
     <div class="form-group row">
-        {{ form.comment.label(class='col-sm-2 col-form-label') }}
+        {{ form.kommentar.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.comment(class='form-control') }}
-        </div>
-    </div>
-    <div class="form-group row">
-        {{ form.geo_id.label(class='col-sm-2 col-form-label') }}
-        <div class="col-sm-10">
-            {{ form.geo_id(class='form-control') }}
+            {{ form.kommentar(class='form-control') }}
         </div>
     </div>
     <div class="form-group row">

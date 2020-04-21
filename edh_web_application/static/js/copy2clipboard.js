@@ -4,7 +4,7 @@ function copy2clipboard(note) {
     textarea.id = 't'
     textarea.style.height = 0
     document.body.appendChild(textarea)
-    textarea.value = document.getElementById("geo_uri").innerText
+    textarea.value = document.getElementById("canonical_uri").innerText
     let selector = document.querySelector('#t')
     selector.select()
     document.execCommand('copy')
