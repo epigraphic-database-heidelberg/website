@@ -613,7 +613,6 @@ class Place:
 
         if 'fo_antik' in form and form['fo_antik'] != "":
             if re.search("\([0-9]*\)$", form['fo_antik']):
-                print("trallala")
                 query_string += 'fo_antik_ci:"' + _escape_value(
                     _remove_number_of_hits_from_autocomplete(form['fo_antik'])) + '" ' + logical_operater + ' '
             else:
@@ -662,7 +661,6 @@ class Place:
                 start = 0
         if hits:
             rows = hits
-        print(rows)
         if request.args.get('sort') in ['fo_antik', 'fo_modern', 'verw_bezirk']:
             sort = request.args.get('sort') + "_str asc"
         elif request.args.get('sort') == "provinz":
@@ -1032,7 +1030,7 @@ def _get_query_params(args):
             params_list = args.getlist('land')
             for c in params_list:
                 result_dict['land'] = result_dict['land'] + Place.country[c] + ", "
-        elif key not in ('anzahl', 'sort', 'start') and args[key] != "":
+        elif key not in ('anzahl', 'sort', 'start', 'view') and args[key] != "":
             result_dict[key] = args[key]
     if 'provinz' in result_dict:
         result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])

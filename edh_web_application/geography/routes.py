@@ -78,7 +78,7 @@ def search_geography():
                                    subtitle=_("Search results"), data=results,
                                    number_of_hits=number_of_hits)
             elif request.args.get('view') == 'map':
-                return render_template('geography/search_results.html', title=_("Geographic Database"),
+                return render_template('geography/search_results_map.html', title=_("Geographic Database"),
                                    subtitle=_("Search results"), data=results,
                                    number_of_hits=number_of_hits)
             else:

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+<p>{{_("The search for:")}}</p>
+<p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
+<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
+
+<div class="search-filter" style="text-align:right">
+    <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('map')}}</button>
+    <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+</div>
+
+<div>
+    <div id="map" style="width:100%;height:600px;margin-top:3em; margin-bottom:3em;border: 1px solid #ccc"></div>
+</div>
+<div id="dialog-view" title = "{{_('view')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=list">{{_('list')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=table">{{_('table')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=map">{{_('map')}}</a></li>
+    </ul>
+</div>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" integrity="sha256-+bdWuWOXMFkX0v9Cvr3OWClPiYefDQz9GGZP/7xZxdc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" integrity="sha256-LWhzWaQGZRsWFrrJxg+6Zn8TT84k0/trtiHBc6qcGpY=" crossorigin="anonymous" />
+<link rel="stylesheet" href=".{{url_for('geography.static', filename='css/geography.css')}}" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js" integrity="sha256-WL6HHfYfbFEkZOFdsJQeY7lJG/E5airjvqbznghUzRw=" crossorigin="anonymous"></script>
+<script src=".{{url_for('geography.static', filename='js/bing.js')}}"></script>
+<script>
+$(document).ready(function() {
+    var BING_KEY = 'AhpTG22M_rzQEp8Q4c4edHpmIWXhwrQE65lztW3S7MsvB4cpUuya0fUgJscUfXMa'
+    var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid2VuYW11biIsImEiOiJCcUl0ZWRzIn0.zxs-a0hWY3La5kF4CWAVug';
+    var streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets', minZoom:5, attribution: mbAttr}),
+        sat = L.tileLayer(mbUrl, {id: 'mapbox.streets-satellite', minZoom:5, attribution: mbAttr}),
+        pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:5, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'}),
+        bing_satellite = new L.BingLayer(BING_KEY, {'type': 'AerialWithLabels'}),
+        openTopoMap = Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://www.thunderforest.com/">Thunderforest</a>',
+            apikey: 'aaeccd3a44a74ce58324c2a455c58a98',
+            minZoom: 5});
+    var map = L.map('map', {
+        center: [47, 11],
+        zoom: 4,
+        layers: [streets],
+        zoomControl: true,
+        preferCanvas: true,
+        scrollWheelZoom: false
+    });
+    var baseLayers = {
+        "Streets": streets,
+        "Mapbox Satellite": sat,
+        "Bing Satellite": bing_satellite,
+        "Pelagios": pelagios,
+        "Topo": openTopoMap
+    };
+    map.zoomControl.setPosition('topright');
+    var overlays = {};
+    L.control.layers(baseLayers, overlays, {position: 'topleft'}).addTo(map);
+    var markers = L.markerClusterGroup();
+{% for place in data['items'] %}
+    {% if place['koordinaten_1'] %}
+        marker = L.circleMarker([{{place['koordinaten_1']}}], {radius:5, color: '#1F6B3B', opacity: 1}).addTo(map).bindPopup('<b>EDH-Geo-ID</b>: <a href="./edh/geographie/{{place['id']}}" style="font-weight: normal;color: #1F6B3B;cursor: pointer;">{{place['id']}}</a><br><b>Fundort antik:</b><br>{% if place['fo_antik']%}{{place['fo_antik']}}{%else%}{%endif%}<br><b>Fundort modern:</b><br>{% if place['fo_modern']%}{{place['fo_modern']}}{%else%}{%endif%}<br><b>Fundstelle:</b><br>{% if place['fundstelle']%}{{place['fundstelle']}}{%else%}{%endif%}<br>');
+        markers.addLayer(marker);
+    {% else %}{%endif%}
+{% endfor %}
+    markers.addLayer(marker);
+	map.addLayer(markers);
+    $(function() {
+        $( "#dialog-sort" ).dialog({
+           autoOpen: false,
+        });
+        $( "#sort-by" ).click(function() {
+           $( "#dialog-sort" ).dialog( "open" );
+        });
+        $( "#dialog-number" ).dialog({
+           autoOpen: false,
+        });
+        $( "#hits-per-page" ).click(function() {
+           $( "#dialog-number" ).dialog( "open" );
+        });
+        $( "#dialog-view" ).dialog({
+           autoOpen: false,
+        });
+        $( "#view" ).click(function() {
+           $( "#dialog-view" ).dialog( "open" );
+        });
+     });
+} );
+</script>
+{% endblock %}
