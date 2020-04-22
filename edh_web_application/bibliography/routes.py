@@ -4,7 +4,6 @@ from ..models.Publication import Publication
 from . import bp_bibliography
 from .forms import BibliographySearch
 import json
-import re
 
 
 @bp_bibliography.route('/bibliographie/suche', methods=['GET', 'POST'])

@@ -6,4 +6,4 @@ from flask_babel import _
 
 @bp_data.route('/data')
 def data():
-    return render_template('data/index.html', title=_("Open Data Repository"))
+    return render_template('data/index.html', title=_("Data"), subtitle=_("Open Data Repository"))

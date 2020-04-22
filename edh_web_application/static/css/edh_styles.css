@@ -37,11 +37,18 @@ h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.4em;
     margin-top: 2em;
+    text-decoration: underline;
+}
+h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    margin-top: 1.5em;
 }
 h3.uri {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     margin-top: -1.5em;
+    text-decoration: none;
 }
 th {
     text-align: left;
@@ -241,9 +248,9 @@ p {
     margin-left: 12px;
 }
 div.panel-heading {
-    font-size: 1.5em;
+    font-size: 1.6em;
     text-align: center;
-    font-weight: 900;
+    font-weight: 500;
     text-transform: uppercase;
     background-color: #ddd;
     color: #1F6B3B;
