@@ -46,47 +46,48 @@
 {% endblock %}
 {% block scripts %}
 {{ super() }}
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" />
-<link rel="stylesheet" href=".{{url_for('geography.static', filename='css/geography.css')}}" />
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
-
-<script>
-$(document).ready(function() {
-    $('#tbl_findspot').DataTable({
-        pageLength: 20,
-        language: {
-            search: "{{ _("dtbl_search") }}",
-            info: "{{ _("dtbl_info") }}",
-            lengthMenu: "{{ _("dtbl_menu") }}",
-            infoFiltered: "{{ _("dtbl_filter") }}",
-            zeroRecords:  "{{ _("dtbl_zero") }}",
-            paginate: {
-                previous: "{{ _("dtbl_previous") }}",
-                next: "{{ _("dtbl_next") }}"
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href=".{{url_for('geography.static', filename='css/geography.css')}}" />
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tbl_findspot').DataTable({
+            pageLength: 20,
+            lengthChange: true,
+            lengthMenu: [[10, 20, 50, 100, -1], [10, 20, 50, 100, "{{_("all")}}" ]],
+            language: {
+                search: "{{ _("dtbl_search") }}",
+                info: "{{ _("dtbl_info") }}",
+                lengthMenu: "{{ _("dtbl_menu") }}",
+                infoFiltered: "{{ _("dtbl_filter") }}",
+                zeroRecords:  "{{ _("dtbl_zero") }}",
+                paginate: {
+                    previous: "{{ _("dtbl_previous") }}",
+                    next: "{{ _("dtbl_next") }}"
+                }
             }
-        }
-    });
-    $(function() {
-        $( "#dialog-sort" ).dialog({
-           autoOpen: false,
         });
-        $( "#sort-by" ).click(function() {
-           $( "#dialog-sort" ).dialog( "open" );
-        });
-        $( "#dialog-number" ).dialog({
-           autoOpen: false,
-        });
-        $( "#hits-per-page" ).click(function() {
-           $( "#dialog-number" ).dialog( "open" );
-        });
-        $( "#dialog-view" ).dialog({
-           autoOpen: false,
-        });
-        $( "#view" ).click(function() {
-           $( "#dialog-view" ).dialog( "open" );
-        });
-     });
-} );
-</script>
+        $(function() {
+            $( "#dialog-sort" ).dialog({
+               autoOpen: false,
+            });
+            $( "#sort-by" ).click(function() {
+               $( "#dialog-sort" ).dialog( "open" );
+            });
+            $( "#dialog-number" ).dialog({
+               autoOpen: false,
+            });
+            $( "#hits-per-page" ).click(function() {
+               $( "#dialog-number" ).dialog( "open" );
+            });
+            $( "#dialog-view" ).dialog({
+               autoOpen: false,
+            });
+            $( "#view" ).click(function() {
+               $( "#dialog-view" ).dialog( "open" );
+            });
+         });
+    } );
+    </script>
 {% endblock %}

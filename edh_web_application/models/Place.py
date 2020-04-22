@@ -687,7 +687,7 @@ class Place:
                     if key not in ('id', 'bearbeiter', 'datum', 'land', 'provinz', 'name'):
                         props[key] = result[key]
                     if key == 'land':
-                        if re.search("\?$", result[key]):
+                        if re.search(".+\?$", result[key]):
                             key_without_trailing_questionmark = re.sub("\?$", "", result[key])
                             props[key] = Place.country[key_without_trailing_questionmark] + "?"
                         else:
