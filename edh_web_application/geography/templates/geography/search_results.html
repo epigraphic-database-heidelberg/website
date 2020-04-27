@@ -218,7 +218,7 @@
             {{ form.kommentar(class='form-control') }}
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">{{ _('Filter...') }}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
         </div>
         <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
     </form>
@@ -254,24 +254,28 @@
     $(function() {
         $( "#dialog-sort" ).dialog({
            autoOpen: false,
+           resizable: false,
         });
         $( "#sort-by" ).click(function() {
            $( "#dialog-sort" ).dialog( "open" );
         });
         $( "#dialog-number" ).dialog({
            autoOpen: false,
+           resizable: false,
         });
         $( "#hits-per-page" ).click(function() {
            $( "#dialog-number" ).dialog( "open" );
         });
         $( "#dialog-view" ).dialog({
            autoOpen: false,
+           resizable: false,
         });
         $( "#view" ).click(function() {
            $( "#dialog-view" ).dialog( "open" );
         });
         $( "#dialog-filter" ).dialog({
            autoOpen: false,
+           resizable: false,
         });
         $( "#filter" ).click(function() {
            $( "#dialog-filter" ).dialog( "open" );

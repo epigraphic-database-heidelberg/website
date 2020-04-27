@@ -45,53 +45,36 @@
 </div>
 <div id="dialog-filter" title = "{{_('filter')}}:">
     <form action="" method="get">
-        <div class="form-group row">
-            {{ form.provinz.label(class='col-sm-2 col-form-label') }}
-            <div class="col-sm-10">
-                {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
-            </div>
+        <div class="form-group">
+            {{ form.provinz.label() }}
+            {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
         </div>
-        <div class="form-group row">
-            {{ form.land.label(class='col-sm-2 col-form-label') }}
-            <div class="col-sm-10">
-                {{ form.land(class='form-control', title=_('select one or more entries...')) }}
-            </div>
+        <div class="form-group">
+            {{ form.land.label() }}
+            {{ form.land(class='form-control', title=_('select one or more entries...')) }}
         </div>
-        <div class="form-group row ui-front">
-            {{ form.fo_antik.label(class='col-sm-2 col-form-label') }}
-            <div class="col-sm-10">
-                {{ form.fo_antik(class='form-control autocomplete autocomplete-filter', id='ancient_find_spot') }}
-            </div>
+        <div class="form-group ui-front">
+            {{ form.fo_antik.label() }}
+            {{ form.fo_antik(class='form-control autocomplete autocomplete-filter', id='ancient_find_spot') }}
         </div>
-        <div class="form-group row ui-front">
-            {{ form.fo_modern.label(class='col-sm-2 col-form-label') }}
-            <div class="col-sm-10">
-                {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
-            </div>
+        <div class="form-group ui-front">
+            {{ form.fo_modern.label() }}
+            {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
         </div>
-        <div class="form-group row ui-front">
-            {{ form.fundstelle.label(class='col-sm-2 col-form-label') }}
-            <div class="col-sm-10">
-                {{ form.fundstelle(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
-            </div>
+        <div class="form-group ui-front">
+            {{ form.fundstelle.label() }}
+            {{ form.fundstelle(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
         </div>
-        <div class="form-group row ui-front">
-            {{ form.region.label(class='col-sm-2 col-form-label') }}
-            <div class="col-sm-10">
-                {{ form.region(class='form-control') }}
-            </div>
+        <div class="form-group ui-front">
+            {{ form.region.label() }}
+            {{ form.region(class='form-control') }}
         </div>
-        <div class="form-group row">
-            {{ form.kommentar.label(class='col-sm-2 col-form-label') }}
-            <div class="col-sm-10">
-                {{ form.kommentar(class='form-control') }}
-            </div>
+        <div class="form-group">
+            {{ form.kommentar.label() }}
+            {{ form.kommentar(class='form-control') }}
         </div>
-        <div class="form-group row">
-        <div class="col-sm-2"></div>
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">{{ _('Filter...') }}</button>
-            </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
         </div>
         <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
     </form>
@@ -126,25 +109,28 @@
         $(function() {
             $( "#dialog-sort" ).dialog({
                autoOpen: false,
+               resizable: false,
             });
             $( "#sort-by" ).click(function() {
                $( "#dialog-sort" ).dialog( "open" );
             });
             $( "#dialog-number" ).dialog({
                autoOpen: false,
+               resizable: false,
             });
             $( "#hits-per-page" ).click(function() {
                $( "#dialog-number" ).dialog( "open" );
             });
             $( "#dialog-view" ).dialog({
                autoOpen: false,
+               resizable: false,
             });
             $( "#view" ).click(function() {
                $( "#dialog-view" ).dialog( "open" );
             });
             $( "#dialog-filter" ).dialog({
                autoOpen: false,
-               width: "500px"
+               resizable: false,
             });
             $( "#filter" ).click(function() {
                $( "#dialog-filter" ).dialog( "open" );
