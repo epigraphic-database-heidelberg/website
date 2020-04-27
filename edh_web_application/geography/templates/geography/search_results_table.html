@@ -43,13 +43,68 @@
     <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=map">{{_('map')}}</a></li>
     </ul>
 </div>
+<div id="dialog-filter" title = "{{_('filter')}}:">
+    <form action="" method="get">
+        <div class="form-group row">
+            {{ form.provinz.label(class='col-sm-2 col-form-label') }}
+            <div class="col-sm-10">
+                {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.land.label(class='col-sm-2 col-form-label') }}
+            <div class="col-sm-10">
+                {{ form.land(class='form-control', title=_('select one or more entries...')) }}
+            </div>
+        </div>
+        <div class="form-group row ui-front">
+            {{ form.fo_antik.label(class='col-sm-2 col-form-label') }}
+            <div class="col-sm-10">
+                {{ form.fo_antik(class='form-control autocomplete autocomplete-filter', id='ancient_find_spot') }}
+            </div>
+        </div>
+        <div class="form-group row ui-front">
+            {{ form.fo_modern.label(class='col-sm-2 col-form-label') }}
+            <div class="col-sm-10">
+                {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+            </div>
+        </div>
+        <div class="form-group row ui-front">
+            {{ form.fundstelle.label(class='col-sm-2 col-form-label') }}
+            <div class="col-sm-10">
+                {{ form.fundstelle(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
+            </div>
+        </div>
+        <div class="form-group row ui-front">
+            {{ form.region.label(class='col-sm-2 col-form-label') }}
+            <div class="col-sm-10">
+                {{ form.region(class='form-control') }}
+            </div>
+        </div>
+        <div class="form-group row">
+            {{ form.kommentar.label(class='col-sm-2 col-form-label') }}
+            <div class="col-sm-10">
+                {{ form.kommentar(class='form-control') }}
+            </div>
+        </div>
+        <div class="form-group row">
+        <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">{{ _('Filter...') }}</button>
+            </div>
+        </div>
+        <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
+    </form>
+</div>
 {% endblock %}
 {% block scripts %}
 {{ super() }}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
     <link rel="stylesheet" href=".{{url_for('geography.static', filename='css/geography.css')}}" />
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
     <script>
     $(document).ready(function() {
         $('#tbl_findspot').DataTable({
@@ -87,7 +142,19 @@
             $( "#view" ).click(function() {
                $( "#dialog-view" ).dialog( "open" );
             });
-         });
+            $( "#dialog-filter" ).dialog({
+               autoOpen: false,
+               width: "500px"
+            });
+            $( "#filter" ).click(function() {
+               $( "#dialog-filter" ).dialog( "open" );
+            });
+        });
+        $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern/short",minLength:3,delay:0})
+        $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik/short",minLength:3,delay:0})
+        $("input#find_spot").autocomplete({source:"./geographie/ac/fundstelle/short",minLength:3,delay:0})
+        $("input#region").autocomplete({source:"./geographie/ac/region/short",minLength:3,delay:0})
+        $('select').selectpicker();
     } );
     </script>
 {% endblock %}

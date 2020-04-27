@@ -62,7 +62,15 @@ def search_geography():
     route for geographical search mask
     :return: html template of geographical search mask
     """
-    form = GeographySearch()
+    form = GeographySearch(data=request.args)
+    form.fo_antik.data = request.args.get('fo_antik')
+    form.fo_modern.data = request.args.get('fo_modern')
+    form.fundstelle.data = request.args.get('fundstelle')
+    form.region.data = request.args.get('region')
+    form.kommentar.data = request.args.get('kommentar')
+    form.provinz.data = request.args.getlist('provinz')
+    form.land.data = request.args.getlist('land')
+
     if len(request.args) > 0:
         # create query string
         query_string = Place.create_query_string(request.args)
@@ -76,15 +84,15 @@ def search_geography():
             if request.args.get('view') == 'table':
                 return render_template('geography/search_results_table.html', title=_("Geographic Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits)
+                                   number_of_hits=number_of_hits, form=form)
             elif request.args.get('view') == 'map':
                 return render_template('geography/search_results_map.html', title=_("Geographic Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits)
+                                   number_of_hits=number_of_hits, form=form)
             else:
                 return render_template('geography/search_results.html', title=_("Geographic Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits)
+                                   number_of_hits=number_of_hits, form=form)
         else:
             return render_template('geography/no_hits.html', title=_("Geographic Database"),
                                    subtitle=_("Search results"), form=form)
@@ -92,37 +100,53 @@ def search_geography():
         return render_template('geography/search.html', title=_("Geographic Database"), subtitle=_("Search"), form=form)
 
 
-@bp_geography.route('/geographie/ac/fo_modern', methods=['GET', 'POST'])
-def autocomplete_fo_modern():
+@bp_geography.route('/geographie/ac/fo_modern', methods=['GET', 'POST'], strict_slashes=False)
+@bp_geography.route('/geographie/ac/fo_modern/<short>', methods=['GET', 'POST'], strict_slashes=False)
+def autocomplete_fo_modern(short=None):
     """
     route for retrieving autocomplete entries for field fo_modern
     :return: list of entries for autocomplete
     """
-    return json.dumps(Place.get_autocomplete_entries("fo_modern", request.args['term']))
+    if short:
+        return json.dumps(Place.get_autocomplete_entries("fo_modern", request.args['term'], 10))
+    else:
+        return json.dumps(Place.get_autocomplete_entries("fo_modern", request.args['term'], 20))
 
 
-@bp_geography.route('/geographie/ac/fo_antik', methods=['GET', 'POST'])
-def autocomplete_fo_antik():
+@bp_geography.route('/geographie/ac/fo_antik', methods=['GET', 'POST'], strict_slashes=False)
+@bp_geography.route('/geographie/ac/fo_antik/<short>', methods=['GET', 'POST'], strict_slashes=False)
+def autocomplete_fo_antik(short=None):
     """
     route for retrieving autocomplete entries for field fo_antik
     :return: list of entries for autocomplete
     """
-    return json.dumps(Place.get_autocomplete_entries("fo_antik", request.args['term']))
+    if short:
+        return json.dumps(Place.get_autocomplete_entries("fo_antik", request.args['term'], 10))
+    else:
+        return json.dumps(Place.get_autocomplete_entries("fo_antik", request.args['term'], 20))
 
 
-@bp_geography.route('/geographie/ac/fundstelle', methods=['GET', 'POST'])
-def autocomplete_fundstelle():
+@bp_geography.route('/geographie/ac/fundstelle', methods=['GET', 'POST'], strict_slashes=False)
+@bp_geography.route('/geographie/ac/fundstelle/<short>', methods=['GET', 'POST'], strict_slashes=False)
+def autocomplete_fundstelle(short=None):
     """
     route for retrieving autocomplete entries for field fundstelle
     :return: list of entries for autocomplete
     """
-    return json.dumps(Place.get_autocomplete_entries("fundstelle", request.args['term']))
+    if short:
+        return json.dumps(Place.get_autocomplete_entries("fundstelle", request.args['term'], 10))
+    else:
+        return json.dumps(Place.get_autocomplete_entries("fundstelle", request.args['term'], 20))
 
 
-@bp_geography.route('/geographie/ac/region', methods=['GET', 'POST'])
-def autocomplete_region():
+@bp_geography.route('/geographie/ac/region', methods=['GET', 'POST'], strict_slashes=False)
+@bp_geography.route('/geographie/ac/region/<short>', methods=['GET', 'POST'], strict_slashes=False)
+def autocomplete_region(short=None):
     """
     route for retrieving autocomplete entries for field verw_bezirk/region
     :return: list of entries for autocomplete
     """
-    return json.dumps(Place.get_autocomplete_entries("verw_bezirk", request.args['term']))
+    if short:
+        return json.dumps(Place.get_autocomplete_entries("verw_bezirk", request.args['term'], 10))
+    else:
+        return json.dumps(Place.get_autocomplete_entries("verw_bezirk", request.args['term'], 20))

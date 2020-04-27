@@ -818,7 +818,7 @@ class Place:
         return grouped_result
 
     @classmethod
-    def get_autocomplete_entries(cls, ac_field, term):
+    def get_autocomplete_entries(cls, ac_field, term, hits):
         """
         queries Solr core edhGeo for list of entries displayed in
         autocomplete fields of Geo form
@@ -832,7 +832,7 @@ class Place:
                 'facet.field': ac_field + '_str',
                 'facet.sort': 'count',
                 'facet.mincount': 1,
-                'facet.limit': '20',
+                'facet.limit': hits,
                 'rows': '0',
             }
             query = ac_field + '_ac:"' + term + '"'
@@ -993,7 +993,7 @@ def _get_url_without_view_parameter(url):
     :param url: current URL as string
     :return: shortened URL as string
     """
-    url = re.sub("view=.*&*", "", url)
+    url = re.sub("view=.*?&*", "", url)
     url = re.sub("&{2,}", "&", url)
     url = re.sub(request.url_root, "", url)
     return "/" + url
