@@ -7,15 +7,18 @@
 {% block app_content %}
 <h1>{{ title }}</h1>
 <h2>{{ subtitle }}</h2>
-<h3 class="uri">{{ _("Canonical URI") }}: <span id="canonical_uri">
-                    <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['province_id']}}">https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['province_id']}}</a>
-                    <img src=".{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
-                </span><span id="copy_button" style="color:#aa2222; font-size:0.7em"></h3>
+<h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
+    <span id="canonical_uri">
+        <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['province_id']}}">https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['province_id']}}</a>
+        <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
+    </span>
+    <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
+</h3>
 <div>
     <div class="detail_block" style="margin-bottom:2em;">
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div id="map_canvas" style="width:100%;height:350px;border: 1px solid #ccc;margin-bottom:1.5em; margin-left:8px;"></div>
+                <div id="map_canvas" style="width:100%;height:350px;border: 1px solid #aaa; margin-bottom:1.5em; margin-left:8px;"></div>
             </section>
 
             <section class="detail_block_content_row">
@@ -31,6 +34,7 @@
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">Pleiades ID:</div>
                 <div class="detail_block_content_row_text">
+                    <i class="fas fa-external-link-alt"></i>
                     <a href="{{data['province_pleiades_id']}}">{{data['province_pleiades_id']|replace("https://pleiades.stoa.org/places/", "")}}</a>
                 </div>
             </section>
@@ -38,6 +42,7 @@
                 <div class="detail_block_content_row_header">Wikidata ID:</div>
                 <div class="detail_block_content_row_text">
                     {% if data['province_wikidata_id'] %}
+                    <i class="fas fa-external-link-alt"></i>
                     <a href="{{data['province_wikidata_id']}}">{{data['province_wikidata_id']|replace("https://www.wikidata.org/entity/", "")}}</a>
                     {% else %}
                     &nbsp;
@@ -48,6 +53,7 @@
                 <div class="detail_block_content_row_header">TM Geo ID:</div>
                 <div class="detail_block_content_row_text">
                     {% if data['province_tm_id'] %}
+                    <i class="fas fa-external-link-alt"></i>
                     <a href="{{data['province_tm_id']}}">{{data['province_tm_id']|replace("https://www.trismegistos.org/place/", "")}}</a>
                     {% else %}
                     &nbsp;
@@ -66,7 +72,7 @@
             <tbody>
             {% for place in data['findspots'] %}
             <tr>
-                <td><a href="./edh/geographie/{{ place['id']}}">{{ place['id']}}</a></td>
+                <td><i class="fas fa-external-link-alt">&nbsp;<a href="./edh/geographie/{{ place['id']}}" style="font-family: 'Ubuntu', sans-serif;">{{ place['id']}}</a></i></td>
                 <td>{% if place['fo_antik'] %}{{place['fo_antik']}}{% else %}{% endif %}</td>
                 <td>{% if place['fo_modern'] %}{{place['fo_modern']}}{% else %}{% endif %}</td>
                 <td>{% if place['fundstelle'] %}{{place['fundstelle']}}{% else %}{% endif %}</td>
@@ -125,6 +131,8 @@
 $(document).ready(function() {
     $('#tbl_findspot').DataTable({
         pageLength: 20,
+        lengthChange: true,
+        lengthMenu: [[10, 20, 50, 100, -1], [10, 20, 50, 100, "{{_("all")}}" ]],
         language: {
             search: "{{ _("dtbl_search") }}",
             info: "{{ _("dtbl_info") }}",

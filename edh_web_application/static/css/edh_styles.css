@@ -47,7 +47,7 @@ h4 {
 h3.uri {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
-    margin-top: -1.5em;
+    margin-top: -1em;
     text-decoration: none;
 }
 th {
@@ -62,6 +62,9 @@ td {
 }
 li.active {
     background-color: #eee;
+}
+i.fas {
+    color: #1F6B3B;
 }
 .footer {
     position: absolute;
@@ -190,14 +193,17 @@ p {
     padding-left: 5px;
     width: 100%;
     margin-bottom: .25em;
+    margin-top: 1em;
 }
 .detail_block_content_row_header {
     font-weight: bold;
     padding-right: 5px;
+    padding-left: 8px;
 }
 .detail_block_content_row_text {
     font-weight: normal;
     margin-bottom: 0.75em;
+    padding-left: 8px;
 }
 .btn {
     color: #1F6B3B;
@@ -234,6 +240,7 @@ p {
 }
 .panel.panel-default {
     height: 100%;
+    border-color: #aaa;
 }
 .panel.panel-default.partner {
     height: 100%;
@@ -246,15 +253,18 @@ p {
 }
 .province_disclaimer {
     margin-left: 12px;
+    margin-top: 2em;
 }
 div.panel-heading {
     font-size: 1.6em;
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;
-    background-color: #ddd;
-    color: #1F6B3B;
+    background-color: #1F6B3B;
+    color: #ddd;
     padding: 0px 15px;
+    min-height: 2em;
+    padding-top: 5px;
 }
 div.panel-heading-image {
     height: 160px;
@@ -366,6 +376,14 @@ div.panel-heading-image {
 /*
  * pagination of search results
 */
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  width: 75px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  width: 75px;
+}
 .pagination>li>a, .pagination>li>span{
   color: #1F6B3B;
 }
@@ -499,6 +517,7 @@ div.panel-heading-image {
     color: #fff;
     min-height: 220px;
     margin-right: 1em;
+    margin-left: 6px;
 }
 .map_canvas {
     width: 220px;
@@ -506,10 +525,15 @@ div.panel-heading-image {
     border: 1px solid #ccc;
 }
 .search-filter {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    height: 2.4em;
-    vertical-align: middle;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 0px;
+    padding-top: 1em;
+    padding-bottom: 0em;
+    padding-right: 100px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
     background-color: #1F6B3B !important;
@@ -529,7 +553,7 @@ label {
 .btn.btn-info {
     background-color: #d4f6d4;
     color: #333;
-    margin-left: 1em;
+    margin-right: 1em;
     padding:6px;
     vertical-align:middle;
 }
@@ -695,6 +719,9 @@ label {
     .col-sm-2.col-form-label {
         text-align: right;
     }
+    .detail_block_content_row {
+        margin-top: 0px;
+    }
     .detail_block_content_row_header {
         font-weight: bold;
         width: 10em;
@@ -719,6 +746,7 @@ label {
     }
     .panel.panel-default {
         height: 300px;
+        background-color: #eee;
     }
     .panel.panel-default.partner {
         height: 150px;
@@ -727,7 +755,7 @@ label {
         font-size: 1em;
     }
     div.panel-body {
-        font-size: 12px;
+        font-size: 15px;
         hyphens: none;
         padding-left: 2px;
         padding-right: 2px;
@@ -741,7 +769,14 @@ label {
     div.panel-heading-image {
         height: 120px;
     }
-
+    .search-filter {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        height: 2.4em;
+        vertical-align: middle;
+        margin-left: 1em;
+        padding-top: 0px;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -779,7 +814,7 @@ label {
         font-size: 1.2em;
     }
     div.panel-body {
-        font-size: 14px;
+        font-size: 16px;
         hyphens: none;
         padding-left: 2px;
         padding-right: 2px;
@@ -804,5 +839,12 @@ label {
     }
     .container {
         max-width: 1000px;
+    }
+}
+
+/* styles for printing */
+@media print {
+    a[href]::after {
+        content: none !important;
     }
 }

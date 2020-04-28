@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-27 13:06+0200\n"
+"POT-Creation-Date: 2020-04-28 10:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,8 +155,8 @@ msgid "Canonical URI"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:17
-#: edh_web_application/geography/templates/geography/detail_view.html:12
-#: edh_web_application/geography/templates/geography/detail_view_province.html:12
+#: edh_web_application/geography/templates/geography/detail_view.html:13
+#: edh_web_application/geography/templates/geography/detail_view_province.html:13
 #: edh_web_application/person/templates/person/detail_view.html:15
 msgid "copied!"
 msgstr ""
@@ -249,7 +249,7 @@ msgid "Number"
 msgstr ""
 
 #: edh_web_application/data/routes.py:9
-#: edh_web_application/templates/base.html:58
+#: edh_web_application/templates/base.html:59
 #: edh_web_application/templates/home.html:61
 msgid "Data"
 msgstr ""
@@ -271,7 +271,7 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/detail_view.html:36
 #: edh_web_application/geography/forms.py:50
 #: edh_web_application/geography/forms.py:63
-#: edh_web_application/geography/templates/geography/detail_view.html:22
+#: edh_web_application/geography/templates/geography/detail_view.html:25
 #: edh_web_application/geography/templates/geography/last_updates.html:27
 #: edh_web_application/geography/templates/geography/search_results.html:83
 #: edh_web_application/geography/templates/geography/search_results.html:167
@@ -283,8 +283,8 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/detail_view.html:40
 #: edh_web_application/geography/forms.py:51
 #: edh_web_application/geography/forms.py:63
-#: edh_web_application/geography/templates/geography/detail_view.html:26
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:29
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:34
 #: edh_web_application/geography/templates/geography/search_results.html:88
 #: edh_web_application/geography/templates/geography/search_results.html:168
@@ -296,8 +296,8 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/detail_view.html:44
 #: edh_web_application/geography/forms.py:52
 #: edh_web_application/geography/forms.py:64
-#: edh_web_application/geography/templates/geography/detail_view.html:30
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:33
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:39
 #: edh_web_application/geography/templates/geography/search_results.html:93
 #: edh_web_application/geography/templates/geography/search_results.html:169
@@ -309,8 +309,8 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/detail_view.html:48
 #: edh_web_application/geography/forms.py:53
 #: edh_web_application/geography/forms.py:65
-#: edh_web_application/geography/templates/geography/detail_view.html:40
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:43
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:43
 #: edh_web_application/geography/templates/geography/search_results.html:97
 #: edh_web_application/geography/templates/geography/search_results.html:170
@@ -360,12 +360,12 @@ msgid "Generic data"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:21
-#: edh_web_application/geography/templates/geography/detail_view.html:111
+#: edh_web_application/geography/templates/geography/detail_view.html:114
 msgid "responsible individual"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:25
-#: edh_web_application/geography/templates/geography/detail_view.html:116
+#: edh_web_application/geography/templates/geography/detail_view.html:119
 msgid "last update"
 msgstr ""
 
@@ -387,8 +387,8 @@ msgstr ""
 
 #: edh_web_application/geography/forms.py:54
 #: edh_web_application/geography/forms.py:65
-#: edh_web_application/geography/templates/geography/detail_view.html:50
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:53
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:47
 #: edh_web_application/geography/templates/geography/search_results.html:101
 #: edh_web_application/geography/templates/geography/search_results.html:171
@@ -398,8 +398,8 @@ msgstr ""
 
 #: edh_web_application/geography/forms.py:55
 #: edh_web_application/geography/forms.py:66
-#: edh_web_application/geography/templates/geography/detail_view.html:60
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:63
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:51
 #: edh_web_application/geography/templates/geography/search_results.html:111
 #: edh_web_application/geography/templates/geography/search_results.html:172
@@ -408,7 +408,7 @@ msgid "verw_bezirk"
 msgstr ""
 
 #: edh_web_application/geography/forms.py:56
-#: edh_web_application/geography/templates/geography/detail_view.html:70
+#: edh_web_application/geography/templates/geography/detail_view.html:73
 msgid "comment"
 msgstr ""
 
@@ -448,89 +448,98 @@ msgstr ""
 msgid "Geographic Database"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:80
+#: edh_web_application/geography/templates/geography/detail_view.html:13
+msgid "Copy URI to clipboard"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view.html:83
 msgid "Pleiades-ID"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:90
+#: edh_web_application/geography/templates/geography/detail_view.html:93
 msgid "Trismegistos Geo-ID"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:100
+#: edh_web_application/geography/templates/geography/detail_view.html:103
 msgid "Geonames ID"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:120
+#: edh_web_application/geography/templates/geography/detail_view.html:123
 msgid "finished"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:122
+#: edh_web_application/geography/templates/geography/detail_view.html:125
 msgid "Yes"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:123
+#: edh_web_application/geography/templates/geography/detail_view.html:126
 msgid "No"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:129
+#: edh_web_application/geography/templates/geography/detail_view.html:132
 msgid "Inscriptions linked to this findspot"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:22
+#: edh_web_application/geography/templates/geography/detail_view_province.html:25
 msgid "Province Status"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:58
+#: edh_web_application/geography/templates/geography/detail_view_province.html:61
 msgid "List of Provinces"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:62
+#: edh_web_application/geography/templates/geography/detail_view_province.html:65
 msgid "Findspots linked to this province"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:129
-#: edh_web_application/geography/templates/geography/search_results_table.html:115
+#: edh_web_application/geography/templates/geography/detail_view_province.html:132
+#: edh_web_application/geography/templates/geography/search_results_table.html:96
+msgid "all"
+msgstr ""
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:134
+#: edh_web_application/geography/templates/geography/search_results_table.html:98
 msgid "dtbl_search"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:130
-#: edh_web_application/geography/templates/geography/search_results_table.html:116
+#: edh_web_application/geography/templates/geography/detail_view_province.html:135
+#: edh_web_application/geography/templates/geography/search_results_table.html:99
 msgid "dtbl_info"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:131
-#: edh_web_application/geography/templates/geography/search_results_table.html:117
+#: edh_web_application/geography/templates/geography/detail_view_province.html:136
+#: edh_web_application/geography/templates/geography/search_results_table.html:100
 msgid "dtbl_menu"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:132
-#: edh_web_application/geography/templates/geography/search_results_table.html:118
+#: edh_web_application/geography/templates/geography/detail_view_province.html:137
+#: edh_web_application/geography/templates/geography/search_results_table.html:101
 msgid "dtbl_filter"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:133
-#: edh_web_application/geography/templates/geography/search_results_table.html:119
+#: edh_web_application/geography/templates/geography/detail_view_province.html:138
+#: edh_web_application/geography/templates/geography/search_results_table.html:102
 msgid "dtbl_zero"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:135
-#: edh_web_application/geography/templates/geography/search_results_table.html:121
+#: edh_web_application/geography/templates/geography/detail_view_province.html:140
+#: edh_web_application/geography/templates/geography/search_results_table.html:104
 msgid "dtbl_previous"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:136
-#: edh_web_application/geography/templates/geography/search_results_table.html:122
+#: edh_web_application/geography/templates/geography/detail_view_province.html:141
+#: edh_web_application/geography/templates/geography/search_results_table.html:105
 msgid "dtbl_next"
 msgstr ""
 
 #: edh_web_application/geography/templates/geography/search.html:17
 #: edh_web_application/geography/templates/geography/search.html:23
-#: edh_web_application/geography/templates/geography/search_results.html:195
-#: edh_web_application/geography/templates/geography/search_results.html:201
-#: edh_web_application/geography/templates/geography/search_results_map.html:34
-#: edh_web_application/geography/templates/geography/search_results_map.html:40
-#: edh_web_application/geography/templates/geography/search_results_table.html:51
-#: edh_web_application/geography/templates/geography/search_results_table.html:57
+#: edh_web_application/geography/templates/geography/search_results.html:194
+#: edh_web_application/geography/templates/geography/search_results.html:198
+#: edh_web_application/geography/templates/geography/search_results_map.html:33
+#: edh_web_application/geography/templates/geography/search_results_map.html:37
+#: edh_web_application/geography/templates/geography/search_results_table.html:50
+#: edh_web_application/geography/templates/geography/search_results_table.html:54
 msgid "select one or more entries..."
 msgstr ""
 
@@ -585,14 +594,10 @@ msgstr ""
 msgid "map"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/search_results.html:237
-#: edh_web_application/geography/templates/geography/search_results_map.html:76
-#: edh_web_application/geography/templates/geography/search_results_table.html:93
+#: edh_web_application/geography/templates/geography/search_results.html:221
+#: edh_web_application/geography/templates/geography/search_results_map.html:60
+#: edh_web_application/geography/templates/geography/search_results_table.html:77
 msgid "Filter..."
-msgstr ""
-
-#: edh_web_application/geography/templates/geography/search_results_table.html:113
-msgid "all"
 msgstr ""
 
 #: edh_web_application/inscription/routes.py:10
@@ -604,12 +609,12 @@ msgid "Epigraphic Text Database"
 msgstr ""
 
 #: edh_web_application/inscription/routes.py:10
-#: edh_web_application/templates/base.html:51
+#: edh_web_application/templates/base.html:52
 msgid "Simple Search"
 msgstr ""
 
 #: edh_web_application/inscription/routes.py:16
-#: edh_web_application/templates/base.html:52
+#: edh_web_application/templates/base.html:53
 msgid "Extended Search"
 msgstr ""
 
@@ -1423,7 +1428,7 @@ msgid "provinces"
 msgstr ""
 
 #: edh_web_application/project/routes.py:44
-#: edh_web_application/templates/base.html:59
+#: edh_web_application/templates/base.html:60
 msgid "Links"
 msgstr ""
 
@@ -1734,61 +1739,61 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: edh_web_application/templates/base.html:15
-#: edh_web_application/templates/base.html:22
+#: edh_web_application/templates/base.html:16
+#: edh_web_application/templates/base.html:23
 msgid "Epigraphic Database Heidelberg"
 msgstr ""
 
-#: edh_web_application/templates/base.html:38
+#: edh_web_application/templates/base.html:39
 msgid "Project..."
 msgstr ""
 
-#: edh_web_application/templates/base.html:40
+#: edh_web_application/templates/base.html:41
 msgid "Concept"
 msgstr ""
 
-#: edh_web_application/templates/base.html:41
+#: edh_web_application/templates/base.html:42
 msgid "History"
 msgstr ""
 
-#: edh_web_application/templates/base.html:42
+#: edh_web_application/templates/base.html:43
 msgid "Cooperations"
 msgstr ""
 
-#: edh_web_application/templates/base.html:43
+#: edh_web_application/templates/base.html:44
 msgid "Research Team Members"
 msgstr ""
 
-#: edh_web_application/templates/base.html:44
+#: edh_web_application/templates/base.html:45
 msgid "Events and Presentations"
 msgstr ""
 
-#: edh_web_application/templates/base.html:45
-#: edh_web_application/templates/base.html:82
+#: edh_web_application/templates/base.html:46
+#: edh_web_application/templates/base.html:83
 msgid "Contact"
 msgstr ""
 
-#: edh_web_application/templates/base.html:49
+#: edh_web_application/templates/base.html:50
 msgid "Inscriptions..."
 msgstr ""
 
-#: edh_web_application/templates/base.html:55
+#: edh_web_application/templates/base.html:56
 msgid "Photos"
 msgstr ""
 
-#: edh_web_application/templates/base.html:56
+#: edh_web_application/templates/base.html:57
 msgid "Bibliography"
 msgstr ""
 
-#: edh_web_application/templates/base.html:57
+#: edh_web_application/templates/base.html:58
 msgid "Geography"
 msgstr ""
 
-#: edh_web_application/templates/base.html:83
+#: edh_web_application/templates/base.html:84
 msgid "Imprint"
 msgstr ""
 
-#: edh_web_application/templates/base.html:84
+#: edh_web_application/templates/base.html:85
 msgid "Data Privacy Statement"
 msgstr ""
 

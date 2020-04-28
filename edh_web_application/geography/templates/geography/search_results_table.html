@@ -23,7 +23,7 @@
             <tbody>
             {% for d in data['items'] %}
             <tr>
-                <td><a href="./edh/geographie/{{ d['id']}}">{{ d['id']}}</a></td>
+                <td><i class="fas fa-external-link-alt">&nbsp;<a href="./edh/geographie/{{ d['id']}}" style="font-family: 'Ubuntu', sans-serif;">{{ d['id']}}</a></i></td>
                 <td>{% if d['fo_antik'] %}{{d['fo_antik']}}{% else %}{% endif %}</td>
                 <td>{% if d['fo_modern'] %}{{d['fo_modern']}}{% else %}{% endif %}</td>
                 <td>{% if d['fundstelle'] %}{{d['fundstelle']}}{% else %}{% endif %}</td>
@@ -51,7 +51,7 @@
         </div>
         <div class="form-group">
             {{ form.land.label() }}
-            {{ form.land(class='form-control', title=_('select one or more entries...')) }}
+            {{ form.land(class='form-control selectpicker', title=_('select one or more entries...')) }}
         </div>
         <div class="form-group ui-front">
             {{ form.fo_antik.label() }}

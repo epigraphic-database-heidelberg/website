@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-27 13:06+0200\n"
+"POT-Creation-Date: 2020-04-28 10:32+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -156,8 +156,8 @@ msgid "Canonical URI"
 msgstr "Zitierweise"
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:17
-#: edh_web_application/geography/templates/geography/detail_view.html:12
-#: edh_web_application/geography/templates/geography/detail_view_province.html:12
+#: edh_web_application/geography/templates/geography/detail_view.html:13
+#: edh_web_application/geography/templates/geography/detail_view_province.html:13
 #: edh_web_application/person/templates/person/detail_view.html:15
 msgid "copied!"
 msgstr "kopiert!"
@@ -250,7 +250,7 @@ msgid "Number"
 msgstr "Suchtreffer"
 
 #: edh_web_application/data/routes.py:9
-#: edh_web_application/templates/base.html:58
+#: edh_web_application/templates/base.html:59
 #: edh_web_application/templates/home.html:61
 msgid "Data"
 msgstr "Daten"
@@ -263,7 +263,7 @@ msgstr ""
 msgid "data page"
 msgstr ""
 "<p>Alle Daten des Open Data Repository der Epigraphischen Datenbank "
-"Heidelberg stehen unter der <a href=\"http://creativecommons.org/licenses"
+"Heidelberg stehen unter der <i class=\"fas fa-external-link-alt\"></i> <a href=\"http://creativecommons.org/licenses"
 "/by-sa/4.0/\"> CC BY-SA 4.0 Lizenz</a>.</p><p>Es stehen grundsätzlich "
 "drei Optionen bereit: Download statischer, periodisch aktualisierter "
 "Dateien (Data Dumps) oder dynamische Abfragen über eine öffentliche "
@@ -274,15 +274,15 @@ msgstr ""
 "Metadaten)</li><li>CIDOC CRM XML (Foto Metadaten)</li><li>BibTeX "
 "(Bibliographie)</li><li>RDF (Inschriften einschließlich "
 "Prosopographie)</li><li>GeoJSON (Geographie)</li></ul><p>Zur "
-"detaillierten Auflistung aller Daten und Download-Links geht es <a "
+"detaillierten Auflistung aller Daten und Download-Links geht es <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./data/export\">hier</a>.</p><h3>Öffentliche "
 "Programmierschnittstellen (API)</h3><p>Über die EDH API besteht Live-"
 "Zugriff auf die Daten der Epigraphischen Datenbank Heidelberg; die "
 "Resultate werden im JSON Format zurückgeliefert. Eine Anleitung und "
-"Beschreibung der Parameter findet sich <a "
+"Beschreibung der Parameter findet sich <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./data/api\">hier</a>.</p><h3>SPARQL Endpunkt</h3><p>Darüber "
 "hinaus werden die Daten der Epigraphischen Datenbank Heidelberg "
-"sukzessive im RDF Format angeboten; ein SPARQL Endpunkt findet sich <a "
+"sukzessive im RDF Format angeboten; ein SPARQL Endpunkt findet sich <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./data/sparql\">hier</a>.</p>"
 
 #: edh_web_application/foto/forms.py:21
@@ -294,7 +294,7 @@ msgstr "F-Nummer"
 #: edh_web_application/foto/templates/foto/detail_view.html:36
 #: edh_web_application/geography/forms.py:50
 #: edh_web_application/geography/forms.py:63
-#: edh_web_application/geography/templates/geography/detail_view.html:22
+#: edh_web_application/geography/templates/geography/detail_view.html:25
 #: edh_web_application/geography/templates/geography/last_updates.html:27
 #: edh_web_application/geography/templates/geography/search_results.html:83
 #: edh_web_application/geography/templates/geography/search_results.html:167
@@ -306,8 +306,8 @@ msgstr "Provinz"
 #: edh_web_application/foto/templates/foto/detail_view.html:40
 #: edh_web_application/geography/forms.py:51
 #: edh_web_application/geography/forms.py:63
-#: edh_web_application/geography/templates/geography/detail_view.html:26
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:29
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:34
 #: edh_web_application/geography/templates/geography/search_results.html:88
 #: edh_web_application/geography/templates/geography/search_results.html:168
@@ -319,8 +319,8 @@ msgstr "Land"
 #: edh_web_application/foto/templates/foto/detail_view.html:44
 #: edh_web_application/geography/forms.py:52
 #: edh_web_application/geography/forms.py:64
-#: edh_web_application/geography/templates/geography/detail_view.html:30
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:33
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:39
 #: edh_web_application/geography/templates/geography/search_results.html:93
 #: edh_web_application/geography/templates/geography/search_results.html:169
@@ -332,8 +332,8 @@ msgstr "Fundort antik"
 #: edh_web_application/foto/templates/foto/detail_view.html:48
 #: edh_web_application/geography/forms.py:53
 #: edh_web_application/geography/forms.py:65
-#: edh_web_application/geography/templates/geography/detail_view.html:40
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:43
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:43
 #: edh_web_application/geography/templates/geography/search_results.html:97
 #: edh_web_application/geography/templates/geography/search_results.html:170
@@ -383,12 +383,12 @@ msgid "Generic data"
 msgstr "Allgemeine Angaben"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:21
-#: edh_web_application/geography/templates/geography/detail_view.html:111
+#: edh_web_application/geography/templates/geography/detail_view.html:114
 msgid "responsible individual"
 msgstr "Bearbeiter"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:25
-#: edh_web_application/geography/templates/geography/detail_view.html:116
+#: edh_web_application/geography/templates/geography/detail_view.html:119
 msgid "last update"
 msgstr "Letzte Änderung"
 
@@ -410,8 +410,8 @@ msgstr ""
 
 #: edh_web_application/geography/forms.py:54
 #: edh_web_application/geography/forms.py:65
-#: edh_web_application/geography/templates/geography/detail_view.html:50
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:53
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:47
 #: edh_web_application/geography/templates/geography/search_results.html:101
 #: edh_web_application/geography/templates/geography/search_results.html:171
@@ -421,8 +421,8 @@ msgstr "Fundstelle"
 
 #: edh_web_application/geography/forms.py:55
 #: edh_web_application/geography/forms.py:66
-#: edh_web_application/geography/templates/geography/detail_view.html:60
-#: edh_web_application/geography/templates/geography/detail_view_province.html:65
+#: edh_web_application/geography/templates/geography/detail_view.html:63
+#: edh_web_application/geography/templates/geography/detail_view_province.html:68
 #: edh_web_application/geography/templates/geography/last_updates.html:51
 #: edh_web_application/geography/templates/geography/search_results.html:111
 #: edh_web_application/geography/templates/geography/search_results.html:172
@@ -431,7 +431,7 @@ msgid "verw_bezirk"
 msgstr "Region"
 
 #: edh_web_application/geography/forms.py:56
-#: edh_web_application/geography/templates/geography/detail_view.html:70
+#: edh_web_application/geography/templates/geography/detail_view.html:73
 msgid "comment"
 msgstr "Kommentar"
 
@@ -471,91 +471,102 @@ msgstr "Geographie-Datenbank: Letzte Änderungen"
 msgid "Geographic Database"
 msgstr "Geographie Datenbank"
 
-#: edh_web_application/geography/templates/geography/detail_view.html:80
+#: edh_web_application/geography/templates/geography/detail_view.html:13
+msgid "Copy URI to clipboard"
+msgstr "Kopiere URI in Zwischenablage"
+
+#: edh_web_application/geography/templates/geography/detail_view.html:83
 msgid "Pleiades-ID"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:90
+#: edh_web_application/geography/templates/geography/detail_view.html:93
 msgid "Trismegistos Geo-ID"
 msgstr "TM Geo-ID"
 
-#: edh_web_application/geography/templates/geography/detail_view.html:100
+#: edh_web_application/geography/templates/geography/detail_view.html:103
 msgid "Geonames ID"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/detail_view.html:120
+#: edh_web_application/geography/templates/geography/detail_view.html:123
 msgid "finished"
 msgstr "bearbeitet"
 
-#: edh_web_application/geography/templates/geography/detail_view.html:122
+#: edh_web_application/geography/templates/geography/detail_view.html:125
 msgid "Yes"
 msgstr "Ja"
 
-#: edh_web_application/geography/templates/geography/detail_view.html:123
+#: edh_web_application/geography/templates/geography/detail_view.html:126
 msgid "No"
 msgstr "Nein"
 
-#: edh_web_application/geography/templates/geography/detail_view.html:129
+#: edh_web_application/geography/templates/geography/detail_view.html:132
 msgid "Inscriptions linked to this findspot"
 msgstr "Mit diesem Fundort verknüpfte Inschriften"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:22
+#: edh_web_application/geography/templates/geography/detail_view_province.html:25
 msgid "Province Status"
 msgstr "Bearbeitungsstand"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:58
+#: edh_web_application/geography/templates/geography/detail_view_province.html:61
 msgid "List of Provinces"
 msgstr ""
-"Provinzgrenzen orientieren sich an der Situation der Mitte des 2. Jh. n. "
-"Chr. (<a href=\"./projekt/provinzen\">Provinzliste</a>)"
+"<i class=\"fas fa-exclamation fa-lg\" style=\"color:#C8656D; padding-"
+"bottom:0px; margin-right:.5em\"></i>Provinzgrenzen orientieren sich an "
+"der Situation der Mitte des 2. Jh. n. Chr. (<i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./projekt/provinzen\">Provinzliste</a>)"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:62
+#: edh_web_application/geography/templates/geography/detail_view_province.html:65
 msgid "Findspots linked to this province"
 msgstr "Mit dieser Provinz verknüpfte Fundorte"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:129
-#: edh_web_application/geography/templates/geography/search_results_table.html:115
+#: edh_web_application/geography/templates/geography/detail_view_province.html:132
+#: edh_web_application/geography/templates/geography/search_results_table.html:96
+msgid "all"
+msgstr "alle"
+
+#: edh_web_application/geography/templates/geography/detail_view_province.html:134
+#: edh_web_application/geography/templates/geography/search_results_table.html:98
 msgid "dtbl_search"
 msgstr "Suchen:"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:130
-#: edh_web_application/geography/templates/geography/search_results_table.html:116
+#: edh_web_application/geography/templates/geography/detail_view_province.html:135
+#: edh_web_application/geography/templates/geography/search_results_table.html:99
 msgid "dtbl_info"
 msgstr "_START_ bis _END_ von _TOTAL_ Einträgen"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:131
-#: edh_web_application/geography/templates/geography/search_results_table.html:117
+#: edh_web_application/geography/templates/geography/detail_view_province.html:136
+#: edh_web_application/geography/templates/geography/search_results_table.html:100
 msgid "dtbl_menu"
 msgstr "_MENU_ Einträge anzeigen"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:132
-#: edh_web_application/geography/templates/geography/search_results_table.html:118
+#: edh_web_application/geography/templates/geography/detail_view_province.html:137
+#: edh_web_application/geography/templates/geography/search_results_table.html:101
 msgid "dtbl_filter"
 msgstr "(gefiltert von _MAX_ Einträgen)"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:133
-#: edh_web_application/geography/templates/geography/search_results_table.html:119
+#: edh_web_application/geography/templates/geography/detail_view_province.html:138
+#: edh_web_application/geography/templates/geography/search_results_table.html:102
 msgid "dtbl_zero"
 msgstr "Keine Einträge vorhanden"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:135
-#: edh_web_application/geography/templates/geography/search_results_table.html:121
+#: edh_web_application/geography/templates/geography/detail_view_province.html:140
+#: edh_web_application/geography/templates/geography/search_results_table.html:104
 msgid "dtbl_previous"
 msgstr "zurück"
 
-#: edh_web_application/geography/templates/geography/detail_view_province.html:136
-#: edh_web_application/geography/templates/geography/search_results_table.html:122
+#: edh_web_application/geography/templates/geography/detail_view_province.html:141
+#: edh_web_application/geography/templates/geography/search_results_table.html:105
 msgid "dtbl_next"
 msgstr "nächste"
 
 #: edh_web_application/geography/templates/geography/search.html:17
 #: edh_web_application/geography/templates/geography/search.html:23
-#: edh_web_application/geography/templates/geography/search_results.html:195
-#: edh_web_application/geography/templates/geography/search_results.html:201
-#: edh_web_application/geography/templates/geography/search_results_map.html:34
-#: edh_web_application/geography/templates/geography/search_results_map.html:40
-#: edh_web_application/geography/templates/geography/search_results_table.html:51
-#: edh_web_application/geography/templates/geography/search_results_table.html:57
+#: edh_web_application/geography/templates/geography/search_results.html:194
+#: edh_web_application/geography/templates/geography/search_results.html:198
+#: edh_web_application/geography/templates/geography/search_results_map.html:33
+#: edh_web_application/geography/templates/geography/search_results_map.html:37
+#: edh_web_application/geography/templates/geography/search_results_table.html:50
+#: edh_web_application/geography/templates/geography/search_results_table.html:54
 msgid "select one or more entries..."
 msgstr "einen oder mehrere Einträge auswählen..."
 
@@ -610,15 +621,11 @@ msgstr "Tabelle"
 msgid "map"
 msgstr "Karte"
 
-#: edh_web_application/geography/templates/geography/search_results.html:237
-#: edh_web_application/geography/templates/geography/search_results_map.html:76
-#: edh_web_application/geography/templates/geography/search_results_table.html:93
+#: edh_web_application/geography/templates/geography/search_results.html:221
+#: edh_web_application/geography/templates/geography/search_results_map.html:60
+#: edh_web_application/geography/templates/geography/search_results_table.html:77
 msgid "Filter..."
 msgstr ""
-
-#: edh_web_application/geography/templates/geography/search_results_table.html:113
-msgid "all"
-msgstr "alle"
 
 #: edh_web_application/inscription/routes.py:10
 #: edh_web_application/inscription/routes.py:16
@@ -629,12 +636,12 @@ msgid "Epigraphic Text Database"
 msgstr "Inschriften Datenbank"
 
 #: edh_web_application/inscription/routes.py:10
-#: edh_web_application/templates/base.html:51
+#: edh_web_application/templates/base.html:52
 msgid "Simple Search"
 msgstr "Einfache Suche"
 
 #: edh_web_application/inscription/routes.py:16
-#: edh_web_application/templates/base.html:52
+#: edh_web_application/templates/base.html:53
 msgid "Extended Search"
 msgstr "Erweiterte Suche"
 
@@ -1448,7 +1455,7 @@ msgid "provinces"
 msgstr "Provinzen"
 
 #: edh_web_application/project/routes.py:44
-#: edh_web_application/templates/base.html:59
+#: edh_web_application/templates/base.html:60
 msgid "Links"
 msgstr "Links"
 
@@ -1672,14 +1679,14 @@ msgstr ""
 " angelegen Konzeption und Arbeitsweise zählt sie zu den international "
 "führenden Datenbankvorhaben zur raschen Sammlung und zuverlässigen "
 "historischen Auswertung epigraphischer Zeugnisse. Die besonderen Merkmale"
-" der <i>EDH</i> liegen auf der <a "
+" der <i>EDH</i> liegen auf der <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./hilfe/liste/provinzen\">regionalen Systematik</a>, der "
 "beliebigen Kombinierbarkeit der gespeicherten Metainformationen und der "
-"wechselseitigen Verknüpfung der <a "
+"wechselseitigen Verknüpfung der <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./inhalt/einfacheSuche\"><i>Epigraphischen Text-"
 "Datenbank</i></a>&nbsp; mit den drei weiteren Teildatenbanken der "
-"<i>EDH</i>, der <a href=\"./inhalt/bibliographie\"><i>Epigraphischen "
-"Bibliographie</i></a>, der <a href=\"./inhalt/fotos\"><i>Epigraphischen "
+"<i>EDH</i>, der <i class=\"fas fa-external-link-alt\"></i> <a href=\"./inhalt/bibliographie\"><i>Epigraphischen "
+"Bibliographie</i></a>, der <i class=\"fas fa-external-link-alt\"></i> <a href=\"./inhalt/fotos\"><i>Epigraphischen "
 "Fotothek</i></a> und der <em>Epigraphischen "
 "Geographiedatenbank.</em></p><p>Ihr <strong>Ziel</strong> liegt darin, "
 "die epigraphische Dokumentation der Provinzen des römischen Reiches bis "
@@ -1687,7 +1694,7 @@ msgstr ""
 "wie möglich für online-Recherchen zur Verfügung zu stellen. Auf Beschluß "
 "der <em>Commissione epigrafia e informatica</em> der <em>AIEGL</em> aus "
 "dem Jahr 2003 für die Errichtung der internationalen epigraphischen "
-"Datenbankföderation <a "
+"Datenbankföderation <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./projekt/geschichte#anker11/2003\"><em>EAGLE</em></a> "
 "<em>(Electronic Archives of Greek and Latin Epigraphy</em><em><span style"
 "=\"font-style: normal;\">) obliegt der "
@@ -1697,7 +1704,7 @@ msgstr ""
 "</span></em><em><i>EDH</i></em><em><span style=\"font-style: normal;\"> "
 "bereits erfaßten Inschriften Italiens</span></em><em><span style=\"font-"
 "style: normal;\"> </span></em><em><span style=\"font-style: normal;\">der"
-" </span></em><em><i><a href=\"http://www.edr-"
+" </span></em><em><i><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.edr-"
 "edr.it/default/index.php\">Epigraphic Database Rome "
 "(EDR)</a></i></em><em><span style=\"font-style: normal;\"> "
 "</span></em><em><span style=\"font-style: normal;\">zur weiteren "
@@ -1732,12 +1739,12 @@ msgstr ""
 "eine seit den Anfängen des Projekts stetig anwachsende umfangreiche "
 "Kartei, in der die in <i>L'Année Épigraphique</i> seit 1888 erfaßten "
 "Publikationen systematisch gesammelt werden, andererseits gemäß dem "
-"regionalen Arbeitsprinzip der <i>EDH</i> auf die einschlägigen <a "
+"regionalen Arbeitsprinzip der <i>EDH</i> auf die einschlägigen <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./inhalt/einfacheSuche#ankerDivPhasen\">Corpora und "
 "Lokalpublikationen</a>. Daneben unterhält die <em>EDH</em> einen regen "
 "Austausch mit in- und ausländischen Forschern und "
 "Forschungseinrichtungen, um gerade deren spezielles, auch regional "
-"ausgeprägtes Profil im Rahmen <a "
+"ausgeprägtes Profil im Rahmen <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./hilfe/liste/externeMitarbeiter\">externer Kooperation</a> in die"
 " <i>EDH</i> einzubringen.</p>"
 
@@ -1747,7 +1754,7 @@ msgstr ""
 "<h3>Addresse</h3><p>Epigraphische Datenbank Heidelberg (EDH)<br />Seminar"
 " für Alte Geschichte und Epigraphik<br />Marstallhof 4<br />D-69117 "
 "Heidelberg</p><h3>Telephon</h3><p>+49 (0) 62 21 / 54 22 "
-"39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 34</p><h3>Email</h3><p><a "
+"39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 34</p><h3>Email</h3><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"mailto:epigraphische.datenbank@zaw.uni-"
 "heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
 
@@ -1792,40 +1799,40 @@ msgstr ""
 "Gerhard Zimmer (Eichstätt).</p><p>Komitate Baranya / Győr - Sopron / "
 "Fejér / Komárom / Pest / Tolna / Vas / Veszprém / Zala (Ungarn), "
 "Ministero per i Beni e le Attività Culturali "
-"(Italien).</p><h3>National</h3><h4>Augsburg</h4><p><a href=\"http://www"
-".roemisches-museum.de/\">Römisches Museum</a><h4>Berlin</h4><p><a "
+"(Italien).</p><h3>National</h3><h4>Augsburg</h4><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www"
+".roemisches-museum.de/\">Römisches Museum</a><h4>Berlin</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://cil.bbaw.de/\">Corpus Inscriptionum Latinarum</a> Berlin, "
-"<a href=\"http://pir.bbaw.de/\">Prosopographia Imperii "
-"Romani</a><h4>Eichstätt</h4><p><a "
+"<i class=\"fas fa-external-link-alt\"></i> <a href=\"http://pir.bbaw.de/\">Prosopographia Imperii "
+"Romani</a><h4>Eichstätt</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://www.museumfuerurundfruehgeschichte.de/\">Museum für Ur- und"
 " Frühgeschichte Eichstätt</a>, s. auch Externe "
-"Mitarbeiter<h4>Erlangen</h4><p><a href=\"http://www.philippoi.de/\">Die "
-"Inschriften von Philippi im Bild</a><h4>Heidelberg</h4><p><a "
+"Mitarbeiter<h4>Erlangen</h4><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.philippoi.de/\">Die "
+"Inschriften von Philippi im Bild</a><h4>Heidelberg</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://www.museum-heidelberg.de/1360820.html\">Kurpfälzisches "
-"Museum</a><h4>Karlsruhe</h4><p><a "
+"Museum</a><h4>Karlsruhe</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://www.landesmuseum.de/\">Badisches Landesmuseum</a> "
-"Karlsruhe<h4>Mainz</h4><p><a href=\"http://www.landesmuseum-"
-"mainz.de/\">Landesmuseum Mainz</a><h4>Osnabrück</h4><p><a "
+"Karlsruhe<h4>Mainz</h4><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.landesmuseum-"
+"mainz.de/\">Landesmuseum Mainz</a><h4>Osnabrück</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://www.hist.uzh.ch/de/fachbereiche/altegeschichte/lehrstuehle/kolb/forschung/projekte/roemischeinschriftenschweiz.html\">Supplementum"
-" zu CIL XIII</a><h4>Seebruck</h4><p><a "
+" zu CIL XIII</a><h4>Seebruck</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://www.bedaium.de/\">Römermuseum "
-"Bedaium</a><h4>Speyer</h4><p><a "
+"Bedaium</a><h4>Speyer</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://museum.speyer.de/de/histmus/\">Historisches Museum der "
-"Pfalz</a>.</p><h3>International</h3><h4>Alcalá (E)</h4><p><a "
+"Pfalz</a>.</p><h3>International</h3><h4>Alcalá (E)</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://www3.uah.es/imagines_cilii/\">CIL II</a><h4>Augst "
-"(CH)</h4><p><a href=\"http://www.augusta-raurica.ch/\">Museum Augusta "
+"(CH)</h4><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.augusta-raurica.ch/\">Museum Augusta "
 "Raurica</a><h4>Barcelona (E)</h4><p>s. Externe Mitarbeiter<h4>Bari "
-"(I)</h4><p><a href=\"https://www.eagle-network.eu/\">EAGLE</a><h4>Cluj-"
-"Napoca (Ro)</h4><p><a "
+"(I)</h4><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.eagle-network.eu/\">EAGLE</a><h4>Cluj-"
+"Napoca (Ro)</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://romans1by1.com/\">Romans1by1</a><h4>Graz (A)</h4><p>s. "
-"Externe Mitarbeiter<h4>Ljubljana (SLO)</h4><p><a "
+"Externe Mitarbeiter<h4>Ljubljana (SLO)</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://www.nms.si/en/\">Slowenisches Nationalmuseum "
 "Ljubljana</a>, s. auch Externe Mitarbeiter<h4>Providence (USA, "
-"RI)</h4><p><a "
+"RI)</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://usepigraphy.brown.edu/projects/usep/collections/\">U.S. "
 "Epigraphy Project</a><h4>Roma (I)</h4><p>EAGLE<h4>Wien (A)</h4><p>s. "
-"Externe Mitarbeiter, <a href=\"http://lupa.at/\">UBI ERAT "
-"LUPA</a><h4>Zürich (CH)</h4><p> <a "
+"Externe Mitarbeiter, <i class=\"fas fa-external-link-alt\"></i> <a href=\"http://lupa.at/\">UBI ERAT "
+"LUPA</a><h4>Zürich (CH)</h4><p> <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://www.hist.uzh.ch/de.html\">Historisches Seminar</a> der "
 "Universität Zürich.</p>"
 
@@ -1839,24 +1846,24 @@ msgstr ""
 " abgelesen werden.</p><ul class=\"timeline\">  <li>    <div "
 "class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">Juni 2019</span>      "
-"</div>      <div class=\"desc\"><a "
+"</div>      <div class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://epigraphy.info/workshop_3.html\">3. epigraphy.info "
 "Workshop</a>, Wien 30. Mai - 1. Juni 2019</div>    </div>  </li>  <li>"
 "    <div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
 "<span class=\"hexa\"></span>        <span class=\"flag\">Dezember "
-"2018</span>      </div>      <div class=\"desc\"><a "
+"2018</span>      </div>      <div class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://epigraphy.info/workshop_2.html\">2. epigraphy.info "
 "Workshop</a>, Zadar 14.-16. Dezember 2018</div>    </div>  </li>  <li>"
 "    <div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
 "<span class=\"hexa\"></span>        <span class=\"flag\">März 2018</span>"
-"      </div>      <div class=\"desc\"><a href=\"https://www.hadw-"
+"      </div>      <div class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.hadw-"
 "bw.de/news/events/epigraphyinfo\">1. epigraphy.info Workshop</a>, "
 "Heidelberg 21.-23. März 2018</div>    </div>  </li>  <li>    <div "
 "class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">August 2017</span>"
-"      </div>      <div class=\"desc\"><a "
+"      </div>      <div class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://epicongr2017.univie.ac.at/\">XV Congressus Internationalis"
-" Epigraphiae Graecae et Latinae</a> (Wien 2017). - <a "
+" Epigraphiae Graecae et Latinae</a> (Wien 2017). - <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://epicongr2017.univie.ac.at/fileadmin/user_upload/p_epicongr2017/Poster/Feraudi_mA.pdf\">Poster</a>"
 " zu \"epigraphy.info. A new Collaborative Platform for Digital Epigraphy "
 "under construction\"</div>    </div>  </li>  <li>    <div "
@@ -1872,12 +1879,12 @@ msgstr ""
 "class=\"desc\">Teilnahme am Workshop der AG eHumanities 2016 veranstaltet"
 " von der Koordinierungsstelle Digital Humanities der Nordrhein-"
 "Westfälischen Akademie der Wissenschaften Düsseldorf mit einem Beitrag zu"
-" <a href=\"http://www.ub.uni-heidelberg.de/archiv/22141\">Digital "
+" <i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.ub.uni-heidelberg.de/archiv/22141\">Digital "
 "Epigraphy am Scheideweg? / Digital Epigraphy at a crossroads?</a> (F. "
 "Feraudi-Gruénais / F. Grieshaber)</div>    </div>  </li>  <li>    <div "
 "class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">Mai 2016</span>      "
-"</div>      <div class=\"desc\">Vortrag über <a "
+"</div>      <div class=\"desc\">Vortrag über <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://www.philhist.uni-"
 "augsburg.de/ringvorlesungen/altertum_kolloquium/sommer_16.html\">\"'Digital"
 " epigraphy' - Auf dem Weg zu einem kollaborativen Editionstool für antike"
@@ -1890,7 +1897,7 @@ msgstr ""
 "    </div>  </li>  <li>    <div class=\"direction-r\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">Juli 2015</span>      </div>      <div "
-"class=\"desc\">Vortrag über <a href=\"https://www.haw.uni-"
+"class=\"desc\">Vortrag über <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.haw.uni-"
 "heidelberg.de/md/haw/publikationen/jahrbuch_2015_www.pdf#page=104\">\"Latein"
 " auf Stein. Inschriften in Heidelberg entdecken\"</a> im Rahmen der "
 "Mitarbeiterreihe der \"Wir forschen. Für Sie\" der Heidelberger Akademie "
@@ -1898,7 +1905,7 @@ msgstr ""
 "<div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
 "<span class=\"hexa\"></span>        <span class=\"flag\">September "
 "2014</span>      </div>      <div class=\"desc\">europeana-EAGLE 2014 "
-"Conference in Paris. (s. auch Proceedings: <a href=\"\">\"Information "
+"Conference in Paris. (s. auch Proceedings: <i class=\"fas fa-external-link-alt\"></i> <a href=\"\">\"Information "
 "technologies for epigraphy and cultural heritage\"</a> [2014])</div>    "
 "</div>  </li>  <li>    <div class=\"direction-r\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
@@ -1907,7 +1914,7 @@ msgstr ""
 "Ljubljana</div>    </div>  </li>  <li>    <div class=\"direction-l\">"
 "      <div class=\"flag-wrapper\">        <span class=\"hexa\"></span>"
 "        <span class=\"flag\">September 2013</span>      </div>      <div "
-"class=\"desc\">Die EDH tritt dem <a "
+"class=\"desc\">Die EDH tritt dem <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://commons.pelagios.org/\">Pelagios Netzwerk</a> bei</div>    "
 "</div>  </li>  <li>    <div class=\"direction-r\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
@@ -1931,7 +1938,7 @@ msgstr ""
 "      </div>      <div class=\"desc\">6. November: Tod des Begründers der"
 " EDH, ehemaligen Forschungsstellenleiters und aktiven Mitglieds der die "
 "EDH begleitenden Akademie-Kommission Prof. Dr. Dr.h.c.mult. Géza "
-"Alföldy.<br /><a href=\"https://edh-www.adw.uni-"
+"Alföldy.<br /><i class=\"fas fa-external-link-alt\"></i> <a href=\"https://edh-www.adw.uni-"
 "heidelberg.de/tplInhalt/img/1448379375_Alfoeldy-"
 "Gedenktafel_Tarragona.jpg\">Gedenktafel im Amphitheater von "
 "Tarragona.</a><br />'refrigerium' in seinem Gedenken am 6.11.2015.</div>"
@@ -1943,14 +1950,14 @@ msgstr ""
 " Epigraphik des Deutschen Archäologischen Instituts München.</div>    "
 "</div>  </li>  <li>    <div class=\"direction-l\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
-"class=\"flag\">Januar 2011</span>      </div>      <div class=\"desc\"><a"
+"class=\"flag\">Januar 2011</span>      </div>      <div class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a"
 " href=\"\">Epidoc/SoSOL training workshop</a> (geleitet von Dr. James "
 "Cowey und Dr. Francisca Feraudi-Gruénais) an der Alma Mater Studiorum "
 "Università di Bologna.</div>    </div>  </li>  <li>    <div "
 "class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">2011</span>      "
 "</div>      <div class=\"desc\">Erfolgreiche Portierung der XML/Epidoc-"
-"getagten Daten der \"Inscriptions of Roman Tripolitania\" <a "
+"getagten Daten der \"Inscriptions of Roman Tripolitania\" <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://inslib.kcl.ac.uk/irt2009/\">IRT2009</a> in die "
 "Datenbankstruktur der EDH.</div>    </div>  </li>  <li>    <div "
 "class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
@@ -1959,25 +1966,25 @@ msgstr ""
 "2010).</div>    </div>  </li>  <li>    <div class=\"direction-r\">      "
 "<div class=\"flag-wrapper\">        <span class=\"hexa\"></span>        "
 "<span class=\"flag\">seit August 2010</span>      </div>      <div "
-"class=\"desc\">Verbindung der Datensätze von <a "
+"class=\"desc\">Verbindung der Datensätze von <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://www.philippoi.de/\">\"Die Inschriften von Philippi im "
 "Bild\"</a> mit den vorliegenden Datensätzen der EDH.</div>    </div>  "
 "</li>  <li>    <div class=\"direction-l\">      <div class=\"flag-"
 "wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">November 2008</span>      </div>      <div "
-"class=\"desc\"><a href=\"http://www.uni-"
+"class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.uni-"
 "heidelberg.de/institute/sonst/adw/edh/alle/EAGLE-"
 "Convegno_Nov2008-programma.pdf\">Convegno Internazionale EAGLE (Roma "
 "2008)</a>.</div>    </div>  </li>  <li>    <div class=\"direction-r\">"
 "      <div class=\"flag-wrapper\">        <span class=\"hexa\"></span>"
 "        <span class=\"flag\">seit November 2007</span>      </div>      "
-"<div class=\"desc\">Verlinkung der Fotos des <a "
+"<div class=\"desc\">Verlinkung der Fotos des <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://cil.bbaw.de/\">\"Corpus Inscriptionum Latinarum "
 "(Berlin)\"</a> von Inschriften und Abklatschen mit den Inschrifttexten "
 "der EDH.</div>    </div>  </li>  <li>    <div class=\"direction-l\">"
 "      <div class=\"flag-wrapper\">        <span class=\"hexa\"></span>"
 "        <span class=\"flag\">September 2007</span>      </div>      <div "
-"class=\"desc\"><a href=\"http://ciegl.classics.ox.ac.uk/\">13th "
+"class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://ciegl.classics.ox.ac.uk/\">13th "
 "International Congress of Greek and Latin Epigraphy</a> (Oxford 2007): "
 "Report zu \"Work & Progress und Perspektiven der EDH\" (F. Feraudi-"
 "Gruénais, Thematic Panel 1.VI. Epigraphy and Information "
@@ -1997,48 +2004,48 @@ msgstr ""
 " XIII des Historischen Seminars / Alte Geschichte der Universität "
 "Osnabrück (2010/11: \"CIL XIII - Erstellung eines Supplementbandes zum "
 "Corpus Inscriptionum Latinarum (CIL XIII, 2) für den Bereich Limes und "
-"Limesvorland\" <a href=\"https://www.uni-"
+"Limesvorland\" <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.uni-"
 "trier.de/index.php?id=3487\">Fachbereich III / Alte Geschichte der "
 "Universität Trier</a>).</div>    </div>  </li>  <li>    <div "
 "class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">seit September "
 "2006</span>      </div>      <div class=\"desc\">Verlinkung der Fotos der"
-" im <a href=\"https://www.nms.si/si/\">Slowenischen Nationalmuseum "
+" im <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.nms.si/si/\">Slowenischen Nationalmuseum "
 "Ljubljana</a> verwahrten Inschriften mit den Inschrifttexten der "
 "EDH.</div>    </div>  </li>  <li>    <div class=\"direction-l\">      "
 "<div class=\"flag-wrapper\">        <span class=\"hexa\"></span>        "
 "<span class=\"flag\">seit April 2006</span>      </div>      <div "
-"class=\"desc\">Wechselseitige Verlinkung der Fotos der Web-Plattform <a "
+"class=\"desc\">Wechselseitige Verlinkung der Fotos der Web-Plattform <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://lupa.at/\">UBI ERAT LUPA</a> mit den zugehörigen "
 "Inschrifttexten der EDH.      <img src=\"./static/img/hispanien.jpg\" "
 "/><br />Vereinbarung einer Arbeitsteilung für die hispanischen Provinzen:"
 " Außer den Inschriften von Tarraco und des conventus Tarraconensis (CIL "
 "II<sup>2</sup> pars 14) sowie der conventus Astigitanus und Cordubensis "
 "(partes 5 und 7) wird das online-Angebot der Inschriften Hispaniens durch"
-" das Datenbankprojekt <a href=\"http://eda-bea.es/\">Hispania Epigraphica"
+" das Datenbankprojekt <i class=\"fas fa-external-link-alt\"></i> <a href=\"http://eda-bea.es/\">Hispania Epigraphica"
 " online</a> (HEpOnl) gewährleistet werden.</div>    </div>  </li>  <li>"
 "    <div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
 "<span class=\"hexa\"></span>        <span class=\"flag\">seit Februar "
 "2006</span>      </div>      <div class=\"desc\">Externe Mitarbeit durch "
-"Mitarbeiter der Forschergruppe LITTERA des <a "
+"Mitarbeiter der Forschergruppe LITTERA des <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://stel.ub.edu/llati/\">Departament de Filologia Llatina</a> "
 "der Universität Barcelona.</div>    </div>  </li>  <li>    <div "
 "class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">seit Januar "
 "2006</span>      </div>      <div class=\"desc\">Wechselseitige "
-"Verlinkung der Fotos des <a "
+"Verlinkung der Fotos des <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://usepigraphy.brown.edu/projects/usep/collections/\">U.S. "
 "Epigraphy Project</a> mit den zugehörigen Inschrifttexten der EDH.</div>"
 "    </div>  </li>  <li>    <div class=\"direction-r\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">seit Juli 2005</span>      </div>      <div "
-"class=\"desc\">Verlinkung der Fotos der im <a href=\"https://www.museum-"
+"class=\"desc\">Verlinkung der Fotos der im <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.museum-"
 "heidelberg.de\">Kurpfälzischen Museum Heidelberg</a> (KMH) verwahrten "
 "Inschriften mit den Inschrifttexten der EDH.</div>    </div>  </li>  <li>"
 "    <div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
 "<span class=\"hexa\"></span>        <span class=\"flag\">seit März "
 "2005</span>      </div>      <div class=\"desc\">Verknüpfung von PIR-"
-"Referenzen im Literaturfeld der EDH mit den Internetseiten der <a "
+"Referenzen im Literaturfeld der EDH mit den Internetseiten der <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://www.bbaw.de/forschung/pir/index.html\">Prosopographia "
 "Imperii Romani</a> (PIR, Forschungsstelle der Berlin-Brandenburgischen "
 "Akademie der Wissenschaften).</div>    </div>  </li>  <li>    <div "
@@ -2055,20 +2062,20 @@ msgstr ""
 "Bibliographie der EDH geht online.<br />      <img "
 "src=\"./static/img/ebh_suche.jpg\" /><br />Suche<br /><br /><img "
 "src=\"./static/img/ebh_ergebnis.jpg\" /><br />Ergebnis</div>      <div "
-"class=\"desc\">Externe Mitarbeit durch Mitglieder des <a "
+"class=\"desc\">Externe Mitarbeit durch Mitglieder des <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"\">Lehrstuhls für Alte Geschichte an der Katholischen Universität "
 "Eichstätt-Ingolstadt</a>.</desc>    </div>  </li>  <li>    <div "
 "class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">seit Oktober "
 "2004</span>      </div>      <div class=\"desc\">Externe Mitarbeit durch "
-"ein Mitglied des <a href=\"https://antike.uni-graz.at/\">Instituts für "
+"ein Mitglied des <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://antike.uni-graz.at/\">Instituts für "
 "Alte Geschichte und Altertumskunde der Universität Graz</a>.</div>    "
 "</div>  </li>  <li>    <div class=\"direction-l\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">seit August 2004</span>      </div>      <div "
 "class=\"desc\">Die EDH überläßt im Sinne der Vereinbarungen einer "
-"internationalen Zusammenarbeit (<a href=\"http://www.eagle-"
-"eagle.it/Italiano/index_it.htm\">EAGLE</a>) der <a href=\"http://www.edr-"
+"internationalen Zusammenarbeit (<i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.eagle-"
+"eagle.it/Italiano/index_it.htm\">EAGLE</a>) der <i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.edr-"
 "edr.it/\">Epigraphic Database Rome</a> (EDR) 11.851 Inschriften "
 "italischer Provenienz als Grundstock zur weiteren Pflege,  Aktualisierung"
 " und Vervollständigung. Dennoch bleibt dieser Bestand in der EDH "
@@ -2078,7 +2085,7 @@ msgstr ""
 "<span class=\"flag\">seit Januar 2004</span>      </div>      <div "
 "class=\"desc\">Erstmals Aufnahme griechischer Inschriften der Kaiserzeit "
 "in die EDH, u.a. der freundlicherweise von Herrn Prof. Dr. Christian "
-"Marek, <a "
+"Marek, <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://www.hist.uzh.ch/de/fachbereiche/altegeschichte/emeritiag/marek.html\">Historisches"
 " Seminar der Universität Zürich</a>, zur Verfügung gestellten Datensätze "
 "von Inschriften der Provinz Bithynia et Pontus.</div>    </div>  </li>  "
@@ -2087,7 +2094,7 @@ msgstr ""
 " 2003</span>      </div>      <div class=\"desc\">Convegno Internazionale"
 " per la presentazione del progetto EAGLE in Aquileia / Triest: Beschluß "
 "für die Errichtung der internationalen epigraphischen Datenbankföderation"
-" <a href=\"http://www.eagle-eagle.it/Italiano/index_it.htm\">EAGLE</a> "
+" <i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.eagle-eagle.it/Italiano/index_it.htm\">EAGLE</a> "
 "(Electronic Archives of Greek and Latin Epigraphy; Statuten und "
 "Folgevereinbarung zur online Präsentation der Fotos von Inschriften "
 "Italiens) nach dem Modell der EDH. - Präsentation der aktuellen Echtzeit-"
@@ -2095,7 +2102,7 @@ msgstr ""
 "</div>  </li>  <li>    <div class=\"direction-r\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">seit September 2003</span>      </div>      <div "
-"class=\"desc\">Externe Mitarbeit durch Mitglieder des <a "
+"class=\"desc\">Externe Mitarbeit durch Mitglieder des <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://www.univie.ac.at/alte-geschichte/\">Instituts für Alte "
 "Geschichte, Altertumskunde und Epigraphik</a> der Universität Wien.</div>"
 "    </div>  </li>  <li>    <div class=\"direction-l\">      <div class"
@@ -2121,13 +2128,13 @@ msgstr ""
 "src=\"./static/img/erweiterte-suche.jpg\" /></div>    </div>  </li>  <li>"
 "    <div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
 "<span class=\"hexa\"></span>        <span class=\"flag\">März 2000</span>"
-"      </div>      <div class=\"desc\"><a href=\"http://www.ub.uni-"
+"      </div>      <div class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.ub.uni-"
 "heidelberg.de/archiv/607\">Sendung des Campus-TV (Rhein-Neckar-Fernsehen)"
 " über die Arbeit der EDH</a>.</div>    </div>  </li>  <li>    <div "
 "class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">seit 2000</span>      "
 "</div>      <div class=\"desc\">Wechselseitige Verlinkung der Fotos des "
-"Archivs der spanischen <a "
+"Archivs der spanischen <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://www3.uah.es/imagines_cilii/\">Außenstelle des Corpus "
 "Inscriptionum Latinarum</a> an der Universität Alcalá mit den zugehörigen"
 " Inschrifttexten der EDH.</div>    </div>  </li>  <li>    <div "
@@ -2145,7 +2152,7 @@ msgstr ""
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">seit 1999</span>      </div>      <div "
 "class=\"desc\">Unter der Obhut der Commissione epigrafia e informatica "
-"der <a href=\"https://www.aiegl.org\">Association Internationale "
+"der <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.aiegl.org\">Association Internationale "
 "d'épigraphie Grecque et Latine</a> (AIEGL), der der "
 "Forschungsstellenleiter angehört, Arbeit an einer internationalen "
 "Koordination der größeren epigraphischen Datenbankvorhaben mit dem "
@@ -2187,8 +2194,8 @@ msgstr ""
 "    </div>  </li>  <li>    <div class=\"direction-r\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">seit März 1993</span>      </div>      <div "
-"class=\"desc\"><a href=\"http://www.hadw-"
-"bw.de/edh.html\">Forschungsstelle</a> der <a href=\"http://www.haw.baden-"
+"class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.hadw-"
+"bw.de/edh.html\">Forschungsstelle</a> der <i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.haw.baden-"
 "wuerttemberg.de/\">Heidelberger Akademie der Wissenschaften</a>.</div>"
 "    </div>  </li>  <li>    <div class=\"direction-l\">      <div class"
 "=\"flag-wrapper\">        <span class=\"hexa\"></span>        <span "
@@ -2213,7 +2220,7 @@ msgstr ""
 "src=\"./static/img/fotothek_utensilien_geschichte.jpg\"><br />deren Daten"
 " zugleich auch in den seit Beginn des Projekts angelegen Teildatenbanken "
 "Bibliographische und Fototheks-Datenbank erfasst werden (s. im Vergleich "
-"<a href=\"http://www.skriptum-geschichte.de/2015/heft-1/blick-in-die-"
+"<i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.skriptum-geschichte.de/2015/heft-1/blick-in-die-"
 "historikerwerkstatt-die-epigraphische-datenbank-heidelberg-edh-"
 "lateinische-inschriften-der-roemischen-antike-online.html\">die EDH 30 "
 "Jahre später</a>).      </div>    </div>  </li></ul><p>Das Projekt wurde "
@@ -2264,13 +2271,13 @@ msgstr ""
 "<ul class=\"timeline\">  <li><div class=\"direction-l\"><div class"
 "=\"flag-wrapper\"><span class=\"hexa\"></span><span "
 "class=\"flag\">Februar 2020</span>      </div>      <div "
-"class=\"desc\">Beteiligung der EDH am <a "
+"class=\"desc\">Beteiligung der EDH am <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://epigraphy.info/workshop_4.html\">4. epigraphy.info "
 "Workshop</a>, Hamburg (Dr. F. Feraudi-Gruénais, Dr. F. Grieshaber)</div>"
 "    </div>  </li><li><div class=\"direction-r\">      <div class=\"flag-"
 "wrapper\">        <span class=\"hexa\"></span>        <span "
 "class=\"flag\">Juni 2019</span>      </div>      <div "
-"class=\"desc\">Beteiligung der EDH am <a "
+"class=\"desc\">Beteiligung der EDH am <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://epigraphy.info/workshop_3.html\">3. epigraphy.info "
 "Workshop</a>, Wien (Dr. B. Gräf, Dr. J. Cowey, J. Osnabrügge)</div>    "
 "</div>  </li> <li>    <div class=\"direction-l\">      <div class=\"flag-"
@@ -2284,7 +2291,7 @@ msgstr ""
 "class=\"desc\">'BOGY'-Schülerpraktikum</div>    </div>  </li><li>    <div"
 " class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">Dezember 2018</span>"
-"      </div>      <div class=\"desc\">Beteiligung der EDH am <a "
+"      </div>      <div class=\"desc\">Beteiligung der EDH am <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://epigraphy.info/workshop_2.html\">2. epigraphy.info "
 "Workshop</a>, Zadar (Dr. F. Feraudi-Gruénais, Dr. F. Grieshaber)</div>"
 "    </div>  </li><li><div class=\"direction-r\">      <div class=\"flag-"
@@ -2293,12 +2300,12 @@ msgstr ""
 "class=\"desc\">'BOGY'-Schülerpraktikum</div>    </div>  </li><li><div "
 "class=\"direction-l\">      <div class=\"flag-wrapper\">        <span "
 "class=\"hexa\"></span>        <span class=\"flag\">März 2018</span>      "
-"</div>      <div class=\"desc\">Organisation des <a href=\"https://www"
+"</div>      <div class=\"desc\">Organisation des <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www"
 ".hadw-bw.de/news/events/epigraphyinfo\">1. epigraphy.info Workshop</a>, "
 "Heidelberg</div>    </div>  </li><li><div class=\"direction-r\">      "
 "<div class=\"flag-wrapper\">        <span class=\"hexa\"></span>        "
 "<span class=\"flag\">Herbst 2017</span>      </div>      <div "
-"class=\"desc\">Verknüpfung der in der <a href=\"https://www.museum-"
+"class=\"desc\">Verknüpfung der in der <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.museum-"
 "heidelberg.de/1360676.html\">Archäologischen Abteilung des Kurpfälzischen"
 " Museums Heidelberg</a> ausgestellten Inschriften über QR-Codes mit den "
 "Daten der EDH auf der Basis von F. Feraudi-Gruénais / R. Ludwig, Die "
@@ -2474,24 +2481,24 @@ msgstr "keine Inschriften aus Germania inferior"
 #: edh_web_application/project/templates/project/project_team_members.html:10
 msgid "Research Team Members page"
 msgstr ""
-"<h3>Leiter der Forschungsstelle</h3><p><a "
+"<h3>Leiter der Forschungsstelle</h3><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"mailto:christian.witschel@urz.uni-heidelberg.de\">Prof. Dr. "
-"Christian Witschel</a> (seit 2007)<br /><a href=\"http://www.uni-"
+"Christian Witschel</a> (seit 2007)<br /><i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.uni-"
 "heidelberg.de/fakultaeten/philosophie/zaw/sag/alfoeldy.html\">Prof. Dr. "
 "Dr. h.c. mult. Géza Alföldy</a> † (1986–2006)</p><h3>Wiss. "
-"MitarbeiterInnen</h3><p><a href=\"mailto:james.cowey@urz.uni-"
-"heidelberg.de\">Dr. James M.S. Cowey</a><br /><a href=\"mailto:francisca"
+"MitarbeiterInnen</h3><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"mailto:james.cowey@urz.uni-"
+"heidelberg.de\">Dr. James M.S. Cowey</a><br /><i class=\"fas fa-external-link-alt\"></i> <a href=\"mailto:francisca"
 ".feraudi-gruenais@zaw.uni-heidelberg.de\">Dr. Francisca Feraudi-"
-"Gruénais</a><br /><a href=\"mailto:brigitte.graef@zaw.uni-"
-"heidelberg.de\">Dr. Brigitte Gräf</a><br /><a "
+"Gruénais</a><br /><i class=\"fas fa-external-link-alt\"></i> <a href=\"mailto:brigitte.graef@zaw.uni-"
+"heidelberg.de\">Dr. Brigitte Gräf</a><br /><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"mailto:frank.grieshaber@zaw.uni-heidelberg.de\">Dr. Frank "
-"Grieshaber</a> (IT)<br /><a href=\"mailto:regine.klar@urz.uni-"
-"heidelberg.de\">Regine Klar</a><br /><a "
+"Grieshaber</a> (IT)<br /><i class=\"fas fa-external-link-alt\"></i> <a href=\"mailto:regine.klar@urz.uni-"
+"heidelberg.de\">Regine Klar</a><br /><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"mailto:Jonas.Osnabruegge@adw.uni-heidelberg.de\">Jonas "
 "Osnabrügge</a></p><h3>Anschrift</h3><p>Epigraphische Datenbank Heidelberg"
 " (EDH)<br />Seminar für Alte Geschichte und Epigraphik<br />Marstallhof "
 "4<br />D-69117 Heidelberg</p><h3>Telephon</h3><p>+49 (0) 62 21 / 54 22 "
-"39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 34</p><h3>Email</h3><p><a "
+"39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 34</p><h3>Email</h3><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"mailto:epigraphische.datenbank@zaw.uni-"
 "heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
 
@@ -2505,76 +2512,76 @@ msgid "404"
 msgstr ""
 "<p>Die gewünschte Seite kann nicht gefunden werden.</p><p>Was "
 "nun?</p><p>Wenn Sie nach Inschriften suchen möchten, benutzen Sie bitte "
-"entweder die <a href=\"./inschrift/suche\">einfache Suche</a> oder die <a"
+"entweder die <i class=\"fas fa-external-link-alt\"></i> <a href=\"./inschrift/suche\">einfache Suche</a> oder die <i class=\"fas fa-external-link-alt\"></i> <a"
 " href=\"./inschrift/erweiterteSuche\">erweiterte Suche</a>.</p><p>Wenn "
-"Sie nach Fotos suchen möchten, klicken Sie bitte auf <a "
+"Sie nach Fotos suchen möchten, klicken Sie bitte auf <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./foto/suche\">Fotos</a>.</p><p>Für die Suche nach Publikationen "
-"zu Inschriften benutzen Sie bitte die <a href=\"./bibliographie/suche"
+"zu Inschriften benutzen Sie bitte die <i class=\"fas fa-external-link-alt\"></i> <a href=\"./bibliographie/suche"
 "\">Bibliographie-Datenbank</a>.</p><p>Möchten Sie sich über das Projekt "
 "informieren, stehen Ihnen die folgenden Links zur "
-"Verfügung:</p><ul><li><a href=\"projekt/konzept\">Konzept</a></li><li><a "
-"href=\"projekt/geschichte\">Geschichte</a></li><li><a "
-"href=\"projekt/kooperationen\">Kooperationen</a></li><li><a "
-"href=\"projekt/mitarbeiter\">Mitarbeiter</a></li><li><a "
+"Verfügung:</p><ul><li><i class=\"fas fa-external-link-alt\"></i> <a href=\"projekt/konzept\">Konzept</a></li><li><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"projekt/geschichte\">Geschichte</a></li><li><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"projekt/kooperationen\">Kooperationen</a></li><li><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"projekt/mitarbeiter\">Mitarbeiter</a></li><li><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"projekt/veranstaltungen\">Veranstaltungen & "
-"Öffentlichkeitsarbeit</a></li></ul><p>Unter <a href=\"./links\">Links</a>"
+"Öffentlichkeitsarbeit</a></li></ul><p>Unter <i class=\"fas fa-external-link-alt\"></i> <a href=\"./links\">Links</a>"
 " finden Sie Hinweise zu weiteren epigraphischen Projekten.</p>"
 
-#: edh_web_application/templates/base.html:15
-#: edh_web_application/templates/base.html:22
+#: edh_web_application/templates/base.html:16
+#: edh_web_application/templates/base.html:23
 msgid "Epigraphic Database Heidelberg"
 msgstr "Epigraphische Datenbank Heidelberg"
 
-#: edh_web_application/templates/base.html:38
+#: edh_web_application/templates/base.html:39
 msgid "Project..."
 msgstr "Projekt..."
 
-#: edh_web_application/templates/base.html:40
+#: edh_web_application/templates/base.html:41
 msgid "Concept"
 msgstr "Konzept"
 
-#: edh_web_application/templates/base.html:41
+#: edh_web_application/templates/base.html:42
 msgid "History"
 msgstr "Geschichte"
 
-#: edh_web_application/templates/base.html:42
+#: edh_web_application/templates/base.html:43
 msgid "Cooperations"
 msgstr "Kooperationen"
 
-#: edh_web_application/templates/base.html:43
+#: edh_web_application/templates/base.html:44
 msgid "Research Team Members"
 msgstr "Mitarbeiter"
 
-#: edh_web_application/templates/base.html:44
+#: edh_web_application/templates/base.html:45
 msgid "Events and Presentations"
 msgstr "Veranstaltungen & Öffentlichkeitsarbeit"
 
-#: edh_web_application/templates/base.html:45
-#: edh_web_application/templates/base.html:82
+#: edh_web_application/templates/base.html:46
+#: edh_web_application/templates/base.html:83
 msgid "Contact"
 msgstr "Kontakt"
 
-#: edh_web_application/templates/base.html:49
+#: edh_web_application/templates/base.html:50
 msgid "Inscriptions..."
 msgstr "Inschriften..."
 
-#: edh_web_application/templates/base.html:55
+#: edh_web_application/templates/base.html:56
 msgid "Photos"
 msgstr "Fotos"
 
-#: edh_web_application/templates/base.html:56
+#: edh_web_application/templates/base.html:57
 msgid "Bibliography"
 msgstr "Bibliographie"
 
-#: edh_web_application/templates/base.html:57
+#: edh_web_application/templates/base.html:58
 msgid "Geography"
 msgstr "Geographie"
 
-#: edh_web_application/templates/base.html:83
+#: edh_web_application/templates/base.html:84
 msgid "Imprint"
 msgstr "Impressum"
 
-#: edh_web_application/templates/base.html:84
+#: edh_web_application/templates/base.html:85
 msgid "Data Privacy Statement"
 msgstr "Datenschutzerklärung"
 
@@ -2591,7 +2598,7 @@ msgstr ""
 "Die Suchergebnisse werden vielfach zusammen mit Fotos oder Zeichnungen "
 "präsentiert. Ein weiterer Fokus liegt in der Aufnahme möglichst präziser "
 "Fundorte der Inschriften.</p><p>Die Epigraphische Datenbank Heidelberg "
-"ist ein Forschungsvorhaben der <a href=\"https://www.hadw-"
+"ist ein Forschungsvorhaben der <i class=\"fas fa-external-link-alt\"></i> <a href=\"https://www.hadw-"
 "bw.de/\">Heidelberger Akademie der Wissenschaften</a>.</p>"
 
 #: edh_web_application/templates/home.html:18
@@ -2645,7 +2652,7 @@ msgid "Geographic Focus"
 msgstr ""
 "Der geographische Fokus liegt auf den Provinzen des römischen Reiches. "
 "Der Bestand wird kontinuierlich provinzweise erweitert, eine Übersicht "
-"über alle <a href=\"./projekt/provinzen\">abgeschlossenen und derzeit "
+"über alle <i class=\"fas fa-external-link-alt\"></i> <a href=\"./projekt/provinzen\">abgeschlossenen und derzeit "
 "bearbeiteten Provinzen</a> kann der Karte entnommen werden"
 
 #: edh_web_application/templates/home.html:65
@@ -2664,9 +2671,9 @@ msgid "ODR"
 msgstr ""
 "Die in den Teildatenbanken erfassten Daten können in unterschiedlichen "
 "Formaten auf diversen Wegen nachgenutzt werden: Hierfür stehen mehrere "
-"Schnittstellen (APIs) und Downloads zur Verfügung; alle Daten des <a "
+"Schnittstellen (APIs) und Downloads zur Verfügung; alle Daten des <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./data\">Open Data Repositorys</a> der Epigraphischen Datenbank "
-"Heidelberg stehen unter der <a href=\"http://creativecommons.org/licenses"
+"Heidelberg stehen unter der <i class=\"fas fa-external-link-alt\"></i> <a href=\"http://creativecommons.org/licenses"
 "/by-sa/4.0/deed.de\">CC BY-SA 4.0 Lizenz</a> zur Nachnutzung bereit."
 
 #: edh_web_application/templates/home.html:73
