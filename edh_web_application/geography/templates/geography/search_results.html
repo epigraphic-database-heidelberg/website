@@ -21,11 +21,11 @@
 <div style="text-align:center">
     <nav aria-label="Search results pages">
         {% set aktuelleSeite = (data['metadata']['start']|int / data['metadata']['rows']|int)|int %}
+        {% set number_of_hits = number_of_hits|replace(".","") %}
         {% set anzahlSeiten = ((number_of_hits|int / data['metadata']['rows']|int))|int %}
-        {% if (number_of_hits|int / data['metadata']['rows']|float) > anzahlSeiten|float %}
+        {% if (number_of_hits|float / data['metadata']['rows']|float) > anzahlSeiten|float %}
             {% set anzahlSeiten = anzahlSeiten + 1  %}
         {% endif %}
-
         {% if anzahlSeiten > 10 %}
         <ul class="pagination justify-content-center">
             <li class="page-item">
@@ -184,7 +184,6 @@
         {% if (number_of_hits|int / data['metadata']['rows']|float) > anzahlSeiten|float %}
             {% set anzahlSeiten = anzahlSeiten + 1  %}
         {% endif %}
-
         {% if anzahlSeiten > 10 %}
         <ul class="pagination justify-content-center">
             <li class="page-item">
