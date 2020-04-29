@@ -373,17 +373,6 @@ div.panel-heading-image {
   border-top: 4px solid #1F6B3B;
   bottom: -4px;
 }
-/*
- * pagination of search results
-*/
-.pagination > li:first-child > a,
-.pagination > li:first-child > span {
-  width: 75px;
-}
-.pagination > li:last-child > a,
-.pagination > li:last-child > span {
-  width: 75px;
-}
 .pagination>li>a, .pagination>li>span{
   color: #1F6B3B;
 }
