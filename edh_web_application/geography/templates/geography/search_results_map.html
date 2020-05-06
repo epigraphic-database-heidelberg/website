@@ -10,12 +10,12 @@
 <p>{{_("The search for:")}}</p>
 <p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
 <p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
-
-<div class="search-filter" style="text-align:right">
-    <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('map')}}</button>
-    <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+<div class="row">
+    <div class="search-filter">
+        <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('map')}}</button>
+        <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+    </div>
 </div>
-
 <div>
     <div id="map" style="width:100%;height:600px;margin-top:3em; margin-bottom:3em;border: 1px solid #aaa"></div>
 </div>
@@ -112,7 +112,7 @@ $(document).ready(function() {
     {% if place['koordinaten_1'] %}
         marker = L.circleMarker([{{place['koordinaten_1']}}], {radius:5, fillColor: '#ff0000', color: '#1F6B3B', opacity: 1}).addTo(map).bindPopup('<b>EDH-Geo-ID</b>: <a href="./edh/geographie/{{place['id']}}" style="font-weight: normal;color: #1F6B3B;cursor: pointer;">{{place['id']}}</a><br><b>Fundort antik:</b><br>{% if place['fo_antik']%}{{place['fo_antik']}}{%else%}{%endif%}<br><b>Fundort modern:</b><br>{% if place['fo_modern']%}{{place['fo_modern']}}{%else%}{%endif%}<br><b>Fundstelle:</b><br>{% if place['fundstelle']%}{{place['fundstelle']}}{%else%}{%endif%}<br>');
         markers.addLayer(marker);
-    {% else %}{%endif%}
+    {%endif%}
 {% endfor %}
     markers.addLayer(marker);
 	map.addLayer(markers);

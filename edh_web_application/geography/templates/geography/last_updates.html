@@ -6,28 +6,29 @@
 
 {% block app_content %}
 <h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
 <div>
     {% set count = namespace(value=0) %}
     {% for d in data %}
-        <h2>{{d}}</h2>
+        <h3>{{d}}</h3>
+        {% set count_hit = namespace(value=0) %}
         {% for entry in data[d] %}
         {% set count.value = count.value + 1 %}
+        {% set count_hit.value = count_hit.value + 1 %}
         <div class="detail_block">
-            <div class="detail_block_header">
-                <span class="detail_block_header_text"><a href="./edh/geographie/{{ entry['id'] }}">{{ entry['id'] }} {{ _('&ndash; open detailed view...') }}</a></span>
-            </div>
             <div class="wrapper_geo_last_updates" style="padding:10px">
+                <a href="./edh/geographie/{{ entry['id'] }}" style="color:#fff"><div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;">{{_('Number')}} &nbsp; {{count_hit.value}}</div></a>
                 <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;">
                     <a href="./edh/geographie/{{ entry['id'] }}">
-                        <div id="map_canvas_{{ count.value }}" style="width:200px;height:200px;border: 1px solid #ccc"></div>
+                        <div id="map_canvas_{{ count.value }}" class="map_canvas"></div>
                     </a>
                 </div>
                 <div class="detail_block_content" style="display: inline-block; vertical-align: top;">
+                    <section class="detail_block_content_row"><p style="text-align:center; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/geographie/{{ entry['id'] }}">{{ entry['id'] }} {{ _('&ndash; open detailed view...') }}</a></p>
+                    </section>
                     <section class="detail_block_content_row">
                         <div class="detail_block_content_row_header">{{ _('province') }}:</div>
-                        <div class="detail_block_content_row_text">
-                            <a href="./edh/geographie/{{ entry['provinz_id'] }}">{{ entry['provinz'] }}</a>
-                        </div>
+                        <div class="detail_block_content_row_text"><i class="fas fa-external-link-alt"></i> <a href="./edh/geographie/{{ entry['provinz_id'] }}">{{ entry['provinz'] }}</a></div>
                     </section>
                     {% if entry['land'] %}
                     <section class="detail_block_content_row">
@@ -37,19 +38,31 @@
                     {% endif %}
                     <section class="detail_block_content_row">
                         <div class="detail_block_content_row_header">{{ _('ancient find spot') }}:</div>
-                        <div class="detail_block_content_row_text">{{ entry['fo_antik'] }}&nbsp;</div>
+                        <div class="detail_block_content_row_text">{% if entry['fo_antik'] %}{{ entry['fo_antik'] }}{% else %}&nbsp;{% endif %}</div>
                     </section>
                     <section class="detail_block_content_row">
                         <div class="detail_block_content_row_header">{{ _('modern find spot') }}:</div>
-                        <div class="detail_block_content_row_text">{{ entry['fo_modern'] }}&nbsp;</div>
+                        <div class="detail_block_content_row_text">{% if entry['fo_modern'] %}{{ entry['fo_modern'] }}{% else %}&nbsp;{% endif %}</div>
                     </section>
                     <section class="detail_block_content_row">
                         <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>
-                        <div class="detail_block_content_row_text">{{ entry['fundstelle'] }}&nbsp;</div>
+                        <div class="detail_block_content_row_text">
+                            {% if entry['fundstelle'] %}
+                                {{entry['fundstelle']|replace("{","<span style='color:red'>")|replace("}","</span>")|safe}}
+                            {% else %}
+                                &nbsp;
+                            {% endif %}
+                        </div>
                     </section>
                     <section class="detail_block_content_row">
                         <div class="detail_block_content_row_header">{{ _('verw_bezirk') }}:</div>
-                        <div class="detail_block_content_row_text">{{ entry['verw_bezirk'] }}&nbsp;</div>
+                        <div class="detail_block_content_row_text">
+                            {% if entry['verw_bezirk'] %}
+                                {{ entry['verw_bezirk'] }}
+                            {% else %}
+                                &nbsp;
+                            {% endif %}
+                        </div>
                     </section>
                 </div>
             </div>
@@ -70,8 +83,8 @@
             {% set count.value = count.value + 1 %}
             var pelagiosMap = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png');
                 var map = L.map('map_canvas_{{count.value}}', {
-                    center: [{{entry['koordinaten1str']}}],
-                    zoom: 4,
+                    center: [ {% if entry['koordinaten1str'] %} {{entry['koordinaten1str']}} {%else%} 47,11 {%endif%}],
+                    zoom: {% if entry['koordinaten1str'] %} 6 {%else%} 3 {%endif%},
                     zoomControl:false,
                     layers: [pelagiosMap]
                 });
@@ -80,7 +93,9 @@
                 map.doubleClickZoom.disable();
                 map.scrollWheelZoom.disable();
                 map.keyboard.disable();
+                {% if entry['koordinaten1str'] %}
                 var marker{{count.value}} = L.marker([{{entry['koordinaten1str']}}]).addTo(map);
+                {% endif %}
         {% endfor %}
     {% endfor %}
 </script>

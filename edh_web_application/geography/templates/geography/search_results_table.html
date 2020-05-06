@@ -10,12 +10,12 @@
 <p>{{_("The search for:")}}</p>
 <p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
 <p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
-
-<div class="search-filter" style="text-align:right">
-    <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('table')}}</button>
-    <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+<div class="row">
+    <div class="search-filter">
+        <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('table')}}</button>
+        <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+    </div>
 </div>
-
 <div>
     <div class="table-responsive" style="100%; margin-bottom: 4rem;margin-top:3em;">
         <table id="tbl_findspot"  class="table-striped">

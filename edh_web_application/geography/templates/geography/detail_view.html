@@ -123,10 +123,10 @@
                 <div class="detail_block_content_row_text">{{data['datum']}}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('finished') }}:</div>
+                <div class="detail_block_content_row_header">{{ _('Work Status') }}:</div>
                 <div class="detail_block_content_row_text">
-                    {% if data['bearbeitet'] %}{{_('Yes')}}
-                    {% else %}{{_('No')}}
+                    {% if data['bearbeitet'] %}{{_('completed')}}
+                    {% else %}{{_('provisional')}}
                     {% endif %}
                 </div>
             </section>
@@ -158,8 +158,8 @@
             apikey: 'aaeccd3a44a74ce58324c2a455c58a98',
             minZoom: 5});
     var map = L.map('map_canvas', {
-        center: [{{data['koordinaten_1']}}],
-        zoom: 9,
+        center: [{% if data['koordinaten_1'] %}{{data['koordinaten_1']}}{% else %} 47,11 {% endif %}],
+        zoom: 4,
         layers: [streets],
         zoomControl: true,
         preferCanvas: true,
@@ -175,6 +175,8 @@
     map.zoomControl.setPosition('topright');
     var overlays = {};
     L.control.layers(baseLayers, overlays, {position: 'topleft'}).addTo(map);
+    {% if data['koordinaten_1'] %}
     var marker = L.marker([{{data['koordinaten_1']}}]).addTo(map);
+    {% endif %}
 </script>
 {% endblock %}

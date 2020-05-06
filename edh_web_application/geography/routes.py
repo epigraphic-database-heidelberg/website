@@ -16,7 +16,7 @@ def last_updates():
     results = Place.last_updates()
     results_grouped_by_date = Place.group_results_by_date(results)
     return render_template('geography/last_updates.html',
-                           title=_("Epigraphic Geographic Database: Last Updates"),
+                           title=_("Geographic Database"), subtitle=_("Last Updates"),
                            data=results_grouped_by_date)
 
 
