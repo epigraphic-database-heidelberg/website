@@ -54,7 +54,7 @@ def detail_view(b_nr):
     results = Publication.query("b_nr:" + b_nr)
     if results is None:
         return render_template('bibliography/no_hits.html',
-                               title=_("Bibliographic Database"), subtitle=_("Detail View"))
+                               title=_("Bibliographic Database"), subtitle=_("Search results"))
     else:
         return render_template('bibliography/detail_view.html',
                                title=_("Bibliographic Database"), subtitle=_("Detail View"),

@@ -49,7 +49,7 @@ def detail_view(geo_id):
         results = Place.query("id:" + geo_id)
         if results is None:
             return render_template('geography/no_hits.html',
-                                   title=_("Geographic Database"), subtitle=_("Detail View"))
+                                   title=_("Geographic Database"), subtitle=_("Search results"))
         else:
             return render_template('geography/detail_view.html',
                                    title=_("Geographic Database"), subtitle=_("Detail View"),
