@@ -70,7 +70,8 @@ def last_updates():
     results = Publication.last_updates()
     results_grouped_by_date = Publication.group_results_by_date(results)
     return render_template('bibliography/last_updates.html',
-                           title=_("Epigraphic Bibliography Database: Last Updates"),
+                           title=_("Bibliography Database"),
+                           subtitle=_("Last Updates"),
                            data=results_grouped_by_date)
 
 

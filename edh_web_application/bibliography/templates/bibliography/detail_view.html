@@ -74,7 +74,7 @@
             <div class="detail_block_content_row_text" style="colspan=2">
                 {% set ae_list = data['ae'].split(';') %}
                 {% for entry in ae_list %}
-                {{ entry.strip() }}
+                {{ entry.strip() }} <br />
                 {% endfor %}
             </div>
         </section>
@@ -90,7 +90,7 @@
             <div class="detail_block_content_row_text">
             {% set ae_list = data['zu_ae'].split(';') %}
             {% for entry in ae_list %}
-            {{ entry.strip() }}
+            {{ entry.strip() }} <br />
             {% endfor %}
             </div>
         </section>
@@ -103,7 +103,7 @@
             <div class="detail_block_content_row_text">
                 {% set cil_list = data['cil'].split(';') %}
                 {% for entry in cil_list %}
-                {{ entry.strip() }}
+                {{ entry.strip() }} <br />
                 {% endfor %}
             </div>
         </section>
@@ -116,7 +116,7 @@
             <div class="detail_block_content_row_text">
                 {% set corpora_list = data['sonstigeCorpora'].split(';') %}
                 {% for entry in corpora_list %}
-                {{ entry.strip() }}
+                {{ entry.strip() }} <br />
                 {% endfor %}
             </div>
         </section>
