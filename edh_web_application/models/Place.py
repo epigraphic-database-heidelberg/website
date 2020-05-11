@@ -565,8 +565,8 @@ class Place:
 
         if 'geo_id' in form and form['geo_id'] != "":
             geo_id = form['geo_id']
-            # check if b_nr is valid pattern
-            # correct if neccessary/possible
+            geo_id = re.sub(r'G0*?', r'', geo_id)
+            geo_id = "G" + "{:06d}".format(int(geo_id))
             query_string = "id:" + geo_id + " " + logical_operater + " "
 
         if 'pleiades_id_1' in form and form['pleiades_id_1'] != "":

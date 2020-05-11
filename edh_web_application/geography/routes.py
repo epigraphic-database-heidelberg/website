@@ -46,6 +46,9 @@ def detail_view(geo_id):
                                data=prov_data)
     else:
         # find spot detail view
+        # reformat Geo ID if necessary
+        geo_id = re.sub(r'G0*?', r'', geo_id)
+        geo_id = "G" + "{:06d}".format(int(geo_id))
         results = Place.query("id:" + geo_id)
         if results is None:
             return render_template('geography/no_hits.html',

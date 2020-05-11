@@ -9,7 +9,9 @@
 <h2>{{ data['name'] | safe }}</h2>
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
-        <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}">https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}</a>
+        <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}">
+            https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}} ({{data['datum']}}{% if data['bearbeiter'] != "Db2inst1" %}, {{data['bearbeiter']}}{%endif%})
+        </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
     </span>
     <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
@@ -111,16 +113,6 @@
                         &nbsp;
                     {% endif %}
                 </div>
-            </section>
-            {% if data['bearbeiter'] != "Db2inst1" %}
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{ _('responsible individual') }}:</div>
-                    <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
-                </section>
-            {% endif %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('last update') }}:</div>
-                <div class="detail_block_content_row_text">{{data['datum']}}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('Work Status') }}:</div>
