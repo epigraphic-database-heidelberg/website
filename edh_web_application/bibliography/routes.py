@@ -13,6 +13,16 @@ def search_bibliography():
     :return: html template of bibliographical search mask
     """
     form = BibliographySearch()
+    form.author.data = request.args.get('author')
+    form.title.data = request.args.get('title')
+    form.publication.data = request.args.get('publication')
+    form.volume.data = request.args.get('volume')
+    form.author.years = request.args.get('years')
+    form.ae.data = request.args.get('ae')
+    form.cil.data = request.args.get('cil')
+    form.on_ae.data = request.args.get('on_ae')
+    form.other_corpora.data = request.args.get('other_corpora')
+
     if len(request.args) > 0:
         # create query string
         query_string = Publication.create_query_string(request.args)
@@ -21,7 +31,12 @@ def search_bibliography():
         number_of_hits = Publication.get_number_of_hits_for_query(query_string)
         # return results to client
         if results:
-            return render_template('bibliography/search_results.html', title=_("Bibliographic Database"), subtitle=_("Search results"), form=form, data=results, number_of_hits=number_of_hits)
+            return render_template('bibliography/search_results.html',
+                                   title=_("Bibliographic Database"),
+                                   subtitle=_("Search results"),
+                                   form=form,
+                                   data=results,
+                                   number_of_hits=number_of_hits)
         else:
             return render_template('bibliography/no_hits.html', title=_("Bibliographic Database"), subtitle=_("Search results"), form=form)
     else:
@@ -75,4 +90,3 @@ def autocomplete_publikation():
     :return: list of entries for autocomplete
     """
     return json.dumps(Publication.get_autocomplete_entries("publikation", request.args['term']))
-

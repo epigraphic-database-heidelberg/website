@@ -42,16 +42,20 @@ class Publication:
         """
         start = 0  # index number of first record to retrieve
         rows = 20  # number of records to retrieve
+        sort = "b_nr asc"  # default
         if request.args.get('start'):
             start = request.args.get('start')
         if request.args.get('anzahl'):
             rows = int(request.args.get('anzahl'))
+        if request.args.get('sort') in ['autor', 'publikation', 'jahr']:
+            sort = request.args.get('sort') + "_sort asc"
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': 'b_nr asc', 'defType': 'edismax'})
+        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort, 'defType': 'edismax'})
         if len(results) == 0:
             return None
         else:
             number_of_hits = results.hits
+            query_params = _get_query_params(request.args)
             query_result = []
             for result in results:
                 props = {}
@@ -66,8 +70,10 @@ class Publication:
                 query_result.append(publ)
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(
-                                     request.url)},
+                                     request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "query_params": query_params},
                     "items": query_result}
+
 
     @classmethod
     def create_query_string(cls, form):
@@ -277,3 +283,30 @@ def _remove_number_of_hits_from_autocomplete(user_entry):
     """
     user_entry = re.sub("\([0-9]*\)$", "", user_entry).strip()
     return user_entry
+
+
+def _get_query_params(args):
+    """
+    creates dictionary of search params for displaying on
+    search result page
+    :param args: request.args
+    :return: dictionary with all params of query
+    """
+    result_dict = {}
+    for key in args:
+        if key not in ('anzahl', 'sort', 'start', 'view') and args[key] != "":
+            result_dict[key] = args[key]
+    return result_dict
+
+
+def _get_url_without_sort_parameter(url):
+    """
+    removes URL parameter sort; these get added later in the template again
+    in dialog "sort by"
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("sort=.*&*", "", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url

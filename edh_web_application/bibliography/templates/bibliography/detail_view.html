@@ -6,19 +6,16 @@
 
 {% block app_content %}
 <h1>{{ title }}</h1>
-<h2>{{ subtitle }}</h2>
-
+<h2>{{ data['autor'] }}: {{ data['titel'] }}</h2>
+<h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
+    <span id="canonical_uri">
+        <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}">https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}</a>
+        <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
+    </span>
+    <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
+</h3>
 <div>
     <div class="detail_block">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _("Canonical URI") }}:
-                <span id="geo_uri">
-                    <a href="https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}">https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}</a>
-                    <img src=".{{url_for('static', filename='img/clippy.png')}}" style="height:23px;cursor:pointer;vertical-align:text-bottom;margin-left:0.5em;margin-top:5px" onclick="copy2clipboard('{{ _('copied!') }}')" alt="Copy URI to clipboard" title="Copy URI to clipboard"/>
-                </span>
-                <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
-            </span>
-        </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _('responsible individual:') }}</div>
