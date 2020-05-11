@@ -1,5 +1,4 @@
 function copy2clipboard(note) {
-    console.log(note)
     let textarea = document.createElement('textarea')
     textarea.id = 't'
     textarea.style.height = 0
