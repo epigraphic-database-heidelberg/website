@@ -117,14 +117,6 @@ a:hover {
     color: #1F6B3B;
     text-decoration: none;
 }
-a.pfeil::before {
-    content: "↗";
-    display:inline-block;
-    margin-right:0.25em;
-}
-a.pfeil.break {
-    display: block;
-}
 p {
     text-align: justify;
 }

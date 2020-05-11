@@ -9,139 +9,119 @@
 <h2>{{ data['autor'] }}: {{ data['titel'] }}</h2>
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
-        <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}">https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}</a>
+        <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['id']}}">
+            https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}
+            ({{data['datum']}}, {{data['bearbeiter']}})
+        </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
     </span>
     <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
 </h3>
 <div>
-    <div class="detail_block">
-        <div class="detail_block_content">
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('responsible individual:') }}</div>
-                <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('last update:') }}</div>
-                <div class="detail_block_content_row_text">{{data['datum']}}</div>
-            </section>
-        </div>
+    <h3>{{ _('Work / contribution') }}</h3>
+    <div class="detail_block_content">
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{ _('author') }}:</div>
+            <div class="detail_block_content_row_text">
+                {% set author_list = data['autor'].split(' - ') %}
+                {% for author in author_list %}
+                    <i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?author={{ author }}">{{ author }}</a> &nbsp;
+                {% endfor %}
+            </div>
+        </section>
+        {% if data['titel'] %}
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{ _('title:') }}</div>
+            <div class="detail_block_content_row_text">{{data['titel']}}</div>
+        </section>
+        {% endif %}
+        {% if data['publikation'] %}
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{ _('publication:') }}</div>
+            <div class="detail_block_content_row_text"><i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?publication={{ data['publikation'] }}">{{data['publikation']}}</a></div>
+        </section>
+        {% endif %}
+        {% if data['band'] %}
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{ _('Volume:') }}</div>
+            <div class="detail_block_content_row_text">{{data['band']}}</div>
+        </section>
+        {% endif %}
+        {% if data['jahr'] %}
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{ _('year(s):') }}</div>
+            <div class="detail_block_content_row_text">{{data['jahr']}}</div>
+        </section>
+        {% endif %}
+        {% if data['seiten'] %}
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{ _('pages') }}:</div>
+            <div class="detail_block_content_row_text">{{data['seiten']}}</div>
+        </section>
+        {% endif %}
+        {% if data['ort'] %}
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{ _('town') }}:</div>
+            <div class="detail_block_content_row_text">{{data['ort']}}</div>
+        </section>
+        {% endif %}
     </div>
-    <div class="detail_block">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _('Work / contribution') }}</span>
-        </div>
-        <div class="detail_block_content">
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('author') }}:</div>
-                <div class="detail_block_content_row_text">
-                    {% set author_list = data['autor'].split(' - ') %}
-                    {% for author in author_list %}
-                        <a href="./bibliographie/suche?author={{ author }}" class="pfeil">{{ author }}</a> &nbsp;
-                    {% endfor %}
-                </div>
-            </section>
-            {% if data['titel'] %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('title:') }}</div>
-                <div class="detail_block_content_row_text">{{data['titel']}}</div>
-            </section>
-            {% endif %}
-            {% if data['publikation'] %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('publication:') }}</div>
-                <div class="detail_block_content_row_text"><a href="./bibliographie/suche?publication={{ data['publikation'] }}" class="pfeil">{{data['publikation']}}</a></div>
-            </section>
-            {% endif %}
-            {% if data['band'] %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('Volume:') }}</div>
-                <div class="detail_block_content_row_text">{{data['band']}}</div>
-            </section>
-            {% endif %}
-            {% if data['jahr'] %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('year(s):') }}</div>
-                <div class="detail_block_content_row_text">{{data['jahr']}}</div>
-            </section>
-            {% endif %}
-            {% if data['seiten'] %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('pages') }}:</div>
-                <div class="detail_block_content_row_text">{{data['seiten']}}</div>
-            </section>
-            {% endif %}
-            {% if data['ort'] %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('town') }}:</div>
-                <div class="detail_block_content_row_text">{{data['ort']}}</div>
-            </section>
-            {% endif %}
-        </div>
-    </div>
-    {% if data['ae'] %}
-    <div class="detail_block">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _('Cited in AE') }}</span>
-        </div>
-        <div class="detail_block_content">
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_text" style="colspan=2">
-                    {% set ae_list = data['ae'].split(';') %}
-                    {% for entry in ae_list %}
-                    <a href="./bibliographie/suche?ae={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
-                    {% endfor %}
-                </div>
 
-            </section>
-        </div>
+    {% if data['ae'] %}
+    <h3>{{ _('Cited in AE') }}</h3>
+    <div class="detail_block_content">
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_text" style="colspan=2">
+                {% set ae_list = data['ae'].split(';') %}
+                {% for entry in ae_list %}
+                {{ entry.strip() }}
+                {% endfor %}
+            </div>
+        </section>
     </div>
     {% endif %}
+
     {% if data['zu_ae'] or data['cil'] or data['sonstigeCorpora'] %}
-    <div class="detail_block" style="margin-bottom:2em;">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _('Also concerns the inscriptions') }}</span>
-        </div>
-        {% if data['zu_ae'] %}
-        <div class="detail_block_content">
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">AE:</div>
-                <div class="detail_block_content_row_text">
-                {% set ae_list = data['zu_ae'].split(';') %}
-                {% for entry in ae_list %}
-                <a href="./bibliographie/suche?on_ae={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
-                {% endfor %}
-                </div>
-            </section>
-        </div>
-        {% endif %}
-        {% if data['cil'] %}
-        <div class="detail_block_content">
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">CIL:</div>
-                <div class="detail_block_content_row_text">
-                    {% set cil_list = data['cil'].split(';') %}
-                    {% for entry in cil_list %}
-                    <a href="./bibliographie/suche?cil={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
-                    {% endfor %}
-                </div>
-            </section>
-        </div>
-        {% endif %}
-        {% if data['sonstigeCorpora'] %}
-        <div class="detail_block_content">
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _('other corpora') }}:</div>
-                <div class="detail_block_content_row_text">
-                    {% set corpora_list = data['sonstigeCorpora'].split(';') %}
-                    {% for entry in corpora_list %}
-                    <a href="./bibliographie/suche?other_corpora={{ entry }}" class="pfeil break">{{ entry.strip() }}</a>
-                    {% endfor %}
-                </div>
-            </section>
-        </div>
-        {% endif %}
+    <h3>{{ _('Also concerns the inscriptions') }}</h3>
+    {% if data['zu_ae'] %}
+    <div class="detail_block_content">
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">AE:</div>
+            <div class="detail_block_content_row_text">
+            {% set ae_list = data['zu_ae'].split(';') %}
+            {% for entry in ae_list %}
+            {{ entry.strip() }}
+            {% endfor %}
+            </div>
+        </section>
     </div>
+    {% endif %}
+    {% if data['cil'] %}
+    <div class="detail_block_content">
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">CIL:</div>
+            <div class="detail_block_content_row_text">
+                {% set cil_list = data['cil'].split(';') %}
+                {% for entry in cil_list %}
+                {{ entry.strip() }}
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+    {% endif %}
+    {% if data['sonstigeCorpora'] %}
+    <div class="detail_block_content">
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{ _('other corpora') }}:</div>
+            <div class="detail_block_content_row_text">
+                {% set corpora_list = data['sonstigeCorpora'].split(';') %}
+                {% for entry in corpora_list %}
+                {{ entry.strip() }}
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+    {% endif %}
     {% endif %}
 </div>
 
