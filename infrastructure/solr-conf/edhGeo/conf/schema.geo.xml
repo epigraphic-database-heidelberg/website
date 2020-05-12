@@ -444,12 +444,14 @@
     <fieldType name="text_ngram_2" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
         <tokenizer class="solr.WhitespaceTokenizerFactory"/>
-        <filter class="solr.NGramFilterFactory" maxGramSize="25" minGramSize="2"/>      
+        <filter class="solr.NGramFilterFactory" maxGramSize="25" minGramSize="2"/>
       </analyzer>
       <analyzer type="query">
         <filter class="solr.LowerCaseFilterFactory"/>
-        <tokenizer class="solr.WhitespaceTokenizerFactory"/> 
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
       </analyzer>
     </fieldType>
 
@@ -457,11 +459,13 @@
       <analyzer type="index">
         <tokenizer class="solr.KeywordTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
         <filter class="solr.EdgeNGramFilterFactory" minGramSize="1" maxGramSize="25" />
       </analyzer>
       <analyzer type="query">
         <tokenizer class="solr.KeywordTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
       </analyzer>
     </fieldType>
 
@@ -473,10 +477,10 @@
         <filter class="solr.LowerCaseFilterFactory"/>
       </analyzer>
       <analyzer type="query">
-        <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="3" /> 
+        <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="3" />
         <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
 		<filter class="solr.WordDelimiterGraphFilterFactory" generateWordParts="0" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="1" splitOnCaseChange="1"/>
-        <filter class="solr.LowerCaseFilterFactory"/> 
+        <filter class="solr.LowerCaseFilterFactory"/>
       </analyzer>
     </fieldType>
 
@@ -484,21 +488,25 @@
 	<analyzer type="index">
             <tokenizer class="solr.KeywordTokenizerFactory"/>
             <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.ASCIIFoldingFilterFactory"/>
         </analyzer>
         <analyzer type="query">
             <tokenizer class="solr.KeywordTokenizerFactory"/>
             <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.ASCIIFoldingFilterFactory"/>
         </analyzer>
     </fieldType>
 
     <fieldType name="text_ci" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
-            <tokenizer class="solr.KeywordTokenizerFactory"/> 
+            <tokenizer class="solr.KeywordTokenizerFactory"/>
             <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.ASCIIFoldingFilterFactory"/>
         </analyzer>
         <analyzer type="query">
-            <tokenizer class="solr.KeywordTokenizerFactory"/> 
+            <tokenizer class="solr.KeywordTokenizerFactory"/>
             <filter class="solr.LowerCaseFilterFactory"/>
+            <filter class="solr.ASCIIFoldingFilterFactory"/>
         </analyzer>
     </fieldType>
 
