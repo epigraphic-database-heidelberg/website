@@ -569,14 +569,11 @@ class Place:
             geo_id = "G" + "{:06d}".format(int(geo_id))
             query_string = "id:" + geo_id + " " + logical_operater + " "
 
-        if 'pleiades_id_1' in form and form['pleiades_id_1'] != "":
-            query_string += "pleiades_id_1:" + _escape_value(form['pleiades_id_1']) + " " + logical_operater + " "
+        if 'pleiades_id' in form and form['pleiades_id'] != "":
+            query_string += "(pleiades_id_1:" + _escape_value(form['pleiades_id']) + " OR " + " pleiades_id_2:" + _escape_value(form['pleiades_id']) + ") " + logical_operater + " "
 
-        if 'pleiades_id_2' in form and form['pleiades_id_2'] != "":
-            query_string += "pleiades_id_2:" + _escape_value(form['pleiades_id_2']) + " " + logical_operater + " "
-
-        if 'geonames_id_1' in form and form['geonames_id_1'] != "":
-            query_string += "geonames_id_1:" + _escape_value(form['geonames_id_1']) + " " + logical_operater + " "
+        if 'geonames_id' in form and form['geonames_id'] != "":
+            query_string += "(geonames_id_1:" + _escape_value(form['geonames_id']) + " OR "  + " geonames_id_2:" + _escape_value(form['geonames_id']) + ") "  + logical_operater + " "
 
         if 'geonames_id_2' in form and form['geonames_id_2'] != "":
             query_string += "geonames_id_2:" + _escape_value(form['geonames_id_2']) + " " + logical_operater + " "
