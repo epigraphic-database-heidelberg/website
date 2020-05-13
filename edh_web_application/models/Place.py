@@ -616,7 +616,6 @@ class Place:
                 query_string += "fo_antik_ci:*" + _escape_value(form['fo_antik']) + "* " + logical_operater + " "
 
         if 'fo_modern' in form and form['fo_modern'] != "":
-            query_string += "fo_modern:" + _escape_value(form['fo_modern']) + " " + logical_operater + " "
             if re.search("\([0-9]*\)$", form['fo_modern']):
                 query_string += 'fo_modern_ci:"' + _escape_value(
                     _remove_number_of_hits_from_autocomplete(form['fo_modern'])) + '" ' + logical_operater + ' '
@@ -635,6 +634,9 @@ class Place:
 
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
+
+        print(query_string)
+
         return query_string
 
     @classmethod
@@ -673,7 +675,14 @@ class Place:
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhGeo')
         results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
-            return None
+            # no hits, return query params
+            query_params = _get_query_params(request.args)
+
+            return {'metadata': {"number_of_hits": 0,
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(
+                                     request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "url_without_view_parameter": _get_url_without_view_parameter(
+                    request.url), "query_params": query_params}}
         else:
             number_of_hits = results.hits
             query_params = _get_query_params(request.args)

@@ -83,7 +83,7 @@ def search_geography():
             results = Place.query(query_string)
         number_of_hits = Place.get_number_of_hits_for_query(query_string)
         # return results to client
-        if results:
+        if results['metadata']['number_of_hits'] > 0:
             if request.args.get('view') == 'table':
                 return render_template('geography/search_results_table.html', title=_("Geographic Database"),
                                    subtitle=_("Search results"), data=results,
@@ -98,7 +98,8 @@ def search_geography():
                                    number_of_hits=number_of_hits, form=form)
         else:
             return render_template('geography/no_hits.html', title=_("Geographic Database"),
-                                   subtitle=_("Search results"), form=form)
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits, form=form)
     else:
         return render_template('geography/search.html', title=_("Geographic Database"), subtitle=_("Search"), form=form)
 
