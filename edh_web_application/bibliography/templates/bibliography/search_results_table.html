@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+<p>{{_("The search for:")}}</p>
+<p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
+<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
+<div class="row">
+    <div class="search-filter">
+        <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('table')}}</button>
+        <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+    </div>
+</div>
+<div>
+    <div class="table-responsive" style="100%; margin-bottom: 4rem;margin-top:3em;">
+        <table id="tbl_biblio"  class="table-striped">
+            <thead><th>ID</th><th>{{_('author')}}</th><th>{{_('title')}}</th><th>{{_('publication')}}</th><th>{{_('volume')}}</th><th>{{_('years')}}</th><th>{{_('pages')}}</th></thead>
+            <tbody>
+            {% for d in data['items'] %}
+            <tr>
+                <td><i class="fas fa-external-link-alt">&nbsp;<a href="./edh/bibliographie/{{ d['b_nr']}}" style="font-family: 'Ubuntu', sans-serif;">{{ d['b_nr']}}</a></i></td>
+                <td>{% if d['autor'] %}{{d['autor']}}{% endif %}</td>
+                <td>{% if d['titel'] %}{{d['titel']}}{% endif %}</td>
+                <td>{% if d['publikation'] %}{{d['publikation']}}{% endif %}</td>
+                <td>{% if d['band'] %}{{d['band']}}{% endif %}</td>
+                <td>{% if d['jahr'] %}{{d['jahr']}}{% endif %}</td>
+                <td>{% if d['seiten'] %}{{d['seiten']}}{% endif %}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="dialog-view" title = "{{_('view')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=list">{{_('list')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=table">{{_('table')}}</a></li>
+    </ul>
+</div>
+<div id="dialog-filter" title = "{{_('filter')}}:">
+    <form action="" method="get">
+        <div class="form-group ui-front">
+            {{ form.author.label() }}
+            {{ form.author(class='form-control autocomplete ui-autocomplete-input', id='autor') }}
+        </div>
+        <div class="form-group">
+            {{ form.title.label() }}
+            {{ form.title(class='form-control') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.publication.label() }}
+            {{ form.publication(class='form-control autocomplete ui-autocomplete-input', id='publikation') }}
+        </div>
+        <div class="form-group">
+            {{ form.volume.label() }}
+            {{ form.volume(class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ form.years.label() }}
+            {{ form.years(class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ form.town.label() }}
+            {{ form.town(class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ form.ae.label() }}
+            {{ form.ae(class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ form.on_ae.label() }}
+            {{ form.on_ae(class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ form.cil.label() }}
+            {{ form.cil(class='form-control') }}
+        </div>
+        <div class="form-group">
+            {{ form.other_corpora.label() }}
+            {{ form.other_corpora(class='form-control') }}
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
+        </div>
+        <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
+    </form>
+</div>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href=".{{url_for('geography.static', filename='css/geography.css')}}" />
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+        $('#tbl_biblio').DataTable({
+            pageLength: 20,
+            lengthChange: true,
+            lengthMenu: [[10, 20, 50, 100, -1], [10, 20, 50, 100, "{{_("all")}}" ]],
+            language: {
+                search: "{{ _("dtbl_search") }}",
+                info: "{{ _("dtbl_info") }}",
+                lengthMenu: "{{ _("dtbl_menu") }}",
+                infoFiltered: "{{ _("dtbl_filter") }}",
+                zeroRecords:  "{{ _("dtbl_zero") }}",
+                paginate: {
+                    previous: "{{ _("dtbl_previous") }}",
+                    next: "{{ _("dtbl_next") }}"
+                }
+            }
+        });
+        $(function() {
+        $( "#dialog-sort" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#sort-by" ).click(function() {
+            $( "#dialog-sort" ).dialog( "open" );
+        });
+        $( "#dialog-number" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#hits-per-page" ).click(function() {
+            $( "#dialog-number" ).dialog( "open" );
+        });
+        $( "#dialog-view" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#view" ).click(function() {
+            $( "#dialog-view" ).dialog( "open" );
+        });
+        $( "#dialog-filter" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#filter" ).click(function() {
+            $( "#dialog-filter" ).dialog( "open" );
+        });
+    });
+    $("input#autor").autocomplete({source:"./bibliographie/ac/autor",minLength:3,delay:0})
+    $("input#publikation").autocomplete({source:"./bibliographie/ac/publikation",minLength:0,selectFirst:true,delay:0, select: function( event, ui ) {}})
+    } );
+    </script>
+{% endblock %}

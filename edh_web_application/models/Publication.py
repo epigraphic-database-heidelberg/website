@@ -35,7 +35,7 @@ class Publication:
         self.datum = datum
 
     @classmethod
-    def query(cls, query_string):
+    def query(cls, query_string, *args, **kwargs):
         """
         queries Solr core
         :return: list of Publication instances
@@ -43,10 +43,17 @@ class Publication:
         start = 0  # index number of first record to retrieve
         rows = 20  # number of records to retrieve
         sort = "b_nr asc"  # default
+        hits = kwargs.get('hits', None)
         if request.args.get('start'):
             start = request.args.get('start')
         if request.args.get('anzahl'):
             rows = int(request.args.get('anzahl'))
+            # if user changes number of hits/page in result page
+            # show all hits on one page if start < rows
+            if int(start) < rows:
+                start = 0
+        if hits:
+            rows = hits
         if request.args.get('sort') in ['autor', 'publikation', 'jahr']:
             sort = request.args.get('sort') + "_sort asc"
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
@@ -71,6 +78,7 @@ class Publication:
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(
                                      request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "url_without_view_parameter": _get_url_without_view_parameter(
                     request.url), "query_params": query_params},
                     "items": query_result}
 
@@ -307,6 +315,19 @@ def _get_url_without_sort_parameter(url):
     :return: shortened URL as string
     """
     url = re.sub("sort=.*&*", "", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
+
+
+def _get_url_without_view_parameter(url):
+    """
+    removes URL parameter view; these get added later in the template again
+    in dialog "view"
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("view=.*?&*", "", url)
     url = re.sub("&{2,}", "&", url)
     url = re.sub(request.url_root, "", url)
     return "/" + url
