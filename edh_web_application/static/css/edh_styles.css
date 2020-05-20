@@ -181,11 +181,9 @@ p {
     font-size:.75em;
 }
 .detail_block_content {
-    display: inline-block;
     vertical-align: top;
 }
 .detail_block_content_geo {
-    display: inline-block;
     vertical-align: top;
     max-width: 90%;
 }
