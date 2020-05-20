@@ -184,6 +184,11 @@ p {
     display: inline-block;
     vertical-align: top;
 }
+.detail_block_content_geo {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 90%;
+}
 .detail_block_content_row {
     padding-left: 5px;
     width: 100%;
@@ -705,6 +710,9 @@ label {
     }
     .detail_block_content {
         max-width:90%;
+    }
+    .detail_block_content_geo {
+        max-width:50%;
     }
     .detail_block_content_row {
         margin-top: 0px;
