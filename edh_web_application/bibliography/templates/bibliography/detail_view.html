@@ -25,7 +25,7 @@
             <div class="detail_block_content_row_text">
                 {% set author_list = data['autor'].split(' - ') %}
                 {% for author in author_list %}
-                    <i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?author={{ author }}">{{ author }}</a> &nbsp;
+                    <i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?autor={{ author }}">{{ author }}</a> &nbsp;
                 {% endfor %}
             </div>
         </section>
@@ -38,7 +38,7 @@
         {% if data['publikation'] %}
         <section class="detail_block_content_row">
             <div class="detail_block_content_row_header">{{ _('publication:') }}</div>
-            <div class="detail_block_content_row_text"><i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?publication={{ data['publikation'] }}">{{data['publikation']}}</a></div>
+            <div class="detail_block_content_row_text"><i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?publikation={{ data['publikation'] }}">{{data['publikation']}}</a></div>
         </section>
         {% endif %}
         {% if data['band'] %}
