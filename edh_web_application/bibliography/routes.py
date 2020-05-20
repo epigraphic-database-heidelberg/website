@@ -13,15 +13,15 @@ def search_bibliography():
     :return: html template of bibliographical search mask
     """
     form = BibliographySearch()
-    form.author.data = request.args.get('author')
-    form.title.data = request.args.get('title')
-    form.publication.data = request.args.get('publication')
-    form.volume.data = request.args.get('volume')
-    form.author.years = request.args.get('years')
+    form.autor.data = request.args.get('autor')
+    form.titel.data = request.args.get('titel')
+    form.publikation.data = request.args.get('publikation')
+    form.band.data = request.args.get('band')
+    form.jahr.data = request.args.get('jahr')
     form.ae.data = request.args.get('ae')
     form.cil.data = request.args.get('cil')
-    form.on_ae.data = request.args.get('on_ae')
-    form.other_corpora.data = request.args.get('other_corpora')
+    form.zu_ae.data = request.args.get('zu_ae')
+    form.sonstige.data = request.args.get('sonstige')
 
     if len(request.args) > 0:
         # create query string

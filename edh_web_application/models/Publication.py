@@ -100,42 +100,42 @@ class Publication:
             b_nr = Publication.format_b_nr(b_nr)
             query_string = "b_nr:" + b_nr + " " + logical_operater + " "
 
-        if 'author' in form and form['author'] != "":
-            if re.search("\([0-9]*\)$", form['author']):
+        if 'autor' in form and form['autor'] != "":
+            if re.search("\([0-9]*\)$", form['autor']):
                 query_string += "autor_ac:" + _escape_value(
-                    _remove_number_of_hits_from_autocomplete(form['author'])) + " " + logical_operater + " "
+                    _remove_number_of_hits_from_autocomplete(form['autor'])) + " " + logical_operater + " "
             else:
-                query_string += "autor:" + (form['author']) + " " + logical_operater + " "
+                query_string += "autor:" + (form['autor']) + " " + logical_operater + " "
 
-        if 'title' in form and form['title'] != "":
-            query_string += "titel_str_ci:*" + re.sub(" ","\ ",form['title']) + "* " + logical_operater + " "
+        if 'titel' in form and form['titel'] != "":
+            query_string += "titel_str_ci:*" + re.sub(" ","\ ",form['titel']) + "* " + logical_operater + " "
 
-        if 'publication' in form and form['publication'] != "":
-            query_string += "publikation_str_ci:*" + _escape_value(_remove_number_of_hits_from_autocomplete(form['publication'])) + "* " + logical_operater + " "
+        if 'publikation' in form and form['publikation'] != "":
+            query_string += "publikation_str_ci:*" + _escape_value(_remove_number_of_hits_from_autocomplete(form['publikation'])) + "* " + logical_operater + " "
 
-        if 'volume' in form and form['volume'] != "":
-            query_string += "band:" + _escape_value(form['volume']) + " " + logical_operater + " "
+        if 'band' in form and form['band'] != "":
+            query_string += "band:" + _escape_value(form['band']) + " " + logical_operater + " "
 
-        if 'years' in form and form['years'] != "":
-            query_string += "jahr:" + _escape_value(form['years']) + " " + logical_operater + " "
+        if 'jahr' in form and form['jahr'] != "":
+            query_string += "jahr:" + _escape_value(form['jahr']) + " " + logical_operater + " "
 
-        if 'pages' in form and form['pages'] != "":
-            query_string += "seiten:" + _escape_value(form['pages']) + " " + logical_operater + " "
+        if 'seiten' in form and form['seiten'] != "":
+            query_string += "seiten:" + _escape_value(form['seiten']) + " " + logical_operater + " "
 
-        if 'town' in form and form['town'] != "":
-            query_string += "ort:*" + re.sub(" ", "\ ", form['town']) + "* " + logical_operater + " "
+        if 'ort' in form and form['ort'] != "":
+            query_string += "ort:*" + re.sub(" ", "\ ", form['ort']) + "* " + logical_operater + " "
 
         if 'ae' in form and form['ae'] != "":
             query_string += "ae:*" + _escape_value(form['ae']) + "* " + logical_operater + " "
 
-        if 'on_ae' in form and form['on_ae'] != "":
-            query_string += "zu_ae:*" + _escape_value(form['on_ae']) + "* " + logical_operater + " "
+        if 'zu_ae' in form and form['zu_ae'] != "":
+            query_string += "zu_ae:*" + _escape_value(form['zu_ae']) + "* " + logical_operater + " "
 
         if 'cil' in form and form['cil'] != "":
             query_string += "cil:*" + _escape_value(form['cil']) + "* " + logical_operater + " "
 
-        if 'other_corpora' in form and form['other_corpora'] != "":
-            query_string += " sonstigeCorpora:*" + _escape_value(form['other_corpora']) + "* " + logical_operater + " "
+        if 'sonstige' in form and form['sonstige'] != "":
+            query_string += "sonstigeCorpora:*" + _escape_value(form['sonstige']) + "* " + logical_operater + " "
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
