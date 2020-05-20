@@ -36,6 +36,8 @@
                 <div class="detail_block_content_row_text">
                     {% if data['fo_antik'] %}
                         {{data['fo_antik']}}
+                    {% else %}
+                        &nbsp;
                     {% endif %}
                 </div>
             </section>
@@ -44,6 +46,8 @@
                 <div class="detail_block_content_row_text">
                     {% if data['fo_modern'] %}
                         {{data['fo_modern']}}
+                    {% else %}
+                        &nbsp;
                     {% endif %}
                 </div>
             </section>
@@ -51,7 +55,9 @@
                 <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>
                 <div class="detail_block_content_row_text">
                     {% if data['fundstelle'] %}
-                        {{data['fundstelle']|replace("{","<span style='color:red'>")|replace("}","</span>")|safe}}                     &nbsp;
+                        {{data['fundstelle']|replace("{","<span style='color:red'>")|replace("}","</span>")|safe}}
+                    {% else %}
+                        &nbsp;
                     {% endif %}
                 </div>
             </section>
@@ -60,6 +66,8 @@
                 <div class="detail_block_content_row_text">
                     {% if data['verw_bezirk'] %}
                         {{data['verw_bezirk']}}
+                    {% else %}
+                        &nbsp;
                     {% endif %}
                 </div>
             </section>
@@ -68,6 +76,8 @@
                 <div class="detail_block_content_row_text">
                     {% if data['kommentar'] %}
                         {{ data['kommentar']|safe }}
+                    {% else %}
+                        &nbsp;
                     {% endif %}
                 </div>
             </section>
@@ -77,6 +87,8 @@
                     {% if data['pleiades_id_1'] %}
                         <i class="fas fa-external-link-alt"></i>
                         <a href="https://pleiades.stoa.org/places/{{data['pleiades_id_1']}}">{{data['pleiades_id_1']}}</a>
+                    {% else %}
+                        &nbsp;
                     {% endif %}
                 </div>
             </section>
@@ -86,6 +98,8 @@
                     {% if data['trismegistos_geo_id'] %}
                         <i class="fas fa-external-link-alt"></i>
                         <a href="https://www.trismegistos.org/place/{{data['trismegistos_geo_id']}}">{{data['trismegistos_geo_id']}}</a>
+                    {% else %}
+                        &nbsp;
                     {% endif %}
                 </div>
             </section>
@@ -95,6 +109,8 @@
                     {% if data['geonames_id_1'] %}
                         <i class="fas fa-external-link-alt"></i>
                         <a href="https://www.geonames.org/{{data['geonames_id_1']}}">{{data['geonames_id_1']}}</a>
+                    {% else %}
+                        &nbsp;
                     {% endif %}
                 </div>
             </section>

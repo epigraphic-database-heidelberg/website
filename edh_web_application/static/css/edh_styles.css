@@ -181,14 +181,17 @@ p {
     font-size:.75em;
 }
 .detail_block_content {
+    display: inline-block;
     vertical-align: top;
 }
 .detail_block_content_geo {
+    display: inline-block;
     vertical-align: top;
     max-width: 90%;
 }
 .detail_block_content_row {
     padding-left: 5px;
+    display: inline-block;
     width: 100%;
     margin-bottom: .25em;
     margin-top: 1em;
@@ -707,9 +710,11 @@ label {
         text-align: right;
     }
     .detail_block_content {
+        display: inline-block;
         max-width:90%;
     }
     .detail_block_content_geo {
+        display: inline-block;
         max-width:50%;
     }
     .detail_block_content_row {
