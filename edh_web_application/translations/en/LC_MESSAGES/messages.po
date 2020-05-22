@@ -401,7 +401,7 @@ msgstr "previous"
 #: edh_web_application/geography/templates/geography/detail_view_province.html:144
 #: edh_web_application/geography/templates/geography/search_results_table.html:105
 msgid "dtbl_next"
-msgstr "nex"
+msgstr "next"
 
 #: edh_web_application/data/routes.py:9
 #: edh_web_application/templates/base.html:59
