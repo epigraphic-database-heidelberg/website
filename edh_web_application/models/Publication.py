@@ -105,7 +105,7 @@ class Publication:
                 query_string += "autor_ac:" + _escape_value(
                     _remove_number_of_hits_from_autocomplete(form['autor'])) + " " + logical_operater + " "
             else:
-                query_string += "autor_ac:*" + _escape_value(form['autor']) + "* " + logical_operater + " "
+                query_string += "autor_ci:*" + _escape_value(form['autor']) + "* " + logical_operater + " "
 
         if 'titel' in form and form['titel'] != "":
             query_string += "titel_str_ci:*" + re.sub(" ","\ ",form['titel']) + "* " + logical_operater + " "
