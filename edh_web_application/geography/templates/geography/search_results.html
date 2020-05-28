@@ -125,7 +125,7 @@
     {% set count.value = count.value + 1 %}
     <div class="detail_block">
         <div class="wrapper_geo_last_updates" style="padding:10px">
-            <a href="./edh/geographie/{{ d['id'] }}" style="color:#fff"><div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;">{{_('Number')}} &nbsp; {{count.value + data['metadata']['start']|int}}</div></a>
+            <a href="./edh/geographie/{{ d['id'] }}" style="color:#fff"><div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;min-height:250px">{{_('Number')}} &nbsp; {{count.value + data['metadata']['start']|int}}</div></a>
             <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;">
                 <a href="./edh/geographie/{{ d['id'] }}">
                     <div id="map_canvas_{{ count.value }}" class="map_canvas" style="min-height:250px"></div>

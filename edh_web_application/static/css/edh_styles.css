@@ -183,6 +183,7 @@ p {
 .detail_block_content {
     display: inline-block;
     vertical-align: top;
+    max-width:90%;
 }
 .detail_block_content_geo {
     display: inline-block;
@@ -193,8 +194,6 @@ p {
     padding-left: 5px;
     display: inline-block;
     width: 100%;
-    margin-bottom: .25em;
-    margin-top: 1em;
 }
 .detail_block_content_row_header {
     font-weight: bold;
@@ -505,7 +504,7 @@ div.panel-heading-image {
     text-transform: uppercase;
     padding: 20px 5px 20px 5px;
     color: #fff;
-    min-height: 250px;
+    min-height: 200px;
     margin-right: 1em;
     margin-left: 6px;
 }
@@ -710,8 +709,6 @@ label {
         text-align: right;
     }
     .detail_block_content {
-        display: inline-block;
-        max-width:90%;
     }
     .detail_block_content_geo {
         display: inline-block;
