@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
 <schema name="default-config" version="1.6">
   <uniqueKey>b_nr</uniqueKey>
   <fieldType name="_nest_path_" class="solr.NestPathField" omitTermFreqAndPositions="true" omitNorms="true" maxCharsForDocValues="-1" stored="false"/>
@@ -72,10 +71,12 @@
     <analyzer type="index">
       <tokenizer class="solr.KeywordTokenizerFactory"/>
       <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
     </analyzer>
     <analyzer type="query">
       <tokenizer class="solr.KeywordTokenizerFactory"/>
       <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
     </analyzer>
   </fieldType>
   <fieldType name="strings" class="solr.StrField" sortMissingLast="true" docValues="true" multiValued="true"/>
@@ -165,18 +166,18 @@
       <filter class="solr.WordDelimiterGraphFilterFactory" catenateNumbers="1" generateNumberParts="1" splitOnCaseChange="1" generateWordParts="0" catenateAll="1" catenateWords="1"/>
       <filter class="solr.LowerCaseFilterFactory"/>
     </analyzer>
-  </fieldType>  
+  </fieldType>
   <fieldType name="text_ngram_2" class="solr.TextField" positionIncrementGap="100">
     <analyzer type="index">
       <filter class="solr.LowerCaseFilterFactory"/>
       <tokenizer class="solr.WhitespaceTokenizerFactory"/>
-      <filter class="solr.NGramFilterFactory" maxGramSize="25" minGramSize="2"/>      
+      <filter class="solr.NGramFilterFactory" maxGramSize="25" minGramSize="2"/>
     </analyzer>
     <analyzer type="query">
       <filter class="solr.LowerCaseFilterFactory"/>
-      <tokenizer class="solr.WhitespaceTokenizerFactory"/> 
+      <tokenizer class="solr.WhitespaceTokenizerFactory"/>
     </analyzer>
-  </fieldType>  
+  </fieldType>
   <fieldType name="text_ngram_edge_front" class="solr.TextField" positionIncrementGap="100">
     <analyzer type="index">
       <filter class="solr.LowerCaseFilterFactory"/>
@@ -184,33 +185,46 @@
     </analyzer>
     <analyzer type="query">
       <filter class="solr.LowerCaseFilterFactory"/>
-      <tokenizer class="solr.WhitespaceTokenizerFactory"/> 
+      <tokenizer class="solr.WhitespaceTokenizerFactory"/>
     </analyzer>
-  </fieldType>  
+  </fieldType>
   <fieldType name="text_ngram_no_token" class="solr.TextField" positionIncrementGap="100">
     <analyzer type="index">
       <tokenizer class="solr.KeywordTokenizerFactory"/>
-      <filter class="solr.NGramFilterFactory" maxGramSize="25" minGramSize="2"/>      
+      <filter class="solr.NGramFilterFactory" maxGramSize="25" minGramSize="2"/>
     </analyzer>
     <analyzer type="query">
       <filter class="solr.LowerCaseFilterFactory"/>
       <tokenizer class="solr.KeywordTokenizerFactory"/>
     </analyzer>
-  </fieldType>    
+  </fieldType>
   <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
     <analyzer>
       <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="text_ci" class="solr.TextField" positionIncrementGap="100">
+    <analyzer type="index">
+      <tokenizer class="solr.KeywordTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer class="solr.KeywordTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.ASCIIFoldingFilterFactory"/>
     </analyzer>
   </fieldType>
   <field name="_nest_path_" type="_nest_path_"/>
   <field name="_root_" type="string" docValues="false" indexed="true" stored="false"/>
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false"/>
   <field name="_version_" type="plong" indexed="false" stored="false"/>
-  
+
   <!-- EDH fields-->
   <field name="ae" type="string"/>
   <field name="autor" type="text_ngram_2"/>
   <field name="autor_ac" type="string"/>
+  <field name="autor_ci" type="text_ci" indexed="true" stored="true" />
   <field name="autor_sort" type="string_ci"/>
   <field name="b_nr" type="string" required="true"/>
   <field name="band" type="string"/>
@@ -228,13 +242,15 @@
   <field name="publikation_sort" type="string"/>
   <field name="seiten" type="string"/>
   <field name="sonstigeCorpora" type="string"/>
+  <field name="sonstigeCorpora_str_ci" type="string_ci"/>
   <field name="titel" type="text_ngram_2"/>
   <field name="titel_ac" type="string"/>
   <field name="titel_str_ci" type="string_ci"/>
   <field name="titel_text_general" type="text_general"/>
   <field name="zu_ae" type="string"/>
-  
+
   <copyField source="autor" dest="autor_ac"/>
+  <copyField source="autor" dest="autor_ci"/>
   <copyField source="autor" dest="autor_sort"/>
   <copyField source="cil" dest="cil_str"/>
   <copyField source="jahr" dest="jahr_sort"/>
@@ -243,7 +259,8 @@
   <copyField source="publikation" dest="publikation_str_ci"/>
   <copyField source="titel" dest="titel_str_ci"/>
   <copyField source="titel" dest="titel_text_general"/>
-  <copyField source="titel" dest="titel_ac"/>  
+  <copyField source="titel" dest="titel_ac"/>
+  <copyField source="sonstigeCorpora" dest="sonstigeCorpora_str_ci"/>
   
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
   <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true"/>
