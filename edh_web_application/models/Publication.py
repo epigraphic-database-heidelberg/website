@@ -1,14 +1,31 @@
-import pysolr
+import collections
 import re
+from datetime import datetime
+
+import pysolr
+from babel.dates import format_date
+from babel.numbers import format_decimal
 from flask import current_app
 from flask import request
-from babel.numbers import format_decimal
-from babel.dates import format_date
-from datetime import datetime
-import collections
+from flask_babel import lazy_gettext as _l
 
 
 class Publication:
+    # dict of localized sort paramter values
+    sort_param_values = {
+        "b_nr": _l('b_nr'),
+        "autor": _l('autor'),
+        "titel": _l('titel'),
+        "publikation": _l('publikation'),
+        "band": _l('band'),
+        "jahr": _l('jahr'),
+        "seiten": _l('seiten'),
+        "ort": _l('ort'),
+        "ae": _l('ae'),
+        "zu ae": _l('zu_ae'),
+        "cil": _l('cil'),
+        "sonstige": _l('sonstige'),
+    }
 
     def __init__(self,
                  b_nr,
