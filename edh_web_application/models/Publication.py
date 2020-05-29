@@ -152,7 +152,7 @@ class Publication:
             query_string += "cil:*" + _escape_value(form['cil']) + "* " + logical_operater + " "
 
         if 'sonstige' in form and form['sonstige'] != "":
-            query_string += "sonstigeCorpora:*" + _escape_value(form['sonstige']) + "* " + logical_operater + " "
+            query_string += "sonstigeCorpora_str_ci:*" + _escape_value(form['sonstige']) + "* " + logical_operater + " "
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
@@ -218,7 +218,7 @@ class Publication:
     @classmethod
     def get_autocomplete_entries(cls, ac_field, term):
         """
-        queries Splor core edhBiblio for list of entries displayed in
+        queries Solr core edhBiblio for list of entries displayed in
         autocomplete fields of Biblio form
         :param ac_field: field to facet
         :param term: querystring
@@ -339,12 +339,14 @@ def _get_url_without_sort_parameter(url):
 
 def _get_url_without_view_parameter(url):
     """
-    removes URL parameter view; these get added later in the template again
+    removes URL parameter view & start; these get added later in the template again
     in dialog "view"
     :param url: current URL as string
     :return: shortened URL as string
     """
+    url = re.sub("view=table|list", "", url)
     url = re.sub("view=.*?&*", "", url)
+    url = re.sub("start=.*?&", "", url)
     url = re.sub("&{2,}", "&", url)
     url = re.sub(request.url_root, "", url)
     return "/" + url
