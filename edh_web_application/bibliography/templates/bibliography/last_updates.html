@@ -13,58 +13,52 @@
         {% set count = namespace(value=0) %}
         {% for entry in data[d] %}
         {% set count.value = count.value + 1 %}
-        <div class="detail_block">
-            <div class="wrapper_geo_last_updates" style="padding:10px">
-                <a href="./edh/bibliographie/{{ entry['b_nr'] }}" style="color:#fff">
-                    <div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;">{{_('Number')}} &nbsp; {{count.value }}</div>
-                </a>
-                <div class="detail_block_content" style="display: inline-block; vertical-align: top;">
-                    <section class="detail_block_content_row"><p style="text-align:left; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/bibliographie/{{ entry['b_nr'] }}">{{ entry['b_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
-                    </section>
-                    <section class="detail_block_content_row">
-                        <div class="detail_block_content_row_header">{{ _('author') }}:</div>
-                        <div class="detail_block_content_row_text">
-                        {% set author_list = entry['autor'].split(' - ') %}
-                        {% for author in author_list %}
-                            <i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?autor={{ author }}">{{ author }}</a> &nbsp;
-                        {% endfor %}
-                        </div>
-                    </section>
-                    {% if entry['titel'] %}
-                    <section class="detail_block_content_row">
-                        <div class="detail_block_content_row_header">{{ _('title') }}:</div>
-                        <div class="detail_block_content_row_text">{{ entry['titel'] }}</div>
-                    </section>
-                    {% endif %}
-                    {% if entry['publikation'] %}
-                    <section class="detail_block_content_row">
-                        <div class="detail_block_content_row_header">{{ _('publication') }}</div>
-                        <div class="detail_block_content_row_text"><i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?publikation={{ entry['publikation'] }}">{{ entry['publikation'] }}</a></div>
-                    </section>
-                    {% endif %}
-                    {% if entry['band'] %}
-                    <section class="detail_block_content_row">
-                        <div class="detail_block_content_row_header">{{ _('volume') }}:</div>
-                        <div class="detail_block_content_row_text">{{ entry['band'] }}</div>
-                    </section>
-                    {% endif %}
-                    {% if entry['jahr'] %}
-                    <section class="detail_block_content_row">
-                        <div class="detail_block_content_row_header">{{ _('years') }}:</div>
-                        <div class="detail_block_content_row_text">{{ entry['jahr'] }}</div>
-                    </section>
-                    {% endif %}
-                    {% if entry['seiten'] %}
-                    <section class="detail_block_content_row">
-                        <div class="detail_block_content_row_header">{{ _('pages') }}:</div>
-                        <div class="detail_block_content_row_text">{{ entry['seiten'] }}</div>
-                    </section>
-                    {% endif %}
-                </div>
+        <div class="detail_block" style="display:flex;">
+            <div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;">{{_('Number')}} &nbsp; {{count.value }}</div>
+            <div class="col">
+                <p style="text-align:left; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/bibliographie/{{ entry['b_nr'] }}">{{ entry['b_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('author') }}:</div>
+                    <div class="detail_block_content_row_text">
+                    {% set author_list = entry['autor'].split(' - ') %}
+                    {% for author in author_list %}
+                        <i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?autor={{ author }}">{{ author }}</a> &nbsp;
+                    {% endfor %}
+                    </div>
+                </section>
+                {% if entry['titel'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('title') }}:</div>
+                    <div class="detail_block_content_row_text">{{ entry['titel'] }}</div>
+                </section>
+                {% endif %}
+                {% if entry['publikation'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('publication') }}</div>
+                    <div class="detail_block_content_row_text"><i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?publikation={{ entry['publikation'] }}">{{ entry['publikation'] }}</a></div>
+                </section>
+                {% endif %}
+                {% if entry['band'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('volume') }}:</div>
+                    <div class="detail_block_content_row_text">{{ entry['band'] }}</div>
+                </section>
+                {% endif %}
+                {% if entry['jahr'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('years') }}:</div>
+                    <div class="detail_block_content_row_text">{{ entry['jahr'] }}</div>
+                </section>
+                {% endif %}
+                {% if entry['seiten'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('pages') }}:</div>
+                    <div class="detail_block_content_row_text">{{ entry['seiten'] }}</div>
+                </section>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
     {% endfor %}
 </div>
-
 {% endblock %}
