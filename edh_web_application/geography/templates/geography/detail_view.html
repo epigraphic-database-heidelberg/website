@@ -75,7 +75,7 @@
                 <div class="detail_block_content_row_header">{{ _('comment') }}:</div>
                 <div class="detail_block_content_row_text">
                     {% if data['kommentar'] %}
-                        {{ data['kommentar']|safe }}
+                        {{ data['kommentar'] | replace("\n", "<br/>") | safe }}
                     {% else %}
                         &nbsp;
                     {% endif %}

@@ -717,6 +717,7 @@ class Place:
                 props['name'] = Place.get_find_spot_name(fo_antik, fo_modern, fundstelle)
                 if 'kommentar' in props:
                     props['kommentar'] = _encode_string_with_links(props['kommentar'])
+                    props['kommentar'] = props['kommentar'].replace("\n", "<br />")
                 pl = Place(result['id'],
                            result['datum'],
                            result['bearbeiter'],
