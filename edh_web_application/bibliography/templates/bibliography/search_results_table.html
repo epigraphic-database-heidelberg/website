@@ -86,6 +86,7 @@
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
+            <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
         </div>
         <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
     </form>
@@ -145,6 +146,18 @@
         });
         $( "#filter" ).click(function() {
             $( "#dialog-filter" ).dialog( "open" );
+        });
+        $('#reset').click(function(){
+            document.getElementById("autor").defaultValue = "";
+            document.getElementById("titel").defaultValue = "";
+            document.getElementById("publikation").defaultValue = "";
+            document.getElementById("band").defaultValue = "";
+            document.getElementById("jahr").defaultValue = "";
+            document.getElementById("ort").defaultValue = "";
+            document.getElementById("ae").defaultValue = "";
+            document.getElementById("zu_ae").defaultValue = "";
+            document.getElementById("cil").defaultValue = "";
+            document.getElementById("sonstige").defaultValue = "";
         });
     });
     $("input#autor").autocomplete({source:"./bibliographie/ac/autor",minLength:3,delay:0})
