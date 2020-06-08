@@ -335,6 +335,7 @@
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
+            <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
         </div>
         <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
     </form>
@@ -396,11 +397,29 @@
         $( "#filter" ).click(function() {
             $( "#dialog-filter" ).dialog( "open" );
         });
+
     });
     $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern/short",minLength:3,delay:0})
     $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik/short",minLength:3,delay:0})
     $("input#find_spot").autocomplete({source:"./geographie/ac/fundstelle/short",minLength:3,delay:0})
     $("input#region").autocomplete({source:"./geographie/ac/region/short",minLength:3,delay:0})
     $('select').selectpicker();
+    $('#reset').click(function(){
+        document.getElementById("ancient_find_spot").defaultValue = "";
+        document.getElementById("modern_find_spot").defaultValue = "";
+        document.getElementById("find_spot").defaultValue = "";
+        document.getElementById("region").defaultValue = "";
+        document.getElementById("kommentar").defaultValue = "";
+        $("#provinz option").each(function () {
+            console.log('huhu');
+            $(this).removeAttr('selected');
+        });
+        $("#land option").each(function () {
+            console.log('huhu');
+            $(this).removeAttr('selected');
+        });
+        $(".selectpicker").val('');
+        $(".selectpicker").selectpicker("refresh");
+    });
 </script>
 {% endblock %}
