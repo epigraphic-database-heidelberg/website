@@ -73,6 +73,10 @@ def search_geography():
     form.kommentar.data = request.args.get('kommentar')
     form.provinz.data = request.args.getlist('provinz')
     form.land.data = request.args.getlist('land')
+    if request.args.get('bearbeitet_abgeschlossen'):
+        form.bearbeitet_abgeschlossen.data = True
+    if request.args.get('bearbeitet_provisorisch'):
+        form.bearbeitet_provisorisch.data = True
 
     if len(request.args) > 0:
         # create query string

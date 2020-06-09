@@ -576,7 +576,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:287
 #: edh_web_application/geography/templates/geography/search_results_table.html:22
 msgid "find spot"
-msgstr ""
+msgstr "find spot (specific)"
 
 #: edh_web_application/geography/forms.py:55
 #: edh_web_application/geography/forms.py:68

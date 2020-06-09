@@ -1,10 +1,11 @@
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, IntegerField, SelectField, SelectMultipleField
-from wtforms.validators import Optional, Regexp
-from flask_babel import lazy_gettext as _l
-from flask import request, session
-from ..models.Place import Place
 import collections
+
+from flask_babel import lazy_gettext as _l
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, IntegerField, SelectField, SelectMultipleField, BooleanField
+from wtforms.validators import Optional, Regexp
+
+from ..models.Place import Place
 
 
 def get_option_list_values_country():
@@ -61,6 +62,8 @@ class GeographySearch(FlaskForm):
     geonames_id_1 = IntegerField(_l('Geonames ID 1'))
     geonames_id_2 = IntegerField(_l('Geonames ID 2'))
     tm_geo_id = IntegerField(_l('Trismegistos Geo ID'))
+    bearbeitet_abgeschlossen = BooleanField(_l('completed'))
+    bearbeitet_provisorisch = BooleanField(_l('provisional'))
     sort = SelectField(_l('sort by'),
                        choices=[('Geo-ID', ('Geo-ID')), ('provinz', _l('province')), ('land', _l('country')),
                                 ('fo_antik', _l('ancient find spot')),

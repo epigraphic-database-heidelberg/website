@@ -568,6 +568,8 @@ class Place:
             geo_id = re.sub(r'G0*?', r'', geo_id)
             geo_id = "G" + "{:06d}".format(int(geo_id))
             query_string = "id:" + geo_id + " " + logical_operater + " "
+        else:
+            query_string = "id:* " + logical_operater + " "
 
         if 'pleiades_id' in form and form['pleiades_id'] != "":
             query_string += "(pleiades_id_1:" + _escape_value(form['pleiades_id']) + " OR " + " pleiades_id_2:" + _escape_value(form['pleiades_id']) + ") " + logical_operater + " "
@@ -632,11 +634,13 @@ class Place:
         if 'kommentar' in form and form['kommentar'] != "":
             query_string += "kommentar:*" + _escape_value(form['kommentar']) + "* " + logical_operater + " "
 
+        if 'bearbeitet_abgeschlossen' in form and 'bearbeitet_provisorisch' not in form:
+            query_string += "bearbeitet:true" + logical_operater + " "
+        elif 'bearbeitet_abgeschlossen' not in form and 'bearbeitet_provisorisch' in form:
+            query_string += "-bearbeitet:* " + logical_operater + " "
+
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
-
-        print(query_string)
-
         return query_string
 
     @classmethod
@@ -1047,12 +1051,20 @@ def _get_query_params(args):
             params_list = args.getlist('land')
             for c in params_list:
                 result_dict['land'] = result_dict['land'] + Place.country[c] + ", "
-        elif key not in ('anzahl', 'sort', 'start', 'view') and args[key] != "":
+        elif key == 'bearbeitet_abgeschlossen' and 'bearbeitet_provisorisch' not in args:
+            # only completed records
+            result_dict[_l('Work Status')] = _l('completed')
+        elif key == 'bearbeitet_provisorisch' and 'bearbeitet_abgeschlossen' not in args:
+            # only provisional records
+            result_dict[_l('Work Status')] = _l('provisional')
+        elif key not in ('anzahl', 'sort', 'start', 'view', 'bearbeitet_abgeschlossen', 'bearbeitet_provisorisch') and args[key] != "":
             result_dict[key] = args[key]
     if 'provinz' in result_dict:
         result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])
     if 'land' in result_dict:
         result_dict['land'] = re.sub(", $", "", result_dict['land'])
+    if len(result_dict) == 0:
+        result_dict['Geo-ID'] = '*'
     return result_dict
 
 

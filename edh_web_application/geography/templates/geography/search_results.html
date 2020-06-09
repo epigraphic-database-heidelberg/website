@@ -334,6 +334,11 @@
             {{ form.kommentar(class='form-control') }}
         </div>
         <div class="form-group">
+            <label>{{ _('Work Status') }}</label><br />
+            {{ form.bearbeitet_abgeschlossen() }} {{ form.bearbeitet_abgeschlossen.label(style='margin-right:1.5em;') }}
+            {{ form.bearbeitet_provisorisch() }} {{ form.bearbeitet_provisorisch.label() }}
+        </div>
+        <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
             <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
         </div>
@@ -410,12 +415,12 @@
         document.getElementById("find_spot").defaultValue = "";
         document.getElementById("region").defaultValue = "";
         document.getElementById("kommentar").defaultValue = "";
+        document.getElementById("bearbeitet_abgeschlossen").setAttribute('checked','checked');
+        document.getElementById("bearbeitet_provisorisch").setAttribute('checked','checked');
         $("#provinz option").each(function () {
-            console.log('huhu');
             $(this).removeAttr('selected');
         });
         $("#land option").each(function () {
-            console.log('huhu');
             $(this).removeAttr('selected');
         });
         $(".selectpicker").val('');
