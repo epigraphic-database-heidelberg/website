@@ -11,7 +11,7 @@
     <span id="canonical_uri">
         <a href="https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}">
             https://edh-www.adw.uni-heidelberg.de/edh/bibliographie/{{data['b_nr']}}
-            ({{data['datum']}}, {{data['bearbeiter']}})
+            ({{_('Last Updates')}}: {{data['datum']}}, {{data['bearbeiter']}})
         </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
     </span>
