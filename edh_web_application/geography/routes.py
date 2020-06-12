@@ -71,6 +71,7 @@ def search_geography():
     form.fundstelle.data = request.args.get('fundstelle')
     form.region.data = request.args.get('region')
     form.kommentar.data = request.args.get('kommentar')
+    form.bearbeiter.data = request.args.get('bearbeiter')
     form.provinz.data = request.args.getlist('provinz')
     form.land.data = request.args.getlist('land')
     if request.args.get('bearbeitet_abgeschlossen'):

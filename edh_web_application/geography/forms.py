@@ -64,6 +64,7 @@ class GeographySearch(FlaskForm):
     tm_geo_id = IntegerField(_l('Trismegistos Geo ID'))
     bearbeitet_abgeschlossen = BooleanField(_l('completed'))
     bearbeitet_provisorisch = BooleanField(_l('provisional'))
+    bearbeiter = StringField(_l('responsible individual'))
     sort = SelectField(_l('sort by'),
                        choices=[('Geo-ID', ('Geo-ID')), ('provinz', _l('province')), ('land', _l('country')),
                                 ('fo_antik', _l('ancient find spot')),

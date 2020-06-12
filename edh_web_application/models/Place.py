@@ -639,6 +639,9 @@ class Place:
         elif 'bearbeitet_abgeschlossen' not in form and 'bearbeitet_provisorisch' in form:
             query_string += "-bearbeitet:* " + logical_operater + " "
 
+        if 'bearbeiter' in form and form['bearbeiter'] != "":
+            query_string += "bearbeiter:" + _escape_value(form['bearbeiter']) + " " + logical_operater + " "
+
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
@@ -1057,6 +1060,8 @@ def _get_query_params(args):
         elif key == 'bearbeitet_provisorisch' and 'bearbeitet_abgeschlossen' not in args:
             # only provisional records
             result_dict[_l('Work Status')] = _l('provisional')
+        elif key == 'bearbeiter' and args['bearbeiter'] != "":
+            result_dict[_l('responsible individual')] = args['bearbeiter']
         elif key not in ('anzahl', 'sort', 'start', 'view', 'bearbeitet_abgeschlossen', 'bearbeitet_provisorisch') and args[key] != "":
             result_dict[key] = args[key]
     if 'provinz' in result_dict:
