@@ -1,10 +1,12 @@
-from flask import render_template, request
-from flask_babel import _
 import json
 import re
-from ..models.Place import Place
+
+from flask import render_template, request
+from flask_babel import _
+
 from . import bp_geography
 from .forms import GeographySearch
+from ..models.Place import Place
 
 
 @bp_geography.route('/geographie/lastUpdates', methods=['GET', 'POST'])
