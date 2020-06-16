@@ -126,7 +126,12 @@
         </div>
     </div>
     <div><h3>{{ _('Inscriptions linked to this findspot')}}</h3></div>
-    <div>&nbsp;</div>
+    <div style="margin-bottom:2em;">
+    {% for hd_nr in inscriptions_list %}
+    <i class="fas fa-external-link-alt"></i>
+    <a href="/edh/inschrift/{{hd_nr}}">{{ hd_nr }}</a><br />
+    {% endfor %}
+    </div>
 </div>
 
 {% endblock %}

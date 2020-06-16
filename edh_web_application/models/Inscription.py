@@ -84,7 +84,7 @@ class Inscription:
                 atext_br = result['atext']
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
                 btext_br = result['btext']
-                props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
+                #props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
                 inscr = Inscription(result['hd_nr'],
                                     result['provinz'],
                                     result['land'],

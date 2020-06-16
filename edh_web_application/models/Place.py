@@ -1,14 +1,17 @@
-import pysolr
-from flask import current_app
-from flask import request
-from babel.numbers import format_decimal
-from babel.dates import format_date
-from datetime import datetime
 import collections
-from flask_babel import lazy_gettext as _l
-import re
 import json
 import math
+import re
+from datetime import datetime
+
+import pysolr
+from babel.dates import format_date
+from babel.numbers import format_decimal
+from flask import current_app
+from flask import request
+from flask_babel import lazy_gettext as _l
+
+from edh_web_application.models.Inscription import Inscription
 
 
 class Place:
@@ -962,6 +965,22 @@ class Place:
             return str((clon * 180 / math.pi)) + ", " + str((clat * 180 / math.pi))
         else:
             return "47, 11"
+
+    @classmethod
+    def get_inscriptions_from_place(cls, geo_id):
+        """
+        returns list of HD-Nos of inscriptions from given place
+        param geo_id: ID of place
+        return: list of HD-Nos
+        """
+        inscription_list = []
+        # only numeric value is needed
+        geo_id = re.sub("G0*", "", geo_id)
+        places = Inscription.query("gdb_id:" + geo_id)
+        if places is not None:
+            for place in places:
+                inscription_list.append(place.hd_nr)
+        return inscription_list
 
 
 def _escape_value(val):

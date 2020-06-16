@@ -50,13 +50,14 @@ def detail_view(geo_id):
         geo_id = re.sub(r'G0*?', r'', geo_id)
         geo_id = "G" + "{:06d}".format(int(geo_id))
         results = Place.query("id:" + geo_id)
+        inscriptions_list = Place.get_inscriptions_from_place(geo_id)
         if results is None:
             return render_template('geography/no_hits.html',
                                    title=_("Geographic Database"), subtitle=_("Search results"))
         else:
             return render_template('geography/detail_view.html',
                                    title=_("Geographic Database"), subtitle=_("Detail View"),
-                                   data=results['items'][0])
+                                   data=results['items'][0], inscriptions_list=inscriptions_list)
 
 
 @bp_geography.route('/geographie/suche', methods=['GET', 'POST'])
