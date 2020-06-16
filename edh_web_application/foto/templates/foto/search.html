@@ -6,51 +6,57 @@
 
 <form action="" method="get">
     <div class="form-group row">
-        {{ form.province.label(class='col-sm-2 col-form-label') }}
+        {{ form.f_id.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.province(class='form-control') }}
+            {{ form.f_id(class='form-control') }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.country.label(class='col-sm-2 col-form-label') }}
+        {{ form.provinz.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.country(class='form-control') }}
+            {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.ancient_find_spot.label(class='col-sm-2 col-form-label') }}
+        {{ form.land.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.ancient_find_spot(class='form-control autocomplete ui-autocomplete-input', id='ancient_find_spot') }}
+            {{ form.land(class='form-control selectpicker', title=_('select one or more entries...')) }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.modern_find_spot.label(class='col-sm-2 col-form-label') }}
+        {{ form.fo_antik.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.modern_find_spot(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+            {{ form.fo_antik(class='form-control autocomplete ui-autocomplete-input', id='ancient_find_spot') }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.present_location.label(class='col-sm-2 col-form-label') }}
+        {{ form.fo_modern.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.present_location(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
+            {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.original_image.label(class='col-sm-2 col-form-label') }}
+        {{ form.aufbewahrung.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.original_image(class='form-control') }}
+            {{ form.aufbewahrung(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.date_of_photograph.label(class='col-sm-2 col-form-label') }}
+        {{ form.vorlage.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.date_of_photograph(class='form-control') }}
+            {{ form.vorlage(class='form-control') }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.quality.label(class='col-sm-2 col-form-label') }}
+        {{ form.aufnahme_jahr.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.quality(class='form-control') }}
+            {{ form.aufnahme_jahr(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.qualitaet.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.qualitaet(class='form-control') }}
         </div>
     </div>
     <div class="form-group row">
@@ -66,15 +72,15 @@
         </div>
     </div>
     <div class="form-group row">
-        {{ form.other_literature.label(class='col-sm-2 col-form-label') }}
+        {{ form.andere.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.other_literature(class='form-control') }}
+            {{ form.andere(class='form-control') }}
         </div>
     </div>
     <div class="form-group row">
-        {{ form.commentary.label(class='col-sm-2 col-form-label') }}
+        {{ form.kommentar.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.commentary(class='form-control') }}
+            {{ form.kommentar(class='form-control') }}
         </div>
     </div>
     <div class="form-group row">
@@ -83,10 +89,18 @@
             {{ form.hd_nr(class='form-control') }}
         </div>
     </div>
+    <hr />
+    <p>{{_("Search Options")}}</p>
     <div class="form-group row">
-        {{ form.f_id.label(class='col-sm-2 col-form-label') }}
+        {{ form.sort.label(class='col-sm-2 col-form-label') }}
         <div class="col-sm-10">
-            {{ form.f_id(class='form-control') }}
+            {{ form.sort(class='form-control', style='width:20%') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.anzahl.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.anzahl(class='form-control', style='width:20%') }}
         </div>
     </div>
     <div class="form-group row">
@@ -94,7 +108,7 @@
 
         </div>
         <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">{{ _('Search...') }}</button> <button type="reset" class="btn btn-secondary" style="margin-left:1em;">{{ _('Reset...') }}</button>
+            <button type="submit" class="btn btn-primary btn-lg">{{ _('Search...') }}</button> <button type="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
         </div>
     </div>
 
@@ -102,9 +116,15 @@
 {% endblock %}
 {% block scripts %}
 {{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
 <script>
-    $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern",minLength:3,delay:0})
-    $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik",minLength:3,delay:0})
-    $("input#find_spot").autocomplete({source:"./geographie/ac/fundstelle",minLength:3,delay:0})
+    $("input#modern_find_spot").autocomplete({source:"./foto/ac/fo_modern",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"./foto/ac/fo_antik",minLength:3,delay:0})
+    $("select").selectpicker();
+    $('#reset').click(function(){
+        $(".selectpicker").val('');
+        $(".selectpicker").selectpicker("refresh");
+    })
 </script>
 {% endblock %}
