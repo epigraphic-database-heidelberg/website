@@ -226,3 +226,39 @@ class Foto:
         for res in results:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             return format_date(dt, 'd. MMM YYYY', locale='de_DE')
+
+    @classmethod
+    def get_autocomplete_entries(cls, ac_field, term, hits):
+        """
+        queries Solr core edhFoto for list of entries displayed in
+        autocomplete fields of Geo form
+        :param ac_field: field to facet
+        :param term: querystring
+        :return: list of relevant field values
+        """
+        if re.match("[a-zA-Z]+", term):
+            params = {
+                'facet': 'on',
+                'facet.field': ac_field + '_str',
+                'facet.sort': 'count',
+                'facet.mincount': 1,
+                'facet.limit': hits,
+                'rows': '0',
+            }
+            query = ac_field + '_ac:"' + term + '"'
+            print(query)
+            solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
+            results = solr.search(query, **params)
+            # concat results and counts as string
+            return_list = []
+            is_first_element = True
+            first_item = ""
+            for entry in results.facets['facet_fields'][ac_field + "_str"]:
+                if is_first_element:
+                    first_item = entry
+                    is_first_element = False
+                    continue
+                else:
+                    is_first_element = True
+                    return_list.append(re.sub("[\{\}]*", '', first_item) + " (" + str(entry) + ")")
+            return return_list
