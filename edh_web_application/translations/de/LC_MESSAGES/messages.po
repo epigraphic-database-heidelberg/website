@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-06-16 13:55+0200\n"
+"POT-Creation-Date: 2020-07-06 09:52+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/search.html:110
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:341
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:90
-#: edh_web_application/foto/forms.py:19
+#: edh_web_application/foto/forms.py:48
 #: edh_web_application/foto/templates/foto/search.html:111
 #: edh_web_application/geography/forms.py:48
 #: edh_web_application/geography/templates/geography/search.html:105
@@ -33,7 +33,7 @@ msgid "Reset..."
 msgstr "Formular leeren..."
 
 #: edh_web_application/bibliography/forms.py:9
-#: edh_web_application/foto/forms.py:20
+#: edh_web_application/foto/forms.py:49
 #: edh_web_application/geography/forms.py:49
 msgid "Submit..."
 msgstr "suchen..."
@@ -95,13 +95,13 @@ msgid "town"
 msgstr "Ort"
 
 #: edh_web_application/bibliography/forms.py:18
-#: edh_web_application/foto/forms.py:31
+#: edh_web_application/foto/forms.py:60
 #: edh_web_application/models/Publication.py:24
 msgid "ae"
 msgstr "AE"
 
 #: edh_web_application/bibliography/forms.py:19
-#: edh_web_application/foto/forms.py:30
+#: edh_web_application/foto/forms.py:59
 #: edh_web_application/models/Publication.py:26
 msgid "cil"
 msgstr "CIL"
@@ -117,7 +117,7 @@ msgstr "sonstige Corpora"
 #: edh_web_application/bibliography/forms.py:22
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:16
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:275
-#: edh_web_application/foto/forms.py:38
+#: edh_web_application/foto/forms.py:67
 #: edh_web_application/geography/forms.py:68
 #: edh_web_application/geography/templates/geography/search_results.html:16
 #: edh_web_application/geography/templates/geography/search_results.html:281
@@ -127,7 +127,7 @@ msgstr "sortieren nach"
 #: edh_web_application/bibliography/forms.py:25
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:17
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:283
-#: edh_web_application/foto/forms.py:48
+#: edh_web_application/foto/forms.py:77
 #: edh_web_application/geography/forms.py:73
 #: edh_web_application/geography/templates/geography/search_results.html:17
 #: edh_web_application/geography/templates/geography/search_results.html:292
@@ -147,23 +147,23 @@ msgstr "Bibliographie Datenbank"
 #: edh_web_application/bibliography/routes.py:43
 #: edh_web_application/bibliography/routes.py:48
 #: edh_web_application/bibliography/routes.py:64
-#: edh_web_application/geography/routes.py:56
-#: edh_web_application/geography/routes.py:95
-#: edh_web_application/geography/routes.py:99
-#: edh_web_application/geography/routes.py:103
-#: edh_web_application/geography/routes.py:107
+#: edh_web_application/geography/routes.py:58
+#: edh_web_application/geography/routes.py:97
+#: edh_web_application/geography/routes.py:101
+#: edh_web_application/geography/routes.py:105
+#: edh_web_application/geography/routes.py:109
 msgid "Search results"
 msgstr "Suchtreffer"
 
 #: edh_web_application/bibliography/routes.py:50
-#: edh_web_application/foto/routes.py:11
-#: edh_web_application/geography/routes.py:110
+#: edh_web_application/foto/routes.py:15
+#: edh_web_application/geography/routes.py:112
 msgid "Search"
 msgstr "Suche"
 
 #: edh_web_application/bibliography/routes.py:67
-#: edh_web_application/foto/routes.py:19 edh_web_application/foto/routes.py:22
-#: edh_web_application/geography/routes.py:59
+#: edh_web_application/foto/routes.py:23 edh_web_application/foto/routes.py:26
+#: edh_web_application/geography/routes.py:61
 #: edh_web_application/inscription/routes.py:23
 #: edh_web_application/inscription/routes.py:25
 msgid "Detail View"
@@ -175,7 +175,7 @@ msgstr "Bibliographie Datenbank"
 
 #: edh_web_application/bibliography/routes.py:81
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:14
-#: edh_web_application/geography/routes.py:19
+#: edh_web_application/geography/routes.py:21
 #: edh_web_application/geography/templates/geography/detail_view.html:13
 #: edh_web_application/templates/home.html:65
 msgid "Last Updates"
@@ -462,12 +462,12 @@ msgstr ""
 "Endpunkt findet sich <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./data/sparql\">hier</a>.</p>"
 
-#: edh_web_application/foto/forms.py:21
+#: edh_web_application/foto/forms.py:50 edh_web_application/foto/forms.py:68
 #: edh_web_application/foto/templates/foto/detail_view.html:17
 msgid "F-number"
 msgstr "F-Nummer"
 
-#: edh_web_application/foto/forms.py:22 edh_web_application/foto/forms.py:40
+#: edh_web_application/foto/forms.py:51 edh_web_application/foto/forms.py:69
 #: edh_web_application/foto/templates/foto/detail_view.html:36
 #: edh_web_application/geography/forms.py:51
 #: edh_web_application/geography/forms.py:69
@@ -479,7 +479,7 @@ msgstr "F-Nummer"
 msgid "province"
 msgstr "Provinz"
 
-#: edh_web_application/foto/forms.py:23 edh_web_application/foto/forms.py:41
+#: edh_web_application/foto/forms.py:52 edh_web_application/foto/forms.py:70
 #: edh_web_application/foto/templates/foto/detail_view.html:40
 #: edh_web_application/geography/forms.py:52
 #: edh_web_application/geography/forms.py:69
@@ -492,7 +492,7 @@ msgstr "Provinz"
 msgid "country"
 msgstr "Land"
 
-#: edh_web_application/foto/forms.py:24 edh_web_application/foto/forms.py:42
+#: edh_web_application/foto/forms.py:53 edh_web_application/foto/forms.py:71
 #: edh_web_application/foto/templates/foto/detail_view.html:44
 #: edh_web_application/geography/forms.py:53
 #: edh_web_application/geography/forms.py:70
@@ -505,7 +505,7 @@ msgstr "Land"
 msgid "ancient find spot"
 msgstr "Fundort antik"
 
-#: edh_web_application/foto/forms.py:25 edh_web_application/foto/forms.py:43
+#: edh_web_application/foto/forms.py:54 edh_web_application/foto/forms.py:72
 #: edh_web_application/foto/templates/foto/detail_view.html:48
 #: edh_web_application/geography/forms.py:54
 #: edh_web_application/geography/forms.py:71
@@ -518,55 +518,55 @@ msgstr "Fundort antik"
 msgid "modern find spot"
 msgstr "Fundort modern"
 
-#: edh_web_application/foto/forms.py:26 edh_web_application/foto/forms.py:44
+#: edh_web_application/foto/forms.py:55 edh_web_application/foto/forms.py:73
 #: edh_web_application/foto/templates/foto/detail_view.html:52
 msgid "present location"
 msgstr "Aufbewahrungsort"
 
-#: edh_web_application/foto/forms.py:27
+#: edh_web_application/foto/forms.py:56
 #: edh_web_application/foto/templates/foto/detail_view.html:63
 msgid "original image"
 msgstr "Vorlage"
 
-#: edh_web_application/foto/forms.py:28
+#: edh_web_application/foto/forms.py:57
 #: edh_web_application/foto/templates/foto/detail_view.html:69
 msgid "date of photograph"
 msgstr "Aufnahme-Jahr\t"
 
-#: edh_web_application/foto/forms.py:29
+#: edh_web_application/foto/forms.py:58
 #: edh_web_application/foto/templates/foto/detail_view.html:75
 msgid "quality"
 msgstr "Qualität"
 
-#: edh_web_application/foto/forms.py:32
+#: edh_web_application/foto/forms.py:61
 msgid "other literature"
 msgstr "andere Literatur"
 
-#: edh_web_application/foto/forms.py:33
+#: edh_web_application/foto/forms.py:62
 msgid "commentary"
 msgstr "Kommentar"
 
-#: edh_web_application/foto/forms.py:34 edh_web_application/foto/forms.py:45
+#: edh_web_application/foto/forms.py:63 edh_web_application/foto/forms.py:74
 msgid "HD-No."
 msgstr "HD-Nr."
 
-#: edh_web_application/foto/forms.py:35
+#: edh_web_application/foto/forms.py:64
 msgid "Date"
 msgstr "Aufnahmejahr"
 
-#: edh_web_application/foto/forms.py:36
+#: edh_web_application/foto/forms.py:65
 #: edh_web_application/foto/templates/foto/detail_view.html:21
 #: edh_web_application/geography/forms.py:67
 #: edh_web_application/models/Place.py:1083
 msgid "responsible individual"
 msgstr "Bearbeiter"
 
-#: edh_web_application/foto/forms.py:37
+#: edh_web_application/foto/forms.py:66
 msgid "Label"
 msgstr "Aufschrift"
 
-#: edh_web_application/foto/routes.py:11 edh_web_application/foto/routes.py:19
-#: edh_web_application/foto/routes.py:22
+#: edh_web_application/foto/routes.py:15 edh_web_application/foto/routes.py:23
+#: edh_web_application/foto/routes.py:26
 msgid "Foto Database"
 msgstr "Foto Datenbank"
 
@@ -589,6 +589,19 @@ msgstr "Aufnahme"
 #: edh_web_application/foto/templates/foto/detail_view.html:82
 msgid "Literature"
 msgstr "Literatur"
+
+#: edh_web_application/foto/templates/foto/search.html:17
+#: edh_web_application/foto/templates/foto/search.html:23
+#: edh_web_application/geography/templates/geography/search.html:17
+#: edh_web_application/geography/templates/geography/search.html:23
+#: edh_web_application/geography/templates/geography/search_results.html:311
+#: edh_web_application/geography/templates/geography/search_results.html:315
+#: edh_web_application/geography/templates/geography/search_results_map.html:34
+#: edh_web_application/geography/templates/geography/search_results_map.html:38
+#: edh_web_application/geography/templates/geography/search_results_table.html:51
+#: edh_web_application/geography/templates/geography/search_results_table.html:55
+msgid "select one or more entries..."
+msgstr "einen oder mehrere Einträge auswählen..."
 
 #: edh_web_application/geography/forms.py:50
 msgid "Geo-ID"
@@ -653,15 +666,15 @@ msgstr "abgeschlossen"
 msgid "provisional"
 msgstr "provisorisch"
 
-#: edh_web_application/geography/routes.py:19
-#: edh_web_application/geography/routes.py:45
-#: edh_web_application/geography/routes.py:56
-#: edh_web_application/geography/routes.py:59
-#: edh_web_application/geography/routes.py:94
-#: edh_web_application/geography/routes.py:98
-#: edh_web_application/geography/routes.py:102
-#: edh_web_application/geography/routes.py:106
-#: edh_web_application/geography/routes.py:110
+#: edh_web_application/geography/routes.py:21
+#: edh_web_application/geography/routes.py:47
+#: edh_web_application/geography/routes.py:58
+#: edh_web_application/geography/routes.py:61
+#: edh_web_application/geography/routes.py:96
+#: edh_web_application/geography/routes.py:100
+#: edh_web_application/geography/routes.py:104
+#: edh_web_application/geography/routes.py:108
+#: edh_web_application/geography/routes.py:112
 #: edh_web_application/templates/home.html:69
 msgid "Geographic Database"
 msgstr "Geographie Datenbank"
@@ -712,17 +725,6 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/detail_view_province.html:67
 msgid "Findspots linked to this province"
 msgstr "Mit dieser Provinz verknüpfte Fundorte"
-
-#: edh_web_application/geography/templates/geography/search.html:17
-#: edh_web_application/geography/templates/geography/search.html:23
-#: edh_web_application/geography/templates/geography/search_results.html:311
-#: edh_web_application/geography/templates/geography/search_results.html:315
-#: edh_web_application/geography/templates/geography/search_results_map.html:34
-#: edh_web_application/geography/templates/geography/search_results_map.html:38
-#: edh_web_application/geography/templates/geography/search_results_table.html:51
-#: edh_web_application/geography/templates/geography/search_results_table.html:55
-msgid "select one or more entries..."
-msgstr "einen oder mehrere Einträge auswählen..."
 
 #: edh_web_application/geography/templates/geography/search_results.html:304
 #: edh_web_application/geography/templates/geography/search_results_map.html:16
@@ -2404,7 +2406,8 @@ msgstr ""
 "mit:</h3><p>wissenschaftliche Mitarbeiter/innen:</p><p>Andreas Dafferner "
 "(1993-2010, EDV), PD Dr. Andrea Scheithauer (1993-1998), Dr. Manfred G. "
 "Schmidt (1993-1995), Dr. Heike Niquet (1995-1997), Dr. Marta García "
-"Morcillo (2005/2006).</p><p>studentische und wissenschaftliche "
+"Morcillo (2005/2006), Dr. James Cowey (2004-2005, 2008-2020), Jonas "
+"Osnabrügge M.A. (2016-2020).</p><p>studentische und wissenschaftliche "
 "Hilfskräfte:</p><p>Raffaela Cengia (1993), Oliver Hoffmann (1993), "
 "Estrella Velasco Servert (1993/1994), Wolfgang Strysio (1993-1996), "
 "Francisca Feraudi-Gruénais (1993-1997), Andrea Steinebrey (1993-1997), "
@@ -2662,19 +2665,15 @@ msgstr ""
 "heidelberg.de/fakultaeten/philosophie/zaw/sag/alfoeldy.html\">Prof. Dr. "
 "Dr. h.c. mult. Géza Alföldy</a> † (1986–2006)</p><h3>Wiss. "
 "MitarbeiterInnen</h3><p><i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"mailto:james.cowey@urz.uni-heidelberg.de\">Dr. James M.S. "
-"Cowey</a><br /><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"mailto:francisca.feraudi-gruenais@zaw.uni-heidelberg.de\">Dr. "
 "Francisca Feraudi-Gruénais</a><br /><i class=\"fas fa-external-link-"
 "alt\"></i> <a href=\"mailto:brigitte.graef@zaw.uni-heidelberg.de\">Dr. "
 "Brigitte Gräf</a><br /><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"mailto:frank.grieshaber@zaw.uni-heidelberg.de\">Dr. Frank "
 "Grieshaber</a> (IT)<br /><i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"mailto:regine.klar@urz.uni-heidelberg.de\">Regine Klar</a><br /><i"
-" class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"mailto:Jonas.Osnabruegge@adw.uni-heidelberg.de\">Jonas "
-"Osnabrügge</a></p><h3>Anschrift</h3><p>Epigraphische Datenbank Heidelberg"
-" (EDH)<br />Seminar für Alte Geschichte und Epigraphik<br />Marstallhof "
+"href=\"mailto:regine.klar@urz.uni-heidelberg.de\">Regine "
+"Klar</a></p><h3>Anschrift</h3><p>Epigraphische Datenbank Heidelberg "
+"(EDH)<br />Seminar für Alte Geschichte und Epigraphik<br />Marstallhof "
 "4<br />D-69117 Heidelberg</p><h3>Telephon</h3><p>+49 (0) 62 21 / 54 22 "
 "39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 34</p><h3>Email</h3><p><i "
 "class=\"fas fa-external-link-alt\"></i> <a "
