@@ -16,11 +16,31 @@
 {% block title %} {{_("Epigraphic Database Heidelberg")}} {% endblock %}
 
 {% block navbar %}
+    <header>
     <div id="beta-banner-wrapper"><img id="beta-banner" src=".{{url_for('static', filename='img/beta-banner_600.png')}}" /></div>
-    <div id="hadw-banner-wrapper"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
+    <!-- <div id="hadw-banner-wrapper"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
     <div class="wrapper head">
         <div class="container head visible-xs-block"><a href="./">EDH</a></div>
         <div class="container head visible-sm-block visible-md-block visible-lg-block"><a href="./">{{_("Epigraphic Database Heidelberg")}}</a></div>
+    </div> -->
+
+
+        <!--<div><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
+            <div>
+                <div class="container head visible-xs-block"><a href="./">EDH</a></div>
+                <div class="container head visible-sm-block visible-md-block visible-lg-block"><a href="./">{{_("Epigraphic Database Heidelberg")}}</a></div>
+            </div>-->
+
+
+    <div class="container" style="background-color:#1F6B3B;">
+        <div class="row">
+            <div class="col-xs-2"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
+            <div class="col-xs-8">
+                <div class="visible-xs-block"style="text-align:center"><a href="./" style="color: #ddd">EDH</a></div>
+                <div class="visible-sm-block visible-md-block visible-lg-block" style="text-align:center"><a href="./" style="color: #ddd">{{_("Epigraphic Database Heidelberg")}}</a></div>
+            </div>
+            <div class="col-xs-2"></div>
+        </div>
     </div>
     <nav class="navbar navbar-light">
         <div class="container">
@@ -31,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand {% if '/home' in request.path %} active {% endif %}" href=".{{ url_for('home') }}"><i class="fas fa-home fa-lg" title="Home" style="font-size:18px;"></i></a>
+                <a class="navbar-brand" href=".{{ url_for('home') }}"><i class="fas fa-home fa-lg" title="Home" style="font-size:18px;"></i></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -62,9 +82,11 @@
             </div>
         </div>
     </nav>
+    </header>
 {% endblock %}
 
 {% block content %}
+    <main>
 	<div class="container">
         {% block app_content %}{% endblock %}
     </div>
@@ -76,7 +98,7 @@
             {% block data_content %}{% endblock %}
         </div>
     {% endif %}
-
+    </main>
     <footer class="footer">
 		<div class="container">
 			<p class="text-muted">

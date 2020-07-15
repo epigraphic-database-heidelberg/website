@@ -16,6 +16,9 @@ body {
     background-color: #fff;
     hyphens: auto;
 }
+header {
+    background-color: #1F6B3B;
+}
 h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -589,6 +592,15 @@ label {
     text-decoration: none;
     color: #1F6B3B;
 }
+div.visible-xs-block {
+    font-size: 2.5em;
+    padding-top: 3px;
+}
+img#hadw-banner {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: -5px;
+}
 
 * {
   -webkit-border-radius: 0 !important;
@@ -772,6 +784,17 @@ label {
         margin-left: 1em;
         padding-top: 0px;
     }
+    div.visible-sm-block {
+        color: white;
+        font-size: 1.9em;
+        padding-top:1em;
+    }
+    img#hadw-banner {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: -10px;
+        height: 100px;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -826,6 +849,17 @@ label {
     .container.head {
         font-size: 1.8em;
     }
+    div.visible-sm-block {
+        color: white;
+        font-size: 2.2em;
+        padding-top:.85em;
+    }
+    img#hadw-banner {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: -10px;
+        height: 110px;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -834,6 +868,17 @@ label {
     }
     .container {
         max-width: 1000px;
+    }
+    div.visible-sm-block {
+        color: white;
+        font-size: 2.75em;
+        padding-top:.75em;
+    }
+    img#hadw-banner {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: -10px;
+        height: 120px;
     }
 }
 
