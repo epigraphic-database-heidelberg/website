@@ -18,23 +18,9 @@
 {% block navbar %}
     <header>
     <div id="beta-banner-wrapper"><img id="beta-banner" src=".{{url_for('static', filename='img/beta-banner_600.png')}}" /></div>
-    <!-- <div id="hadw-banner-wrapper"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
-    <div class="wrapper head">
-        <div class="container head visible-xs-block"><a href="./">EDH</a></div>
-        <div class="container head visible-sm-block visible-md-block visible-lg-block"><a href="./">{{_("Epigraphic Database Heidelberg")}}</a></div>
-    </div> -->
-
-
-        <!--<div><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
-            <div>
-                <div class="container head visible-xs-block"><a href="./">EDH</a></div>
-                <div class="container head visible-sm-block visible-md-block visible-lg-block"><a href="./">{{_("Epigraphic Database Heidelberg")}}</a></div>
-            </div>-->
-
-
-    <div class="container" style="background-color:#1F6B3B;">
+    <div class="container" style="background-color:#1F6B3B;white-space: nowrap;">
         <div class="row">
-            <div class="col-xs-2"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
+            <div class="col-xs-2"><a href="https://www.hadw-bw.de/"><img id="hadw-banner" style="" src=".{{url_for('static', filename='img/hadw_head.svg')}}" /></a></div>
             <div class="col-xs-8">
                 <div class="visible-xs-block"style="text-align:center"><a href="./" style="color: #ddd">EDH</a></div>
                 <div class="visible-sm-block visible-md-block visible-lg-block" style="text-align:center"><a href="./" style="color: #ddd">{{_("Epigraphic Database Heidelberg")}}</a></div>
