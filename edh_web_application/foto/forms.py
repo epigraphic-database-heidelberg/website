@@ -47,7 +47,7 @@ def get_option_list_values_province():
 class FotoSearch(FlaskForm):
     reset = SubmitField(_l('Reset...'))
     submit = SubmitField(_l('Submit...'))
-    f_id = StringField(_l('F-number'), validators=[Optional(), Regexp('^[0-9]{1,6}$')])
+    f_nr = StringField(_l('F-number'), validators=[Optional(), Regexp('^[0-9]{1,6}$')])
     provinz = SelectMultipleField(_l('province'), choices=get_option_list_values_province())
     land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_de())
     fo_antik = StringField(_l('ancient find spot'))

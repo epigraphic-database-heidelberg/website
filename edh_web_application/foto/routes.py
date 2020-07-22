@@ -10,9 +10,23 @@ from ..models.Place import Place
 
 
 @bp_foto.route('/foto/suche')
-def search_bibliography():
+def search_foto():
     form = FotoSearch()
-    return render_template('foto/search.html', title=_("Foto Database"), subtitle=_("Search"), form=form)
+    if len(request.args) > 0:
+        # create query string
+        query_string = Foto.create_query_string(request.args)
+        results = Foto.query(query_string)
+        number_of_hits = Foto.get_number_of_hits_for_query(query_string)
+        if results:
+            return render_template('foto/search_results.html', title=_("Foto Database"),
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits, form=form)
+        else:
+            return render_template('foto/no_hits.html', title=_("Foto Database"),
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits, form=form)
+    else:
+        return render_template('foto/search.html', title=_("Foto Database"), subtitle=_("Search"), form=form)
 
 
 @bp_foto.route('/edh/foto/<f_nr>')
@@ -24,7 +38,7 @@ def detail_view(f_nr):
     else:
         return render_template('foto/detail_view.html',
                                title=_("Foto Database"), subtitle=_("Detail View"),
-                               data=results[0])
+                               data=results['items'][0])
 
 
 @bp_foto.route('/foto/ac/fo_modern', methods=['GET', 'POST'], strict_slashes=False)

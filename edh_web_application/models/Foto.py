@@ -1,12 +1,15 @@
-import pysolr
-import re
-from flask import Markup
-from flask import current_app
-from babel.numbers import format_decimal
-from babel.dates import format_date
-from datetime import datetime
 import collections
+import re
+from datetime import datetime
+
+import pysolr
+from babel.dates import format_date
+from babel.numbers import format_decimal
+from flask import current_app
+from flask import request
 from flask_babel import lazy_gettext as _l
+
+from edh_web_application.models.Place import Place
 
 
 class Foto:
@@ -181,34 +184,112 @@ class Foto:
         self.datum = datum
 
     @classmethod
-    def query(cls, query_string):
+    def query(cls, query_string, *args, **kwargs):
         """
         queries Solr core
         :return: list of Foto instances
         """
+        start = 0  # index number of first record to retrieve
+        rows = 20  # number of records to retrieve
+        sort = "f_nr asc"  # default
+        hits = kwargs.get('hits', None)
+        if request.args.get('start'):
+            start = request.args.get('start')
+        if request.args.get('anzahl'):
+            rows = int(request.args.get('anzahl'))
+            # if user changes number of hits/page in result page
+            # show all hits on one page if start < rows
+            if int(start) < rows:
+                start = 0
+        if hits:
+            rows = hits
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
-        results = solr.search(query_string, **{'rows': '20'})
+        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
             return None
         else:
+            number_of_hits = results.hits
+            query_params = _get_query_params(request.args)
             query_result = []
             for result in results:
                 props = {}
                 for key in result:
                     if key not in ('f_nr', 'bearbeiter', 'datum'):
                         props[key] = result[key]
+                    if key == 'land':
+                        if re.search(".+\?$", result[key]):
+                            key_without_trailing_questionmark = re.sub("\?$", "", result[key])
+                            props[key] = Place.country[key_without_trailing_questionmark] + "?"
+                        else:
+                            props[key] = Place.country[result[key]]
+                    elif key == 'provinz':
+                        if re.search("\?$", result[key]):
+                            key_without_trailing_questionmark = re.sub("\?$", "", result[key])
+                            props[key] = _l(key_without_trailing_questionmark) + "?"
+                        else:
+                            props[key] = _l(result[key])
+                        props['provinz_id'] = Place.get_province_id_from_code(re.sub("\?$", "", result[key]))
+
+
                 publ = Foto(result['f_nr'],
                                    result['bearbeiter'],
                                    result['datum'],
                                    **props
                                    )
                 query_result.append(publ)
-            return query_result
+            return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(
+                                     request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "url_without_view_parameter": _get_url_without_view_parameter(
+                    request.url), "query_params": query_params},
+                    "items": query_result}
+
+    @classmethod
+    def create_query_string(cls, form):
+        """
+        creates solr query based on user data entered into search mask
+        :param form: ImmutableMultiDict of GET params
+        :return: query_string
+        """
+        logical_operater = "AND"
+        query_string = ""
+        if 'f_nr' in form and form['f_nr'] != "":
+            f_nr = form['f_nr']
+            f_nr = re.sub(r'F0*?', r'', f_nr, flags=re.IGNORECASE)
+            if re.match(r'^\d*$', f_nr):
+                f_nr = "F" + "{:06d}".format(int(f_nr))
+            query_string = "f_nr:" + f_nr + " " + logical_operater + " "
+        else:
+            query_string = "f_nr:* " + logical_operater + " "
+
+        if 'provinz' in form and form['provinz'] != "":
+            # province is a multi value field
+            query_string += "("
+            for prov in form.getlist('provinz'):
+                if prov != "":
+                    query_string += "provinz:" + prov + "* OR "
+            # remove trailing OR
+            query_string = re.sub(" OR $", "", query_string)
+            query_string += ") " + logical_operater + " "
+
+        if 'land' in form and form['land'] != "":
+            # country is a multi value field
+            query_string += "("
+            for c in form.getlist('land'):
+                if c != "":
+                    query_string += "land:" + c + "* OR "
+            # remove trailing OR
+            query_string = re.sub(" OR $", "", query_string)
+            query_string += ") " + logical_operater + " "
+
+        # remove last " AND"
+        query_string = re.sub(" " + logical_operater + " $", "", query_string)
+        return query_string
 
     @classmethod
     def get_number_of_records(cls):
         """
-        returns number of fotographic records from Solr Core edhBiblio
+        returns number of fotographic records from Solr Core edhFoto
         :return: number of fotographic records (str)
         """
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
@@ -226,6 +307,17 @@ class Foto:
         for res in results:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             return format_date(dt, 'd. MMM YYYY', locale='de_DE')
+
+    @classmethod
+    def get_number_of_hits_for_query(cls, query_string):
+        """
+        returns number of hits for given query
+        :param query_string: Solr query string
+        :return:
+        """
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
+        results = solr.search(query_string)
+        return format_decimal(results.hits, locale='de_DE')
 
     @classmethod
     def get_autocomplete_entries(cls, ac_field, term, hits):
@@ -246,7 +338,6 @@ class Foto:
                 'rows': '0',
             }
             query = ac_field + '_ac:"' + term + '"'
-            print(query)
             solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
             results = solr.search(query, **params)
             # concat results and counts as string
@@ -262,3 +353,57 @@ class Foto:
                     is_first_element = True
                     return_list.append(re.sub("[\{\}]*", '', first_item) + " (" + str(entry) + ")")
             return return_list
+
+def _get_query_params(args):
+    """
+    creates dictionary of search params for displaying on
+    search result page
+    :param args: request.args
+    :return: dictionary with all params of query
+    """
+    result_dict = {}
+    for key in args:
+        if key not in ('anzahl', 'sort', 'start', 'view') and args[key] != "":
+            result_dict[key] = args[key]
+    return result_dict
+
+def _get_url_without_pagination_parameters(url):
+    """
+    removes URL parameters anzahl and start; these get added later in the template again
+    with values for pagination
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("start=[0-9]*&*", "", url)
+    url = re.sub("anzahl=[0-9]*&*", "", url)
+    url = re.sub("&&", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
+
+
+def _get_url_without_sort_parameter(url):
+    """
+    removes URL parameter sort; these get added later in the template again
+    in dialog "sort by"
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("sort=.*&*", "", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
+
+
+def _get_url_without_view_parameter(url):
+    """
+    removes URL parameter view & start; these get added later in the template again
+    in dialog "view"
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("view=table|list", "", url)
+    url = re.sub("view=.*?&*", "", url)
+    url = re.sub("start=.*?&", "", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
