@@ -18,29 +18,9 @@
 </h3>
 <div>
     <div id="map" style="margin-top:2em; height:400px; width: 100%; border: 1px solid #333;"></div>
-    <div class="detail_block">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _('Generic data') }}</span>
-        </div>
-        <div class="detail_block_content">
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _("F-number") }}:</div>
-                <div class="detail_block_content_row_text">{{data['f_nr']}}</div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _("responsible individual") }}:</div>
-                <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _("last update") }}:</div>
-                <div class="detail_block_content_row_text">{{data['datum']}}</div>
-            </section>
-        </div>
-    </div>
-    <div class="detail_block">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _("Find circumstances / present location") }}</span>
-        </div>
+    <div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div>
+    <div>
+        <h3>{{ _("Find circumstances / present location") }}</h3>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("province") }}:</div>
@@ -52,45 +32,37 @@
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("ancient find spot") }}:</div>
-                <div class="detail_block_content_row_text">{{data['fo_antik']}}</div>
+                <div class="detail_block_content_row_text">{% if data['fo_antik'] %}{{data['fo_antik']}}{%else%}&nbsp;{%endif%}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("modern find spot") }}:</div>
-                <div class="detail_block_content_row_text">{{data['fo_modern']}}</div>
+                <div class="detail_block_content_row_text">{% if data['fo_modern'] %}{{data['fo_modern']}}{%else%}&nbsp;{%endif%}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("present location") }}:</div>
-                <div class="detail_block_content_row_text">{{data['aufbewahrung']}}</div>
+                <div class="detail_block_content_row_text">{% if data['aufbewahrung'] %}{{data['aufbewahrung']}}{%else%}&nbsp;{%endif%}</div>
             </section>
         </div>
     </div>
-    <div class="detail_block">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _("Picture") }}</span>
-        </div>
+    <div>
+        <h3>{{ _("Picture") }}</h3>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("original image") }}</div>
-                <div class="detail_block_content_row_text">{{data['neg_nr']}}</div>
+                <div class="detail_block_content_row_text">{% if data['neg_nr'] %}{{data['neg_nr']}}{%else%}&nbsp;{%endif%}</div>
             </section>
-        </div>
-        <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("date of photograph") }}</div>
-                <div class="detail_block_content_row_text">{{data['aufnahme_jahr']}}</div>
+                <div class="detail_block_content_row_text">{% if data['aufnahme_jahr'] %}{{data['aufnahme_jahr']}}{%else%}&nbsp;{%endif%}</div>
             </section>
-        </div>
-        <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("quality") }}</div>
-                <div class="detail_block_content_row_text">{{data['qualitaet']}}</div>
+                <div class="detail_block_content_row_text">{% if data['qualitaet'] %}{{data['qualitaet']}}{%else%}&nbsp;{%endif%}</div>
             </section>
         </div>
     </div>
-    <div class="detail_block" style="margin-bottom:2em;">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">{{ _("Literature") }}</span>
-        </div>
+    <div>
+        <h3>{{ _("Literature") }}</h3>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">AE</div>
@@ -98,16 +70,12 @@
                     {% if data['ae']%}{{data['ae']}}{%else%}&nbsp;{%endif%}
                 </div>
             </section>
-        </div>
-        <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">CIL</div>
                 <div class="detail_block_content_row_text">
                     {% if data['cil']%}{{data['cil']}}{%else%}&nbsp;{%endif%}
                 </div>
             </section>
-        </div>
-        <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("other corpora") }}</div>
                 <div class="detail_block_content_row_text">
@@ -123,8 +91,8 @@
 {{ super() }}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-   integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-   crossorigin=""></script>
+    integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+    crossorigin=""></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.rawgit.com/mejackreed/Leaflet-IIIF/v2.0.1/leaflet-iiif.js"></script>
 <script src=".{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
@@ -132,18 +100,18 @@
 var map;
 var iiifLayers = {};
 map = L.map('map', {
-  center: [0, 0],
-  crs: L.CRS.Simple,
-  zoom: 0,
-  zoomSnap: 0,
-  zoomDelta: 0.25
+    center: [0, 0],
+    crs: L.CRS.Simple,
+    zoom: 0,
+    zoomSnap: 0,
+    zoomDelta: 0.25
 });
 var manifestUrl = 'https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json';
 $.getJSON(manifestUrl, function(data) {
-  $.each(data.sequences[0].canvases, function(_, val) {
-    iiifLayers[val.label] = L.tileLayer.iiif(val.images[0].resource.service['@id'] + '/info.json');
-  });
-  iiifLayers[Object.keys(iiifLayers)[0]].addTo(map);
+    $.each(data.sequences[0].canvases, function(_, val) {
+        iiifLayers[val.label] = L.tileLayer.iiif(val.images[0].resource.service['@id'] + '/info.json');
+    });
+    iiifLayers[Object.keys(iiifLayers)[0]].addTo(map);
 });
 </script>
 {% endblock %}
