@@ -10,6 +10,7 @@ from flask import request
 from flask_babel import lazy_gettext as _l
 
 from edh_web_application.models.Place import Place
+from edh_web_application.models.helpers import get_fullname
 
 
 class Foto:
@@ -176,11 +177,12 @@ class Foto:
             "bearbeiter": None,
             "datum": None,
             "aufschrift": None,
+            "inschriften_fotos": None
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
         self.f_nr = f_nr
-        self.bearbeiter = bearbeiter
+        self.bearbeiter = get_fullname(bearbeiter)
         self.datum = datum
 
     @classmethod
@@ -229,10 +231,12 @@ class Foto:
                         else:
                             props[key] = _l(result[key])
                         props['provinz_id'] = Place.get_province_id_from_code(re.sub("\?$", "", result[key]))
-
-
+                    elif key == 'bearbeiter':
+                        bearbeiter = get_fullname(result['bearbeiter'].lower().capitalize())
+                    elif key == 'hd_nr':
+                        props['inschriften_fotos'] = _get_fotos_of_inscription(result['hd_nr'], result['f_nr'])
                 publ = Foto(result['f_nr'],
-                                   result['bearbeiter'],
+                                   bearbeiter,
                                    result['datum'],
                                    **props
                                    )
@@ -407,3 +411,18 @@ def _get_url_without_view_parameter(url):
     url = re.sub("&{2,}", "&", url)
     url = re.sub(request.url_root, "", url)
     return "/" + url
+
+
+def _get_fotos_of_inscription(hd_nr, f_nr):
+    """
+    returns list of other fotos of given inscription + F-No combination
+    :param hd_nr: HD-No of inscription
+    :param f_nr: F-No of image to exclude from list of images
+    :return: list of F-Nos of inscription
+    """
+    list_of_fotos = []
+    solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
+    results = solr.search("hd_nr:"+hd_nr+" AND NOT f_nr:" + f_nr)
+    for res in results:
+        list_of_fotos.append(res['f_nr'])
+    return list_of_fotos

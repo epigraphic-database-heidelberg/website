@@ -10,7 +10,8 @@
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
         <a href="https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['f_nr']}}">
-            https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['f_nr']}} ({{data['aufschrift']}})
+            https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['f_nr']}}
+            ({% if data['aufschrift'] %}{{data['aufschrift']}}. {%endif%}{{_('Last Updates')}}: {{data['datum']}}, {{data['bearbeiter']}})
         </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
     </span>
@@ -18,6 +19,7 @@
 </h3>
 <div>
     <div id="map" style="margin-top:2em; height:400px; width: 100%; border: 1px solid #333;"></div>
+    <!--<div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div> -->
     <div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div>
     <div>
         <h3>{{ _("Find circumstances / present location") }}</h3>
@@ -48,15 +50,15 @@
         <h3>{{ _("Picture") }}</h3>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _("original image") }}</div>
+                <div class="detail_block_content_row_header">{{ _("original image") }}:</div>
                 <div class="detail_block_content_row_text">{% if data['neg_nr'] %}{{data['neg_nr']}}{%else%}&nbsp;{%endif%}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _("date of photograph") }}</div>
+                <div class="detail_block_content_row_header">{{ _("date of photograph") }}:</div>
                 <div class="detail_block_content_row_text">{% if data['aufnahme_jahr'] %}{{data['aufnahme_jahr']}}{%else%}&nbsp;{%endif%}</div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _("quality") }}</div>
+                <div class="detail_block_content_row_header">{{ _("quality") }}:</div>
                 <div class="detail_block_content_row_text">{% if data['qualitaet'] %}{{data['qualitaet']}}{%else%}&nbsp;{%endif%}</div>
             </section>
         </div>
@@ -65,25 +67,39 @@
         <h3>{{ _("Literature") }}</h3>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">AE</div>
+                <div class="detail_block_content_row_header">AE:</div>
                 <div class="detail_block_content_row_text">
                     {% if data['ae']%}{{data['ae']}}{%else%}&nbsp;{%endif%}
                 </div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">CIL</div>
+                <div class="detail_block_content_row_header">CIL:</div>
                 <div class="detail_block_content_row_text">
                     {% if data['cil']%}{{data['cil']}}{%else%}&nbsp;{%endif%}
                 </div>
             </section>
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">{{ _("other corpora") }}</div>
+                <div class="detail_block_content_row_header">{{ _("other corpora") }}:</div>
                 <div class="detail_block_content_row_text">
-                    {% if data['sonstigeCorpora']%}{{data['sonstigeCorpora']}}{%else%}&nbsp;{%endif%}
+                    {% if data['andere']%}{{data['andere']}}{%else%}&nbsp;{%endif%}
                 </div>
             </section>
         </div>
     </div>
+    {% if data['hd_nr'] %}
+    <div>
+        <h3>{{ _("Inschrift") }}</h3>
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_("HD-No.")}}:</div>
+                <div class="detail_block_content_row_text">
+                    <i class="fas fa-external-link-alt"></i>
+                    <a href="/edh/inschrift/{{data['hd_nr']}}">{{data['hd_nr']}}</a>
+                </div>
+            </section>
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}
