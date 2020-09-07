@@ -261,6 +261,7 @@
   <copyField source="fo_modern" dest="fo_modern_str"/>
   <copyField source="land" dest="land_ci"/>
   <copyField source="neg_nr" dest="neg_nr_string"/>
+  <copyField source="neg_nr" dest="neg_nr_ci"/>
   <copyField source="provinz" dest="provinz_ci"/>
   <copyField source="aufbewahrung" dest="aufbewahrung_ac"/>
   <copyField source="aufbewahrung" dest="aufbewahrung_ci"/>
