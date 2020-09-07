@@ -12,6 +12,7 @@ from flask import request
 from flask_babel import lazy_gettext as _l
 
 from edh_web_application.models.Inscription import Inscription
+from edh_web_application.models.helpers import remove_number_of_hits_from_autocomplete, escape_value
 
 
 class Place:
@@ -575,16 +576,16 @@ class Place:
             query_string = "id:* " + logical_operater + " "
 
         if 'pleiades_id' in form and form['pleiades_id'] != "":
-            query_string += "(pleiades_id_1:" + _escape_value(form['pleiades_id']) + " OR " + " pleiades_id_2:" + _escape_value(form['pleiades_id']) + ") " + logical_operater + " "
+            query_string += "(pleiades_id_1:" + escape_value(form['pleiades_id']) + " OR " + " pleiades_id_2:" + escape_value(form['pleiades_id']) + ") " + logical_operater + " "
 
         if 'geonames_id' in form and form['geonames_id'] != "":
-            query_string += "(geonames_id_1:" + _escape_value(form['geonames_id']) + " OR "  + " geonames_id_2:" + _escape_value(form['geonames_id']) + ") "  + logical_operater + " "
+            query_string += "(geonames_id_1:" + escape_value(form['geonames_id']) + " OR "  + " geonames_id_2:" + escape_value(form['geonames_id']) + ") "  + logical_operater + " "
 
         if 'geonames_id_2' in form and form['geonames_id_2'] != "":
-            query_string += "geonames_id_2:" + _escape_value(form['geonames_id_2']) + " " + logical_operater + " "
+            query_string += "geonames_id_2:" + escape_value(form['geonames_id_2']) + " " + logical_operater + " "
 
         if 'tm_geo_id' in form and form['tm_geo_id'] != "":
-            query_string += "trismegistos_geo_id:" + _escape_value(form['tm_geo_id']) + " " + logical_operater + " "
+            query_string += "trismegistos_geo_id:" + escape_value(form['tm_geo_id']) + " " + logical_operater + " "
 
         if 'provinz' in form and form['provinz'] != "":
             # province is a multi value field
@@ -608,34 +609,34 @@ class Place:
 
         if 'region' in form and form['region'] != "":
             if re.search("\([0-9]*\)$", form['region']):
-                query_string += 'verw_bezirk_ci:"' + _escape_value(
-                    _remove_number_of_hits_from_autocomplete(form['region'])) + '" ' + logical_operater + ' '
+                query_string += 'verw_bezirk_ci:"' + escape_value(
+                    remove_number_of_hits_from_autocomplete(form['region'])) + '" ' + logical_operater + ' '
             else:
-                query_string += "verw_bezirk_ci:*" + _escape_value(form['region']) + "* " + logical_operater + " "
+                query_string += "verw_bezirk_ci:*" + escape_value(form['region']) + "* " + logical_operater + " "
 
         if 'fo_antik' in form and form['fo_antik'] != "":
             if re.search("\([0-9]*\)$", form['fo_antik']):
-                query_string += 'fo_antik_ci:"' + _escape_value(
-                    _remove_number_of_hits_from_autocomplete(form['fo_antik'])) + '" ' + logical_operater + ' '
+                query_string += 'fo_antik_ci:"' + escape_value(
+                    remove_number_of_hits_from_autocomplete(form['fo_antik'])) + '" ' + logical_operater + ' '
             else:
-                query_string += "fo_antik_ci:*" + _escape_value(form['fo_antik']) + "* " + logical_operater + " "
+                query_string += "fo_antik_ci:*" + escape_value(form['fo_antik']) + "* " + logical_operater + " "
 
         if 'fo_modern' in form and form['fo_modern'] != "":
             if re.search("\([0-9]*\)$", form['fo_modern']):
-                query_string += 'fo_modern_ci:"' + _escape_value(
-                    _remove_number_of_hits_from_autocomplete(form['fo_modern'])) + '" ' + logical_operater + ' '
+                query_string += 'fo_modern_ci:"' + escape_value(
+                    remove_number_of_hits_from_autocomplete(form['fo_modern'])) + '" ' + logical_operater + ' '
             else:
-                query_string += "fo_modern_ci:*" + _escape_value(form['fo_modern']) + "* " + logical_operater + " "
+                query_string += "fo_modern_ci:*" + escape_value(form['fo_modern']) + "* " + logical_operater + " "
 
         if 'fundstelle' in form and form['fundstelle'] != "":
             if re.search("\([0-9]*\)$", form['fundstelle']):
-                query_string += 'fundstelle_ci:"' + _escape_value(
-                    _remove_number_of_hits_from_autocomplete(form['fundstelle'])) + '" ' + logical_operater + ' '
+                query_string += 'fundstelle_ci:"' + escape_value(
+                    remove_number_of_hits_from_autocomplete(form['fundstelle'])) + '" ' + logical_operater + ' '
             else:
-                query_string += "fundstelle_ci:*" + _escape_value(form['fundstelle']) + "* " + logical_operater + " "
+                query_string += "fundstelle_ci:*" + escape_value(form['fundstelle']) + "* " + logical_operater + " "
 
         if 'kommentar' in form and form['kommentar'] != "":
-            query_string += "kommentar:*" + _escape_value(form['kommentar']) + "* " + logical_operater + " "
+            query_string += "kommentar:*" + escape_value(form['kommentar']) + "* " + logical_operater + " "
 
         if 'bearbeitet_abgeschlossen' in form and 'bearbeitet_provisorisch' not in form:
             query_string += "bearbeitet:true" + logical_operater + " "
@@ -643,7 +644,7 @@ class Place:
             query_string += "-bearbeitet:* " + logical_operater + " "
 
         if 'bearbeiter' in form and form['bearbeiter'] != "":
-            query_string += "bearbeiter:" + _escape_value(form['bearbeiter']) + " " + logical_operater + " "
+            query_string += "bearbeiter:" + escape_value(form['bearbeiter']) + " " + logical_operater + " "
 
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
@@ -983,25 +984,6 @@ class Place:
         return inscription_list
 
 
-def _escape_value(val):
-    """
-    escape user entered value for solr query
-    :param val: string value entered by user to be escaped
-    :return: escaped string ready for solr query
-    """
-    val = re.sub("\s", "\ ", val)
-    val = re.sub(":", "\:", val)
-    val = re.sub("\(", "\(", val)
-    val = re.sub("\)", "\)", val)
-    val = re.sub("\]", "\]", val)
-    val = re.sub("\[", "\[", val)
-    val = re.sub("\{", "\{", val)
-    val = re.sub("\}", "\}", val)
-    val = re.sub("/", "\/", val)
-    val = re.sub("\?", "\?", val)
-    return val
-
-
 def _get_url_without_pagination_parameters(url):
     """
     removes URL parameters anzahl and start; these get added later in the template again
@@ -1040,16 +1022,6 @@ def _get_url_without_view_parameter(url):
     url = re.sub("&{2,}", "&", url)
     url = re.sub(request.url_root, "", url)
     return "/" + url
-
-
-def _remove_number_of_hits_from_autocomplete(user_entry):
-    """
-    removes number of hits from entry string that has been added by autocomplete
-    :param user_entry: user entry string with number of hits in parenthesis
-    :return: user_entry without number of hits
-    """
-    user_entry = re.sub("\([0-9]*\)$", "", user_entry).strip()
-    return user_entry
 
 
 def _get_query_params(args):
