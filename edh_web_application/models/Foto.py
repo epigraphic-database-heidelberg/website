@@ -10,7 +10,7 @@ from flask import request
 from flask_babel import lazy_gettext as _l
 
 from edh_web_application.models.Place import Place
-from edh_web_application.models.helpers import get_fullname
+from edh_web_application.models.helpers import get_fullname, escape_value, remove_number_of_hits_from_autocomplete
 
 
 class Foto:
@@ -286,8 +286,39 @@ class Foto:
             query_string = re.sub(" OR $", "", query_string)
             query_string += ") " + logical_operater + " "
 
+        if 'fo_antik' in form and form['fo_antik'] != "":
+            if re.search("\([0-9]*\)$", form['fo_antik']):
+                query_string += 'fo_antik_ci:"' + escape_value(
+                    remove_number_of_hits_from_autocomplete(form['fo_antik'])) + '" ' + logical_operater + ' '
+            else:
+                query_string += "fo_antik_ci:*" + escape_value(form['fo_antik']) + "* " + logical_operater + " "
+
+        if 'fo_modern' in form and form['fo_modern'] != "":
+            if re.search("\([0-9]*\)$", form['fo_modern']):
+                query_string += 'fo_modern_ci:"' + escape_value(
+                    remove_number_of_hits_from_autocomplete(form['fo_modern'])) + '" ' + logical_operater + ' '
+            else:
+                query_string += "fo_modern_ci:*" + escape_value(form['fo_modern']) + "* " + logical_operater + " "
+
+        if 'aufbewahrung' in form and form['aufbewahrung'] != "":
+            if re.search("\([0-9]*\)$", form['aufbewahrung']):
+                query_string += 'aufbewahrung_ci:"' + escape_value(
+                    remove_number_of_hits_from_autocomplete(form['aufbewahrung'])) + '" ' + logical_operater + ' '
+            else:
+                query_string += "aufbewahrung_ci:*" + escape_value(form['aufbewahrung']) + "* " + logical_operater + " "
+
+        if 'vorlage' in form and form['vorlage'] != "":
+            if re.search("\([0-9]*\)$", form['vorlage']):
+                query_string += 'neg_nr_ci:"' + escape_value(
+                    remove_number_of_hits_from_autocomplete(form['vorlage'])) + '" ' + logical_operater + ' '
+            else:
+                query_string += "neg_nr_ci:" + escape_value(form['vorlage']) + " " + logical_operater + " "
+
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
+
+        print(query_string)
+
         return query_string
 
     @classmethod
