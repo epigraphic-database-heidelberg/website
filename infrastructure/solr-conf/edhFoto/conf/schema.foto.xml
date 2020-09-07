@@ -226,20 +226,21 @@
   <field name="fo_modern_ac" type="text_edgengram" indexed="true" stored="true" />
   <field name="fo_modern_ci" type="text_ci" indexed="true" stored="true" />
   <field name="fo_modern_str" type="string" indexed="true" stored="true" />
-  <field name="hd_nr" type="string"/>
-  <field name="internet" type="string"/>
-  <field name="jahr" type="text"/>
-  <field name="kommentar" type="text_ngram"/>
-  <field name="land" type="string"/>
-  <field name="land_ci" type="text_ci"/>
-  <field name="land_sort_de" type="pint"/>
-  <field name="land_sort_en" type="pint"/>
-  <field name="neg_nr" type="text_ngram"/>
-  <field name="neg_nr_string" type="string"/>
-  <field name="provinz" type="string"/>
-  <field name="provinz_ci" type="text_ci"/>
-  <field name="qualitaet" type="pint"/>
-  <field name="staticId" type="pint"/>
+  <field name="hd_nr" type="string" indexed="true" stored="true"/>
+  <field name="internet" type="string" indexed="true" stored="true"/>
+  <field name="jahr" type="text" indexed="true" stored="true"/>
+  <field name="kommentar" type="text_ngram" indexed="true" stored="true"/>
+  <field name="land" type="string" indexed="true" stored="true"/>
+  <field name="land_ci" type="text_ci" indexed="true" stored="true"/>
+  <field name="land_sort_de" type="pint" indexed="true" stored="true"/>
+  <field name="land_sort_en" type="pint" indexed="true" stored="true"/>
+  <field name="neg_nr" type="text_ngram" indexed="true" stored="true"/>
+  <field name="neg_nr_ci" type="text_ci" indexed="true" stored="true"/>
+  <field name="neg_nr_string" type="string" indexed="true" stored="true"/>
+  <field name="provinz" type="string" indexed="true" stored="true"/>
+  <field name="provinz_ci" type="text_ci" indexed="true" stored="true"/>
+  <field name="qualitaet" type="pint" indexed="true" stored="true"/>
+  <field name="staticId" type="pint" indexed="true" stored="true"/>
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true"/>
   <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true"/>
   <dynamicField name="*_txt_sort" type="text_gen_sort" indexed="true" stored="true"/>
