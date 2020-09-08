@@ -569,8 +569,11 @@ class Place:
 
         if 'geo_id' in form and form['geo_id'] != "":
             geo_id = form['geo_id']
-            geo_id = re.sub(r'G0*?', r'', geo_id)
-            geo_id = "G" + "{:06d}".format(int(geo_id))
+            geo_id = re.sub(r'G0*?', r'', geo_id, flags=re.IGNORECASE)
+            try:
+                geo_id = "G" + "{:06d}".format(int(geo_id))
+            except:
+                geo_id = form['geo_id']
             query_string = "id:" + geo_id + " " + logical_operater + " "
         else:
             query_string = "id:* " + logical_operater + " "
