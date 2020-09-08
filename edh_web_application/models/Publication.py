@@ -112,9 +112,9 @@ class Publication:
 
         if 'b_nr' in form and form['b_nr'] != "":
             b_nr = form['b_nr']
-            # check if b_nr is valid pattern
-            # correct if necessary/possible
-            b_nr = Publication.format_b_nr(b_nr)
+            b_nr = re.sub(r'B0*?', r'', b_nr, flags=re.IGNORECASE)
+            if re.match(r'^\d*$', b_nr):
+                b_nr = "B" + "{:06d}".format(int(b_nr))
             query_string = "b_nr:" + b_nr + " " + logical_operater + " "
 
         if 'autor' in form and form['autor'] != "":
