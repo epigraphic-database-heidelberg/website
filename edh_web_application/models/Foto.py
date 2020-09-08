@@ -208,7 +208,13 @@ class Foto:
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
         results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
-            return None
+            # no hits, return query params
+            query_params = _get_query_params(request.args)
+            return {'metadata': {"number_of_hits": 0,
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(
+                                     request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "url_without_view_parameter": _get_url_without_view_parameter(
+                    request.url), "query_params": query_params}}
         else:
             number_of_hits = results.hits
             query_params = _get_query_params(request.args)
@@ -457,3 +463,35 @@ def _get_fotos_of_inscription(hd_nr, f_nr):
     for res in results:
         list_of_fotos.append(res['f_nr'])
     return list_of_fotos
+
+
+def _get_query_params(args):
+    """
+    creates dictionary of search params for displaying on
+    search result page
+    :param args: request.args
+    :return: dictionary with all params of query
+    """
+    result_dict = {}
+    for key in args:
+        if key == 'provinz' and args['provinz'] != "":
+            # multidict
+            result_dict['provinz'] = ""
+            params_list = args.getlist('provinz')
+            for prov in params_list:
+                result_dict['provinz'] = result_dict['provinz'] + _l(prov) + ", "
+        elif key == 'land' and args['land'] != "":
+            # multidict
+            result_dict['land'] = ""
+            params_list = args.getlist('land')
+            for c in params_list:
+                result_dict['land'] = result_dict['land'] + Place.country[c] + ", "
+        elif key not in ('anzahl', 'sort', 'start', 'view', 'bearbeitet_abgeschlossen', 'bearbeitet_provisorisch') and args[key] != "":
+            result_dict[key] = args[key]
+    if 'provinz' in result_dict:
+        result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])
+    if 'land' in result_dict:
+        result_dict['land'] = re.sub(", $", "", result_dict['land'])
+    if len(result_dict) == 0:
+        result_dict['Geo-ID'] = '*'
+    return result_dict
