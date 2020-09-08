@@ -76,7 +76,13 @@ class Publication:
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
         results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort, 'defType': 'edismax'})
         if len(results) == 0:
-            return None
+            # no hits, return query params
+            query_params = _get_query_params(request.args)
+            return {'metadata': {"number_of_hits": 0,
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(
+                                     request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "url_without_view_parameter": _get_url_without_view_parameter(
+                    request.url), "query_params": query_params}}
         else:
             number_of_hits = results.hits
             query_params = _get_query_params(request.args)
