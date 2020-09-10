@@ -323,6 +323,9 @@ class Foto:
         if 'aufnahme_jahr' in form and form['aufnahme_jahr'] != "":
             query_string += "aufnahme_jahr:" + escape_value(form['aufnahme_jahr']) + " " + logical_operater + " "
 
+        if 'qualitaet' in form and form['qualitaet'] != "":
+            query_string += "qualitaet:" + escape_value(form['qualitaet']) + " " + logical_operater + " "
+
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
