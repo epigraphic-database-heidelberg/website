@@ -211,7 +211,7 @@
   <field name="aufbewahrung_ac" type="text_ngram_2"/>
   <field name="aufbewahrung_ci" type="text_ci"/>
   <field name="aufbewahrung_str" type="string"/>
-  <field name="aufnahme_jahr" type="pint"/>
+  <field name="aufnahme_jahr" type="string"/>
   <field name="aufschrift" type="text_ngram"/>
   <field name="bearbeiter" type="text_ngram"/>
   <field name="cil" type="text_ngram"/>

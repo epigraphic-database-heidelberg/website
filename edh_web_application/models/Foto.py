@@ -320,11 +320,11 @@ class Foto:
             else:
                 query_string += "neg_nr_ci:" + escape_value(form['vorlage']) + " " + logical_operater + " "
 
+        if 'aufnahme_jahr' in form and form['aufnahme_jahr'] != "":
+            query_string += "aufnahme_jahr:" + escape_value(form['aufnahme_jahr']) + " " + logical_operater + " "
+
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
-
-        print(query_string)
-
         return query_string
 
     @classmethod
