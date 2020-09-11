@@ -176,6 +176,12 @@
                             <div class="detail_block_content_row_text">{{ d['andere'] }}</div>
                         </section>
                         {% endif %}
+                        {% if d['kommentar'] %}
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('commentary') }}:</div>
+                            <div class="detail_block_content_row_text">{{ d['kommentar'] }}</div>
+                        </section>
+                        {% endif %}
                         {% if d['hd_nr'] %}
                         <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('HD-No.') }}:</div>
