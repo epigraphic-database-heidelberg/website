@@ -326,6 +326,25 @@ class Foto:
         if 'qualitaet' in form and form['qualitaet'] != "":
             query_string += "qualitaet:" + escape_value(form['qualitaet']) + " " + logical_operater + " "
 
+        if 'ae' in form and form['ae'] != "":
+            query_string += "ae_sort:*" + escape_value(form['ae']) + "* " + logical_operater + " "
+
+        if 'cil' in form and form['cil'] != "":
+            query_string += "cil_sort:*" + escape_value(form['cil']) + "* " + logical_operater + " "
+
+        if 'andere' in form and form['andere'] != "":
+            query_string += "andere:*" + escape_value(form['andere']) + "* " + logical_operater + " "
+
+        if 'kommentar' in form and form['kommentar'] != "":
+            query_string += "kommentar:*" + escape_value(form['kommentar']) + "* " + logical_operater + " "
+
+        if 'hd_nr' in form and form['hd_nr'] != "":
+            hd_nr = form['hd_nr']
+            hd_nr = re.sub(r'HD0*?', r'', hd_nr, flags=re.IGNORECASE)
+            if re.match(r'^\d*$', hd_nr):
+                hd_nr = "HD" + "{:06d}".format(int(hd_nr))
+            query_string += "hd_nr:" + hd_nr + " " + logical_operater + " "
+
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
