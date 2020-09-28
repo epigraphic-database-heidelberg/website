@@ -86,13 +86,17 @@
             </section>
         </div>
     </div>
+    {% if data['kommentar']%}
     <div>
         <h3>{{ _("Commentary") }}</h3>
-        <div class="detail_block_content_row_text">{{ data['kommentar'] }}</div>
+        <div class="detail_block_content_row_text">
+            {{data['kommentar']}}
+        </div>
     </div>
+    {%endif%}
     {% if data['hd_nr'] %}
     <div>
-        <h3>{{ _("Inschrift") }}</h3>
+        <h3>{{ _("Inscription") }}</h3>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_("HD-No.")}}:</div>
@@ -101,6 +105,16 @@
                     <a href="/edh/inschrift/{{data['hd_nr']}}">{{data['hd_nr']}}</a>
                 </div>
             </section>
+        </div>
+    </div>
+    {% endif %}
+    {% if data['inschriften_fotos'] %}
+    <div style="margin-bottom:2em;">
+        <h3>{{ _("More Images of this Inscription") }}</h3>
+        <div class="image_layout">
+            {% for image in data['inschriften_fotos'] %}
+            <a href="/edh/foto/{{image}}" class="imagelink"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{ image }}.JPG" loading="lazy"></a>
+            {% endfor %}
         </div>
     </div>
     {% endif %}

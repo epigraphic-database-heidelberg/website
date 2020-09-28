@@ -602,11 +602,27 @@ img#hadw-banner {
     margin-left: -5px;
 }
 
+/* image layout */
+.image_layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+}
+.image_layout img {
+    margin: 0px 10px 10px 0px;
+    border: 1px solid #333;
+    height: 200px;
+}
+
+/* end image layout*/
+
 * {
   -webkit-border-radius: 0 !important;
      -moz-border-radius: 0 !important;
           border-radius: 0 !important;
 }
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     body {
