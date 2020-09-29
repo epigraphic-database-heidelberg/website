@@ -78,3 +78,17 @@ def autocomplete_aufbewahrung(short=None):
         return json.dumps(Foto.get_autocomplete_entries("aufbewahrung", request.args['term'], 10))
     else:
         return json.dumps(Foto.get_autocomplete_entries("aufbewahrung", request.args['term'], 20))
+
+
+@bp_foto.route('/foto/lastUpdates', methods=['GET', 'POST'])
+def last_updates():
+    """
+    route for displaying last updates in bibliographic database
+    :return: orderedDictionary of bibliographic entries grouped by date
+    """
+    results = Foto.last_updates()
+    results_grouped_by_date = Foto.group_results_by_date(results)
+    return render_template('foto/last_updates.html',
+                           title=_("Foto Database"),
+                           subtitle=_("Last Updates"),
+                           data=results_grouped_by_date)
