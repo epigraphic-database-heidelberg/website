@@ -426,6 +426,18 @@ class Foto:
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
         results = solr.search("*:*", sort="datum desc", rows=50)
         for res in results:
+            fragezeichen = ""
+            land = res['land']
+            if res['land'][-1] == "?":
+                fragezeichen = "?"
+                land = re.sub("\\?", "", res['land'])
+            res['land'] = Place.country[land] + fragezeichen
+            fragezeichen = ""
+            provinz = res['provinz']
+            if res['provinz'][-1] == "?":
+                fragezeichen = "?"
+                provinz = re.sub("\\?", "", res['provinz'])
+            res['provinz'] = Place.province_dict[provinz] + fragezeichen
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             res['datum'] = format_date(dt, 'd. MMM YYYY', locale='de_DE')
         return results
