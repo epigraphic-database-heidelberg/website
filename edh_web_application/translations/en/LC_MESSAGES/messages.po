@@ -629,7 +629,7 @@ msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:112
 msgid "More Images of this Inscription"
-msgstr ""
+msgstr "More images of this inscription"
 
 #: edh_web_application/foto/templates/foto/search.html:17
 #: edh_web_application/foto/templates/foto/search.html:23
