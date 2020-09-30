@@ -72,7 +72,7 @@ class FotoSearch(FlaskForm):
                                 ('fo_modern', _l('modern find spot')),
                                 ('aufbewahrung', _l('present location')),
                                 ('hd_nr', _l('HD-No.')),
-                                ('CIL', ('CIL')),
-                                ('AE', 'AE')])
+                                ('cil', ('CIL')),
+                                ('ae', 'AE')])
     anzahl = SelectField(_l('number of results/page'),
                          choices=[('20', '20'), ('50', '50'), ('100', '100'), ('200', '200')])

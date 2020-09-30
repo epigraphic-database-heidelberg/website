@@ -13,7 +13,7 @@
 <a href="/foto/suche"><button type="button" class="btn">{{_('New Search')}}</button></a>
 <div class="row">
     <div class="col search-filter">
-        <button type="button" class="btn btn-info" id="sort-by" style="margin-left:0px;">{{_('sort by')}}: {% if request.args.get('sort') %}{{ _(request.args.get('sort')) }}{%else%}{{_('b_nr')}}{%endif%}</button><br class="visible-xs" />
+        <button type="button" class="btn btn-info" id="sort-by" style="margin-left:0px;">{{_('sort by')}}: {% if request.args.get('sort') %}{{ _(request.args.get('sort')) }}{%else%}{{_('f_nr')}}{%endif%}</button><br class="visible-xs" />
         <button type="button" class="btn btn-info" id="hits-per-page">{{_('number of results/page')}}: {{data['metadata']['rows']}}</button><br class="visible-xs" />
         <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('list')}}</button>
         <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
@@ -298,10 +298,15 @@
 </div>
 <div id="dialog-sort" title = "{{_('sort by')}}:">
     <ul>
-    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=b_nr">{{_('B-Nr.')}}</a></li>
-    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=autor">{{_('author')}}</a></li>
-    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=publikation">{{_('publication')}}</a></li>
-    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=jahr">{{_('years')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=b_nr">{{_('F-Nr.')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=provinz">{{_('province')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=land">{{_('country')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_antik">{{_('ancient find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_modern">{{_('modern find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=aufbewahrung">{{_('present location')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=hd_nr">{{_('HD-No.')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=cil">{{_('CIL')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=ae">{{_('AE')}}</a></li>
     </ul>
 </div>
 <div id="dialog-number" title = "{{_('number of results/page')}}:">

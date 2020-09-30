@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-28 14:16+0200\n"
+"POT-Creation-Date: 2020-09-30 11:30+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -50,7 +50,6 @@ msgstr "B-Nr."
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:132
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:278
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
-#: edh_web_application/foto/templates/foto/search_results.html:302
 msgid "author"
 msgstr "Autor"
 
@@ -67,7 +66,6 @@ msgstr "Titel"
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:148
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:279
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
-#: edh_web_application/foto/templates/foto/search_results.html:303
 msgid "publication"
 msgstr "Publikation"
 
@@ -98,14 +96,18 @@ msgstr "Ort"
 
 #: edh_web_application/bibliography/forms.py:18
 #: edh_web_application/foto/forms.py:60
+#: edh_web_application/foto/templates/foto/last_updates.html:50
 #: edh_web_application/foto/templates/foto/search_results.html:163
+#: edh_web_application/models/Foto.py:165
 #: edh_web_application/models/Publication.py:24
 msgid "ae"
 msgstr "AE"
 
 #: edh_web_application/bibliography/forms.py:19
 #: edh_web_application/foto/forms.py:59
+#: edh_web_application/foto/templates/foto/last_updates.html:56
 #: edh_web_application/foto/templates/foto/search_results.html:169
+#: edh_web_application/models/Foto.py:164
 #: edh_web_application/models/Publication.py:26
 msgid "cil"
 msgstr "CIL"
@@ -135,7 +137,7 @@ msgstr "sortieren nach"
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:283
 #: edh_web_application/foto/forms.py:77
 #: edh_web_application/foto/templates/foto/search_results.html:17
-#: edh_web_application/foto/templates/foto/search_results.html:307
+#: edh_web_application/foto/templates/foto/search_results.html:312
 #: edh_web_application/geography/forms.py:73
 #: edh_web_application/geography/templates/geography/search_results.html:17
 #: edh_web_application/geography/templates/geography/search_results.html:292
@@ -184,6 +186,7 @@ msgstr "Bibliographie Datenbank"
 
 #: edh_web_application/bibliography/routes.py:83
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:14
+#: edh_web_application/foto/routes.py:93
 #: edh_web_application/foto/templates/foto/detail_view.html:14
 #: edh_web_application/geography/routes.py:21
 #: edh_web_application/geography/templates/geography/detail_view.html:13
@@ -249,6 +252,7 @@ msgstr "andere Corpora"
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:17
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:128
+#: edh_web_application/foto/templates/foto/last_updates.html:17
 #: edh_web_application/foto/templates/foto/search_results.html:128
 #: edh_web_application/geography/templates/geography/last_updates.html:20
 #: edh_web_application/geography/templates/geography/search_results.html:129
@@ -257,6 +261,7 @@ msgstr "Suchtreffer"
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:19
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:130
+#: edh_web_application/foto/templates/foto/last_updates.html:20
 #: edh_web_application/foto/templates/foto/search_results.html:132
 #: edh_web_application/geography/templates/geography/last_updates.html:27
 #: edh_web_application/geography/templates/geography/search_results.html:136
@@ -267,7 +272,6 @@ msgstr "&ndash; Detailansicht öffnen..."
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:160
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:280
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
-#: edh_web_application/foto/templates/foto/search_results.html:304
 msgid "years"
 msgstr "Jahre"
 
@@ -336,7 +340,6 @@ msgid "New Search"
 msgstr "neue Suche"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:16
-#: edh_web_application/foto/templates/foto/search_results.html:16
 #: edh_web_application/models/Publication.py:16
 msgid "b_nr"
 msgstr "B-Nr."
@@ -346,7 +349,7 @@ msgstr "B-Nr."
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:16
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:40
 #: edh_web_application/foto/templates/foto/search_results.html:18
-#: edh_web_application/foto/templates/foto/search_results.html:315
+#: edh_web_application/foto/templates/foto/search_results.html:320
 #: edh_web_application/geography/templates/geography/search_results.html:18
 #: edh_web_application/geography/templates/geography/search_results.html:300
 #: edh_web_application/geography/templates/geography/search_results_map.html:16
@@ -360,7 +363,7 @@ msgstr "Ansicht"
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:293
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:42
 #: edh_web_application/foto/templates/foto/search_results.html:18
-#: edh_web_application/foto/templates/foto/search_results.html:317
+#: edh_web_application/foto/templates/foto/search_results.html:322
 #: edh_web_application/geography/templates/geography/search_results.html:18
 #: edh_web_application/geography/templates/geography/search_results.html:302
 #: edh_web_application/geography/templates/geography/search_results_map.html:25
@@ -373,7 +376,7 @@ msgstr "Liste"
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:17
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:46
 #: edh_web_application/foto/templates/foto/search_results.html:19
-#: edh_web_application/foto/templates/foto/search_results.html:321
+#: edh_web_application/foto/templates/foto/search_results.html:326
 #: edh_web_application/geography/templates/geography/search_results.html:19
 #: edh_web_application/geography/templates/geography/search_results.html:307
 #: edh_web_application/geography/templates/geography/search_results_map.html:17
@@ -384,14 +387,13 @@ msgid "filter"
 msgstr "Filter"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:277
-#: edh_web_application/foto/templates/foto/search_results.html:301
 msgid "B-Nr."
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:294
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:16
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:43
-#: edh_web_application/foto/templates/foto/search_results.html:318
+#: edh_web_application/foto/templates/foto/search_results.html:323
 #: edh_web_application/geography/templates/geography/search_results.html:303
 #: edh_web_application/geography/templates/geography/search_results_map.html:26
 #: edh_web_application/geography/templates/geography/search_results_table.html:16
@@ -499,7 +501,9 @@ msgstr "F-Nummer"
 
 #: edh_web_application/foto/forms.py:51 edh_web_application/foto/forms.py:69
 #: edh_web_application/foto/templates/foto/detail_view.html:28
+#: edh_web_application/foto/templates/foto/last_updates.html:25
 #: edh_web_application/foto/templates/foto/search_results.html:138
+#: edh_web_application/foto/templates/foto/search_results.html:302
 #: edh_web_application/geography/forms.py:51
 #: edh_web_application/geography/forms.py:69
 #: edh_web_application/geography/templates/geography/detail_view.html:28
@@ -512,7 +516,9 @@ msgstr "Provinz"
 
 #: edh_web_application/foto/forms.py:52 edh_web_application/foto/forms.py:70
 #: edh_web_application/foto/templates/foto/detail_view.html:32
+#: edh_web_application/foto/templates/foto/last_updates.html:29
 #: edh_web_application/foto/templates/foto/search_results.html:142
+#: edh_web_application/foto/templates/foto/search_results.html:303
 #: edh_web_application/geography/forms.py:52
 #: edh_web_application/geography/forms.py:69
 #: edh_web_application/geography/templates/geography/detail_view.html:32
@@ -526,7 +532,9 @@ msgstr "Land"
 
 #: edh_web_application/foto/forms.py:53 edh_web_application/foto/forms.py:71
 #: edh_web_application/foto/templates/foto/detail_view.html:36
+#: edh_web_application/foto/templates/foto/last_updates.html:33
 #: edh_web_application/foto/templates/foto/search_results.html:146
+#: edh_web_application/foto/templates/foto/search_results.html:304
 #: edh_web_application/geography/forms.py:53
 #: edh_web_application/geography/forms.py:70
 #: edh_web_application/geography/templates/geography/detail_view.html:36
@@ -540,7 +548,9 @@ msgstr "Fundort antik"
 
 #: edh_web_application/foto/forms.py:54 edh_web_application/foto/forms.py:72
 #: edh_web_application/foto/templates/foto/detail_view.html:40
+#: edh_web_application/foto/templates/foto/last_updates.html:37
 #: edh_web_application/foto/templates/foto/search_results.html:150
+#: edh_web_application/foto/templates/foto/search_results.html:305
 #: edh_web_application/geography/forms.py:54
 #: edh_web_application/geography/forms.py:71
 #: edh_web_application/geography/templates/geography/detail_view.html:46
@@ -554,7 +564,9 @@ msgstr "Fundort modern"
 
 #: edh_web_application/foto/forms.py:55 edh_web_application/foto/forms.py:73
 #: edh_web_application/foto/templates/foto/detail_view.html:44
+#: edh_web_application/foto/templates/foto/last_updates.html:41
 #: edh_web_application/foto/templates/foto/search_results.html:154
+#: edh_web_application/foto/templates/foto/search_results.html:306
 msgid "present location"
 msgstr "Aufbewahrungsort"
 
@@ -565,6 +577,7 @@ msgstr "Vorlage"
 
 #: edh_web_application/foto/forms.py:57
 #: edh_web_application/foto/templates/foto/detail_view.html:57
+#: edh_web_application/foto/templates/foto/last_updates.html:45
 #: edh_web_application/foto/templates/foto/search_results.html:158
 msgid "date of photograph"
 msgstr "Aufnahme-Jahr\t"
@@ -575,18 +588,22 @@ msgid "quality"
 msgstr "Qualität"
 
 #: edh_web_application/foto/forms.py:61
+#: edh_web_application/foto/templates/foto/last_updates.html:62
 #: edh_web_application/foto/templates/foto/search_results.html:175
 msgid "other literature"
 msgstr "andere Literatur"
 
 #: edh_web_application/foto/forms.py:62
+#: edh_web_application/foto/templates/foto/last_updates.html:68
 #: edh_web_application/foto/templates/foto/search_results.html:181
 msgid "commentary"
 msgstr "Kommentar"
 
 #: edh_web_application/foto/forms.py:63 edh_web_application/foto/forms.py:74
-#: edh_web_application/foto/templates/foto/detail_view.html:100
+#: edh_web_application/foto/templates/foto/detail_view.html:102
+#: edh_web_application/foto/templates/foto/last_updates.html:74
 #: edh_web_application/foto/templates/foto/search_results.html:187
+#: edh_web_application/foto/templates/foto/search_results.html:307
 msgid "HD-No."
 msgstr "HD-Nr."
 
@@ -606,7 +623,7 @@ msgstr "Aufschrift"
 
 #: edh_web_application/foto/routes.py:21 edh_web_application/foto/routes.py:25
 #: edh_web_application/foto/routes.py:29 edh_web_application/foto/routes.py:37
-#: edh_web_application/foto/routes.py:40
+#: edh_web_application/foto/routes.py:40 edh_web_application/foto/routes.py:92
 msgid "Foto Database"
 msgstr "Foto Datenbank"
 
@@ -622,15 +639,15 @@ msgstr "Aufnahme"
 msgid "Literature"
 msgstr "Literatur"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:90
+#: edh_web_application/foto/templates/foto/detail_view.html:91
 msgid "Commentary"
 msgstr "Kommentar"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:97
+#: edh_web_application/foto/templates/foto/detail_view.html:99
 msgid "Inscription"
 msgstr "Inschrift"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:112
+#: edh_web_application/foto/templates/foto/detail_view.html:113
 msgid "More Images of this Inscription"
 msgstr "Weitere Fotos dieser Inschrift"
 
@@ -646,6 +663,23 @@ msgstr "Weitere Fotos dieser Inschrift"
 #: edh_web_application/geography/templates/geography/search_results_table.html:55
 msgid "select one or more entries..."
 msgstr "einen oder mehrere Einträge auswählen..."
+
+#: edh_web_application/foto/templates/foto/search_results.html:16
+#: edh_web_application/models/Foto.py:157
+msgid "f_nr"
+msgstr "F-Nr."
+
+#: edh_web_application/foto/templates/foto/search_results.html:301
+msgid "F-Nr."
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/search_results.html:308
+msgid "CIL"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/search_results.html:309
+msgid "AE"
+msgstr ""
 
 #: edh_web_application/geography/forms.py:50
 msgid "Geo-ID"
@@ -1044,6 +1078,34 @@ msgstr "Kosovo"
 msgid "unknown"
 msgstr "unbekannt"
 
+#: edh_web_application/models/Foto.py:158
+#: edh_web_application/models/Place.py:445
+msgid "provinz"
+msgstr "Provinz"
+
+#: edh_web_application/models/Foto.py:159
+#: edh_web_application/models/Place.py:444
+msgid "land"
+msgstr "Land"
+
+#: edh_web_application/models/Foto.py:160
+#: edh_web_application/models/Place.py:446
+msgid "fo_antik"
+msgstr "Fundort antik"
+
+#: edh_web_application/models/Foto.py:161
+#: edh_web_application/models/Place.py:447
+msgid "fo_modern"
+msgstr "Fundort modern"
+
+#: edh_web_application/models/Foto.py:162
+msgid "aufbewahrung"
+msgstr "Aufbewahrungsort"
+
+#: edh_web_application/models/Foto.py:163
+msgid "hd_nr"
+msgstr "HD-Nr."
+
 #: edh_web_application/models/Person.py:14
 msgid "senatorial order"
 msgstr "Senatorenstand"
@@ -1359,22 +1421,6 @@ msgstr "Venetia et Histria (Regio X)"
 #: edh_web_application/models/Place.py:443
 msgid "geo_id"
 msgstr "Geo-ID"
-
-#: edh_web_application/models/Place.py:444
-msgid "land"
-msgstr "Land"
-
-#: edh_web_application/models/Place.py:445
-msgid "provinz"
-msgstr "Provinz"
-
-#: edh_web_application/models/Place.py:446
-msgid "fo_antik"
-msgstr "Fundort antik"
-
-#: edh_web_application/models/Place.py:447
-msgid "fo_modern"
-msgstr "Fundort modern"
 
 #: edh_web_application/models/Place.py:448
 msgid "fundstelle"
@@ -2963,16 +3009,3 @@ msgstr "Griechische &amp; Lateinische Inschriften der Türkei"
 #: edh_web_application/templates/home.html:208
 msgid "Linked Open Data methods & tools for exploring historical places"
 msgstr "Linked Open Data Methoden und Tools für historische Orte"
-
-#~ msgid "The search resulted in no hits."
-#~ msgstr "Die Suche ergab keine Treffer."
-
-#~ msgid "Generic data"
-#~ msgstr "Allgemeine Angaben"
-
-#~ msgid "last update"
-#~ msgstr "Letzte Änderung"
-
-#~ msgid "Inschrift"
-#~ msgstr ""
-

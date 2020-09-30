@@ -151,6 +151,20 @@ class Foto:
         "Val": "Valeria",
         "VeH": "Venetia et Histria (Regio X)",
     }
+
+    # dict of localized sort paramter values
+    sort_param_values = {
+        "f_nr": _l('f_nr'),
+        "provinz": _l('provinz'),
+        "land": _l('land'),
+        "fo_antik": _l('fo_antik'),
+        "fo_modern": _l('fo_modern'),
+        "aufbewahrung": _l('aufbewahrung'),
+        "hd_nr": _l('hd_nr'),
+        "cil": _l('cil'),
+        "ae": _l('ae'),
+    }
+
     def __init__(self,
                  f_nr,
                  bearbeiter,
@@ -205,6 +219,20 @@ class Foto:
                 start = 0
         if hits:
             rows = hits
+        if request.args.get('sort') in ['cil', 'ae']:
+            sort = request.args.get('sort') + "_sort asc"
+        elif request.args.get('sort') in ['fo_antik', 'fo_modern', 'aufbewahrung']:
+            sort = request.args.get('sort') + "_str asc"
+        elif request.args.get('sort') == "provinz":
+            sort = "provinz asc"
+        elif request.args.get('sort') == "land":
+            from flask import session
+            if session.get('lang'):
+                sort = "land_sort_" + session.get('lang') + " asc"
+            else:
+                sort = "land_sort_en asc"
+        elif request.args.get('sort') == "hd_nr":
+            sort = request.args.get('sort') + " asc"
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
         results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
