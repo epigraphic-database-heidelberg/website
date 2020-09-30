@@ -414,7 +414,7 @@ class Foto:
     def get_autocomplete_entries(cls, ac_field, term, hits):
         """
         queries Solr core edhFoto for list of entries displayed in
-        autocomplete fields of Geo form
+        autocomplete fields of form
         :param ac_field: field to facet
         :param term: querystring
         :return: list of relevant field values
@@ -586,5 +586,5 @@ def _get_query_params(args):
     if 'land' in result_dict:
         result_dict['land'] = re.sub(", $", "", result_dict['land'])
     if len(result_dict) == 0:
-        result_dict['Geo-ID'] = '*'
+        result_dict['F-Nr'] = '*'
     return result_dict
