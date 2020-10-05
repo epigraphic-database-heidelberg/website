@@ -352,7 +352,8 @@ class Foto:
             query_string += "aufnahme_jahr:" + escape_value(form['aufnahme_jahr']) + " " + logical_operater + " "
 
         if 'qualitaet' in form and form['qualitaet'] != "":
-            query_string += "qualitaet:" + escape_value(form['qualitaet']) + " " + logical_operater + " "
+            if form['qualitaet'].isnumeric():
+                query_string += "qualitaet:" + escape_value(form['qualitaet']) + " " + logical_operater + " "
 
         if 'ae' in form and form['ae'] != "":
             query_string += "ae_sort:*" + escape_value(form['ae']) + "* " + logical_operater + " "
