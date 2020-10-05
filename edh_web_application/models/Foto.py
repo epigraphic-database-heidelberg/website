@@ -488,19 +488,6 @@ class Foto:
         return grouped_result
 
 
-def _get_query_params(args):
-    """
-    creates dictionary of search params for displaying on
-    search result page
-    :param args: request.args
-    :return: dictionary with all params of query
-    """
-    result_dict = {}
-    for key in args:
-        if key not in ('anzahl', 'sort', 'start', 'view') and args[key] != "":
-            result_dict[key] = args[key]
-    return result_dict
-
 def _get_url_without_pagination_parameters(url):
     """
     removes URL parameters anzahl and start; these get added later in the template again
@@ -579,6 +566,16 @@ def _get_query_params(args):
             params_list = args.getlist('land')
             for c in params_list:
                 result_dict['land'] = result_dict['land'] + Place.country[c] + ", "
+        elif key == 'vorlage' and args['vorlage'] != "":
+            result_dict['original image'] = args[key]
+        elif key == 'aufnahme_jahr' and args['aufnahme_jahr'] != "":
+            result_dict['date of photograph'] = args[key]
+        elif key == 'qualitaet' and args['qualitaet'] != "":
+            result_dict['quality'] = args[key]
+        elif key == 'andere' and args['andere'] != "":
+            result_dict['other literature'] = args[key]
+        elif key == 'kommentar' and args['kommentar'] != "":
+            result_dict['commentary'] = args[key]
         elif key not in ('anzahl', 'sort', 'start', 'view', 'bearbeitet_abgeschlossen', 'bearbeitet_provisorisch') and args[key] != "":
             result_dict[key] = args[key]
     if 'provinz' in result_dict:

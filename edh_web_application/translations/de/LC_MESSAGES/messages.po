@@ -580,7 +580,7 @@ msgstr "Vorlage"
 #: edh_web_application/foto/templates/foto/last_updates.html:45
 #: edh_web_application/foto/templates/foto/search_results.html:158
 msgid "date of photograph"
-msgstr "Aufnahme-Jahr\t"
+msgstr "Aufnahme-Jahr"
 
 #: edh_web_application/foto/forms.py:58
 #: edh_web_application/foto/templates/foto/detail_view.html:61
