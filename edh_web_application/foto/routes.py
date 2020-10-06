@@ -11,7 +11,16 @@ from ..models.Place import Place
 
 @bp_foto.route('/foto/suche')
 def search_foto():
-    form = FotoSearch()
+    form = FotoSearch(data=request.args)
+    form.fo_antik.data = request.args.get('fo_antik')
+    form.fo_modern.data = request.args.get('fo_modern')
+    form.kommentar.data = request.args.get('kommentar')
+    form.provinz.data = request.args.getlist('provinz')
+    form.land.data = request.args.getlist('land')
+    form.aufbewahrung.data = request.args.get('aufbewahrung')
+    form.cil.data = request.args.get('cil')
+    form.ae.data = request.args.get('ae')
+    form.andere.data = request.args.get('andere')
     if len(request.args) > 0:
         # create query string
         query_string = Foto.create_query_string(request.args)
