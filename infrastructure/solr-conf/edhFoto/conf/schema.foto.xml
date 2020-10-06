@@ -205,7 +205,9 @@
   <field name="_version_" type="plong" indexed="false" stored="false"/>
   <field name="ae" type="text_ngram"/>
   <field name="ae_sort" type="string"/>
-  <field name="andere" type="text_ngram"/>
+  <field name="ae_ci" type="text_ci"/>
+  <field name="andere" type="string"/>
+  <field name="andere_ci" type="text_ci"/>
   <field name="aufbewahrung" type="text_ngram"/>
   <field name="aufbewahrung_sort" type="string"/>
   <field name="aufbewahrung_ac" type="text_ngram_2"/>
@@ -216,6 +218,7 @@
   <field name="bearbeiter" type="text_ngram"/>
   <field name="cil" type="text_ngram"/>
   <field name="cil_sort" type="string"/>
+  <field name="cil_ci" type="text_ci"/>
   <field name="datum" type="string"/>
   <field name="f_nr" type="string" required="true"/>
   <field name="fo_antik" type="text_ngram_2" indexed="true" stored="true" />
@@ -229,7 +232,8 @@
   <field name="hd_nr" type="string" indexed="true" stored="true"/>
   <field name="internet" type="string" indexed="true" stored="true"/>
   <field name="jahr" type="text" indexed="true" stored="true"/>
-  <field name="kommentar" type="text_ngram" indexed="true" stored="true"/>
+  <field name="kommentar" type="string" indexed="true" stored="true"/>
+  <field name="kommentar_ci" type="text_ci" indexed="true" stored="true"/>
   <field name="land" type="string" indexed="true" stored="true"/>
   <field name="land_ci" type="text_ci" indexed="true" stored="true"/>
   <field name="land_sort_de" type="pint" indexed="true" stored="true"/>
@@ -251,14 +255,18 @@
   <dynamicField name="*_point" type="point" indexed="true" stored="true"/>
   <dynamicField name="*_ws" type="text_ws" indexed="true" stored="true"/>
   <copyField source="ae" dest="ae_sort"/>
+  <copyField source="ae" dest="ae_ci"/>
+  <copyField source="andere" dest="andere_ci"/>
   <copyField source="aufbewahrung" dest="aufbewahrung_sort"/>
   <copyField source="cil" dest="cil_sort"/>
+  <copyField source="cil" dest="cil_ci"/>
   <copyField source="fo_antik" dest="fo_antik_ci"/>
   <copyField source="fo_antik" dest="fo_antik_str"/>
   <copyField source="fo_antik" dest="fo_antik_ac" />
   <copyField source="fo_modern" dest="fo_modern_ci"/>
   <copyField source="fo_modern" dest="fo_modern_ac"/>
   <copyField source="fo_modern" dest="fo_modern_str"/>
+  <copyField source="kommentar" dest="kommentar_ci"/>
   <copyField source="land" dest="land_ci"/>
   <copyField source="neg_nr" dest="neg_nr_string"/>
   <copyField source="neg_nr" dest="neg_nr_ci"/>
