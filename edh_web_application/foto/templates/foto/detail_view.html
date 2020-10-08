@@ -18,7 +18,7 @@
     <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
 </h3>
 <div>
-    <div id="map" style="margin-top:2em; height:400px; width: 100%; border: 1px solid #333;"></div>
+    <div id="map" style="margin-top:2em; height:400px; width: 100%; border: 1px solid #333; resize: both; overflow: auto;"></div>
     <!--<div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div> -->
     <div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div>
     <div>
@@ -138,7 +138,8 @@ map = L.map('map', {
     crs: L.CRS.Simple,
     zoom: 0,
     zoomSnap: 0,
-    zoomDelta: 0.25
+    zoomDelta: 0.25,
+    attributionControl: false
 });
 var manifestUrl = 'https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json';
 $.getJSON(manifestUrl, function(data) {
