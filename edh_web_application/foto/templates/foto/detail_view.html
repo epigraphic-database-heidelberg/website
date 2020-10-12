@@ -18,7 +18,7 @@
     <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
 </h3>
 <div>
-    <div id="map" style="margin-top:2em; height:400px; width: 100%; border: 1px solid #333; resize: both; overflow: auto;"></div>
+    <div id="map" style="margin-top:2em; height:400px; width: 100%; border: 1px solid #333;"></div>
     <!--<div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div> -->
     <div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div>
     <div>
@@ -105,17 +105,19 @@
                     <a href="/edh/inschrift/{{data['hd_nr']}}">{{data['hd_nr']}}</a>
                 </div>
             </section>
+        {% if data['inschriften_fotos'] %}
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_("more images")}}:</div>
+                <div class="detail_block_content_row_text">
+                    <div class="image_layout">
+                    {% for image in data['inschriften_fotos'] %}
+                    <a href="/edh/foto/{{image}}" class="imagelink"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{ image }}.JPG" loading="lazy"></a>
+                    {% endfor %}
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-    {% endif %}
-    {% if data['inschriften_fotos'] %}
-    <div style="margin-bottom:2em;">
-        <h3>{{ _("More Images of this Inscription") }}</h3>
-        <div class="image_layout">
-            {% for image in data['inschriften_fotos'] %}
-            <a href="/edh/foto/{{image}}" class="imagelink"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{ image }}.JPG" loading="lazy"></a>
-            {% endfor %}
-        </div>
+        {% endif %}
     </div>
     {% endif %}
 </div>
