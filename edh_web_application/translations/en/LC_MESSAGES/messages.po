@@ -2055,8 +2055,7 @@ msgstr ""
 "Heidelberg<br />Germany</p><h3>Phone</h3><p>+49 (0) 62 21 / 54 22 "
 "39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 34</p><h3>Email</h3><p><i "
 "class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"mailto:epigraphische.datenbank@zaw.uni-"
-"heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
+"href=\"mailto:epigraphische-datenbank@hadw-bw.de\">epigraphische-datenbank@hadw-bw.de</a></p>"
 
 #: edh_web_application/project/templates/project/project_cooperations.html:10
 msgid "Cooperations Description"
@@ -2821,8 +2820,7 @@ msgstr ""
 "4<br />69117 Heidelberg<br /> Germany</p><h3>Phon</h3><p>+49 (0) 62 21 / "
 "54 22 39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 "
 "34</p><h3>Email</h3><p><i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"mailto:epigraphische.datenbank@zaw.uni-"
-"heidelberg.de\">epigraphische.datenbank@zaw.uni-heidelberg.de</a></p>"
+"href=\"mailto:epigraphische-datenbank@hadw-bw.de\">epigraphische-datenbank@hadw-bw.de</a></p>"
 
 #: edh_web_application/templates/404.html:4
 #: edh_web_application/templates/404.html:8
