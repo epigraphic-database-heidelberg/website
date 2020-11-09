@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+<p>{{_("The search for:")}}</p>
+<p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
+<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
+<a href="/foto/suche"><button type="button" class="btn">{{_('New Search')}}</button></a>
+<div class="row">
+    <div class="col search-filter">
+        <button type="button" class="btn btn-info" id="sort-by" style="margin-left:0px;">{{_('sort by')}}: {% if request.args.get('sort') %}{{ _(request.args.get('sort')) }}{%else%}{{_('f_nr')}}{%endif%}</button><br class="visible-xs" />
+        <button type="button" class="btn btn-info" id="hits-per-page">{{_('number of results/page')}}: {{data['metadata']['rows']}}</button><br class="visible-xs" />
+        <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('grid')}}</button>
+        <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+    </div>
+</div>
+<div class="row">
+    <div class="masonry-wrapper"><div class="masonry">
+        {% for d in data['items'] %}
+        <div class="masonry-item">
+            <a href="./edh/foto/{{ d['f_nr'] }}"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{d['f_nr']}}.JPG" alt="Dummy Image" class="masonry-content" style="max-width:180px"></a>
+          </div>
+        {% endfor %}
+    </div></div>
+</div>
+<div id="dialog-sort" title = "{{_('sort by')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=f_nr&view=grid">{{_('F-Nr.')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=provinz&view=grid">{{_('province')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=land&view=grid">{{_('country')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_antik&view=grid">{{_('ancient find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_modern&view=grid">{{_('modern find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=aufbewahrung&view=grid">{{_('present location')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=hd_nr&view=grid">{{_('HD-No.')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=cil&view=grid">{{_('CIL')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=ae&view=grid">{{_('AE')}}</a></li>
+    </ul>
+</div>
+<div id="dialog-number" title = "{{_('number of results/page')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=20">20</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=50">50</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=100">100</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=200">200</a></li>
+    </ul>
+</div>
+<div id="dialog-view" title = "{{_('view')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&view=list">{{_('list')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&view=grid">{{_('grid')}}</a></li>
+    </ul>
+</div>
+<div id="dialog-filter" title = "{{_('filter')}}:">
+    <form action="" method="get">
+        <div class="form-group">
+            {{ form.provinz.label() }}
+            {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
+        </div>
+        <div class="form-group">
+            {{ form.land.label() }}
+            {{ form.land(class='form-control selectpicker', title=_('select one or more entries...')) }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.fo_antik.label() }}
+            {{ form.fo_antik(class='form-control autocomplete autocomplete-filter', id='ancient_find_spot') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.fo_modern.label() }}
+            {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.aufbewahrung.label() }}
+            {{ form.aufbewahrung(class='form-control autocomplete ui-autocomplete-input', id='present_location') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.cil.label() }}
+            {{ form.cil(class='form-control', id='cil') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.ae.label() }}
+            {{ form.ae(class='form-control', id='ae') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.andere.label() }}
+            {{ form.andere(class='form-control', id='andere') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.kommentar.label() }}
+            {{ form.kommentar(class='form-control', id='kommentar') }}
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
+            <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
+        </div>
+        <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
+        <input type="hidden" id="anzahl_param" name="anzahl" value="{{ request.args.get('anzahl') }}">
+        <input type="hidden" id="sort_param" name="sort" value="{{ request.args.get('sort') }}">
+    </form>
+</div>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+<link src=".{{url_for('static', filename='css/masonry.css')}}"></link>
+<script>
+
+    $(function() {
+        $( "#dialog-sort" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#sort-by" ).click(function() {
+            $( "#dialog-sort" ).dialog( "open" );
+            console.log("huhu");
+        });
+        $( "#dialog-number" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#hits-per-page" ).click(function() {
+            $( "#dialog-number" ).dialog( "open" );
+        });
+        $( "#dialog-view" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#view" ).click(function() {
+            $( "#dialog-view" ).dialog( "open" );
+        });
+        $( "#dialog-filter" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#filter" ).click(function() {
+            $( "#dialog-filter" ).dialog( "open" );
+        });
+        $('#reset').click(function(){
+            document.getElementById("autor").defaultValue = "";
+            document.getElementById("titel").defaultValue = "";
+            document.getElementById("publikation").defaultValue = "";
+            document.getElementById("band").defaultValue = "";
+            document.getElementById("jahr").defaultValue = "";
+            document.getElementById("ort").defaultValue = "";
+            document.getElementById("ae").defaultValue = "";
+            document.getElementById("zu_ae").defaultValue = "";
+            document.getElementById("cil").defaultValue = "";
+            document.getElementById("sonstige").defaultValue = "";
+        });
+    });
+    $("input#modern_find_spot").autocomplete({source:"./foto/ac/fo_modern",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"./foto/ac/fo_antik",minLength:3,delay:0})
+    $("input#present_location").autocomplete({source:"./foto/ac/aufbewahrung",minLength:3,delay:0})
+
+</script>
+{% endblock %}
