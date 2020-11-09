@@ -8,5 +8,5 @@ solr restart
 
 sleep 5
 
-curl 'http://localhost:8983/solr/edhText/update?commit=true' --data-binary @../data/edh_data.csv -H 'Content-type:application/csv'
+curl 'http://localhost:8983/solr/edhText/update?commit=true' --data-binary @../data/edh_data_text.csv -H 'Content-type:application/csv'
 
