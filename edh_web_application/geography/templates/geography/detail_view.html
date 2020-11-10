@@ -149,8 +149,8 @@
             '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2VuYW11biIsImEiOiJCcUl0ZWRzIn0.zxs-a0hWY3La5kF4CWAVug';
-    var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', minZoom:5, attribution: mbAttr}),
-        sat = L.tileLayer(mbUrl, {id: 'mapbox/satellite-streets-v11', minZoom:5, attribution: mbAttr}),
+    var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
+        sat = L.tileLayer(mbUrl, {id: 'mapbox/satellite-streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
         pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:5, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'}),
         bing_satellite = new L.BingLayer(BING_KEY, {'type': 'AerialWithLabels'}),
         openTopoMap = Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
