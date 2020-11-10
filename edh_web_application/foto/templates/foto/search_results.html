@@ -124,71 +124,71 @@
     {% set count = namespace(value=0) %}
     {% for d in data['items'] %}
     {% set count.value = count.value + 1 %}
-    <div class="detail_block" style="display:flex;">
-        <div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;"><a href="./edh/foto/{{ d['f_nr'] }}" style="color: white">{{_('Number')}} &nbsp; {{count.value + data['metadata']['start']|int}}</a></div>
-
-        <div class="col">
-            <div style="">
-                <p style="text-align:left; vertical-align:top; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/foto/{{ d['f_nr'] }}">{{ d['f_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
-                <div style="display: flex">
-                    <div class="" style="width:200px; margin:15px 15px 15px 0px;vertical-align: middle;"><a href="./edh/foto/{{ d['f_nr'] }}"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{d['f_nr']}}.JPG" style="width:200px; border: 1px solid #333;"/></a></div>
-                    <div>
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('province') }}:</div>
-                            <div class="detail_block_content_row_text">{{ _(d['provinz']) }}</div>
-                        </section>
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('country') }}:</div>
-                            <div class="detail_block_content_row_text">{{ _(d['land']) }}</div>
-                        </section>
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('ancient find spot') }}:</div>
-                            <div class="detail_block_content_row_text">{% if d['fo_antik'] %}{{ d['fo_antik'] }}{% else %}&nbsp;{% endif %}</div>
-                        </section>
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('modern find spot') }}:</div>
-                            <div class="detail_block_content_row_text">{% if d['fo_modern'] %}{{ d['fo_modern'] }}{% else %}&nbsp;{% endif %}</div>
-                        </section>
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('present location') }}:</div>
-                            <div class="detail_block_content_row_text">{% if d['aufbewahrung'] %}{{ d['aufbewahrung'] }}{% else %}&nbsp;{% endif %}</div>
-                        </section>
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('date of photograph') }}:</div>
-                            <div class="detail_block_content_row_text">{% if d['aufnahme_jahr'] %}{{ d['aufnahme_jahr'] }}{% else %}&nbsp;{% endif %}</div>
-                        </section>
-                        {% if d['ae'] %}
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('ae') }}:</div>
-                            <div class="detail_block_content_row_text">{{ d['ae'] }}</div>
-                        </section>
-                        {% endif %}
-                        {% if d['cil'] %}
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('cil') }}:</div>
-                            <div class="detail_block_content_row_text">{{ d['cil'] }}</div>
-                        </section>
-                        {% endif %}
-                        {% if d['andere'] %}
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('other literature') }}:</div>
-                            <div class="detail_block_content_row_text">{{ d['andere'] }}</div>
-                        </section>
-                        {% endif %}
-                        {% if d['kommentar'] %}
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('commentary') }}:</div>
-                            <div class="detail_block_content_row_text">{{ d['kommentar'] }}</div>
-                        </section>
-                        {% endif %}
-                        {% if d['hd_nr'] %}
-                        <section class="detail_block_content_row">
-                            <div class="detail_block_content_row_header">{{ _('HD-No.') }}:</div>
-                            <div class="detail_block_content_row_text">{{ d['hd_nr'] }}</div>
-                        </section>
-                        {% endif %}
-                    </div>
-                </div>
+    <div class="detail_block" style="padding-left: 0px;">
+        <div class="wrapper_geo_last_updates" style="padding:10px">
+            <a href="./edh/foto/{{ d['f_nr'] }}" style="color: white"><div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;min-height:250px">{{_('Number')}} &nbsp; {{count.value + data['metadata']['start']|int}}</div></a>
+            <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;width:200px;">
+                <a href="./edh/foto/{{ d['f_nr'] }}">
+                    <img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{d['f_nr']}}.JPG" style="max-width:200px; max-height:250px; border: 1px solid #333;"/>
+                </a>
+            </div>
+            <div class="detail_block_content_geo">
+                <section class="detail_block_content_row"><p style="text-align:left; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/foto/{{ d['f_nr'] }}">{{ d['f_nr'] }} &ndash; open detailed view...</a></p>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('province') }}:</div>
+                    <div class="detail_block_content_row_text">{{ _(d['provinz']) }}</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('country') }}:</div>
+                    <div class="detail_block_content_row_text">{{ _(d['land']) }}</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('ancient find spot') }}:</div>
+                    <div class="detail_block_content_row_text">{% if d['fo_antik'] %}{{ d['fo_antik'] }}{% else %}&nbsp;{% endif %}</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('modern find spot') }}:</div>
+                    <div class="detail_block_content_row_text">{% if d['fo_modern'] %}{{ d['fo_modern'] }}{% else %}&nbsp;{% endif %}</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('present location') }}:</div>
+                    <div class="detail_block_content_row_text">{% if d['aufbewahrung'] %}{{ d['aufbewahrung'] }}{% else %}&nbsp;{% endif %}</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('date of photograph') }}:</div>
+                    <div class="detail_block_content_row_text">{% if d['aufnahme_jahr'] %}{{ d['aufnahme_jahr'] }}{% else %}&nbsp;{% endif %}</div>
+                </section>
+                {% if d['ae'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('ae') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['ae'] }}</div>
+                </section>
+                {% endif %}
+                {% if d['cil'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('cil') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['cil'] }}</div>
+                </section>
+                {% endif %}
+                {% if d['andere'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('other literature') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['andere'] }}</div>
+                </section>
+                {% endif %}
+                {% if d['kommentar'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('commentary') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['kommentar'] }}</div>
+                </section>
+                {% endif %}
+                {% if d['hd_nr'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('HD-No.') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['hd_nr'] }}</div>
+                </section>
+                {% endif %}
             </div>
         </div>
     </div>
