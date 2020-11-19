@@ -1,4 +1,7 @@
+import re
+
 from flask import render_template, jsonify
+
 from . import bp_api
 from ..models.Foto import Foto
 
@@ -10,7 +13,9 @@ def create_iiif_manifest(f_nr):
     :param f_nr : F-No of image (string)
     :return: json IIIF manifest file
     """
-    # TODO: validate f_nr
+    f_nr = re.sub(r'F0*?', r'', f_nr, flags=re.IGNORECASE)
+    if re.match(r'^\d*$', f_nr):
+        f_nr = "F" + "{:06d}".format(int(f_nr))
     results = Foto.query("f_nr:" + f_nr)
     if results['metadata']['number_of_hits'] == 0:
         return render_template('404.html'), 404
