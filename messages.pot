@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-11-25 10:01+0100\n"
+"POT-Creation-Date: 2020-12-01 13:38+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -472,7 +472,7 @@ msgstr ""
 msgid "dtbl_next"
 msgstr ""
 
-#: edh_web_application/data/routes.py:9
+#: edh_web_application/data/routes.py:9 edh_web_application/data/routes.py:14
 #: edh_web_application/templates/base.html:65
 #: edh_web_application/templates/home.html:61
 msgid "Data"
@@ -480,6 +480,14 @@ msgstr ""
 
 #: edh_web_application/data/routes.py:9
 msgid "Open Data Repository"
+msgstr ""
+
+#: edh_web_application/data/routes.py:14
+msgid "Application Programming Interface (API)"
+msgstr ""
+
+#: edh_web_application/data/templates/data/api.html:10
+msgid "api page"
 msgstr ""
 
 #: edh_web_application/data/templates/data/index.html:10
