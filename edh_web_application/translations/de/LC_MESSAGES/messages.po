@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-01 13:38+0100\n"
+"POT-Creation-Date: 2020-12-08 12:15+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -180,7 +180,7 @@ msgid "Search"
 msgstr "Suche"
 
 #: edh_web_application/bibliography/routes.py:69
-#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:58
+#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:69
 #: edh_web_application/geography/routes.py:61
 #: edh_web_application/inscription/routes.py:23
 #: edh_web_application/inscription/routes.py:25
@@ -193,7 +193,7 @@ msgstr "Bibliographie Datenbank"
 
 #: edh_web_application/bibliography/routes.py:83
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:14
-#: edh_web_application/foto/routes.py:111
+#: edh_web_application/foto/routes.py:122
 #: edh_web_application/foto/templates/foto/detail_view.html:14
 #: edh_web_application/geography/routes.py:21
 #: edh_web_application/geography/templates/geography/detail_view.html:13
@@ -253,7 +253,7 @@ msgid "Also concerns the inscriptions"
 msgstr "Betrifft außerdem die Inschriften"
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:115
-#: edh_web_application/foto/templates/foto/detail_view.html:82
+#: edh_web_application/foto/templates/foto/detail_view.html:85
 msgid "other corpora"
 msgstr "andere Corpora"
 
@@ -490,89 +490,144 @@ msgstr ""
 #: edh_web_application/data/templates/data/api.html:10
 msgid "api page"
 msgstr ""
-"Alle Daten des Open Data Repository der Epigraphischen Datenbank stehen unter der <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0 Lizenz</a>."
-"<p><a href='http://creativecommons.org/licenses/by-sa/4.0/deed.de'><img src='./static/img/CC-BY-SA_icon.png' style='margin-bottom:2em;' /></a></p>"
-"<p>Daten aus der EDH können über eine öffentliche Schnittstelle (API) abgefragt werden (<a href='https://de.wikipedia.org/wiki/Cross-Origin_Resource_Sharing'>CORS</a> ist aktiviert für cross-origin Zugriffe).</p>"
-"<p>Inhaltsverzeichnis:</p>"
-"<ul><li>Suchparameter für<ol><li><a href='/data/api#inschrift'>Inschriften</a></li><li><a href='/data/api#photo'>Fotos</a></li><li><a href='/data/api#biblio'>Bibliographie</a></li><li><a href='/data/api#geo'>Geography</a></li></ol></li>"
-"<li>Response Format</li></ul>"
-"<h3>Suchparameter</h3>"
-"<h4><a name='inschrift'>1. Inschriften</a></h4>"
-"<p>Das allgemeine URI Muster für Suchanfragen lautet:</p>"
-"<pre style='font-size: 1em;'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?par_1=value&par_2=value&par_n=value</pre>"
-"<p>Suche nach "votum solvit" in der lateinischen Transkription der Inschrift aus den beiden Germanischen Provinzen mit einer Datierung nach 200 n. Chr.:</p>"
-"<a href='https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?province=ges&province=gei&transcription=votum solvit&year_not_before=200'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?province=ges&province=gei&transcription=votum solvit&year_not_before=200</a>"
-"<p style='margin-top:1.5em;'>Die folgenden Parameter stehen zur Verfügung:</p>"
-"<ul>"
-"<li><strong>hd_nr</strong> (HD-Nummer der Inschrift)</li>"
-"<li><strong>province</strong> (case insensitive, vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/province</a>, case insensitive)</li>"
-"<li><strong>country</strong> (case insensitive, vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/country</a>, case insensitive)</li>"
-"<li><strong>findspot_modern</strong> (Trunkierung vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case insensitive)</li>"
-"<li><strong>findspot_ancient</strong> (Trunkierung vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case insensitive)</li>"
-"<li><strong>year_not_before</strong> (Zahl, vorchristliche Datierungen als negative Zahlen)</li>"
-"<li><strong>year_not_after</strong> (Zahl, vorchristliche Datierungen als negative Zahlen)</li>"
-"<li><strong>tm_nr</strong> (Zahl)</li>"
-"<li><strong>transcription</strong> (automatische Trunkierung vorne & hinten, Klammern werden ignoriert)</li>"
-"<li><strong>type</strong> (Inschriftengattung, vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/type'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/type</a>, case insensitive)</li>"
-"<li><strong>bbox</strong> (Boundingbox; Format bbox=minLong , minLat , maxLong , maxLat , bspw.: <a href='https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48</a>)</li>"
-"</ul>"
-"<h4><a name='photo'>2. Fotos</a></h4>"
-"<p>Das allgemeine URI Muster für Suchanfragen lautet:</p>"
-"<pre style='font-size: 1em;'>https://edh-www.adw.uni-heidelberg.de/data/api/fotos/search?par_1=value&par_2=value&par_n=value</pre>"
-"<p>Suche nach Fotos von Inschriften aus Deutschland, die im CIL Korpus enthalten sind:</p>"
-"<p><a href='https://edh-www.adw.uni-heidelberg.de/data/api/fotos/search?country=de&cil=*'>https://edh-www.adw.uni-heidelberg.de/data/api/fotos/search?country=de&cil=*</a></p>"
-"<p style='margin-top:1.5em;'>Die folgenden Parameter stehen zur Verfügung:<ul>"
-"<li><strong>province</strong> case insensitive, vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/province</a>, case insensitive)</li>"
-"<li><strong>country</strong> (case insensitive, vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/country</a>, case insensitive)</li>"
-"<li><strong>findspot_modern</strong> (Trunkierung vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case insensitive)</li>"
-"<li><strong>findspot_ancient</strong> (Trunkierung vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case insensitive)</li>"
-"<li><strong>cil</strong> (automatische Trunkierung vorne & hinten)</li>"
-"<li><strong>ae</strong> (automatische Trunkierung vorne & hinten)</li>"
-"<li><strong>commentary</strong> (automatische Trunkierung vorne & hinten, case insensitive)</li>"
-"<li><strong>present_location</strong> (automatische Trunkierung vorne & hinten, case insensitive)</li>"
-"<li><strong>hd_nr</strong> (HD Nr. der Inschrift)</li>"
-"</ul></p>"
-"<h4><a name='biblio'>3. Bibliographie</a></h4>"
-"<p>Das allgemeine URI Muster für Suchanfragen lautet:</p>"
-"<pre style='font-size: 1em;'>https://edh-www.adw.uni-heidelberg.de/data/api/bibliography/search?par_1=value&par_2=value&par_n=value</pre>"
-"<p>Suche nach Publikationen von Alföldy:</p>"
-"<p><a href='https://edh-www.adw.uni-heidelberg.de/data/api/bibliography/search?author=Alföldy'>https://edh-www.adw.uni-heidelberg.de/data/api/bibliography/search?author=Alföldy</a></p>"
-"<p style='margin-top:1.5em;'>Die folgenden Parameter stehen zur Verfügung:<ul>"
-"<li><strong>author</strong> (automatische Trunkierung vorne & hinten)</li>"
-"<li><strong>title</strong> (automatische Trunkierung vorne & hinten)</li>"
-"<li><strong>year</strong> (Zahl)</li>"
-"<li><strong>publication</strong> (automatische Trunkierung vorne & hinten)</li>"
-"<li><strong>ae</strong> (automatische Trunkierung vorne & hinten)</li>"
-"<li><strong>cil</strong> (automatische Trunkierung vorne & hinten)</li>"
-"<li><strong>other_corpora</strong> (automatische Trunkierung vorne & hinten)</li>"
-"</ul></p>"
-"<h4><a name='geo'>4. Geographie</a></h4>"
-"<p>Das allgemeine URI Muster für Suchanfragen lautet:</p>"
-"<pre style='font-size: 1em;'>https://edh-www.adw.uni-heidelberg.de/data/api/geography/search?par_1=value&par_2=value&par_n=value</pre>"
-"<p>Suche nach allen Fundorten innerhalb einer Boundingbox und Land = Deutschland:</p>"
-"<p><a href='https://edh-www.adw.uni-heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de'>https://edh-www.adw.uni-heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de</a></p>"
-"<p style='margin-top:1.5em;'>Die folgenden Parameter stehen zur Verfügung:</p>"
-"<ul>"
-"<li><strong>province</strong> (case insensitive, vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/province</a>, case insensitive)</li>"
-"<li><strong>country</strong> (case insensitive, vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/country</a>, case insensitive)</li>"
-"<li><strong>findspot_modern</strong> (Trunkierung vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case insensitive)</li>"
-"<li><strong>findspot_ancient</strong> (Trunkierung vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case insensitive)</li>"
-"<li><strong>findspot</strong> (Fundstelle; Trunkierung vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case insensitive)</li>"
-"<li><strong>bbox</strong> (Boundingbox; Format bbox=minLong , minLat , maxLong , maxLat , bspw.:  <a href='https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48</a>)</li>"
-"<li><strong>pleiades_id</strong> (Pleiades Identifier eines Orts, Zahl)</li>"
-"<li><strong>geonames_id</strong> (Geonames Identifier eines Orts, Zahl)</li>"
-"</ul>"
-"<h3>Response format</h3>"
-"<p>Die API gibt Ergebnisse im JSON Format zurück:</p>"
-"<pre>{"
-"\"total\" : 61,"
-"  \"limit\" : "20","
-"  \"items\" : [ ... ]""
-"}</pre>"
-"<p>Ergebnisse werden seitenweise zurückgegeben (20 Treffer pro Seite); dies kann über den limit-Parameter geändert werden, bei Bedarf kann zusätzlich ein Offset-Parameter gesetzt werden:</p>"
-"<p style='margin-bottom: 2em;'><a href='https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100</a></p>"
-
-
+"Alle Daten des Open Data Repository der Epigraphischen Datenbank stehen "
+"unter der <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC "
+"BY-SA 4.0 Lizenz</a>.<p><a href='http://creativecommons.org/licenses/by-"
+"sa/4.0/deed.de'><img src='./static/img/CC-BY-SA_icon.png' style='margin-"
+"bottom:2em;' /></a></p><p>Daten aus der EDH können über eine öffentliche "
+"Schnittstelle (API) abgefragt werden (<a "
+"href='https://de.wikipedia.org/wiki/Cross-"
+"Origin_Resource_Sharing'>CORS</a> ist aktiviert für cross-origin "
+"Zugriffe).</p><p>Inhaltsverzeichnis:</p><ul><li>Suchparameter "
+"für<ol><li><a href='/data/api#inschrift'>Inschriften</a></li><li><a "
+"href='/data/api#photo'>Fotos</a></li><li><a "
+"href='/data/api#biblio'>Bibliographie</a></li><li><a "
+"href='/data/api#geo'>Geography</a></li></ol></li><li>Response "
+"Format</li></ul><h3>Suchparameter</h3><h4><a name='inschrift'>1. "
+"Inschriften</a></h4><p>Das allgemeine URI Muster für Suchanfragen "
+"lautet:</p><pre style='font-size: 1em;'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?par_1=value&par_2=value&par_n=value</pre><p>Suche"
+" nach \"votum solvit\" in der lateinischen Transkription der Inschrift "
+"aus den beiden Germanischen Provinzen mit einer Datierung nach 200 n. "
+"Chr.:</p><a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?province=ges&province=gei&transcription=votum"
+" solvit&year_not_before=200'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?province=ges&province=gei&transcription=votum"
+" solvit&year_not_before=200</a><p style='margin-top:1.5em;'>Die folgenden"
+" Parameter stehen zur Verfügung:</p><ul><li><strong>hd_nr</strong> (HD-"
+"Nummer der Inschrift)</li><li><strong>province</strong> (case "
+"insensitive, vollständige Liste aller Werte unter <a href='https://edh-"
+"www.adw.uni-heidelberg.de/data/api/terms/province'>https://edh-www.adw"
+".uni-heidelberg.de/data/api/terms/province</a>, case "
+"insensitive)</li><li><strong>country</strong> (case insensitive, "
+"vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country</a>, case "
+"insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
+"vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case "
+"insensitive)</li><li><strong>findspot_ancient</strong> (Trunkierung "
+"vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case "
+"insensitive)</li><li><strong>year_not_before</strong> (Zahl, "
+"vorchristliche Datierungen als negative "
+"Zahlen)</li><li><strong>year_not_after</strong> (Zahl, vorchristliche "
+"Datierungen als negative Zahlen)</li><li><strong>tm_nr</strong> "
+"(Zahl)</li><li><strong>transcription</strong> (automatische Trunkierung "
+"vorne & hinten, Klammern werden ignoriert)</li><li><strong>type</strong> "
+"(Inschriftengattung, vollständige Liste aller Werte unter <a href='https"
+"://edh-www.adw.uni-heidelberg.de/data/api/terms/type'>https://edh-www.adw"
+".uni-heidelberg.de/data/api/terms/type</a>, case "
+"insensitive)</li><li><strong>bbox</strong> (Boundingbox; Format "
+"bbox=minLong , minLat , maxLong , maxLat , bspw.: <a href='https://edh-"
+"www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48'>https://edh-"
+"www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48</a>)</li></ul><h4><a"
+" name='photo'>2. Fotos</a></h4><p>Das allgemeine URI Muster für "
+"Suchanfragen lautet:</p><pre style='font-size: 1em;'>https://edh-www.adw"
+".uni-"
+"heidelberg.de/data/api/fotos/search?par_1=value&par_2=value&par_n=value</pre><p>Suche"
+" nach Fotos von Inschriften aus Deutschland, die im CIL Korpus enthalten "
+"sind:</p><p><a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/fotos/search?country=de&cil=*'>https://edh-www.adw"
+".uni-heidelberg.de/data/api/fotos/search?country=de&cil=*</a></p><p style"
+"='margin-top:1.5em;'>Die folgenden Parameter stehen zur "
+"Verfügung:<ul><li><strong>province</strong> case insensitive, "
+"vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province</a>, case "
+"insensitive)</li><li><strong>country</strong> (case insensitive, "
+"vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country</a>, case "
+"insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
+"vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case "
+"insensitive)</li><li><strong>findspot_ancient</strong> (Trunkierung "
+"vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case "
+"insensitive)</li><li><strong>cil</strong> (automatische Trunkierung vorne"
+" & hinten)</li><li><strong>ae</strong> (automatische Trunkierung vorne & "
+"hinten)</li><li><strong>commentary</strong> (automatische Trunkierung "
+"vorne & hinten, case "
+"insensitive)</li><li><strong>present_location</strong> (automatische "
+"Trunkierung vorne & hinten, case "
+"insensitive)</li><li><strong>hd_nr</strong> (HD Nr. der "
+"Inschrift)</li></ul></p><h4><a name='biblio'>3. "
+"Bibliographie</a></h4><p>Das allgemeine URI Muster für Suchanfragen "
+"lautet:</p><pre style='font-size: 1em;'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/bibliography/search?par_1=value&par_2=value&par_n=value</pre><p>Suche"
+" nach Publikationen von Alföldy:</p><p><a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/bibliography/search?author=Alföldy'>https://edh-"
+"www.adw.uni-"
+"heidelberg.de/data/api/bibliography/search?author=Alföldy</a></p><p style"
+"='margin-top:1.5em;'>Die folgenden Parameter stehen zur "
+"Verfügung:<ul><li><strong>author</strong> (automatische Trunkierung vorne"
+" & hinten)</li><li><strong>title</strong> (automatische Trunkierung vorne"
+" & hinten)</li><li><strong>year</strong> "
+"(Zahl)</li><li><strong>publication</strong> (automatische Trunkierung "
+"vorne & hinten)</li><li><strong>ae</strong> (automatische Trunkierung "
+"vorne & hinten)</li><li><strong>cil</strong> (automatische Trunkierung "
+"vorne & hinten)</li><li><strong>other_corpora</strong> (automatische "
+"Trunkierung vorne & hinten)</li></ul></p><h4><a name='geo'>4. "
+"Geographie</a></h4><p>Das allgemeine URI Muster für Suchanfragen "
+"lautet:</p><pre style='font-size: 1em;'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/geography/search?par_1=value&par_2=value&par_n=value</pre><p>Suche"
+" nach allen Fundorten innerhalb einer Boundingbox und Land = "
+"Deutschland:</p><p><a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de'>https"
+"://edh-www.adw.uni-"
+"heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de</a></p><p"
+" style='margin-top:1.5em;'>Die folgenden Parameter stehen zur "
+"Verfügung:</p><ul><li><strong>province</strong> (case insensitive, "
+"vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province</a>, case "
+"insensitive)</li><li><strong>country</strong> (case insensitive, "
+"vollständige Liste aller Werte unter <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country</a>, case "
+"insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
+"vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case "
+"insensitive)</li><li><strong>findspot_ancient</strong> (Trunkierung "
+"vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case "
+"insensitive)</li><li><strong>findspot</strong> (Fundstelle; Trunkierung "
+"vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case "
+"insensitive)</li><li><strong>bbox</strong> (Boundingbox; Format "
+"bbox=minLong , minLat , maxLong , maxLat , bspw.:  <a href='https://edh-"
+"www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48'>https://edh-"
+"www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48</a>)</li><li><strong>pleiades_id</strong>"
+" (Pleiades Identifier eines Orts, "
+"Zahl)</li><li><strong>geonames_id</strong> (Geonames Identifier eines "
+"Orts, Zahl)</li></ul><h3>Response format</h3><p>Die API gibt Ergebnisse "
+"im JSON Format zurück:</p><pre>{\"total\" : 61,  \"limit\" : \"20\",  "
+"\"items\" : [ ... ]\"}</pre><p>Ergebnisse werden seitenweise "
+"zurückgegeben (20 Treffer pro Seite); dies kann über den limit-Parameter "
+"geändert werden, bei Bedarf kann zusätzlich ein Offset-Parameter gesetzt "
+"werden:</p><p style='margin-bottom: 2em;'><a href='https://edh-www.adw"
+".uni-"
+"heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100'>https"
+"://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100</a></p>"
 
 #: edh_web_application/data/templates/data/index.html:10
 msgid "data page"
@@ -607,7 +662,7 @@ msgid "F-number"
 msgstr "F-Nummer"
 
 #: edh_web_application/foto/forms.py:51 edh_web_application/foto/forms.py:69
-#: edh_web_application/foto/templates/foto/detail_view.html:28
+#: edh_web_application/foto/templates/foto/detail_view.html:27
 #: edh_web_application/foto/templates/foto/last_updates.html:25
 #: edh_web_application/foto/templates/foto/search_results.html:139
 #: edh_web_application/foto/templates/foto/search_results.html:301
@@ -623,7 +678,7 @@ msgid "province"
 msgstr "Provinz"
 
 #: edh_web_application/foto/forms.py:52 edh_web_application/foto/forms.py:70
-#: edh_web_application/foto/templates/foto/detail_view.html:32
+#: edh_web_application/foto/templates/foto/detail_view.html:31
 #: edh_web_application/foto/templates/foto/last_updates.html:29
 #: edh_web_application/foto/templates/foto/search_results.html:143
 #: edh_web_application/foto/templates/foto/search_results.html:302
@@ -640,7 +695,7 @@ msgid "country"
 msgstr "Land"
 
 #: edh_web_application/foto/forms.py:53 edh_web_application/foto/forms.py:71
-#: edh_web_application/foto/templates/foto/detail_view.html:36
+#: edh_web_application/foto/templates/foto/detail_view.html:35
 #: edh_web_application/foto/templates/foto/last_updates.html:33
 #: edh_web_application/foto/templates/foto/search_results.html:147
 #: edh_web_application/foto/templates/foto/search_results.html:303
@@ -657,7 +712,7 @@ msgid "ancient find spot"
 msgstr "Fundort antik"
 
 #: edh_web_application/foto/forms.py:54 edh_web_application/foto/forms.py:72
-#: edh_web_application/foto/templates/foto/detail_view.html:40
+#: edh_web_application/foto/templates/foto/detail_view.html:39
 #: edh_web_application/foto/templates/foto/last_updates.html:37
 #: edh_web_application/foto/templates/foto/search_results.html:151
 #: edh_web_application/foto/templates/foto/search_results.html:304
@@ -674,7 +729,7 @@ msgid "modern find spot"
 msgstr "Fundort modern"
 
 #: edh_web_application/foto/forms.py:55 edh_web_application/foto/forms.py:73
-#: edh_web_application/foto/templates/foto/detail_view.html:44
+#: edh_web_application/foto/templates/foto/detail_view.html:43
 #: edh_web_application/foto/templates/foto/last_updates.html:41
 #: edh_web_application/foto/templates/foto/search_results.html:155
 #: edh_web_application/foto/templates/foto/search_results.html:305
@@ -683,19 +738,19 @@ msgid "present location"
 msgstr "Aufbewahrungsort"
 
 #: edh_web_application/foto/forms.py:56
-#: edh_web_application/foto/templates/foto/detail_view.html:53
+#: edh_web_application/foto/templates/foto/detail_view.html:52
 msgid "original image"
 msgstr "Vorlage"
 
 #: edh_web_application/foto/forms.py:57
-#: edh_web_application/foto/templates/foto/detail_view.html:57
+#: edh_web_application/foto/templates/foto/detail_view.html:56
 #: edh_web_application/foto/templates/foto/last_updates.html:45
 #: edh_web_application/foto/templates/foto/search_results.html:159
 msgid "date of photograph"
 msgstr "Aufnahme-Jahr"
 
 #: edh_web_application/foto/forms.py:58
-#: edh_web_application/foto/templates/foto/detail_view.html:61
+#: edh_web_application/foto/templates/foto/detail_view.html:60
 msgid "quality"
 msgstr "Qualität"
 
@@ -712,7 +767,7 @@ msgid "commentary"
 msgstr "Kommentar"
 
 #: edh_web_application/foto/forms.py:63 edh_web_application/foto/forms.py:74
-#: edh_web_application/foto/templates/foto/detail_view.html:102
+#: edh_web_application/foto/templates/foto/detail_view.html:105
 #: edh_web_application/foto/templates/foto/last_updates.html:74
 #: edh_web_application/foto/templates/foto/search_results.html:188
 #: edh_web_application/foto/templates/foto/search_results.html:306
@@ -736,32 +791,36 @@ msgstr "Aufschrift"
 
 #: edh_web_application/foto/routes.py:32 edh_web_application/foto/routes.py:38
 #: edh_web_application/foto/routes.py:43 edh_web_application/foto/routes.py:47
-#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:58
-#: edh_web_application/foto/routes.py:110
+#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:69
+#: edh_web_application/foto/routes.py:121
 msgid "Foto Database"
 msgstr "Foto Datenbank"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:25
+#: edh_web_application/foto/templates/foto/detail_view.html:24
 msgid "Find circumstances / present location"
 msgstr "Fundumstände / Aufbewahrung"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:50
+#: edh_web_application/foto/templates/foto/detail_view.html:49
 msgid "Picture"
 msgstr "Aufnahme"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:67
+#: edh_web_application/foto/templates/foto/detail_view.html:64
+msgid "size (pixel)"
+msgstr "Größe (Pixel)"
+
+#: edh_web_application/foto/templates/foto/detail_view.html:70
 msgid "Literature"
 msgstr "Literatur"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:91
+#: edh_web_application/foto/templates/foto/detail_view.html:94
 msgid "Commentary"
 msgstr "Kommentar"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:99
+#: edh_web_application/foto/templates/foto/detail_view.html:102
 msgid "Inscription"
 msgstr "Inschrift"
 
-#: edh_web_application/foto/templates/foto/detail_view.html:110
+#: edh_web_application/foto/templates/foto/detail_view.html:113
 msgid "more images"
 msgstr "weitere Fotos"
 

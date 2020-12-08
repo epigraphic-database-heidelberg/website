@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-01 13:38+0100\n"
+"POT-Creation-Date: 2020-12-08 12:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -179,7 +179,7 @@ msgid "Search"
 msgstr ""
 
 #: edh_web_application/bibliography/routes.py:69
-#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:58
+#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:69
 #: edh_web_application/geography/routes.py:61
 #: edh_web_application/inscription/routes.py:23
 #: edh_web_application/inscription/routes.py:25
@@ -192,7 +192,7 @@ msgstr ""
 
 #: edh_web_application/bibliography/routes.py:83
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:14
-#: edh_web_application/foto/routes.py:111
+#: edh_web_application/foto/routes.py:122
 #: edh_web_application/foto/templates/foto/detail_view.html:14
 #: edh_web_application/geography/routes.py:21
 #: edh_web_application/geography/templates/geography/detail_view.html:13
@@ -252,7 +252,7 @@ msgid "Also concerns the inscriptions"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:115
-#: edh_web_application/foto/templates/foto/detail_view.html:82
+#: edh_web_application/foto/templates/foto/detail_view.html:85
 msgid "other corpora"
 msgstr ""
 
@@ -499,7 +499,7 @@ msgid "F-number"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:51 edh_web_application/foto/forms.py:69
-#: edh_web_application/foto/templates/foto/detail_view.html:28
+#: edh_web_application/foto/templates/foto/detail_view.html:27
 #: edh_web_application/foto/templates/foto/last_updates.html:25
 #: edh_web_application/foto/templates/foto/search_results.html:139
 #: edh_web_application/foto/templates/foto/search_results.html:301
@@ -515,7 +515,7 @@ msgid "province"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:52 edh_web_application/foto/forms.py:70
-#: edh_web_application/foto/templates/foto/detail_view.html:32
+#: edh_web_application/foto/templates/foto/detail_view.html:31
 #: edh_web_application/foto/templates/foto/last_updates.html:29
 #: edh_web_application/foto/templates/foto/search_results.html:143
 #: edh_web_application/foto/templates/foto/search_results.html:302
@@ -532,7 +532,7 @@ msgid "country"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:53 edh_web_application/foto/forms.py:71
-#: edh_web_application/foto/templates/foto/detail_view.html:36
+#: edh_web_application/foto/templates/foto/detail_view.html:35
 #: edh_web_application/foto/templates/foto/last_updates.html:33
 #: edh_web_application/foto/templates/foto/search_results.html:147
 #: edh_web_application/foto/templates/foto/search_results.html:303
@@ -549,7 +549,7 @@ msgid "ancient find spot"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:54 edh_web_application/foto/forms.py:72
-#: edh_web_application/foto/templates/foto/detail_view.html:40
+#: edh_web_application/foto/templates/foto/detail_view.html:39
 #: edh_web_application/foto/templates/foto/last_updates.html:37
 #: edh_web_application/foto/templates/foto/search_results.html:151
 #: edh_web_application/foto/templates/foto/search_results.html:304
@@ -566,7 +566,7 @@ msgid "modern find spot"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:55 edh_web_application/foto/forms.py:73
-#: edh_web_application/foto/templates/foto/detail_view.html:44
+#: edh_web_application/foto/templates/foto/detail_view.html:43
 #: edh_web_application/foto/templates/foto/last_updates.html:41
 #: edh_web_application/foto/templates/foto/search_results.html:155
 #: edh_web_application/foto/templates/foto/search_results.html:305
@@ -575,19 +575,19 @@ msgid "present location"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:56
-#: edh_web_application/foto/templates/foto/detail_view.html:53
+#: edh_web_application/foto/templates/foto/detail_view.html:52
 msgid "original image"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:57
-#: edh_web_application/foto/templates/foto/detail_view.html:57
+#: edh_web_application/foto/templates/foto/detail_view.html:56
 #: edh_web_application/foto/templates/foto/last_updates.html:45
 #: edh_web_application/foto/templates/foto/search_results.html:159
 msgid "date of photograph"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:58
-#: edh_web_application/foto/templates/foto/detail_view.html:61
+#: edh_web_application/foto/templates/foto/detail_view.html:60
 msgid "quality"
 msgstr ""
 
@@ -604,7 +604,7 @@ msgid "commentary"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:63 edh_web_application/foto/forms.py:74
-#: edh_web_application/foto/templates/foto/detail_view.html:102
+#: edh_web_application/foto/templates/foto/detail_view.html:105
 #: edh_web_application/foto/templates/foto/last_updates.html:74
 #: edh_web_application/foto/templates/foto/search_results.html:188
 #: edh_web_application/foto/templates/foto/search_results.html:306
@@ -628,32 +628,36 @@ msgstr ""
 
 #: edh_web_application/foto/routes.py:32 edh_web_application/foto/routes.py:38
 #: edh_web_application/foto/routes.py:43 edh_web_application/foto/routes.py:47
-#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:58
-#: edh_web_application/foto/routes.py:110
+#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:69
+#: edh_web_application/foto/routes.py:121
 msgid "Foto Database"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:25
+#: edh_web_application/foto/templates/foto/detail_view.html:24
 msgid "Find circumstances / present location"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:50
+#: edh_web_application/foto/templates/foto/detail_view.html:49
 msgid "Picture"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:67
+#: edh_web_application/foto/templates/foto/detail_view.html:64
+msgid "size (pixel)"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:70
 msgid "Literature"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:91
+#: edh_web_application/foto/templates/foto/detail_view.html:94
 msgid "Commentary"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:99
+#: edh_web_application/foto/templates/foto/detail_view.html:102
 msgid "Inscription"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:110
+#: edh_web_application/foto/templates/foto/detail_view.html:113
 msgid "more images"
 msgstr ""
 

@@ -1,4 +1,4 @@
-import json
+import re, json, urllib.request
 
 from flask import render_template, request
 from flask_babel import _
@@ -54,9 +54,21 @@ def detail_view(f_nr):
         return render_template('foto/no_hits.html',
                                title=_("Foto Database"), subtitle=_("Detail View"))
     else:
+        # image size from IIIF info.json
+        f_nr = re.sub(r'F0*?', r'', f_nr, flags=re.IGNORECASE)
+        if re.match(r'^\d*$', f_nr):
+            f_number = "{:06d}".format(int(f_nr))
+            f_nr = "F" + "{:06d}".format(int(f_nr))
+        try:
+            with urllib.request.urlopen(
+                    "https://edh-www.adw.uni-heidelberg.de/iiif2/iiif/2/f" + f_number + ".tif/info.json") as url:
+                data = json.loads(url.read().decode())
+                img_size = {"x":data['width'], "y":data['height']}
+        except:
+            img_size = {"x": 0, "y": 0}
         return render_template('foto/detail_view.html',
                                title=_("Foto Database"), subtitle=_("Detail View"),
-                               data=results['items'][0])
+                               data={"results": results['items'][0], "image_size": img_size})
 
 
 @bp_foto.route('/foto/ac/fo_modern', methods=['GET', 'POST'], strict_slashes=False)

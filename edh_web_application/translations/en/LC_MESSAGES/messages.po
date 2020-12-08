@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-01 13:38+0100\n"
+"POT-Creation-Date: 2020-12-08 12:15+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -180,7 +180,7 @@ msgid "Search"
 msgstr ""
 
 #: edh_web_application/bibliography/routes.py:69
-#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:58
+#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:69
 #: edh_web_application/geography/routes.py:61
 #: edh_web_application/inscription/routes.py:23
 #: edh_web_application/inscription/routes.py:25
@@ -193,7 +193,7 @@ msgstr ""
 
 #: edh_web_application/bibliography/routes.py:83
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:14
-#: edh_web_application/foto/routes.py:111
+#: edh_web_application/foto/routes.py:122
 #: edh_web_application/foto/templates/foto/detail_view.html:14
 #: edh_web_application/geography/routes.py:21
 #: edh_web_application/geography/templates/geography/detail_view.html:13
@@ -253,7 +253,7 @@ msgid "Also concerns the inscriptions"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:115
-#: edh_web_application/foto/templates/foto/detail_view.html:82
+#: edh_web_application/foto/templates/foto/detail_view.html:85
 msgid "other corpora"
 msgstr ""
 
@@ -490,87 +490,137 @@ msgstr ""
 #: edh_web_application/data/templates/data/api.html:10
 msgid "api page"
 msgstr ""
-"All data of the Open Data Repository by the Epigraphic Database Heidelberg can be reused under the <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0 licence</a>."
-"<p><a href='http://creativecommons.org/licenses/by-sa/4.0/deed.de'><img src='./static/img/CC-BY-SA_icon.png' style='margin-bottom:2em;' /></a></p>"
-"<p>Table of Contents:</p>"
-"<ul><li>Search parameters for<ol><li><a href='/data/api#inschrift'>inscriptions</a></li><li><a href='/data/api#photo'>photos</a></li><li><a href='/data/api#biblio'>bibliography</a></li><li><a href='/data/api#geo'>places</a></li></ol></li>"
-"<li>Response format</li></ul>"
-"<h3>Search Parameters</h3>"
-"<h4><a name='inschrift'>1. Inscriptions</a></h4>"
-"<p>The generic search pattern URI is the following:</p>"
-"<pre style='font-size: 1em;'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?par_1=value&par_2=value&par_n=value</pre>"
-"<p>E.g. query for inscriptions with "votum solvit" within the Latin transcription from both Germaniae that are dated after 200 AD:</p>"
-"<a href='https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?province=ges&province=gei&transcription=votum solvit&year_not_before=200'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?province=ges&province=gei&transcription=votum solvit&year_not_before=200</a>"
-"<p style='margin-top:1.5em;'>You can query for:</p>"
-"<ul>"
-"<li><strong>hd_nr</strong> (HD-No of inscription)</li>"
-"<li><strong>province</strong> (get list of valid values at <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/province</a>, case insensitive)</li>"
-"<li><strong>country</strong> (get list of valid values at <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/country</a>, case insensitive)</li>"
-"<li><strong>findspot_modern</strong> (add leading and/or trailing truncation by asterisk *, e.g. findspot_modern=köln*, case insensitive)</li>"
-"<li><strong>findspot_ancient</strong> (add leading and/or trailing truncation by asterisk *, e.g. findspot_ancient=aquae*, case insensitive)</li>"
-"<li><strong>year_not_before</strong> (integer, BC years are negative integers)</li>"
-"<li><strong>year_not_after</strong> (integer, BC years are negative integers)</li>"
-"<li><strong>tm_nr</strong> (integer value)</li>"
-"<li><strong>transcription</strong> (automatic leading & trailing truncation, brackets are ignored)</li>"
-"<li><strong>type</strong> (of inscription, get list of values at <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/type'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/type</a>, case insensitive)</li>"
-"<li><strong>bbox</strong> (bounding box in the format bbox=minLong , minLat , maxLong , maxLat , example: <a href='https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48</a>)</li>"
-"</ul>"
-"<h4><a name='photo'>2. Photos</a></h4>"
-"<p>The generic search pattern URI is the following:</p>"
-"<pre style='font-size: 1em;'>https://edh-www.adw.uni-heidelberg.de/data/api/fotos/search?par_1=value&par_2=value&par_n=value</pre>"
-"<p>E.g. query for photos of inscriptions from Germany that are part of the CIL corpus:</p>"
-"<p><a href='https://edh-www.adw.uni-heidelberg.de/data/api/fotos/search?country=de&cil=*'>https://edh-www.adw.uni-heidelberg.de/data/api/fotos/search?country=de&cil=*</a></p>"
-"<p style='margin-top:1.5em;'>You can query for:<ul>"
-"<li><strong>province</strong> (get list of valid values at <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/province</a>, case insensitive)</li>"
-"<li><strong>country</strong> (get list of valid values at <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/country</a>, case insensitive)</li>"
-"<li><strong>findspot_modern</strong> (add leading and/or trailing truncation by asterisk *, e.g. findspot_modern=köln*, case insensitive)</li>"
-"<li><strong>findspot_ancient</strong> (add leading and/or trailing truncation by asterisk *, e.g. findspot_ancient=aquae*, case insensitive)</li>"
-"<li><strong>cil</strong> (automatic leading & trailing truncation)</li>"
-"<li><strong>ae</strong> (automatic leading & trailing truncation)</li>"
-"<li><strong>commentary</strong> (automatic leading & trailing truncation, case insensitive)</li>"
-"<li><strong>present_location</strong> (automatic leading & trailing truncation, case insensitive)</li>"
-"<li><strong>hd_nr</strong> (HD No. of inscription)</li>"
-"</ul></p>"
-"<h4><a name='biblio'>3. Bibliography</a></h4>"
-"<p>The generic search pattern URI is the following:</p>"
-"<pre style='font-size: 1em;'>https://edh-www.adw.uni-heidelberg.de/data/api/bibliography/search?par_1=value&par_2=value&par_n=value</pre>"
-"<p>E.g. query for publications by Alföldy:</p>"
-"<p><a href='https://edh-www.adw.uni-heidelberg.de/data/api/bibliography/search?author=Alföldy'>https://edh-www.adw.uni-heidelberg.de/data/api/bibliography/search?author=Alföldy</a></p>"
-"<p style='margin-top:1.5em;'>You can query for:<ul>"
-"<li><strong>author</strong> (automatic leading & trailing truncation)</li>"
-"<li><strong>title</strong> (automatic leading & trailing truncation)</li>"
-"<li><strong>year</strong></li>"
-"<li><strong>publication</strong> (automatic leading & trailing truncation)</li>"
-"<li><strong>ae</strong> (automatic leading & trailing truncation)</li>"
-"<li><strong>cil</strong> (automatic leading & trailing truncation)</li>"
-"<li><strong>other_corpora</strong> (automatic leading & trailing truncation)</li>"
-"</ul></p>"
-"<h4><a name='geo'>4. Geography</a></h4>"
-"<p>The generic search pattern URI is the following:</p>"
-"<pre style='font-size: 1em;'>https://edh-www.adw.uni-heidelberg.de/data/api/geography/search?par_1=value&par_2=value&par_n=value</pre>"
-"<p>E.g. query for all findspots within a defined boundingbox and filtered by country = Germany:</p>"
-"<p><a href='https://edh-www.adw.uni-heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de'>https://edh-www.adw.uni-heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de</a></p>"
-"<p style='margin-top:1.5em;'>You can query for:</p>"
-"<ul>"
-"<li><strong>province</strong> (get list of valid values at <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/province</a>, case insensitive)</li>"
-"<li><strong>country</strong> (get list of valid values at <a href='https://edh-www.adw.uni-heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-heidelberg.de/data/api/terms/country</a>, case insensitive)</li>"
-"<li><strong>findspot_modern</strong> (add leading and/or trailing truncation by asterisk *, e.g. findspot_modern=köln*, case insensitive)</li>"
-"<li><strong>findspot_ancient</strong> (add leading and/or trailing truncation by asterisk *, e.g. findspot_ancient=aquae*, case insensitive)</li>"
-"<li><strong>findspot</strong> (level of village, street etc.; add leading and/or trailing truncation by asterisk *, e.g. findspot_modern=köln*, case insensitive)</li>"
-"<li><strong>bbox</strong> (bounding box in the format bbox=minLong , minLat , maxLong , maxLat , example: <a href='https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48</a>)</li>"
-"<li><strong>pleiades_id</strong> (Pleiades identifier of a place; integer value)</li>"
-"<li><strong>geonames_id</strong> (Geonames identifier of a place; integer value)</li>"
-"</ul>"
-"<h3>Response format</h3>"
-"<p>The API returns responses in JSON format:</p>"
-"<pre>{"
-"\"total\" : 61,"
-"  \"limit\" : "20","
-"  \"items\" : [ ... ]""
-"}</pre>"
-"<p>Results are paginated with a default of 20 hits per page; you can change this with the limit-parameter, if needed you can also specify an offset e.g.:</p>"
-"<p style='margin-bottom: 2em;'><a href='https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100'>https://edh-www.adw.uni-heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100</a></p>"
-
+"All data of the Open Data Repository by the Epigraphic Database "
+"Heidelberg can be reused under the <a "
+"href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0 "
+"licence</a>.<p><a href='http://creativecommons.org/licenses/by-"
+"sa/4.0/deed.de'><img src='./static/img/CC-BY-SA_icon.png' style='margin-"
+"bottom:2em;' /></a></p><p>Table of Contents:</p><ul><li>Search parameters"
+" for<ol><li><a href='/data/api#inschrift'>inscriptions</a></li><li><a "
+"href='/data/api#photo'>photos</a></li><li><a "
+"href='/data/api#biblio'>bibliography</a></li><li><a "
+"href='/data/api#geo'>places</a></li></ol></li><li>Response "
+"format</li></ul><h3>Search Parameters</h3><h4><a name='inschrift'>1. "
+"Inscriptions</a></h4><p>The generic search pattern URI is the "
+"following:</p><pre style='font-size: 1em;'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?par_1=value&par_2=value&par_n=value</pre><p>E.g."
+" query for inscriptions with \"votum solvit\" within the Latin "
+"transcription from both Germaniae that are dated after 200 AD:</p><a "
+"href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?province=ges&province=gei&transcription=votum"
+" solvit&year_not_before=200'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?province=ges&province=gei&transcription=votum"
+" solvit&year_not_before=200</a><p style='margin-top:1.5em;'>You can query"
+" for:</p><ul><li><strong>hd_nr</strong> (HD-No of "
+"inscription)</li><li><strong>province</strong> (get list of valid values "
+"at <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province</a>, case "
+"insensitive)</li><li><strong>country</strong> (get list of valid values "
+"at <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country</a>, case "
+"insensitive)</li><li><strong>findspot_modern</strong> (add leading and/or"
+" trailing truncation by asterisk *, e.g. findspot_modern=köln*, case "
+"insensitive)</li><li><strong>findspot_ancient</strong> (add leading "
+"and/or trailing truncation by asterisk *, e.g. findspot_ancient=aquae*, "
+"case insensitive)</li><li><strong>year_not_before</strong> (integer, BC "
+"years are negative integers)</li><li><strong>year_not_after</strong> "
+"(integer, BC years are negative integers)</li><li><strong>tm_nr</strong> "
+"(integer value)</li><li><strong>transcription</strong> (automatic leading"
+" & trailing truncation, brackets are "
+"ignored)</li><li><strong>type</strong> (of inscription, get list of "
+"values at <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/type'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/type</a>, case "
+"insensitive)</li><li><strong>bbox</strong> (bounding box in the format "
+"bbox=minLong , minLat , maxLong , maxLat , example: <a href='https://edh-"
+"www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48'>https://edh-"
+"www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48</a>)</li></ul><h4><a"
+" name='photo'>2. Photos</a></h4><p>The generic search pattern URI is the "
+"following:</p><pre style='font-size: 1em;'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/fotos/search?par_1=value&par_2=value&par_n=value</pre><p>E.g."
+" query for photos of inscriptions from Germany that are part of the CIL "
+"corpus:</p><p><a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/fotos/search?country=de&cil=*'>https://edh-www.adw"
+".uni-heidelberg.de/data/api/fotos/search?country=de&cil=*</a></p><p style"
+"='margin-top:1.5em;'>You can query for:<ul><li><strong>province</strong> "
+"(get list of valid values at <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province</a>, case "
+"insensitive)</li><li><strong>country</strong> (get list of valid values "
+"at <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country</a>, case "
+"insensitive)</li><li><strong>findspot_modern</strong> (add leading and/or"
+" trailing truncation by asterisk *, e.g. findspot_modern=köln*, case "
+"insensitive)</li><li><strong>findspot_ancient</strong> (add leading "
+"and/or trailing truncation by asterisk *, e.g. findspot_ancient=aquae*, "
+"case insensitive)</li><li><strong>cil</strong> (automatic leading & "
+"trailing truncation)</li><li><strong>ae</strong> (automatic leading & "
+"trailing truncation)</li><li><strong>commentary</strong> (automatic "
+"leading & trailing truncation, case "
+"insensitive)</li><li><strong>present_location</strong> (automatic leading"
+" & trailing truncation, case insensitive)</li><li><strong>hd_nr</strong> "
+"(HD No. of inscription)</li></ul></p><h4><a name='biblio'>3. "
+"Bibliography</a></h4><p>The generic search pattern URI is the "
+"following:</p><pre style='font-size: 1em;'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/bibliography/search?par_1=value&par_2=value&par_n=value</pre><p>E.g."
+" query for publications by Alföldy:</p><p><a href='https://edh-www.adw"
+".uni-heidelberg.de/data/api/bibliography/search?author=Alföldy'>https"
+"://edh-www.adw.uni-"
+"heidelberg.de/data/api/bibliography/search?author=Alföldy</a></p><p style"
+"='margin-top:1.5em;'>You can query for:<ul><li><strong>author</strong> "
+"(automatic leading & trailing truncation)</li><li><strong>title</strong> "
+"(automatic leading & trailing "
+"truncation)</li><li><strong>year</strong></li><li><strong>publication</strong>"
+" (automatic leading & trailing truncation)</li><li><strong>ae</strong> "
+"(automatic leading & trailing truncation)</li><li><strong>cil</strong> "
+"(automatic leading & trailing "
+"truncation)</li><li><strong>other_corpora</strong> (automatic leading & "
+"trailing truncation)</li></ul></p><h4><a name='geo'>4. "
+"Geography</a></h4><p>The generic search pattern URI is the "
+"following:</p><pre style='font-size: 1em;'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/geography/search?par_1=value&par_2=value&par_n=value</pre><p>E.g."
+" query for all findspots within a defined boundingbox and filtered by "
+"country = Germany:</p><p><a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de'>https"
+"://edh-www.adw.uni-"
+"heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de</a></p><p"
+" style='margin-top:1.5em;'>You can query "
+"for:</p><ul><li><strong>province</strong> (get list of valid values at <a"
+" href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/province</a>, case "
+"insensitive)</li><li><strong>country</strong> (get list of valid values "
+"at <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country'>https://edh-www.adw.uni-"
+"heidelberg.de/data/api/terms/country</a>, case "
+"insensitive)</li><li><strong>findspot_modern</strong> (add leading and/or"
+" trailing truncation by asterisk *, e.g. findspot_modern=köln*, case "
+"insensitive)</li><li><strong>findspot_ancient</strong> (add leading "
+"and/or trailing truncation by asterisk *, e.g. findspot_ancient=aquae*, "
+"case insensitive)</li><li><strong>findspot</strong> (level of village, "
+"street etc.; add leading and/or trailing truncation by asterisk *, e.g. "
+"findspot_modern=köln*, case insensitive)</li><li><strong>bbox</strong> "
+"(bounding box in the format bbox=minLong , minLat , maxLong , maxLat , "
+"example: <a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48'>https://edh-"
+"www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?bbox=11,47,12,48</a>)</li><li><strong>pleiades_id</strong>"
+" (Pleiades identifier of a place; integer "
+"value)</li><li><strong>geonames_id</strong> (Geonames identifier of a "
+"place; integer value)</li></ul><h3>Response format</h3><p>The API returns"
+" responses in JSON format:</p><pre>{\"total\" : 61,  \"limit\" : \"20\","
+"  \"items\" : [ ... ]\"}</pre><p>Results are paginated with a default of "
+"20 hits per page; you can change this with the limit-parameter, if needed"
+" you can also specify an offset e.g.:</p><p style='margin-bottom: "
+"2em;'><a href='https://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100'>https"
+"://edh-www.adw.uni-"
+"heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100</a></p>"
 
 #: edh_web_application/data/templates/data/index.html:10
 msgid "data page"
@@ -602,7 +652,7 @@ msgid "F-number"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:51 edh_web_application/foto/forms.py:69
-#: edh_web_application/foto/templates/foto/detail_view.html:28
+#: edh_web_application/foto/templates/foto/detail_view.html:27
 #: edh_web_application/foto/templates/foto/last_updates.html:25
 #: edh_web_application/foto/templates/foto/search_results.html:139
 #: edh_web_application/foto/templates/foto/search_results.html:301
@@ -618,7 +668,7 @@ msgid "province"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:52 edh_web_application/foto/forms.py:70
-#: edh_web_application/foto/templates/foto/detail_view.html:32
+#: edh_web_application/foto/templates/foto/detail_view.html:31
 #: edh_web_application/foto/templates/foto/last_updates.html:29
 #: edh_web_application/foto/templates/foto/search_results.html:143
 #: edh_web_application/foto/templates/foto/search_results.html:302
@@ -635,7 +685,7 @@ msgid "country"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:53 edh_web_application/foto/forms.py:71
-#: edh_web_application/foto/templates/foto/detail_view.html:36
+#: edh_web_application/foto/templates/foto/detail_view.html:35
 #: edh_web_application/foto/templates/foto/last_updates.html:33
 #: edh_web_application/foto/templates/foto/search_results.html:147
 #: edh_web_application/foto/templates/foto/search_results.html:303
@@ -652,7 +702,7 @@ msgid "ancient find spot"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:54 edh_web_application/foto/forms.py:72
-#: edh_web_application/foto/templates/foto/detail_view.html:40
+#: edh_web_application/foto/templates/foto/detail_view.html:39
 #: edh_web_application/foto/templates/foto/last_updates.html:37
 #: edh_web_application/foto/templates/foto/search_results.html:151
 #: edh_web_application/foto/templates/foto/search_results.html:304
@@ -669,7 +719,7 @@ msgid "modern find spot"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:55 edh_web_application/foto/forms.py:73
-#: edh_web_application/foto/templates/foto/detail_view.html:44
+#: edh_web_application/foto/templates/foto/detail_view.html:43
 #: edh_web_application/foto/templates/foto/last_updates.html:41
 #: edh_web_application/foto/templates/foto/search_results.html:155
 #: edh_web_application/foto/templates/foto/search_results.html:305
@@ -678,19 +728,19 @@ msgid "present location"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:56
-#: edh_web_application/foto/templates/foto/detail_view.html:53
+#: edh_web_application/foto/templates/foto/detail_view.html:52
 msgid "original image"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:57
-#: edh_web_application/foto/templates/foto/detail_view.html:57
+#: edh_web_application/foto/templates/foto/detail_view.html:56
 #: edh_web_application/foto/templates/foto/last_updates.html:45
 #: edh_web_application/foto/templates/foto/search_results.html:159
 msgid "date of photograph"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:58
-#: edh_web_application/foto/templates/foto/detail_view.html:61
+#: edh_web_application/foto/templates/foto/detail_view.html:60
 msgid "quality"
 msgstr ""
 
@@ -707,7 +757,7 @@ msgid "commentary"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:63 edh_web_application/foto/forms.py:74
-#: edh_web_application/foto/templates/foto/detail_view.html:102
+#: edh_web_application/foto/templates/foto/detail_view.html:105
 #: edh_web_application/foto/templates/foto/last_updates.html:74
 #: edh_web_application/foto/templates/foto/search_results.html:188
 #: edh_web_application/foto/templates/foto/search_results.html:306
@@ -731,32 +781,36 @@ msgstr ""
 
 #: edh_web_application/foto/routes.py:32 edh_web_application/foto/routes.py:38
 #: edh_web_application/foto/routes.py:43 edh_web_application/foto/routes.py:47
-#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:58
-#: edh_web_application/foto/routes.py:110
+#: edh_web_application/foto/routes.py:55 edh_web_application/foto/routes.py:69
+#: edh_web_application/foto/routes.py:121
 msgid "Foto Database"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:25
+#: edh_web_application/foto/templates/foto/detail_view.html:24
 msgid "Find circumstances / present location"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:50
+#: edh_web_application/foto/templates/foto/detail_view.html:49
 msgid "Picture"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:67
+#: edh_web_application/foto/templates/foto/detail_view.html:64
+msgid "size (pixel)"
+msgstr ""
+
+#: edh_web_application/foto/templates/foto/detail_view.html:70
 msgid "Literature"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:91
+#: edh_web_application/foto/templates/foto/detail_view.html:94
 msgid "Commentary"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:99
+#: edh_web_application/foto/templates/foto/detail_view.html:102
 msgid "Inscription"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/detail_view.html:110
+#: edh_web_application/foto/templates/foto/detail_view.html:113
 msgid "more images"
 msgstr ""
 

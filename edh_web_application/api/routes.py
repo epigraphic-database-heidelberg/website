@@ -22,10 +22,14 @@ def create_iiif_manifest(f_nr):
         return render_template('404.html'), 404
     else:
         # image size from IIIF info.json
-        with urllib.request.urlopen("https://edh-www.adw.uni-heidelberg.de/iiif2/iiif/2/f"+f_number+".tif/info.json") as url:
-            data = json.loads(url.read().decode())
-            img_size_x = data['width']
-            img_size_y = data['height']
+        try:
+            with urllib.request.urlopen("https://edh-www.adw.uni-heidelberg.de/iiif2/iiif/2/f"+f_number+".tif/info.json") as url:
+                data = json.loads(url.read().decode())
+                img_size_x = data['width']
+                img_size_y = data['height']
+        except:
+            img_size_x = 0
+            img_size_y = 0
         # create basic context of manifest
         iiif_dict = {'@context': "http://iiif.io/api/presentation/2/context.json",
                      '@id': "https://edh-www.adw.uni-heidelberg.de/iiif/edh/" + f_nr + ".manifest.json",

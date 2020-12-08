@@ -6,12 +6,12 @@
 
 {% block app_content %}
 <h1>{{ title }}</h1>
-<h2>{{ subtitle }}: {{data['f_nr']}}</h2>
+<h2>{{ subtitle }}: {{data['results']['f_nr']}}</h2>
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
-        <a href="https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['f_nr']}}">
-            https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['f_nr']}}
-            ({% if data['aufschrift'] %}{{data['aufschrift']}}. {%endif%}{{_('Last Updates')}}: {{data['datum']}}, {{data['bearbeiter']}})
+        <a href="https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['results']['f_nr']}}">
+            https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['results']['f_nr']}}
+            ({% if data['results']['aufschrift'] %}{{data['results']['aufschrift']}}. {%endif%}{{_('Last Updates')}}: {{data['results']['datum']}}, {{data['results']['bearbeiter']}})
         </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
     </span>
@@ -19,30 +19,29 @@
 </h3>
 <div>
     <div id="map" style="margin-top:2em; height:400px; width: 100%; border: 1px solid #333;"></div>
-    <!--<div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div> -->
-    <div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json</a></div>
+    <div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['results']['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['results']['f_nr']}}.manifest.json</a></div>
     <div>
         <h3>{{ _("Find circumstances / present location") }}</h3>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("province") }}:</div>
-                <div class="detail_block_content_row_text">{{data['provinz']}}</div>
+                <div class="detail_block_content_row_text">{{data['results']['provinz']}}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("country") }}:</div>
-                <div class="detail_block_content_row_text">{{data['land']}}</div>
+                <div class="detail_block_content_row_text">{{data['results']['land']}}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("ancient find spot") }}:</div>
-                <div class="detail_block_content_row_text">{% if data['fo_antik'] %}{{data['fo_antik']}}{%else%}&nbsp;{%endif%}</div>
+                <div class="detail_block_content_row_text">{% if data['results']['fo_antik'] %}{{data['results']['fo_antik']}}{%else%}&nbsp;{%endif%}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("modern find spot") }}:</div>
-                <div class="detail_block_content_row_text">{% if data['fo_modern'] %}{{data['fo_modern']}}{%else%}&nbsp;{%endif%}</div>
+                <div class="detail_block_content_row_text">{% if data['results']['fo_modern'] %}{{data['results']['fo_modern']}}{%else%}&nbsp;{%endif%}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("present location") }}:</div>
-                <div class="detail_block_content_row_text">{% if data['aufbewahrung'] %}{{data['aufbewahrung']}}{%else%}&nbsp;{%endif%}</div>
+                <div class="detail_block_content_row_text">{% if data['results']['aufbewahrung'] %}{{data['results']['aufbewahrung']}}{%else%}&nbsp;{%endif%}</div>
             </section>
         </div>
     </div>
@@ -51,15 +50,19 @@
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("original image") }}:</div>
-                <div class="detail_block_content_row_text">{% if data['neg_nr'] %}{{data['neg_nr']}}{%else%}&nbsp;{%endif%}</div>
+                <div class="detail_block_content_row_text">{% if data['results']['neg_nr'] %}{{data['results']['neg_nr']}}{%else%}&nbsp;{%endif%}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("date of photograph") }}:</div>
-                <div class="detail_block_content_row_text">{% if data['aufnahme_jahr'] %}{{data['aufnahme_jahr']}}{%else%}&nbsp;{%endif%}</div>
+                <div class="detail_block_content_row_text">{% if data['results']['aufnahme_jahr'] %}{{data['results']['aufnahme_jahr']}}{%else%}&nbsp;{%endif%}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("quality") }}:</div>
-                <div class="detail_block_content_row_text">{% if data['qualitaet'] %}{{data['qualitaet']}}{%else%}&nbsp;{%endif%}</div>
+                <div class="detail_block_content_row_text">{% if data['results']['qualitaet'] %}{{data['results']['qualitaet']}}{%else%}&nbsp;{%endif%}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _("size (pixel)") }}:</div>
+                <div class="detail_block_content_row_text">{% if data['image_size']['x'] %}{{data['image_size']['x']}} x {{data['image_size']['y']}}{%else%}&nbsp;{%endif%}</div>
             </section>
         </div>
     </div>
@@ -69,32 +72,32 @@
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">AE:</div>
                 <div class="detail_block_content_row_text">
-                    {% if data['ae']%}{{data['ae']}}{%else%}&nbsp;{%endif%}
+                    {% if data['results']['ae']%}{{data['results']['ae']}}{%else%}&nbsp;{%endif%}
                 </div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">CIL:</div>
                 <div class="detail_block_content_row_text">
-                    {% if data['cil']%}{{data['cil']}}{%else%}&nbsp;{%endif%}
+                    {% if data['results']['cil']%}{{data['results']['cil']}}{%else%}&nbsp;{%endif%}
                 </div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{ _("other corpora") }}:</div>
                 <div class="detail_block_content_row_text">
-                    {% if data['andere']%}{{data['andere']}}{%else%}&nbsp;{%endif%}
+                    {% if data['results']['andere']%}{{data['results']['andere']}}{%else%}&nbsp;{%endif%}
                 </div>
             </section>
         </div>
     </div>
-    {% if data['kommentar']%}
+    {% if data['results']['kommentar']%}
     <div>
         <h3>{{ _("Commentary") }}</h3>
         <div class="detail_block_content_row_text">
-            {{data['kommentar']}}
+            {{data['results']['kommentar']}}
         </div>
     </div>
     {%endif%}
-    {% if data['hd_nr'] %}
+    {% if data['results']['hd_nr'] %}
     <div>
         <h3>{{ _("Inscription") }}</h3>
         <div class="detail_block_content">
@@ -102,15 +105,15 @@
                 <div class="detail_block_content_row_header">{{_("HD-No.")}}:</div>
                 <div class="detail_block_content_row_text">
                     <i class="fas fa-external-link-alt"></i>
-                    <a href="./edh/inschrift/{{data['hd_nr']}}">{{data['hd_nr']}}</a>
+                    <a href="./edh/inschrift/{{data['results']['hd_nr']}}">{{data['results']['hd_nr']}}</a>
                 </div>
             </section>
-        {% if data['inschriften_fotos'] %}
+        {% if data['results']['inschriften_fotos'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_("more images")}}:</div>
                 <div class="detail_block_content_row_text">
                     <div class="image_layout">
-                    {% for image in data['inschriften_fotos'] %}
+                    {% for image in data['results']['inschriften_fotos'] %}
                     <a href="./edh/foto/{{image}}" class="imagelink"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{ image }}.JPG" loading="lazy"></a>
                     {% endfor %}
                     </div>
@@ -143,7 +146,7 @@ map = L.map('map', {
     zoomDelta: 0.25,
     attributionControl: false
 });
-var manifestUrl = 'https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['f_nr']}}.manifest.json';
+var manifestUrl = 'https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['results']['f_nr']}}.manifest.json';
 $.getJSON(manifestUrl, function(data) {
     $.each(data.sequences[0].canvases, function(_, val) {
         iiifLayers[val.label] = L.tileLayer.iiif(val.images[0].resource.service['@id'] + '/info.json');
