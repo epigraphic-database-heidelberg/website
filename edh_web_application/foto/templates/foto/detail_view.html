@@ -102,7 +102,7 @@
                 <div class="detail_block_content_row_header">{{_("HD-No.")}}:</div>
                 <div class="detail_block_content_row_text">
                     <i class="fas fa-external-link-alt"></i>
-                    <a href="/edh/inschrift/{{data['hd_nr']}}">{{data['hd_nr']}}</a>
+                    <a href="./edh/inschrift/{{data['hd_nr']}}">{{data['hd_nr']}}</a>
                 </div>
             </section>
         {% if data['inschriften_fotos'] %}
@@ -111,7 +111,7 @@
                 <div class="detail_block_content_row_text">
                     <div class="image_layout">
                     {% for image in data['inschriften_fotos'] %}
-                    <a href="/edh/foto/{{image}}" class="imagelink"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{ image }}.JPG" loading="lazy"></a>
+                    <a href="./edh/foto/{{image}}" class="imagelink"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{ image }}.JPG" loading="lazy"></a>
                     {% endfor %}
                     </div>
                 </div>
