@@ -129,7 +129,7 @@
             <a href="./edh/foto/{{ d['f_nr'] }}" style="color: white"><div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;min-height:250px">{{_('Number')}} &nbsp; {{count.value + data['metadata']['start']|int}}</div></a>
             <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;width:200px;">
                 <a href="./edh/foto/{{ d['f_nr'] }}">
-                    <img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{d['f_nr']}}.JPG" style="max-width:200px; max-height:250px; border: 1px solid #333;"/>
+                    <img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{d['f_nr']}}.JPG" onerror="this.onerror=null;this.src='/static/img/no-image.png'" style="max-width:200px; max-height:250px; border: 1px solid #333;"/>
                 </a>
             </div>
             <div class="detail_block_content_geo">
