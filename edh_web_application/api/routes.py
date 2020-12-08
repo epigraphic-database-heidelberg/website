@@ -1,4 +1,4 @@
-import re
+import re, json, urllib.request
 
 from flask import render_template, jsonify
 
@@ -15,11 +15,18 @@ def create_iiif_manifest(f_nr):
     """
     f_nr = re.sub(r'F0*?', r'', f_nr, flags=re.IGNORECASE)
     if re.match(r'^\d*$', f_nr):
+        f_number = "{:06d}".format(int(f_nr))
         f_nr = "F" + "{:06d}".format(int(f_nr))
     results = Foto.query("f_nr:" + f_nr)
     if results['metadata']['number_of_hits'] == 0:
         return render_template('404.html'), 404
     else:
+        # image size from IIIF info.json
+        with urllib.request.urlopen("https://edh-www.adw.uni-heidelberg.de/iiif2/iiif/2/f"+f_number+".tif/info.json") as url:
+            data = json.loads(url.read().decode())
+            img_size_x = data['width']
+            img_size_y = data['height']
+        # create basic context of manifest
         iiif_dict = {'@context': "http://iiif.io/api/presentation/2/context.json",
                      '@id': "https://edh-www.adw.uni-heidelberg.de/iiif/edh/" + f_nr + ".manifest.json",
                      '@type': "sc:Manifest", 'label': "EDH Image",
@@ -42,6 +49,8 @@ def create_iiif_manifest(f_nr):
         canvas = [{'@id': 'https://edh-www.adw.uni-heidelberg.de/digilib/edh/canvas/' + f_nr,# TODO: remove digilib specific URI
                    '@type': 'sc:Canvas',
                    'label': f_nr,
+                   'height': img_size_y,
+                   'width': img_size_x,
                    }]
         cv_metadata = [{'label': 'Foto ID', 'value': 'https://edh-www.adw.uni-heidelberg.de/edh/foto/' + f_nr}]
         if results['items'][0].aufschrift:
@@ -66,7 +75,7 @@ def create_iiif_manifest(f_nr):
                      }}]
         canvas[0]['images'][0]['resource'] = resource
         sequence[0]['canvases'] = canvas
-        iiif_dict['sequence'] = sequence
+        iiif_dict['sequences'] = sequence
         iiif_json = jsonify(iiif_dict)
         iiif_json.headers.add('Access-Control-Allow-Origin', '*')
         return iiif_json

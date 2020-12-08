@@ -807,7 +807,7 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/search_results_grid.html:18
 #: edh_web_application/foto/templates/foto/search_results_grid.html:257
 msgid "grid"
-msgstr ""
+msgstr "Grid"
 
 #: edh_web_application/geography/forms.py:50
 msgid "Geo-ID"
