@@ -124,7 +124,7 @@
     <div class="masonry-wrapper"><div class="masonry">
         {% for d in data['items'] %}
         <div class="masonry-item">
-            <a href="./edh/foto/{{ d['f_nr'] }}"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{d['f_nr']}}.JPG" alt="EDH Image" onerror="this.onerror=null;this.src='/static/img/no-image.png'" class="masonry-content" style="max-width:180px"></a>
+            <a href="./edh/foto/{{ d['f_nr'] }}"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{d['f_nr']}}.JPG" alt="EDH Image" onerror="this.onerror=null;this.src='./static/img/no-image.png'" class="masonry-content" style="max-width:180px"></a>
           </div>
         {% endfor %}
     </div></div>
