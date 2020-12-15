@@ -186,7 +186,7 @@
                 {% if d['hd_nr'] %}
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('HD-No.') }}:</div>
-                    <div class="detail_block_content_row_text">{{ d['hd_nr'] }}</div>
+                    <div class="detail_block_content_row_text"><a href="./edh/inschrift/{{d['hd_nr']}}"><i class="fas fa-external-link-alt"></i> {{d['hd_nr']}}</a></div>
                 </section>
                 {% endif %}
             </div>
