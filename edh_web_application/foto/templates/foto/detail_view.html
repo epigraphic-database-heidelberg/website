@@ -17,9 +17,12 @@
     </span>
     <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
 </h3>
-<div>
+<div>{% if data['image_size']['x'] %}
     <div id="map" style="margin-top:2em; height:400px; width: 100%; border: 1px solid #333;"></div>
     <div style="margin-top:1em;"><img src=".{{url_for('static', filename='img/iiif_logo.png')}}" style="height:30px" /> <a href="https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['results']['f_nr']}}.manifest.json">Manifest URI: https://edh-www.adw.uni-heidelberg.de/iiif/edh/{{data['results']['f_nr']}}.manifest.json</a></div>
+    {% else %}
+    <div style="margin-top:2em; "><img src="./static/img/no-image.png" style="height:200px" /></div>
+    {% endif %}
     <div>
         <h3>{{ _("Find circumstances / present location") }}</h3>
         <div class="detail_block_content">
