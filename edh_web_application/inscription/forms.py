@@ -2,8 +2,7 @@ import collections
 
 from flask_babel import lazy_gettext as _l
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, IntegerField, SelectField, SelectMultipleField, BooleanField
-from wtforms.validators import Optional, Regexp
+from wtforms import StringField, SubmitField, SelectField, SelectMultipleField, BooleanField
 
 from ..models.Inscription import Inscription
 from ..models.Place import Place
@@ -55,7 +54,6 @@ class InscriptionSearch(FlaskForm):
     submit = SubmitField(_l('Submit...'))
     hd_nr = StringField(_l('HD-No.'))
     provinz = SelectMultipleField(_l('province'), choices=get_option_list_values_province())
-    land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_de())
     fo_antik = StringField(_l('ancient find spot'))
     fo_modern = StringField(_l('modern find spot'))
     fundstelle = StringField(_l('find spot'))
@@ -77,4 +75,9 @@ class InscriptionSearch(FlaskForm):
                          choices=[('20', '20'), ('50', '50'), ('100', '100'), ('200', '200')])
 
 
+class InscriptionSearchDe(InscriptionSearch):
+    land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_de())
 
+
+class InscriptionSearchEn(InscriptionSearch):
+    land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_en())

@@ -1,17 +1,21 @@
-import re, json, urllib.request
+import json
+import re
+import urllib.request
 
 from flask import render_template, request
 from flask_babel import _
 
 from . import bp_foto
-from .forms import FotoSearch
+from .forms import FotoSearchDe, FotoSearchEn
 from ..models.Foto import Foto
-from ..models.Place import Place
 
 
 @bp_foto.route('/foto/suche')
 def search_foto():
-    form = FotoSearch(data=request.args)
+    if _('lang') == "de":
+        form = FotoSearchDe(data=request.args)
+    else:
+        form = FotoSearchEn(data=request.args)
     form.fo_antik.data = request.args.get('fo_antik')
     form.fo_modern.data = request.args.get('fo_modern')
     form.kommentar.data = request.args.get('kommentar')

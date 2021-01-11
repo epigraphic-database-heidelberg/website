@@ -1,20 +1,9 @@
-import collections
-
 from flask_babel import lazy_gettext as _l
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, IntegerField, SelectField, SelectMultipleField, BooleanField
 from wtforms.validators import Optional, Regexp
 
 from ..models.Place import Place
-
-
-def get_option_list_values_country():
-    countries_dict = collections.OrderedDict()
-    countries_dict = Place.country
-    countries_list = []
-    for k, v in countries_dict.items():
-        countries_list.append((k, v))
-    return countries_list
 
 
 def get_option_list_values_country_de():
@@ -49,7 +38,6 @@ class GeographySearch(FlaskForm):
     submit = SubmitField(_l('Submit...'))
     geo_id = StringField(_l('Geo-ID'), validators=[Optional(), Regexp('^[0-9]{1,6}$')])
     provinz = SelectMultipleField(_l('province'), choices=get_option_list_values_province())
-    land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_de())
     fo_antik = StringField(_l('ancient find spot'))
     fo_modern = StringField(_l('modern find spot'))
     fundstelle = StringField(_l('find spot'))
@@ -72,3 +60,11 @@ class GeographySearch(FlaskForm):
                                 ('verw_bezirk', _l('verw_bezirk'))])
     anzahl = SelectField(_l('number of results/page'),
                          choices=[('20', '20'), ('50', '50'), ('100', '100'), ('200', '200')])
+
+
+class GeographySearchDe(GeographySearch):
+    land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_de())
+
+
+class GeographySearchEn(GeographySearch):
+    land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_en())

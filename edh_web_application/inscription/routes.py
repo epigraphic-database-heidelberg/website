@@ -2,13 +2,16 @@ from flask import render_template, request
 from flask_babel import _
 
 from . import bp_inscription
-from .forms import InscriptionSearch
+from .forms import InscriptionSearchDe, InscriptionSearchEn
 from ..models.Inscription import Inscription
 
 
 @bp_inscription.route('/inschrift/suche')
 def simple_search():
-    form = InscriptionSearch(data=request.args)
+    if _('lang') == "de":
+        form = InscriptionSearchDe(data=request.args)
+    else:
+        form = InscriptionSearchEn(data=request.args)
     return render_template('inscription/search.html', title=_("Epigraphic Text Database"), subtitle=_("Simple Search"), form=form)
 
 

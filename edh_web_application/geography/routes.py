@@ -5,7 +5,7 @@ from flask import render_template, request
 from flask_babel import _
 
 from . import bp_geography
-from .forms import GeographySearch
+from .forms import GeographySearchDe, GeographySearchEn
 from ..models.Place import Place
 
 
@@ -68,7 +68,10 @@ def search_geography():
     route for geographical search mask
     :return: html template of geographical search mask
     """
-    form = GeographySearch(data=request.args)
+    if _('lang') == "de":
+        form = GeographySearchDe(data=request.args)
+    else:
+        form = GeographySearchEn(data=request.args)
     form.fo_antik.data = request.args.get('fo_antik')
     form.fo_modern.data = request.args.get('fo_modern')
     form.fundstelle.data = request.args.get('fundstelle')
