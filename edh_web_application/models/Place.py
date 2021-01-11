@@ -18,21 +18,22 @@ from edh_web_application.models.helpers import remove_number_of_hits_from_autoco
 class Place:
     # list of countries (de)
     country_de = (
-        'eg', 'al', 'dz', 'ad', 'am', 'az', 'be', 'ba', 'bg', 'dk', 'de', 'fr', 'ge', 'gi', 'gr',
+        '?', 'eg', 'al', 'dz', 'ad', 'am', 'az', 'be', 'ba', 'bg', 'dk', 'de', 'fr', 'ge', 'gi', 'gr',
         'gb', 'iq', 'il', 'it', 'ye', 'jo', 'kz', 'kg', 'hr', 'lb', 'ly', 'li', 'lu', 'mt', 'ma', 'mk', 'md', 'mc',
         'me', 'nl', 'at', 'pl', 'pt', 'ro', 'ru', 'sm', 'se', 'ch', 'rs', 'sk', 'si', 'es', 'sd', 'sy', 'tj', 'cz',
-        'tn', 'tr', 'ua', '?', 'hu', 'uz', 'va', 'cy'
+        'tn', 'tr', 'ua', 'hu', 'uz', 'va', 'cy'
     )
     country_en = (
-        'al', 'dz', 'ad', 'am', 'at', 'az', 'be', 'ba', 'bg', 'hr', 'cy', 'cz', 'dk', 'eg', 'fr', 'ge',
+        '?', 'al', 'dz', 'ad', 'am', 'at', 'az', 'be', 'ba', 'bg', 'hr', 'cy', 'cz', 'dk', 'eg', 'fr', 'ge',
         'de', 'gi', 'gr', 'va', 'hu', 'iq', 'il', 'it', 'jo', 'kz', 'kg', 'lb', 'ly', 'li', 'lu', 'mk', 'mt', 'md',
         'mc', 'me', 'ma', 'nl', 'pl', 'pt', 'ro', 'ru', 'sm', 'sa', 'rs', 'sk', 'si', 'es', 'sd', 'se', 'ch', 'sy',
-        'tj', 'tn', 'tr', 'ua', 'gb', '?', 'uz', 'ye'
+        'tj', 'tn', 'tr', 'ua', 'gb', 'uz', 'ye'
     )
 
     # dict of localized country names
     country = collections.OrderedDict()
     country = {
+        "?": _l("land-?"),
         "ad": _l("land-ad"),
         "al": _l("land-al"),
         "am": _l("land-am"),
@@ -89,7 +90,6 @@ class Place:
         "tn": _l("land-tn"),
         "tr": _l("land-tr"),
         "ua": _l("land-ua"),
-        "?": _l("land-?"),
         "uz": _l("land-uz"),
         "va": _l("land-va"),
         "ye": _l("land-ye"),
@@ -142,7 +142,6 @@ class Place:
         "GeI": _l("GeI"),
         "GeS": _l("GeS"),
         "HiC": _l("HiC"),
-        "Inc": _l("unknown"),
         "Iud": _l("Iud"),
         "LaC": _l("LaC"),
         "Lig": _l("Lig"),
