@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+
+<form action="" method="get">
+    <div class="form-group row">
+        {{ form.hd_nr.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.hd_nr(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.provinz.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.land.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.land(class='form-control selectpicker', title=_('select one or more entries...')) }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.fo_antik.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.fo_antik(class='form-control autocomplete ui-autocomplete-input', id='ancient_find_spot') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.fo_modern.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.fundstelle.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.fundstelle(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.literatur.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.literatur(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class='col-sm-2 col-form-label'>{{ _('Datierung')}}</label>
+        <div class="col-sm-2">
+            {{ form.dat_jahr_a.label() }} {{ form.dat_jahr_a(class='form-control') }}
+        </div>
+        <div class="col-sm-2">
+            {{ form.dat_jahr_e.label() }} {{ form.dat_jahr_e(class='form-control') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2  col-form-label">&nbsp; </label>
+        <div class="col-sm-2">
+            {{ form.dat_erweitert.label() }} {{ form.dat_erweitert() }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2  col-form-label">{{ _("search string(s)")}}</label>
+        <div class="col-sm-2">
+            {{ form.atext1(class='form-control') }}
+        </div>
+        <div class="col-sm-2" style="padding-left:2em;padding-right:2em;">
+            {{ form.bool(class='form-control') }}
+        </div>
+        <div class="col-sm-2">
+            {{ form.atext2(class='form-control') }}
+        </div>
+
+    </div>
+
+    <hr />
+    <p>{{_("Search Options")}}</p>
+    <div class="form-group row">
+        {{ form.sort.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.sort(class='form-control', style='width:20%') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        {{ form.anzahl.label(class='col-sm-2 col-form-label') }}
+        <div class="col-sm-10">
+            {{ form.anzahl(class='form-control', style='width:20%') }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary btn-lg">{{ _('Search...') }}</button> <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+<script>
+    $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik",minLength:3,delay:0})
+    $("input#find_spot").autocomplete({source:"./geographie/ac/fundstelle",minLength:3,delay:0})
+    $("input#region").autocomplete({source:"./geographie/ac/region",minLength:3,delay:0})
+    $("select").selectpicker();
+    $('#reset').click(function(){
+        $(".selectpicker").val('');
+        $(".selectpicker").selectpicker("refresh");
+    })
+</script>
+{% endblock %}

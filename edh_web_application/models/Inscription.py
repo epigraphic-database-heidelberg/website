@@ -1,13 +1,21 @@
-import pysolr
 import re
+from datetime import datetime
+
+import pysolr
+from babel.dates import format_date
+from babel.numbers import format_decimal
 from flask import Markup
 from flask import current_app
-from babel.numbers import format_decimal
-from babel.dates import format_date
-from datetime import datetime
+from flask_babel import lazy_gettext as _l
 
 
 class Inscription:
+
+    historic_periods = (
+        _l('per_1'), _l('per_2'), _l('per_3'), _l('per_4'), _l('per_5'), _l('per_6'), _l('per_7'), _l('per_8'), _l('per_9'), _l('per_10'),
+        _l('per_11'), _l('per_12'), _l('per_13'), _l('per_14'), _l('per_15'), _l('per_16'), _l('per_17'), _l('per_18'), _l('per_19'), _l('per_20'),
+        _l('per_21'), _l('per_22'), _l('per_23'), _l('per_24'), _l('per_25'), _l('per_26')
+    )
 
     def __init__(self,
                  hd_nr,

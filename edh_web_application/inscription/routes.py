@@ -1,13 +1,15 @@
-from flask import render_template
+from flask import render_template, request
+from flask_babel import _
 
 from . import bp_inscription
+from .forms import InscriptionSearch
 from ..models.Inscription import Inscription
-from flask_babel import _
 
 
 @bp_inscription.route('/inschrift/suche')
 def simple_search():
-    return render_template('inscription/simple_search.html', title=_("Epigraphic Text Database"), subtitle=_("Simple Search"))
+    form = InscriptionSearch(data=request.args)
+    return render_template('inscription/search.html', title=_("Epigraphic Text Database"), subtitle=_("Simple Search"), form=form)
 
 
 @bp_inscription.route('/inschrift/erweiterteSuche')
