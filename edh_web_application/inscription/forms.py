@@ -70,6 +70,11 @@ class InscriptionSearch(FlaskForm):
                        choices=[('HD-No.', _l('HD-No.')), ('provinz', _l('province')), ('land', _l('country')),
                                 ('fo_antik', _l('ancient find spot')),
                                 ('fo_modern', _l('modern find spot')), ('fundstelle', _l('find spot')),
+                                (_l('type of inscription sort'), _l('type of inscription')),
+                                (_l('type of monument sort'), _l('type of monument')),
+                                (_l('material sort'), _l('material')),
+                                (_l('date from sort'), _l('date from')),
+                                (_l('date to sort'), _l('date to')),
                                 ])
     anzahl = SelectField(_l('number of results/page'),
                          choices=[('20', '20'), ('50', '50'), ('100', '100'), ('200', '200')])
