@@ -25,9 +25,9 @@ class Place:
     )
     country_en = (
         '?', 'al', 'dz', 'ad', 'am', 'at', 'az', 'be', 'ba', 'bg', 'hr', 'cy', 'cz', 'dk', 'eg', 'fr', 'ge',
-        'de', 'gi', 'gr', 'va', 'hu', 'iq', 'il', 'it', 'jo', 'kz', 'kg', 'lb', 'ly', 'li', 'lu', 'mk', 'mt', 'md',
-        'mc', 'me', 'ma', 'nl', 'pl', 'pt', 'ro', 'ru', 'sm', 'sa', 'rs', 'sk', 'si', 'es', 'sd', 'se', 'ch', 'sy',
-        'tj', 'tn', 'tr', 'ua', 'gb', 'uz', 'ye'
+        'de', 'gi', 'gr', 'hu', 'iq', 'il', 'it', 'jo', 'kz', 'kg', 'lb', 'ly', 'li', 'lu', 'mk', 'mt', 'md',
+        'mc', 'me', 'ma', 'nl', 'pl', 'pt', 'ro', 'ru', 'sa', 'rs', 'sk', 'si', 'es', 'sd', 'se', 'ch', 'sy',
+        'tj', 'tn', 'tr', 'ua', 'gb', 'uz', 'va', 'ye'
     )
 
     # dict of localized country names
@@ -83,7 +83,6 @@ class Place:
         "se": _l("land-se"),
         "si": _l("land-si"),
         "sk": _l("land-sk"),
-        "sm": _l("land-sm"),
         "sa": _l("land-sa"),
         "sy": _l("land-sy"),
         "tj": _l("land-tj"),
