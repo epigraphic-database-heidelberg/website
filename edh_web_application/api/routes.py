@@ -6,7 +6,7 @@ from . import bp_api
 from ..models.Foto import Foto
 
 
-@bp_api.route('/iiif/edh/<f_nr>.manifest.json', methods=['GET', 'POST'])
+@bp_api.route('/iiif2/edh/<f_nr>.manifest.json', methods=['GET', 'POST'])
 def create_iiif_manifest(f_nr):
     """
     route for returning IIIF manifest file

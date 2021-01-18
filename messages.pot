@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-01-14 16:20+0100\n"
+"POT-Creation-Date: 2021-01-18 18:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,7 +150,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:61
 #: edh_web_application/geography/templates/geography/search_results.html:17
 #: edh_web_application/geography/templates/geography/search_results.html:292
-#: edh_web_application/inscription/forms.py:80
+#: edh_web_application/inscription/forms.py:79
 msgid "number of results/page"
 msgstr ""
 
@@ -186,8 +186,7 @@ msgstr ""
 #: edh_web_application/bibliography/routes.py:69
 #: edh_web_application/foto/routes.py:59 edh_web_application/foto/routes.py:74
 #: edh_web_application/geography/routes.py:61
-#: edh_web_application/inscription/routes.py:28
-#: edh_web_application/inscription/routes.py:30
+#: edh_web_application/inscription/routes.py:29
 msgid "Detail View"
 msgstr ""
 
@@ -201,6 +200,7 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/detail_view.html:14
 #: edh_web_application/geography/routes.py:21
 #: edh_web_application/geography/templates/geography/detail_view.html:13
+#: edh_web_application/inscription/templates/inscription/detail_view.html:14
 #: edh_web_application/templates/home.html:65
 msgid "Last Updates"
 msgstr ""
@@ -209,6 +209,7 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/detail_view.html:10
 #: edh_web_application/geography/templates/geography/detail_view.html:10
 #: edh_web_application/geography/templates/geography/detail_view_province.html:10
+#: edh_web_application/inscription/templates/inscription/detail_view.html:10
 #: edh_web_application/person/templates/person/detail_view.html:12
 msgid "Canonical URI"
 msgstr ""
@@ -217,6 +218,7 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/detail_view.html:16
 #: edh_web_application/geography/templates/geography/detail_view.html:16
 #: edh_web_application/geography/templates/geography/detail_view_province.html:13
+#: edh_web_application/inscription/templates/inscription/detail_view.html:16
 #: edh_web_application/person/templates/person/detail_view.html:15
 msgid "copied!"
 msgstr ""
@@ -225,6 +227,7 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/detail_view.html:16
 #: edh_web_application/geography/templates/geography/detail_view.html:16
 #: edh_web_application/geography/templates/geography/detail_view_province.html:13
+#: edh_web_application/inscription/templates/inscription/detail_view.html:16
 msgid "Copy URI to clipboard"
 msgstr ""
 
@@ -641,8 +644,8 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:285
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:70
-#: edh_web_application/inscription/forms.py:85
-#: edh_web_application/inscription/forms.py:89
+#: edh_web_application/inscription/forms.py:84
+#: edh_web_application/inscription/forms.py:88
 msgid "country"
 msgstr ""
 
@@ -929,43 +932,41 @@ msgid "type of inscription"
 msgstr ""
 
 #: edh_web_application/inscription/forms.py:74
-#: edh_web_application/inscription/forms.py:75
 msgid "type of monument sort"
 msgstr ""
 
 #: edh_web_application/inscription/forms.py:74
-#: edh_web_application/inscription/forms.py:75
 msgid "type of monument"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:76
+#: edh_web_application/inscription/forms.py:75
 msgid "material sort"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:76
+#: edh_web_application/inscription/forms.py:75
 msgid "material"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:77
+#: edh_web_application/inscription/forms.py:76
 msgid "date from sort"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:77
+#: edh_web_application/inscription/forms.py:76
 msgid "date from"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:78
+#: edh_web_application/inscription/forms.py:77
 msgid "date to sort"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:78
+#: edh_web_application/inscription/forms.py:77
 msgid "date to"
 msgstr ""
 
 #: edh_web_application/inscription/routes.py:15
 #: edh_web_application/inscription/routes.py:21
-#: edh_web_application/inscription/routes.py:28
-#: edh_web_application/inscription/routes.py:30
+#: edh_web_application/inscription/routes.py:29
+#: edh_web_application/inscription/routes.py:31
 #: edh_web_application/templates/home.html:66
 msgid "Epigraphic Text Database"
 msgstr ""
@@ -1366,6 +1367,104 @@ msgstr ""
 
 #: edh_web_application/models/Inscription.py:17
 msgid "per_26"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:21
+msgid "titaccl"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:21
+msgid "titadnun"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:21
+msgid "titadsig"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:21
+msgid "nota"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:21
+msgid "titoppubpriv"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:21
+msgid "titreiexpl"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:21
+msgid "titpossfabr"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:21
+msgid "brief"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "titdefix"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "tithon"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "elogium"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "oratio"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "titsep"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "titterm"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "fasti"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "miliarium"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "diplmil"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "titiurpub"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:22
+msgid "titiurpriv"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:23
+msgid "titsedspect"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:23
+msgid "indexlaterc"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:23
+msgid "titsac"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:146
+msgid "Inschrift"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:148
+#: edh_web_application/models/Inscription.py:150
+#: edh_web_application/models/Inscription.py:152
+msgid " from "
 msgstr ""
 
 #: edh_web_application/models/Person.py:14

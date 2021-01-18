@@ -17,6 +17,13 @@ class Inscription:
         _l('per_21'), _l('per_22'), _l('per_23'), _l('per_24'), _l('per_25'), _l('per_26')
     )
 
+    type_of_inscription = (
+        _l('titaccl'), _l('titadnun'), _l('titadsig'), _l('nota'), _l('titoppubpriv'), _l('titreiexpl'), _l('titpossfabr'), _l('brief'),
+        _l('titdefix'), _l('tithon'), _l('elogium'), _l('oratio'), _l('titsep'), _l('titterm'), _l('fasti'), _l('miliarium'), _l('diplmil'), _l('titiurpub'), _l('titiurpriv'),
+        _l('titsedspect'), _l('indexlaterc'), _l('titsac')
+    )
+
+
     def __init__(self,
                  hd_nr,
                  provinz,
@@ -127,5 +134,31 @@ class Inscription:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             return format_date(dt, 'd. MMM YYYY', locale='de_DE')
 
-
-
+    def get_title(self):
+        """
+        returns title for detail view of inscription
+        :return: title string
+        """
+        title_str = ""
+        if self.i_gattung and self.i_gattung != "":
+            i_gatt = self.i_gattung
+            if re.search("\?$", i_gatt):
+                key_without_trailing_questionmark = re.sub("\?$", "", i_gatt)
+                title_str = _l(key_without_trailing_questionmark) + "?"
+            else:
+                title_str = _l(i_gatt)
+        else:
+            title_str = _l("Inschrift")
+        if self.fo_antik and self.fo_antik != "":
+            title_str += _l(" from ") + self.fo_antik
+        elif self.fo_modern:
+            title_str += _l(" from ") + self.fo_modern
+        else:
+            provinz = self.provinz
+            if re.search("\?$", provinz):
+                key_without_trailing_questionmark = re.sub("\?$", "", provinz)
+                title_str += _l(" from ") + _l(key_without_trailing_questionmark) + "?"
+            else:
+                title_str += _l(" from ") + _l(provinz)
+        # uppercase first character
+        return title_str[0].upper() + title_str[1:]

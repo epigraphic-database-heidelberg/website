@@ -7,6 +7,16 @@
 {% block app_content %}
 <h1>{{ title }}</h1>
 <h2>{{ subtitle }}</h2>
+<h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
+    <span id="canonical_uri">
+        <a href="/edh/inschrift/{{data['hd_nr']}}">
+            https://edh-www.adw.uni-heidelberg.de/edh/inschrift/{{data['hd_nr']}}
+            ({{_('Last Updates')}}: {{data['datum']}}, {{data['bearbeiter']}})
+        </a>
+        <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
+    </span>
+    <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
+</h3>
 <div>
     <div class="detail_block">
         <div class="detail_block_header">
@@ -70,4 +80,8 @@
     }
 </script>
 
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script src=".{{url_for('static', filename='js/copy2clipboard.js')}}"></script>
 {% endblock %}
