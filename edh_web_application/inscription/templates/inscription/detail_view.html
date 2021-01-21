@@ -6,7 +6,7 @@
 
 {% block app_content %}
 <h1>{{ title }}</h1>
-<h2>{{ subtitle }}</h2>
+<h2>{{ data['titel'] }}</h2>
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
         <a href="/edh/inschrift/{{data['hd_nr']}}">
@@ -17,54 +17,159 @@
     </span>
     <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
 </h3>
+<h3>Edition </h3>
+<!--<div><span id="toggleLinebreaks" onClick="toggleLinebreaks()" style="cursor: pointer;font-size:.7em;">Show Linebreaks</span></div>-->
 <div>
     <div class="detail_block">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">Allgemeine Angaben</span>
-        </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">HD-Nr:</div>
-                <div class="detail_block_content_row_text">{{data['hd_nr']}}</div>
-            </section>
-            {% if data['gdb_id']  %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">GDB_ID:</div>
-                <div class="detail_block_content_row_text">{{data['gdb_id']}}</div>
-            </section>
-            {% endif %}
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">Bearbeitungsstand:</div>
-                <div class="detail_block_content_row_text">{{data['beleg']}}</div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">Bearbeiter:</div>
-                <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
-            </section>
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">letzte Änderung:</div>
-                <div class="detail_block_content_row_text">{{data['datum']}}</div>
-            </section>
-        </div>
-    </div>
-    <div class="detail_block">
-        <div class="detail_block_header">
-            <span class="detail_block_header_text">Transcription (<span id="toggleLinebreaks" onClick="toggleLinebreaks()">Show Linebreaks</span>)</span>
-        </div>
-        <div class="detail_block_content">
-            <section class="detail_block_content_row">
-                <div class="detail_block_content_row_header">Majuscle:</div>
-                <div id="btext" class="detail_block_content_row_text">{{data['btext']}}</div>
+                <div class="detail_block_content_row_header">{{_('Majuscle')}}:</div>
+                <div id="btext" class="detail_block_content_row_text" style="hyphens: none;">{{data['btext']}}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">Edition:</div>
-                <div id="atext" class="detail_block_content_row_text">{{data['atext']}}</div>
+                <div id="atext" class="detail_block_content_row_text" style="hyphens: none;">{{data['atext']}}</div>
             </section>
         </div>
     </div>
-
-
 </div>
+<h3>{{_('Find circumstances / present location')}}</h3>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('province')}}:</div>
+                <div id="provinz" class="detail_block_content_row_text">{{data['provinz']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('country')}}:</div>
+                <div id="land" class="detail_block_content_row_text">{{data['land']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('ancient find spot')}}:</div>
+                <div id="fo_antik" class="detail_block_content_row_text">{{data['fo_antik']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('modern find spot')}}:</div>
+                <div id="fo_modern" class="detail_block_content_row_text">{{data['fo_modern']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('find spot')}}:</div>
+                <div id="fundstelle" class="detail_block_content_row_text">{{data['fundstelle']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('modern region')}}:</div>
+                <div id="region" class="detail_block_content_row_text">{{data['verw_bezirk']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('year of find')}}:</div>
+                <div id="fundjahr" class="detail_block_content_row_text">{{data['fundjahr']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('present location')}}:</div>
+                <div id="aufbewahrung" class="detail_block_content_row_text">{{data['aufbewahrung']}}</div>
+            </section>
+        </div>
+    </div>
+</div>
+<h3>{{_('Type of inscription / language')}}</h3>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('type of inscription')}}:</div>
+                <div id="i_gattung" class="detail_block_content_row_text">{{data['i_gattung_str']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('language')}}:</div>
+                <div id="lang" class="detail_block_content_row_text">{{data['nl_text']}}</div>
+            </section>
+        </div>
+    </div>
+</div>
+<h3>{{_('Type of monument')}}</h3>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('type of monument')}}:</div>
+                <div id="i_traeger" class="detail_block_content_row_text">{{data['i_traeger_str']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('material')}}:</div>
+                <div id="material" class="detail_block_content_row_text">{{data['material']}}</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('height')}}:</div>
+                <div id="hoehe" class="detail_block_content_row_text">{{data['hoehe']}} cm</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('width')}}:</div>
+                <div id="breite" class="detail_block_content_row_text">{{data['breite']}} cm</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('depth')}}:</div>
+                <div id="tiefe" class="detail_block_content_row_text">{{data['tiefe']}} cm</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('letter size')}}:</div>
+                <div id="bh" class="detail_block_content_row_text">{{data['bh']}} cm</div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{_('decoration')}}:</div>
+                <div id="dekoration" class="detail_block_content_row_text">{{data['dekor']}}</div>
+            </section>
+        </div>
+    </div>
+</div>
+<h3>{{_('Commentary')}}</h3>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_content">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">&nbsp;</div>
+                <div id="kommnetar" class="detail_block_content_row_text">{{data['kommentar']}}</div>
+            </section>
+        </div>
+    </div>
+</div>
+<h3>{{_('Palaeography')}}</h3>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_content">
+
+        </div>
+    </div>
+</div>
+<h3>{{_('General Data')}}</h3>
+<div class="detail_block" style="margin-bottom:3em;">
+    <div class="detail_block_content">
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">HD-Nr:</div>
+            <div class="detail_block_content_row_text">{{data['hd_nr']}}</div>
+        </section>
+        {% if data['gdb_id']  %}
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">GDB_ID:</div>
+            <div class="detail_block_content_row_text">{{data['gdb_id']}}</div>
+        </section>
+        {% endif %}
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">Bearbeitungsstand:</div>
+            <div class="detail_block_content_row_text">{{data['beleg']}}</div>
+        </section>
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">Bearbeiter:</div>
+            <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
+        </section>
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">letzte Änderung:</div>
+            <div class="detail_block_content_row_text">{{data['datum']}}</div>
+        </section>
+    </div>
+</div>
+
+
 <script>
     function toggleLinebreaks() {
         status = document.getElementById("toggleLinebreaks").innerHTML

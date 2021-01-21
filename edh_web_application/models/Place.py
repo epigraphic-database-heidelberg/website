@@ -11,7 +11,7 @@ from flask import current_app
 from flask import request
 from flask_babel import lazy_gettext as _l
 
-from edh_web_application.models.Inscription import Inscription
+#from edh_web_application.models.Inscription import Inscription
 from edh_web_application.models.helpers import remove_number_of_hits_from_autocomplete, escape_value
 
 
@@ -975,6 +975,7 @@ class Place:
         param geo_id: ID of place
         return: list of HD-Nos
         """
+        from edh_web_application.models.Inscription import Inscription
         inscription_list = []
         # only numeric value is needed
         geo_id = re.sub("G0*", "", geo_id)

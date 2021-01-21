@@ -52,13 +52,7 @@
                             <li><a href="./projekt/kontakt">{{ _('Contact') }}</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown {% if '/inschrift' in request.path %} active {% endif %}">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ _('Inscriptions...') }}<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="./inschrift/suche">{{ _('Simple Search') }}</a></li>
-                            <li><a href="./inschrift/erweiterteSuche">{{ _('Extended Search') }}</a></li>
-                        </ul>
-                    </li>
+                    <li {% if '/inschrift' in request.path %} class="active" {% endif %}><a href="./inschrift/suche">{{ _('Inscriptions') }}</a></li>
                     <li {% if '/foto' in request.path %} class="active" {% endif %}><a href="./foto/suche">{{ _('Photos') }}</a></li>
                     <li {% if '/bibliographie' in request.path %} class="active" {% endif %}><a href="./bibliographie/suche">{{ _('Bibliography') }}</a></li>
                     <li {% if '/geographie' in request.path %} class="active" {% endif %}><a href="./geographie/suche">{{ _('Geography') }}</a></li>
