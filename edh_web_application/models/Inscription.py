@@ -80,6 +80,7 @@ class Inscription:
             "btext_br": None,
             "titel": None,
             "bearbeiter": None,
+            "koordinaten1": None,
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
