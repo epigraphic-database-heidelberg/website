@@ -46,27 +46,27 @@
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('ancient find spot')}}:</div>
-                <div id="fo_antik" class="detail_block_content_row_text">{{data['fo_antik']}}</div>
+                <div id="fo_antik" class="detail_block_content_row_text">{% if data['fo_antik'] %}{{data['fo_antik']}}{% endif %}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('modern find spot')}}:</div>
-                <div id="fo_modern" class="detail_block_content_row_text">{{data['fo_modern']}}</div>
+                <div id="fo_modern" class="detail_block_content_row_text">{% if data['fo_modern'] %}{{data['fo_modern']}}{% endif %}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('find spot')}}:</div>
-                <div id="fundstelle" class="detail_block_content_row_text">{{data['fundstelle']}}</div>
+                <div id="fundstelle" class="detail_block_content_row_text">{% if data['fundstelle'] %}{{data['fundstelle']}}{% endif %}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('modern region')}}:</div>
-                <div id="region" class="detail_block_content_row_text">{{data['verw_bezirk']}}</div>
+                <div id="region" class="detail_block_content_row_text">{% if data['verw_bezirk'] %}{{data['verw_bezirk']}}{% endif %}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('year of find')}}:</div>
-                <div id="fundjahr" class="detail_block_content_row_text">{{data['fundjahr']}}</div>
+                <div id="fundjahr" class="detail_block_content_row_text">{% if data['fundjahr'] %}{{data['fundjahr']}}{% endif %}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('present location')}}:</div>
-                <div id="aufbewahrung" class="detail_block_content_row_text">{{data['aufbewahrung']}}</div>
+                <div id="aufbewahrung" class="detail_block_content_row_text">{% if data['aufbewahrung'] %}{{data['aufbewahrung']}}{% endif %}</div>
             </section>
         </div>
     </div>
@@ -75,10 +75,12 @@
 <div>
     <div class="detail_block">
         <div class="detail_block_content">
+            {% if data['i_gattung_str'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('type of inscription')}}:</div>
                 <div id="i_gattung" class="detail_block_content_row_text">{{data['i_gattung_str']}}</div>
             </section>
+            {% endif %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('language')}}:</div>
                 <div id="lang" class="detail_block_content_row_text">{{data['nl_text']}}</div>
@@ -86,41 +88,58 @@
         </div>
     </div>
 </div>
+{% if data['i_traeger_str'] or data['material'] or data['hoehe'] or data['breite'] or data['tiefe'] or data['bh'] or data['dekor'] %}
 <h3>{{_('Type of monument')}}</h3>
 <div>
     <div class="detail_block">
         <div class="detail_block_content">
+            {% if data['i_traeger_str'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('type of monument')}}:</div>
                 <div id="i_traeger" class="detail_block_content_row_text">{{data['i_traeger_str']}}</div>
             </section>
+            {% endif %}
+            {% if data['material'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('material')}}:</div>
                 <div id="material" class="detail_block_content_row_text">{{data['material']}}</div>
             </section>
+            {% endif %}
+            {% if data['hoehe'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('height')}}:</div>
                 <div id="hoehe" class="detail_block_content_row_text">{{data['hoehe']}} cm</div>
             </section>
+            {% endif %}
+            {% if data['breite'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('width')}}:</div>
                 <div id="breite" class="detail_block_content_row_text">{{data['breite']}} cm</div>
             </section>
+            {% endif %}
+            {% if data['tiefe'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('depth')}}:</div>
                 <div id="tiefe" class="detail_block_content_row_text">{{data['tiefe']}} cm</div>
             </section>
+            {% endif %}
+            {% if data['bh'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('letter size')}}:</div>
                 <div id="bh" class="detail_block_content_row_text">{{data['bh']}} cm</div>
             </section>
+            {% endif %}
+            {% if data['dekor'] %}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('decoration')}}:</div>
                 <div id="dekoration" class="detail_block_content_row_text">{{data['dekor']}}</div>
             </section>
+            {% endif %}
         </div>
     </div>
 </div>
+{% endif %}
+{% if data['kommentar'] %}
 <h3>{{_('Commentary')}}</h3>
 <div>
     <div class="detail_block">
@@ -132,6 +151,7 @@
         </div>
     </div>
 </div>
+{% endif %}
 <h3>{{_('Palaeography')}}</h3>
 <div>
     <div class="detail_block">

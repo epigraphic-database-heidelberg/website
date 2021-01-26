@@ -127,7 +127,7 @@ class Inscription:
                     if key == 'denkmaltyp':
                         if re.search(".+\?$", result[key]):
                             key_without_trailing_questionmark = re.sub("\?$", "", result[key])
-                            props['i_traeger_str'] = _l([key_without_trailing_questionmark]) + "?"
+                            props['i_traeger_str'] = _l(key_without_trailing_questionmark) + "?"
                         else:
                             props['i_traeger_str'] = str(_l(result[key]))
                     elif key == 'bearbeiter':
