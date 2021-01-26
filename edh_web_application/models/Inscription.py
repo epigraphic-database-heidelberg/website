@@ -81,6 +81,7 @@ class Inscription:
             "titel": None,
             "bearbeiter": None,
             "koordinaten1": None,
+            "datierung": None,
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
@@ -103,6 +104,7 @@ class Inscription:
             for result in results:
                 props = {}
                 for key in result:
+                    print(key, result[key])
                     if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg'):
                         props[key] = result[key]
                     if key == 'land':
@@ -159,7 +161,16 @@ class Inscription:
                     props['provinz'] = ""
                 if 'i_gattung' not in props:
                     props['i_gattung'] = ""
+                if 'dat_jahr_a' not in props:
+                    props['dat_jahr_a'] = ""
+                if 'dat_jahr_e' not in props:
+                    props['dat_jahr_e'] = ""
+                if 'dat_monat' not in props:
+                    props['dat_monat'] = ""
+                if 'dat_tag' not in props:
+                    props['dat_tag'] = ""
                 props['titel'] = _get_title(props['i_gattung'], props['fo_antik'], props['fo_modern'], props['provinz'])
+                props['datierung'] = _get_date_string(props['dat_jahr_a'], props['dat_jahr_e'], props['dat_monat'], props['dat_tag'])
                 atext_br = result['atext']
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
                 btext_br = result['btext']
@@ -193,6 +204,38 @@ class Inscription:
         for res in results:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             return format_date(dt, 'd. MMM YYYY', locale='de_DE')
+
+
+def _get_date_string(dat_jahr_a, dat_jahr_e, monat, tag):
+    """
+    return description of date of inscription
+    :return: date string
+    """
+    date_str = ""
+    print(tag, monat)
+    if tag != "":
+        date_str += str(tag) + ". "
+    if monat != "":
+        date_str += str(monat) + ". "
+    elif monat == "" and tag != "":
+        date_str +=  "?. "
+    if dat_jahr_a != "":
+        if dat_jahr_a < 0:
+            if dat_jahr_e != "":
+                date_str += str(dat_jahr_a).replace("-", "") + " " + _l("BC") + " &ndash; "
+            else:
+                date_str += str(dat_jahr_a).replace("-", "") + " " + _l("BC")
+        else:
+            if dat_jahr_e != "":
+                date_str += str(dat_jahr_a) + " " + _l("AD") + " &ndash; "
+            else:
+                date_str += str(dat_jahr_a) + " " + _l("AD")
+    if dat_jahr_e != "":
+        if dat_jahr_e < 0:
+            date_str += str(dat_jahr_e).replace("-", "") + " " + _l("BC")
+        else:
+            date_str += str(dat_jahr_e) + " " + _l("AD")
+    return date_str
 
 
 def _get_title(i_gattung="", fo_antik="", fo_modern="", provinz=""):
