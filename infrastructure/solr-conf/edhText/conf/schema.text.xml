@@ -509,7 +509,7 @@ catchall "text" field, and use that for searching.
         <field name="beleg" type="plong"/>
         <field name="beziehung" type="text_general_sv"/>
         <field name="bh" type="text_general_sv"/>
-        <field name="breite" type="pdoubles"/>
+        <field name="breite" type="pdouble"/>
         <field name="btext" type="text_general_sv"/>
         <field name="dat_jahr_a" type="plong"/>
         <field name="dat_jahr_e" type="plong"/>
