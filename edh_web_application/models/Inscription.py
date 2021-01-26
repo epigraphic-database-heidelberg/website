@@ -118,13 +118,13 @@ class Inscription:
                         else:
                             props[key] = _l(result[key])
                         props['provinz_id'] = Place.get_province_id_from_code(re.sub("\?$", "", result[key]))
-                    if key == 'i_gattung':
+                    elif key == 'i_gattung':
                         if re.search(".+\?$", result[key]):
                             key_without_trailing_questionmark = re.sub("\?$", "", result[key])
                             props['i_gattung_str'] = _l(key_without_trailing_questionmark) + "?"
                         else:
                             props['i_gattung_str'] = str(_l(result[key]))
-                    if key == 'denkmaltyp':
+                    elif key == 'denkmaltyp':
                         if re.search(".+\?$", result[key]):
                             key_without_trailing_questionmark = re.sub("\?$", "", result[key])
                             props['i_traeger_str'] = _l(key_without_trailing_questionmark) + "?"
@@ -132,6 +132,25 @@ class Inscription:
                             props['i_traeger_str'] = str(_l(result[key]))
                     elif key == 'bearbeiter':
                         props['bearbeiter'] = get_fullname(result['bearbeiter'].lower().capitalize())
+                    elif key == 'hoehe':
+                        if result[key] < 0:
+                            hoehe_str = str(int(result[key])).replace("-", "")
+                            props['hoehe'] = "("+hoehe_str+")"
+                        else:
+                            props['hoehe'] = str(int(result[key]))
+                    elif key == 'breite':
+                        if result[key] < 0:
+                            breite_str = str(int(result[key])).replace("-", "")
+                            props['breite'] = "(" + breite_str + ")"
+                        else:
+                            props['breite'] = str(int(result[key]))
+                    elif key == 'tiefe':
+                        if result[key] < 0:
+                            tiefe_str = str(int(result[key])).replace("-", "")
+                            props['tiefe'] = "(" + tiefe_str + ")"
+                        else:
+                            props['tiefe'] = str(int(result[key]))
+
                 if 'fo_antik' not in props:
                     props['fo_antik'] = ""
                 if 'fo_modern' not in props:
