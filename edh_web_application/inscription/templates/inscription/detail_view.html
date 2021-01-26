@@ -60,14 +60,18 @@
                 <div class="detail_block_content_row_header">{{_('modern region')}}:</div>
                 <div id="region" class="detail_block_content_row_text">{% if data['verw_bezirk'] %}{{data['verw_bezirk']}}{% endif %}</div>
             </section>
+            {% if data['fundjahr']%}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('year of find')}}:</div>
                 <div id="fundjahr" class="detail_block_content_row_text">{% if data['fundjahr'] %}{{data['fundjahr']}}{% endif %}</div>
             </section>
+            {% endif %}
+            {% if data['aufbewahrung']%}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('present location')}}:</div>
                 <div id="aufbewahrung" class="detail_block_content_row_text">{% if data['aufbewahrung'] %}{{data['aufbewahrung']}}{% endif %}</div>
             </section>
+            {% endif %}
         </div>
     </div>
 </div>

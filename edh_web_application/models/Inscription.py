@@ -121,7 +121,7 @@ class Inscription:
                     if key == 'i_gattung':
                         if re.search(".+\?$", result[key]):
                             key_without_trailing_questionmark = re.sub("\?$", "", result[key])
-                            props['i_gattung_str'] = _l([key_without_trailing_questionmark]) + "?"
+                            props['i_gattung_str'] = _l(key_without_trailing_questionmark) + "?"
                         else:
                             props['i_gattung_str'] = str(_l(result[key]))
                     if key == 'denkmaltyp':
