@@ -1,3 +1,4 @@
+import collections
 import re
 from datetime import datetime
 
@@ -666,6 +667,51 @@ class Inscription:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             return format_date(dt, 'd. MMM YYYY', locale='de_DE')
 
+    @classmethod
+    def last_updates(cls):
+        """
+        return last 50 entries that have been updated
+        :return: list of 50 entries
+        """
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
+        results = solr.search("*:*", sort="datum desc", rows=50)
+        for res in results:
+            dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
+            res['datum'] = format_date(dt, 'd. MMM YYYY', locale='de_DE')
+            fragezeichen = ""
+            land = res['land']
+            if res['land'][-1] == "?":
+                fragezeichen = "?"
+                land = re.sub("\\?", "", res['land'])
+            res['land'] = Place.country[land] + fragezeichen
+            fragezeichen = ""
+            provinz = res['provinz']
+            if res['provinz'][-1] == "?":
+                fragezeichen = "?"
+                provinz = re.sub("\\?", "", res['provinz'])
+            res['provinz'] = Place.province_dict[provinz] + fragezeichen
+            res['provinz_id'] = Place.get_province_id_from_code(res['provinz'])
+            if 'fundstelle' in res:
+                res['fundstelle'] = re.sub("[\{\}]", "", res['fundstelle'])
+        return results
+
+    @classmethod
+    def group_results_by_date(cls, results):
+        """
+        groups last 50 entries in geographic database by date
+        :param results: list of geographic entries
+        :return: orderedDict with date as keys, and list of entries as values
+        """
+        last_date = ""
+        grouped_result = collections.OrderedDict()
+        for res in results:
+            current_date = res['datum']
+            if current_date != last_date:
+                grouped_result[current_date] = []
+                last_date = current_date
+            grouped_result[current_date].append(res)
+        return grouped_result
+
 
 def _get_date_string(dat_jahr_a, dat_jahr_e, monat, tag):
     """
@@ -727,3 +773,5 @@ def _get_title(i_gattung="", fo_antik="", fo_modern="", provinz=""):
             title_str += _l(" from ") + _l(provinz)
     # uppercase first character
     return title_str[0].upper() + title_str[1:]
+
+

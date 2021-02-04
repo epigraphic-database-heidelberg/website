@@ -6,6 +6,19 @@ from .forms import InscriptionSearchDe, InscriptionSearchEn
 from ..models.Inscription import Inscription
 
 
+@bp_inscription.route('/inschrift/lastUpdates', methods=['GET', 'POST'])
+def last_updates():
+    """
+    route for displaying last updates in inscription database
+    :return: orderedDictionary of inscription entries grouped by date
+    """
+    results = Inscription.last_updates()
+    results_grouped_by_date = Inscription.group_results_by_date(results)
+    return render_template('inscription/last_updates.html',
+                           title=_("Epigraphic Text Database"), subtitle=_("Last Updates"),
+                           data=results_grouped_by_date)
+
+
 @bp_inscription.route('/inschrift/suche')
 def simple_search():
     if _('lang') == "de":

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+<div>
+    {% set count_map = namespace(value=0) %}
+    {% for d in data %}
+
+        <h3>{{d}}</h3>
+        {% set count = namespace(value=0) %}
+        {% for entry in data[d] %}
+        {% set count.value = count.value + 1 %}
+        {% set count_map.value = count_map.value + 1 %}
+        <div class="detail_block" style="display:flex;">
+        <div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;"><a href="./edh/inschrift/{{ entry['hd_nr'] }}" style="color: white">{{_('Number')}} &nbsp; {{count.value}}</a></div>
+        <div class="col">
+            <div style="">
+                <p style="text-align:left; vertical-align:top; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/inschrift/{{ entry['hd_nr'] }}">{{ entry['hd_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
+                <div style="display: flex">
+                    <div class="" style="width:200px; margin:15px 15px 15px 0px;vertical-align: middle;">
+                        <a href="./edh/inschrift/{{ entry['hd_nr'] }}"><div id="map_canvas_{{ count_map.value }}" class="map_canvas"></div></a>
+                    </div>
+                    <div>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('Transcription') }}:</div>
+                            <div class="detail_block_content_row_text">{{ _(entry['atext']) }}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('province') }}:</div>
+                            <div class="detail_block_content_row_text">{{ _(entry['provinz']) }}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('country') }}:</div>
+                            <div class="detail_block_content_row_text">{{ _(entry['land']) }}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                                <div class="detail_block_content_row_header">{{ _('ancient find spot') }}:</div>
+                                <div class="detail_block_content_row_text">{% if entry['fo_antik'] %}{{ entry['fo_antik'] }}{% else %}&nbsp;{% endif %}</div>
+                            </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('modern find spot') }}:</div>
+                            <div class="detail_block_content_row_text">{% if entry['fo_modern'] %}{{ entry['fo_modern'] }}{% else %}&nbsp;{% endif %}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('literature') }}:</div>
+                            <div class="detail_block_content_row_text">{% if entry['literatur'] %}{{ entry['literatur'] | replace("#", "<br/>") | safe }}{% else %}&nbsp;{% endif %}</div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script type="text/javascript">
+    {% set count = namespace(value=0) %}
+    {% for d in data %}
+        {% for entry in data[d] %}
+            {% set count.value = count.value + 1 %}
+            var pelagiosMap = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png');
+                var map = L.map('map_canvas_{{count.value}}', {
+                    center: [ {% if entry['koordinaten1'] %} {{entry['koordinaten1']}} {%else%} 47,11 {%endif%}],
+                    zoom: {% if entry['koordinaten1'] %} 5 {%else%} 3 {%endif%},
+                    zoomControl:false,
+                    layers: [pelagiosMap]
+                });
+                map.dragging.disable();
+                map.touchZoom.disable();
+                map.doubleClickZoom.disable();
+                map.scrollWheelZoom.disable();
+                map.keyboard.disable();
+                {% if entry['koordinaten1'] %}
+                var marker{{count.value}} = L.marker([{{entry['koordinaten1']}}]).addTo(map);
+                {% endif %}
+        {% endfor %}
+    {% endfor %}
+</script>
+{% endblock %}
