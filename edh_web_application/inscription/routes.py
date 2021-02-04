@@ -23,6 +23,9 @@ def extended_search():
 
 @bp_inscription.route('/edh/inschrift/<hd_nr>')
 def detail_view(hd_nr):
+    if hd_nr in Inscription.hd_nr_redirects:
+        return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
+                               subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
     results = Inscription.query("hd_nr:" + hd_nr)
     if results is None:
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"), subtitle=_("Detail View"))

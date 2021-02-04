@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ data['titel'] }}</h2>
+
+<div>
+{{ _('The HD-No.')}} {{data[0]}} {{_('is not valid any more.') }}
+
+{{ _('Now HD no.') }} <a href="./edh/inschrift/{{ data[1] }}">{{ data[1] }}</a>.
+</div>
+{% endblock %}
