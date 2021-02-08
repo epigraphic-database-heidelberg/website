@@ -47,6 +47,10 @@
                             <div class="detail_block_content_row_text">{% if entry['fo_modern'] %}{{ entry['fo_modern'] }}{% else %}&nbsp;{% endif %}</div>
                         </section>
                         <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('Chronological Data') }}:</div>
+                            <div class="detail_block_content_row_text">{% if entry['datierung'] %}{{ entry['datierung'] | safe }}{% else %}###&nbsp;{% endif %}</div>
+                        </section>
+                        <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('literature') }}:</div>
                             <div class="detail_block_content_row_text">{% if entry['literatur'] %}{{ entry['literatur'] | replace("#", "<br/>") | safe }}{% else %}&nbsp;{% endif %}</div>
                         </section>

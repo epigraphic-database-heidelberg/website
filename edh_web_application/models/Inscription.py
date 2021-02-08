@@ -566,7 +566,6 @@ class Inscription:
             for result in results:
                 props = {}
                 for key in result:
-                    print(key, result[key])
                     if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg'):
                         props[key] = result[key]
                     if key == 'land':
@@ -676,6 +675,16 @@ class Inscription:
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
         results = solr.search("*:*", sort="datum desc", rows=50)
         for res in results:
+            if 'dat_jahr_a' not in res:
+                res['dat_jahr_a'] = ""
+            if 'dat_jahr_e' not in res:
+                res['dat_jahr_e'] = ""
+            if 'dat_monat' not in res:
+                res['dat_monat'] = ""
+            if 'dat_tag' not in res:
+                res['dat_tag'] = ""
+            res['datierung'] = _get_date_string(res['dat_jahr_a'], res['dat_jahr_e'], res['dat_monat'],
+                                                  res['dat_tag'])
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             res['datum'] = format_date(dt, 'd. MMM YYYY', locale='de_DE')
             fragezeichen = ""
@@ -719,7 +728,6 @@ def _get_date_string(dat_jahr_a, dat_jahr_e, monat, tag):
     :return: date string
     """
     date_str = ""
-    print(tag, monat)
     if tag != "":
         date_str += str(tag) + ". "
     if monat != "":
