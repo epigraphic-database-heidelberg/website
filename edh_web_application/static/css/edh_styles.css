@@ -606,6 +606,25 @@ img#hadw-banner {
     margin-left: -5px;
 }
 
+.ui-state-hover,
+.ui-state-focus,
+.ui-state-active,
+.ui-widget-content .ui-state-hover,
+.ui-widget-content .ui-state-active,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-hover,
+.ui-widget-header .ui-state-active,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover, .ui-button:focus
+.ui-button:active, .ui-button:active
+{
+    border: 1px solid aaa !important;
+    background: #f6f6f6 !important;
+    outline: 0 none !important;
+}
+
+
+
 /* image layout */
 .image_layout {
     display: flex;

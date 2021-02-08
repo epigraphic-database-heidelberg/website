@@ -48,29 +48,24 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class='col-sm-2 col-form-label'>{{ _('Datierung')}}</label>
-        <div class="col-sm-2">
-            {{ form.dat_jahr_a.label() }} {{ form.dat_jahr_a(class='form-control') }}
-        </div>
-        <div class="col-sm-2">
-            {{ form.dat_jahr_e.label() }} {{ form.dat_jahr_e(class='form-control') }}
-        </div>
+        <label class='col-sm-2 col-form-label'>{{ _('year')}}</label>
+        <div class="col-sm-10" style="padding-right:22px"><div style="margin-top:12px;margin-left:8px; margin-right:8ox;" id="slider-range"></div></div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2  col-form-label">&nbsp; </label>
-        <div class="col-sm-2">
-            {{ form.dat_erweitert.label() }} {{ form.dat_erweitert() }}
+        <label class="col-sm-2  col-form-label"></label>
+        <div class="col-sm-10">
+             {{ form.dat_erweitert.label() }} {{ form.dat_erweitert() }} <span id="dat_str" style="padding-left:2em;">-1000 - 1500</span>
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2  col-form-label">{{ _("search string(s)")}}</label>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
             {{ form.atext1(class='form-control') }}
         </div>
-        <div class="col-sm-2" style="padding-left:2em;padding-right:2em;">
+        <div class="col-sm-3" style="padding-left:2em;padding-right:2em;">
             {{ form.bool(class='form-control') }}
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
             {{ form.atext2(class='form-control') }}
         </div>
 
@@ -113,5 +108,18 @@
         $(".selectpicker").val('');
         $(".selectpicker").selectpicker("refresh");
     })
+    $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: -1000,
+      max: 1500,
+      values: [ -1000, 1500 ],
+      slide: function( event, ui ) {
+        $( "#dat_str" ).text(  ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+      }
+    });
+    $( "#dat_str" ).text( $( "#slider-range" ).slider( "values", 0 ) +
+      " - " + $( "#slider-range" ).slider( "values", 1 ) );
+  } );
 </script>
 {% endblock %}
