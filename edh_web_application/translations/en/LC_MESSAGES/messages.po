@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-08 10:34+0100\n"
+"POT-Creation-Date: 2021-02-09 15:52+0100\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -32,7 +32,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_map.html:71
 #: edh_web_application/geography/templates/geography/search_results_table.html:88
 #: edh_web_application/inscription/forms.py:53
-#: edh_web_application/inscription/templates/inscription/search.html:97
+#: edh_web_application/inscription/templates/inscription/search.html:92
 msgid "Reset..."
 msgstr ""
 
@@ -342,14 +342,14 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/search.html:93
 #: edh_web_application/foto/templates/foto/search.html:93
 #: edh_web_application/geography/templates/geography/search.html:88
-#: edh_web_application/inscription/templates/inscription/search.html:80
+#: edh_web_application/inscription/templates/inscription/search.html:75
 msgid "Search Options"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search.html:110
 #: edh_web_application/foto/templates/foto/search.html:111
 #: edh_web_application/geography/templates/geography/search.html:105
-#: edh_web_application/inscription/templates/inscription/search.html:97
+#: edh_web_application/inscription/templates/inscription/search.html:92
 msgid "Search..."
 msgstr ""
 
@@ -680,7 +680,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:56
 #: edh_web_application/inscription/forms.py:70
-#: edh_web_application/inscription/templates/inscription/detail_view.html:42
+#: edh_web_application/inscription/templates/inscription/detail_view.html:60
 #: edh_web_application/inscription/templates/inscription/last_updates.html:34
 msgid "province"
 msgstr ""
@@ -701,7 +701,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:57
 #: edh_web_application/inscription/forms.py:71
-#: edh_web_application/inscription/templates/inscription/detail_view.html:50
+#: edh_web_application/inscription/templates/inscription/detail_view.html:68
 #: edh_web_application/inscription/templates/inscription/last_updates.html:42
 msgid "ancient find spot"
 msgstr ""
@@ -722,7 +722,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:58
 #: edh_web_application/inscription/forms.py:72
-#: edh_web_application/inscription/templates/inscription/detail_view.html:54
+#: edh_web_application/inscription/templates/inscription/detail_view.html:72
 #: edh_web_application/inscription/templates/inscription/last_updates.html:46
 msgid "modern find spot"
 msgstr ""
@@ -733,7 +733,7 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/search_results.html:155
 #: edh_web_application/foto/templates/foto/search_results.html:305
 #: edh_web_application/foto/templates/foto/search_results_grid.html:240
-#: edh_web_application/inscription/templates/inscription/detail_view.html:73
+#: edh_web_application/inscription/templates/inscription/detail_view.html:97
 msgid "present location"
 msgstr ""
 
@@ -810,7 +810,7 @@ msgstr ""
 #: edh_web_application/inscription/forms.py:70
 #: edh_web_application/inscription/forms.py:84
 #: edh_web_application/inscription/forms.py:88
-#: edh_web_application/inscription/templates/inscription/detail_view.html:46
+#: edh_web_application/inscription/templates/inscription/detail_view.html:64
 #: edh_web_application/inscription/templates/inscription/last_updates.html:38
 msgid "country"
 msgstr ""
@@ -829,7 +829,7 @@ msgid "Foto Database"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:27
-#: edh_web_application/inscription/templates/inscription/detail_view.html:37
+#: edh_web_application/inscription/templates/inscription/detail_view.html:50
 msgid "Find circumstances / present location"
 msgstr ""
 
@@ -847,7 +847,7 @@ msgid "Literature"
 msgstr ""
 
 #: edh_web_application/foto/templates/foto/detail_view.html:97
-#: edh_web_application/inscription/templates/inscription/detail_view.html:149
+#: edh_web_application/inscription/templates/inscription/detail_view.html:173
 msgid "Commentary"
 msgstr ""
 
@@ -919,7 +919,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:59
 #: edh_web_application/inscription/forms.py:72
-#: edh_web_application/inscription/templates/inscription/detail_view.html:58
+#: edh_web_application/inscription/templates/inscription/detail_view.html:76
 msgid "find spot"
 msgstr "find spot (specific)"
 
@@ -1104,7 +1104,7 @@ msgid "type of inscription sort"
 msgstr "i_gattung_sort_en"
 
 #: edh_web_application/inscription/forms.py:73
-#: edh_web_application/inscription/templates/inscription/detail_view.html:86
+#: edh_web_application/inscription/templates/inscription/detail_view.html:110
 msgid "type of inscription"
 msgstr ""
 
@@ -1113,7 +1113,7 @@ msgid "type of monument sort"
 msgstr "denkmaltyp"
 
 #: edh_web_application/inscription/forms.py:74
-#: edh_web_application/inscription/templates/inscription/detail_view.html:104
+#: edh_web_application/inscription/templates/inscription/detail_view.html:128
 msgid "type of monument"
 msgstr ""
 
@@ -1122,7 +1122,7 @@ msgid "material sort"
 msgstr "material_sort"
 
 #: edh_web_application/inscription/forms.py:75
-#: edh_web_application/inscription/templates/inscription/detail_view.html:110
+#: edh_web_application/inscription/templates/inscription/detail_view.html:134
 msgid "material"
 msgstr ""
 
@@ -1174,51 +1174,55 @@ msgstr ""
 msgid "Chronological Data"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:62
+#: edh_web_application/inscription/templates/inscription/detail_view.html:80
 msgid "modern region"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:67
+#: edh_web_application/inscription/templates/inscription/detail_view.html:85
 msgid "year of find"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:80
+#: edh_web_application/inscription/templates/inscription/detail_view.html:88
+msgid "before"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:104
 msgid "Type of inscription / language"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:91
+#: edh_web_application/inscription/templates/inscription/detail_view.html:115
 msgid "language"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:98
+#: edh_web_application/inscription/templates/inscription/detail_view.html:122
 msgid "Type of monument"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:116
+#: edh_web_application/inscription/templates/inscription/detail_view.html:140
 msgid "height"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:122
+#: edh_web_application/inscription/templates/inscription/detail_view.html:146
 msgid "width"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:128
+#: edh_web_application/inscription/templates/inscription/detail_view.html:152
 msgid "depth"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:134
+#: edh_web_application/inscription/templates/inscription/detail_view.html:158
 msgid "letter size"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:140
+#: edh_web_application/inscription/templates/inscription/detail_view.html:164
 msgid "decoration"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:161
+#: edh_web_application/inscription/templates/inscription/detail_view.html:185
 msgid "Palaeography"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:169
+#: edh_web_application/inscription/templates/inscription/detail_view.html:193
 msgid "General Data"
 msgstr ""
 
@@ -1234,11 +1238,11 @@ msgstr ""
 msgid "Now HD no."
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/search.html:53
+#: edh_web_application/inscription/templates/inscription/search.html:51
 msgid "year"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/search.html:66
+#: edh_web_application/inscription/templates/inscription/search.html:61
 msgid "search string(s)"
 msgstr ""
 
@@ -1862,26 +1866,26 @@ msgstr "rn\""
 msgid "Waffe"
 msgstr "weapon"
 
-#: edh_web_application/models/Inscription.py:732
-#: edh_web_application/models/Inscription.py:734
-#: edh_web_application/models/Inscription.py:742
+#: edh_web_application/models/Inscription.py:753
+#: edh_web_application/models/Inscription.py:755
+#: edh_web_application/models/Inscription.py:763
 msgid "BC"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:737
-#: edh_web_application/models/Inscription.py:739
-#: edh_web_application/models/Inscription.py:744
+#: edh_web_application/models/Inscription.py:758
+#: edh_web_application/models/Inscription.py:760
+#: edh_web_application/models/Inscription.py:765
 msgid "AD"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:762
+#: edh_web_application/models/Inscription.py:783
 msgid "Inschrift"
 msgstr "Inscription"
 
-#: edh_web_application/models/Inscription.py:764
-#: edh_web_application/models/Inscription.py:766
-#: edh_web_application/models/Inscription.py:771
-#: edh_web_application/models/Inscription.py:773
+#: edh_web_application/models/Inscription.py:785
+#: edh_web_application/models/Inscription.py:787
+#: edh_web_application/models/Inscription.py:792
+#: edh_web_application/models/Inscription.py:794
 msgid " from "
 msgstr ""
 
@@ -2743,13 +2747,13 @@ msgstr ""
 "latter these belong to the records of the <em>Photographic Database</em> "
 "– or ideally through autopsy. By means of the \"status field\" the user "
 "of the database is informed about the manner of verification of the "
-"readings.</p><p style="margin-bottom:2em;">The revision of the inscriptions being processed for the "
-"<em>Epigraphic Text Database</em> is based on a card-index. On the one "
-"hand the publications presented in <em>L'Année Épigraphique</em> since "
-"1888 are systematically collected. On the other hand in which the "
-"relevant <i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"./inhalt/einfacheSuche#ankerDivPhasen\">corpora editions</a> and "
-"<i class=\"fas fa-external-link-alt\"></i> <a "
+"readings.</p><p style=\"margin-bottom:2em;\">The revision of the "
+"inscriptions being processed for the <em>Epigraphic Text Database</em> is"
+" based on a card-index. On the one hand the publications presented in "
+"<em>L'Année Épigraphique</em> since 1888 are systematically collected. On"
+" the other hand in which the relevant <i class=\"fas fa-external-link-"
+"alt\"></i> <a href=\"./inhalt/einfacheSuche#ankerDivPhasen\">corpora "
+"editions</a> and <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./inhalt/einfacheSuche#ankerDivPhasen\">local publications</a> are"
 " systematically collected according to the regional method applied by "
 "<em>EDH</em>. <em>EDH</em> enjoys a lively exchange of information with "
@@ -2792,8 +2796,8 @@ msgstr ""
 " Kortüm (Stuttgart), Dr. Péter Kovács (Piliscsaba), Friedrich Krämer+ "
 "(Lobbach-Lobenfeld), Katharina Krügel (Weimar), Dr. Anamarija Kurilić "
 "(Zadar)<h4>L</h4><p>Carmen Lanz (Heidelberg), Prof. Gaetano Lena "
-"(Cassino), Prof. Dr. Barnabás Lőrincz † (Budapest)<h4>M</h4><p>Felix Marcu "
-"(Cluj-Napoca), Valeria Mare M.A. (Heidelberg), Dr. Ivan Matijević "
+"(Cassino), Prof. Dr. Barnabás Lőrincz † (Budapest)<h4>M</h4><p>Felix "
+"Marcu (Cluj-Napoca), Valeria Mare M.A. (Heidelberg), Dr. Ivan Matijević "
 "(Split), PD Dr. Krešimir Matijević (Trier), Marko Matijević (Split), "
 "Prof. Dr. Giovanni Mennella (Genova), Prof. Miroslava Mirković "
 "(Beograd)<h4>N</h4><p>Dr. Eduard Németh (Cluj-Napoca), Prof. Dr. György "
@@ -2855,7 +2859,8 @@ msgstr ""
 "alt\"></i> <a href=\"http://lupa.at\">UBI ERAT LUPA</a><h4>Zürich "
 "(CH)</h4><p><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"https://www.hist.uzh.ch/\">Historisches Seminar</a> the University"
-" of Zürich.</p><p style="margin-top:2em;margin-bottom:2em;">Last update: February 2021</p>"
+" of Zürich.</p><p style=\"margin-top:2em;margin-bottom:2em;\">Last "
+"update: February 2021</p>"
 
 #: edh_web_application/project/templates/project/project_history.html:10
 msgid "History page"
@@ -2863,23 +2868,21 @@ msgstr ""
 "<p>The Epigraphic Database Heidelberg started work on 1. July 1986. Since"
 " then many changes and additions have been made, and new national and "
 "international cooperations started. Scoll down this timeline to find out "
-"more about the history of the project. </p><ul class=\"timeline\">"
-"<li>    <div class=\"direction-l\">      <div class=\"flag-"
+"more about the history of the project. </p><ul class=\"timeline\"><li>"
+"    <div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
+"<span class=\"hexa\"></span>        <span class=\"flag\">2021</span>"
+"      </div>      <div class=\"desc\">Closing year (phase-out funding) of"
+" EDH's funding by the <strong>Programme of the Academies of the Bund-"
+"Länder Commission</strong></div>    </div>  <li>    <div "
+"class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
+"class=\"hexa\"></span>        <span class=\"flag\">November 2020</span>"
+"      </div>      <div class=\"desc\"><i class=\"fas fa-external-link-"
+"alt\"></i> <a href=\"http://epigraphy.info/workshop_5.html\">5. "
+"epigraphy.info Workshop</a>, Leuven 3. - 6. November 2020</div>    </div>"
+"  </li><li>    <div class=\"direction-l\">      <div class=\"flag-"
 "wrapper\">        <span class=\"hexa\"></span>        <span "
-"class=\"flag\">2021</span>      </div>      <div "
-"class=\"desc\">Closing year (phase-out funding) of EDH's funding by the"
-" <strong>Programme of the Academies of the Bund-Länder Commission</strong></div>    </div>  "
-"<li>"
-"    <div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">November "
-"2020</span>      </div>      <div class=\"desc\"><i class=\"fas fa-"
-"external-link-alt\"></i> <a "
-"href=\"http://epigraphy.info/workshop_5.html\">5. epigraphy.info "
-"Workshop</a>, Leuven 3. - 6. November 2020</div>    </div>  </li><li>    "
-"<div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
-"<span class=\"hexa\"></span>        <span class=\"flag\">February "
-"2020</span>      </div>      <div class=\"desc\"><i class=\"fas fa-"
-"external-link-alt\"></i> <a "
+"class=\"flag\">February 2020</span>      </div>      <div "
+"class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"http://epigraphy.info/workshop_4.html\">4. epigraphy.info "
 "Workshop</a>, Hamburg 19. - 21. February 2020</div>    </div>  </li><li>"
 "    <div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
@@ -3281,40 +3284,43 @@ msgstr ""
 "project the following people have worked on the EDH:</p><p>Research "
 "Associates:</p><p>Andreas Dafferner (1993-2010, IT), PD Dr. Andrea "
 "Scheithauer (1993-1998), Dr. Manfred G. Schmidt (1993-1995), Dr. Heike "
-"Niquet (1995-1997), Dr. Francisca Feraudi-Gruénais (1997-2021), Dr. Brigitte Gräf (1998-2021), Dr. Marta García Morcillo (2005/2006), Dr. James "
-"Cowey (2004-2005, 2008-2020), Dr. Frank Grieshaber (2010-2021), Regine Klar (2012-2020), Jonas Osnabrügge M.A. "
-"(2016-2020).</p><p>Student and Graduate Assistants:</p><p>Raffaela Cengia"
-" (1993), Oliver Hoffmann (1993), Estrella Velasco Servert (1993/1994), "
-"Wolfgang Strysio (1993-1996), Francisca Feraudi-Gruénais (1993-1997), "
-"Andrea Steinebrey (1993-1997), Cordelia Eule (1993-1998), Brigitte Ruck "
-"(1995-1998), Daniela Quade (1996-2000), Dagmar Hofmann (1996-2001), "
-"Stefano Conti (1997), Rahsan Dogan (1998-2001), Angela Gärtner "
-"(1998/1999), Eric Hummel (1998-2001), Verena Unmüßig (1998-2002), Michael"
-" Schmitt (1999), Sarah Hillebrand (2000-2003), Meike Morhart (2000-2003),"
-" Panagiotis Galanis (2001), Jürgen Gallinat (2001/2002), Henning Wirth "
-"(2001-2004), Verena Gander (2002-2004), Nicole Petzi (2002/2003), Antje "
-"König (2002-2005), Dagmar Schweinfurth (2003/2004), Burkhard Hildebrandt "
-"(2004), Sascha Beck (2004/2005), Benedikt von Imhoff (2004/2005), Nadine "
-"Grimmig (2004-2006), Victoria Clay (2005), Vera Bachthaler (2005-2009), "
-"Florian Helmer (2005-2008), Helena Kotarlić (2006/2007), Nina Valuta "
-"(2006/2007), Nadine Viermann (2006/2007), Eva Borchert (2007-2010), "
-"Daniel Kanzleiter (2007-2010), Jan Kaufhold (Heidelberg-Osnabrück, "
-"2007/2008), Sebastian Platz (2007-2011), Bernadette Esch (Heidelberg-"
-"Osnabrück, 2008-2010), Elisabeth Neubert (2009-2014), Simone Pastor "
-"(2008/2009), Dominik Fröse (2009-2013), Otto Ritter (2010-2014), Ricarda "
-"Wagner (2010/2011), Felix Schulte (2011/2012), Shipe Smajlaj (2011), "
-"Katharina Oldenhage (2012-2014); Christopher Schubert (2013-2018); Josef "
-"Bäck (2014-2016 [europeana]); Denitsa Dzhigova (2014 [europeana]); Laura "
-"Sandmann (2014-2019); Niklas Bettermann (2015-2021); Jennifer Goetz "
-"(2015-2017); Sarah Deck (2018-2019); Berglind Hatje (2018-2019); Caroline"
-" Albert (2020); Natascha Beiermann "
-"(2020-2021).</p><p>Internships:</p><p>Thomas Somló (Heidelberg; 08/2005),"
-" Raffaella Marchesini (Roma; 04-08/2007), Sarah Bond (Chapel Hill; "
-"07-08/2007), Amanda Rampichini (Siena; 07-08/2012), Laura Löser (St "
-"Andrews; 08/2013), Christopher Schubert (Mannheim; 02/2015), Julia "
-"Ortseifen (Heidelberg; 03/2015), Aránzazu López Fernández (Madrid; "
-"02-05/2016 [Erasmus+]); Giovanni Arena (Bologna; 04-07/2018 [Erasmus+]); "
-"Melissa Kleinhans (Karlsruhe; 07-08/2019).</p><p style="margin-top:2em;margin-bottom:2em;">Last update: February 2021</p>"
+"Niquet (1995-1997), Dr. Francisca Feraudi-Gruénais (1997-2021), Dr. "
+"Brigitte Gräf (1998-2021), Dr. Marta García Morcillo (2005/2006), Dr. "
+"James Cowey (2004-2005, 2008-2020), Dr. Frank Grieshaber (2010-2021), "
+"Regine Klar (2012-2020), Jonas Osnabrügge M.A. (2016-2020).</p><p>Student"
+" and Graduate Assistants:</p><p>Raffaela Cengia (1993), Oliver Hoffmann "
+"(1993), Estrella Velasco Servert (1993/1994), Wolfgang Strysio "
+"(1993-1996), Francisca Feraudi-Gruénais (1993-1997), Andrea Steinebrey "
+"(1993-1997), Cordelia Eule (1993-1998), Brigitte Ruck (1995-1998), "
+"Daniela Quade (1996-2000), Dagmar Hofmann (1996-2001), Stefano Conti "
+"(1997), Rahsan Dogan (1998-2001), Angela Gärtner (1998/1999), Eric Hummel"
+" (1998-2001), Verena Unmüßig (1998-2002), Michael Schmitt (1999), Sarah "
+"Hillebrand (2000-2003), Meike Morhart (2000-2003), Panagiotis Galanis "
+"(2001), Jürgen Gallinat (2001/2002), Henning Wirth (2001-2004), Verena "
+"Gander (2002-2004), Nicole Petzi (2002/2003), Antje König (2002-2005), "
+"Dagmar Schweinfurth (2003/2004), Burkhard Hildebrandt (2004), Sascha Beck"
+" (2004/2005), Benedikt von Imhoff (2004/2005), Nadine Grimmig "
+"(2004-2006), Victoria Clay (2005), Vera Bachthaler (2005-2009), Florian "
+"Helmer (2005-2008), Helena Kotarlić (2006/2007), Nina Valuta (2006/2007),"
+" Nadine Viermann (2006/2007), Eva Borchert (2007-2010), Daniel Kanzleiter"
+" (2007-2010), Jan Kaufhold (Heidelberg-Osnabrück, 2007/2008), Sebastian "
+"Platz (2007-2011), Bernadette Esch (Heidelberg-Osnabrück, 2008-2010), "
+"Elisabeth Neubert (2009-2014), Simone Pastor (2008/2009), Dominik Fröse "
+"(2009-2013), Otto Ritter (2010-2014), Ricarda Wagner (2010/2011), Felix "
+"Schulte (2011/2012), Shipe Smajlaj (2011), Katharina Oldenhage "
+"(2012-2014); Christopher Schubert (2013-2018); Josef Bäck (2014-2016 "
+"[europeana]); Denitsa Dzhigova (2014 [europeana]); Laura Sandmann "
+"(2014-2019); Niklas Bettermann (2015-2021); Jennifer Goetz (2015-2017); "
+"Sarah Deck (2018-2019); Berglind Hatje (2018-2019); Caroline Albert "
+"(2020); Natascha Beiermann (2020-2021).</p><p>Internships:</p><p>Thomas "
+"Somló (Heidelberg; 08/2005), Raffaella Marchesini (Roma; 04-08/2007), "
+"Sarah Bond (Chapel Hill; 07-08/2007), Amanda Rampichini (Siena; "
+"07-08/2012), Laura Löser (St Andrews; 08/2013), Christopher Schubert "
+"(Mannheim; 02/2015), Julia Ortseifen (Heidelberg; 03/2015), Aránzazu "
+"López Fernández (Madrid; 02-05/2016 [Erasmus+]); Giovanni Arena (Bologna;"
+" 04-07/2018 [Erasmus+]); Melissa Kleinhans (Karlsruhe; 07-08/2019).</p><p"
+" style=\"margin-top:2em;margin-bottom:2em;\">Last update: February "
+"2021</p>"
 
 #: edh_web_application/project/templates/project/project_presentations.html:10
 msgid "Presentations page"
@@ -3521,8 +3527,8 @@ msgid "Research Team Members page"
 msgstr ""
 "<h3>Director of the Research Center</h3><p><i class=\"fas fa-external-"
 "link-alt\"></i> <a href=\"mailto:christian.witschel@urz.uni-"
-"heidelberg.de\">Prof. Dr. Christian Witschel</a><br /><i "
-"class=\"fas fa-external-link-alt\"></i> <a href=\"http://www.uni-"
+"heidelberg.de\">Prof. Dr. Christian Witschel</a><br /><i class=\"fas fa-"
+"external-link-alt\"></i> <a href=\"http://www.uni-"
 "heidelberg.de/fakultaeten/philosophie/zaw/sag/alfoeldy.html\">Prof. Dr. "
 "Dr. h.c. mult. Géza Alföldy</a> † (1986–2006)</p><h3>Research Team "
 "Members</h3><p><i class=\"fas fa-external-link-alt\"></i> <a "
@@ -3531,13 +3537,13 @@ msgstr ""
 "alt\"></i> <a href=\"mailto:brigitte.graef@zaw.uni-heidelberg.de\">Dr. "
 "Brigitte Gräf</a><br /><i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"mailto:frank.grieshaber@zaw.uni-heidelberg.de\">Dr. Frank "
-"Grieshaber</a> (IT)</p><h3>Address</h3><p>Epigraphische Datenbank Heidelberg "
-"(EDH)<br />Seminar für Alte Geschichte und Epigraphik<br />Marstallhof "
-"4<br />69117 Heidelberg<br /> Germany</p><h3>Phon</h3><p>+49 (0) 62 21 / "
-"54 22 39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 "
-"34</p><h3>Email</h3><p><i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"mailto:epigraphische-datenbank@hadw-bw.de\">epigraphische-"
-"datenbank@hadw-bw.de</a></p>"
+"Grieshaber</a> (IT)</p><h3>Address</h3><p>Epigraphische Datenbank "
+"Heidelberg (EDH)<br />Seminar für Alte Geschichte und Epigraphik<br "
+"/>Marstallhof 4<br />69117 Heidelberg<br /> "
+"Germany</p><h3>Phon</h3><p>+49 (0) 62 21 / 54 22 39</p><h3>Fax</h3><p>+49"
+" (0) 62 21 / 54 22 34</p><h3>Email</h3><p><i class=\"fas fa-external-"
+"link-alt\"></i> <a href=\"mailto:epigraphische-datenbank@hadw-bw.de"
+"\">epigraphische-datenbank@hadw-bw.de</a></p>"
 
 #: edh_web_application/templates/404.html:4
 #: edh_web_application/templates/404.html:8

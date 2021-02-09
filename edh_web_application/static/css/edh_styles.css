@@ -723,6 +723,9 @@ img#hadw-banner {
     .masonry {
         columns: 2;
     }
+    .detail_block_wrapper {
+        display: flex;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */

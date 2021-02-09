@@ -545,6 +545,7 @@ class Inscription:
             "koordinaten1": None,
             "datierung": None,
             "foto_nr": None,
+            "provinz_id": None,
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
@@ -579,8 +580,10 @@ class Inscription:
                         if re.search("\?$", result[key]):
                             key_without_trailing_questionmark = re.sub("\?$", "", result[key])
                             props[key] = _l(key_without_trailing_questionmark) + "?"
+                            props['provinz_id'] = Place.get_province_id_from_code(key_without_trailing_questionmark)
                         else:
                             props[key] = _l(result[key])
+                            props['provinz_id'] = Place.get_province_id_from_code(result[key])
                         props['provinz_id'] = Place.get_province_id_from_code(re.sub("\?$", "", result[key]))
                     elif key == 'i_gattung':
                         if re.search(".+\?$", result[key]):
@@ -637,6 +640,9 @@ class Inscription:
                 if 'dat_tag' not in props:
                     props['dat_tag'] = ""
                 props['titel'] = _get_title(props['i_gattung'], props['fo_antik'], props['fo_modern'], props['provinz'])
+                if 'fundstelle' in props:
+                    fundstelle = re.sub("\{", "<a href='./edh/geographie/"+str(props['gdb_id'])+"'><i class='fas fa-external-link-alt'></i> ", props['fundstelle'])
+                    props['fundstelle'] = re.sub("\}","</a>",fundstelle)
                 props['datierung'] = _get_date_string(props['dat_jahr_a'], props['dat_jahr_e'], props['dat_monat'], props['dat_tag'])
                 atext_br = result['atext']
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))

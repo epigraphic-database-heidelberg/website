@@ -34,6 +34,7 @@
         </div>
     </div>
 </div>
+{% if data['foto_nr'] %}
 <hr/>
 <div>
     <section class="regular slider" style="margin-top:1em;margin-bottom:1em;">
@@ -45,13 +46,19 @@
   </section>
 </div>
 <hr/>
+{% endif %}
 <h3>{{_('Find circumstances / present location')}}</h3>
 <div>
-    <div class="detail_block">
+    <div class="detail_block_wrapper">
+        <div class="detail_block_content">
+            <div>
+                <a href="./edh/geographie/{{ data['gdb_id'] }}"><div id="map_canvas" style="height:250px;min-width:300px;border:1px solid #ccc;margin-bottom:1em;"></div></a>
+            </div>
+        </div>
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('province')}}:</div>
-                <div id="provinz" class="detail_block_content_row_text">{{data['provinz']}}</div>
+                <div id="provinz" class="detail_block_content_row_text"><a href="./edh/geographie/{{ data['provinz_id'] }}"><i class='fas fa-external-link-alt'></i> {{data['provinz']}}</a></div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('country')}}:</div>
@@ -67,7 +74,7 @@
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('find spot')}}:</div>
-                <div id="fundstelle" class="detail_block_content_row_text">{% if data['fundstelle'] %}{{data['fundstelle']}}{% endif %}</div>
+                <div id="fundstelle" class="detail_block_content_row_text">{% if data['fundstelle'] %}{{data['fundstelle'] | safe }}{% endif %}</div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('modern region')}}:</div>
@@ -76,7 +83,13 @@
             {% if data['fundjahr']%}
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('year of find')}}:</div>
-                <div id="fundjahr" class="detail_block_content_row_text">{% if data['fundjahr'] %}{{data['fundjahr']}}{% endif %}</div>
+                <div id="fundjahr" class="detail_block_content_row_text">
+                    {% if data['fundjahr'] and data['fundjahr'] < 0 %}
+                        {{_('before')}} {{data['fundjahr'] | replace("-", "")}}
+                    {% else %}
+                        {{data['fundjahr']}}
+                    {% endif %}
+                </div>
             </section>
             {% endif %}
             {% if data['aufbewahrung']%}
@@ -239,7 +252,23 @@
 
 <script type="text/javascript">
 
+    var pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:5, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'});
 
+    var map = L.map('map_canvas', {
+        center: [{{data['koordinaten1']}}],
+        zoom: 6,
+        layers: [pelagios],
+        zoomControl: false,
+        preferCanvas: true,
+        scrollWheelZoom: false
+    });
+    var baseLayers = {
+        "Pelagios": pelagios
+
+    };
+
+    var overlays = {};
+    var marker = L.marker([{{data['koordinaten1']}}]).addTo(map);
     $(".regular").slick({
         dots: true,
         infinite: false,
