@@ -19,13 +19,13 @@
 </h3>
 
 <!--<div><span id="toggleLinebreaks" onClick="toggleLinebreaks()" style="cursor: pointer;font-size:.7em;">Show Linebreaks</span></div>-->
+
 <div>
     <div class="detail_block">
         <div class="inschrift-kurzansicht">
-            <div id="map_canvas" style="height:200px;min-width:300px;border: 1px solid #aaa;margin-bottom:1.5em;margin-left:5px;"></div>
-            <div id="data" class="" style="padding-left:10px;hyphens: none;">
+            <div id="data" class="" style="padding-left:5px;hyphens: none;">
                 <div style="margin-bottom:1em;"><strong>{{_('Transcription')}}</strong>:<br/>{{data['atext']}}</div>
-                <div style="margin-bottom:1em;"><strong>{{_('Majuscle')}}</strong>:<br/>{{data['btext']}}</div>
+                <div style="margin-bottom:1em;"><strong>{{_('Majuscle')}}</strong>:<br/>{{data['btext'] | replace("/", "<br/>" | safe)}}</div>
                 {% if data['datierung'] %}
                     <div style="margin-bottom:1em;"><strong>{{_('Chronological Data')}}</strong>:<br/>{{data['datierung'] | safe}}</div>
                 {% endif%}
@@ -34,6 +34,17 @@
         </div>
     </div>
 </div>
+<hr/>
+<div>
+    <section class="regular slider" style="margin-top:1em;margin-bottom:1em;">
+    {% for foto in data['foto_nr']%}
+    <div>
+        <a href="./edh/foto/{{foto | replace("f","F") }}"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{foto | replace("f","F") }}.JPG" style="max-height:150px; max-width:150px; border: 1px solid #ccc;"></a>
+    </div>
+    {% endfor %}
+  </section>
+</div>
+<hr/>
 <h3>{{_('Find circumstances / present location')}}</h3>
 <div>
     <div class="detail_block">
@@ -213,48 +224,30 @@
 {% endblock %}
 {% block scripts %}
 {{ super() }}
- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 <script src="./static/js/copy2clipboard.js"></script>
 <script src="./static_geo/js/bing.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-<script type="text/javascript">
-    var BING_KEY = 'AhpTG22M_rzQEp8Q4c4edHpmIWXhwrQE65lztW3S7MsvB4cpUuya0fUgJscUfXMa'
-    var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2VuYW11biIsImEiOiJCcUl0ZWRzIn0.zxs-a0hWY3La5kF4CWAVug';
-    var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
-        sat = L.tileLayer(mbUrl, {id: 'mapbox/satellite-streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
-        pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:5, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'}),
-        bing_satellite = new L.BingLayer(BING_KEY, {'type': 'AerialWithLabels'}),
-        openTopoMap = Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://www.thunderforest.com/">Thunderforest</a>',
-            apikey: 'aaeccd3a44a74ce58324c2a455c58a98',
-            minZoom: 5});
-    var map = L.map('map_canvas', {
-        center: [{{data['koordinaten1']}}],
-        zoom: 8,
-        layers: [pelagios],
-        zoomControl: true,
-        preferCanvas: true,
-        scrollWheelZoom: false
-    });
-    var baseLayers = {
-        "Pelagios": pelagios,
-        "Streets": streets,
-        "Mapbox Satellite": sat,
-        "Bing Satellite": bing_satellite,
-        "Topo": openTopoMap
-    };
-    map.zoomControl.setPosition('topright');
-    var overlays = {};
-    var marker = L.marker([{{data['koordinaten1']}}]).addTo(map);
+<script src="./static/js/slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="./static/js/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="./static/js/slick/slick-theme.css">
 
+<script type="text/javascript">
+
+
+    $(".regular").slick({
+        dots: true,
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        centerMode: false,
+        initialSlide: 0,
+        swipeToSlide: true,
+      });
 </script>
 {% endblock %}

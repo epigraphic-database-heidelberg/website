@@ -544,6 +544,7 @@ class Inscription:
             "bearbeiter": None,
             "koordinaten1": None,
             "datierung": None,
+            "foto_nr": None,
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
@@ -566,7 +567,7 @@ class Inscription:
             for result in results:
                 props = {}
                 for key in result:
-                    if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg'):
+                    if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg', 'foto_nr'):
                         props[key] = result[key]
                     if key == 'land':
                         if re.search(".+\?$", result[key]):
@@ -613,7 +614,12 @@ class Inscription:
                             props['tiefe'] = "(" + tiefe_str + ")"
                         else:
                             props['tiefe'] = str(int(result[key]))
-
+                    elif key == 'foto_nr':
+                        fotos = result['foto_nr'].split()
+                        fotos_list = []
+                        for foto in fotos:
+                            fotos_list.append(re.sub("[JN]", "", foto))
+                        props['foto_nr'] = fotos_list
                 if 'fo_antik' not in props:
                     props['fo_antik'] = ""
                 if 'fo_modern' not in props:
@@ -636,6 +642,7 @@ class Inscription:
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
                 btext_br = result['btext']
                 props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
+
                 inscr = Inscription(result['hd_nr'],
                                     result['datum'],
                                     result['beleg'],

@@ -605,7 +605,6 @@ img#hadw-banner {
     padding-bottom: 5px;
     margin-left: -5px;
 }
-
 .ui-state-hover,
 .ui-state-focus,
 .ui-state-active,
@@ -624,6 +623,28 @@ img#hadw-banner {
 }
 
 
+/* slick carousel */
+.slider {
+    width: 90%;
+    margin: 100px auto;
+}
+.slick-slide {
+    margin: 0px 10px;
+}
+.slick-slide img {
+    width: 100%;
+}
+.slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: 1;
+}
+.slick-active {
+    opacity: 1;
+}
+.slick-current {
+    opacity: 1;
+}
+/* slick carousel */
 
 /* image layout */
 .image_layout {
