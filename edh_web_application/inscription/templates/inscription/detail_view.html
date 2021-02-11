@@ -24,7 +24,7 @@
     <div class="detail_block">
         <div class="inschrift-kurzansicht">
             <div id="data" class="" style="padding-left:5px;hyphens: none;">
-                <div style="margin-bottom:1em;"><strong>{{_('Transcription')}}</strong>:<br/>{{data['atext']}}</div>
+                <div style="margin-bottom:1em;"><strong>{{_('Transcription')}}</strong>:<br/>{{data['atext']|safe}}</div>
                 <div style="margin-bottom:1em;"><strong>{{_('Majuscle')}}</strong>:<br/>{{data['btext'] | replace("/", "<br/>" | safe)}}</div>
                 {% if data['datierung'] %}
                     <div style="margin-bottom:1em;"><strong>{{_('Chronological Data')}}</strong>:<br/>{{data['datierung'] | safe}}</div>

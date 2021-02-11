@@ -807,18 +807,18 @@ def _prepare_atext(atext):
     :return: transcription string
     """
     transcription = atext.strip()
-    # break up <f=S>ilius#<f>ilius#SILIUS
+    # change $ against ------
+    transcription = re.sub("\$", "------", transcription)
+    # change & against ------
+    transcription = re.sub("&", "------", transcription)
+    # break up <f=S>ilius#<f>ilius#SILIUS and display only first token
     if "#" in transcription:
         transcription = ""
         tokenized_atext = atext.split()
         for token in tokenized_atext:
             if "#" in token:
                 sub_token = token.split("#")
-                transcription += sub_token[0] + " "
+                transcription += re.sub("<", "&lt;", sub_token[0] + " ")
             else:
                 transcription += token + " "
-    # change $ against ------
-    transcription = re.sub("\$", "------", transcription)
-    # change & against ------
-    transcription = re.sub("&", "------", transcription)
     return transcription
