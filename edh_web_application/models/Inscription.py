@@ -783,17 +783,19 @@ def _get_title(i_gattung="", fo_antik="", fo_modern="", provinz=""):
             title_str = _l(i_gatt)
     else:
         title_str = _l("Inschrift")
-    if fo_antik and fo_antik != "":
+
+    if fo_antik and fo_antik != "" and fo_modern and fo_modern != "":
+        title_str += _l(" from ") + fo_antik + " &ndash; " + fo_modern
+    elif fo_antik and fo_antik != "":
         title_str += _l(" from ") + fo_antik
     elif fo_modern:
         title_str += _l(" from ") + fo_modern
+    provinz = str(provinz)
+    if re.search("\?$", provinz):
+        key_without_trailing_questionmark = re.sub("\?$", "", provinz)
+        title_str +=  " (" + _l(key_without_trailing_questionmark) + "?)"
     else:
-        provinz = provinz
-        if re.search("\?$", provinz):
-            key_without_trailing_questionmark = re.sub("\?$", "", provinz)
-            title_str += _l(" from ") + _l(key_without_trailing_questionmark) + "?"
-        else:
-            title_str += _l(" from ") + _l(provinz)
+        title_str += " (" + _l(provinz) + ")"
     # uppercase first character
     return title_str[0].upper() + title_str[1:]
 

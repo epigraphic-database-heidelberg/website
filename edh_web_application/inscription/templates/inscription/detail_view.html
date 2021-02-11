@@ -6,7 +6,7 @@
 
 {% block app_content %}
 <h1>{{ title }}</h1>
-<h2>{{ data['titel'] }}</h2>
+<h2>{{ data['titel'] | safe }}</h2>
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
         <a href="/edh/inschrift/{{data['hd_nr']}}">
