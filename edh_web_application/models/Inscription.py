@@ -664,7 +664,7 @@ class Inscription:
         :return: number of inscription records (str)
         """
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
-        results = solr.search("*:*")
+        results = solr.search("*:*", fq=["-beleg:77", "-beleg:99"])
         return format_decimal(results.hits, locale='de_DE')
 
     @classmethod
