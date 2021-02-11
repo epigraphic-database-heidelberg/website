@@ -568,7 +568,7 @@ class Inscription:
             for result in results:
                 props = {}
                 for key in result:
-                    if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg', 'foto_nr'):
+                    if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg', 'foto_nr', 'atext'):
                         props[key] = result[key]
                     if key == 'land':
                         if re.search(".+\?$", result[key]):
@@ -623,6 +623,8 @@ class Inscription:
                         for foto in fotos:
                             fotos_list.append(re.sub("[JN]", "", foto))
                         props['foto_nr'] = fotos_list
+                    elif key == 'atext':
+                        props['atext'] = _prepare_atext(result[key])
                 if 'fo_antik' not in props:
                     props['fo_antik'] = ""
                 if 'fo_modern' not in props:
@@ -796,3 +798,25 @@ def _get_title(i_gattung="", fo_antik="", fo_modern="", provinz=""):
     return title_str[0].upper() + title_str[1:]
 
 
+def _prepare_atext(atext):
+    """
+    prepare transcription for display by i.a.:
+        break up <f=S>ilius#<f>ilius#SILIUS
+    :return: transcription string
+    """
+    transcription = atext.strip()
+    # break up <f=S>ilius#<f>ilius#SILIUS
+    if "#" in transcription:
+        transcription = ""
+        tokenized_atext = atext.split()
+        for token in tokenized_atext:
+            if "#" in token:
+                sub_token = token.split("#")
+                transcription += sub_token[0] + " "
+            else:
+                transcription += token + " "
+    # change $ against ------
+    transcription = re.sub("\$", "------", transcription)
+    # change & against ------
+    transcription = re.sub("&", "------", transcription)
+    return transcription
