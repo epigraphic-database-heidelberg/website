@@ -4,6 +4,7 @@ from flask_babel import _
 from . import bp_inscription
 from .forms import InscriptionSearchDe, InscriptionSearchEn
 from ..models.Inscription import Inscription
+from ..models.Person import Person
 
 
 @bp_inscription.route('/inschrift/lastUpdates', methods=['GET', 'POST'])
@@ -43,5 +44,7 @@ def detail_view(hd_nr):
     if results is None:
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"), subtitle=_("Detail View"))
     else:
+        people = Person.query("id:" + hd_nr )
+        print(people)
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"),
-                               data=results[0])
+                               data=results[0], people = Person.query("hd_nr:" + hd_nr ))

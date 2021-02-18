@@ -176,12 +176,142 @@
         <div class="detail_block_content">
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">&nbsp;</div>
-                <div id="kommnetar" class="detail_block_content_row_text">{{data['kommentar']}}</div>
+                <div id="kommentar" class="detail_block_content_row_text">{{data['kommentar']}}</div>
             </section>
         </div>
     </div>
 </div>
 {% endif %}
+{% if people %}
+<h3>{{_('People')}}</h3>
+<div>
+    <div class="detail_block">
+        {% for person in people %}
+
+        <div class="detail_block_content" style="margin-bottom:1.5em;">
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header"><span style="font-variant:small-caps;font-size:1.2em;">Person {{loop.index}}</span></div>
+            </section>
+            <section class="detail_block_content_row">
+                <div class="detail_block_content_row_header">{{ _('Name') }}:</div>
+                <div class="detail_block_content_row_text">{{person['name']}}</div>
+            </section>
+            {% if person['praenomen'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Praenomen') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['praenomen']}}</div>
+                </section>
+            {% endif %}
+            {% if person['nomen'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Nomen') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['nomen']}}</div>
+                </section>
+            {% endif %}
+            {% if person['cognomen'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Cognomen') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['cognomen']}}</div>
+                </section>
+            {% endif %}
+            {% if person['supernomen'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Supernomen') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['supernomen']}}</div>
+                </section>
+            {% endif %}
+            {% if person['filiation'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Filiation') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['filiation']}}</div>
+                </section>
+            {% endif %}
+            {% if person['tribus'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Tribus') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['tribus']}}</div>
+                </section>
+            {% endif %}
+            {% if person['origo'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Origo') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['origo']}}</div>
+                </section>
+            {% endif %}
+            {% if person['geschlecht'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Gender') }}:</div>
+                    <div class="detail_block_content_row_text">
+                        {% if person['geschlecht'] == "W" %}
+                            {{ _('female') }}
+                        {% else %}
+                            {{ _('male') }}
+                        {% endif %}
+                    </div>
+                </section>
+            {% endif %}
+            {% if person['status'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Status') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['status']}}</div>
+                </section>
+            {% endif %}
+            {% if person['beruf'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Beruf') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['beruf']}}</div>
+                </section>
+            {% endif %}
+            {% if person['l_jahre'] or person['l_monate'] or person['l_tage'] or person['l_stunden'] %}
+                {% if person['l_jahre'] %}
+                    <section class="detail_block_content_row">
+                        <div class="detail_block_content_row_header">{{ _('Age: Years') }}:</div>
+                        <div class="detail_block_content_row_text">{{person['l_jahre']}}</div>
+                    </section>
+                {% endif %}
+                {% if person['l_monate'] %}
+                    <section class="detail_block_content_row">
+                        <div class="detail_block_content_row_header">{{ _('Age: Months') }}:</div>
+                        <div class="detail_block_content_row_text">{{person['l_monate']}}</div>
+                    </section>
+                {% endif %}
+                {% if person['l_tage'] %}
+                    <section class="detail_block_content_row">
+                        <div class="detail_block_content_row_header">{{ _('Age: Days') }}:</div>
+                        <div class="detail_block_content_row_text">{{person['l_tage']}}</div>
+                    </section>
+                {% endif %}
+                {% if person['l_stunden'] %}
+                    <section class="detail_block_content_row">
+                        <div class="detail_block_content_row_header">{{ _('Age: Hours') }}:</div>
+                        <div class="detail_block_content_row_text">{{person['l_stunden']}}</div>
+                    </section>
+                {% endif %}
+            {% endif %}
+            {% if person['uri'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('External IDs') }}:</div>
+                    <div class="detail_block_content_row_text">
+                        {% for uri in person['uri'] %}
+                            <a href="{{uri}}">{{uri}}</a>
+                        {% endfor %}
+                    </div>
+                </section>
+            {% endif %}
+            {% if person['pir'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('PIR') }}:</div>
+                    <div class="detail_block_content_row_text">{{person['pir']}}</div>
+                </section>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+{% endif %}
+
 <h3>{{_('Palaeography')}}</h3>
 <div>
     <div class="detail_block">

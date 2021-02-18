@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-09 15:52+0100\n"
+"POT-Creation-Date: 2021-02-18 16:56+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -187,8 +187,8 @@ msgstr "Suche"
 #: edh_web_application/bibliography/routes.py:69
 #: edh_web_application/foto/routes.py:59 edh_web_application/foto/routes.py:74
 #: edh_web_application/geography/routes.py:61
-#: edh_web_application/inscription/routes.py:41
-#: edh_web_application/inscription/routes.py:44
+#: edh_web_application/inscription/routes.py:42
+#: edh_web_application/inscription/routes.py:45
 msgid "Detail View"
 msgstr "Detailansicht"
 
@@ -202,7 +202,7 @@ msgstr "Bibliographie Datenbank"
 #: edh_web_application/foto/templates/foto/detail_view.html:14
 #: edh_web_application/geography/routes.py:21
 #: edh_web_application/geography/templates/geography/detail_view.html:13
-#: edh_web_application/inscription/routes.py:18
+#: edh_web_application/inscription/routes.py:19
 #: edh_web_application/inscription/templates/inscription/detail_view.html:14
 #: edh_web_application/templates/home.html:65
 msgid "Last Updates"
@@ -827,7 +827,7 @@ msgstr "Land"
 
 #: edh_web_application/foto/routes.py:15
 #: edh_web_application/geography/routes.py:71
-#: edh_web_application/inscription/routes.py:24
+#: edh_web_application/inscription/routes.py:25
 msgid "lang"
 msgstr "de"
 
@@ -1058,21 +1058,22 @@ msgid "from"
 msgstr "von"
 
 #: edh_web_application/inscription/forms.py:62
-#: edh_web_application/project/templates/project/project_provinces.html:33
-#: edh_web_application/project/templates/project/project_provinces.html:51
-#: edh_web_application/project/templates/project/project_provinces.html:76
-#: edh_web_application/project/templates/project/project_provinces.html:98
-#: edh_web_application/project/templates/project/project_provinces.html:118
-#: edh_web_application/project/templates/project/project_provinces.html:158
-#: edh_web_application/project/templates/project/project_provinces.html:176
+#: edh_web_application/project/templates/project/project_provinces.html:34
+#: edh_web_application/project/templates/project/project_provinces.html:52
+#: edh_web_application/project/templates/project/project_provinces.html:77
+#: edh_web_application/project/templates/project/project_provinces.html:99
+#: edh_web_application/project/templates/project/project_provinces.html:119
+#: edh_web_application/project/templates/project/project_provinces.html:159
+#: edh_web_application/project/templates/project/project_provinces.html:177
 #: edh_web_application/project/templates/project/project_provinces.html:246
-#: edh_web_application/project/templates/project/project_provinces.html:262
-#: edh_web_application/project/templates/project/project_provinces.html:283
-#: edh_web_application/project/templates/project/project_provinces.html:297
-#: edh_web_application/project/templates/project/project_provinces.html:322
-#: edh_web_application/project/templates/project/project_provinces.html:362
-#: edh_web_application/project/templates/project/project_provinces.html:419
-#: edh_web_application/project/templates/project/project_provinces.html:441
+#: edh_web_application/project/templates/project/project_provinces.html:329
+#: edh_web_application/project/templates/project/project_provinces.html:345
+#: edh_web_application/project/templates/project/project_provinces.html:366
+#: edh_web_application/project/templates/project/project_provinces.html:380
+#: edh_web_application/project/templates/project/project_provinces.html:405
+#: edh_web_application/project/templates/project/project_provinces.html:445
+#: edh_web_application/project/templates/project/project_provinces.html:502
+#: edh_web_application/project/templates/project/project_provinces.html:524
 msgid "until"
 msgstr "bis"
 
@@ -1151,21 +1152,21 @@ msgstr "dat_jahr_e"
 msgid "date to"
 msgstr "Datierung Ende"
 
-#: edh_web_application/inscription/routes.py:18
-#: edh_web_application/inscription/routes.py:28
-#: edh_web_application/inscription/routes.py:34
-#: edh_web_application/inscription/routes.py:40
-#: edh_web_application/inscription/routes.py:44
-#: edh_web_application/inscription/routes.py:46
+#: edh_web_application/inscription/routes.py:19
+#: edh_web_application/inscription/routes.py:29
+#: edh_web_application/inscription/routes.py:35
+#: edh_web_application/inscription/routes.py:41
+#: edh_web_application/inscription/routes.py:45
+#: edh_web_application/inscription/routes.py:49
 #: edh_web_application/templates/home.html:66
 msgid "Epigraphic Text Database"
 msgstr "Inschriften Datenbank"
 
-#: edh_web_application/inscription/routes.py:28
+#: edh_web_application/inscription/routes.py:29
 msgid "Simple Search"
 msgstr "Einfache Suche"
 
-#: edh_web_application/inscription/routes.py:34
+#: edh_web_application/inscription/routes.py:35
 msgid "Extended Search"
 msgstr "Erweiterte Suche"
 
@@ -1227,11 +1228,110 @@ msgstr "Buchstabenhöhe"
 msgid "decoration"
 msgstr "Dekoration"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:185
+#: edh_web_application/inscription/templates/inscription/detail_view.html:186
+msgid "People"
+msgstr "Personen"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:196
+#: edh_web_application/person/templates/person/detail_view.html:22
+msgid "Name"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:201
+#: edh_web_application/person/templates/person/detail_view.html:27
+msgid "Praenomen"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:207
+#: edh_web_application/person/templates/person/detail_view.html:33
+msgid "Nomen"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:213
+#: edh_web_application/person/templates/person/detail_view.html:39
+msgid "Cognomen"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:219
+#: edh_web_application/person/templates/person/detail_view.html:45
+msgid "Supernomen"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:225
+#: edh_web_application/person/templates/person/detail_view.html:51
+msgid "Filiation"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:231
+#: edh_web_application/person/templates/person/detail_view.html:57
+msgid "Tribus"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:237
+#: edh_web_application/person/templates/person/detail_view.html:63
+msgid "Origo"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:243
+#: edh_web_application/person/templates/person/detail_view.html:69
+msgid "Gender"
+msgstr "Geschlecht"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:246
+#: edh_web_application/person/templates/person/detail_view.html:72
+msgid "female"
+msgstr "weiblich"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:248
+#: edh_web_application/person/templates/person/detail_view.html:74
+msgid "male"
+msgstr "männlich"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:255
+#: edh_web_application/person/templates/person/detail_view.html:81
+msgid "Status"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:261
+#: edh_web_application/person/templates/person/detail_view.html:87
+msgid "Beruf"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:268
+#: edh_web_application/person/templates/person/detail_view.html:94
+msgid "Age: Years"
+msgstr "Lebensalter: Jahre"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:274
+#: edh_web_application/person/templates/person/detail_view.html:100
+msgid "Age: Months"
+msgstr "Lebensalter: Monate"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:280
+#: edh_web_application/person/templates/person/detail_view.html:106
+msgid "Age: Days"
+msgstr "Lebensalter: Tage"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:286
+#: edh_web_application/person/templates/person/detail_view.html:112
+msgid "Age: Hours"
+msgstr "Lebensalter: Stunden"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:293
+#: edh_web_application/person/templates/person/detail_view.html:119
+msgid "External IDs"
+msgstr "Externe IDs"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:303
+#: edh_web_application/person/templates/person/detail_view.html:129
+msgid "PIR"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:315
 msgid "Palaeography"
 msgstr "Paläographie"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:193
+#: edh_web_application/inscription/templates/inscription/detail_view.html:323
 msgid "General Data"
 msgstr "Allgemeine Angaben"
 
@@ -1875,26 +1975,25 @@ msgstr ""
 msgid "Waffe"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:753
 #: edh_web_application/models/Inscription.py:755
-#: edh_web_application/models/Inscription.py:763
+#: edh_web_application/models/Inscription.py:757
+#: edh_web_application/models/Inscription.py:765
 msgid "BC"
 msgstr "v. Chr."
 
-#: edh_web_application/models/Inscription.py:758
 #: edh_web_application/models/Inscription.py:760
-#: edh_web_application/models/Inscription.py:765
+#: edh_web_application/models/Inscription.py:762
+#: edh_web_application/models/Inscription.py:767
 msgid "AD"
 msgstr "n. Chr."
 
-#: edh_web_application/models/Inscription.py:783
+#: edh_web_application/models/Inscription.py:785
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:785
-#: edh_web_application/models/Inscription.py:787
+#: edh_web_application/models/Inscription.py:788
+#: edh_web_application/models/Inscription.py:790
 #: edh_web_application/models/Inscription.py:792
-#: edh_web_application/models/Inscription.py:794
 msgid " from "
 msgstr " aus "
 
@@ -2362,82 +2461,6 @@ msgstr ""
 
 #: edh_web_application/person/routes.py:21
 msgid "Epigraphic Person Database: Detail View"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:22
-msgid "Name"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:27
-msgid "Praenomen"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:33
-msgid "Nomen"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:39
-msgid "Cognomen"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:45
-msgid "Supernomen"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:51
-msgid "Filiation"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:57
-msgid "Tribus"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:63
-msgid "Origo"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:69
-msgid "Gender"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:72
-msgid "female"
-msgstr "weiblich"
-
-#: edh_web_application/person/templates/person/detail_view.html:74
-msgid "male"
-msgstr "männlich"
-
-#: edh_web_application/person/templates/person/detail_view.html:81
-msgid "Status"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:87
-msgid "Beruf"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:94
-msgid "Age: Years"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:100
-msgid "Age: Months"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:106
-msgid "Age: Days"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:112
-msgid "Age: Hours"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:119
-msgid "External IDs"
-msgstr ""
-
-#: edh_web_application/person/templates/person/detail_view.html:129
-msgid "PIR"
 msgstr ""
 
 #: edh_web_application/project/routes.py:9
@@ -3515,43 +3538,35 @@ msgstr ""
 "die Datenerfassung der Inschriften für die abgeschlossenen Provinzen "
 "benutzt"
 
-#: edh_web_application/project/templates/project/project_provinces.html:18
-#: edh_web_application/project/templates/project/project_provinces.html:171
-msgid "work in progress"
-msgstr "in Arbeit"
-
-#: edh_web_application/project/templates/project/project_provinces.html:33
-#: edh_web_application/project/templates/project/project_provinces.html:51
-#: edh_web_application/project/templates/project/project_provinces.html:76
-#: edh_web_application/project/templates/project/project_provinces.html:98
-#: edh_web_application/project/templates/project/project_provinces.html:118
-#: edh_web_application/project/templates/project/project_provinces.html:158
-#: edh_web_application/project/templates/project/project_provinces.html:246
-#: edh_web_application/project/templates/project/project_provinces.html:262
-#: edh_web_application/project/templates/project/project_provinces.html:283
-#: edh_web_application/project/templates/project/project_provinces.html:297
-#: edh_web_application/project/templates/project/project_provinces.html:322
-#: edh_web_application/project/templates/project/project_provinces.html:362
-#: edh_web_application/project/templates/project/project_provinces.html:419
-#: edh_web_application/project/templates/project/project_provinces.html:441
+#: edh_web_application/project/templates/project/project_provinces.html:34
+#: edh_web_application/project/templates/project/project_provinces.html:52
+#: edh_web_application/project/templates/project/project_provinces.html:77
+#: edh_web_application/project/templates/project/project_provinces.html:99
+#: edh_web_application/project/templates/project/project_provinces.html:119
+#: edh_web_application/project/templates/project/project_provinces.html:159
+#: edh_web_application/project/templates/project/project_provinces.html:329
+#: edh_web_application/project/templates/project/project_provinces.html:345
+#: edh_web_application/project/templates/project/project_provinces.html:366
+#: edh_web_application/project/templates/project/project_provinces.html:380
+#: edh_web_application/project/templates/project/project_provinces.html:405
+#: edh_web_application/project/templates/project/project_provinces.html:445
+#: edh_web_application/project/templates/project/project_provinces.html:502
+#: edh_web_application/project/templates/project/project_provinces.html:524
 msgid "entered completely"
 msgstr "vollständig aufgenommen"
 
-#: edh_web_application/project/templates/project/project_provinces.html:173
+#: edh_web_application/project/templates/project/project_provinces.html:174
 msgid "except civitas Tungrorum ==> Belgica"
 msgstr "außer civitas Tungrorum ==> Belgica"
 
-#: edh_web_application/project/templates/project/project_provinces.html:176
-#: edh_web_application/project/templates/project/project_provinces.html:177
-#: edh_web_application/project/templates/project/project_provinces.html:182
-#: edh_web_application/project/templates/project/project_provinces.html:192
-msgid "under progress"
-msgstr "in Arb."
-
-#: edh_web_application/project/templates/project/project_provinces.html:183
-#: edh_web_application/project/templates/project/project_provinces.html:186
+#: edh_web_application/project/templates/project/project_provinces.html:184
+#: edh_web_application/project/templates/project/project_provinces.html:187
 msgid "no inscriptions from Germania inferior"
 msgstr "keine Inschriften aus Germania inferior"
+
+#: edh_web_application/project/templates/project/project_provinces.html:247
+msgid "under progress"
+msgstr "in Arb."
 
 #: edh_web_application/project/templates/project/project_team_members.html:10
 msgid "Research Team Members page"
@@ -3839,4 +3854,7 @@ msgstr "Linked Open Data Methoden und Tools für historische Orte"
 
 #~ msgid "Datierung"
 #~ msgstr ""
+
+#~ msgid "work in progress"
+#~ msgstr "in Arbeit"
 
