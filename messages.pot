@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-23 15:23+0100\n"
+"POT-Creation-Date: 2021-02-23 16:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1909,25 +1909,49 @@ msgstr ""
 msgid "nlt-N"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:760
-#: edh_web_application/models/Inscription.py:762
-#: edh_web_application/models/Inscription.py:770
+#: edh_web_application/models/Inscription.py:41
+msgid "beleg-a"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:41
+msgid "beleg-b"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:41
+msgid "beleg-c"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:41
+msgid "beleg-d"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:41
+msgid "beleg-e"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:41
+msgid "beleg-f"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:763
+#: edh_web_application/models/Inscription.py:765
+#: edh_web_application/models/Inscription.py:773
 msgid "BC"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:765
-#: edh_web_application/models/Inscription.py:767
-#: edh_web_application/models/Inscription.py:772
+#: edh_web_application/models/Inscription.py:768
+#: edh_web_application/models/Inscription.py:770
+#: edh_web_application/models/Inscription.py:775
 msgid "AD"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:790
+#: edh_web_application/models/Inscription.py:793
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:793
-#: edh_web_application/models/Inscription.py:795
-#: edh_web_application/models/Inscription.py:797
+#: edh_web_application/models/Inscription.py:796
+#: edh_web_application/models/Inscription.py:798
+#: edh_web_application/models/Inscription.py:800
 msgid " from "
 msgstr ""
 

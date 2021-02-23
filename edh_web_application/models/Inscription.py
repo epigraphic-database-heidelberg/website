@@ -37,6 +37,9 @@ class Inscription:
         _l('nlt-It'), _l('nlt-ItL'), _l('nlt-K'), _l('nlt-KL'), _l('nlt-L'), _l('nlt-LM'), _l('nlt-LO'), _l('nlt-P'), _l('nlt-PL'), _l('nlt-PyL'),
         _l('nlt-Py'), _l('nlt-N')
     )
+    work_status = (
+        _l('beleg-a'), _l('beleg-b'), _l('beleg-c'), _l('beleg-d'), _l('beleg-e'), _l('beleg-f')
+    )
 
     hd_nr_redirects = {
         'HD011276': 'HD057246',
@@ -556,7 +559,7 @@ class Inscription:
             setattr(self, prop, kwargs.get(prop, default))
         self.hd_nr = hd_nr
         self.datum = datum
-        self.beleg = beleg
+        self.beleg = _translate_works_status(str(beleg))
 
     @classmethod
     def query(cls, query_string):
@@ -827,3 +830,23 @@ def _prepare_atext(atext):
             else:
                 transcription += token + " "
     return transcription
+
+
+def _translate_works_status(ws):
+    """
+    multiple work stati are combined
+    :param ws: string of work status code
+    :return: new code
+    """
+    if re.match("0$",ws):
+        return "a"
+    elif re.match("1$",ws):
+        return "b"
+    elif re.match("2$", ws):
+        return "c"
+    elif re.match("3$", ws):
+        return "d"
+    elif re.match("4$", ws):
+        return "f"
+    else:
+        return "e"
