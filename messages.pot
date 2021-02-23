@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-18 16:56+0100\n"
+"POT-Creation-Date: 2021-02-23 10:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -852,6 +852,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:342
 #: edh_web_application/geography/templates/geography/search_results_map.html:65
 #: edh_web_application/geography/templates/geography/search_results_table.html:82
+#: edh_web_application/inscription/templates/inscription/detail_view.html:331
 #: edh_web_application/models/Place.py:1052
 #: edh_web_application/models/Place.py:1055
 #: edh_web_application/templates/home.html:62
@@ -1166,6 +1167,14 @@ msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/detail_view.html:323
 msgid "General Data"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:335
+msgid "Last Update"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:336
+msgid "by"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/detail_view_redirect.html:12

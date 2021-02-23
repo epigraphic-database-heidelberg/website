@@ -23,6 +23,48 @@ class Person:
         "0": _l("emperor / imperial household"),
     }
 
+    # full name of tribus
+    tribus = {
+        "AEL": "Aelia",
+        "AEM": "Aemilia",
+        "ANI": "Aniensis",
+        "ARN": "Arnensis",
+        "CAM": "Camilia",
+        "CLA": "Claudia",
+        "CLU": "Clustumina",
+        "COL": "Collina",
+        "COR": "Cornelia",
+        "ESQ": "Esquilina",
+        "FAB": "Fabia",
+        "FAL": "Falerna",
+        "GAL": "Galeria",
+        "HOR": "Horatia",
+        "LEM": "Lemonia",
+        "MAE": "Maecia",
+        "MEN": "Menenia",
+        "OUF": "Oufentina",
+        "PAL": "Palatina",
+        "PAP": "Papiria",
+        "POL": "Pollia",
+        "POM": "Pomptina",
+        "PUB": "Publilia",
+        "PUP": "Pupinia",
+        "QUI": "Quirina",
+        "ROM": "Romilia",
+        "SAB": "Sabatina",
+        "SCA": "Scaptia",
+        "SER": "Sergia",
+        "STE": "Stellatina",
+        "SUC": "Suburana",
+        "SUL": "Sulpicia",
+        "TER": "Teretina",
+        "TRO": "Tromentina",
+        "ULP": "Ulpia",
+        "VEL": "Velina",
+        "VOL": "Voltinia",
+        "VOT": "Voturia",
+    }
+
     def __init__(self,
                  id,
                  hd_nr,
@@ -53,7 +95,10 @@ class Person:
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
         # get localized string for status property
-        self.status = Person.localized_status[self.status]
+        if self.status:
+            self.status = Person.localized_status[self.status]
+        if self.tribus:
+            self.tribus = Person.tribus[self.tribus]
         self.id = id
         self.hd_nr = hd_nr
         self.pers_no = pers_no

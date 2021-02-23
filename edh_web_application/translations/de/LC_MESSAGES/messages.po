@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-18 16:56+0100\n"
+"POT-Creation-Date: 2021-02-23 10:21+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -1015,11 +1015,12 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:342
 #: edh_web_application/geography/templates/geography/search_results_map.html:65
 #: edh_web_application/geography/templates/geography/search_results_table.html:82
+#: edh_web_application/inscription/templates/inscription/detail_view.html:331
 #: edh_web_application/models/Place.py:1052
 #: edh_web_application/models/Place.py:1055
 #: edh_web_application/templates/home.html:62
 msgid "Work Status"
-msgstr "Stand der Bearbeitung"
+msgstr "Bearbeitungsstand"
 
 #: edh_web_application/geography/templates/geography/detail_view.html:128
 msgid "Inscriptions linked to this findspot"
@@ -1334,6 +1335,14 @@ msgstr "Paläographie"
 #: edh_web_application/inscription/templates/inscription/detail_view.html:323
 msgid "General Data"
 msgstr "Allgemeine Angaben"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:335
+msgid "Last Update"
+msgstr "Letzte Änderung"
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:336
+msgid "by"
+msgstr "von"
 
 #: edh_web_application/inscription/templates/inscription/detail_view_redirect.html:12
 msgid "The HD-No."

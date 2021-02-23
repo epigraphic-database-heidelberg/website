@@ -327,23 +327,13 @@
             <div class="detail_block_content_row_header">HD-Nr:</div>
             <div class="detail_block_content_row_text">{{data['hd_nr']}}</div>
         </section>
-        {% if data['gdb_id']  %}
         <section class="detail_block_content_row">
-            <div class="detail_block_content_row_header">GDB_ID:</div>
-            <div class="detail_block_content_row_text">{{data['gdb_id']}}</div>
-        </section>
-        {% endif %}
-        <section class="detail_block_content_row">
-            <div class="detail_block_content_row_header">Bearbeitungsstand:</div>
+            <div class="detail_block_content_row_header">{{_('Work Status')}}:</div>
             <div class="detail_block_content_row_text">{{data['beleg']}}</div>
         </section>
         <section class="detail_block_content_row">
-            <div class="detail_block_content_row_header">Bearbeiter:</div>
-            <div class="detail_block_content_row_text">{{data['bearbeiter']}}</div>
-        </section>
-        <section class="detail_block_content_row">
-            <div class="detail_block_content_row_header">letzte Änderung:</div>
-            <div class="detail_block_content_row_text">{{data['datum']}}</div>
+            <div class="detail_block_content_row_header">{{_('Last Update')}}:</div>
+            <div class="detail_block_content_row_text">{{data['datum']}} {{_('by')}} {{data['bearbeiter']}}</div>
         </section>
     </div>
 </div>
