@@ -838,15 +838,15 @@ def _translate_works_status(ws):
     :param ws: string of work status code
     :return: new code
     """
-    if re.match("0$",ws):
+    if re.match(".*0$",ws):
         return "a"
-    elif re.match("1$",ws):
+    elif re.match(".*1$",ws):
         return "b"
-    elif re.match("2$", ws):
+    elif re.match(".*2$", ws):
         return "c"
-    elif re.match("3$", ws):
+    elif re.match(".*3$", ws):
         return "d"
-    elif re.match("4$", ws):
+    elif re.match(".*4$", ws):
         return "f"
     else:
         return "e"
