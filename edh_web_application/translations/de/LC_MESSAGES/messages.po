@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-23 15:11+0100\n"
+"POT-Creation-Date: 2021-02-23 15:23+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -1229,6 +1229,10 @@ msgstr "Buchstabenhöhe"
 msgid "decoration"
 msgstr "Dekoration"
 
+#: edh_web_application/inscription/templates/inscription/detail_view.html:165
+msgid "present"
+msgstr "vorhanden"
+
 #: edh_web_application/inscription/templates/inscription/detail_view.html:186
 msgid "People"
 msgstr "Personen"
@@ -2062,7 +2066,7 @@ msgstr "phönizisch-punisch-lateinisch"
 
 #: edh_web_application/models/Inscription.py:37
 msgid "nlt-PyL"
-msgstr palmyrisch-lateinisch""
+msgstr "almyrisch-lateinisch\""
 
 #: edh_web_application/models/Inscription.py:38
 msgid "nlt-Py"

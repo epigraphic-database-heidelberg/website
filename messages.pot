@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-23 15:11+0100\n"
+"POT-Creation-Date: 2021-02-23 15:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1060,6 +1060,10 @@ msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/detail_view.html:164
 msgid "decoration"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/detail_view.html:165
+msgid "present"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/detail_view.html:186
