@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-23 10:21+0100\n"
+"POT-Creation-Date: 2021-02-23 15:11+0100\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -1984,25 +1984,113 @@ msgstr ""
 msgid "Waffe"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:755
-#: edh_web_application/models/Inscription.py:757
-#: edh_web_application/models/Inscription.py:765
-msgid "BC"
-msgstr "v. Chr."
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-A"
+msgstr "arabisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-AL"
+msgstr "arabisch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-G"
+msgstr "griechisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-GHL"
+msgstr "griechisch-hebräisch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-GL"
+msgstr "griechisch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-H"
+msgstr "hebräisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-HIbL"
+msgstr "hebräisch-iberisch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-HL"
+msgstr "hebräsch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-Ib"
+msgstr "iberisch"
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-IbL"
+msgstr "iberisch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-It"
+msgstr "italisch"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-ItL"
+msgstr "italisch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-K"
+msgstr "keltisch"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-KL"
+msgstr "keltisch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-L"
+msgstr "lateinisch"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-LM"
+msgstr "lateinisch (und andere Sprachen)"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-LO"
+msgstr "lateinisch (ausschließlich)"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-P"
+msgstr "phönizisch-punisch"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-PL"
+msgstr "phönizisch-punisch-lateinisch"
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-PyL"
+msgstr palmyrisch-lateinisch""
+
+#: edh_web_application/models/Inscription.py:38
+msgid "nlt-Py"
+msgstr "palmyrisch"
+
+#: edh_web_application/models/Inscription.py:38
+msgid "nlt-N"
+msgstr "numidisch"
 
 #: edh_web_application/models/Inscription.py:760
 #: edh_web_application/models/Inscription.py:762
+#: edh_web_application/models/Inscription.py:770
+msgid "BC"
+msgstr "v. Chr."
+
+#: edh_web_application/models/Inscription.py:765
 #: edh_web_application/models/Inscription.py:767
+#: edh_web_application/models/Inscription.py:772
 msgid "AD"
 msgstr "n. Chr."
 
-#: edh_web_application/models/Inscription.py:785
+#: edh_web_application/models/Inscription.py:790
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:788
-#: edh_web_application/models/Inscription.py:790
-#: edh_web_application/models/Inscription.py:792
+#: edh_web_application/models/Inscription.py:793
+#: edh_web_application/models/Inscription.py:795
+#: edh_web_application/models/Inscription.py:797
 msgid " from "
 msgstr " aus "
 

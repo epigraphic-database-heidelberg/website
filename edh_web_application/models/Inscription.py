@@ -32,6 +32,11 @@ class Inscription:
         _l('Olla'),_l('Pflaster'), _l('Relief'), _l('Sarkophag'), _l('Skulptur'), _l('Clipeus'), _l('Platte'), _l('Statue'), _l('Statuenbasis'),
         _l('Stele'), _l('Mensa'), _l('Tafel'), _l('Tessera'), _l('Ziegel'), _l('Urne'), _l('Waffe')
     )
+    language = (
+        _l('nlt-A'), _l('nlt-AL'), _l('nlt-G'), _l('nlt-GHL'), _l('nlt-GL'), _l('nlt-H'), _l('nlt-HIbL'), _l('nlt-HL'), _l('nlt-Ib'), _l('nlt-IbL'),
+        _l('nlt-It'), _l('nlt-ItL'), _l('nlt-K'), _l('nlt-KL'), _l('nlt-L'), _l('nlt-LM'), _l('nlt-LO'), _l('nlt-P'), _l('nlt-PL'), _l('nlt-PyL'),
+        _l('nlt-Py'), _l('nlt-N')
+    )
 
     hd_nr_redirects = {
         'HD011276': 'HD057246',

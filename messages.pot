@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-02-23 10:21+0100\n"
+"POT-Creation-Date: 2021-02-23 15:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1817,25 +1817,113 @@ msgstr ""
 msgid "Waffe"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:755
-#: edh_web_application/models/Inscription.py:757
-#: edh_web_application/models/Inscription.py:765
-msgid "BC"
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-A"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-AL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-G"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-GHL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-GL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-H"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-HIbL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-HL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-Ib"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:36
+msgid "nlt-IbL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-It"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-ItL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-K"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-KL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-L"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-LM"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-LO"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-P"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-PL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:37
+msgid "nlt-PyL"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:38
+msgid "nlt-Py"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:38
+msgid "nlt-N"
 msgstr ""
 
 #: edh_web_application/models/Inscription.py:760
 #: edh_web_application/models/Inscription.py:762
+#: edh_web_application/models/Inscription.py:770
+msgid "BC"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:765
 #: edh_web_application/models/Inscription.py:767
+#: edh_web_application/models/Inscription.py:772
 msgid "AD"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:785
+#: edh_web_application/models/Inscription.py:790
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:788
-#: edh_web_application/models/Inscription.py:790
-#: edh_web_application/models/Inscription.py:792
+#: edh_web_application/models/Inscription.py:793
+#: edh_web_application/models/Inscription.py:795
+#: edh_web_application/models/Inscription.py:797
 msgid " from "
 msgstr ""
 
