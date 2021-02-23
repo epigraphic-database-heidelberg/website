@@ -99,6 +99,17 @@ class Person:
             self.status = Person.localized_status[self.status]
         if self.tribus:
             self.tribus = Person.tribus[self.tribus]
+        if self.praenomen and "0" in self.praenomen:
+            if "?" in self.praenomen:
+                self.praenomen = "[-]?"
+            else:
+                self.praenomen = "[-]"
+        if self.nomen and self.nomen == "00":
+            self.nomen = "[---]"
+        if self.cognomen and self.cognomen == "00":
+            self.cognomen = "[---]"
+        if self.supernomen and self.supernomen == "00":
+            self.supernomen = "[---]"
         self.id = id
         self.hd_nr = hd_nr
         self.pers_no = pers_no
