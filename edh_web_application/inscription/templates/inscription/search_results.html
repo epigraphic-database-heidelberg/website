@@ -1,0 +1,409 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+<p>{{_("The search for:")}}</p>
+<p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
+<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
+<a href="./inschrift/suche"><button type="button" class="btn">{{_('New Search')}}</button></a>
+<div class="row">
+    <div class="col search-filter">
+        <button type="button" class="btn btn-info" id="sort-by" style="margin-left:0px;">{{_('sort by')}}: {% if request.args.get('sort') %}{{ _(request.args.get('sort')) }}{%else%}HD-Nr{%endif%}</button><br class="visible-xs" />
+        <button type="button" class="btn btn-info" id="hits-per-page">{{_('number of results/page')}}: {{data['metadata']['rows']}}</button><br class="visible-xs" />
+        <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('list')}}</button>
+        <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+    </div>
+</div>
+<div style="text-align:center">
+    <nav aria-label="Search results pages">
+        {% set aktuelleSeite = (data['metadata']['start']|int / data['metadata']['rows']|int)|int %}
+        {% set number_of_hits = number_of_hits|replace(".","") %}
+        {% set anzahlSeiten = ((number_of_hits|int / data['metadata']['rows']|int))|int %}
+        {% if (number_of_hits|float / data['metadata']['rows']|float) > anzahlSeiten|float %}
+            {% set anzahlSeiten = anzahlSeiten + 1  %}
+        {% endif %}
+        {% if anzahlSeiten > 10 %}
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}" aria-label="Last"><span aria-hidden="true"><i class="fas fa-fast-backward"></i></span><span class="sr-only">First</span></a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="
+                    {% if (data['metadata']['start']|int - data['metadata']['rows']|int) > 0 %}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int - data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                    {% else %}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}
+                    {% endif %}
+                    " aria-label="Previous">
+                    <span aria-hidden="true" style="width:500px"><i class="fas fa-backward"></i></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            {% for hit in range(anzahlSeiten) %}
+                {% if loop.index > aktuelleSeite - 3 and loop.index <= aktuelleSeite + 4  %}
+                    {% if (data['metadata']['start']|int ) / data['metadata']['rows']|int == hit %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">{{ hit + 1 }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+                        </li>
+                    {% endif %}
+                {% else %}{%endif%}
+            {% endfor%}
+            <li class="page-item">
+                <a class="page-link" href="
+                {% if (data['metadata']['start']|int + data['metadata']['rows']|int) <= data['metadata']['number_of_hits']|int %}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                {% else %}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}
+                {% endif %}
+                " aria-label="Next">
+                    <span aria-hidden="true"><i class="fas fa-forward"></i></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ (anzahlSeiten-1) * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}" aria-label="Last"><span aria-hidden="true"><i class="fas fa-fast-forward"></i></span><span class="sr-only">Last</span></a>
+            </li>
+        </ul>
+        {% else %}
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}" aria-label="Last"><span aria-hidden="true"><i class="fas fa-fast-backward"></i></span><span class="sr-only">First</span></a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="
+                    {% if (data['metadata']['start']|int - data['metadata']['rows']|int) > 0 %}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int - data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                    {% else %}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}
+                    {% endif %}
+                    " aria-label="Previous">
+                    <span aria-hidden="true" style="width:500px"><i class="fas fa-backward"></i></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            {% for hit in range(anzahlSeiten) %}
+                {% if (data['metadata']['start']|int ) / data['metadata']['rows']|int == hit %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">{{ hit + 1 }}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+                </li>
+                {% endif %}
+            {% endfor%}
+            <li class="page-item">
+                <a class="page-link" href="
+                {% if (data['metadata']['start']|int + data['metadata']['rows']|int) < data['metadata']['number_of_hits']|int %}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                {% else %}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}
+                {% endif %}
+                " aria-label="Next">
+                    <span aria-hidden="true"><i class="fas fa-forward"></i></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ (anzahlSeiten-1) * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}" aria-label="Last"><span aria-hidden="true"><i class="fas fa-fast-forward"></i></span><span class="sr-only">Last</span></a>
+            </li>
+        </ul>
+        {% endif %}
+    </nav>
+</div>
+<div>
+    {% set count = namespace(value=0) %}
+    {% for d in data['items'] %}
+    {% set count.value = count.value + 1 %}
+    <div class="detail_block" style="padding-left: 0px;">
+        <div class="wrapper_geo_last_updates" style="padding:10px">
+            <a href="./edh/inschrift/{{ d['hd_nr'] }}" style="color:#fff"><div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;min-height:250px">{{_('Number')}} &nbsp; {{count.value + data['metadata']['start']|int}}</div></a>
+            <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;">
+                <a href="./edh/inschrift/{{ d['hd_nr'] }}">
+                    <div id="map_canvas_{{ count.value }}" class="map_canvas" style="min-height:250px"></div>
+                </a>
+            </div>
+            <div class="detail_block_content_geo">
+                <section class="detail_block_content_row"><p style="text-align:left; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/inschrift/{{ d['hd_nr'] }}">{{ d['hd_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Transcription') }}:</div>
+                    <div class="detail_block_content_row_text">{{ d['atext'] | safe }}</div>
+                </section>
+
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>
+                    <div class="detail_block_content_row_text">
+                        {% if d['fundstelle_str'] %}
+                            {{d['fundstelle_str']|replace("{","<span style='color:red'>")|replace("}","</span>")|safe}}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('province') }}:</div>
+                    <div class="detail_block_content_row_text"><i class="fas fa-external-link-alt"></i> <a href="./edh/geographie/{{ d['provinz_id'] }}">{{ d['provinz'] }} {% if d['land'] %}({{ d['land'] }}){% endif %}</a></div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Chronological Data') }}:</div>
+                    <div class="detail_block_content_row_text">{{d['datierung'] | safe}}</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Literature') }}:</div>
+                    <div class="detail_block_content_row_text">{{d['literatur'] | replace("#", "<br>") | safe }}</div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div style="text-align:center">
+    <nav aria-label="Search results pages">
+        {% set aktuelleSeite = (data['metadata']['start']|int / data['metadata']['rows']|int)|int %}
+        {% set anzahlSeiten = ((number_of_hits|int / data['metadata']['rows']|int))|int %}
+        {% if (number_of_hits|int / data['metadata']['rows']|float) > anzahlSeiten|float %}
+            {% set anzahlSeiten = anzahlSeiten + 1  %}
+        {% endif %}
+        {% if anzahlSeiten > 10 %}
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}" aria-label="Last"><span aria-hidden="true"><i class="fas fa-fast-backward"></i></span><span class="sr-only">First</span></a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="
+                    {% if (data['metadata']['start']|int - data['metadata']['rows']|int) > 0 %}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int - data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                    {% else %}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}
+                    {% endif %}
+                    " aria-label="Previous">
+                    <span aria-hidden="true" style="width:500px"><i class="fas fa-backward"></i></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            {% for hit in range(anzahlSeiten) %}
+                {% if loop.index > aktuelleSeite - 3 and loop.index <= aktuelleSeite + 4  %}
+                    {% if (data['metadata']['start']|int ) / data['metadata']['rows']|int == hit %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">{{ hit + 1 }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+                        </li>
+                    {% endif %}
+                {% else %}{%endif%}
+            {% endfor%}
+            <li class="page-item">
+                <a class="page-link" href="
+                {% if (data['metadata']['start']|int + data['metadata']['rows']|int) <= data['metadata']['number_of_hits']|int %}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                {% else %}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}
+                {% endif %}
+                " aria-label="Next">
+                    <span aria-hidden="true"><i class="fas fa-forward"></i></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ (anzahlSeiten-1) * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}" aria-label="Last"><span aria-hidden="true"><i class="fas fa-fast-forward"></i></span><span class="sr-only">Last</span></a>
+            </li>
+        </ul>
+        {% else %}
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}" aria-label="Last"><span aria-hidden="true"><i class="fas fa-fast-backward"></i></span><span class="sr-only">First</span></a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="
+                    {% if (data['metadata']['start']|int - data['metadata']['rows']|int) > 0 %}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int - data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                    {% else %}
+                        .{{data['metadata']['url_without_pagination_parameters']}}&start=0&anzahl={{data['metadata']['rows']}}
+                    {% endif %}
+                    " aria-label="Previous">
+                    <span aria-hidden="true" style="width:500px"><i class="fas fa-backward"></i></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            {% for hit in range(anzahlSeiten) %}
+                {% if (data['metadata']['start']|int ) / data['metadata']['rows']|int == hit %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">{{ hit + 1 }}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ hit * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}">{{ hit + 1 }}</a>
+                </li>
+                {% endif %}
+            {% endfor%}
+            <li class="page-item">
+                <a class="page-link" href="
+                {% if (data['metadata']['start']|int + data['metadata']['rows']|int) < data['metadata']['number_of_hits']|int %}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']|int + data['metadata']['rows']|int }}&anzahl={{data['metadata']['rows']}}
+                {% else %}
+                    .{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}
+                {% endif %}
+                " aria-label="Next">
+                    <span aria-hidden="true"><i class="fas fa-forward"></i></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{ (anzahlSeiten-1) * data['metadata']['rows'] }}&anzahl={{data['metadata']['rows']}}" aria-label="Last"><span aria-hidden="true"><i class="fas fa-fast-forward"></i></span><span class="sr-only">Last</span></a>
+            </li>
+        </ul>
+        {% endif %}
+    </nav>
+</div>
+<div id="dialog-sort" title = "{{_('sort by')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=hd_nr">HD-Nr</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=provinz">{{_('province')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=land">{{_('country')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_antik">{{_('ancient find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_modern">{{_('modern find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fundstelle">{{_('find spot')}}</a></li>
+    </ul>
+</div>
+<div id="dialog-number" title = "{{_('number of results/page')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=20">20</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=50">50</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=100">100</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=200">200</a></li>
+    </ul>
+</div>
+<div id="dialog-view" title = "{{_('view')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=list">{{_('list')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=table">{{_('table')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=map">{{_('map')}}</a></li>
+    </ul>
+</div>
+<div id="dialog-filter" title = "{{_('filter')}}:">
+    <form action="" method="get">
+        <div class="form-group">
+            {{ form.provinz.label() }}
+            {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
+        </div>
+        <div class="form-group">
+            {{ form.land.label() }}
+            {{ form.land(class='form-control selectpicker', title=_('select one or more entries...')) }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.fo_antik.label() }}
+            {{ form.fo_antik(class='form-control autocomplete autocomplete-filter', id='ancient_find_spot') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.fo_modern.label() }}
+            {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.fundstelle.label() }}
+            {{ form.fundstelle(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
+            <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
+        </div>
+        <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
+    </form>
+</div>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+<script>
+    {% set count = namespace(value=0) %}
+    {% for d in data['items'] %}
+        {% set count.value = count.value + 1 %}
+        {% if d['koordinaten1'] %}
+            var pelagiosMap = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png');
+            var map = L.map('map_canvas_{{count.value}}', {
+                center: [{{d['koordinaten1']}}],
+                zoom: 4,
+                zoomControl:false,
+                layers: [pelagiosMap]
+            });
+            map.dragging.disable();
+            map.touchZoom.disable();
+            map.doubleClickZoom.disable();
+            map.scrollWheelZoom.disable();
+            map.keyboard.disable();
+            var marker{{count.value}} = L.marker([{{d['koordinaten1']}}]).addTo(map);
+        {% endif %}
+    {% endfor %}
+    $('select').selectpicker();
+    $(function() {
+        $( "#dialog-sort" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#sort-by" ).click(function() {
+            $( "#dialog-sort" ).dialog( "open" );
+        });
+        $( "#dialog-number" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#hits-per-page" ).click(function() {
+            $( "#dialog-number" ).dialog( "open" );
+        });
+        $( "#dialog-view" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#view" ).click(function() {
+            $( "#dialog-view" ).dialog( "open" );
+        });
+        $( "#dialog-filter" ).dialog({
+            autoOpen: false,
+            resizable: false,
+        });
+        $( "#filter" ).click(function() {
+            $( "#dialog-filter" ).dialog( "open" );
+        });
+
+    });
+    $("input#modern_find_spot").autocomplete({source:"./inschrift/ac/fo_modern/short",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"./inschrift/ac/fo_antik/short",minLength:3,delay:0})
+    $("input#find_spot").autocomplete({source:"./inschrift/ac/fundstelle/short",minLength:3,delay:0})
+
+    $('select').selectpicker();
+    $('#reset').click(function(){
+        document.getElementById("ancient_find_spot").defaultValue = "";
+        document.getElementById("modern_find_spot").defaultValue = "";
+        document.getElementById("find_spot").defaultValue = "";
+
+
+        document.getElementById("bearbeiter").defaultValue = "";
+        document.getElementById("bearbeitet_abgeschlossen").setAttribute('checked','checked');
+        document.getElementById("bearbeitet_provisorisch").setAttribute('checked','checked');
+        $("#provinz option").each(function () {
+            $(this).removeAttr('selected');
+        });
+        $("#land option").each(function () {
+            $(this).removeAttr('selected');
+        });
+        $(".selectpicker").val('');
+        $(".selectpicker").selectpicker("refresh");
+    });
+</script>
+{% endblock %}

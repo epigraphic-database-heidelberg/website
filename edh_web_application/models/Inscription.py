@@ -7,6 +7,7 @@ from babel.dates import format_date
 from babel.numbers import format_decimal
 from flask import Markup
 from flask import current_app
+from flask import request
 from flask_babel import lazy_gettext as _l
 
 from edh_web_application.models.Place import Place
@@ -554,6 +555,7 @@ class Inscription:
             "datierung": None,
             "foto_nr": None,
             "provinz_id": None,
+            "fundstelle_str": None,
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
@@ -562,17 +564,81 @@ class Inscription:
         self.beleg = _translate_works_status(str(beleg))
 
     @classmethod
-    def query(cls, query_string):
+    def create_query_string(cls, form):
+        """
+        creates solr query based on user data entered into search mask
+        :param form: ImmutableMultiDict of GET params
+        :return: query_string
+        """
+        logical_operater = "AND"
+        query_string = ""
+
+        if 'hd_nr' in form and form['hd_nr'] != "":
+            hd_nr = form['hd_nr']
+            hd_nr = re.sub(r'HD0*?', r'', hd_nr, flags=re.IGNORECASE)
+            try:
+                hd_nr = "HD" + "{:06d}".format(int(hd_nr))
+            except:
+                hd_nr = form['hd_nr']
+            query_string = "hd_nr:" + hd_nr + " " + logical_operater + " "
+        else:
+            query_string = "hd_nr:* " + logical_operater + " "
+
+        if 'provinz' in form and form['provinz'] != "":
+            # province is a multi value field
+            query_string += "("
+            for prov in form.getlist('provinz'):
+                if prov != "":
+                    query_string += "provinz:" + prov + "* OR "
+            # remove trailing OR
+            query_string = re.sub(" OR $", "", query_string)
+            query_string += ") " + logical_operater + " "
+
+        if 'land' in form and form['land'] != "":
+            # country is a multi value field
+            query_string += "("
+            for c in form.getlist('land'):
+                if c != "":
+                    query_string += "land:" + c + "* OR "
+            # remove trailing OR
+            query_string = re.sub(" OR $", "", query_string)
+            query_string += ") " + logical_operater + " "
+
+        # remove last " AND"
+        query_string = re.sub(" " + logical_operater + " $", "", query_string)
+        return query_string
+
+    @classmethod
+    def query(cls, query_string, *args, **kwargs):
         """
         queries Solr core
         :return: list of Inscription instances
         """
+        hits = kwargs.get('hits', None)
+        start = 0  # index number of first record to retrieve
+        rows = 20  # number of receords to retrieve
+        sort = "hd_nr asc"  # default
+        if request.args.get('start'):
+            start = request.args.get('start')
+        if request.args.get('anzahl'):
+            rows = int(request.args.get('anzahl'))
+            # if user changes number of hits/page in result page
+            # show all hits on one page if start < rows
+            if int(start) < rows:
+                start = 0
+        if hits:
+            rows = hits
+
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
-        results = solr.search(query_string, **{'rows': '20'})
+
+        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
+            # keine Resultate
             return None
         else:
             query_result = []
+            number_of_hits = results.hits
+            query_params = _get_query_params(request.args)
             for result in results:
                 props = {}
                 for key in result:
@@ -637,6 +703,8 @@ class Inscription:
                     props['fo_antik'] = ""
                 if 'fo_modern' not in props:
                     props['fo_modern'] = ""
+                if 'fundstelle' not in props:
+                    props['fundstelle'] = ""
                 if 'provinz' not in props:
                     props['provinz'] = ""
                 if 'i_gattung' not in props:
@@ -649,23 +717,39 @@ class Inscription:
                     props['dat_monat'] = ""
                 if 'dat_tag' not in props:
                     props['dat_tag'] = ""
+                if 'koordinaten_1' not in props:
+                    props['koordinaten_1'] = ""
                 props['titel'] = _get_title(props['i_gattung'], props['fo_antik'], props['fo_modern'], props['provinz'])
-                if 'fundstelle' in props:
-                    fundstelle = re.sub("\{", "<a href='./edh/geographie/"+str(props['gdb_id'])+"'><i class='fas fa-external-link-alt'></i> ", props['fundstelle'])
-                    props['fundstelle'] = re.sub("\}","</a>",fundstelle)
+                #if 'fundstelle' in props:
+                #    fundstelle = re.sub("\{", "<a href='./edh/geographie/"+str(props['gdb_id'])+"'><i class='fas fa-external-link-alt'></i> ", props['fundstelle'])
+                #    props['fundstelle'] = re.sub("\}","</a>",fundstelle)
                 props['datierung'] = _get_date_string(props['dat_jahr_a'], props['dat_jahr_e'], props['dat_monat'], props['dat_tag'])
+                props['fundstelle_str'] = _get_findspot_string(props['fo_antik'], props['fo_modern'], props['fundstelle'])
                 atext_br = result['atext']
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
                 btext_br = result['btext']
                 props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
-
                 inscr = Inscription(result['hd_nr'],
                                     result['datum'],
                                     result['beleg'],
                                     **props
                                     )
                 query_result.append(inscr)
-            return query_result
+            return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(request.url),
+                                 "url_without_view_parameter": _get_url_without_view_parameter(request.url), "query_params": query_params},
+                    "items": query_result}
+
+    @classmethod
+    def get_number_of_hits_for_query(cls, query_string):
+        """
+        returns number of hits for given query
+        :param query_string: Solr query string
+        :return:
+        """
+        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
+        results = solr.search(query_string)
+        return format_decimal(results.hits, locale='de_DE')
 
     @classmethod
     def get_number_of_records(cls):
@@ -850,3 +934,91 @@ def _translate_works_status(ws):
         return "f"
     else:
         return "e"
+
+
+def _get_query_params(args):
+    """
+    creates dictionary of search params for displaying on
+    search result page
+    :param args: request.args
+    :return: dictionary with all params of query
+    """
+    result_dict = {}
+    for key in args:
+        if key == 'provinz' and args['provinz'] != "":
+            # multidict
+            result_dict['provinz'] = ""
+            params_list = args.getlist('provinz')
+            for prov in params_list:
+                result_dict['provinz'] = result_dict['provinz'] + _l(prov) + ", "
+        elif key == 'land' and args['land'] != "":
+            # multidict
+            result_dict['land'] = ""
+            params_list = args.getlist('land')
+            for c in params_list:
+                result_dict['land'] = result_dict['land'] + Place.country[c] + ", "
+        elif key not in ('anzahl', 'sort', 'start', 'view', 'bearbeitet_abgeschlossen', 'bearbeitet_provisorisch', 'bool') and args[key] != "":
+            result_dict[key] = args[key]
+    if 'provinz' in result_dict:
+        result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])
+    if 'land' in result_dict:
+        result_dict['land'] = re.sub(", $", "", result_dict['land'])
+    if len(result_dict) == 0:
+        result_dict['HD-Nr'] = '*'
+    return result_dict
+
+
+def _get_findspot_string(fo_antik, fo_modern, fundstelle):
+    """
+    format findspot string as: fo_modern (fo_antik) - fundstelle
+    """
+    findspot_str = ""
+    if fo_modern != "" and fo_antik != "":
+        findspot_str = fo_modern + " (" + fo_antik + ") "
+    elif fo_modern != "":
+        findspot_str = fo_modern + " "
+    else:
+        findspot_str = fo_antik + " "
+    if fundstelle != "":
+        findspot_str += "&ndash; " + fundstelle
+    return findspot_str
+
+
+def _get_url_without_sort_parameter(url):
+    """
+    removes URL parameter sort; these get added later in the template again
+    in dialog "sort by"
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("sort=.*&*", "", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
+
+
+def _get_url_without_view_parameter(url):
+    """
+    removes URL parameter view; these get added later in the template again
+    in dialog "view"
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("view=.*?&*", "", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url
+
+
+def _get_url_without_pagination_parameters(url):
+    """
+    removes URL parameters anzahl and start; these get added later in the template again
+    with values for pagination
+    :param url: current URL as string
+    :return: shortened URL as string
+    """
+    url = re.sub("start=[0-9]*&*", "", url)
+    url = re.sub("anzahl=[0-9]*&*", "", url)
+    url = re.sub("&{2,}", "&", url)
+    url = re.sub(request.url_root, "", url)
+    return "/" + url

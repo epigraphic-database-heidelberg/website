@@ -26,7 +26,19 @@ def simple_search():
         form = InscriptionSearchDe(data=request.args)
     else:
         form = InscriptionSearchEn(data=request.args)
-    return render_template('inscription/search.html', title=_("Epigraphic Text Database"), subtitle=_("Simple Search"), form=form)
+
+    if len(request.args) > 0:
+        # create query string
+        query_string = Inscription.create_query_string(request.args)
+        results = Inscription.query(query_string)
+        number_of_hits = Inscription.get_number_of_hits_for_query(query_string)
+        return render_template('inscription/search_results.html', title=_("Epigraphic Text Database"),
+                               subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits, form=form)
+
+
+    else:
+        return render_template('inscription/search.html', title=_("Epigraphic Text Database"), subtitle=_("Simple Search"), form=form)
 
 
 @bp_inscription.route('/inschrift/erweiterteSuche')
@@ -44,7 +56,6 @@ def detail_view(hd_nr):
     if results is None:
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"), subtitle=_("Detail View"))
     else:
-        people = Person.query("id:" + hd_nr )
-        print(people)
+        people = Person.query("id:" + hd_nr)
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"),
-                               data=results[0], people = Person.query("hd_nr:" + hd_nr ))
+                               data=results['items'][0], people=Person.query("hd_nr:" + hd_nr ))
