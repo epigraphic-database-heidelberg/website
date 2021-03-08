@@ -630,11 +630,15 @@ class Inscription:
             rows = hits
 
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
-
         results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
-            # keine Resultate
-            return None
+            # no results
+            query_params = _get_query_params(request.args)
+            return {'metadata': {"number_of_hits": 0,
+                                 "url_without_pagination_parameters": _get_url_without_pagination_parameters(
+                                     request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(
+                    request.url), "url_without_view_parameter": _get_url_without_view_parameter(
+                    request.url), "query_params": query_params}}
         else:
             query_result = []
             number_of_hits = results.hits
@@ -720,9 +724,6 @@ class Inscription:
                 if 'koordinaten_1' not in props:
                     props['koordinaten_1'] = ""
                 props['titel'] = _get_title(props['i_gattung'], props['fo_antik'], props['fo_modern'], props['provinz'])
-                #if 'fundstelle' in props:
-                #    fundstelle = re.sub("\{", "<a href='./edh/geographie/"+str(props['gdb_id'])+"'><i class='fas fa-external-link-alt'></i> ", props['fundstelle'])
-                #    props['fundstelle'] = re.sub("\}","</a>",fundstelle)
                 props['datierung'] = _get_date_string(props['dat_jahr_a'], props['dat_jahr_e'], props['dat_monat'], props['dat_tag'])
                 props['fundstelle_str'] = _get_findspot_string(props['fo_antik'], props['fo_modern'], props['fundstelle'])
                 atext_br = result['atext']

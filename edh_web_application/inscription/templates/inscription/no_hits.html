@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+<p>{{_("The search for:")}}</p>
+<p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
+<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
+<!--<p style="margin-top:2em;"><i class="fas fa-external-link-alt"></i> <a href="./geographie/suche">{{ _("Start new search") }}</a></p>-->
+<p><a href="./inschrift/suche"><button type="submit" class="btn">{{ _('Start new search') }}</button></a></p>
+{% endblock %}

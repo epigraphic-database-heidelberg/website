@@ -32,11 +32,16 @@ def simple_search():
         query_string = Inscription.create_query_string(request.args)
         results = Inscription.query(query_string)
         number_of_hits = Inscription.get_number_of_hits_for_query(query_string)
-        return render_template('inscription/search_results.html', title=_("Epigraphic Text Database"),
-                               subtitle=_("Search results"), data=results,
+
+        # return results to client
+        if results['metadata']['number_of_hits'] > 0:
+                return render_template('inscription/search_results.html', title=_("Epigraphic Text Database"),
+                                       subtitle=_("Search results"), data=results,
+                                       number_of_hits=number_of_hits, form=form)
+        else:
+            return render_template('inscription/no_hits.html', title=_("Epigraphic Text Database"),
+                                   subtitle=_("Search results"), data=results,
                                    number_of_hits=number_of_hits, form=form)
-
-
     else:
         return render_template('inscription/search.html', title=_("Epigraphic Text Database"), subtitle=_("Simple Search"), form=form)
 
