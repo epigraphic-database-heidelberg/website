@@ -627,8 +627,13 @@ class Inscription:
         if 'literatur' in form and form['literatur'] != "":
             query_string += 'literatur:*' + escape_value(form['literatur']) + '* ' + logical_operater + ' '
 
-        if 'atext1' in form and form['atext1'] != "":
+        # atext1, atext2 and combinations
+        if 'atext1' in form and form['atext1'] != "" and 'atext2' in form and form['atext2'] != "":
+            query_string += '(atext:*' + escape_value(form['atext1']) + '* ' + form['bool'] + ' atext:*' + escape_value(form['atext2']) + '* ) ' + logical_operater + ' '
+        elif 'atext1' in form and form['atext1'] != "":
             query_string += 'atext:*' + escape_value(form['atext1']) + '* ' + logical_operater + ' '
+        elif 'atext2' in form and form['atext2'] != "":
+            query_string += 'atext:*' + escape_value(form['atext2']) + '* ' + logical_operater + ' '
 
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
