@@ -139,16 +139,17 @@
                     <div class="detail_block_content_row_header">{{ _('Transcription') }}:</div>
                     <div class="detail_block_content_row_text">{{ d['atext'] | safe }}</div>
                 </section>
-
                 <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>
-                    <div class="detail_block_content_row_text">
-                        {% if d['fundstelle_str'] %}
-                            {{d['fundstelle_str']|replace("{","<span style='color:red'>")|replace("}","</span>")|safe}}
-                        {% else %}
-                            &nbsp;
-                        {% endif %}
-                    </div>
+                    <div class="detail_block_content_row_header">{{_('ancient find spot')}}:</div>
+                    <div id="fo_antik" class="detail_block_content_row_text">{% if d['fo_antik'] %}{{d['fo_antik']}}{% endif %}</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{_('modern find spot')}}:</div>
+                    <div id="fo_modern" class="detail_block_content_row_text">{% if d['fo_modern'] %}{{d['fo_modern']}}{% endif %}</div>
+                </section>
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{_('find spot')}}:</div>
+                    <div id="fundstelle" class="detail_block_content_row_text">{% if d['fundstelle'] %}{{d['fundstelle'] | safe }}{% endif %}</div>
                 </section>
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('province') }}:</div>
@@ -162,7 +163,6 @@
                     <div class="detail_block_content_row_header">{{ _('Literature') }}:</div>
                     <div class="detail_block_content_row_text">{{d['literatur'] | replace("#", "<br>") | safe }}</div>
                 </section>
-
             </div>
         </div>
     </div>

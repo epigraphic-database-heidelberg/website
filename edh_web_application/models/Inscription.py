@@ -649,6 +649,8 @@ class Inscription:
             # show all hits on one page if start < rows
             if int(start) < rows:
                 start = 0
+        if request.args.get('sort'):
+            sort = request.args.get('sort') + " asc"
         if hits:
             rows = hits
 
