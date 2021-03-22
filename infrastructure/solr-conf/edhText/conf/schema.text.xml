@@ -564,7 +564,7 @@ catchall "text" field, and use that for searching.
         <field name="land_sort_en" type="plong"/>
         <field name="lemma" type="text_general_sv"/>
         <field name="ligatur" type="text_general_sv"/>
-        <field name="literatur" type="text_general_sv"/>
+        <field name="literatur" type="text_ci"/>
         <field name="material" type="text_general_sv"/>
         <field name="metrik" type="text_general_sv"/>
         <field name="militaer" type="text_general_sv"/>

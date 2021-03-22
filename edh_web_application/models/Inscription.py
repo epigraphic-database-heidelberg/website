@@ -624,6 +624,9 @@ class Inscription:
             else:
                 query_string += "fundstelle_ci:*" + escape_value(form['fundstelle']) + "* " + logical_operater + " "
 
+        if 'literatur' in form and form['literatur'] != "":
+            query_string += 'literatur:*' + escape_value(form['literatur']) + '* ' + logical_operater + ' '
+
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
