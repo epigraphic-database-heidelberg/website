@@ -67,7 +67,7 @@ class InscriptionSearch(FlaskForm):
     bool = SelectField(_l('bool'), choices=[('AND', _l('AND')), ('OR', _l('OR')), ('AND NOT', _l('AND NOT'))])
 
     sort = SelectField(_l('sort by'),
-                       choices=[('HD-No.', _l('HD-No.')), ('provinz', _l('province')), ('land', _l('country')),
+                       choices=[('hd_nr', _l('HD-No.')), ('provinz', _l('province')), ('land', _l('country')),
                                 ('fo_antik', _l('ancient find spot')),
                                 ('fo_modern', _l('modern find spot')), ('fundstelle', _l('find spot')),
                                 (_l('type of inscription sort'), _l('type of inscription')),
