@@ -138,7 +138,7 @@
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('Transcription') }}:</div>
                     {% if d['atext_hl'] %}
-                    <div class="detail_block_content_row_text">{{ d['atext_hl']['atext_ci_nb'][0] | safe }}</div>
+                    <div class="detail_block_content_row_text">{{ d['atext_hl'] | safe }}</div>
                     {% else %}
                     <div class="detail_block_content_row_text">{{ d['atext'] | safe }}</div>
                     {% endif %}

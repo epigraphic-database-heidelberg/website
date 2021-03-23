@@ -665,7 +665,7 @@ class Inscription:
 
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
         # for performance reasons activate highlighting only for transcription queries
-        if request.args.get('atext1') != "" or request.args.get('atext2') != "":
+        if (request.args.get('atext1') and request.args.get('atext1') != "") or (request.args.get('atext2') and request.args.get('atext2') != ""):
             hl_q = ""
             if request.args.get('atext1') != "" and request.args.get('atext2') != "":
                 hl_q = '(atext_ci_nb:' + escape_value(request.args.get('atext1')) + ' ' + request.args.get('bool') + ' atext_ci_nb:' + escape_value(request.args.get('atext2')) + ')'
@@ -673,7 +673,7 @@ class Inscription:
                 hl_q = 'atext_ci_nb:' + escape_value(request.args.get('atext1'))
             elif request.args.get('atext2') != "":
                 hl_q = 'atext_ci_nb:' + escape_value(request.args.get('atext2'))
-            results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': 'atext_ci_nb', 'hl.method': 'unified', 'hl.q': hl_q})
+            results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': 'atext_ci_nb', 'hl.method': 'unified', 'hl.q': hl_q, 'hl.fragsize': 0})
         else:
             results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
@@ -772,8 +772,9 @@ class Inscription:
                 props['datierung'] = _get_date_string(props['dat_jahr_a'], props['dat_jahr_e'], props['dat_monat'], props['dat_tag'])
                 props['fundstelle_str'] = _get_findspot_string(props['fo_antik'], props['fo_modern'], props['fundstelle'])
                 atext_br = result['atext']
-                if results.highlighting[result['hd_nr']]:
+                if results.highlighting and results.highlighting[result['hd_nr']]:
                     props['atext_hl'] = results.highlighting[result['hd_nr']]
+                    props['atext_hl'] = _prepare_atext("".join(props['atext_hl']['atext_ci_nb']))
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
                 btext_br = result['btext']
                 props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
