@@ -65,6 +65,10 @@ td {
 li.active {
     background-color: #eee;
 }
+em {
+    background-color: #d4f6d4;
+    font-style: normal;
+}
 i.fas {
     color: #1F6B3B;
 }

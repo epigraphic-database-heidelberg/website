@@ -556,6 +556,7 @@ class Inscription:
             "foto_nr": None,
             "provinz_id": None,
             "fundstelle_str": None,
+            "atext_hl": None,
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
@@ -629,11 +630,11 @@ class Inscription:
 
         # atext1, atext2 and combinations
         if 'atext1' in form and form['atext1'] != "" and 'atext2' in form and form['atext2'] != "":
-            query_string += '(atext:*' + escape_value(form['atext1']) + '* ' + form['bool'] + ' atext:*' + escape_value(form['atext2']) + '* ) ' + logical_operater + ' '
+            query_string += '(atext_ci_nb:' + escape_value(form['atext1']) + ' ' + form['bool'] + ' atext_ci_nb:' + escape_value(form['atext2']) + ' ) ' + logical_operater + ' '
         elif 'atext1' in form and form['atext1'] != "":
-            query_string += 'atext:*' + escape_value(form['atext1']) + '* ' + logical_operater + ' '
+            query_string += 'atext_ci_nb:' + escape_value(form['atext1']) + ' ' + logical_operater + ' '
         elif 'atext2' in form and form['atext2'] != "":
-            query_string += 'atext:*' + escape_value(form['atext2']) + '* ' + logical_operater + ' '
+            query_string += 'atext_ci_nb:' + escape_value(form['atext2']) + ' ' + logical_operater + ' '
 
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
@@ -663,7 +664,18 @@ class Inscription:
             rows = hits
 
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
-        results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
+        # for performance reasons activate highlighting only for transcription queries
+        if request.args.get('atext1') != "" or request.args.get('atext2') != "":
+            hl_q = ""
+            if request.args.get('atext1') != "" and request.args.get('atext2') != "":
+                hl_q = '(atext_ci_nb:' + escape_value(request.args.get('atext1')) + ' ' + request.args.get('bool') + ' atext_ci_nb:' + escape_value(request.args.get('atext2')) + ')'
+            elif request.args.get('atext1') != "":
+                hl_q = 'atext_ci_nb:' + escape_value(request.args.get('atext1'))
+            elif request.args.get('atext2') != "":
+                hl_q = 'atext_ci_nb:' + escape_value(request.args.get('atext2'))
+            results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': 'atext_ci_nb', 'hl.method': 'unified', 'hl.q': hl_q})
+        else:
+            results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
             # no results
             query_params = _get_query_params(request.args)
@@ -760,6 +772,8 @@ class Inscription:
                 props['datierung'] = _get_date_string(props['dat_jahr_a'], props['dat_jahr_e'], props['dat_monat'], props['dat_tag'])
                 props['fundstelle_str'] = _get_findspot_string(props['fo_antik'], props['fo_modern'], props['fundstelle'])
                 atext_br = result['atext']
+                if results.highlighting[result['hd_nr']]:
+                    props['atext_hl'] = results.highlighting[result['hd_nr']]
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
                 btext_br = result['btext']
                 props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
@@ -769,6 +783,7 @@ class Inscription:
                                     **props
                                     )
                 query_result.append(inscr)
+
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(request.url),
                                  "url_without_view_parameter": _get_url_without_view_parameter(request.url), "query_params": query_params},
