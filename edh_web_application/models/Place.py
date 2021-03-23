@@ -981,7 +981,7 @@ class Place:
         geo_id = re.sub("G0*", "", geo_id)
         places = Inscription.query("gdb_id:" + geo_id)
         if places is not None:
-            for place in places:
+            for place in places['items']:
                 inscription_list.append({"hd_nr":place.hd_nr, "titel":place.titel})
         return inscription_list
 
