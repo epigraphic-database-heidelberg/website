@@ -980,7 +980,7 @@ class Place:
         # only numeric value is needed
         geo_id = re.sub("G0*", "", geo_id)
         places = Inscription.query("gdb_id:" + geo_id)
-        if places is not None:
+        if places['metadata']['number_of_hits'] > 0:
             for place in places['items']:
                 inscription_list.append({"hd_nr":place.hd_nr, "titel":place.titel})
         return inscription_list
