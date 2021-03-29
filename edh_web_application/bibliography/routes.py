@@ -55,6 +55,7 @@ def search_bibliography():
 @bp_bibliography.route('/edh/bibliographie/<b_nr>')
 @bp_bibliography.route('/edh/bibliographie/<b_nr>/')
 @bp_bibliography.route('/edh/bibliographie/<b_nr>/<conv_format>')
+@bp_bibliography.route('/edh/bibliographie/<b_nr>/<conv_format>/')
 def detail_view(b_nr, conv_format=''):
     """
     route for displaying detail view of bibliographical record
@@ -76,7 +77,6 @@ def detail_view(b_nr, conv_format=''):
             return_dict = Publication.get_json_for_bib_record(b_nr)
             return_dict_json = jsonify(return_dict)
             return_dict_json.headers.add('Access-Control-Allow-Origin', '*')
-            return_dict_json.headers.add('Content-Type', 'application/json; charset=utf-8')
             return return_dict_json
 
 
