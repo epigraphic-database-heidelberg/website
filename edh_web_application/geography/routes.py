@@ -9,7 +9,7 @@ from .forms import GeographySearchDe, GeographySearchEn
 from ..models.Place import Place
 
 
-@bp_geography.route('/geographie/lastUpdates', methods=['GET', 'POST'])
+@bp_geography.route('/geographie/lastUpdates', methods=['GET', 'POST'], strict_slashes=False)
 def last_updates():
     """
     route for displaying last updates in geographic database
@@ -22,7 +22,7 @@ def last_updates():
                            data=results_grouped_by_date)
 
 
-@bp_geography.route('/edh/geographie/<geo_id>')
+@bp_geography.route('/edh/geographie/<geo_id>', strict_slashes=False)
 def detail_view(geo_id):
     """
     route for displaying detail view of geographical record
@@ -62,7 +62,7 @@ def detail_view(geo_id):
                                    data=results['items'][0], inscriptions_list=inscriptions_list)
 
 
-@bp_geography.route('/geographie/suche', methods=['GET', 'POST'])
+@bp_geography.route('/geographie/suche', methods=['GET', 'POST'], strict_slashes=False)
 def search_geography():
     """
     route for geographical search mask

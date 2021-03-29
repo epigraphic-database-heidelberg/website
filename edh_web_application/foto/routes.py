@@ -10,7 +10,7 @@ from .forms import FotoSearchDe, FotoSearchEn
 from ..models.Foto import Foto
 
 
-@bp_foto.route('/foto/suche')
+@bp_foto.route('/foto/suche', strict_slashes=False)
 def search_foto():
     if _('lang') == "de":
         form = FotoSearchDe(data=request.args)
@@ -51,7 +51,7 @@ def search_foto():
         return render_template('foto/search.html', title=_("Foto Database"), subtitle=_("Search"), form=form)
 
 
-@bp_foto.route('/edh/foto/<f_nr>')
+@bp_foto.route('/edh/foto/<f_nr>', strict_slashes=False)
 def detail_view(f_nr):
     results = Foto.query("f_nr:" + f_nr)
     if results is None:

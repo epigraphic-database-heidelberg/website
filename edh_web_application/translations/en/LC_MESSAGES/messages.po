@@ -3715,7 +3715,7 @@ msgstr ""
 "href=\"projekt/veranstaltungen\">Events and "
 "Presentations</a></li></ul><p>Under <i class=\"fas fa-external-link-"
 "alt\"></i> <a href=\"./links\">Links</a> you will find directions to "
-"further epigrahic projects.</p>"
+"further epigraphic projects.</p>"
 
 #: edh_web_application/templates/500.html:4
 #: edh_web_application/templates/500.html:8

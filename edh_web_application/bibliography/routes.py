@@ -6,7 +6,7 @@ from .forms import BibliographySearch
 import json
 
 
-@bp_bibliography.route('/bibliographie/suche', methods=['GET', 'POST'])
+@bp_bibliography.route('/bibliographie/suche', methods=['GET', 'POST'], strict_slashes=False)
 def search_bibliography():
     """
     route for bibliographical search mask
@@ -52,10 +52,8 @@ def search_bibliography():
         return render_template('bibliography/search.html', title=_("Bibliographic Database"), subtitle=_("Search"), form=form)
 
 
-@bp_bibliography.route('/edh/bibliographie/<b_nr>')
-@bp_bibliography.route('/edh/bibliographie/<b_nr>/')
-@bp_bibliography.route('/edh/bibliographie/<b_nr>/<conv_format>')
-@bp_bibliography.route('/edh/bibliographie/<b_nr>/<conv_format>/')
+@bp_bibliography.route('/edh/bibliographie/<b_nr>', strict_slashes=False)
+@bp_bibliography.route('/edh/bibliographie/<b_nr>/<conv_format>', strict_slashes=False)
 def detail_view(b_nr, conv_format=''):
     """
     route for displaying detail view of bibliographical record
@@ -80,7 +78,7 @@ def detail_view(b_nr, conv_format=''):
             return return_dict_json
 
 
-@bp_bibliography.route('/bibliographie/lastUpdates', methods=['GET', 'POST'])
+@bp_bibliography.route('/bibliographie/lastUpdates', methods=['GET', 'POST'], strict_slashes=False)
 def last_updates():
     """
     route for displaying last updates in bibliographic database
@@ -94,7 +92,7 @@ def last_updates():
                            data=results_grouped_by_date)
 
 
-@bp_bibliography.route('/bibliographie/ac/autor', methods=['GET', 'POST'])
+@bp_bibliography.route('/bibliographie/ac/autor', methods=['GET', 'POST'], strict_slashes=False)
 def autocomplete_autor():
     """
     route for retrieving autocomplete entries for field autor
@@ -103,7 +101,7 @@ def autocomplete_autor():
     return json.dumps(Publication.get_autocomplete_entries("autor", request.args['term']))
 
 
-@bp_bibliography.route('/bibliographie/ac/publikation', methods=['GET', 'POST'])
+@bp_bibliography.route('/bibliographie/ac/publikation', methods=['GET', 'POST'], strict_slashes=False)
 def autocomplete_publikation():
     """
     route for retrieving autocomplete entries for field publikation

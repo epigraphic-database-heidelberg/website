@@ -7,7 +7,7 @@ from ..models.Inscription import Inscription
 from ..models.Person import Person
 
 
-@bp_inscription.route('/inschrift/lastUpdates', methods=['GET', 'POST'])
+@bp_inscription.route('/inschrift/lastUpdates', methods=['GET', 'POST'], strict_slashes=False)
 def last_updates():
     """
     route for displaying last updates in inscription database
@@ -20,7 +20,7 @@ def last_updates():
                            data=results_grouped_by_date)
 
 
-@bp_inscription.route('/inschrift/suche')
+@bp_inscription.route('/inschrift/suche', strict_slashes=False)
 def simple_search():
     if _('lang') == "de":
         form = InscriptionSearchDe(data=request.args)
@@ -46,13 +46,13 @@ def simple_search():
         return render_template('inscription/search.html', title=_("Epigraphic Text Database"), subtitle=_("Simple Search"), form=form)
 
 
-@bp_inscription.route('/inschrift/erweiterteSuche')
+@bp_inscription.route('/inschrift/erweiterteSuche', strict_slashes=False)
 def extended_search():
     return render_template('inscription/extended_search.html',
                            title=_("Epigraphic Text Database"), subtitle=_("Extended Search"))
 
 
-@bp_inscription.route('/edh/inschrift/<hd_nr>')
+@bp_inscription.route('/edh/inschrift/<hd_nr>', strict_slashes=False)
 def detail_view(hd_nr):
     if hd_nr in Inscription.hd_nr_redirects:
         return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),

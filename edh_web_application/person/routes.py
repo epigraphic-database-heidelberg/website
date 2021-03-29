@@ -4,7 +4,7 @@ from ..models.Person import Person
 from . import bp_people
 
 
-@bp_people.route('/edh/person/<hd_nr>/<pers_id>')
+@bp_people.route('/edh/person/<hd_nr>/<pers_id>', strict_slashes=False)
 def detail_view(hd_nr, pers_id):
     """
     route for displaying detail view of person record
