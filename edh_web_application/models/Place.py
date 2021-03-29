@@ -985,6 +985,55 @@ class Place:
                 inscription_list.append({"hd_nr":place.hd_nr, "titel":place.titel})
         return inscription_list
 
+    @classmethod
+    def get_json_for_geo_record(cls, geo_id):
+        """
+        return record as json
+        :param geo_id: No. of record
+        """
+        record = Place.query("id:" + geo_id)
+        if len(record) > 0 and 'items' in record:
+            for item in record['items']:
+                item_dict = {'id': geo_id,
+                             'uri': current_app.config['HOST'] + "/edh/geographie/" + geo_id,
+                             'last_update': item.datum,
+                             'responsible_individual': item.bearbeiter,
+                             }
+                if item.fo_antik:
+                    item_dict['findspot_ancient'] = item.fo_antik
+                if item.fo_antik:
+                    item_dict['findspot_modern'] = item.fo_modern
+                if item.fundstelle:
+                    item_dict['findspot'] = item.fundstelle
+                if item.provinz:
+                    item_dict['province'] = item.provinz
+                if item.land:
+                    item_dict['country'] = item.land
+                if item.verw_bezirk:
+                    item_dict['modern_region'] = item.verw_bezirk
+                if item.pleiades_id_1:
+                    item_dict['pleiades_uri_1'] = "https://pleiades.stoa.org/places/" + item.pleiades_id_1
+                if item.pleiades_id_2:
+                    item_dict['pleiades_uri_2'] = "https://pleiades.stoa.org/places/" + item.pleiades_id_2
+                if item.geonames_id_1:
+                    item_dict['geonames_uri_1'] = "https://geonames.org/" + item.geonames_id_1
+                if item.pleiades_id_2:
+                    item_dict['geonames_uri_2'] = "https://geonames.org/" + item.geonames_id_2
+                if item.koordinaten_1:
+                    item_dict['coordinates_1'] = item.koordinaten_1
+                if item.koordinaten_2:
+                    item_dict['coordinates_2'] = item.koordinaten_2
+                if item.trismegistos_geo_id:
+                    item_dict['tm_geo_uri'] = "https://trismegistos.org/place/" + item.trismegistos_geo_id
+                if item.bearbeitet:
+                    item_dict['work_status'] = _l('completed')
+                else:
+                    item_dict['work_status'] = 'provisional'
+                if item.kommentar:
+                    item_dict['commentary'] = item.kommentar
+            pub_dict = {'items': item_dict, 'limit': 20, 'total': 1}
+            return pub_dict
+
 
 def _get_url_without_pagination_parameters(url):
     """

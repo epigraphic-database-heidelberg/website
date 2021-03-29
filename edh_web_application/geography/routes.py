@@ -1,7 +1,7 @@
 import json
 import re
 
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from flask_babel import _
 
 from . import bp_geography
@@ -23,11 +23,13 @@ def last_updates():
 
 
 @bp_geography.route('/edh/geographie/<geo_id>', strict_slashes=False)
-def detail_view(geo_id):
+@bp_geography.route('/edh/geographie/<geo_id>/<conv_format>', strict_slashes=False)
+def detail_view(geo_id, conv_format = ''):
     """
     route for displaying detail view of geographical record
     :param geo_id: identifier of geographical record
-    :return: html template
+    :param conv_format: conversion format (json)
+    :return: html template or json
     """
     query = ""
     if re.match("^[0-9]*$", geo_id) and int(geo_id) >= 900000 and int(geo_id) <= 900061:
@@ -51,15 +53,22 @@ def detail_view(geo_id):
         # reformat Geo ID if necessary
         geo_id = re.sub(r'G0*?', r'', geo_id)
         geo_id = "G" + "{:06d}".format(int(geo_id))
-        results = Place.query("id:" + geo_id)
-        inscriptions_list = Place.get_inscriptions_from_place(geo_id)
-        if results is None:
-            return render_template('geography/no_hits.html',
-                                   title=_("Geographic Database"), subtitle=_("Search results"))
+        if conv_format == '':
+            results = Place.query("id:" + geo_id)
+            inscriptions_list = Place.get_inscriptions_from_place(geo_id)
+            if results is None:
+                return render_template('geography/no_hits.html',
+                                       title=_("Geographic Database"), subtitle=_("Search results"))
+            else:
+                return render_template('geography/detail_view.html',
+                                       title=_("Geographic Database"), subtitle=_("Detail View"),
+                                       data=results['items'][0], inscriptions_list=inscriptions_list)
         else:
-            return render_template('geography/detail_view.html',
-                                   title=_("Geographic Database"), subtitle=_("Detail View"),
-                                   data=results['items'][0], inscriptions_list=inscriptions_list)
+            # data export
+            return_dict = Place.get_json_for_geo_record(geo_id)
+            return_dict_json = jsonify(return_dict)
+            return_dict_json.headers.add('Access-Control-Allow-Origin', '*')
+            return return_dict_json
 
 
 @bp_geography.route('/geographie/suche', methods=['GET', 'POST'], strict_slashes=False)
