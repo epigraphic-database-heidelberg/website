@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from flask_babel import _
 from ..models.Publication import Publication
 from . import bp_bibliography
@@ -53,11 +53,14 @@ def search_bibliography():
 
 
 @bp_bibliography.route('/edh/bibliographie/<b_nr>')
-def detail_view(b_nr):
+@bp_bibliography.route('/edh/bibliographie/<b_nr>/')
+@bp_bibliography.route('/edh/bibliographie/<b_nr>/<conv_format>')
+def detail_view(b_nr, conv_format=''):
     """
     route for displaying detail view of bibliographical record
     :param b_nr: identifier of bibliographical record
-    :return: html template
+    :param conv_format: conversion format (json)
+    :return: html template (default) or json
     """
     b_nr = Publication.format_b_nr(b_nr)
     results = Publication.query("b_nr:" + b_nr)
@@ -65,9 +68,16 @@ def detail_view(b_nr):
         return render_template('bibliography/no_hits.html',
                                title=_("Bibliographic Database"), subtitle=_("Search results"))
     else:
-        return render_template('bibliography/detail_view.html',
+        if conv_format == '':
+            return render_template('bibliography/detail_view.html',
                                title=_("Bibliographic Database"), subtitle=_("Detail View"),
                                data=results['items'][0])
+        else:
+            return_dict = Publication.get_json_for_bib_record(b_nr)
+            return_dict_json = jsonify(return_dict)
+            return_dict_json.headers.add('Access-Control-Allow-Origin', '*')
+            return_dict_json.headers.add('Content-Type', 'application/json; charset=utf-8')
+            return return_dict_json
 
 
 @bp_bibliography.route('/bibliographie/lastUpdates', methods=['GET', 'POST'])

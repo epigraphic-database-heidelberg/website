@@ -105,7 +105,6 @@ class Publication:
                     request.url), "query_params": query_params},
                     "items": query_result}
 
-
     @classmethod
     def create_query_string(cls, form):
         """
@@ -131,10 +130,11 @@ class Publication:
                 query_string += "autor_ci:*" + _escape_value(form['autor']) + "* " + logical_operater + " "
 
         if 'titel' in form and form['titel'] != "":
-            query_string += "titel_str_ci:*" + re.sub(" ","\ ",form['titel']) + "* " + logical_operater + " "
+            query_string += "titel_str_ci:*" + re.sub(" ", "\ ", form['titel']) + "* " + logical_operater + " "
 
         if 'publikation' in form and form['publikation'] != "":
-            query_string += "publikation_str_ci:*" + _escape_value(_remove_number_of_hits_from_autocomplete(form['publikation'])) + "* " + logical_operater + " "
+            query_string += "publikation_str_ci:*" + _escape_value(
+                _remove_number_of_hits_from_autocomplete(form['publikation'])) + "* " + logical_operater + " "
 
         if 'band' in form and form['band'] != "":
             query_string += "band:" + _escape_value(form['band']) + " " + logical_operater + " "
@@ -230,7 +230,7 @@ class Publication:
         :param term: querystring
         :return: list of relevant field values
         """
-        if re.match("[a-zA-Z]+",term):
+        if re.match("[a-zA-Z]+", term):
             params = {
                 'facet': 'on',
                 'facet.field': ac_field + '_ac',
@@ -270,6 +270,43 @@ class Publication:
         b_nr = b_nr.lstrip("0")
         b_nr = b_nr.zfill(6)
         return "B" + b_nr
+
+    @classmethod
+    def get_json_for_bib_record(cls, b_nr):
+        """
+        return record as json
+        :param b_nr: B-No of record
+        """
+        pub = Publication.query("b_nr:" + b_nr)
+        if len(pub) > 0 and 'items' in pub:
+            for item in pub['items']:
+                item_dict = {'id': b_nr, 'uri': current_app.config['HOST'] + "/edh/bibliographie/" + b_nr}
+                if item.ort:
+                    item_dict['place'] = item.ort
+                if item.autor:
+                    item_dict['author'] = item.autor
+                if item.titel:
+                    item_dict['title'] = item.titel
+                if item.jahr:
+                    item_dict['year'] = item.jahr
+                if item.publikation:
+                    item_dict['publication'] = item.publikation
+                if item.band:
+                    item_dict['volume'] = item.band
+                if item.seiten:
+                    item_dict['pages'] = item.seiten
+                if item.ae:
+                    item_dict['ae'] = item.ae
+                if item.zu_ae:
+                    item_dict['about_ae'] = item.zu_ae
+                if item.cil:
+                    item_dict['cil'] = item.cil
+                if item.sonstigeCorpora:
+                    item_dict['other_corpora'] = item.sonstigeCorpora
+            pub_dict = {'items': item_dict, 'limit': 20, 'total': 1}
+            return pub_dict
+        else:
+            return {'items': [], 'limit': 20, 'total': 0}
 
 
 def _escape_value(val):
