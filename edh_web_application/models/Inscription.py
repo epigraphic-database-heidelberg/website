@@ -963,6 +963,7 @@ def _prepare_atext(atext):
                 transcription += re.sub("<", "&lt;", sub_token[0] + " ")
             else:
                 transcription += token + " "
+    transcription = re.sub("<", "&lt;", transcription)
     return transcription
 
 
