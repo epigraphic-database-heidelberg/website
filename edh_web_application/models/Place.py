@@ -1033,6 +1033,8 @@ class Place:
                     item_dict['commentary'] = item.kommentar
             pub_dict = {'items': item_dict, 'limit': 20, 'total': 1}
             return pub_dict
+        else:
+            return {'items': [], 'limit': 20, 'total': 0}
 
 
 def _get_url_without_pagination_parameters(url):

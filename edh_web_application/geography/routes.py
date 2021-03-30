@@ -56,10 +56,12 @@ def detail_view(geo_id, conv_format = ''):
         if conv_format == '':
             results = Place.query("id:" + geo_id)
             inscriptions_list = Place.get_inscriptions_from_place(geo_id)
-            if results is None:
+            if results['metadata']['number_of_hits'] == 0:
+                results['metadata']['query_params'] = {'Geo-ID': geo_id}
                 return render_template('geography/no_hits.html',
-                                       title=_("Geographic Database"), subtitle=_("Search results"))
+                                       title=_("Geographic Database"), subtitle=_("Search results"), data=results)
             else:
+
                 return render_template('geography/detail_view.html',
                                        title=_("Geographic Database"), subtitle=_("Detail View"),
                                        data=results['items'][0], inscriptions_list=inscriptions_list)

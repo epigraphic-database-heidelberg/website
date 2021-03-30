@@ -9,7 +9,7 @@
 <h2>{{ subtitle }}</h2>
 <p>{{_("The search for:")}}</p>
 <p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
-<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
+<p>{{_("resulted in")}} {{data['metadata']['number_of_hits']}} {{_("hits.")}}</p>
 
 <p><a href="./bibliographie/suche"><button type="submit" class="btn">{{ _('Start new search') }}</button></a></p>
 {% endblock %}

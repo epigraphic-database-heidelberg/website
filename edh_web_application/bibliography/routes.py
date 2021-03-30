@@ -63,9 +63,10 @@ def detail_view(b_nr, conv_format=''):
     """
     b_nr = Publication.format_b_nr(b_nr)
     results = Publication.query("b_nr:" + b_nr)
-    if results is None:
+    if results['metadata']['number_of_hits'] == 0:
+        results['metadata']['query_params'] = {'b_nr': b_nr}
         return render_template('bibliography/no_hits.html',
-                               title=_("Bibliographic Database"), subtitle=_("Search results"))
+                               title=_("Bibliographic Database"), subtitle=_("Search results"), data=results)
     else:
         if conv_format == '':
             return render_template('bibliography/detail_view.html',
