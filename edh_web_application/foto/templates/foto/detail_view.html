@@ -11,7 +11,7 @@
     <span id="canonical_uri">
         <a href="https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['results']['f_nr']}}">
             https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['results']['f_nr']}}
-            ({% if data['results']['aufschrift'] %}{{data['results']['aufschrift']}}. {%endif%}{{_('Last Updates')}}: {{data['results']['datum']}}, {{data['results']['bearbeiter']}})
+            ({% if data['results']['aufschrift'] %}{{data['results']['aufschrift']| safe}}. {%endif%}{{_('Last Updates')}}: {{data['results']['datum']}}, {{data['results']['bearbeiter']}})
         </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
     </span>
@@ -126,6 +126,11 @@
         {% endif %}
     </div>
     {% endif %}
+    <h3>Download</h3>
+    <div class="detail_block_content">
+        <p style="margin-bottom:3rem;"><a href="./edh/foto/{{data['results']['f_nr']}}/json"><i class="fas fa-file-download" style="margin-right:1rem;"></i>JSON</a></p>
+        <p style="margin-bottom:3rem;"><a href="http://creativecommons.org/licenses/by-sa/4.0/deed.de"><img src="./static/img/CC-BY-SA_icon.png" style="margin-bottom:2em;" /></a></p>
+    </div>
 </div>
 
 {% endblock %}

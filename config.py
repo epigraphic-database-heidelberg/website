@@ -7,7 +7,7 @@ class Config(object):
     BABEL_DEFAULT_LOCALE = 'en'
     SOLR_BASE_URL = 'http://localhost:8983/solr/'
     BASE_HREF = "/"
-    HOST = 'https://edh-ww.adw.uni-heidelberg.de'
+    HOST = 'https://edh-www.adw.uni-heidelberg.de'
     JSON_AS_ASCII = False
 
 

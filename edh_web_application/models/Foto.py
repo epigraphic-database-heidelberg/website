@@ -488,6 +488,42 @@ class Foto:
             grouped_result[current_date].append(res)
         return grouped_result
 
+    @classmethod
+    def get_json_for_foto_record(cls, f_nr):
+        record = Foto.query("f_nr:" + f_nr)
+        if len(record) > 0 and 'items' in record:
+            for item in record['items']:
+                item_dict = {'id': f_nr,
+                             'uri': current_app.config['HOST'] + "/edh/foto/" + f_nr,
+                             'iiif_manifest_uri': current_app.config['HOST'] + "/iiif/edh/" + f_nr + ".manifest.json",
+                             'last_update': item.datum,
+                             'responsible_individual': item.bearbeiter,
+                             }
+                if item.fo_antik:
+                    item_dict['findspot_ancient'] = item.fo_antik
+                if item.fo_modern:
+                    item_dict['findspot_modern'] = item.fo_modern
+                if item.provinz:
+                    item_dict['province'] = item.provinz
+                if item.land:
+                    item_dict['country'] = item.land
+                if item.aufbewahrung:
+                    item_dict['present_location'] = item.aufbewahrung
+                if item.aufnahme_jahr:
+                    item_dict['year_of_foto'] = item.aufnahme_jahr
+                if item.cil:
+                    item_dict['cil'] = item.cil
+                if item.ae:
+                    item_dict['ae'] = item.ae
+                if item.andere:
+                    item_dict['other_literature'] = item.andere
+                if item.kommentar:
+                    item_dict['commentary'] = item.kommentar
+
+            pub_dict = {'items': item_dict, 'limit': 20, 'total': 1}
+            return pub_dict
+
+
 
 def _get_url_without_pagination_parameters(url):
     """

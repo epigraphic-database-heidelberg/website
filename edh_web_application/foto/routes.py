@@ -2,7 +2,7 @@ import json
 import re
 import urllib.request
 
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from flask_babel import _
 
 from . import bp_foto
@@ -52,27 +52,35 @@ def search_foto():
 
 
 @bp_foto.route('/edh/foto/<f_nr>', strict_slashes=False)
-def detail_view(f_nr):
+@bp_foto.route('/edh/foto/<f_nr>/<conv_format>', strict_slashes=False)
+def detail_view(f_nr, conv_format = ''):
     results = Foto.query("f_nr:" + f_nr)
-    if results is None:
+    if results['metadata']['number_of_hits'] == 0:
+        results['metadata']['query_params'] = {'f_nr': f_nr}
         return render_template('foto/no_hits.html',
-                               title=_("Foto Database"), subtitle=_("Detail View"))
+                               title=_("Foto Database"), subtitle=_("Detail View"), data=results)
     else:
-        # image size from IIIF info.json
-        f_nr = re.sub(r'F0*?', r'', f_nr, flags=re.IGNORECASE)
-        if re.match(r'^\d*$', f_nr):
-            f_number = "{:06d}".format(int(f_nr))
-            f_nr = "F" + "{:06d}".format(int(f_nr))
-        try:
-            with urllib.request.urlopen(
-                    "https://edh-www.adw.uni-heidelberg.de/iiif2/iiif/2/f" + f_number + ".tif/info.json") as url:
-                data = json.loads(url.read().decode())
-                img_size = {"x":data['width'], "y":data['height']}
-        except:
-            img_size = {"x": 0, "y": 0}
-        return render_template('foto/detail_view.html',
-                               title=_("Foto Database"), subtitle=_("Detail View"),
-                               data={"results": results['items'][0], "image_size": img_size})
+        if conv_format == '':
+            # image size from IIIF info.json
+            f_nr = re.sub(r'F0*?', r'', f_nr, flags=re.IGNORECASE)
+            if re.match(r'^\d*$', f_nr):
+                f_number = "{:06d}".format(int(f_nr))
+                f_nr = "F" + "{:06d}".format(int(f_nr))
+            try:
+                with urllib.request.urlopen(
+                        "https://edh-www.adw.uni-heidelberg.de/iiif2/iiif/2/f" + f_number + ".tif/info.json") as url:
+                    data = json.loads(url.read().decode())
+                    img_size = {"x": data['width'], "y": data['height']}
+            except:
+                img_size = {"x": 0, "y": 0}
+            return render_template('foto/detail_view.html',
+                                   title=_("Foto Database"), subtitle=_("Detail View"),
+                                   data={"results": results['items'][0], "image_size": img_size})
+        else:
+            return_dict = Foto.get_json_for_foto_record(f_nr)
+            return_dict_json = jsonify(return_dict)
+            return_dict_json.headers.add('Access-Control-Allow-Origin', '*')
+            return return_dict_json
 
 
 @bp_foto.route('/foto/ac/fo_modern', methods=['GET', 'POST'], strict_slashes=False)

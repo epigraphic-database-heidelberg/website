@@ -1001,7 +1001,7 @@ class Place:
                              }
                 if item.fo_antik:
                     item_dict['findspot_ancient'] = item.fo_antik
-                if item.fo_antik:
+                if item.fo_modern:
                     item_dict['findspot_modern'] = item.fo_modern
                 if item.fundstelle:
                     item_dict['findspot'] = item.fundstelle
