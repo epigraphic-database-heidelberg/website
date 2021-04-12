@@ -124,54 +124,58 @@
     {% set count = namespace(value=0) %}
     {% for d in data['items'] %}
     {% set count.value = count.value + 1 %}
-    <div class="detail_block" style="padding-left: 0px;">
-        <div class="wrapper_geo_last_updates" style="padding:10px">
-            <a href="./edh/inschrift/{{ d['hd_nr'] }}" style="color:#fff"><div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;min-height:250px">{{_('Number')}} &nbsp; {{count.value + data['metadata']['start']|int}}</div></a>
-            <div class="map_geo_last_updates" style="display: inline-block; vertical-align: top;">
-                <a href="./edh/inschrift/{{ d['hd_nr'] }}">
-                    <div id="map_canvas_{{ count.value }}" class="map_canvas" style="min-height:250px"></div>
-                </a>
-            </div>
-            <div class="detail_block_content_geo">
-                <section class="detail_block_content_row"><p style="text-align:left; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/inschrift/{{ d['hd_nr'] }}">{{ d['hd_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
-                </section>
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{ _('Transcription') }}:</div>
-                    {% if d['atext_hl'] %}
-                    <div class="detail_block_content_row_text">{{ d['atext_hl'] | safe }}</div>
-                    {% else %}
-                    <div class="detail_block_content_row_text">{{ d['atext'] | safe }}</div>
-                    {% endif %}
-                </section>
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{_('ancient find spot')}}:</div>
-                    <div id="fo_antik" class="detail_block_content_row_text">{% if d['fo_antik'] %}{{d['fo_antik']}}{% endif %}</div>
-                </section>
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{_('modern find spot')}}:</div>
-                    <div id="fo_modern" class="detail_block_content_row_text">{% if d['fo_modern'] %}{{d['fo_modern']}}{% endif %}</div>
-                </section>
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{_('find spot')}}:</div>
-                    <div id="fundstelle" class="detail_block_content_row_text">{% if d['fundstelle'] %}{{d['fundstelle'] | replace("{","") | replace("}","") | safe }}{% endif %}</div>
-                </section>
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{ _('province') }}:</div>
-                    <div class="detail_block_content_row_text"><i class="fas fa-external-link-alt"></i> <a href="./edh/geographie/{{ d['provinz_id'] }}">{{ d['provinz'] }} {% if d['land'] %}({{ d['land'] }}){% endif %}</a></div>
-                </section>
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{ _('Chronological Data') }}:</div>
-                    <div class="detail_block_content_row_text">{{d['datierung'] | safe}}</div>
-                </section>
-                <section class="detail_block_content_row">
-                    <div class="detail_block_content_row_header">{{ _('Literature') }}:</div>
-                    <div class="detail_block_content_row_text">{{d['literatur'] | replace("#", "<br>") | safe }}</div>
-                </section>
+
+    <div class="row">
+        <div class="detail_block" style="display:flex;">
+            <div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;"><a href="./edh/inschrift/{{ d['hd_nr'] }}" style="color: white">{{_('Number')}} &nbsp; {{count.value}}</a></div>
+            <div class="col">
+                <div><p style="text-align:left; vertical-align:top; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/inschrift/{{ d['hd_nr'] }}">{{ d['hd_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
+                <div class="edh-record-display">
+                    <div class="" style="width:200px; margin:0px 15px 15px 0px;vertical-align: middle;">
+                        <a href="./edh/inschrift/{{ d['hd_nr'] }}"><div id="map_canvas_{{ count.value }}" class="map_canvas"></div></a>
+                    </div>
+                    <div>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('Transcription') }}:</div>
+                            <div class="detail_block_content_row_text">{{ _(d['atext']) }}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('province') }}:</div>
+                            <div class="detail_block_content_row_text">{{ _(d['provinz']) }}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('country') }}:</div>
+                            <div class="detail_block_content_row_text">{{ _(d['land']) }}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                                <div class="detail_block_content_row_header">{{ _('ancient find spot') }}:</div>
+                                <div class="detail_block_content_row_text">{% if d['fo_antik'] %}{{ d['fo_antik'] }}{% else %}&nbsp;{% endif %}</div>
+                            </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('modern find spot') }}:</div>
+                            <div class="detail_block_content_row_text">{% if d['fo_modern'] %}{{ d['fo_modern'] }}{% else %}&nbsp;{% endif %}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>
+                            <div class="detail_block_content_row_text">{% if d['fundstelle'] %}{{ d['fundstelle'] }}{% else %}&nbsp;{% endif %}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('Chronological Data') }}:</div>
+                            <div class="detail_block_content_row_text">{% if d['datierung'] %}{{ d['datierung'] | safe }}{% else %}&nbsp;{% endif %}</div>
+                        </section>
+                        <section class="detail_block_content_row">
+                            <div class="detail_block_content_row_header">{{ _('literature') }}:</div>
+                            <div class="detail_block_content_row_text">{% if d['literatur'] %}{{ d['literatur'] | replace("#", "<br/>") | safe }}{% else %}&nbsp;{% endif %}</div>
+                        </section>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {% endfor %}
 </div>
+{% endfor %}
+</div>
+
 <div style="text-align:center">
     <nav aria-label="Search results pages">
         {% set aktuelleSeite = (data['metadata']['start']|int / data['metadata']['rows']|int)|int %}

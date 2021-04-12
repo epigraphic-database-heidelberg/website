@@ -863,6 +863,7 @@ class Inscription:
             res['provinz_id'] = Place.get_province_id_from_code(res['provinz'])
             if 'fundstelle' in res:
                 res['fundstelle'] = re.sub("[\{\}]", "", res['fundstelle'])
+            res['atext'] = _prepare_atext(res['atext'])
         return results
 
     @classmethod

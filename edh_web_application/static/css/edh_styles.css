@@ -207,12 +207,13 @@ p {
 .detail_block_content_row_header {
     font-weight: bold;
     padding-right: 5px;
-    padding-left: 8px;
+    padding-left: 0px;
 }
 .detail_block_content_row_text {
     font-weight: normal;
     margin-bottom: 0.75em;
-    padding-left: 8px;
+    padding-left: 0px;
+    padding-right: 8px;
 }
 .btn {
     color: #1F6B3B;
@@ -522,7 +523,7 @@ div.inschrift-kurzansicht {
     margin-left: 6px;
 }
 .map_canvas {
-    width: 220px;
+    width: 240px;
     height: 220px;
     border: 1px solid #ccc;
 }
@@ -860,6 +861,7 @@ img#hadw-banner {
         font-weight: bold;
         width: 10em;
         padding-right: 5px;
+        padding-left: 8px;
         text-align: right;
         float: left;
     }
