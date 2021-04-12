@@ -127,7 +127,9 @@ a:hover {
 p {
     text-align: justify;
 }
-
+.edh-record-display {
+    display: block;
+}
 .navbar {
     border-top: 1px solid #fff;
     border-bottom: 1px solid #333;
@@ -576,6 +578,7 @@ label {
 }
 .ui-dialog .ui-dialog-title {
     padding: 5px;
+    font-weight: bold;
 }
 .ui-dialog .ui-dialog-content {
     background: none repeat scroll 0 0 transparent;
@@ -588,7 +591,7 @@ label {
     background: #1F6B3B;
     border: 0;
     color: #fff;
-    font-weight: normal;
+    font-weight: bold;
     text-transform: uppercase;
 }
 .ui-dialog .ui-dialog-titlebar {
@@ -599,6 +602,9 @@ label {
 .ui-widget-content a {
     text-decoration: none;
     color: #1F6B3B;
+}
+.ui-slider-range .ui-corner-all .ui-widget-header {
+    background: #1F6B3B;
 }
 div.visible-xs-block {
     font-size: 2.5em;
@@ -720,6 +726,7 @@ img#hadw-banner {
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     body {
+        /* background-color: blue; */
     }
     .container.head > a {
         font-size: 3em;
@@ -739,6 +746,10 @@ img#hadw-banner {
     }
     body {
         font-size: 1.5em;
+        /* background-color: green; */
+    }
+    .edh-record-display {
+        display: flex;
     }
     .container {
         max-width: 730px;
@@ -945,10 +956,10 @@ img#hadw-banner {
         text-align: left;
     }
     div.panel.panel-default:hover {
-        #border-color: #1F6B3B;
-            outline: 0;
-            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(31,107,59,.6);
-            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(31,107,59,.6);
+        border-color: #1F6B3B;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(31,107,59,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(31,107,59,.6);
     }
     div.panel-heading {
         font-size: 1.2em;
