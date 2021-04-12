@@ -42,6 +42,10 @@ class Inscription:
         _l('beleg-a'), _l('beleg-b'), _l('beleg-c'), _l('beleg-d'), _l('beleg-e'), _l('beleg-f')
     )
 
+    date_sort_by = (
+        _l('dat_jahr_a'), _l('dat_jahr_e')
+    )
+
     hd_nr_redirects = {
         'HD011276': 'HD057246',
         'HD017892': 'HD057373',
@@ -641,7 +645,6 @@ class Inscription:
             query_string += '(dat_jahr_a:['+jahr_a+' TO ' + jahr_e + '] AND dat_jahr_e:[' + jahr_a + ' TO ' + jahr_e + ']) ' + logical_operater + ' '
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
-        print(query_string)
         return query_string
 
     @classmethod
@@ -663,7 +666,12 @@ class Inscription:
             if int(start) < rows:
                 start = 0
         if request.args.get('sort'):
-            sort = request.args.get('sort') + " asc"
+            if request.args.get('sort') in ('fo_antik', 'fo_modern', 'fundstelle'):
+                sort = request.args.get('sort') + "_ci asc"
+            elif request.args.get('sort') == 'land':
+                sort = request.args.get('sort') + "_sort_de asc"
+            else:
+                sort = request.args.get('sort') + " asc"
         if hits:
             rows = hits
 
@@ -1018,7 +1026,10 @@ def _get_query_params(args):
             # include years range only if not default value '-1000 - 1500'
             if key == 'jahre' and args[key] == '-1000 - 1500':
                 continue
-            result_dict[_l('years')] = args[key]
+            if key == 'jahre':
+                result_dict[_l('years')] = args[key]
+            else:
+                result_dict[key] = args[key]
     if 'provinz' in result_dict:
         result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])
     if 'land' in result_dict:

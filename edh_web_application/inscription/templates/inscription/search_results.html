@@ -157,7 +157,7 @@
                         </section>
                         <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>
-                            <div class="detail_block_content_row_text">{% if d['fundstelle'] %}{{ d['fundstelle'] }}{% else %}&nbsp;{% endif %}</div>
+                            <div class="detail_block_content_row_text">{% if d['fundstelle'] %}{{ d['fundstelle']|replace("{", "")|replace("}", "") }}{% else %}&nbsp;{% endif %}</div>
                         </section>
                         <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('Chronological Data') }}:</div>
@@ -284,6 +284,8 @@
     <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_antik">{{_('ancient find spot')}}</a></li>
     <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_modern">{{_('modern find spot')}}</a></li>
     <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fundstelle">{{_('find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=dat_jahr_a">{{_('date from')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=dat_jahr_e">{{_('date to')}}</a></li>
     </ul>
 </div>
 <div id="dialog-number" title = "{{_('number of results/page')}}:">
