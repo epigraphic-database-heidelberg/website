@@ -472,7 +472,7 @@ catchall "text" field, and use that for searching.
     <fieldType name="atext_ci_nb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
                multiValued="false">
         <analyzer type="index">
-            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="50"/>
+            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="30"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="[\[\]\(\)\{\}\\\!\?\/\-,]" replacement=""
                     replace="all"/>

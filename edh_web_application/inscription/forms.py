@@ -4,6 +4,8 @@ from flask_babel import lazy_gettext as _l
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, SelectMultipleField, BooleanField
 
+from wtforms.validators import Length
+
 from ..models.Inscription import Inscription
 from ..models.Place import Place
 
@@ -62,8 +64,8 @@ class InscriptionSearch(FlaskForm):
     dat_jahr_e = StringField(_l('until'))
     dat_erweitert = BooleanField(_l('extended'))
     hist_periods = SelectField(_l('historic period'), choices=get_option_list_values_hist_periods())
-    atext1 = StringField(_l('atext1'))
-    atext2 = StringField(_l('atext2'))
+    atext1 = StringField(_l('atext1'), render_kw=dict(maxlength=30))
+    atext2 = StringField(_l('atext2'), render_kw=dict(maxlength=30))
     bool = SelectField(_l('bool'), choices=[('AND', _l('AND')), ('OR', _l('OR')), ('AND NOT', _l('AND NOT'))])
 
     sort = SelectField(_l('sort by'),
