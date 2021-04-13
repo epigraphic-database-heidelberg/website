@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-12 16:26+0200\n"
+"POT-Creation-Date: 2021-04-13 09:45+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -32,7 +32,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_map.html:71
 #: edh_web_application/geography/templates/geography/search_results_table.html:88
 #: edh_web_application/inscription/forms.py:55
-#: edh_web_application/inscription/templates/inscription/search.html:92
+#: edh_web_application/inscription/templates/inscription/search.html:87
 #: edh_web_application/inscription/templates/inscription/search_results.html:331
 msgid "Reset..."
 msgstr ""
@@ -299,7 +299,7 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:160
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:280
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
-#: edh_web_application/models/Inscription.py:1030
+#: edh_web_application/models/Inscription.py:1034
 msgid "years"
 msgstr ""
 
@@ -360,14 +360,14 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/search.html:93
 #: edh_web_application/foto/templates/foto/search.html:93
 #: edh_web_application/geography/templates/geography/search.html:88
-#: edh_web_application/inscription/templates/inscription/search.html:75
+#: edh_web_application/inscription/templates/inscription/search.html:70
 msgid "Search Options"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search.html:110
 #: edh_web_application/foto/templates/foto/search.html:111
 #: edh_web_application/geography/templates/geography/search.html:105
-#: edh_web_application/inscription/templates/inscription/search.html:92
+#: edh_web_application/inscription/templates/inscription/search.html:87
 msgid "Search..."
 msgstr ""
 
@@ -1404,7 +1404,7 @@ msgstr ""
 msgid "year"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/search.html:61
+#: edh_web_application/inscription/templates/inscription/search.html:58
 msgid "search string(s)"
 msgstr ""
 
@@ -2148,25 +2148,26 @@ msgstr "date from"
 msgid "dat_jahr_e"
 msgstr "date to"
 
-#: edh_web_application/models/Inscription.py:910
-#: edh_web_application/models/Inscription.py:912
-#: edh_web_application/models/Inscription.py:920
-msgid "BC"
-msgstr ""
-
-#: edh_web_application/models/Inscription.py:915
-#: edh_web_application/models/Inscription.py:917
-#: edh_web_application/models/Inscription.py:922
+#: edh_web_application/models/Inscription.py:50
+#: edh_web_application/models/Inscription.py:919
+#: edh_web_application/models/Inscription.py:921
+#: edh_web_application/models/Inscription.py:926
 msgid "AD"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:940
+#: edh_web_application/models/Inscription.py:914
+#: edh_web_application/models/Inscription.py:916
+#: edh_web_application/models/Inscription.py:924
+msgid "BC"
+msgstr ""
+
+#: edh_web_application/models/Inscription.py:944
 msgid "Inschrift"
 msgstr "Inscription"
 
-#: edh_web_application/models/Inscription.py:943
-#: edh_web_application/models/Inscription.py:945
 #: edh_web_application/models/Inscription.py:947
+#: edh_web_application/models/Inscription.py:949
+#: edh_web_application/models/Inscription.py:951
 msgid " from "
 msgstr ""
 

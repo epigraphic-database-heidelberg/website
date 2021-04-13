@@ -48,15 +48,12 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class='col-sm-2 col-form-label'>{{ _('year')}}</label>
-        <div class="col-sm-10" style="padding-right:22px"><div style="margin-top:12px;margin-left:8px; margin-right:8ox;" id="slider-range"></div></div>
+        <label class='col-sm-2 col-form-label' style="margin-bottom: 0px;">{{ _('year')}}</label>
+        <div class="col-sm-10" style="padding-right:22px;padding-top:7px;padding-bottom:0px">
+        <input id="dat_str" readonly style="margin-left:0em;margin-top:0px;padding-bottom:10px; padding-right:10px;border:0px" name="jahre" value="600 {{_('BC')}} - 1500 {{_('AD')}}"></input> {{ form.dat_erweitert() }} {{ form.dat_erweitert.label() }} <br />
+        <div style="margin-bottom:3em;margin-right:7px;margin-left:15px;" id="slider"></div></div>
     </div>
-    <div class="form-group row">
-        <label class="col-sm-2  col-form-label"></label>
-        <div class="col-sm-10">
-             {{ form.dat_erweitert.label() }} {{ form.dat_erweitert() }} <input id="dat_str" style="margin-left:2em;padding-left:10px; padding-right:10px;border:0px" name="jahre" value="-1000 - 1500"></input>
-        </div>
-    </div>
+    
     <div class="form-group row">
         <label class="col-sm-2  col-form-label">{{ _("search string(s)")}}</label>
         <div class="col-sm-3">
@@ -68,9 +65,7 @@
         <div class="col-sm-3">
             {{ form.atext2(class='form-control') }}
         </div>
-
     </div>
-
     <hr />
     <p>{{_("Search Options")}}</p>
     <div class="form-group row">
@@ -97,7 +92,10 @@
 {% block scripts %}
 {{ super() }}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+<link href=".{{url_for('static', filename='css/nouislider.min.css')}}" rel="stylesheet">
+<link href=".{{url_for('static', filename='css/edh_styles.css')}}" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+<script src=".{{url_for('static', filename='js/nouislider.min.js')}}"></script>
 <script>
     $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern",minLength:3,delay:0})
     $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik",minLength:3,delay:0})
@@ -108,18 +106,40 @@
         $(".selectpicker").val('');
         $(".selectpicker").selectpicker("refresh");
     })
-    $( function() {
-    $( "#slider-range" ).slider({
-      range: true,
-      min: -1000,
-      max: 1500,
-      values: [ -1000, 1500 ],
-      slide: function( event, ui ) {
-        $( "#dat_str" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-      }
+    
+    var slider = document.getElementById('slider');
+    noUiSlider.create(slider, {
+        start: [-600, 1500],
+        connect: true,
+        tooltips: true,
+        pips: {
+            mode: 'values',
+                values: [-600, -300, 1, 200, 500, 1000, 1500],
+                density: 5
+        },
+        range: {
+            'min': -600,
+            'max': 1500
+        },
+        format: {
+            to: function (value) {
+                if (Math.round(value)>0) 
+                    return Math.round(value) + " {{ _('AD')}}";
+                else
+                    jahr = value * -1
+                    return Math.round(jahr) + " {{ _('BC')}}";
+            },
+            from: function (value) {
+                return Number(value);
+            }
+        }
     });
-    $( "#dat_str" ).val( $( "#slider-range" ).slider( "values", 0 ) +
-      " - " + $( "#slider-range" ).slider( "values", 1 ) );
-  } );
+    
+    slider.noUiSlider.on("update", function(values, handle, unencoded ) {
+        var dat_jahr_a = values[0];
+        var dat_jahr_e = values[1];
+        if (dat_jahr_a < 1) dat_jahr_a = dat_jahr_a * -1
+        $( "#dat_str" ).val(dat_jahr_a + " - " + dat_jahr_e);
+    });
 </script>
 {% endblock %}

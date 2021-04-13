@@ -639,12 +639,22 @@ class Inscription:
             query_string += 'atext_ci_nb:' + escape_value(form['atext1']) + ' ' + logical_operater + ' '
         elif 'atext2' in form and form['atext2'] != "":
             query_string += 'atext_ci_nb:' + escape_value(form['atext2']) + ' ' + logical_operater + ' '
-
-        if 'jahre' in form and form['jahre'] != "-1000 - 1500":
+        
+        if 'jahre' in form and not (form['jahre'] == "600 v. Chr. - 1500 n. Chr." or form['jahre'] == "600 BC - 1500 AD" ):
             (jahr_a, jahr_e) = form['jahre'].split(" - ")
-            query_string += '(dat_jahr_a:['+jahr_a+' TO ' + jahr_e + '] AND dat_jahr_e:[' + jahr_a + ' TO ' + jahr_e + ']) ' + logical_operater + ' '
+            if "v. Chr." in jahr_a or " BC" in jahr_a:
+                jahr_a_mo = str(int(re.match("\d*",jahr_a)[0]) * -1)
+            else:
+                jahr_a_mo = str(int(re.match("\d*",jahr_a)[0]))
+            
+            if "v. Chr." in jahr_e or " BĆ" in jahr_e:
+                jahr_e_mo = str(int(re.match("\d*",jahr_e)[0]) * -1)
+            else:
+                jahr_e_mo = re.match("\d*",jahr_e)[0]
+            query_string += '(dat_jahr_a:['+jahr_a_mo+' TO ' + jahr_e_mo + '] AND dat_jahr_e:[' + jahr_a_mo + ' TO ' + jahr_e_mo + ']) ' + logical_operater + ' '
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
+        print(query_string)
         return query_string
 
     @classmethod
@@ -1023,13 +1033,14 @@ def _get_query_params(args):
             for c in params_list:
                 result_dict['land'] = result_dict['land'] + Place.country[c] + ", "
         elif key not in ('anzahl', 'sort', 'start', 'view', 'bearbeitet_abgeschlossen', 'bearbeitet_provisorisch', 'bool') and args[key] != "":
-            # include years range only if not default value '-1000 - 1500'
-            if key == 'jahre' and args[key] == '-1000 - 1500':
+            # include years range only if not default value
+            if key == 'jahre' and (args['jahre'] == '600 v. Chr. - 1500 n. Chr.' or args['jahre'] == '600 BC - 1500 AD'):
                 continue
-            if key == 'jahre':
-                result_dict[_l('years')] = args[key]
             else:
-                result_dict[key] = args[key]
+                if key == 'jahre':
+                    result_dict['years'] = args[key]    
+                else:
+                    result_dict[key] = args[key]
     if 'provinz' in result_dict:
         result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])
     if 'land' in result_dict:

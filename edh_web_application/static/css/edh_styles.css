@@ -69,6 +69,9 @@ em {
     background-color: #d4f6d4;
     font-style: normal;
 }
+*:focus {
+    outline: none;
+}
 i.fas {
     color: #1F6B3B;
 }
@@ -604,6 +607,16 @@ label {
     text-decoration: none;
     color: #1F6B3B;
 }
+.noUi-connect {
+    background: #1F6B3B;
+}
+.noUi-tooltip {
+    display: none;
+    background-color: #d4f6d4;
+}
+.noUi-active .noUi-tooltip {
+    display: block;
+}
 .ui-slider-range .ui-corner-all .ui-widget-header {
     background: #1F6B3B;
 }
@@ -848,8 +861,6 @@ img#hadw-banner {
     .col-sm-2.col-form-label {
         text-align: right;
     }
-    .detail_block_content {
-    }
     .detail_block_content_geo {
         display: inline-block;
         max-width:50%;
@@ -859,14 +870,14 @@ img#hadw-banner {
     }
     .detail_block_content_row_header {
         font-weight: bold;
-        width: 10em;
+        width: 11em;
         padding-right: 5px;
         padding-left: 8px;
         text-align: right;
         float: left;
     }
     .detail_block_content_row_text {
-        padding-left: 10em;
+        padding-left: 11em;
     }
     a.pfeil.break {
         display: inline;
