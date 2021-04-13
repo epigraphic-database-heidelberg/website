@@ -137,15 +137,21 @@
                     <div>
                         <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('Transcription') }}:</div>
-                            <div class="detail_block_content_row_text">{{ _(d['atext_hl']) }}</div>
+                            <div class="detail_block_content_row_text">
+                                {% if d['atext_hl'] %}
+                                {{ d['atext_hl'] | safe }}
+                                {% else %}
+                                {{ d['atext'] | safe }}
+                                {% endif %}
+                            </div>
                         </section>
                         <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('province') }}:</div>
-                            <div class="detail_block_content_row_text">{{ _(d['provinz']) }}</div>
+                            <div class="detail_block_content_row_text">{{ d['provinz'] }}</div>
                         </section>
                         <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('country') }}:</div>
-                            <div class="detail_block_content_row_text">{{ _(d['land']) }}</div>
+                            <div class="detail_block_content_row_text">{{ d['land'] }}</div>
                         </section>
                         <section class="detail_block_content_row">
                                 <div class="detail_block_content_row_header">{{ _('ancient find spot') }}:</div>
