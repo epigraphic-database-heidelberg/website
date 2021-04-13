@@ -165,7 +165,7 @@
     var map = L.map('map_canvas', {
         center: [{% if data['koordinaten_1'] %}{{data['koordinaten_1']}}{% else %} 47,11 {% endif %}],
         zoom: 4,
-        layers: [streets],
+        layers: [pelagios],
         zoomControl: true,
         preferCanvas: true,
         scrollWheelZoom: false

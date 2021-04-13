@@ -52,7 +52,11 @@
     <div class="detail_block_wrapper">
         <div class="detail_block_content">
             <div>
+                {% if data['gdb_id'] %}
                 <a href="./edh/geographie/{{ data['gdb_id'] }}"><div id="map_canvas" style="height:250px;min-width:300px;border:1px solid #ccc;margin-bottom:1em;"></div></a>
+                {% else %}
+                <div id="map_canvas" style="height:250px;min-width:300px;border:1px solid #ccc;margin-bottom:1em;"></div>
+                {% endif %}
             </div>
         </div>
         <div class="detail_block_content">
@@ -368,23 +372,33 @@
 
 <script type="text/javascript">
 
-    var pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:5, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'});
-
+    var pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png');
+    {% if data['koordinaten1'] %}
+        {% set koordinaten = data['koordinaten1'] %}
+        {% set zoom_level = 4 %}
+    {% else %}
+        {% set koordinaten = '47,11' %}
+        {% set zoom_level = 3 %}
+    {% endif %}
     var map = L.map('map_canvas', {
-        center: [{{data['koordinaten1']}}],
-        zoom: 6,
+        center: [{{ koordinaten }}],
+        zoom: {{ zoom_level }},
         layers: [pelagios],
         zoomControl: false,
-        preferCanvas: true,
         scrollWheelZoom: false
     });
     var baseLayers = {
         "Pelagios": pelagios
-
     };
-
+    map.dragging.disable();
+    map.touchZoom.disable();
+    map.doubleClickZoom.disable();
+    map.scrollWheelZoom.disable();
+    map.keyboard.disable();
     var overlays = {};
-    var marker = L.marker([{{data['koordinaten1']}}]).addTo(map);
+    {% if data['koordinaten1'] %}
+        var marker = L.marker([{{data['koordinaten1']}}]).addTo(map);
+    {% endif %}
     $(".regular").slick({
         dots: true,
         infinite: false,

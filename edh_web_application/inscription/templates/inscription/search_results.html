@@ -137,7 +137,7 @@
                     <div>
                         <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('Transcription') }}:</div>
-                            <div class="detail_block_content_row_text">{{ _(d['atext']) }}</div>
+                            <div class="detail_block_content_row_text">{{ _(d['atext_hl']) }}</div>
                         </section>
                         <section class="detail_block_content_row">
                             <div class="detail_block_content_row_header">{{ _('province') }}:</div>
@@ -345,10 +345,16 @@
     {% for d in data['items'] %}
         {% set count.value = count.value + 1 %}
         {% if d['koordinaten1'] %}
+        {% set koordinaten = d['koordinaten1'] %}
+        {% set zoom_level = 4 %}
+        {% else %}
+        {% set koordinaten = '47,11' %}
+        {% set zoom_level = 3 %}
+        {% endif %}
             var pelagiosMap = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png');
             var map = L.map('map_canvas_{{count.value}}', {
-                center: [{{d['koordinaten1']}}],
-                zoom: 4,
+                center: [{{koordinaten}}],
+                zoom: {{zoom_level}},
                 zoomControl:false,
                 layers: [pelagiosMap]
             });
@@ -357,8 +363,10 @@
             map.doubleClickZoom.disable();
             map.scrollWheelZoom.disable();
             map.keyboard.disable();
+            {% if d['koordinaten1'] %}
             var marker{{count.value}} = L.marker([{{d['koordinaten1']}}]).addTo(map);
-        {% endif %}
+            {% endif %}
+        
     {% endfor %}
     $('select').selectpicker();
     $(function() {

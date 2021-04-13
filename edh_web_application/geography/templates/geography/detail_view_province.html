@@ -102,11 +102,11 @@
             '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2VuYW11biIsImEiOiJCcUl0ZWRzIn0.zxs-a0hWY3La5kF4CWAVug';
-    var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1});
+    var pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png');
     var map = L.map('map_canvas', {
         center: [{{ data['polygon_center'] }}],
         zoom: 5,
-        layers: [streets],
+        layers: [pelagios],
         zoomControl: false,
         preferCanvas: true,
         scrollWheelZoom: false
@@ -114,7 +114,7 @@
     var baseLayers = {
         "Streets": streets
     };
-    var geojson = {{ data['polygon'] | safe  }}
+    var geojson = {{ data['polygon'] | safe }}
     var overlays = {};
     function polystyle(feature) {
         return {
