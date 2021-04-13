@@ -852,7 +852,7 @@ class Inscription:
         :return: list of 50 entries
         """
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
-        results = solr.search("*:*", sort="datum desc", rows=50)
+        results = solr.search("*:* AND NOT beleg:77", sort="datum desc", rows=50)
         for res in results:
             if 'dat_jahr_a' not in res:
                 res['dat_jahr_a'] = ""
@@ -870,7 +870,8 @@ class Inscription:
             land = res['land']
             if res['land'][-1] == "?":
                 fragezeichen = "?"
-                land = re.sub("\\?", "", res['land'])
+                land = re.sub("\\?$", "", res['land'])
+                print("land: "+land)
             res['land'] = Place.country[land] + fragezeichen
             fragezeichen = ""
             provinz = res['provinz']
@@ -881,7 +882,8 @@ class Inscription:
             res['provinz_id'] = Place.get_province_id_from_code(res['provinz'])
             if 'fundstelle' in res:
                 res['fundstelle'] = re.sub("[\{\}]", "", res['fundstelle'])
-            res['atext'] = _prepare_atext(res['atext'])
+            if 'atext' in res:
+                res['atext'] = _prepare_atext(res['atext'])
         return results
 
     @classmethod
