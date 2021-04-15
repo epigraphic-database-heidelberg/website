@@ -505,6 +505,12 @@ class Inscription:
         'HD022101': 'HD022083',
         'HD018222': 'HD018219',
         'HD080013': 'HD028791',
+        'HD040882': 'HD044413',
+        'HD020094': 'HD030715',
+        'HD059828': 'HD017459',
+        'HD059832': 'HD017462',
+        'HD059824': 'HD017453',
+        'HD059826': 'HD017456',
     }
 
     def __init__(self,
@@ -576,7 +582,7 @@ class Inscription:
         :return: query_string
         """
         logical_operater = "AND"
-        query_string = ""
+        query_string = "NOT beleg:77 AND " # exlude redirects from query result 
 
         if 'hd_nr' in form and form['hd_nr'] != "":
             hd_nr = form['hd_nr']
@@ -585,9 +591,9 @@ class Inscription:
                 hd_nr = "HD" + "{:06d}".format(int(hd_nr))
             except:
                 hd_nr = form['hd_nr']
-            query_string = "hd_nr:" + hd_nr + " " + logical_operater + " "
+            query_string += "hd_nr:" + hd_nr + " " + logical_operater + " "
         else:
-            query_string = "hd_nr:* " + logical_operater + " "
+            query_string += "hd_nr:* " + logical_operater + " "
 
         if 'provinz' in form and form['provinz'] != "":
             # province is a multi value field
