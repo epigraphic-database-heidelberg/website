@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, Response
 from flask_babel import _
 
 from . import bp_inscription
@@ -51,6 +51,17 @@ def extended_search():
     return render_template('inscription/extended_search.html',
                            title=_("Epigraphic Text Database"), subtitle=_("Extended Search"))
 
+
+@bp_inscription.route('/edh/inschrift/<hd_nr>/xml', strict_slashes=False)
+def export_xml(hd_nr):
+    if hd_nr in Inscription.hd_nr_redirects:
+            return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
+                                subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
+    inscription = Inscription.query("hd_nr:" + hd_nr)
+    i = inscription['items'][0]
+    return_xml = i.toXml()
+    return Response(return_xml, mimetype='text/xml')
+    
 
 @bp_inscription.route('/edh/inschrift/<hd_nr>', strict_slashes=False)
 def detail_view(hd_nr):

@@ -10,6 +10,7 @@ Flask-WTF==0.14.2
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.11.3
+lxml==4.6.3
 MarkupSafe==1.1.1
 pysolr==3.8.1
 pytz==2018.9

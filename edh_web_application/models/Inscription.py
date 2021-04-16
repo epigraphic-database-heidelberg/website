@@ -9,6 +9,7 @@ from flask import Markup
 from flask import current_app
 from flask import request
 from flask_babel import lazy_gettext as _l
+from lxml import etree
 
 from edh_web_application.models.Place import Place
 from edh_web_application.models.helpers import get_fullname
@@ -574,6 +575,86 @@ class Inscription:
         self.datum = datum
         self.beleg = _translate_works_status(str(beleg))
 
+
+    def toXml(self):
+        epidoc_template = """<?xml version="1.0" encoding="UTF-8"?><?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?><TEI 
+        xmlns="http://www.tei-c.org/ns/1.0">
+            <teiHeader>
+                <fileDesc>
+                    <titleStmt>
+                        <title/>
+                    </titleStmt>
+                    <publicationStmt>
+                        <authority>Epigraphische Datenbank Heidelberg</authority>
+                        <availability>
+                            <p>Heidelberger Akademie der Wissenschaften</p>
+                            <licence target="http://creativecommons.org/licenses/by-sa/4.0/">This file is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.
+                            </licence>
+                        </availability>
+                    </publicationStmt>
+                    <sourceDesc>
+                        <msDesc>
+                            <msIdentifier>
+                                <repository>museum/archive</repository>
+                                <idno>inventory number</idno>
+                            </msIdentifier>
+                            <physDesc>
+                                <objectDesc>
+                                    <supportDesc>
+                                        <support>description of object/monument (likely to include <material/>
+                                            and <objectType/> information, <dimensions/>, etc.)</support>
+                                    </supportDesc>
+                                    <layoutDesc>
+                                        <layout>description of text field/campus</layout>
+                                    </layoutDesc>
+                                </objectDesc>
+                                <handDesc>
+                                    <handNote>description of letters, possibly including <height>letter-heights</height>
+                                    </handNote>
+                                </handDesc>
+                            </physDesc>
+                            <history>
+                                <origin>
+                                    <origPlace>Place of origin</origPlace>
+                                    <origDate>Date of origin</origDate>
+                                </origin>
+                                <provenance type="found"> Findspot and circumstances/context
+                                </provenance>
+                                <provenance type="observed">Modern location(s) (if different from repository, above)
+                                </provenance>
+                            </history>
+                        </msDesc>
+                    </sourceDesc>
+                </fileDesc>
+            </teiHeader>
+            <facsimile>
+                <graphic url="photograph of text or monument"/>
+            </facsimile>
+            <text>
+                <body>
+                    <div type="edition" xml:space="preserve">
+                        <ab>
+                            <lb n="1"/>Greek or Latin (etc.) text here
+                        </ab>
+                    </div>
+                    <div type="commentary">
+                        <p>commentary</p>
+                    </div>
+                    <div type="bibliography">
+                        <p>bibliography of previous editions, discussion, etc.</p>
+                    </div>
+                </body>
+            </text>
+        </TEI>
+        """
+        xml = bytes(bytearray(epidoc_template, encoding='utf-8'))
+        root = etree.fromstring(xml)
+        title_element = root.find('*//{http://www.tei-c.org/ns/1.0}titleStmt/{http://www.tei-c.org/ns/1.0}title')
+        if title_element is not None:
+            title_element.text = self.titel
+        return etree.tostring(root, pretty_print=True)
+
+
     @classmethod
     def create_query_string(cls, form):
         """
@@ -582,7 +663,7 @@ class Inscription:
         :return: query_string
         """
         logical_operater = "AND"
-        query_string = "NOT beleg:77 AND " # exlude redirects from query result 
+        query_string = "NOT beleg:77 AND " # exclude redirects from query result 
 
         if 'hd_nr' in form and form['hd_nr'] != "":
             hd_nr = form['hd_nr']
