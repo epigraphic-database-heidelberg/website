@@ -495,6 +495,83 @@ catchall "text" field, and use that for searching.
         </analyzer>
     </fieldType>
 
+    <!--  standard atext search index field: case-sensitive, no brackets-->
+    <fieldType name="atext_cs_nb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
+               multiValued="false">
+        <analyzer type="index">
+            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="30"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="[\[\]\(\)\{\}\\\!\?\/\-,]" replacement=""
+                    replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&#60;" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&#62;" replacement="" replace="all"/>
+            <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+        </analyzer>
+        <analyzer type="query">
+            <tokenizer class="solr.KeywordTokenizerFactory"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="[\[\]\(\)\{\}\\\!\?\/\-,]" replacement=""
+                    replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&lt;" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&gt;" replacement="" replace="all"/>
+            <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+        </analyzer>
+    </fieldType>
+    
+    <!--  standard atext search index field: case-insensitive, with brackets-->
+    <fieldType name="atext_ci_wb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
+               multiValued="false">
+        <analyzer type="index">
+            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="30"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement=""
+                    replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&#60;" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&#62;" replacement="" replace="all"/>
+            <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+        <analyzer type="query">
+            <tokenizer class="solr.KeywordTokenizerFactory"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="[\[\]\(\)\{\}\\\!\?\/\-,]" replacement=""
+                    replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&lt;" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&gt;" replacement="" replace="all"/>
+            <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+    </fieldType>
+    
+    <!--  standard atext search index field: case-sensitive, with brackets-->
+    <fieldType name="atext_cs_wb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
+               multiValued="false">
+        <analyzer type="index">
+            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="30"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement=""
+                    replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&#60;" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&#62;" replacement="" replace="all"/>
+            <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+        </analyzer>
+        <analyzer type="query">
+            <tokenizer class="solr.KeywordTokenizerFactory"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="[\[\]\(\)\{\}\\\!\?\/\-,]" replacement=""
+                    replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&lt;" replacement="" replace="all"/>
+            <filter class="solr.PatternReplaceFilterFactory" pattern="&gt;" replacement="" replace="all"/>
+            <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+        </analyzer>
+    </fieldType>
+    
     <fieldType name="text_ngram" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
             <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="2"/>
@@ -547,6 +624,9 @@ catchall "text" field, and use that for searching.
     <!-- EDH specific fields -->
     <field name="atext" type="text_latin"/>
     <field name="atext_ci_nb" type="atext_ci_nb"/>
+    <field name="atext_ci_wb" type="atext_ci_wb"/>
+    <field name="atext_cs_nb" type="atext_cs_nb"/>
+    <field name="atext_cs_wb" type="atext_cs_wb"/>
     <field name="aufbewahrung" type="text_general_sv"/>
     <field name="bearbeiter" type="text_general_sv"/>
     <field name="beleg" type="plong"/>
@@ -617,6 +697,11 @@ catchall "text" field, and use that for searching.
     <copyField source="fo_modern" dest="fo_modern_ci"/>
     <copyField source="fundstelle" dest="fundstelle_ci"/>
     <copyField source="atext" dest="atext_ci_nb"/>
+    <copyField source="atext" dest="atext_ci_wb"/>
+    <copyField source="atext" dest="atext_cs_nb"/>
+    <copyField source="atext" dest="atext_cs_wb"/>
+    
+    
 
     <!-- Similarity is the scoring routine for each document vs. a query.
     A custom Similarity or SimilarityFactory may be specified here, but
