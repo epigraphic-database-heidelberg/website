@@ -495,7 +495,7 @@ catchall "text" field, and use that for searching.
         </analyzer>
     </fieldType>
 
-    <!--  standard atext search index field: case-sensitive, no brackets-->
+    <!-- standard atext search index field: case-sensitive, no brackets -->
     <fieldType name="atext_cs_nb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
                multiValued="false">
         <analyzer type="index">
@@ -520,7 +520,7 @@ catchall "text" field, and use that for searching.
         </analyzer>
     </fieldType>
     
-    <!--  standard atext search index field: case-insensitive, with brackets-->
+    <!-- atext search index field: case-insensitive, with brackets -->
     <fieldType name="atext_ci_wb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
                multiValued="false">
         <analyzer type="index">
@@ -529,25 +529,22 @@ catchall "text" field, and use that for searching.
             <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement=""
                     replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="&#60;" replacement="" replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="&#62;" replacement="" replace="all"/>
             <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
             <filter class="solr.LowerCaseFilterFactory"/>
         </analyzer>
         <analyzer type="query">
             <tokenizer class="solr.KeywordTokenizerFactory"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="[\[\]\(\)\{\}\\\!\?\/\-,]" replacement=""
+            <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement=""
                     replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="&lt;" replacement="" replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="&gt;" replacement="" replace="all"/>
             <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
             <filter class="solr.LowerCaseFilterFactory"/>
         </analyzer>
     </fieldType>
     
-    <!--  standard atext search index field: case-sensitive, with brackets-->
+    <!-- atext search index field: case-sensitive, with brackets -->
     <fieldType name="atext_cs_wb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
                multiValued="false">
         <analyzer type="index">
@@ -556,18 +553,14 @@ catchall "text" field, and use that for searching.
             <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement=""
                     replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="&#60;" replacement="" replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="&#62;" replacement="" replace="all"/>
             <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
         </analyzer>
         <analyzer type="query">
             <tokenizer class="solr.KeywordTokenizerFactory"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="[\[\]\(\)\{\}\\\!\?\/\-,]" replacement=""
+            <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement=""
                     replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="&lt;" replacement="" replace="all"/>
-            <filter class="solr.PatternReplaceFilterFactory" pattern="&gt;" replacement="" replace="all"/>
             <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
         </analyzer>
     </fieldType>

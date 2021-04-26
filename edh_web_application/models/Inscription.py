@@ -648,13 +648,22 @@ class Inscription:
             query_string += 'literatur:*' + escape_value(form['literatur']) + '* ' + logical_operater + ' '
 
         # atext1, atext2 and combinations
+        solr_index_field = "atext_ci_nb"  #default
+        if ('brackets' in form and form['brackets'] == 'y') and ('casesensitive' in form and form['casesensitive'] == 'y'):
+            solr_index_field = "atext_cs_wb"
+        elif ('brackets' in form and form['brackets'] == 'y'):
+            solr_index_field = "atext_ci_wb"
+        elif ('casesensitive' in form and form['casesensitive'] == 'y'):
+            solr_index_field = "atext_cs_nb"
+        print(solr_index_field)
         if 'atext1' in form and form['atext1'] != "" and 'atext2' in form and form['atext2'] != "":
-            query_string += '(atext_ci_nb:' + escape_value(form['atext1']) + ' ' + form['bool'] + ' atext_ci_nb:' + escape_value(form['atext2']) + ' ) ' + logical_operater + ' '
+            query_string += '('+solr_index_field+':' + escape_value(form['atext1']) + ' ' + form['bool'] + ' '+solr_index_field+':' + escape_value(form['atext2']) + ' ) ' + logical_operater + ' '
         elif 'atext1' in form and form['atext1'] != "":
-            query_string += 'atext_ci_nb:' + escape_value(form['atext1']) + ' ' + logical_operater + ' '
+            query_string += solr_index_field+':' + escape_value(form['atext1']) + ' ' + logical_operater + ' '
         elif 'atext2' in form and form['atext2'] != "":
-            query_string += 'atext_ci_nb:' + escape_value(form['atext2']) + ' ' + logical_operater + ' '
+            query_string += solr_index_field+':' + escape_value(form['atext2']) + ' ' + logical_operater + ' '
         
+        # chronology
         if 'jahre' in form and not (form['jahre'] == "600 v. Chr. - 1500 n. Chr." or form['jahre'] == "600 BC - 1500 AD" ):
             (jahr_a, jahr_e) = form['jahre'].split(" - ")
             if "v. Chr." in jahr_a or " BC" in jahr_a:
@@ -704,13 +713,20 @@ class Inscription:
         # for performance reasons activate highlighting only for transcription queries
         if (request.args.get('atext1') and request.args.get('atext1') != "") or (request.args.get('atext2') and request.args.get('atext2') != ""):
             hl_q = ""
+            solr_index_field = "atext_ci_nb"  #default
+            if (request.args.get('brackets') and request.args.get('brackets') == 'y') and (request.args.get('casesensitive') and request.args.get('casesensitive') == 'y'):
+                solr_index_field = "atext_cs_wb"
+            elif (request.args.get('brackets') and request.args.get('brackets') == 'y'):
+                solr_index_field = "atext_ci_wb"
+            elif (request.args.get('casesensitive') and request.args.get('casesensitive') == 'y'):
+                solr_index_field = "atext_cs_nb"
             if request.args.get('atext1') != "" and request.args.get('atext2') != "":
-                hl_q = '(atext_ci_nb:' + escape_value(request.args.get('atext1')) + ' ' + request.args.get('bool') + ' atext_ci_nb:' + escape_value(request.args.get('atext2')) + ')'
+                hl_q = '('+solr_index_field+':' + escape_value(request.args.get('atext1')) + ' ' + request.args.get('bool') + ' '+solr_index_field+':' + escape_value(request.args.get('atext2')) + ')'
             elif request.args.get('atext1') != "":
-                hl_q = 'atext_ci_nb:' + escape_value(request.args.get('atext1'))
+                hl_q = solr_index_field+':' + escape_value(request.args.get('atext1'))
             elif request.args.get('atext2') != "":
-                hl_q = 'atext_ci_nb:' + escape_value(request.args.get('atext2'))
-            results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': 'atext_ci_nb', 'hl.method': 'unified', 'hl.q': hl_q, 'hl.fragsize': 0})
+                hl_q = solr_index_field+':' + escape_value(request.args.get('atext2'))
+            results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': solr_index_field, 'hl.method': 'unified', 'hl.q': hl_q, 'hl.fragsize': 0, 'hl.tag.pre': '@', 'hl.tag.post': '°'})
         else:
             results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
@@ -813,7 +829,7 @@ class Inscription:
                 atext_br = result['atext']
                 if results.highlighting and results.highlighting[result['hd_nr']]:
                     props['atext_hl'] = results.highlighting[result['hd_nr']]
-                    props['atext_hl'] = _prepare_atext("".join(props['atext_hl']['atext_ci_nb']))
+                    props['atext_hl'] = _add_highlighting(_prepare_atext("".join(props['atext_hl'][solr_index_field])))
                 props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
                 btext_br = result['btext']
                 props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
@@ -1005,10 +1021,17 @@ def _prepare_atext(atext):
                 transcription += re.sub("<", "&lt;", sub_token[0] + " ")
             else:
                 transcription += token + " "
-    transcription = re.sub("<i", "&lt;i", transcription)
-    transcription = re.sub("<b", "&lt;b", transcription)
+    transcription = re.sub("<", "&lt;", transcription)
+    transcription = re.sub(">", "&gt;", transcription)
     return transcription
 
+def _add_highlighting(atext):
+    """
+    swaps @ and ° from solr results against <em> and </em>
+    """
+    atext = re.sub("@", "<em>", atext)
+    atext = re.sub("°", "</em>", atext)
+    return atext
 
 def _translate_works_status(ws):
     """
@@ -1057,7 +1080,9 @@ def _get_query_params(args):
                 continue
             else:
                 if key == 'jahre':
-                    result_dict['years'] = args[key]    
+                    result_dict['years'] = args[key]
+                elif key in ['brackets', 'casesensitive'] and args[key] == 'y':
+                    result_dict[key] = _l('yes')
                 else:
                     result_dict[key] = args[key]
     if 'provinz' in result_dict:

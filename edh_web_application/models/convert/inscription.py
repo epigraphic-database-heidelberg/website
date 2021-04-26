@@ -45,7 +45,7 @@ def to_xml(inscription):
 
     handDesc_elem = root.find('*//{http://www.tei-c.org/ns/1.0}handDesc')
     if handDesc_elem is not None and inscription.bh is not None:
-        handDesc_elem.append(etree.XML("<dimensions><height unit='cm'>"+inscription.bh+"</height></dimensions>"))
+        handDesc_elem.append(etree.XML("<handNote><dimensions><height unit='cm'>"+inscription.bh+"</height></dimensions></handNote>"))
 
     origin_elem = root.find('*//{http://www.tei-c.org/ns/1.0}origin')
     if origin_elem is not None and (inscription.provinz is not None or inscription.fo_antik is not None):
@@ -179,7 +179,7 @@ def _get_eagle_uri_for_objecttype(objecttype):
         "Waffe": "https://www.eagle-network.eu/voc/objtyp/lod/42",
         "Ziegel": "https://www.eagle-network.eu/voc/objtyp/lod/147",
     }
-    return switcher.get(objecttype, "")
+    return switcher.get(objecttype, "#")
 
 def xmlesc(txt):
     """
@@ -246,9 +246,7 @@ epidoc_template = """<?xml version="1.0" encoding="UTF-8"?><?xml-model href="htt
             <textClass>
                 <keywords/>
             </textClass>
-            <particDesc>
-                <listPerson/>
-            </particDesc>
+            <particDesc><p/></particDesc>
         </profileDesc>
         <revisionDesc/>
     </teiHeader>
