@@ -690,6 +690,7 @@ class Inscription:
         hits = kwargs.get('hits', None)
         start = 0  # index number of first record to retrieve
         rows = 20  # number of receords to retrieve
+        
         sort = "hd_nr asc"  # default
         if request.args.get('start'):
             start = request.args.get('start')
@@ -699,6 +700,12 @@ class Inscription:
             # show all hits on one page if start < rows
             if int(start) < rows:
                 start = 0
+        # overide URL parameters for CSV exports
+        if kwargs.get('start') == 0:
+            start = 0
+        if kwargs.get('number_of_results'):
+            rows = kwargs.get('number_of_results')
+
         if request.args.get('sort'):
             if request.args.get('sort') in ('fo_antik', 'fo_modern', 'fundstelle'):
                 sort = request.args.get('sort') + "_ci asc"
@@ -710,8 +717,8 @@ class Inscription:
             rows = hits
 
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
-        # for performance reasons activate highlighting only for transcription queries
-        if (request.args.get('atext1') and request.args.get('atext1') != "") or (request.args.get('atext2') and request.args.get('atext2') != ""):
+        # for performance reasons activate highlighting only for transcription queries (and not for CSV exports)
+        if not kwargs.get('no_highlighting') and (request.args.get('atext1') and request.args.get('atext1') != "") or (request.args.get('atext2') and request.args.get('atext2') != ""):
             hl_q = ""
             solr_index_field = "atext_ci_nb"  #default
             if (request.args.get('brackets') and request.args.get('brackets') == 'y') and (request.args.get('casesensitive') and request.args.get('casesensitive') == 'y'):
@@ -826,12 +833,15 @@ class Inscription:
                 props['titel'] = _get_title(props['i_gattung'], props['fo_antik'], props['fo_modern'], props['provinz'])
                 props['datierung'] = _get_date_string(props['dat_jahr_a'], props['dat_jahr_e'], props['dat_monat'], props['dat_tag'])
                 props['fundstelle_str'] = _get_findspot_string(props['fo_antik'], props['fo_modern'], props['fundstelle'])
-                atext_br = result['atext']
+                if 'atext' in result:
+                    atext_br = result['atext']
                 if results.highlighting and results.highlighting[result['hd_nr']]:
                     props['atext_hl'] = results.highlighting[result['hd_nr']]
                     props['atext_hl'] = _add_highlighting(_prepare_atext("".join(props['atext_hl'][solr_index_field])))
-                props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
-                btext_br = result['btext']
+                if 'atext_br' in result:
+                    props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
+                if 'btext' in result:
+                    btext_br = result['btext']
                 props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
                 inscr = Inscription(result['hd_nr'],
                                     result['datum'],

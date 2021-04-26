@@ -1,5 +1,8 @@
 from flask import render_template, request, Response
 from flask_babel import _
+import io
+import csv
+import re
 
 from . import bp_inscription
 from .forms import InscriptionSearchDe, InscriptionSearchEn
@@ -32,12 +35,40 @@ def simple_search():
         query_string = Inscription.create_query_string(request.args)
         results = Inscription.query(query_string)
         number_of_hits = Inscription.get_number_of_hits_for_query(query_string)
-
         # return results to client
         if results['metadata']['number_of_hits'] > 0:
+            # CSV export of results
+            if request.args.get('export') and request.args.get('export') == 'csv':
+                results = Inscription.query(query_string, number_of_results=100000, no_highlighting=True, start=0)
+                output = io.StringIO()
+                writer = csv.writer(output)
+                first_row = ['HD-No.', 'transcription', 'work status', 'province / Italic region', 'country', 'ancient find spot', 
+                            'modern find spot', 'find spot (village, street, etc.)', 'chronological data', 'literature', 'coordinates (lat,lng)', 'type of monument', 'type of inscription', 'material']
+                writer.writerow(first_row)
+                for i in results['items']:
+                    writer.writerow((
+                        i.hd_nr,
+                        i.atext,
+                        _('beleg-'+i.beleg),
+                        i.provinz,
+                        i.land,
+                        i.fo_antik,
+                        i.fo_modern,
+                        i.fundstelle,
+                        i.datierung.replace("&ndash;", "-"),
+                        i.literatur.replace("#", ""),
+                        i.koordinaten1,
+                        i.i_traeger_str,
+                        i.i_gattung_str,
+                        i.material
+                    ))
+                output.seek(0)    
+                return Response(output, mimetype="text/csv", headers={"Content-Disposition":"attachment;filename=edh.csv"})
+            else:
+                # default: HTML representation
                 return render_template('inscription/search_results.html', title=_("Epigraphic Text Database"),
-                                       subtitle=_("Search results"), data=results,
-                                       number_of_hits=number_of_hits, form=form)
+                                    subtitle=_("Search results"), data=results,
+                                    number_of_hits=number_of_hits, form=form)
         else:
             return render_template('inscription/no_hits.html', title=_("Epigraphic Text Database"),
                                    subtitle=_("Search results"), data=results,
