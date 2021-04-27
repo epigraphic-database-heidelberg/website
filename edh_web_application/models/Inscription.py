@@ -39,14 +39,21 @@ class Inscription:
         _l('nlt-It'), _l('nlt-ItL'), _l('nlt-K'), _l('nlt-KL'), _l('nlt-L'), _l('nlt-LM'), _l('nlt-LO'), _l('nlt-P'), _l('nlt-PL'), _l('nlt-PyL'),
         _l('nlt-Py'), _l('nlt-N')
     )
+    interpunction = (
+        _l('interp-a'), _l('interp-b')
+    )
+    palaeography = (
+        _l('schreibt-a'), _l('schreibt-b'), _l('schreibt-c'), _l('schreibt-d'), _l('schreibt-e'), _l('schreibt-f'), _l('schreibt-g'), _l('schreibt-h'), _l('schreibt-i'), _l('schreibt-j'), _l('schreibt-k'), _l('schreibt-l')
+    )
+    religion = (
+        _l('rel-a'), _l('rel-b'), _l('rel-c'), _l('rel-d'), _l('rel-e')
+    )
     work_status = (
         _l('beleg-a'), _l('beleg-b'), _l('beleg-c'), _l('beleg-d'), _l('beleg-e'), _l('beleg-f')
     )
-
     date_sort_by = (
         _l('dat_jahr_a'), _l('dat_jahr_e')
     )
-
     hd_nr_redirects = {
         'HD011276': 'HD057246',
         'HD017892': 'HD057373',
@@ -544,15 +551,19 @@ class Inscription:
             "nl_text": None,
             "metrik": None,
             "dekor": None,
-            "schreibtechnik": None,
-            "interpunktion": None,
+            "pal_schreibtechnik": None,
+            "pal_interpunktion": None,
+            "pal_schreibtechnik_str": None,
+            "pal_interpunktion_str": None,
             "dat_jahr_a": None,
             "dat_jahr_e": None,
             "dat_monat": None,
             "dat_tag": None,
             "religion": None,
+            "religion_str": None,
             "militaer": None,
             "geographie": None,
+            "soziales": None,
             "sowire": None,
             "literatur": None,
             "kommentar": None,
@@ -655,7 +666,6 @@ class Inscription:
             solr_index_field = "atext_ci_wb"
         elif ('casesensitive' in form and form['casesensitive'] == 'y'):
             solr_index_field = "atext_cs_nb"
-        print(solr_index_field)
         if 'atext1' in form and form['atext1'] != "" and 'atext2' in form and form['atext2'] != "":
             query_string += '('+solr_index_field+':' + escape_value(form['atext1']) + ' ' + form['bool'] + ' '+solr_index_field+':' + escape_value(form['atext2']) + ' ) ' + logical_operater + ' '
         elif 'atext1' in form and form['atext1'] != "":
@@ -671,7 +681,7 @@ class Inscription:
             else:
                 jahr_a_mo = str(int(re.match("\d*",jahr_a)[0]))
             
-            if "v. Chr." in jahr_e or " BĆ" in jahr_e:
+            if "v. Chr." in jahr_e or " BC" in jahr_e:
                 jahr_e_mo = str(int(re.match("\d*",jahr_e)[0]) * -1)
             else:
                 jahr_e_mo = re.match("\d*",jahr_e)[0]
@@ -810,6 +820,12 @@ class Inscription:
                         props['foto_nr'] = fotos_list
                     elif key == 'atext':
                         props['atext'] = _prepare_atext(result[key])
+                    elif key == 'pal_schreibtechnik':
+                        props['pal_schreibtechnik_str'] = _get_palaeography(result[key])
+                    elif key == 'pal_interpunktion':
+                        props['pal_interpunktion_str'] = _get_interpunction(result[key])
+                    elif key == 'religion':
+                        props['religion_str'] = _get_religion(result[key])
                 if 'fo_antik' not in props:
                     props['fo_antik'] = ""
                 if 'fo_modern' not in props:
@@ -914,7 +930,6 @@ class Inscription:
             if res['land'][-1] == "?":
                 fragezeichen = "?"
                 land = re.sub("\\?$", "", res['land'])
-                print("land: "+land)
             res['land'] = Place.country[land] + fragezeichen
             fragezeichen = ""
             provinz = res['provinz']
@@ -1009,6 +1024,33 @@ def _get_title(i_gattung="", fo_antik="", fo_modern="", provinz=""):
     # uppercase first character
     return title_str[0].upper() + title_str[1:]
 
+
+def _get_palaeography(pal):
+    """
+    create palaeography string
+    """
+    palaeography_list = []
+    for key in pal:
+        palaeography_list.append(str(_l("schreibt-" + key)))
+    return "; ".join(palaeography_list)
+
+def _get_interpunction(pal):
+    """
+    create interpunction string
+    """
+    palaeography_list = []
+    for key in pal:
+        palaeography_list.append(str(_l("interp-" + key)))
+    return "; ".join(palaeography_list)
+
+def _get_religion(keys):
+    """
+    create religion string
+    """
+    religion_list = []
+    for key in keys:
+        religion_list.append(str(_l("rel-" + key)))
+    return "; ".join(religion_list)
 
 def _prepare_atext(atext):
     """

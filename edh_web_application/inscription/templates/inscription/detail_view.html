@@ -173,6 +173,60 @@
     </div>
 </div>
 {% endif %}
+{% if data['pal_schreibtechnik_str'] or data['pal_interpunktion_str'] %}
+<h3>{{_('Palaeography')}}</h3>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_content">            
+            {% if data['pal_schreibtechnik_str'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('Palaeography') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['pal_schreibtechnik_str']}}</div>
+                </section>
+            {% endif %}
+            {% if data['pal_interpunktion_str'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('punctuation') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['pal_interpunktion_str']}}</div>
+                </section>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if data['religion_str'] or data['militaer'] or data['geographie'] or data['soziales'] %}
+<h3>{{_('Historical relevant data')}}</h3>
+<div>
+    <div class="detail_block">
+        <div class="detail_block_content">
+            {% if data['religion_str'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('religion') }}:</div>
+                    <div class="detail_block_content_row_text">{{data['religion_str']}}</div>
+                </section>
+            {% endif %}
+            {% if data['militaer'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('military') }}:</div>
+                    <div class="detail_block_content_row_text">{{_('present')}}</div>
+                </section>
+            {% endif %}
+            {% if data['geographie'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('geography') }}:</div>
+                    <div class="detail_block_content_row_text">{{_('present')}}</div>
+                </section>
+            {% endif %}
+            {% if data['soziales'] %}
+                <section class="detail_block_content_row">
+                    <div class="detail_block_content_row_header">{{ _('soziales') }}:</div>
+                    <div class="detail_block_content_row_text">{{_('present')}}</div>
+                </section>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
 {% if data['kommentar'] %}
 <h3>{{_('Commentary')}}</h3>
 <div>
@@ -316,14 +370,6 @@
 </div>
 {% endif %}
 
-<h3>{{_('Palaeography')}}</h3>
-<div>
-    <div class="detail_block">
-        <div class="detail_block_content">
-
-        </div>
-    </div>
-</div>
 <h3>{{_('General Data')}}</h3>
 <div class="detail_block" style="margin-bottom:3em;">
     <div class="detail_block_content">
@@ -341,15 +387,14 @@
         </section>
     </div>
 </div>
+
 <h3>Download</h3>
 <div class="detail_block" style="margin-bottom:3em;">
     <div class="detail_block_content">
-        <p><a href="./edh/inschrift/{{data['hd_nr']}}/xml"><i class="fas fa-file-download" style="margin-left:7px; margin-right:1rem;"></i>EpiDoc XML</a></p>
-        <p style="margin-left:7px; margin-bottom:3rem;"><a href="http://creativecommons.org/licenses/by-sa/4.0/deed.de"><img src="./static/img/CC-BY-SA_icon.png" style="margin-bottom:2em;" /></a></p>
+        <p><a href="./edh/inschrift/{{data['hd_nr']}}/xml"><i class="fas fa-file-download" style="margin-left:7px; margin-right:1rem;margin-bottom:2rem;"></i>EpiDoc XML</a></p>
+        <p style="margin-left:7px; margin-bottom:2rem;"><a href="http://creativecommons.org/licenses/by-sa/4.0/deed.de"><img src="./static/img/CC-BY-SA_icon.png" style="margin-bottom:2em;" /></a></p>
     </div>
 </div>
-
-
 
 <script>
     function toggleLinebreaks() {
