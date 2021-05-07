@@ -103,6 +103,6 @@ def detail_view(hd_nr):
     if results is None:
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"), subtitle=_("Detail View"))
     else:
-        people = Person.query("id:" + hd_nr)
+        people = Person.query("hd_nr:" + hd_nr)
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"),
-                               data=results['items'][0], people=Person.query("hd_nr:" + hd_nr ))
+                               data=results['items'][0], people=people)

@@ -1,6 +1,7 @@
 from lxml import etree
 from flask import current_app
 from flask_babel import _
+from edh_web_application.models.Person import Person
 import re
 
 
@@ -127,6 +128,30 @@ def to_xml(inscription):
     if edition_elem is not None:
         edition_elem.text = inscription.atext
     
+    # people data
+    people = Person.query("hd_nr:" + inscription.hd_nr)
+    if people:
+        particDesc_elem = root.find('*//{http://www.tei-c.org/ns/1.0}particDesc/{http://www.tei-c.org/ns/1.0}p')
+        listPerson_elem = etree.XML("<listPerson/>")
+        for person in people:
+            name = person.name
+            praenomen =""
+            nomen =""
+            cognomen =""
+            supernomen =""
+            sex = ""
+            if person.praenomen:
+                praenomen = "<name type='praenomen'>"+person.praenomen+"</name>"
+            if person.nomen:
+                nomen = "<name type='nomen'>"+person.nomen+"</name>"
+            if person.cognomen:
+                cognomen = "<name type='cognomen'>"+person.cognomen+"</name>"
+            if person.supernomen:
+                nomen = "<name type='nsupernomenomen'>"+person.supernomen+"</name>"
+            if person.geschlecht:
+                sex = "sex='"+person.geschlecht+"'"
+            listPerson_elem.append(etree.XML("<person xml:id='"+person.hd_nr+"_"+str(person.pers_no)+"' "+sex+">"+praenomen+nomen+cognomen+"</person>"))
+            particDesc_elem.append(listPerson_elem)
     return etree.tostring(root.getroottree(), pretty_print=True, xml_declaration=True, encoding='UTF-8')
 
 
@@ -225,7 +250,7 @@ epidoc_template = """<?xml version="1.0" encoding="UTF-8"?><?xml-model href="htt
                                 <layout>description of text field/campus</layout>
                             </layoutDesc>
                         </objectDesc>
-                        <handDesc/>
+                        <handDesc><p></p></handDesc>
                     </physDesc>
                     <history>
                         <origin/>
@@ -246,7 +271,7 @@ epidoc_template = """<?xml version="1.0" encoding="UTF-8"?><?xml-model href="htt
             <textClass>
                 <keywords/>
             </textClass>
-            <particDesc><p/></particDesc>
+            <particDesc><p></p></particDesc>
         </profileDesc>
         <revisionDesc/>
     </teiHeader>
