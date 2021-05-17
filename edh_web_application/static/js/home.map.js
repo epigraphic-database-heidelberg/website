@@ -6,12 +6,12 @@ map.touchZoom.disable();
 map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();
 function getColorBearbeitung(d) {
-    return d > 4  ? '#A6A6A6' :
-           d > 3  ? '#585859' :
-           d > 2  ? '#A6A6A6' :
+    return d > 4  ? '#D9D9D9' :
+           d > 3  ? '#8C8C8C' :
+           d > 2  ? '#D9D9D9' :
            d > 1  ? '#C8656D' :
            d > 0  ? '#1F6B3B' :
-                    '#d39090';
+                    '#585859';
 }
 
 function style(feature) {
