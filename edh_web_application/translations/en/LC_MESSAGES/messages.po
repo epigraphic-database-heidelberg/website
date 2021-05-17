@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-27 10:58+0200\n"
+"POT-Creation-Date: 2021-05-17 15:10+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -1211,7 +1211,7 @@ msgid "Epigraphic Text Database"
 msgstr "Inscription Database"
 
 #: edh_web_application/inscription/routes.py:52
-#: edh_web_application/models/convert/inscription.py:114
+#: edh_web_application/models/convert/inscription.py:115
 msgid "beleg-"
 msgstr ""
 
@@ -2304,7 +2304,7 @@ msgstr ""
 msgid "rel-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1139
+#: edh_web_application/models/Inscription.py:1137
 msgid "yes"
 msgstr ""
 
@@ -3857,6 +3857,15 @@ msgstr ""
 msgid "under progress"
 msgstr ""
 
+#: edh_web_application/project/templates/project/project_provinces.html:348
+#: edh_web_application/project/templates/project/project_provinces.html:369
+#: edh_web_application/project/templates/project/project_provinces.html:383
+#: edh_web_application/project/templates/project/project_provinces.html:408
+#: edh_web_application/project/templates/project/project_provinces.html:448
+#: edh_web_application/project/templates/project/project_provinces.html:527
+msgid "concordances added"
+msgstr ""
+
 #: edh_web_application/project/templates/project/project_team_members.html:10
 msgid "Research Team Members page"
 msgstr ""
@@ -4101,15 +4110,35 @@ msgstr ""
 msgid "International Digital Epigraphy Association"
 msgstr ""
 
-#: edh_web_application/templates/home.html:184
+#: edh_web_application/templates/home.html:183
 msgid "Portal of papyrological and epigraphical resources"
 msgstr ""
 
-#: edh_web_application/templates/home.html:196
+#: edh_web_application/templates/home.html:195
 msgid "Greek & Latin inscriptions from Turkey"
 msgstr ""
 
-#: edh_web_application/templates/home.html:208
+#: edh_web_application/templates/home.html:207
 msgid "Linked Open Data methods & tools for exploring historical places"
+msgstr ""
+
+#: edh_web_application/templates/home.html:219
+msgid "Database of people recorded in classical ancient texts"
+msgstr ""
+
+#: edh_web_application/templates/home.html:233
+msgid "Community-built gazetteer and graph of ancient places"
+msgstr ""
+
+#: edh_web_application/templates/home.html:245
+msgid "Corpus Inscriptionum Latinarum"
+msgstr ""
+
+#: edh_web_application/templates/home.html:257
+msgid "Collaborative Environment for Digital Epigraphy"
+msgstr ""
+
+#: edh_web_application/templates/home.html:269
+msgid "Colleections of Grrek & Latin Inscriptions in the USA"
 msgstr ""
 
