@@ -1,39 +1,16 @@
-var map = L.map('mapid', { zoomControl:false }).setView([43.105, 11.49], 4);
+/*
+    Code for displaying province map on EDH landing page
+ */
+
+var map = L.map('mapid', { zoomControl:false, zoom: 7 }).setView([43.105, 11.49], 4);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
 }).addTo(map);
+map.setZoom(setInitialMapZoom());
 map.touchZoom.disable();
 map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();
-function getColorBearbeitung(d) {
-    return d > 4  ? '#D9D9D9' :
-           d > 3  ? '#8C8C8C' :
-           d > 2  ? '#D9D9D9' :
-           d > 1  ? '#C8656D' :
-           d > 0  ? '#1F6B3B' :
-                    '#585859';
-}
 
-function style(feature) {
-    return {
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7,
-        fillColor: getColor(feature.properties.numberOfInscriptions)
-    };
-}
-function styleBearbeitung(feature) {
-    return {
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7,
-        fillColor: getColorBearbeitung(feature.properties.numberOfInscriptions)
-    };
-}
 $.getJSON("./static/data/provinceBearbeitung.edh.geojson", function(data) {
     geoJsonBearbeitung = L.geoJson(data, {
     style: styleBearbeitung
@@ -54,3 +31,45 @@ legendBearbeitung.onAdd = function (mapBearbeitung) {
     return div;
 };
 legendBearbeitung.addTo(map);
+
+function setInitialMapZoom() {
+    var viewportWidth = window.innerWidth;
+    var mapZoom;
+    if (viewportWidth < 768) {
+        mapZoom = 3;
+    } else {
+        mapZoom = 4;
+    }
+    return mapZoom;
+};
+
+function getColorBearbeitung(d) {
+    return d > 4  ? '#D9D9D9' :
+           d > 3  ? '#8C8C8C' :
+           d > 2  ? '#D9D9D9' :
+           d > 1  ? '#C8656D' :
+           d > 0  ? '#1F6B3B' :
+                    '#585859';
+}
+
+function style(feature) {
+    return {
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7,
+        fillColor: getColor(feature.properties.numberOfInscriptions)
+    };
+}
+
+function styleBearbeitung(feature) {
+    return {
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7,
+        fillColor: getColorBearbeitung(feature.properties.numberOfInscriptions)
+    };
+}
