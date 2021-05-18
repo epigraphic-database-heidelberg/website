@@ -878,7 +878,7 @@ class Place:
                     continue
                 else:
                     is_first_element = True
-                    return_list.append(re.sub("[\{\}]*", '', first_item) + " (" + str(entry) + ")")
+                    return_list.append(first_item + " (" + str(entry) + ")")
             return return_list
 
     @classmethod

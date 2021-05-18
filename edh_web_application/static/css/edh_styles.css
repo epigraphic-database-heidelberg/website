@@ -642,7 +642,7 @@ img#hadw-banner {
 .ui-button:active, .ui-button:active
 {
     border: 1px solid aaa !important;
-    background: #f6f6f6 !important;
+    background-color: 1F6B3B !important;
     outline: 0 none !important;
 }
 

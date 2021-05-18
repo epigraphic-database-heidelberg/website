@@ -675,7 +675,7 @@ class Inscription:
         
         # chronology
         if 'jahre' in form and not (form['jahre'] == "600 v. Chr. - 1500 n. Chr." or form['jahre'] == "600 BC - 1500 AD" ):
-            (jahr_a, jahr_e) = form['jahre'].split(" - ")
+            (jahr_a, jahr_e) = form['jahre'].strip().split(" - ")
             if "v. Chr." in jahr_a or " BC" in jahr_a:
                 jahr_a_mo = str(int(re.match("\d*",jahr_a)[0]) * -1)
             else:
@@ -688,7 +688,6 @@ class Inscription:
             query_string += '(dat_jahr_a:['+jahr_a_mo+' TO ' + jahr_e_mo + '] AND dat_jahr_e:[' + jahr_a_mo + ' TO ' + jahr_e_mo + ']) ' + logical_operater + ' '
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
-        print(query_string)
         return query_string
 
     @classmethod
@@ -960,6 +959,41 @@ class Inscription:
                 last_date = current_date
             grouped_result[current_date].append(res)
         return grouped_result
+    
+    @classmethod
+    def get_autocomplete_entries(cls, ac_field, term, hits):
+        """
+        queries Solr core edhText for list of entries displayed in
+        autocomplete fields of inscription form
+        :param ac_field: field to facet
+        :param term: querystring
+        :return: list of relevant field values
+        """
+        if re.match("[a-zA-Z]+", term):
+            params = {
+                'facet': 'on',
+                'facet.field': ac_field + '_str',
+                'facet.sort': 'count',
+                'facet.mincount': 1,
+                'facet.limit': hits,
+                'rows': '0',
+            }
+            query = ac_field + '_ac:"' + term + '"'
+            solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
+            results = solr.search(query, **params)
+            # concat results and counts as string
+            return_list = []
+            is_first_element = True
+            first_item = ""
+            for entry in results.facets['facet_fields'][ac_field + "_str"]:
+                if is_first_element:
+                    first_item = entry
+                    is_first_element = False
+                    continue
+                else:
+                    is_first_element = True
+                    return_list.append(first_item + " (" + str(entry) + ")")
+            return return_list
 
 
 def _get_date_string(dat_jahr_a, dat_jahr_e, monat, tag):

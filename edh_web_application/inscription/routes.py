@@ -3,11 +3,13 @@ from flask_babel import _
 import io
 import csv
 import re
+import json
 
 from . import bp_inscription
 from .forms import InscriptionSearchDe, InscriptionSearchEn
 from ..models.Inscription import Inscription
 from ..models.Person import Person
+from ..models.Place import Place
 
 
 @bp_inscription.route('/inschrift/lastUpdates', methods=['GET', 'POST'], strict_slashes=False)
@@ -29,6 +31,12 @@ def simple_search():
         form = InscriptionSearchDe(data=request.args)
     else:
         form = InscriptionSearchEn(data=request.args)
+    form.fo_antik.data = request.args.get('fo_antik')
+    form.fo_modern.data = request.args.get('fo_modern')
+    form.fundstelle.data = request.args.get('fundstelle')
+    form.provinz.data = request.args.getlist('provinz')
+    form.land.data = request.args.getlist('land')
+    form.literatur.data = request.args.get('literatur')
 
     if len(request.args) > 0:
         # create query string
@@ -106,3 +114,42 @@ def detail_view(hd_nr):
         people = Person.query("hd_nr:" + hd_nr)
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"),
                                data=results['items'][0], people=people)
+
+
+@bp_inscription.route('/inschrift/ac/fo_modern', methods=['GET', 'POST'], strict_slashes=False)
+@bp_inscription.route('/inschrift/ac/fo_modern/<short>', methods=['GET', 'POST'], strict_slashes=False)
+def autocomplete_fo_modern(short=None):
+    """
+    route for retrieving autocomplete entries for field fo_modern
+    :return: list of entries for autocomplete
+    """
+    if short:
+        return json.dumps(Inscription.get_autocomplete_entries("fo_modern", request.args['term'], 10))
+    else:
+        return json.dumps(Inscription.get_autocomplete_entries("fo_modern", request.args['term'], 20))
+
+
+@bp_inscription.route('/inschrift/ac/fo_antik', methods=['GET', 'POST'], strict_slashes=False)
+@bp_inscription.route('/inschrift/ac/fo_antik/<short>', methods=['GET', 'POST'], strict_slashes=False)
+def autocomplete_fo_antik(short=None):
+    """
+    route for retrieving autocomplete entries for field fo_antik
+    :return: list of entries for autocomplete
+    """
+    if short:
+        return json.dumps(Inscription.get_autocomplete_entries("fo_antik", request.args['term'], 10))
+    else:
+        return json.dumps(Inscription.get_autocomplete_entries("fo_antik", request.args['term'], 20))
+
+
+@bp_inscription.route('/inschrift/ac/fundstelle', methods=['GET', 'POST'], strict_slashes=False)
+@bp_inscription.route('/inschrift/ac/fundstelle/<short>', methods=['GET', 'POST'], strict_slashes=False)
+def autocomplete_fundstelle(short=None):
+    """
+    route for retrieving autocomplete entries for field fundstelle
+    :return: list of entries for autocomplete
+    """
+    if short:
+        return json.dumps(Inscription.get_autocomplete_entries("fundstelle", request.args['term'], 10))
+    else:
+        return json.dumps(Inscription.get_autocomplete_entries("fundstelle", request.args['term'], 20))
