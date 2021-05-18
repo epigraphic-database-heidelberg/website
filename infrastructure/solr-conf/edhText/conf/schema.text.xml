@@ -441,6 +441,19 @@ catchall "text" field, and use that for searching.
 
 
     <!-- EDh specific fieldTypes -->
+    <fieldType name="text_ngram_2" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.NGramFilterFactory" maxGramSize="25" minGramSize="2"/>
+      </analyzer>
+      <analyzer type="query">
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+      </analyzer>
+    </fieldType>
 
     <!-- einfacher A-Text -->
     <fieldType name="text_latin" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true">
@@ -582,6 +595,20 @@ catchall "text" field, and use that for searching.
         </analyzer>
     </fieldType>
 
+    <fieldType name="text_edgengram" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="1" maxGramSize="25" />
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.ASCIIFoldingFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
     <fieldType name="text_general_sv" class="solr.TextField" positionIncrementGap="100" multiValued="false"
                stored="true" indexed="true">
         <analyzer type="index">
@@ -639,13 +666,19 @@ catchall "text" field, and use that for searching.
     <field name="felder" type="text_general_sv"/>
     <field name="fo_antik" type="text_ngram"/>
     <field name="fo_antik_ci" type="text_ci" indexed="true" stored="true"/>
+    <field name="fo_antik_ac" type="text_edgengram" indexed="true" stored="true" />
+    <field name="fo_antik_str" type="string" indexed="true" stored="true" />
     <field name="fo_modern" type="text_ngram"/>
     <field name="fo_modern_ci" type="text_ci" indexed="true" stored="true"/>
+    <field name="fo_modern_ac" type="text_edgengram" indexed="true" stored="true" />
+    <field name="fo_modern_str" type="string" indexed="true" stored="true" />
     <field name="foto_extern" type="text_general_sv"/>
     <field name="foto_nr" type="text_general_sv"/>
     <field name="fundjahr" type="plong"/>
     <field name="fundstelle" type="text_general_sv"/>
     <field name="fundstelle_ci" type="text_ci" indexed="true" stored="true"/>
+    <field name="fundstelle_ac" type="text_ngram_2" indexed="true" stored="true" />
+    <field name="fundstelle_str" type="string" indexed="true" stored="true" />
     <field name="gdb_id" type="plong"/>
     <field name="gemeinden" type="text_general_sv"/>
     <field name="geo_id1" type="plong"/>
@@ -687,8 +720,15 @@ catchall "text" field, and use that for searching.
 
     <!-- copyFields -->
     <copyField source="fo_antik" dest="fo_antik_ci"/>
+    <copyField source="fo_antik" dest="fo_antik_ac"/>
+    <copyField source="fo_antik" dest="fo_antik_str"/>
     <copyField source="fo_modern" dest="fo_modern_ci"/>
+    <copyField source="fo_modern" dest="fo_modern_ac"/>
+    <copyField source="fo_modern" dest="fo_modern_str"/>
     <copyField source="fundstelle" dest="fundstelle_ci"/>
+    <copyField source="fundstelle" dest="fundstelle_ac"/>
+    <copyField source="fundstelle" dest="fundstelle_str"/>
+    
     <copyField source="atext" dest="atext_ci_nb"/>
     <copyField source="atext" dest="atext_ci_wb"/>
     <copyField source="atext" dest="atext_cs_nb"/>
