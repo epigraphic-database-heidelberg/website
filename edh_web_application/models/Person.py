@@ -96,7 +96,12 @@ class Person:
             setattr(self, prop, kwargs.get(prop, default))
         # get localized string for status property
         if self.status:
-            self.status = Person.localized_status[self.status]
+            trailing_questionmark = ""
+            status_code = self.status
+            if '?' in self.status:
+                trailing_questionmark = "?"
+                status_code = status_code.replace("?", "")
+            self.status = Person.localized_status[status_code] + trailing_questionmark
         if self.tribus:
             self.tribus = Person.tribus[self.tribus]
         if self.praenomen and "0" in self.praenomen:
