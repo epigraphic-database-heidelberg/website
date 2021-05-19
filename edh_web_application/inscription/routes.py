@@ -108,12 +108,13 @@ def detail_view(hd_nr):
         return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
                                subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
     results = Inscription.query("hd_nr:" + hd_nr)
+    see_also_urls = Inscription.get_see_also_urls_from_tm_api(hd_nr)
     if results is None:
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"), subtitle=_("Detail View"))
     else:
         people = Person.query("hd_nr:" + hd_nr)
         return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"),
-                               data=results['items'][0], people=people)
+                               data=results['items'][0], people=people, see_also_urls=see_also_urls)
 
 
 @bp_inscription.route('/inschrift/ac/fo_modern', methods=['GET', 'POST'], strict_slashes=False)

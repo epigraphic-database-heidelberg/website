@@ -385,6 +385,16 @@
             <div class="detail_block_content_row_header">{{_('Last Update')}}:</div>
             <div class="detail_block_content_row_text">{{data['datum']}} {{_('by')}} {{data['bearbeiter']}}</div>
         </section>
+        <section class="detail_block_content_row">
+            <div class="detail_block_content_row_header">{{_('See Also')}}:</div>
+            <div class="detail_block_content_row_text">
+                {% for key in see_also_urls %}
+                    {% for url in see_also_urls[key] %}
+                    <i class="fas fa-external-link-alt" style="margin-right:5px"></i> <a href="{{url}}">{{key}}</a><br/>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </section>
     </div>
 </div>
 

@@ -1,5 +1,7 @@
 import collections
 import re
+import requests
+import json
 from datetime import datetime
 
 import pysolr
@@ -994,6 +996,29 @@ class Inscription:
                     is_first_element = True
                     return_list.append(first_item + " (" + str(entry) + ")")
             return return_list
+
+    
+    @classmethod
+    def get_see_also_urls_from_tm_api(cls, hd_nr):
+        """
+        returns dictionary with see also links for inscription detail page
+        :param hd_nr: HD-No of inscription
+        :return: dict with urls
+        """
+        tm_api_url = "https://www.trismegistos.org/dataservices/texrelations/uri/"
+        query = {'source': 'edh'}
+        try:
+            r = requests.get(tm_api_url+hd_nr, params=query, timeout=1)
+        except:
+            return {}
+        resp = r.json()
+        see_also_urls_dict = {}
+        for r in resp:
+            for key in r.keys():
+                if r[key] is not None:
+                    if key != "EDH": # ignore EDH urls
+                        see_also_urls_dict[key] = r[key]
+        return see_also_urls_dict
 
 
 def _get_date_string(dat_jahr_a, dat_jahr_e, monat, tag):
