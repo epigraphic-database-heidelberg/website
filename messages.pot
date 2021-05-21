@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-19 10:21+0200\n"
+"POT-Creation-Date: 2021-05-19 16:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -552,10 +552,10 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:139
 #: edh_web_application/geography/templates/geography/search_results.html:284
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:58
 #: edh_web_application/inscription/forms.py:74
 #: edh_web_application/inscription/templates/inscription/detail_view.html:64
 #: edh_web_application/inscription/templates/inscription/last_updates.html:33
+#: edh_web_application/inscription/templates/inscription/search.html:101
 #: edh_web_application/inscription/templates/inscription/search_results.html:149
 #: edh_web_application/inscription/templates/inscription/search_results.html:290
 msgid "province"
@@ -575,7 +575,6 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:149
 #: edh_web_application/geography/templates/geography/search_results.html:286
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:59
 #: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/detail_view.html:72
 #: edh_web_application/inscription/templates/inscription/last_updates.html:41
@@ -598,7 +597,6 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:153
 #: edh_web_application/geography/templates/geography/search_results.html:287
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:60
 #: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:76
 #: edh_web_application/inscription/templates/inscription/last_updates.html:45
@@ -652,8 +650,8 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/search_results.html:188
 #: edh_web_application/foto/templates/foto/search_results.html:306
 #: edh_web_application/foto/templates/foto/search_results_grid.html:241
-#: edh_web_application/inscription/forms.py:57
 #: edh_web_application/inscription/forms.py:74
+#: edh_web_application/inscription/templates/inscription/search.html:100
 msgid "HD-No."
 msgstr ""
 
@@ -688,10 +686,9 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:285
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:74
-#: edh_web_application/inscription/forms.py:88
-#: edh_web_application/inscription/forms.py:92
 #: edh_web_application/inscription/templates/inscription/detail_view.html:68
 #: edh_web_application/inscription/templates/inscription/last_updates.html:37
+#: edh_web_application/inscription/templates/inscription/search.html:102
 #: edh_web_application/inscription/templates/inscription/search_results.html:153
 #: edh_web_application/inscription/templates/inscription/search_results.html:291
 msgid "country"
@@ -801,7 +798,6 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:157
 #: edh_web_application/geography/templates/geography/search_results.html:288
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:61
 #: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:80
 #: edh_web_application/inscription/templates/inscription/last_updates.html:49
@@ -924,10 +920,28 @@ msgstr ""
 msgid "map"
 msgstr ""
 
+#: edh_web_application/inscription/forms.py:57
+msgid "Search HD-No."
+msgstr ""
+
+#: edh_web_application/inscription/forms.py:58
+msgid "Search province"
+msgstr ""
+
+#: edh_web_application/inscription/forms.py:59
+msgid "Search ancient find spot"
+msgstr ""
+
+#: edh_web_application/inscription/forms.py:60
+msgid "Search modern find spot"
+msgstr ""
+
+#: edh_web_application/inscription/forms.py:61
+msgid "Search find spot"
+msgstr ""
+
 #: edh_web_application/inscription/forms.py:62
-#: edh_web_application/inscription/templates/inscription/last_updates.html:57
-#: edh_web_application/inscription/templates/inscription/search_results.html:175
-msgid "literature"
+msgid "Search literature"
 msgstr ""
 
 #: edh_web_application/inscription/forms.py:63
@@ -1037,6 +1051,11 @@ msgstr ""
 #: edh_web_application/inscription/forms.py:81
 #: edh_web_application/inscription/templates/inscription/search_results.html:296
 msgid "date to"
+msgstr ""
+
+#: edh_web_application/inscription/forms.py:88
+#: edh_web_application/inscription/forms.py:92
+msgid "Search country"
 msgstr ""
 
 #: edh_web_application/inscription/routes.py:24
@@ -1288,34 +1307,85 @@ msgstr ""
 msgid "Now HD no."
 msgstr ""
 
+#: edh_web_application/inscription/templates/inscription/last_updates.html:57
+#: edh_web_application/inscription/templates/inscription/search.html:106
+#: edh_web_application/inscription/templates/inscription/search_results.html:175
+msgid "literature"
+msgstr ""
+
 #: edh_web_application/inscription/templates/inscription/search.html:51
 #: edh_web_application/inscription/templates/inscription/search_results.html:341
 msgid "year"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:138
+#: edh_web_application/inscription/templates/inscription/search.html:146
 #: edh_web_application/inscription/templates/inscription/search_results.html:343
 #: edh_web_application/inscription/templates/inscription/search_results.html:454
-#: edh_web_application/models/Inscription.py:1036
-#: edh_web_application/models/Inscription.py:1038
-#: edh_web_application/models/Inscription.py:1046
+#: edh_web_application/models/Inscription.py:1039
+#: edh_web_application/models/Inscription.py:1041
+#: edh_web_application/models/Inscription.py:1049
 msgid "BC"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:135
+#: edh_web_application/inscription/templates/inscription/search.html:143
 #: edh_web_application/inscription/templates/inscription/search_results.html:343
 #: edh_web_application/inscription/templates/inscription/search_results.html:451
-#: edh_web_application/models/Inscription.py:1041
-#: edh_web_application/models/Inscription.py:1043
-#: edh_web_application/models/Inscription.py:1048
+#: edh_web_application/models/Inscription.py:1044
+#: edh_web_application/models/Inscription.py:1046
+#: edh_web_application/models/Inscription.py:1051
 msgid "AD"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:58
 #: edh_web_application/inscription/templates/inscription/search_results.html:347
 msgid "search string(s)"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:100
+msgid "hlp_hd_nr"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:101
+msgid "hlp_provinz"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:102
+msgid "hlp_land"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:103
+#: edh_web_application/models/Foto.py:160
+#: edh_web_application/models/Place.py:444
+msgid "fo_antik"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:103
+msgid "hlp_fo_antik"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:104
+#: edh_web_application/models/Foto.py:161
+#: edh_web_application/models/Place.py:445
+msgid "fo_modern"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:104
+msgid "hlp_fo_modern"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:105
+#: edh_web_application/models/Place.py:446
+msgid "fundstelle"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:105
+msgid "hlp_fundstelle"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:106
+msgid "hlp_literatur"
 msgstr ""
 
 #: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:37
@@ -1574,16 +1644,6 @@ msgstr ""
 #: edh_web_application/models/Foto.py:159
 #: edh_web_application/models/Place.py:442
 msgid "land"
-msgstr ""
-
-#: edh_web_application/models/Foto.py:160
-#: edh_web_application/models/Place.py:444
-msgid "fo_antik"
-msgstr ""
-
-#: edh_web_application/models/Foto.py:161
-#: edh_web_application/models/Place.py:445
-msgid "fo_modern"
 msgstr ""
 
 #: edh_web_application/models/Foto.py:162
@@ -2134,29 +2194,29 @@ msgstr ""
 msgid "dat_jahr_e"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1066
+#: edh_web_application/models/Inscription.py:1069
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1069
-#: edh_web_application/models/Inscription.py:1071
-#: edh_web_application/models/Inscription.py:1073
+#: edh_web_application/models/Inscription.py:1072
+#: edh_web_application/models/Inscription.py:1074
+#: edh_web_application/models/Inscription.py:1076
 msgid " from "
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1090
+#: edh_web_application/models/Inscription.py:1093
 msgid "schreibt-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1099
+#: edh_web_application/models/Inscription.py:1102
 msgid "interp-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1108
+#: edh_web_application/models/Inscription.py:1111
 msgid "rel-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1193
+#: edh_web_application/models/Inscription.py:1196
 msgid "yes"
 msgstr ""
 
@@ -2474,10 +2534,6 @@ msgstr ""
 
 #: edh_web_application/models/Place.py:441
 msgid "geo_id"
-msgstr ""
-
-#: edh_web_application/models/Place.py:446
-msgid "fundstelle"
 msgstr ""
 
 #: edh_web_application/models/Place.py:447

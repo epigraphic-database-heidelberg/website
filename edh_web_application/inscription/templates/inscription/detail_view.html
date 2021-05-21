@@ -390,7 +390,7 @@
             <div class="detail_block_content_row_text">
                 {% for key in see_also_urls %}
                     {% for url in see_also_urls[key] %}
-                    <i class="fas fa-external-link-alt" style="margin-right:5px"></i> <a href="{{url}}">{{key}}</a><br/>
+                    <a href="{{url}}"><i class="fas fa-external-link-alt" style="margin-right:5px"></i> {{key}}</a><br/>
                     {% endfor %}
                 {% endfor %}
             </div>

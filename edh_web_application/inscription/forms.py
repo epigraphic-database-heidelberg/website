@@ -54,12 +54,12 @@ def get_option_list_values_hist_periods():
 class InscriptionSearch(FlaskForm):
     reset = SubmitField(_l('Reset...'))
     submit = SubmitField(_l('Submit...'))
-    hd_nr = StringField(_l('HD-No.'))
-    provinz = SelectMultipleField(_l('province'), choices=get_option_list_values_province())
-    fo_antik = StringField(_l('ancient find spot'))
-    fo_modern = StringField(_l('modern find spot'))
-    fundstelle = StringField(_l('find spot'))
-    literatur = StringField(_l('literature'))
+    hd_nr = StringField(_l('Search HD-No.'))
+    provinz = SelectMultipleField(_l('Search province'), choices=get_option_list_values_province())
+    fo_antik = StringField(_l('Search ancient find spot'))
+    fo_modern = StringField(_l('Search modern find spot'))
+    fundstelle = StringField(_l('Search find spot'))
+    literatur = StringField(_l('Search literature'))
     dat_jahr_a = StringField(_l('from'))
     dat_jahr_e = StringField(_l('until'))
     dat_erweitert = BooleanField(_l('extended'))
@@ -85,8 +85,8 @@ class InscriptionSearch(FlaskForm):
 
 
 class InscriptionSearchDe(InscriptionSearch):
-    land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_de())
+    land = SelectMultipleField(_l('Search country'), choices=get_option_list_values_country_de())
 
 
 class InscriptionSearchEn(InscriptionSearch):
-    land = SelectMultipleField(_l('country'), choices=get_option_list_values_country_en())
+    land = SelectMultipleField(_l('Search country'), choices=get_option_list_values_country_en())

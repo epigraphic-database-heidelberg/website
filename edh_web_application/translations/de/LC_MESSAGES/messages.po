@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-19 10:21+0200\n"
+"POT-Creation-Date: 2021-05-19 16:50+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -715,10 +715,10 @@ msgstr "F-Nummer"
 #: edh_web_application/geography/templates/geography/search_results.html:139
 #: edh_web_application/geography/templates/geography/search_results.html:284
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:58
 #: edh_web_application/inscription/forms.py:74
 #: edh_web_application/inscription/templates/inscription/detail_view.html:64
 #: edh_web_application/inscription/templates/inscription/last_updates.html:33
+#: edh_web_application/inscription/templates/inscription/search.html:101
 #: edh_web_application/inscription/templates/inscription/search_results.html:149
 #: edh_web_application/inscription/templates/inscription/search_results.html:290
 msgid "province"
@@ -738,7 +738,6 @@ msgstr "Provinz"
 #: edh_web_application/geography/templates/geography/search_results.html:149
 #: edh_web_application/geography/templates/geography/search_results.html:286
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:59
 #: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/detail_view.html:72
 #: edh_web_application/inscription/templates/inscription/last_updates.html:41
@@ -761,7 +760,6 @@ msgstr "Fundort antik"
 #: edh_web_application/geography/templates/geography/search_results.html:153
 #: edh_web_application/geography/templates/geography/search_results.html:287
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:60
 #: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:76
 #: edh_web_application/inscription/templates/inscription/last_updates.html:45
@@ -815,8 +813,8 @@ msgstr "Kommentar"
 #: edh_web_application/foto/templates/foto/search_results.html:188
 #: edh_web_application/foto/templates/foto/search_results.html:306
 #: edh_web_application/foto/templates/foto/search_results_grid.html:241
-#: edh_web_application/inscription/forms.py:57
 #: edh_web_application/inscription/forms.py:74
+#: edh_web_application/inscription/templates/inscription/search.html:100
 msgid "HD-No."
 msgstr "HD-Nr."
 
@@ -851,10 +849,9 @@ msgstr "Aufschrift"
 #: edh_web_application/geography/templates/geography/search_results.html:285
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:74
-#: edh_web_application/inscription/forms.py:88
-#: edh_web_application/inscription/forms.py:92
 #: edh_web_application/inscription/templates/inscription/detail_view.html:68
 #: edh_web_application/inscription/templates/inscription/last_updates.html:37
+#: edh_web_application/inscription/templates/inscription/search.html:102
 #: edh_web_application/inscription/templates/inscription/search_results.html:153
 #: edh_web_application/inscription/templates/inscription/search_results.html:291
 msgid "country"
@@ -964,7 +961,6 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:157
 #: edh_web_application/geography/templates/geography/search_results.html:288
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:61
 #: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:80
 #: edh_web_application/inscription/templates/inscription/last_updates.html:49
@@ -1091,11 +1087,41 @@ msgstr "Mit dieser Provinz verknüpfte Fundorte"
 msgid "map"
 msgstr "Karte"
 
+#: edh_web_application/inscription/forms.py:57
+msgid "Search HD-No."
+msgstr ""
+"HD-Nr. <span class='hlp' id='hlp_hd_nr'><i class='fa fa-"
+"question'></i></span>"
+
+#: edh_web_application/inscription/forms.py:58
+msgid "Search province"
+msgstr ""
+"Provinz <span class='hlp' id='hlp_provinz'><i class='fa fa-"
+"question'></i></span>"
+
+#: edh_web_application/inscription/forms.py:59
+msgid "Search ancient find spot"
+msgstr ""
+"Fundort antik <span class='hlp' id='hlp_fo_antik'><i class='fa fa-"
+"question'></i></span>"
+
+#: edh_web_application/inscription/forms.py:60
+msgid "Search modern find spot"
+msgstr ""
+"Fundort modern <span class='hlp' id='hlp_fo_modern'><i class='fa fa-"
+"question'></i></span>"
+
+#: edh_web_application/inscription/forms.py:61
+msgid "Search find spot"
+msgstr ""
+"Fundstelle <span class='hlp' id='hlp_fundstelle'><i class='fa fa-"
+"question'></i></span>"
+
 #: edh_web_application/inscription/forms.py:62
-#: edh_web_application/inscription/templates/inscription/last_updates.html:57
-#: edh_web_application/inscription/templates/inscription/search_results.html:175
-msgid "literature"
-msgstr "Literatur"
+msgid "Search literature"
+msgstr ""
+"Literatur <span class='hlp' id='hlp_literatur'><i class='fa fa-"
+"question'></i></span>"
 
 #: edh_web_application/inscription/forms.py:63
 msgid "from"
@@ -1205,6 +1231,11 @@ msgstr "dat_jahr_e"
 #: edh_web_application/inscription/templates/inscription/search_results.html:296
 msgid "date to"
 msgstr "Datierung Ende"
+
+#: edh_web_application/inscription/forms.py:88
+#: edh_web_application/inscription/forms.py:92
+msgid "Search country"
+msgstr "Land <span class='hlp' id='hlp_land'><i class='fa fa-question'></i></span>"
 
 #: edh_web_application/inscription/routes.py:24
 #: edh_web_application/inscription/routes.py:77
@@ -1455,28 +1486,34 @@ msgstr "ist nicht mehr gültig."
 msgid "Now HD no."
 msgstr "Jetzt HD-Nr."
 
+#: edh_web_application/inscription/templates/inscription/last_updates.html:57
+#: edh_web_application/inscription/templates/inscription/search.html:106
+#: edh_web_application/inscription/templates/inscription/search_results.html:175
+msgid "literature"
+msgstr "Literatur"
+
 #: edh_web_application/inscription/templates/inscription/search.html:51
 #: edh_web_application/inscription/templates/inscription/search_results.html:341
 msgid "year"
 msgstr "Datierung"
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:138
+#: edh_web_application/inscription/templates/inscription/search.html:146
 #: edh_web_application/inscription/templates/inscription/search_results.html:343
 #: edh_web_application/inscription/templates/inscription/search_results.html:454
-#: edh_web_application/models/Inscription.py:1036
-#: edh_web_application/models/Inscription.py:1038
-#: edh_web_application/models/Inscription.py:1046
+#: edh_web_application/models/Inscription.py:1039
+#: edh_web_application/models/Inscription.py:1041
+#: edh_web_application/models/Inscription.py:1049
 msgid "BC"
 msgstr "v. Chr."
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:135
+#: edh_web_application/inscription/templates/inscription/search.html:143
 #: edh_web_application/inscription/templates/inscription/search_results.html:343
 #: edh_web_application/inscription/templates/inscription/search_results.html:451
-#: edh_web_application/models/Inscription.py:1041
-#: edh_web_application/models/Inscription.py:1043
-#: edh_web_application/models/Inscription.py:1048
+#: edh_web_application/models/Inscription.py:1044
+#: edh_web_application/models/Inscription.py:1046
+#: edh_web_application/models/Inscription.py:1051
 msgid "AD"
 msgstr "n. Chr."
 
@@ -1484,6 +1521,79 @@ msgstr "n. Chr."
 #: edh_web_application/inscription/templates/inscription/search_results.html:347
 msgid "search string(s)"
 msgstr "Suchworte"
+
+#: edh_web_application/inscription/templates/inscription/search.html:100
+msgid "hlp_hd_nr"
+msgstr ""
+"Die Nummer des gesuchten Datensatzes in einer der folgenden "
+"Formate:<ul><li>HD004711</li><li>004711</li><li>4711</li></ul>Alternativ "
+"kann mit Asterisk nach allen Datensätzen gesucht werden."
+
+#: edh_web_application/inscription/templates/inscription/search.html:101
+msgid "hlp_provinz"
+msgstr ""
+"Grenzen der antiken Provinzen / italischen Regionen:<ul><li>Prinzipiell gelten die Grenzen der Zeit um die Mitte des 2. Jh. n. Chr. (aus dieser Zeit stammen die meisten Inschriften). "
+"Ausnahme: Moesia inferior: Grenzziehung des 3. Jh. n. Chr. (nach CIL III Suppl. tab. IV)</li><li>Spätantike Provinzbezeichnungen werden nicht verwendet, sondern geographisch den angegebenen Provinzen / Regionen zugeordnet.</li></ul>"
+
+#: edh_web_application/inscription/templates/inscription/search.html:102
+msgid "hlp_land"
+msgstr "Eine Mehrfachauswahl von Ländern findet alle Denkmäler, die mindestens einer der ausgewählten Kategorien angehören."
+
+#: edh_web_application/inscription/templates/inscription/search.html:103
+#: edh_web_application/models/Foto.py:160
+#: edh_web_application/models/Place.py:444
+msgid "fo_antik"
+msgstr "Fundort antik"
+
+#: edh_web_application/inscription/templates/inscription/search.html:103
+msgid "hlp_fo_antik"
+msgstr ""
+"Suche durch Eingabe oder Auswahl (Autocomplete)<br/>Schreibweise:<ul><li>Richtlinien:<br/>"
+"R.J.A. Talbert, Barrington atlas of the Greek and Roman world (Princeton 2000)</br/>"
+"CIL</li><li>Bei antiken Namensvarianten (z. B. im Falle von Kolonien) steht im Fundortfeld "
+"eine davon in runden Klammern, damit beide Varianten gefunden werden können."
+"z. B.: bei Colonia Iulia Augusta Philippensium bzw. Philippi: \"Colonia Iulia Augusta Philippensium (= Philippi)\""
+"<br/>Dies gilt nicht für den Fall, dass die Varianten in einem vollständigen Wort deckungsgleich sind "
+"z. B.: bei Colonia Laus Iulia Corinthus bzw. Corinthus: \"Colonia Laus Iulia Corinthus\""
+"</li><li>Der antike Fundortname verschleppter Inschriften ist durch \"(Fundort-antik), aus\" gekennzeichnet, während der moderne Fundortname regulär dem tatsächlichen Fundort entspricht; "
+"die jeweiligen Bezeichnungen von antiker Provinz / Region bzw. modernem Land entspricht in diesen Fällen jeweils dem antiken bzw. modernen Fundort<br>"
+"z.B.: Fundort-modern: Szombathely (Land: Ungarn)  =  Fundort-antik: Roma, aus? (Provinz / italische Region: Latium et Campania)</li></ul>"
+
+
+#: edh_web_application/inscription/templates/inscription/search.html:104
+#: edh_web_application/models/Foto.py:161
+#: edh_web_application/models/Place.py:445
+msgid "fo_modern"
+msgstr "Fundort modern"
+
+#: edh_web_application/inscription/templates/inscription/search.html:104
+msgid "hlp_fo_modern"
+msgstr ""
+"Politisch selbständige Gemeinde bzw. Stadt (vgl. dagegen: Orts- bzw. Stadtteil einer politisch selbständigen Gemeinde bzw. einer Stadt = "Fundstelle")<br/>"
+"Suche durch Eingabe oder Auswahl."
+"Schreibweise:<ul><li>In der Landessprache.<br/>Richtlinien sind bevorzugt J.C. Bartholomew, The Times atlas of the world (London 1987) oder die geographische "
+"Datenbank <a href='https://geonames.org'>GeoNames</a>.<br/>Bei arabischen Namen Translitteration nach DIN 31635 durch die Deutsche Morgenländische Gesellschaft "
+"(DMG) (in Text- und Foto-Datenbank noch nicht vollständig umgesetzt).</li><li>Akzente und Umlaute werden ignoriert.</li></ul>"
+"Hinweis: Da die Gebietsgrenzen antiker und moderner Fundorte in der Regel nicht identisch sind, ist es möglich, daß einem antiken Fundort bzw. Territorium mehrere Namen moderner Fundorte oder Fundstellen entsprechen. Tatsächliche Unschärfen, die allerdings häufig nicht mehr behoben werden können, ergeben sich hingegen aus unpräzisen Funddokumentationen."
+
+#: edh_web_application/inscription/templates/inscription/search.html:105
+#: edh_web_application/models/Place.py:446
+msgid "fundstelle"
+msgstr "Fundstelle"
+
+#: edh_web_application/inscription/templates/inscription/search.html:105
+msgid "hlp_fundstelle"
+msgstr ""
+"<ul><li>Orts- bzw. Stadtteil einer politisch selbständigen Gemeinde bzw. einer Stadt (z. B. Stadtteil, eingemeindete Ortschaft) "
+"(vgl. dagegen: Politisch selbständige Gemeinde bzw. Stadt = \"Fundort modern\")</li><li>Kleinere geographische Einheit (z. B. Straße, Parzelle, Berg, Fluß) "
+"oder Bauwerk (z. B. Kastell, Stadtmauer, Kirche)</li></ul>"
+
+#: edh_web_application/inscription/templates/inscription/search.html:106
+msgid "hlp_literatur"
+msgstr ""
+"Es gelten besondere Zitierweisen für Abkürzungen, Band- / Jahresangaben bzw. Nummernzählung:"
+""<ul><li>Année Épigraphique:<br/>AE Jahrgang, Nummer (immer vierstellig); z. B.:<br/>AE 1983, 0825<br/>AE 2001, 1720<br/>AE 1969/70, 0384</li>"
+"<li>Corpora</li><li>Zeitschriften</li><li>sonstige Publikationen</li></ul>"
 
 #: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:37
 msgid "land-ad"
@@ -1742,16 +1852,6 @@ msgstr "Provinz"
 #: edh_web_application/models/Place.py:442
 msgid "land"
 msgstr "Land"
-
-#: edh_web_application/models/Foto.py:160
-#: edh_web_application/models/Place.py:444
-msgid "fo_antik"
-msgstr "Fundort antik"
-
-#: edh_web_application/models/Foto.py:161
-#: edh_web_application/models/Place.py:445
-msgid "fo_modern"
-msgstr "Fundort modern"
 
 #: edh_web_application/models/Foto.py:162
 msgid "aufbewahrung"
@@ -2301,29 +2401,29 @@ msgstr "Datierung Anfang"
 msgid "dat_jahr_e"
 msgstr "Datierung Ende"
 
-#: edh_web_application/models/Inscription.py:1066
+#: edh_web_application/models/Inscription.py:1069
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1069
-#: edh_web_application/models/Inscription.py:1071
-#: edh_web_application/models/Inscription.py:1073
+#: edh_web_application/models/Inscription.py:1072
+#: edh_web_application/models/Inscription.py:1074
+#: edh_web_application/models/Inscription.py:1076
 msgid " from "
 msgstr " aus "
 
-#: edh_web_application/models/Inscription.py:1090
+#: edh_web_application/models/Inscription.py:1093
 msgid "schreibt-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1099
+#: edh_web_application/models/Inscription.py:1102
 msgid "interp-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1108
+#: edh_web_application/models/Inscription.py:1111
 msgid "rel-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1193
+#: edh_web_application/models/Inscription.py:1196
 msgid "yes"
 msgstr "ja"
 
@@ -2642,10 +2742,6 @@ msgstr "Venetia et Histria (Regio X)"
 #: edh_web_application/models/Place.py:441
 msgid "geo_id"
 msgstr "Geo-ID"
-
-#: edh_web_application/models/Place.py:446
-msgid "fundstelle"
-msgstr "Fundstelle"
 
 #: edh_web_application/models/Place.py:447
 msgid "region"
@@ -4189,4 +4285,7 @@ msgstr ""
 #: edh_web_application/templates/home.html:269
 msgid "Colleections of Grrek & Latin Inscriptions in the USA"
 msgstr ""
+
+#~ msgid "hlp_casesensitive"
+#~ msgstr ""
 

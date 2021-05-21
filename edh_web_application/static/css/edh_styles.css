@@ -645,7 +645,11 @@ img#hadw-banner {
     background-color: 1F6B3B !important;
     outline: 0 none !important;
 }
-
+.hlp >i.fa {
+    color: #1F6B3B;
+    font-size:.9em;
+    cursor: pointer;
+}
 
 /* slick carousel */
 .slider {
