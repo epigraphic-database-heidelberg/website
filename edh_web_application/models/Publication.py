@@ -363,7 +363,7 @@ def _get_query_params(args):
     result_dict = {}
     for key in args:
         if key not in ('anzahl', 'sort', 'start', 'view') and args[key] != "":
-            result_dict[key] = args[key]
+            result_dict[key] = re.sub("\([0-9]+\)", "", args[key])
     return result_dict
 
 

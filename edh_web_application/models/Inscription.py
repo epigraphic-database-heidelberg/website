@@ -1195,7 +1195,7 @@ def _get_query_params(args):
                 elif key in ['brackets', 'casesensitive'] and args[key] == 'y':
                     result_dict[key] = _l('yes')
                 else:
-                    result_dict[key] = args[key]
+                    result_dict[key] = re.sub("\([0-9]+\)", "", args[key])
     if 'provinz' in result_dict:
         result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])
     if 'land' in result_dict:

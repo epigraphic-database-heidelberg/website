@@ -614,7 +614,7 @@ def _get_query_params(args):
         elif key == 'kommentar' and args['kommentar'] != "":
             result_dict['commentary'] = args[key]
         elif key not in ('anzahl', 'sort', 'start', 'view', 'bearbeitet_abgeschlossen', 'bearbeitet_provisorisch') and args[key] != "":
-            result_dict[key] = args[key]
+            result_dict[key] = re.sub("\([0-9]+\)", "", args[key])
     if 'provinz' in result_dict:
         result_dict['provinz'] = re.sub(", $", "", result_dict['provinz'])
     if 'land' in result_dict:
