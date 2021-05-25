@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-19 16:50+0200\n"
+"POT-Creation-Date: 2021-05-25 12:14+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -20,20 +20,20 @@ msgstr ""
 
 #: edh_web_application/bibliography/forms.py:8
 #: edh_web_application/bibliography/templates/bibliography/search.html:110
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:341
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:345
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:90
 #: edh_web_application/foto/forms.py:37
 #: edh_web_application/foto/templates/foto/search.html:111
-#: edh_web_application/foto/templates/foto/search_results.html:365
-#: edh_web_application/foto/templates/foto/search_results_grid.html:300
+#: edh_web_application/foto/templates/foto/search_results.html:369
+#: edh_web_application/foto/templates/foto/search_results_grid.html:304
 #: edh_web_application/geography/forms.py:37
 #: edh_web_application/geography/templates/geography/search.html:105
-#: edh_web_application/geography/templates/geography/search_results.html:348
+#: edh_web_application/geography/templates/geography/search_results.html:352
 #: edh_web_application/geography/templates/geography/search_results_map.html:71
 #: edh_web_application/geography/templates/geography/search_results_table.html:88
 #: edh_web_application/inscription/forms.py:55
 #: edh_web_application/inscription/templates/inscription/search.html:96
-#: edh_web_application/inscription/templates/inscription/search_results.html:354
+#: edh_web_application/inscription/templates/inscription/search_results.html:360
 msgid "Reset..."
 msgstr ""
 
@@ -53,15 +53,15 @@ msgstr ""
 #: edh_web_application/bibliography/forms.py:23
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:24
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:21
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:132
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:278
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:134
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:282
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "author"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:12
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:31
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:142
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:144
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "title"
 msgstr ""
@@ -69,15 +69,15 @@ msgstr ""
 #: edh_web_application/bibliography/forms.py:13
 #: edh_web_application/bibliography/forms.py:23
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:37
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:148
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:279
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:150
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:283
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "publication"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:14
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:43
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:154
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:156
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "volume"
 msgstr ""
@@ -90,7 +90,7 @@ msgstr ""
 #: edh_web_application/bibliography/forms.py:16
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:58
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:55
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:166
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:168
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "pages"
 msgstr ""
@@ -103,7 +103,7 @@ msgstr ""
 #: edh_web_application/bibliography/forms.py:18
 #: edh_web_application/foto/forms.py:48
 #: edh_web_application/foto/templates/foto/last_updates.html:50
-#: edh_web_application/foto/templates/foto/search_results.html:164
+#: edh_web_application/foto/templates/foto/search_results.html:166
 #: edh_web_application/models/Foto.py:165
 #: edh_web_application/models/Publication.py:24
 msgid "ae"
@@ -112,7 +112,7 @@ msgstr "AE"
 #: edh_web_application/bibliography/forms.py:19
 #: edh_web_application/foto/forms.py:47
 #: edh_web_application/foto/templates/foto/last_updates.html:56
-#: edh_web_application/foto/templates/foto/search_results.html:170
+#: edh_web_application/foto/templates/foto/search_results.html:172
 #: edh_web_application/models/Foto.py:164
 #: edh_web_application/models/Publication.py:26
 msgid "cil"
@@ -128,35 +128,35 @@ msgstr "other corpora"
 
 #: edh_web_application/bibliography/forms.py:22
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:16
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:275
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:279
 #: edh_web_application/foto/forms.py:55
 #: edh_web_application/foto/templates/foto/search_results.html:16
-#: edh_web_application/foto/templates/foto/search_results.html:298
+#: edh_web_application/foto/templates/foto/search_results.html:302
 #: edh_web_application/foto/templates/foto/search_results_grid.html:16
-#: edh_web_application/foto/templates/foto/search_results_grid.html:233
+#: edh_web_application/foto/templates/foto/search_results_grid.html:237
 #: edh_web_application/geography/forms.py:56
 #: edh_web_application/geography/templates/geography/search_results.html:16
-#: edh_web_application/geography/templates/geography/search_results.html:281
+#: edh_web_application/geography/templates/geography/search_results.html:285
 #: edh_web_application/inscription/forms.py:73
 #: edh_web_application/inscription/templates/inscription/search_results.html:16
-#: edh_web_application/inscription/templates/inscription/search_results.html:287
+#: edh_web_application/inscription/templates/inscription/search_results.html:293
 msgid "sort by"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:25
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:17
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:283
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:287
 #: edh_web_application/foto/forms.py:65
 #: edh_web_application/foto/templates/foto/search_results.html:17
-#: edh_web_application/foto/templates/foto/search_results.html:311
+#: edh_web_application/foto/templates/foto/search_results.html:315
 #: edh_web_application/foto/templates/foto/search_results_grid.html:17
-#: edh_web_application/foto/templates/foto/search_results_grid.html:246
+#: edh_web_application/foto/templates/foto/search_results_grid.html:250
 #: edh_web_application/geography/forms.py:61
 #: edh_web_application/geography/templates/geography/search_results.html:17
-#: edh_web_application/geography/templates/geography/search_results.html:292
+#: edh_web_application/geography/templates/geography/search_results.html:296
 #: edh_web_application/inscription/forms.py:83
 #: edh_web_application/inscription/templates/inscription/search_results.html:17
-#: edh_web_application/inscription/templates/inscription/search_results.html:299
+#: edh_web_application/inscription/templates/inscription/search_results.html:305
 msgid "number of results/page"
 msgstr ""
 
@@ -276,29 +276,29 @@ msgid "other corpora"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:17
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:128
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:130
 #: edh_web_application/foto/templates/foto/last_updates.html:17
-#: edh_web_application/foto/templates/foto/search_results.html:129
+#: edh_web_application/foto/templates/foto/search_results.html:131
 #: edh_web_application/geography/templates/geography/last_updates.html:20
-#: edh_web_application/geography/templates/geography/search_results.html:129
+#: edh_web_application/geography/templates/geography/search_results.html:131
 #: edh_web_application/inscription/templates/inscription/last_updates.html:20
-#: edh_web_application/inscription/templates/inscription/search_results.html:130
+#: edh_web_application/inscription/templates/inscription/search_results.html:132
 msgid "Number"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:19
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:130
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:132
 #: edh_web_application/foto/templates/foto/last_updates.html:20
 #: edh_web_application/geography/templates/geography/last_updates.html:27
-#: edh_web_application/geography/templates/geography/search_results.html:136
+#: edh_web_application/geography/templates/geography/search_results.html:138
 #: edh_web_application/inscription/templates/inscription/last_updates.html:22
-#: edh_web_application/inscription/templates/inscription/search_results.html:132
+#: edh_web_application/inscription/templates/inscription/search_results.html:134
 msgid "&ndash; open detailed view..."
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:49
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:160
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:280
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:162
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:284
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "years"
 msgstr ""
@@ -388,81 +388,81 @@ msgid "b_nr"
 msgstr "B-No."
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:18
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:291
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:295
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:16
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:40
 #: edh_web_application/foto/templates/foto/search_results.html:18
-#: edh_web_application/foto/templates/foto/search_results.html:319
+#: edh_web_application/foto/templates/foto/search_results.html:323
 #: edh_web_application/foto/templates/foto/search_results_grid.html:18
-#: edh_web_application/foto/templates/foto/search_results_grid.html:254
+#: edh_web_application/foto/templates/foto/search_results_grid.html:258
 #: edh_web_application/geography/templates/geography/search_results.html:18
-#: edh_web_application/geography/templates/geography/search_results.html:300
+#: edh_web_application/geography/templates/geography/search_results.html:304
 #: edh_web_application/geography/templates/geography/search_results_map.html:16
 #: edh_web_application/geography/templates/geography/search_results_map.html:23
 #: edh_web_application/geography/templates/geography/search_results_table.html:16
 #: edh_web_application/geography/templates/geography/search_results_table.html:40
 #: edh_web_application/inscription/templates/inscription/search_results.html:18
-#: edh_web_application/inscription/templates/inscription/search_results.html:307
+#: edh_web_application/inscription/templates/inscription/search_results.html:313
 msgid "view"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:18
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:293
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:297
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:42
 #: edh_web_application/foto/templates/foto/search_results.html:18
-#: edh_web_application/foto/templates/foto/search_results.html:321
-#: edh_web_application/foto/templates/foto/search_results_grid.html:256
+#: edh_web_application/foto/templates/foto/search_results.html:325
+#: edh_web_application/foto/templates/foto/search_results_grid.html:260
 #: edh_web_application/geography/templates/geography/search_results.html:18
-#: edh_web_application/geography/templates/geography/search_results.html:302
+#: edh_web_application/geography/templates/geography/search_results.html:306
 #: edh_web_application/geography/templates/geography/search_results_map.html:25
 #: edh_web_application/geography/templates/geography/search_results_table.html:42
 #: edh_web_application/inscription/templates/inscription/search_results.html:18
-#: edh_web_application/inscription/templates/inscription/search_results.html:309
+#: edh_web_application/inscription/templates/inscription/search_results.html:315
 msgid "list"
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:19
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:297
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:301
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:17
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:46
 #: edh_web_application/foto/templates/foto/search_results.html:19
-#: edh_web_application/foto/templates/foto/search_results.html:325
+#: edh_web_application/foto/templates/foto/search_results.html:329
 #: edh_web_application/foto/templates/foto/search_results_grid.html:19
-#: edh_web_application/foto/templates/foto/search_results_grid.html:260
+#: edh_web_application/foto/templates/foto/search_results_grid.html:264
 #: edh_web_application/geography/templates/geography/search_results.html:19
-#: edh_web_application/geography/templates/geography/search_results.html:307
+#: edh_web_application/geography/templates/geography/search_results.html:311
 #: edh_web_application/geography/templates/geography/search_results_map.html:17
 #: edh_web_application/geography/templates/geography/search_results_map.html:30
 #: edh_web_application/geography/templates/geography/search_results_table.html:17
 #: edh_web_application/geography/templates/geography/search_results_table.html:47
 #: edh_web_application/inscription/templates/inscription/search_results.html:19
-#: edh_web_application/inscription/templates/inscription/search_results.html:314
+#: edh_web_application/inscription/templates/inscription/search_results.html:320
 msgid "filter"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:277
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:281
 msgid "B-Nr."
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:294
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:298
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:16
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:43
-#: edh_web_application/geography/templates/geography/search_results.html:303
+#: edh_web_application/geography/templates/geography/search_results.html:307
 #: edh_web_application/geography/templates/geography/search_results_map.html:26
 #: edh_web_application/geography/templates/geography/search_results_table.html:16
 #: edh_web_application/geography/templates/geography/search_results_table.html:43
-#: edh_web_application/inscription/templates/inscription/search_results.html:310
+#: edh_web_application/inscription/templates/inscription/search_results.html:316
 msgid "table"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search_results.html:340
+#: edh_web_application/bibliography/templates/bibliography/search_results.html:344
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:89
-#: edh_web_application/foto/templates/foto/search_results.html:364
-#: edh_web_application/foto/templates/foto/search_results_grid.html:299
-#: edh_web_application/geography/templates/geography/search_results.html:347
+#: edh_web_application/foto/templates/foto/search_results.html:368
+#: edh_web_application/foto/templates/foto/search_results_grid.html:303
+#: edh_web_application/geography/templates/geography/search_results.html:351
 #: edh_web_application/geography/templates/geography/search_results_map.html:70
 #: edh_web_application/geography/templates/geography/search_results_table.html:87
-#: edh_web_application/inscription/templates/inscription/search_results.html:353
+#: edh_web_application/inscription/templates/inscription/search_results.html:359
 msgid "Filter..."
 msgstr ""
 
@@ -695,75 +695,75 @@ msgstr ""
 #: edh_web_application/foto/forms.py:40 edh_web_application/foto/forms.py:57
 #: edh_web_application/foto/templates/foto/detail_view.html:30
 #: edh_web_application/foto/templates/foto/last_updates.html:25
-#: edh_web_application/foto/templates/foto/search_results.html:139
-#: edh_web_application/foto/templates/foto/search_results.html:301
-#: edh_web_application/foto/templates/foto/search_results_grid.html:236
+#: edh_web_application/foto/templates/foto/search_results.html:141
+#: edh_web_application/foto/templates/foto/search_results.html:305
+#: edh_web_application/foto/templates/foto/search_results_grid.html:240
 #: edh_web_application/geography/forms.py:40
 #: edh_web_application/geography/forms.py:57
 #: edh_web_application/geography/templates/geography/detail_view.html:28
 #: edh_web_application/geography/templates/geography/last_updates.html:30
-#: edh_web_application/geography/templates/geography/search_results.html:139
-#: edh_web_application/geography/templates/geography/search_results.html:284
+#: edh_web_application/geography/templates/geography/search_results.html:141
+#: edh_web_application/geography/templates/geography/search_results.html:288
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:74
 #: edh_web_application/inscription/templates/inscription/detail_view.html:64
 #: edh_web_application/inscription/templates/inscription/last_updates.html:33
 #: edh_web_application/inscription/templates/inscription/search.html:101
-#: edh_web_application/inscription/templates/inscription/search_results.html:149
-#: edh_web_application/inscription/templates/inscription/search_results.html:290
+#: edh_web_application/inscription/templates/inscription/search_results.html:151
+#: edh_web_application/inscription/templates/inscription/search_results.html:296
 msgid "province"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:41 edh_web_application/foto/forms.py:59
 #: edh_web_application/foto/templates/foto/detail_view.html:38
 #: edh_web_application/foto/templates/foto/last_updates.html:33
-#: edh_web_application/foto/templates/foto/search_results.html:147
-#: edh_web_application/foto/templates/foto/search_results.html:303
-#: edh_web_application/foto/templates/foto/search_results_grid.html:238
+#: edh_web_application/foto/templates/foto/search_results.html:149
+#: edh_web_application/foto/templates/foto/search_results.html:307
+#: edh_web_application/foto/templates/foto/search_results_grid.html:242
 #: edh_web_application/geography/forms.py:41
 #: edh_web_application/geography/forms.py:58
 #: edh_web_application/geography/templates/geography/detail_view.html:36
 #: edh_web_application/geography/templates/geography/detail_view_province.html:70
 #: edh_web_application/geography/templates/geography/last_updates.html:40
-#: edh_web_application/geography/templates/geography/search_results.html:149
-#: edh_web_application/geography/templates/geography/search_results.html:286
+#: edh_web_application/geography/templates/geography/search_results.html:151
+#: edh_web_application/geography/templates/geography/search_results.html:290
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/detail_view.html:72
 #: edh_web_application/inscription/templates/inscription/last_updates.html:41
-#: edh_web_application/inscription/templates/inscription/search_results.html:157
-#: edh_web_application/inscription/templates/inscription/search_results.html:292
+#: edh_web_application/inscription/templates/inscription/search_results.html:159
+#: edh_web_application/inscription/templates/inscription/search_results.html:298
 msgid "ancient find spot"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:42 edh_web_application/foto/forms.py:60
 #: edh_web_application/foto/templates/foto/detail_view.html:42
 #: edh_web_application/foto/templates/foto/last_updates.html:37
-#: edh_web_application/foto/templates/foto/search_results.html:151
-#: edh_web_application/foto/templates/foto/search_results.html:304
-#: edh_web_application/foto/templates/foto/search_results_grid.html:239
+#: edh_web_application/foto/templates/foto/search_results.html:153
+#: edh_web_application/foto/templates/foto/search_results.html:308
+#: edh_web_application/foto/templates/foto/search_results_grid.html:243
 #: edh_web_application/geography/forms.py:42
 #: edh_web_application/geography/forms.py:59
 #: edh_web_application/geography/templates/geography/detail_view.html:46
 #: edh_web_application/geography/templates/geography/detail_view_province.html:70
 #: edh_web_application/geography/templates/geography/last_updates.html:44
-#: edh_web_application/geography/templates/geography/search_results.html:153
-#: edh_web_application/geography/templates/geography/search_results.html:287
+#: edh_web_application/geography/templates/geography/search_results.html:155
+#: edh_web_application/geography/templates/geography/search_results.html:291
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:76
 #: edh_web_application/inscription/templates/inscription/last_updates.html:45
-#: edh_web_application/inscription/templates/inscription/search_results.html:162
-#: edh_web_application/inscription/templates/inscription/search_results.html:293
+#: edh_web_application/inscription/templates/inscription/search_results.html:164
+#: edh_web_application/inscription/templates/inscription/search_results.html:299
 msgid "modern find spot"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:43 edh_web_application/foto/forms.py:61
 #: edh_web_application/foto/templates/foto/detail_view.html:46
 #: edh_web_application/foto/templates/foto/last_updates.html:41
-#: edh_web_application/foto/templates/foto/search_results.html:155
-#: edh_web_application/foto/templates/foto/search_results.html:305
-#: edh_web_application/foto/templates/foto/search_results_grid.html:240
+#: edh_web_application/foto/templates/foto/search_results.html:157
+#: edh_web_application/foto/templates/foto/search_results.html:309
+#: edh_web_application/foto/templates/foto/search_results_grid.html:244
 #: edh_web_application/inscription/templates/inscription/detail_view.html:101
 msgid "present location"
 msgstr ""
@@ -776,7 +776,7 @@ msgstr ""
 #: edh_web_application/foto/forms.py:45
 #: edh_web_application/foto/templates/foto/detail_view.html:59
 #: edh_web_application/foto/templates/foto/last_updates.html:45
-#: edh_web_application/foto/templates/foto/search_results.html:159
+#: edh_web_application/foto/templates/foto/search_results.html:161
 msgid "date of photograph"
 msgstr ""
 
@@ -787,22 +787,22 @@ msgstr ""
 
 #: edh_web_application/foto/forms.py:49
 #: edh_web_application/foto/templates/foto/last_updates.html:62
-#: edh_web_application/foto/templates/foto/search_results.html:176
+#: edh_web_application/foto/templates/foto/search_results.html:178
 msgid "other literature"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:50
 #: edh_web_application/foto/templates/foto/last_updates.html:68
-#: edh_web_application/foto/templates/foto/search_results.html:182
+#: edh_web_application/foto/templates/foto/search_results.html:184
 msgid "commentary"
 msgstr ""
 
 #: edh_web_application/foto/forms.py:51 edh_web_application/foto/forms.py:62
 #: edh_web_application/foto/templates/foto/detail_view.html:108
 #: edh_web_application/foto/templates/foto/last_updates.html:74
-#: edh_web_application/foto/templates/foto/search_results.html:188
-#: edh_web_application/foto/templates/foto/search_results.html:306
-#: edh_web_application/foto/templates/foto/search_results_grid.html:241
+#: edh_web_application/foto/templates/foto/search_results.html:190
+#: edh_web_application/foto/templates/foto/search_results.html:310
+#: edh_web_application/foto/templates/foto/search_results_grid.html:245
 #: edh_web_application/inscription/forms.py:74
 #: edh_web_application/inscription/templates/inscription/search.html:100
 msgid "HD-No."
@@ -826,24 +826,24 @@ msgstr ""
 #: edh_web_application/foto/forms.py:74
 #: edh_web_application/foto/templates/foto/detail_view.html:34
 #: edh_web_application/foto/templates/foto/last_updates.html:29
-#: edh_web_application/foto/templates/foto/search_results.html:143
-#: edh_web_application/foto/templates/foto/search_results.html:302
-#: edh_web_application/foto/templates/foto/search_results_grid.html:237
+#: edh_web_application/foto/templates/foto/search_results.html:145
+#: edh_web_application/foto/templates/foto/search_results.html:306
+#: edh_web_application/foto/templates/foto/search_results_grid.html:241
 #: edh_web_application/geography/forms.py:57
 #: edh_web_application/geography/forms.py:66
 #: edh_web_application/geography/forms.py:70
 #: edh_web_application/geography/templates/geography/detail_view.html:32
 #: edh_web_application/geography/templates/geography/detail_view_province.html:70
 #: edh_web_application/geography/templates/geography/last_updates.html:35
-#: edh_web_application/geography/templates/geography/search_results.html:144
-#: edh_web_application/geography/templates/geography/search_results.html:285
+#: edh_web_application/geography/templates/geography/search_results.html:146
+#: edh_web_application/geography/templates/geography/search_results.html:289
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:74
 #: edh_web_application/inscription/templates/inscription/detail_view.html:68
 #: edh_web_application/inscription/templates/inscription/last_updates.html:37
 #: edh_web_application/inscription/templates/inscription/search.html:102
-#: edh_web_application/inscription/templates/inscription/search_results.html:153
-#: edh_web_application/inscription/templates/inscription/search_results.html:291
+#: edh_web_application/inscription/templates/inscription/search_results.html:155
+#: edh_web_application/inscription/templates/inscription/search_results.html:297
 msgid "country"
 msgstr ""
 
@@ -893,22 +893,22 @@ msgstr ""
 
 #: edh_web_application/foto/templates/foto/search.html:17
 #: edh_web_application/foto/templates/foto/search.html:23
-#: edh_web_application/foto/templates/foto/search_results.html:329
 #: edh_web_application/foto/templates/foto/search_results.html:333
-#: edh_web_application/foto/templates/foto/search_results_grid.html:264
+#: edh_web_application/foto/templates/foto/search_results.html:337
 #: edh_web_application/foto/templates/foto/search_results_grid.html:268
+#: edh_web_application/foto/templates/foto/search_results_grid.html:272
 #: edh_web_application/geography/templates/geography/search.html:17
 #: edh_web_application/geography/templates/geography/search.html:23
-#: edh_web_application/geography/templates/geography/search_results.html:311
 #: edh_web_application/geography/templates/geography/search_results.html:315
+#: edh_web_application/geography/templates/geography/search_results.html:319
 #: edh_web_application/geography/templates/geography/search_results_map.html:34
 #: edh_web_application/geography/templates/geography/search_results_map.html:38
 #: edh_web_application/geography/templates/geography/search_results_table.html:51
 #: edh_web_application/geography/templates/geography/search_results_table.html:55
 #: edh_web_application/inscription/templates/inscription/search.html:17
 #: edh_web_application/inscription/templates/inscription/search.html:23
-#: edh_web_application/inscription/templates/inscription/search_results.html:318
-#: edh_web_application/inscription/templates/inscription/search_results.html:322
+#: edh_web_application/inscription/templates/inscription/search_results.html:324
+#: edh_web_application/inscription/templates/inscription/search_results.html:328
 msgid "select one or more entries..."
 msgstr ""
 
@@ -918,24 +918,24 @@ msgstr ""
 msgid "f_nr"
 msgstr "F-No."
 
-#: edh_web_application/foto/templates/foto/search_results.html:300
-#: edh_web_application/foto/templates/foto/search_results_grid.html:235
+#: edh_web_application/foto/templates/foto/search_results.html:304
+#: edh_web_application/foto/templates/foto/search_results_grid.html:239
 msgid "F-Nr."
 msgstr "F-No."
 
-#: edh_web_application/foto/templates/foto/search_results.html:307
-#: edh_web_application/foto/templates/foto/search_results_grid.html:242
+#: edh_web_application/foto/templates/foto/search_results.html:311
+#: edh_web_application/foto/templates/foto/search_results_grid.html:246
 msgid "CIL"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/search_results.html:308
-#: edh_web_application/foto/templates/foto/search_results_grid.html:243
+#: edh_web_application/foto/templates/foto/search_results.html:312
+#: edh_web_application/foto/templates/foto/search_results_grid.html:247
 msgid "AE"
 msgstr ""
 
-#: edh_web_application/foto/templates/foto/search_results.html:322
+#: edh_web_application/foto/templates/foto/search_results.html:326
 #: edh_web_application/foto/templates/foto/search_results_grid.html:18
-#: edh_web_application/foto/templates/foto/search_results_grid.html:257
+#: edh_web_application/foto/templates/foto/search_results_grid.html:261
 msgid "grid"
 msgstr ""
 
@@ -948,14 +948,14 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/detail_view.html:56
 #: edh_web_application/geography/templates/geography/detail_view_province.html:70
 #: edh_web_application/geography/templates/geography/last_updates.html:48
-#: edh_web_application/geography/templates/geography/search_results.html:157
-#: edh_web_application/geography/templates/geography/search_results.html:288
+#: edh_web_application/geography/templates/geography/search_results.html:159
+#: edh_web_application/geography/templates/geography/search_results.html:292
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:80
 #: edh_web_application/inscription/templates/inscription/last_updates.html:49
-#: edh_web_application/inscription/templates/inscription/search_results.html:167
-#: edh_web_application/inscription/templates/inscription/search_results.html:294
+#: edh_web_application/inscription/templates/inscription/search_results.html:169
+#: edh_web_application/inscription/templates/inscription/search_results.html:300
 msgid "find spot"
 msgstr "find spot"
 
@@ -964,8 +964,8 @@ msgstr "find spot"
 #: edh_web_application/geography/templates/geography/detail_view.html:66
 #: edh_web_application/geography/templates/geography/detail_view_province.html:70
 #: edh_web_application/geography/templates/geography/last_updates.html:58
-#: edh_web_application/geography/templates/geography/search_results.html:167
-#: edh_web_application/geography/templates/geography/search_results.html:289
+#: edh_web_application/geography/templates/geography/search_results.html:169
+#: edh_web_application/geography/templates/geography/search_results.html:293
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 msgid "verw_bezirk"
 msgstr "region"
@@ -1039,7 +1039,7 @@ msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view.html:119
 #: edh_web_application/geography/templates/geography/search.html:81
-#: edh_web_application/geography/templates/geography/search_results.html:342
+#: edh_web_application/geography/templates/geography/search_results.html:346
 #: edh_web_application/geography/templates/geography/search_results_map.html:65
 #: edh_web_application/geography/templates/geography/search_results_table.html:82
 #: edh_web_application/inscription/templates/inscription/detail_view.html:381
@@ -1070,11 +1070,11 @@ msgstr ""
 msgid "Findspots linked to this province"
 msgstr ""
 
-#: edh_web_application/geography/templates/geography/search_results.html:304
+#: edh_web_application/geography/templates/geography/search_results.html:308
 #: edh_web_application/geography/templates/geography/search_results_map.html:16
 #: edh_web_application/geography/templates/geography/search_results_map.html:27
 #: edh_web_application/geography/templates/geography/search_results_table.html:44
-#: edh_web_application/inscription/templates/inscription/search_results.html:311
+#: edh_web_application/inscription/templates/inscription/search_results.html:317
 msgid "map"
 msgstr ""
 
@@ -1210,7 +1210,7 @@ msgid "date from sort"
 msgstr "dat_jahr_a"
 
 #: edh_web_application/inscription/forms.py:80
-#: edh_web_application/inscription/templates/inscription/search_results.html:295
+#: edh_web_application/inscription/templates/inscription/search_results.html:301
 msgid "date from"
 msgstr ""
 
@@ -1219,7 +1219,7 @@ msgid "date to sort"
 msgstr "dat_jahr_e"
 
 #: edh_web_application/inscription/forms.py:81
-#: edh_web_application/inscription/templates/inscription/search_results.html:296
+#: edh_web_application/inscription/templates/inscription/search_results.html:302
 msgid "date to"
 msgstr ""
 
@@ -1258,7 +1258,7 @@ msgstr "Extended Search"
 
 #: edh_web_application/inscription/templates/inscription/detail_view.html:27
 #: edh_web_application/inscription/templates/inscription/last_updates.html:29
-#: edh_web_application/inscription/templates/inscription/search_results.html:139
+#: edh_web_application/inscription/templates/inscription/search_results.html:141
 msgid "Transcription"
 msgstr ""
 
@@ -1268,7 +1268,7 @@ msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/detail_view.html:30
 #: edh_web_application/inscription/templates/inscription/last_updates.html:53
-#: edh_web_application/inscription/templates/inscription/search_results.html:171
+#: edh_web_application/inscription/templates/inscription/search_results.html:173
 msgid "Chronological Data"
 msgstr ""
 
@@ -1481,19 +1481,19 @@ msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/last_updates.html:57
 #: edh_web_application/inscription/templates/inscription/search.html:106
-#: edh_web_application/inscription/templates/inscription/search_results.html:175
+#: edh_web_application/inscription/templates/inscription/search_results.html:177
 msgid "literature"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:51
-#: edh_web_application/inscription/templates/inscription/search_results.html:341
+#: edh_web_application/inscription/templates/inscription/search_results.html:347
 msgid "year"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
 #: edh_web_application/inscription/templates/inscription/search.html:146
-#: edh_web_application/inscription/templates/inscription/search_results.html:343
-#: edh_web_application/inscription/templates/inscription/search_results.html:454
+#: edh_web_application/inscription/templates/inscription/search_results.html:349
+#: edh_web_application/inscription/templates/inscription/search_results.html:460
 #: edh_web_application/models/Inscription.py:1039
 #: edh_web_application/models/Inscription.py:1041
 #: edh_web_application/models/Inscription.py:1049
@@ -1502,8 +1502,8 @@ msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
 #: edh_web_application/inscription/templates/inscription/search.html:143
-#: edh_web_application/inscription/templates/inscription/search_results.html:343
-#: edh_web_application/inscription/templates/inscription/search_results.html:451
+#: edh_web_application/inscription/templates/inscription/search_results.html:349
+#: edh_web_application/inscription/templates/inscription/search_results.html:457
 #: edh_web_application/models/Inscription.py:1044
 #: edh_web_application/models/Inscription.py:1046
 #: edh_web_application/models/Inscription.py:1051
@@ -1511,7 +1511,7 @@ msgid "AD"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:58
-#: edh_web_application/inscription/templates/inscription/search_results.html:347
+#: edh_web_application/inscription/templates/inscription/search_results.html:353
 msgid "search string(s)"
 msgstr ""
 
@@ -1525,12 +1525,18 @@ msgstr ""
 #: edh_web_application/inscription/templates/inscription/search.html:101
 msgid "hlp_provinz"
 msgstr ""
-"Boundaries of the ancient provinces / Italic regions:<ul><li>As a rule the boundaries are those of the mid 2nd century AD (most inscriptions date from this period). "
-"Exception: Moesia inferior: boundaries of 3rd century AD (according to CIL III Suppl. tab. IV)</li><li>The provinces of Late Antiquity are not used, but assigned geographically to the above mentioned provinces / regions.</li></ul>"
+"Boundaries of the ancient provinces / Italic regions:<ul><li>As a rule "
+"the boundaries are those of the mid 2nd century AD (most inscriptions "
+"date from this period). Exception: Moesia inferior: boundaries of 3rd "
+"century AD (according to CIL III Suppl. tab. IV)</li><li>The provinces of"
+" Late Antiquity are not used, but assigned geographically to the above "
+"mentioned provinces / regions.</li></ul>"
 
 #: edh_web_application/inscription/templates/inscription/search.html:102
 msgid "hlp_land"
-msgstr "Choosing multiple options will find all records that belong to at least one of chosen countries."
+msgstr ""
+"Choosing multiple options will find all records that belong to at least "
+"one of chosen countries."
 
 #: edh_web_application/inscription/templates/inscription/search.html:103
 #: edh_web_application/models/Foto.py:160
@@ -1541,15 +1547,23 @@ msgstr "ancient find spot"
 #: edh_web_application/inscription/templates/inscription/search.html:103
 msgid "hlp_fo_antik"
 msgstr ""
-"Search with Entry or Choice (Autocomplete)<br/>Spelling:<ul><li>guidelines:<br/>"
-"R.J.A. Talbert, Barrington atlas of the Greek and Roman world (Princeton 2000)</br/>"
-"CIL</li><li>Ancient variants of the name (e.g. in the case of colonies): one of them is included in the findspot field in brackets, so that both variants can be found."
-"e.g.: Colonia Iulia Augusta Philippensium bzw. Philippi: \"Colonia Iulia Augusta Philippensium (= Philippi)\""
-"<br/>This is not applicable in cases, where the variants are contained within the name by one word, which is precisely the same word. "
-"e.g.: Colonia Laus Iulia Corinthus bzw. Corinthus: \"Colonia Laus Iulia Corinthus\""
-"</li><li>The ancient findspot name of removed inscriptions is made clear by "(ancient findspot), from", whereas the modern findspot name regularly corresponds to the genuine findspot; "
-"the respective names of ancient province / region or modern country correspond in these cases to the ancient and modern findspot<br>"
-"e.g.: modern findspot: Szombathely (Country: Hungary)  =  ancient fundort: Roma, aus? (Province / Italic Region: Latium et Campania)</li></ul>"
+"Search with Entry or Choice "
+"(Autocomplete)<br/>Spelling:<ul><li>guidelines:<br/>R.J.A. Talbert, "
+"Barrington atlas of the Greek and Roman world (Princeton "
+"2000)</br/>CIL</li><li>Ancient variants of the name (e.g. in the case of "
+"colonies): one of them is included in the findspot field in brackets, so "
+"that both variants can be found.e.g.: Colonia Iulia Augusta Philippensium"
+" bzw. Philippi: \"Colonia Iulia Augusta Philippensium (= "
+"Philippi)\"<br/>This is not applicable in cases, where the variants are "
+"contained within the name by one word, which is precisely the same word. "
+"e.g.: Colonia Laus Iulia Corinthus bzw. Corinthus: \"Colonia Laus Iulia "
+"Corinthus\"</li><li>The ancient findspot name of removed inscriptions is "
+"made clear by \"(ancient findspot), from\", whereas the modern findspot "
+"name regularly corresponds to the genuine findspot; the respective names "
+"of ancient province / region or modern country correspond in these cases "
+"to the ancient and modern findspot<br>e.g.: modern findspot: Szombathely "
+"(Country: Hungary)  =  ancient fundort: Roma, aus? (Province / Italic "
+"Region: Latium et Campania)</li></ul>"
 
 #: edh_web_application/inscription/templates/inscription/search.html:104
 #: edh_web_application/models/Foto.py:161
@@ -1560,12 +1574,21 @@ msgstr "modern find spot"
 #: edh_web_application/inscription/templates/inscription/search.html:104
 msgid "hlp_fo_modern"
 msgstr ""
-"Politically independent municipality or city "
-"(cf. in contrast: town or city quarter of a politically independent municipality or a city = "find spot (village, street, etc.)")<br/>"
-"Search by means of entry or choice."
-"Spelling:<ul><li>In the language of the country. Preference is given to the Guidelines in J.C. Bartholomew, The Times atlas of the world (London 1987) or the geographical database <a href='https://geonames.org'>GeoNames</a>.<br/>In the case of Arabic names translitteration according to DIN 31635 the Deutsche Morgenländische Gesellschaft (DMG) (in Text and Photographic database these have not been carried out completely).</li>"
-"<li>Accents and Umlaute are ignored.</li></ul>"
-"Note: Since the territory areas of ancient and modern findspots are normally not identical, it is possible, that several names of modern findspots correspond to one ancient findspot or territory. Genuine lack of clarity, which unfortunately often cannot be solved, results from imprecise findspot documentation."
+"Politically independent municipality or city (cf. in contrast: town or "
+"city quarter of a politically independent municipality or a city = \"find"
+" spot (village, street, etc.)\")<br/>Search by means of entry or "
+"choice.Spelling:<ul><li>In the language of the country. Preference is "
+"given to the Guidelines in J.C. Bartholomew, The Times atlas of the world"
+" (London 1987) or the geographical database <a "
+"href='https://geonames.org'>GeoNames</a>.<br/>In the case of Arabic names"
+" translitteration according to DIN 31635 the Deutsche Morgenländische "
+"Gesellschaft (DMG) (in Text and Photographic database these have not been"
+" carried out completely).</li><li>Accents and Umlaute are "
+"ignored.</li></ul>Note: Since the territory areas of ancient and modern "
+"findspots are normally not identical, it is possible, that several names "
+"of modern findspots correspond to one ancient findspot or territory. "
+"Genuine lack of clarity, which unfortunately often cannot be solved, "
+"results from imprecise findspot documentation."
 
 #: edh_web_application/inscription/templates/inscription/search.html:105
 #: edh_web_application/models/Place.py:446
@@ -1575,16 +1598,21 @@ msgstr "findspot"
 #: edh_web_application/inscription/templates/inscription/search.html:105
 msgid "hlp_fundstelle"
 msgstr ""
-"<ul><li>Town or city quarter of a politically independent municipality or of a city (e.g. town quarter, incorporated village, hamlet) "
-"(cf. in contrast: politically independent municipality or city = \"modern findspot\")</li><li>Smaller geographic unit (e.g. street, area of land, mountain, river) "
-"or building (e.g. fort, city wall, church)</li></ul>"
+"<ul><li>Town or city quarter of a politically independent municipality or"
+" of a city (e.g. town quarter, incorporated village, hamlet) (cf. in "
+"contrast: politically independent municipality or city = \"modern "
+"findspot\")</li><li>Smaller geographic unit (e.g. street, area of land, "
+"mountain, river) or building (e.g. fort, city wall, church)</li></ul>"
 
 #: edh_web_application/inscription/templates/inscription/search.html:106
 msgid "hlp_literatur"
 msgstr ""
-"These are the special rules for citation for abbreviations, volume and year information as well as the counting of numbers:"
-""<ul><li>Année Épigraphique:<br/>AE  year, number (always 4 digit); e.g.::<br/>AE 1983, 0825<br/>AE 2001, 1720<br/>AE 1969/70, 0384</li>"
-"<li>Corpora</li><li>journals</li><li>other publications</li></ul>"
+"These are the special rules for citation for abbreviations, volume and "
+"year information as well as the counting of numbers:\"<ul><li>Année "
+"Épigraphique:<br/>AE  year, number (always 4 digit); e.g.::<br/>AE 1983, "
+"0825<br/>AE 2001, 1720<br/>AE 1969/70, "
+"0384</li><li>Corpora</li><li>journals</li><li>other "
+"publications</li></ul>"
 
 #: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:37
 msgid "land-ad"
@@ -3322,16 +3350,31 @@ msgstr ""
 "<span class=\"hexa\"></span>        <span class=\"flag\">2021</span>"
 "      </div>      <div class=\"desc\">Closing year (phase-out funding) of"
 " EDH's funding by the <strong>Programme of the Academies of the Bund-"
-"Länder Commission</strong></div>    </div>  <li>    <div "
+"Länder Commission</strong></div></div></li>  <li>    <div "
 "class=\"direction-r\">      <div class=\"flag-wrapper\">        <span "
-"class=\"hexa\"></span>        <span class=\"flag\">November 2020</span>"
-"      </div>      <div class=\"desc\"><i class=\"fas fa-external-link-"
-"alt\"></i> <a href=\"http://epigraphy.info/workshop_5.html\">5. "
-"epigraphy.info Workshop</a>, Leuven 3. - 6. November 2020</div>    </div>"
-"  </li><li>    <div class=\"direction-l\">      <div class=\"flag-"
+"class=\"hexa\"></span>        <span class=\"flag\">March 2021</span>"
+"      </div>      <div class=\"desc\">Transfer of the EDH inscription "
+"index (ca. 18 running meters) of the inscriptions of the Regiones Italiae"
+" to Rome (<i class=\"fas fa-external-link-alt\"></i> <a href=\"http://www"
+".edr-edr.it/default/index.php?lang=en\">EDR</a>, University of Rome La "
+"Sapienza</div>    </div>  </li><li>    <div class=\"direction-l\">      "
+"<div class=\"flag-wrapper\">        <span class=\"hexa\"></span>        "
+"<span class=\"flag\">May 2021</span>      </div>      <div "
+"class=\"desc\">Transfer of the EDH inscription index (ca. 52 running "
+"meters) of the inscriptions of the Roman provinces to Vienna (<i "
+"class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"https://altegeschichte.univie.ac.at/\">Department of Ancient "
+"History, Papyrology and Epigraphy</a>, University of Vienna</div>    "
+"</div>  </li><li>    <div class=\"direction-r\">      <div class=\"flag-"
 "wrapper\">        <span class=\"hexa\"></span>        <span "
-"class=\"flag\">February 2020</span>      </div>      <div "
+"class=\"flag\">November 2020</span>      </div>      <div "
 "class=\"desc\"><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"http://epigraphy.info/workshop_5.html\">5. epigraphy.info "
+"Workshop</a>, Leuven 3. - 6. November 2020</div>    </div>  </li><li>    "
+"<div class=\"direction-l\">      <div class=\"flag-wrapper\">        "
+"<span class=\"hexa\"></span>        <span class=\"flag\">February "
+"2020</span>      </div>      <div class=\"desc\"><i class=\"fas fa-"
+"external-link-alt\"></i> <a "
 "href=\"http://epigraphy.info/workshop_4.html\">4. epigraphy.info "
 "Workshop</a>, Hamburg 19. - 21. February 2020</div>    </div>  </li><li>"
 "    <div class=\"direction-r\">      <div class=\"flag-wrapper\">        "
@@ -3950,6 +3993,16 @@ msgstr ""
 msgid "entered completely"
 msgstr ""
 
+#: edh_web_application/project/templates/project/project_provinces.html:99
+#: edh_web_application/project/templates/project/project_provinces.html:348
+#: edh_web_application/project/templates/project/project_provinces.html:369
+#: edh_web_application/project/templates/project/project_provinces.html:383
+#: edh_web_application/project/templates/project/project_provinces.html:408
+#: edh_web_application/project/templates/project/project_provinces.html:448
+#: edh_web_application/project/templates/project/project_provinces.html:527
+msgid "concordances added"
+msgstr ""
+
 #: edh_web_application/project/templates/project/project_provinces.html:174
 msgid "except civitas Tungrorum ==> Belgica"
 msgstr ""
@@ -3961,15 +4014,6 @@ msgstr ""
 
 #: edh_web_application/project/templates/project/project_provinces.html:250
 msgid "under progress"
-msgstr ""
-
-#: edh_web_application/project/templates/project/project_provinces.html:348
-#: edh_web_application/project/templates/project/project_provinces.html:369
-#: edh_web_application/project/templates/project/project_provinces.html:383
-#: edh_web_application/project/templates/project/project_provinces.html:408
-#: edh_web_application/project/templates/project/project_provinces.html:448
-#: edh_web_application/project/templates/project/project_provinces.html:527
-msgid "concordances added"
 msgstr ""
 
 #: edh_web_application/project/templates/project/project_team_members.html:10
