@@ -19,6 +19,7 @@
         <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
     </div>
 </div>
+{% if number_of_hits|int > data['metadata']['rows']|int %}
 <div style="text-align:center">
     <nav aria-label="Search results pages">
         {% set aktuelleSeite = (data['metadata']['start']|int / data['metadata']['rows']|int)|int %}
@@ -120,6 +121,7 @@
         {% endif %}
     </nav>
 </div>
+{% endif %}
 <div>
     {% set count = namespace(value=0) %}
     {% for d in data['items'] %}
@@ -171,6 +173,7 @@
     </div>
     {% endfor %}
 </div>
+{% if number_of_hits|int > data['metadata']['rows']|int %}
 <div style="text-align:center">
     <nav aria-label="Search results pages">
         {% set aktuelleSeite = (data['metadata']['start']|int / data['metadata']['rows']|int)|int %}
@@ -272,6 +275,7 @@
         {% endif %}
     </nav>
 </div>
+{% endif %}
 <div id="dialog-sort" title = "{{_('sort by')}}:">
     <ul>
     <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=b_nr">{{_('B-Nr.')}}</a></li>
