@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-25 12:14+0200\n"
+"POT-Creation-Date: 2021-05-31 13:11+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -1501,9 +1501,9 @@ msgstr "Datierung"
 #: edh_web_application/inscription/templates/inscription/search.html:146
 #: edh_web_application/inscription/templates/inscription/search_results.html:349
 #: edh_web_application/inscription/templates/inscription/search_results.html:460
-#: edh_web_application/models/Inscription.py:1039
-#: edh_web_application/models/Inscription.py:1041
-#: edh_web_application/models/Inscription.py:1049
+#: edh_web_application/models/Inscription.py:1050
+#: edh_web_application/models/Inscription.py:1052
+#: edh_web_application/models/Inscription.py:1060
 msgid "BC"
 msgstr "v. Chr."
 
@@ -1511,9 +1511,9 @@ msgstr "v. Chr."
 #: edh_web_application/inscription/templates/inscription/search.html:143
 #: edh_web_application/inscription/templates/inscription/search_results.html:349
 #: edh_web_application/inscription/templates/inscription/search_results.html:457
-#: edh_web_application/models/Inscription.py:1044
-#: edh_web_application/models/Inscription.py:1046
-#: edh_web_application/models/Inscription.py:1051
+#: edh_web_application/models/Inscription.py:1055
+#: edh_web_application/models/Inscription.py:1057
+#: edh_web_application/models/Inscription.py:1062
 msgid "AD"
 msgstr "n. Chr."
 
@@ -2428,31 +2428,36 @@ msgstr "Datierung Anfang"
 msgid "dat_jahr_e"
 msgstr "Datierung Ende"
 
-#: edh_web_application/models/Inscription.py:1069
+#: edh_web_application/models/Inscription.py:1080
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1072
-#: edh_web_application/models/Inscription.py:1074
-#: edh_web_application/models/Inscription.py:1076
+#: edh_web_application/models/Inscription.py:1083
+#: edh_web_application/models/Inscription.py:1085
+#: edh_web_application/models/Inscription.py:1087
 msgid " from "
 msgstr " aus "
 
-#: edh_web_application/models/Inscription.py:1093
+#: edh_web_application/models/Inscription.py:1104
 msgid "schreibt-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1102
+#: edh_web_application/models/Inscription.py:1113
 msgid "interp-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1111
+#: edh_web_application/models/Inscription.py:1122
 msgid "rel-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1196
+#: edh_web_application/models/Inscription.py:1207
+#: edh_web_application/models/Inscription.py:1209
 msgid "yes"
 msgstr "ja"
+
+#: edh_web_application/models/Inscription.py:1209
+msgid "dat_erweitert"
+msgstr "erweitert"
 
 #: edh_web_application/models/Person.py:14
 msgid "senatorial order"

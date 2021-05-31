@@ -687,7 +687,18 @@ class Inscription:
                 jahr_e_mo = str(int(re.match("\d*",jahr_e)[0]) * -1)
             else:
                 jahr_e_mo = re.match("\d*",jahr_e)[0]
-            query_string += '(dat_jahr_a:['+jahr_a_mo+' TO ' + jahr_e_mo + '] AND dat_jahr_e:[' + jahr_a_mo + ' TO ' + jahr_e_mo + ']) ' + logical_operater + ' '
+            # search for single year: jahr_a_mo = jahr_e_mo
+            if jahr_a_mo == jahr_e_mo:
+                if 'dat_erweitert' in form and form['dat_erweitert'] == 'y':
+                    query_string += '(dat_jahr_a:[' + jahr_a_mo + ' TO ' + jahr_a_mo + '] OR (dat_jahr_a:[* TO '+jahr_a_mo+'] AND dat_jahr_e:['+jahr_e_mo+' TO *])) ' + logical_operater + ' '
+                else:
+                    query_string += '(dat_jahr_a:[' + jahr_a_mo + ' TO ' + jahr_a_mo + '] AND NOT dat_jahr_e:*) ' + logical_operater + ' '
+            else: 
+                #year span
+                if 'dat_erweitert' in form and form['dat_erweitert'] == 'y':
+                    query_string += ' ((dat_jahr_a:[' + jahr_a_mo + ' TO ' + jahr_e_mo + '] AND NOT dat_jahr_e:[* TO *]) OR (dat_jahr_a:[' + jahr_a_mo + ' TO *] AND dat_jahr_e:[* TO ' + jahr_e_mo + ']) OR dat_jahr_e:[' + jahr_a_mo + ' TO ' + jahr_e_mo + '] OR dat_jahr_a:[' + jahr_a_mo + ' TO ' + jahr_e_mo + '] OR (dat_jahr_a:[* TO ' + jahr_a_mo + '] AND dat_jahr_e:[' + jahr_e_mo + ' TO *]))' 
+                else:
+                    query_string += '(dat_jahr_a:['+jahr_a_mo+' TO ' + jahr_e_mo + '] AND dat_jahr_e:[' + jahr_a_mo + ' TO ' + jahr_e_mo + ']) ' + logical_operater + ' '
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         return query_string
@@ -1194,6 +1205,8 @@ def _get_query_params(args):
                     result_dict['years'] = args[key]
                 elif key in ['brackets', 'casesensitive'] and args[key] == 'y':
                     result_dict[key] = _l('yes')
+                elif key == 'dat_erweitert':
+                    result_dict[_l('dat_erweitert')] = _l('yes')
                 else:
                     result_dict[key] = re.sub("\([0-9]+\)", "", args[key])
     if 'provinz' in result_dict:
