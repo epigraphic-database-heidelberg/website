@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-31 13:11+0200\n"
+"POT-Creation-Date: 2021-05-31 16:46+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -1491,7 +1491,7 @@ msgid "year"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:146
+#: edh_web_application/inscription/templates/inscription/search.html:147
 #: edh_web_application/inscription/templates/inscription/search_results.html:349
 #: edh_web_application/inscription/templates/inscription/search_results.html:460
 #: edh_web_application/models/Inscription.py:1050
@@ -1501,7 +1501,7 @@ msgid "BC"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:143
+#: edh_web_application/inscription/templates/inscription/search.html:144
 #: edh_web_application/inscription/templates/inscription/search_results.html:349
 #: edh_web_application/inscription/templates/inscription/search_results.html:457
 #: edh_web_application/models/Inscription.py:1055
@@ -1613,6 +1613,21 @@ msgstr ""
 "0825<br/>AE 2001, 1720<br/>AE 1969/70, "
 "0384</li><li>Corpora</li><li>journals</li><li>other "
 "publications</li></ul>"
+
+#: edh_web_application/inscription/templates/inscription/search.html:107
+msgid "chronology"
+msgstr "Chronology"
+
+#: edh_web_application/inscription/templates/inscription/search.html:107
+msgid "hlp_datierung"
+msgstr ""
+"Dating by years.<br /><br />Move the sliders until you have defined the time span you are searching for.<br /><br />"
+"without the option \"extended\": "
+"<ul><li>precise year</li><li>periods, which include the complete specified time span, or years / periods, which lie within the specified time span</li>"
+"<li>Jyears / time spans, which do not lie before or after a specified year</li></ul>"
+"With option \"extended\": "
+"<ul><li>specific single year: finds all time spans, which are and are within the specified years, as well as years / time spans, which lie beyond the start date or before of this specified year</li>"
+"<li>time span: finds furthermore time spans, which only partially overlap with the specified time span</li></ul>"
 
 #: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:37
 msgid "land-ad"

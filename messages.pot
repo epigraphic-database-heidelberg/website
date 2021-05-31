@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-31 13:11+0200\n"
+"POT-Creation-Date: 2021-05-31 16:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1319,7 +1319,7 @@ msgid "year"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:146
+#: edh_web_application/inscription/templates/inscription/search.html:147
 #: edh_web_application/inscription/templates/inscription/search_results.html:349
 #: edh_web_application/inscription/templates/inscription/search_results.html:460
 #: edh_web_application/models/Inscription.py:1050
@@ -1329,7 +1329,7 @@ msgid "BC"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:143
+#: edh_web_application/inscription/templates/inscription/search.html:144
 #: edh_web_application/inscription/templates/inscription/search_results.html:349
 #: edh_web_application/inscription/templates/inscription/search_results.html:457
 #: edh_web_application/models/Inscription.py:1055
@@ -1386,6 +1386,14 @@ msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:106
 msgid "hlp_literatur"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:107
+msgid "chronology"
+msgstr ""
+
+#: edh_web_application/inscription/templates/inscription/search.html:107
+msgid "hlp_datierung"
 msgstr ""
 
 #: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:37

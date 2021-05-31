@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-31 13:11+0200\n"
+"POT-Creation-Date: 2021-05-31 16:46+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -1498,7 +1498,7 @@ msgid "year"
 msgstr "Datierung"
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:146
+#: edh_web_application/inscription/templates/inscription/search.html:147
 #: edh_web_application/inscription/templates/inscription/search_results.html:349
 #: edh_web_application/inscription/templates/inscription/search_results.html:460
 #: edh_web_application/models/Inscription.py:1050
@@ -1508,7 +1508,7 @@ msgid "BC"
 msgstr "v. Chr."
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:143
+#: edh_web_application/inscription/templates/inscription/search.html:144
 #: edh_web_application/inscription/templates/inscription/search_results.html:349
 #: edh_web_application/inscription/templates/inscription/search_results.html:457
 #: edh_web_application/models/Inscription.py:1055
@@ -1621,6 +1621,21 @@ msgstr ""
 " (immer vierstellig); z. B.:<br/>AE 1983, 0825<br/>AE 2001, 1720<br/>AE "
 "1969/70, 0384</li><li>Corpora</li><li>Zeitschriften</li><li>sonstige "
 "Publikationen</li></ul>"
+
+#: edh_web_application/inscription/templates/inscription/search.html:107
+msgid "chronology"
+msgstr "Datierung"
+
+#: edh_web_application/inscription/templates/inscription/search.html:107
+msgid "hlp_datierung"
+msgstr ""
+"Datierung nach Jahren.<br /><br />Verschieben Sie die Schieberegler, bis die gewünschte Zeitspanne ausgewählt ist.<br /><br />"
+"Ohne Option \"erweitert\": "
+"<ul><li>genaue Jahreszahl</li><li>Zeiträume, die den angegebenen Zeitraum komplett abdecken, oder Jahre / Zeiträume, "
+"die innerhalb des angegebenen Zeitraums liegen</li><li>Jahre / Zeiträume, die nicht nach / vor dem angegebenen Jahr / Zeitraum liegen</li></ul>"
+"Mit Option \"erweitert\": "
+"<ul><li>Jahreszahl: findet alle Zeiträume, die die angegebene Jahreszahl mit beinhalten, sowie Jahre / Zeiträume, die nach bzw. vor dieser "
+"Jahreszahl liegen</li><li>Zeitspanne: findet zusätzlich Zeiträume, die sich nur teilweise mit dem angegebenen Zeitraum überschneiden</li></ul>"
 
 #: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:37
 msgid "land-ad"
