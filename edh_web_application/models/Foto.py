@@ -457,7 +457,10 @@ class Foto:
         for res in results:
             fragezeichen = ""
             land = res['land']
-            if res['land'][-1] == "?":
+            if land == '??':
+                land = '?'
+                fragezeichen = '?'
+            elif res['land'][-1] == "?":
                 fragezeichen = "?"
                 land = re.sub("\\?", "", res['land'])
             res['land'] = Place.country[land] + fragezeichen
