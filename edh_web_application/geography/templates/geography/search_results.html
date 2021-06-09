@@ -19,7 +19,7 @@
         <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
     </div>
 </div>
-{% if number_of_hits|int > data['metadata']['rows']|int %}
+{% if data['metadata']['number_of_hits'] > data['metadata']['rows']|int %}
 <div style="text-align:center">
     <nav aria-label="Search results pages">
         {% set aktuelleSeite = (data['metadata']['start']|int / data['metadata']['rows']|int)|int %}
@@ -180,7 +180,7 @@
     </div>
     {% endfor %}
 </div>
-{% if number_of_hits|int > data['metadata']['rows']|int %}
+{% if data['metadata']['number_of_hits'] > data['metadata']['rows']|int %}
 <div style="text-align:center">
     <nav aria-label="Search results pages">
         {% set aktuelleSeite = (data['metadata']['start']|int / data['metadata']['rows']|int)|int %}
