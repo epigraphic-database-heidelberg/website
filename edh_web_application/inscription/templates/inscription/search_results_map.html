@@ -9,16 +9,40 @@
 <h2>{{ subtitle }}</h2>
 <p>{{_("The search for:")}}</p>
 <p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
-<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
-<a href="./geographie/suche"><button type="button" class="btn">{{_('New Search')}}</button></a>
+<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}} (<a href="{{request.url}}&export=csv"><i class="fas fa-download" style="font-size:.8em"></i> CSV Download</a>)</p>
+<a href="./inschrift/suche"><button type="button" class="btn">{{_('New Search')}}</button></a>
 <div class="row">
-    <div class="search-filter">
+    <div class="col search-filter">
+        <button type="button" class="btn btn-info" id="sort-by" style="margin-left:0px;">{{_('sort by')}}: {% if request.args.get('sort') %}{{ _(request.args.get('sort')) }}{%else%}HD-Nr{%endif%}</button><br class="visible-xs" />
+        <button type="button" class="btn btn-info" id="hits-per-page">{{_('number of results/page')}}: {{data['metadata']['rows']}}</button><br class="visible-xs" />
         <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('map')}}</button>
         <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
     </div>
 </div>
+
 <div>
     <div id="map" style="width:100%;height:600px;margin-top:3em; margin-bottom:3em;border: 1px solid #aaa"></div>
+</div>
+
+<div id="dialog-sort" title = "{{_('sort by')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=hd_nr">HD-Nr</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=provinz">{{_('province')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=land">{{_('country')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_antik">{{_('ancient find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_modern">{{_('modern find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fundstelle">{{_('find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=dat_jahr_a">{{_('date from')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=dat_jahr_e">{{_('date to')}}</a></li>
+    </ul>
+</div>
+<div id="dialog-number" title = "{{_('number of results/page')}}:">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=20">20</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=50">50</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=100">100</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=200">200</a></li>
+    </ul>
 </div>
 <div id="dialog-view" title = "{{_('view')}}:">
     <ul>
@@ -50,21 +74,20 @@
             {{ form.fundstelle(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
         </div>
         <div class="form-group ui-front">
-            {{ form.region.label() }}
-            {{ form.region(class='form-control') }}
+            {{ form.literatur.label() }}
+            {{ form.literatur(class='form-control', id='literatur') }}
         </div>
         <div class="form-group">
-            {{ form.kommentar.label() }}
-            {{ form.kommentar(class='form-control') }}
+            <label class='col-form-label' style="margin-bottom: 0px;">{{ _('year')}}</label>
+            <div class="col-sm-10" style="padding-right:22px;padding-top:7px;padding-bottom:0px">
+            <input id="dat_str" readonly style="margin-left:0em;margin-top:0px;padding-bottom:10px; padding-right:10px;border:0px" name="jahre" value="600 {{_('BC')}} - 1500 {{_('AD')}}"></input> {{ form.dat_erweitert() }} {{ form.dat_erweitert.label() }} <br />
+            <div style="margin-bottom:3em;margin-right:7px;margin-left:15px;" id="slider"></div></div>
         </div>
         <div class="form-group">
-            {{ form.bearbeiter.label() }}
-            {{ form.bearbeiter(class='form-control') }}
-        </div>
-        <div class="form-group">
-            <label>{{ _('Work Status') }}</label><br />
-            {{ form.bearbeitet_abgeschlossen() }} {{ form.bearbeitet_abgeschlossen.label(style='margin-right:1.5em;') }}
-            {{ form.bearbeitet_provisorisch() }} {{ form.bearbeitet_provisorisch.label() }}
+            <label class="col-form-label">{{ _("search string(s)")}}</label>
+                <div>{{ form.atext1(class='form-control') }}</div>
+                <div style="margin-top:2px">{{ form.bool(class='form-control') }}</div>
+                <div style="margin-top:2px">{{ form.atext2(class='form-control') }}</div>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
@@ -80,10 +103,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" integrity="sha256-+bdWuWOXMFkX0v9Cvr3OWClPiYefDQz9GGZP/7xZxdc=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" integrity="sha256-LWhzWaQGZRsWFrrJxg+6Zn8TT84k0/trtiHBc6qcGpY=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
-<link rel="stylesheet" href=".{{url_for('geography.static', filename='css/geography.css')}}" />
+<link href=".{{url_for('static', filename='css/nouislider.min.css')}}" rel="stylesheet">
+<link href=".{{url_for('static', filename='css/edh_styles.css')}}" rel="stylesheet">
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js" integrity="sha256-WL6HHfYfbFEkZOFdsJQeY7lJG/E5airjvqbznghUzRw=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+<script src=".{{url_for('static', filename='js/nouislider.min.js')}}"></script>
 <script src=".{{url_for('geography.static', filename='js/bing.js')}}"></script>
 <script>
 $(document).ready(function() {
@@ -92,14 +117,14 @@ $(document).ready(function() {
             '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2VuYW11biIsImEiOiJCcUl0ZWRzIn0.zxs-a0hWY3La5kF4CWAVug';
-    var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
-        sat = L.tileLayer(mbUrl, {id: 'mapbox/satellite-streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
+    var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11',  attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
+        sat = L.tileLayer(mbUrl, {id: 'mapbox/satellite-streets-v11',  attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
         pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:5, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'}),
         bing_satellite = new L.BingLayer(BING_KEY, {'type': 'AerialWithLabels'}),
         openTopoMap = Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://www.thunderforest.com/">Thunderforest</a>',
             apikey: 'aaeccd3a44a74ce58324c2a455c58a98',
-            minZoom: 5});
+            });
     var map = L.map('map', {
         center: [47, 11],
         zoom: 4,
@@ -119,58 +144,97 @@ $(document).ready(function() {
     var overlays = {};
     L.control.layers(baseLayers, overlays, {position: 'topleft'}).addTo(map);
     var markers = L.markerClusterGroup();
+    var koord_array = [];
     {% for place in data['items'] %}
-        {% if place['koordinaten_1'] %}
-            marker = L.circleMarker([{{place['koordinaten_1']}}], {radius:5, fillColor: '#ff0000', color: '#1F6B3B', opacity: 1}).addTo(map).bindPopup('<b>EDH-Geo-ID</b>: <a href="./edh/geographie/{{place['id']}}" style="font-weight: normal;color: #1F6B3B;cursor: pointer;">{{place['id']}}</a><br><b>Fundort antik:</b><br>{% if place['fo_antik']%}{{place['fo_antik']}}{%else%}{%endif%}<br><b>Fundort modern:</b><br>{% if place['fo_modern']%}{{place['fo_modern']}}{%else%}{%endif%}<br><b>Fundstelle:</b><br>{% if place['fundstelle']%}{{place['fundstelle']}}{%else%}{%endif%}<br>');
+        {% if place['koordinaten1'] %}
+            marker = L.circleMarker([{{place['koordinaten1']}}], {radius:5, fillColor: '#ff0000', color: '#1F6B3B', opacity: 1}).addTo(map).bindPopup('<b>EDH-Geo-ID</b>: <a href="./edh/geographie/{{place['id']}}" style="font-weight: normal;color: #1F6B3B;cursor: pointer;">{{place['id']}}</a><br><b>Fundort antik:</b><br>{% if place['fo_antik']%}{{place['fo_antik']}}{%else%}{%endif%}<br><b>Fundort modern:</b><br>{% if place['fo_modern']%}{{place['fo_modern']}}{%else%}{%endif%}<br><b>Fundstelle:</b><br>{% if place['fundstelle']%}{{place['fundstelle']}}{%else%}{%endif%}<br>');
             markers.addLayer(marker);
+            koord_array.push([{{place['koordinaten1']}}]);
         {%endif%}
     {% endfor %}
     markers.addLayer(marker);
 	map.addLayer(markers);
+    map.fitBounds(koord_array);
+
+    $('select').selectpicker();
     $(function() {
         $( "#dialog-sort" ).dialog({
-           autoOpen: false,
-           resizable: false,
+            autoOpen: false,
+            resizable: false,
         });
         $( "#sort-by" ).click(function() {
-           $( "#dialog-sort" ).dialog( "open" );
+            $( "#dialog-sort" ).dialog( "open" );
         });
         $( "#dialog-number" ).dialog({
-           autoOpen: false,
-           resizable: false,
+            autoOpen: false,
+            resizable: false,
         });
         $( "#hits-per-page" ).click(function() {
-           $( "#dialog-number" ).dialog( "open" );
+            $( "#dialog-number" ).dialog( "open" );
         });
         $( "#dialog-view" ).dialog({
-           autoOpen: false,
-           resizable: false,
+            autoOpen: false,
+            resizable: false,
         });
         $( "#view" ).click(function() {
-           $( "#dialog-view" ).dialog( "open" );
+            $( "#dialog-view" ).dialog( "open" );
         });
         $( "#dialog-filter" ).dialog({
-           autoOpen: false,
-           resizable: false,
+            autoOpen: false,
+            resizable: false,
         });
         $( "#filter" ).click(function() {
-           $( "#dialog-filter" ).dialog( "open" );
+            $( "#dialog-filter" ).dialog( "open" );
         });
+
     });
-    $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern/short",minLength:3,delay:0})
-    $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik/short",minLength:3,delay:0})
-    $("input#find_spot").autocomplete({source:"./geographie/ac/fundstelle/short",minLength:3,delay:0})
-    $("input#region").autocomplete({source:"./geographie/ac/region/short",minLength:3,delay:0})
+    $("input#modern_find_spot").autocomplete({source:"./inschrift/ac/fo_modern/short",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"./inschrift/ac/fo_antik/short",minLength:3,delay:0})
+    $("input#find_spot").autocomplete({source:"./inschrift/ac/fundstelle/short",minLength:3,delay:0})
+
+
+    var slider = document.getElementById('slider');
+    noUiSlider.create(slider, {
+        start: [-600, 1500],
+        connect: true,
+        tooltips: true,
+        pips: {
+            mode: 'values',
+                values: [-600, -300, 1, 200, 500, 1000, 1500],
+                density: 5
+        },
+        range: {
+            'min': -600,
+            'max': 1500
+        },
+        format: {
+            to: function (value) {
+                if (Math.round(value)>0) 
+                    return Math.round(value) + " {{ _('AD')}}";
+                else
+                    jahr = value * -1
+                    return Math.round(jahr) + " {{ _('BC')}}";
+            },
+            from: function (value) {
+                return Number(value);
+            }
+        }
+    });
+    
+    slider.noUiSlider.on("update", function(values, handle, unencoded ) {
+        var dat_jahr_a = values[0];
+        var dat_jahr_e = values[1];
+        if (dat_jahr_a < 1) dat_jahr_a = dat_jahr_a * -1
+        $( "#dat_str" ).val(dat_jahr_a + " - " + dat_jahr_e);
+    });
+
+    $( "#dat_str" ).val(" {{ request.args.get('jahre') }} ");
+
     $('select').selectpicker();
     $('#reset').click(function(){
         document.getElementById("ancient_find_spot").defaultValue = "";
         document.getElementById("modern_find_spot").defaultValue = "";
         document.getElementById("find_spot").defaultValue = "";
-        document.getElementById("region").defaultValue = "";
-        document.getElementById("kommentar").defaultValue = "";
-        document.getElementById("bearbeiter").defaultValue = "";
-        document.getElementById("bearbeitet_abgeschlossen").setAttribute('checked','checked');
-        document.getElementById("bearbeitet_provisorisch").setAttribute('checked','checked');
         $("#provinz option").each(function () {
             $(this).removeAttr('selected');
         });

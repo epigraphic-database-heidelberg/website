@@ -41,7 +41,10 @@ def simple_search():
     if len(request.args) > 0:
         # create query string
         query_string = Inscription.create_query_string(request.args)
-        results = Inscription.query(query_string)
+        if request.args.get('view') == 'table' or request.args.get('view') == 'map':
+            results = Inscription.query(query_string, hits=10000)
+        else:
+            results = Inscription.query(query_string)
         number_of_hits = Inscription.get_number_of_hits_for_query(query_string)
         # return results to client
         if results['metadata']['number_of_hits'] > 0:
@@ -73,8 +76,13 @@ def simple_search():
                 output.seek(0)    
                 return Response(output, mimetype="text/csv", headers={"Content-Disposition":"attachment;filename=edh.csv"})
             else:
-                # default: HTML representation
-                return render_template('inscription/search_results.html', title=_("Epigraphic Text Database"),
+                # default: HTML representation: Map/Table/List(=Default)
+                if request.args.get('view') == 'map':
+                    return render_template('inscription/search_results_map.html', title=_("Epigraphic Text Database"),
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits, form=form)
+                else:
+                    return render_template('inscription/search_results.html', title=_("Epigraphic Text Database"),
                                     subtitle=_("Search results"), data=results,
                                     number_of_hits=number_of_hits, form=form)
         else:
