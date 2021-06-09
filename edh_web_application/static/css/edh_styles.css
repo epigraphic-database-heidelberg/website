@@ -528,7 +528,7 @@ div.inschrift-kurzansicht {
 .map_canvas {
     width: 240px;
     height: 220px;
-    border: 1px solid #ccc;
+    border: 1px solid #aaa;
 }
 .search-filter {
     margin-left: 1em;
