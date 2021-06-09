@@ -20,14 +20,14 @@
 <div>
     <div id="map" style="width:100%;height:600px;margin-top:3em; margin-bottom:3em;border: 1px solid #aaa"></div>
 </div>
-<div id="dialog-view" title = "{{_('view')}}:">
+<div id="dialog-view" title = "{{_('view')}}:" style="display:none">
     <ul>
     <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=list">{{_('list')}}</a></li>
     <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=table">{{_('table')}}</a></li>
     <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=map">{{_('map')}}</a></li>
     </ul>
 </div>
-<div id="dialog-filter" title = "{{_('filter')}}:">
+<div id="dialog-filter" title = "{{_('filter')}}:" style="display:none">
     <form action="" method="get">
         <div class="form-group">
             {{ form.provinz.label() }}
@@ -87,6 +87,35 @@
 <script src=".{{url_for('geography.static', filename='js/bing.js')}}"></script>
 <script>
 $(document).ready(function() {
+    $( "#dialog-sort" ).dialog({
+        autoOpen: false,
+        resizable: false,
+    });
+    $( "#sort-by" ).click(function() {
+        $( "#dialog-sort" ).dialog( "open" );
+    });
+    $( "#dialog-number" ).dialog({
+        autoOpen: false,
+        resizable: false,
+    });
+    $( "#hits-per-page" ).click(function() {
+        $( "#dialog-number" ).dialog( "open" );
+    });
+    $( "#dialog-view" ).dialog({
+        autoOpen: false,
+        resizable: false,
+    });
+    $( "#view" ).click(function() {
+        $( "#dialog-view" ).dialog( "open" );
+    });
+    $( "#dialog-filter" ).dialog({
+        autoOpen: false,
+        resizable: false,
+    });
+    $( "#filter" ).click(function() {
+        $( "#dialog-filter" ).dialog( "open" );
+    });
+    
     var BING_KEY = 'AhpTG22M_rzQEp8Q4c4edHpmIWXhwrQE65lztW3S7MsvB4cpUuya0fUgJscUfXMa'
     var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
             '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -130,36 +159,7 @@ $(document).ready(function() {
     markers.addLayer(marker);
 	map.addLayer(markers);
     map.fitBounds(koord_array);
-    $(function() {
-        $( "#dialog-sort" ).dialog({
-           autoOpen: false,
-           resizable: false,
-        });
-        $( "#sort-by" ).click(function() {
-           $( "#dialog-sort" ).dialog( "open" );
-        });
-        $( "#dialog-number" ).dialog({
-           autoOpen: false,
-           resizable: false,
-        });
-        $( "#hits-per-page" ).click(function() {
-           $( "#dialog-number" ).dialog( "open" );
-        });
-        $( "#dialog-view" ).dialog({
-           autoOpen: false,
-           resizable: false,
-        });
-        $( "#view" ).click(function() {
-           $( "#dialog-view" ).dialog( "open" );
-        });
-        $( "#dialog-filter" ).dialog({
-           autoOpen: false,
-           resizable: false,
-        });
-        $( "#filter" ).click(function() {
-           $( "#dialog-filter" ).dialog( "open" );
-        });
-    });
+    
     $("input#modern_find_spot").autocomplete({source:"./geographie/ac/fo_modern/short",minLength:3,delay:0})
     $("input#ancient_find_spot").autocomplete({source:"./geographie/ac/fo_antik/short",minLength:3,delay:0})
     $("input#find_spot").autocomplete({source:"./geographie/ac/fundstelle/short",minLength:3,delay:0})
