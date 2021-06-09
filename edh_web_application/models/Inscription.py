@@ -1024,11 +1024,12 @@ class Inscription:
             return {}
         resp = r.json()
         see_also_urls_dict = {}
-        for r in resp:
-            for key in r.keys():
-                if r[key] is not None:
-                    if key != "EDH": # ignore EDH urls
-                        see_also_urls_dict[key] = r[key]
+        if "This ID is not in our database" not in str(resp):
+            for r in resp:
+                for key in r.keys():
+                    if r[key] is not None:
+                        if key != "EDH": # ignore EDH urls
+                            see_also_urls_dict[key] = r[key]
         return see_also_urls_dict
 
 
