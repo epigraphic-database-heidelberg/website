@@ -81,6 +81,10 @@ def simple_search():
                     return render_template('inscription/search_results_map.html', title=_("Epigraphic Text Database"),
                                    subtitle=_("Search results"), data=results,
                                    number_of_hits=number_of_hits, form=form)
+                if request.args.get('view') == 'table':
+                    return render_template('inscription/search_results_table.html', title=_("Epigraphic Text Database"),
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=number_of_hits, form=form)
                 else:
                     return render_template('inscription/search_results.html', title=_("Epigraphic Text Database"),
                                     subtitle=_("Search results"), data=results,

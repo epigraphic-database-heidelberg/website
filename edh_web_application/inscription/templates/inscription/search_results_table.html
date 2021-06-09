@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+<h1>{{ title }}</h1>
+<h2>{{ subtitle }}</h2>
+<p>{{_("The search for:")}}</p>
+<p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
+<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}} (<a href="{{request.url}}&export=csv"><i class="fas fa-download" style="font-size:.8em"></i> CSV Download</a>)</p>
+<a href="./inschrift/suche"><button type="button" class="btn">{{_('New Search')}}</button></a>
+<div class="row">
+    <div class="col search-filter">
+        <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('table')}}</button>
+        <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
+    </div>
+</div>
+
+<div>
+    <div class="table-responsive" style="100%; margin-bottom: 4rem;margin-top:3em;">
+        <table id="tbl_findspot"  class="table-striped">
+            <thead><th>ID</th><th>{{_('title')}}</th><th>{{_('Chronological Data')}}</th><th>{{_('Transcription')}}</th></thead>
+            <tbody>
+            {% for d in data['items'] %}
+            <tr>
+                <td><i class="fas fa-external-link-alt">&nbsp;<a href="./edh/inschrift/{{ d['hd_nr']}}" style="font-family: 'Ubuntu', sans-serif;">{{ d['hd_nr']}}</a></i></td>
+                <td>{% if d['titel'] %}{{d['titel']|safe}}{% else %}{% endif %}</td>
+                <td>{% if d['datierung'] %}{{d['datierung']|safe}}{% else %}{% endif %}</td>
+                <td>{% if d['atext'] %}{{d['atext']}}{% else %}{% endif %}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="dialog-sort" title = "{{_('sort by')}}:" style="display:none">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=hd_nr">HD-Nr</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=provinz">{{_('province')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=land">{{_('country')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_antik">{{_('ancient find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fo_modern">{{_('modern find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=fundstelle">{{_('find spot')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=dat_jahr_a">{{_('date from')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_sort_parameter']}}&start={{data['metadata']['start']}}&anzahl={{data['metadata']['rows']}}&sort=dat_jahr_e">{{_('date to')}}</a></li>
+    </ul>
+</div>
+<div id="dialog-number" title = "{{_('number of results/page')}}:" style="display:none">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=20">20</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=50">50</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=100">100</a></li>
+    <li><a href=".{{data['metadata']['url_without_pagination_parameters']}}&start={{data['metadata']['start']}}&anzahl=200">200</a></li>
+    </ul>
+</div>
+<div id="dialog-view" title = "{{_('view')}}:" style="display:none">
+    <ul>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=list">{{_('list')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=table">{{_('table')}}</a></li>
+    <li><a href=".{{data['metadata']['url_without_view_parameter']}}&start={{data['metadata']['start']}}&view=map">{{_('map')}}</a></li>
+    </ul>
+</div>
+<div id="dialog-filter" title = "{{_('filter')}}:" style="display:none">
+    <form action="" method="get">
+        <div class="form-group">
+            {{ form.provinz.label() }}
+            {{ form.provinz(class='form-control selectpicker', title=_('select one or more entries...')) }}
+        </div>
+        <div class="form-group">
+            {{ form.land.label() }}
+            {{ form.land(class='form-control selectpicker', title=_('select one or more entries...')) }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.fo_antik.label() }}
+            {{ form.fo_antik(class='form-control autocomplete autocomplete-filter', id='ancient_find_spot') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.fo_modern.label() }}
+            {{ form.fo_modern(class='form-control autocomplete ui-autocomplete-input', id='modern_find_spot') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.fundstelle.label() }}
+            {{ form.fundstelle(class='form-control autocomplete ui-autocomplete-input', id='find_spot') }}
+        </div>
+        <div class="form-group ui-front">
+            {{ form.literatur.label() }}
+            {{ form.literatur(class='form-control', id='literatur') }}
+        </div>
+        <div class="form-group">
+            <label class='col-form-label' style="margin-bottom: 0px;">{{ _('year')}}</label>
+            <div class="col-sm-10" style="padding-right:22px;padding-top:7px;padding-bottom:0px">
+            <input id="dat_str" readonly style="margin-left:0em;margin-top:0px;padding-bottom:10px; padding-right:10px;border:0px" name="jahre" value="600 {{_('BC')}} - 1500 {{_('AD')}}"></input> {{ form.dat_erweitert() }} {{ form.dat_erweitert.label() }} <br />
+            <div style="margin-bottom:3em;margin-right:7px;margin-left:15px;" id="slider"></div></div>
+        </div>
+        <div class="form-group">
+            <label class="col-form-label">{{ _("search string(s)")}}</label>
+                <div>{{ form.atext1(class='form-control') }}</div>
+                <div style="margin-top:2px">{{ form.bool(class='form-control') }}</div>
+                <div style="margin-top:2px">{{ form.atext2(class='form-control') }}</div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
+            <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
+        </div>
+        <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
+    </form>
+</div>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/css/bootstrap-select.min.css" integrity="sha256-l3FykDBm9+58ZcJJtzcFvWjBZNJO40HmvebhpHXEhC0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" />
+<link href=".{{url_for('static', filename='css/nouislider.min.css')}}" rel="stylesheet">
+<link href=".{{url_for('static', filename='css/edh_styles.css')}}" rel="stylesheet">
+<link rel="stylesheet" href=".{{url_for('inscription.static', filename='css/inscription.css')}}" />
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.12/js/bootstrap-select.min.js" integrity="sha256-+o/X+QCcfTkES5MroTdNL5zrLNGb3i4dYdWPWuq6whY=" crossorigin="anonymous"></script>
+<script src=".{{url_for('static', filename='js/nouislider.min.js')}}"></script>
+<script>
+$(document).ready(function() {
+    $( "#dialog-sort" ).dialog({
+        autoOpen: false,
+        resizable: false,
+    });
+    $( "#sort-by" ).click(function() {
+        $( "#dialog-sort" ).dialog( "open" );
+    });
+    $( "#dialog-number" ).dialog({
+        autoOpen: false,
+        resizable: false,
+    });
+    $( "#hits-per-page" ).click(function() {
+        $( "#dialog-number" ).dialog( "open" );
+    });
+    $( "#dialog-view" ).dialog({
+        autoOpen: false,
+        resizable: false,
+    });
+    $( "#view" ).click(function() {
+        $( "#dialog-view" ).dialog( "open" );
+    });
+    $( "#dialog-filter" ).dialog({
+        autoOpen: false,
+        resizable: false,
+    });
+    $( "#filter" ).click(function() {
+        $( "#dialog-filter" ).dialog( "open" );
+    });
+    $('#tbl_findspot').DataTable({
+            pageLength: 20,
+            lengthChange: true,
+            lengthMenu: [[10, 20, 50, 100, -1], [10, 20, 50, 100, "{{_("all")}}" ]],
+            language: {
+                search: "{{ _("dtbl_search") }}",
+                info: "{{ _("dtbl_info") }}",
+                lengthMenu: "{{ _("dtbl_menu") }}",
+                infoFiltered: "{{ _("dtbl_filter") }}",
+                zeroRecords:  "{{ _("dtbl_zero") }}",
+                paginate: {
+                    previous: "{{ _("dtbl_previous") }}",
+                    next: "{{ _("dtbl_next") }}"
+                }
+            }
+        });
+
+    $('select').selectpicker();
+    $("input#modern_find_spot").autocomplete({source:"./inschrift/ac/fo_modern/short",minLength:3,delay:0})
+    $("input#ancient_find_spot").autocomplete({source:"./inschrift/ac/fo_antik/short",minLength:3,delay:0})
+    $("input#find_spot").autocomplete({source:"./inschrift/ac/fundstelle/short",minLength:3,delay:0})
+
+    var slider = document.getElementById('slider');
+    noUiSlider.create(slider, {
+        start: [-600, 1500],
+        connect: true,
+        tooltips: true,
+        pips: {
+            mode: 'values',
+                values: [-600, -300, 1, 200, 500, 1000, 1500],
+                density: 5
+        },
+        range: {
+            'min': -600,
+            'max': 1500
+        },
+        format: {
+            to: function (value) {
+                if (Math.round(value)>0) 
+                    return Math.round(value) + " {{ _('AD')}}";
+                else
+                    jahr = value * -1
+                    return Math.round(jahr) + " {{ _('BC')}}";
+            },
+            from: function (value) {
+                return Number(value);
+            }
+        }
+    });
+    
+    slider.noUiSlider.on("update", function(values, handle, unencoded ) {
+        var dat_jahr_a = values[0];
+        var dat_jahr_e = values[1];
+        if (dat_jahr_a < 1) dat_jahr_a = dat_jahr_a * -1
+        $( "#dat_str" ).val(dat_jahr_a + " - " + dat_jahr_e);
+    });
+
+    $( "#dat_str" ).val(" {{ request.args.get('jahre') }} ");
+
+    $('select').selectpicker();
+    $('#reset').click(function(){
+        document.getElementById("ancient_find_spot").defaultValue = "";
+        document.getElementById("modern_find_spot").defaultValue = "";
+        document.getElementById("find_spot").defaultValue = "";
+        $("#provinz option").each(function () {
+            $(this).removeAttr('selected');
+        });
+        $("#land option").each(function () {
+            $(this).removeAttr('selected');
+        });
+        $(".selectpicker").val('');
+        $(".selectpicker").selectpicker("refresh");
+    });
+} );
+</script>
+{% endblock %}
