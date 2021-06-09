@@ -175,7 +175,7 @@ $(document).ready(function() {
     var koord_array = [];
     {% for place in data['items'] %}
         {% if place['koordinaten1'] %}
-            marker = L.circleMarker([{{place['koordinaten1']}}], {radius:5, fillColor: '#ff0000', color: '#1F6B3B', opacity: 1}).addTo(map).bindPopup('<b>EDH-Geo-ID</b>: <a href="./edh/geographie/{{place['id']}}" style="font-weight: normal;color: #1F6B3B;cursor: pointer;">{{place['id']}}</a><br><b>Fundort antik:</b><br>{% if place['fo_antik']%}{{place['fo_antik']}}{%else%}{%endif%}<br><b>Fundort modern:</b><br>{% if place['fo_modern']%}{{place['fo_modern']}}{%else%}{%endif%}<br><b>Fundstelle:</b><br>{% if place['fundstelle']%}{{place['fundstelle']}}{%else%}{%endif%}<br>');
+            marker = L.circleMarker([{{place['koordinaten1']}}], {radius:5, fillColor: '#ff0000', color: '#1F6B3B', opacity: 1}).addTo(map).bindPopup('<b>EDH-Geo-ID</b>: <a href="./edh/geographie/{{place['gdb_id']}}" style="font-weight: normal;color: #1F6B3B;cursor: pointer;">{{place['gdb_id']}}</a><br><b>Fundort antik:</b><br>{% if place['fo_antik']%}{{place['fo_antik']}}{%else%}{%endif%}<br><b>Fundort modern:</b><br>{% if place['fo_modern']%}{{place['fo_modern']}}{%else%}{%endif%}<br><b>Fundstelle:</b><br>{% if place['fundstelle']%}{{place['fundstelle']}}{%else%}{%endif%}<br>');
             markers.addLayer(marker);
             koord_array.push([{{place['koordinaten1']}}]);
         {%endif%}
