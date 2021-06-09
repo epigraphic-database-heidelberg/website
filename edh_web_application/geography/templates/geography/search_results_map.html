@@ -92,14 +92,14 @@ $(document).ready(function() {
             '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2VuYW11biIsImEiOiJCcUl0ZWRzIn0.zxs-a0hWY3La5kF4CWAVug';
-    var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
-        sat = L.tileLayer(mbUrl, {id: 'mapbox/satellite-streets-v11', minZoom:5, attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
+    var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
+        sat = L.tileLayer(mbUrl, {id: 'mapbox/satellite-streets-v11', attribution: mbAttr, tileSize: 512, zoomOffset: -1}),
         pelagios = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {id: 'pelagios', maxZoom:11, minZoom:5, attribution: 'Map Data: <a href="https://dare.ht.lu.se">DARE</a>'}),
         bing_satellite = new L.BingLayer(BING_KEY, {'type': 'AerialWithLabels'}),
         openTopoMap = Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://www.thunderforest.com/">Thunderforest</a>',
             apikey: 'aaeccd3a44a74ce58324c2a455c58a98',
-            minZoom: 5});
+            });
     var map = L.map('map', {
         center: [47, 11],
         zoom: 4,
@@ -119,14 +119,17 @@ $(document).ready(function() {
     var overlays = {};
     L.control.layers(baseLayers, overlays, {position: 'topleft'}).addTo(map);
     var markers = L.markerClusterGroup();
+    var koord_array = [];
     {% for place in data['items'] %}
         {% if place['koordinaten_1'] %}
             marker = L.circleMarker([{{place['koordinaten_1']}}], {radius:5, fillColor: '#ff0000', color: '#1F6B3B', opacity: 1}).addTo(map).bindPopup('<b>EDH-Geo-ID</b>: <a href="./edh/geographie/{{place['id']}}" style="font-weight: normal;color: #1F6B3B;cursor: pointer;">{{place['id']}}</a><br><b>Fundort antik:</b><br>{% if place['fo_antik']%}{{place['fo_antik']}}{%else%}{%endif%}<br><b>Fundort modern:</b><br>{% if place['fo_modern']%}{{place['fo_modern']}}{%else%}{%endif%}<br><b>Fundstelle:</b><br>{% if place['fundstelle']%}{{place['fundstelle']}}{%else%}{%endif%}<br>');
             markers.addLayer(marker);
+            koord_array.push([{{place['koordinaten_1']}}]);
         {%endif%}
     {% endfor %}
     markers.addLayer(marker);
 	map.addLayer(markers);
+    map.fitBounds(koord_array);
     $(function() {
         $( "#dialog-sort" ).dialog({
            autoOpen: false,
