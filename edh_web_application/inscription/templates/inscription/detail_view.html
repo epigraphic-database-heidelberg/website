@@ -78,7 +78,11 @@
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('find spot')}}:</div>
-                <div id="fundstelle" class="detail_block_content_row_text">{% if data['fundstelle'] %}{{data['fundstelle'] | safe }}{% endif %}</div>
+                <div id="fundstelle" class="detail_block_content_row_text">
+                    {% if data['fundstelle'] %}
+                        {{data['fundstelle']|replace("{","") | replace("}","") | safe }}
+                    {% endif %}
+                </div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('modern region')}}:</div>
