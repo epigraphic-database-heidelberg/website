@@ -773,7 +773,7 @@ class Inscription:
             for result in results:
                 props = {}
                 for key in result:
-                    if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg', 'foto_nr', 'atext'):
+                    if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg', 'foto_nr', 'atext', 'kommentar'):
                         props[key] = result[key]
                     if key == 'land':
                         if re.search(".+\?$", result[key]):
@@ -838,6 +838,8 @@ class Inscription:
                         props['pal_interpunktion_str'] = _get_interpunction(result[key])
                     elif key == 'religion':
                         props['religion_str'] = _get_religion(result[key])
+                    elif key == 'kommentar':
+                        props['kommentar'] = re.sub("Fälschung", "<span style='color:red'>Fälschung</span>", result[key])
                 if 'fo_antik' not in props:
                     props['fo_antik'] = ""
                 if 'fo_modern' not in props:
