@@ -69,22 +69,22 @@ def to_xml(inscription):
         dat_str = ""
         if inscription.dat_jahr_a and inscription.dat_jahr_e:
             if inscription.dat_jahr_a:
-                if inscription.dat_jahr_a < 0:
+                if int(inscription.dat_jahr_a) < 0:
                     not_before = "notBefore-custom='"+str(inscription.dat_jahr_a).zfill(5)+"'"
                     dat_str += str(inscription.dat_jahr_a).replace("-", "") + " BC - "
                 else:
                     not_before = "notBefore-custom='"+str(inscription.dat_jahr_a).zfill(4)+"'"
                     dat_str += str(inscription.dat_jahr_a).replace("-", "") + " AD - "
             if inscription.dat_jahr_e:
-                if inscription.dat_jahr_e < 0:
+                if int(inscription.dat_jahr_e) < 0:
                     not_after = "notAfter-custom='"+str(inscription.dat_jahr_e).zfill(5)+"'"
                     dat_str += str(inscription.dat_jahr_e).replace("-", "") + " BC"
                 else:
                     not_after = "notAfter-custom='"+str(inscription.dat_jahr_e).zfill(4)+"'"
                     dat_str += str(inscription.dat_jahr_e).replace("-", "") + " AD"
-        else:
+        elif inscription.dat_jahr_a:
             when = "when-custom='"+str(inscription.dat_jahr_a).zfill(4)+"'"
-            if inscription.dat_jahr_a < 0:
+            if int(inscription.dat_jahr_a) < 0:
                 dat_str += str(inscription.dat_jahr_a).replace("-", "") + " BC"
             else:
                 dat_str += str(inscription.dat_jahr_a).replace("-", "") + " AD"
