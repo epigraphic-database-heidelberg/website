@@ -101,7 +101,10 @@ class Person:
             if '?' in self.status:
                 trailing_questionmark = "?"
                 status_code = status_code.replace("?", "")
-            self.status = Person.localized_status[status_code] + trailing_questionmark
+            status_str = []
+            for code in status_code:
+                status_str.append(Person.localized_status[code] + trailing_questionmark)
+            self.status = "; ".join(status_str)
         if self.tribus:
             self.tribus = Person.tribus[self.tribus]
         if self.praenomen and "0" in self.praenomen:
