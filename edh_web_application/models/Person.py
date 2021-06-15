@@ -106,7 +106,11 @@ class Person:
                 status_str.append(Person.localized_status[code] + trailing_questionmark)
             self.status = "; ".join(status_str)
         if self.tribus:
-            self.tribus = Person.tribus[self.tribus]
+            plus_zeichen = ""
+            if self.tribus[-1] == "+":
+                plus_zeichen = "+"
+                tribus = re.sub("\\+", "", self.tribus)
+                self.tribus = Person.tribus[tribus] + plus_zeichen
         if self.praenomen and "0" in self.praenomen:
             if "?" in self.praenomen:
                 self.praenomen = "[-]?"
