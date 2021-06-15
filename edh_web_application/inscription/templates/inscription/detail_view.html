@@ -70,17 +70,29 @@
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('ancient find spot')}}:</div>
-                <div id="fo_antik" class="detail_block_content_row_text">{% if data['fo_antik'] %}{{data['fo_antik']}}{% endif %}</div>
+                <div id="fo_antik" class="detail_block_content_row_text">
+                {% if data['fo_modern'] == "" and data['fundstelle'] == ""  %}
+                    {% if data['fo_antik'] %}<a href="./edh/geographie/{{ data['gdb_id'] }}"><i class='fas fa-external-link-alt'></i> {{data['fo_antik']}}</a>{% endif %}
+                {% else %}
+                    {% if data['fo_antik'] %}{{data['fo_antik']}}{% endif %}
+                {% endif %}
+                </div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('modern find spot')}}:</div>
-                <div id="fo_modern" class="detail_block_content_row_text">{% if data['fo_modern'] %}{{data['fo_modern']}}{% endif %}</div>
+                <div id="fo_modern" class="detail_block_content_row_text">
+                {% if data['fundstelle'] == "" %}
+                    {% if data['fo_modern'] %}<a href="./edh/geographie/{{ data['gdb_id'] }}"><i class='fas fa-external-link-alt'></i> {{data['fo_modern']}}</a>{% endif %}
+                {% else %}
+                    {% if data['fo_modern'] %}{{data['fo_modern']}}{% endif %}
+                {% endif %}
+                </div>
             </section>
             <section class="detail_block_content_row">
                 <div class="detail_block_content_row_header">{{_('find spot')}}:</div>
                 <div id="fundstelle" class="detail_block_content_row_text">
                     {% if data['fundstelle'] %}
-                        {{data['fundstelle']|replace("{","") | replace("}","") | safe }}
+                        <a href="./edh/geographie/{{ data['gdb_id'] }}"><i class='fas fa-external-link-alt'></i> {{data['fundstelle']|replace("{","") | replace("}","") | safe }}</a>
                     {% endif %}
                 </div>
             </section>
