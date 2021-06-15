@@ -18,6 +18,11 @@ def show_project_content_fotos_page():
     return render_template('project/project_content_fotos.html', title=_("Project"), subtitle=_("content - fotos"))
 
 
+@bp_project.route('/projekt/inhalt/bibliographie', strict_slashes=False)
+def show_project_content_bibliography_page():
+    return render_template('project/project_content_bibliography.html', title=_("Project"), subtitle=_("content - bibliography"))
+
+
 @bp_project.route('/projekt/geschichte', strict_slashes=False)
 def show_project_history_page():
     return render_template('project/project_history.html', title=_("Project"), subtitle=_("history"))

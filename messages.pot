@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-15 11:27+0200\n"
+"POT-Creation-Date: 2021-06-15 11:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2783,6 +2783,7 @@ msgstr ""
 #: edh_web_application/project/routes.py:38
 #: edh_web_application/project/routes.py:43
 #: edh_web_application/project/routes.py:48
+#: edh_web_application/project/routes.py:53
 msgid "Project"
 msgstr ""
 
@@ -2799,30 +2800,34 @@ msgid "content - fotos"
 msgstr ""
 
 #: edh_web_application/project/routes.py:23
-msgid "history"
+msgid "content - bibliography"
 msgstr ""
 
 #: edh_web_application/project/routes.py:28
-msgid "cooperations"
+msgid "history"
 msgstr ""
 
 #: edh_web_application/project/routes.py:33
-msgid "research team members"
+msgid "cooperations"
 msgstr ""
 
 #: edh_web_application/project/routes.py:38
-msgid "presentations"
+msgid "research team members"
 msgstr ""
 
 #: edh_web_application/project/routes.py:43
-msgid "contact"
+msgid "presentations"
 msgstr ""
 
 #: edh_web_application/project/routes.py:48
-msgid "provinces"
+msgid "contact"
 msgstr ""
 
 #: edh_web_application/project/routes.py:53
+msgid "provinces"
+msgstr ""
+
+#: edh_web_application/project/routes.py:58
 #: edh_web_application/templates/base.html:60
 msgid "Links"
 msgstr ""
@@ -3051,6 +3056,10 @@ msgstr ""
 
 #: edh_web_application/project/templates/project/project_contact.html:10
 msgid "Contact page"
+msgstr ""
+
+#: edh_web_application/project/templates/project/project_content_bibliography.html:10
+msgid "Content bibliography page"
 msgstr ""
 
 #: edh_web_application/project/templates/project/project_content_fotos.html:10
