@@ -8,9 +8,15 @@ from flask_babel import _
 def show_project_concept_page():
     return render_template('project/project_concept.html', title=_("Project"), subtitle=_("concept"))
 
+
 @bp_project.route('/projekt/inhalt/inschriften', strict_slashes=False)
 def show_project_content_inscriptions_page():
     return render_template('project/project_content_inscriptions.html', title=_("Project"), subtitle=_("content - inscriptions"))
+
+
+@bp_project.route('/projekt/inhalt/fotos/fotographen', strict_slashes=False)
+def show_project_content_fotographers_page():
+    return render_template('project/project_content_fotographers.html', title=_("Project"), subtitle=_("content - fotographers"))
 
 
 @bp_project.route('/projekt/inhalt/fotos', strict_slashes=False)

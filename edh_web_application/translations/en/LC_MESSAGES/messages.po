@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-15 11:45+0200\n"
+"POT-Creation-Date: 2021-06-15 13:28+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -3012,15 +3012,16 @@ msgid "Epigraphic Person Database: Detail View"
 msgstr ""
 
 #: edh_web_application/project/routes.py:9
-#: edh_web_application/project/routes.py:13
-#: edh_web_application/project/routes.py:18
-#: edh_web_application/project/routes.py:23
-#: edh_web_application/project/routes.py:28
-#: edh_web_application/project/routes.py:33
-#: edh_web_application/project/routes.py:38
-#: edh_web_application/project/routes.py:43
-#: edh_web_application/project/routes.py:48
-#: edh_web_application/project/routes.py:53
+#: edh_web_application/project/routes.py:14
+#: edh_web_application/project/routes.py:19
+#: edh_web_application/project/routes.py:24
+#: edh_web_application/project/routes.py:29
+#: edh_web_application/project/routes.py:34
+#: edh_web_application/project/routes.py:39
+#: edh_web_application/project/routes.py:44
+#: edh_web_application/project/routes.py:49
+#: edh_web_application/project/routes.py:54
+#: edh_web_application/project/routes.py:59
 msgid "Project"
 msgstr ""
 
@@ -3028,43 +3029,47 @@ msgstr ""
 msgid "concept"
 msgstr "Concept"
 
-#: edh_web_application/project/routes.py:13
+#: edh_web_application/project/routes.py:14
 msgid "content - inscriptions"
 msgstr "Content - Inscriptions"
 
-#: edh_web_application/project/routes.py:18
+#: edh_web_application/project/routes.py:19
+msgid "content - fotographers"
+msgstr "Content - Fotos: List of Fotographers"
+
+#: edh_web_application/project/routes.py:24
 msgid "content - fotos"
 msgstr "Content - Fotos"
 
-#: edh_web_application/project/routes.py:23
+#: edh_web_application/project/routes.py:29
 msgid "content - bibliography"
 msgstr "Content - Bibliography"
 
-#: edh_web_application/project/routes.py:28
+#: edh_web_application/project/routes.py:34
 msgid "history"
 msgstr "History"
 
-#: edh_web_application/project/routes.py:33
+#: edh_web_application/project/routes.py:39
 msgid "cooperations"
 msgstr "Cooperations"
 
-#: edh_web_application/project/routes.py:38
+#: edh_web_application/project/routes.py:44
 msgid "research team members"
 msgstr "Research team members"
 
-#: edh_web_application/project/routes.py:43
+#: edh_web_application/project/routes.py:49
 msgid "presentations"
 msgstr "Presentations"
 
-#: edh_web_application/project/routes.py:48
+#: edh_web_application/project/routes.py:54
 msgid "contact"
 msgstr "Contact"
 
-#: edh_web_application/project/routes.py:53
+#: edh_web_application/project/routes.py:59
 msgid "provinces"
 msgstr "Provinces"
 
-#: edh_web_application/project/routes.py:58
+#: edh_web_application/project/routes.py:64
 #: edh_web_application/templates/base.html:60
 msgid "Links"
 msgstr "Links"
@@ -3291,42 +3296,40 @@ msgstr ""
 msgid "Concept page"
 msgstr ""
 "<p>The <strong>task</strong> of the <i>Epigraphic Database Heidelberg "
-"(EDH)</i> is the systematic entry of ancient Latin and bilingual "
-"(usually Latin and Greek) inscriptions into a complex database. As a "
-"result of its interdisciplinary approach, conception and method of work "
-"<i>EDH</i> is to be counted among the leading international database "
-"projects which collects and provides reliable historical analysis of "
-"epigraphic monuments. A distinguishing feature of <i>EDH</i> is its <i "
-"class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"./projekt/provinzen\">regional focus</a>, its capability of "
-"combining the stored metadata as freely as possible and the reciprocal "
-"linking of the <i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"./projekt/inhalt/inschriften\"><i>Epigraphic Text "
-"Database</i></a>&nbsp;with three of the constituent databases of "
+"(EDH)</i> is the systematic entry of ancient Latin and bilingual (usually"
+" Latin and Greek) inscriptions into a complex database. As a result of "
+"its interdisciplinary approach, conception and method of work <i>EDH</i> "
+"is to be counted among the leading international database projects which "
+"collects and provides reliable historical analysis of epigraphic "
+"monuments. A distinguishing feature of <i>EDH</i> is its <i class=\"fas "
+"fa-external-link-alt\"></i> <a href=\"./projekt/provinzen\">regional "
+"focus</a>, its capability of combining the stored metadata as freely as "
+"possible and the reciprocal linking of the <i class=\"fas fa-external-"
+"link-alt\"></i> <a href=\"./projekt/inhalt/inschriften\"><i>Epigraphic "
+"Text Database</i></a>&nbsp;with three of the constituent databases of "
 "<i>EDH</i>, the <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./projekt/inhalt/bibliographie\"><i>Bibliographic "
 "Database</i></a>, the <i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"./projekt/inhalt/fotos\"><i>Photographic Database</i></a> and the"
-" <i>Epigraphic Geographic Database.</i></p><p>Its <strong>aim</strong> "
-"is to render the epigraphic documentation of the provinces of the Roman "
+"href=\"./projekt/inhalt/fotos\"><i>Photographic Database</i></a> and the "
+"<i>Epigraphic Geographic Database.</i></p><p>Its <strong>aim</strong> is "
+"to render the epigraphic documentation of the provinces of the Roman "
 "Empire as completely and reliably as possible for online research work. "
-"Under the leadership of the <i>Commissione epigrafia e informatica of "
-"the AIEGL</i> a decision was made in 2003 to create an international "
+"Under the leadership of the <i>Commissione epigrafia e informatica of the"
+" AIEGL</i> a decision was made in 2003 to create an international "
 "epigraphic database confederation <i class=\"fas fa-external-link-"
-"alt\"></i> <a "
-"href=\"./projekt/geschichte\"><i>EAGLE</i></a> "
+"alt\"></i> <a href=\"./projekt/geschichte\"><i>EAGLE</i></a> "
 "<i>(Electronic Archives of Greek and Latin Epigraphy)</i>. Since then "
 "<i>EDH</i> is responsible for the inscriptions of the <strong>Roman "
 "provinces</strong>. The inscriptions of Italy which had already been "
 "entered into EDH were passed on to the <i><i class=\"fas fa-external-"
 "link-alt\"></i> <a href=\"http://www.edr-"
-"edr.it/default/index.php\">Epigraphic Database Rome (EDR)</a></i>. It is"
-" now the domain of EDR to improve these records as well as adding to "
-"their number in order to complete the entry of all inscriptions of Italy."
-" The long term aim of this confederation is to make all Latin and Greek "
+"edr.it/default/index.php\">Epigraphic Database Rome (EDR)</a></i>. It is "
+"now the domain of EDR to improve these records as well as adding to their"
+" number in order to complete the entry of all inscriptions of Italy. The "
+"long term aim of this confederation is to make all Latin and Greek "
 "inscriptions from Antiquity available on the Internet in a standardised "
-"system of criteria. It was with this in mind that <i>EDR</i> was "
-"founded on the model of and in cooperation with "
+"system of criteria. It was with this in mind that <i>EDR</i> was founded "
+"on the model of and in cooperation with "
 "<i>EDH</i>.</p><p><strong>Concept</strong>: The <i>Epigraphic Text "
 "Database</i> is the heart of <i>EDH</i> and contains about 82.000 "
 "inscriptions at present. Almost all of the records present texts, which "
@@ -3335,18 +3338,18 @@ msgstr ""
 "modern textual editorial practice – or published, revised and discussed "
 "in thousands of scholarly articles. The texts and metadata of the "
 "inscriptions are thus presented on the basis of up to date scholarly "
-"research. One of the basic principles of the working method of "
-"<i>EDH</i> is that readings are not simply accepted from the editions "
-"and secondary literature. As much as possible these readings are verified"
-" at least on the basis of drawings or photographs – in the case of the "
-"latter these belong to the records of the <i>Photographic Database</i> "
-"– or ideally through autopsy. By means of the \"status field\" the user "
-"of the database is informed about the manner of verification of the "
+"research. One of the basic principles of the working method of <i>EDH</i>"
+" is that readings are not simply accepted from the editions and secondary"
+" literature. As much as possible these readings are verified at least on "
+"the basis of drawings or photographs – in the case of the latter these "
+"belong to the records of the <i>Photographic Database</i> – or ideally "
+"through autopsy. By means of the \"status field\" the user of the "
+"database is informed about the manner of verification of the "
 "readings.</p><p style=\"margin-bottom:2em;\">The revision of the "
-"inscriptions being processed for the <i>Epigraphic Text Database</i> is"
-" based on a card-index. On the one hand the publications presented in "
-"<i>L'Année Épigraphique</i> since 1888 are systematically collected. On"
-" the other hand in which the relevant <i class=\"fas fa-external-link-"
+"inscriptions being processed for the <i>Epigraphic Text Database</i> is "
+"based on a card-index. On the one hand the publications presented in "
+"<i>L'Année Épigraphique</i> since 1888 are systematically collected. On "
+"the other hand in which the relevant <i class=\"fas fa-external-link-"
 "alt\"></i> <a href=\"./inhalt/einfacheSuche#ankerDivPhasen\">corpora "
 "editions</a> and <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./inhalt/einfacheSuche#ankerDivPhasen\">local publications</a> are"
@@ -3371,13 +3374,29 @@ msgstr ""
 #: edh_web_application/project/templates/project/project_content_bibliography.html:10
 msgid "Content bibliography page"
 msgstr ""
-"<p> The Bibliographic Database alongside the Photographic Database and the Epigraphic Text Database is a constituent part of EDH.</p>"
-"<ul style='font-size:1.2em;'>"
-"<li>It contains currently about 16.600 records concerning monographs and articles in journals, anthologies, commemorative volumes and Congress Acts, which were referred to during work on the inscriptions presented in the L'Année Épigraphique.</li>"
-"<li>This considerable collection of specialist literature is to a very large extent present at the research centre at the very least in the form of photocopies.</li>"
-"</ul>"
-"<p>The special usefulness of this database for the user is that it is possible to access an extensive bibliography and in this way be able to use a rich collection of literature which is often difficult to trace. Particularly attractive search possibilities are to be had through using the fields CIL and other corpora. In this manner relevant secondary literature can be found all the more quickly. </p>"
-"<p>In addition to this it is possible with the help of the Epigraphische Bibliographie (EBH) to carry out research work without further ado on, for example, literature that was cited in the AE with respect to inscriptions, which are already in the Epigraphic Text Database, but have not yet been entered into the database in full fashion, or by searching for a specific inscription number in a corpus volume to find the relevant literature on the inscription in question. An integrated print function allows the user to print out clearly arranged individual records.</p>"
+"<p> The Bibliographic Database alongside the Photographic Database and "
+"the Epigraphic Text Database is a constituent part of EDH.</p><ul style"
+"='font-size:1.2em;'><li>It contains currently about 16.600 records "
+"concerning monographs and articles in journals, anthologies, "
+"commemorative volumes and Congress Acts, which were referred to during "
+"work on the inscriptions presented in the L'Année "
+"Épigraphique.</li><li>This considerable collection of specialist "
+"literature is to a very large extent present at the research centre at "
+"the very least in the form of photocopies.</li></ul><p>The special "
+"usefulness of this database for the user is that it is possible to access"
+" an extensive bibliography and in this way be able to use a rich "
+"collection of literature which is often difficult to trace. Particularly "
+"attractive search possibilities are to be had through using the fields "
+"CIL and other corpora. In this manner relevant secondary literature can "
+"be found all the more quickly. </p><p>In addition to this it is possible "
+"with the help of the Epigraphische Bibliographie (EBH) to carry out "
+"research work without further ado on, for example, literature that was "
+"cited in the AE with respect to inscriptions, which are already in the "
+"Epigraphic Text Database, but have not yet been entered into the database"
+" in full fashion, or by searching for a specific inscription number in a "
+"corpus volume to find the relevant literature on the inscription in "
+"question. An integrated print function allows the user to print out "
+"clearly arranged individual records.</p>"
 
 #: edh_web_application/project/templates/project/project_content_fotos.html:10
 msgid "Content fotos page"
@@ -4533,7 +4552,4 @@ msgstr ""
 #: edh_web_application/templates/home.html:269
 msgid "Colleections of Grrek & Latin Inscriptions in the USA"
 msgstr ""
-
-#~ msgid "hlp_casesensitive"
-#~ msgstr ""
 

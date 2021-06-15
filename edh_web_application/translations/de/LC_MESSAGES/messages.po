@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-15 11:45+0200\n"
+"POT-Creation-Date: 2021-06-15 13:28+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -3020,15 +3020,16 @@ msgid "Epigraphic Person Database: Detail View"
 msgstr ""
 
 #: edh_web_application/project/routes.py:9
-#: edh_web_application/project/routes.py:13
-#: edh_web_application/project/routes.py:18
-#: edh_web_application/project/routes.py:23
-#: edh_web_application/project/routes.py:28
-#: edh_web_application/project/routes.py:33
-#: edh_web_application/project/routes.py:38
-#: edh_web_application/project/routes.py:43
-#: edh_web_application/project/routes.py:48
-#: edh_web_application/project/routes.py:53
+#: edh_web_application/project/routes.py:14
+#: edh_web_application/project/routes.py:19
+#: edh_web_application/project/routes.py:24
+#: edh_web_application/project/routes.py:29
+#: edh_web_application/project/routes.py:34
+#: edh_web_application/project/routes.py:39
+#: edh_web_application/project/routes.py:44
+#: edh_web_application/project/routes.py:49
+#: edh_web_application/project/routes.py:54
+#: edh_web_application/project/routes.py:59
 msgid "Project"
 msgstr "Projekt"
 
@@ -3036,43 +3037,47 @@ msgstr "Projekt"
 msgid "concept"
 msgstr "Konzept"
 
-#: edh_web_application/project/routes.py:13
+#: edh_web_application/project/routes.py:14
 msgid "content - inscriptions"
 msgstr "Inhalt - Inschriften"
 
-#: edh_web_application/project/routes.py:18
+#: edh_web_application/project/routes.py:19
+msgid "content - fotographers"
+msgstr "Inhalt - Fotos: Liste der Fotographen"
+
+#: edh_web_application/project/routes.py:24
 msgid "content - fotos"
 msgstr "Inhalt - Fotos"
 
-#: edh_web_application/project/routes.py:23
+#: edh_web_application/project/routes.py:29
 msgid "content - bibliography"
 msgstr "Inhalt - Bibliographie"
 
-#: edh_web_application/project/routes.py:28
+#: edh_web_application/project/routes.py:34
 msgid "history"
 msgstr "Geschichte"
 
-#: edh_web_application/project/routes.py:33
+#: edh_web_application/project/routes.py:39
 msgid "cooperations"
 msgstr "Kooperationen"
 
-#: edh_web_application/project/routes.py:38
+#: edh_web_application/project/routes.py:44
 msgid "research team members"
 msgstr "Mitarbeiter"
 
-#: edh_web_application/project/routes.py:43
+#: edh_web_application/project/routes.py:49
 msgid "presentations"
 msgstr "Veranstaltungen & Öffentlichkeitsarbeit"
 
-#: edh_web_application/project/routes.py:48
+#: edh_web_application/project/routes.py:54
 msgid "contact"
 msgstr "Kontakt"
 
-#: edh_web_application/project/routes.py:53
+#: edh_web_application/project/routes.py:59
 msgid "provinces"
 msgstr "Provinzen"
 
-#: edh_web_application/project/routes.py:58
+#: edh_web_application/project/routes.py:64
 #: edh_web_application/templates/base.html:60
 msgid "Links"
 msgstr "Links"
@@ -3312,10 +3317,10 @@ msgstr ""
 "alt\"></i> <a href=\"./projekt/inhalt/inschriften\"><i>Epigraphischen "
 "Text-Datenbank</i></a>&nbsp; mit den drei weiteren Teildatenbanken der "
 "<i>EDH</i>, der <i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"./projekt/inhalt/bibliographie\"><i>Epigraphischen Bibliographie</i></a>, "
-"der <i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"./projekt/inhalt/fotos\"><i>Epigraphischen Fotothek</i></a> und der "
-"<i>Epigraphischen Geographiedatenbank.</i></p><p>Ihr "
+"href=\"./projekt/inhalt/bibliographie\"><i>Epigraphischen "
+"Bibliographie</i></a>, der <i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./projekt/inhalt/fotos\"><i>Epigraphischen Fotothek</i></a> und "
+"der <i>Epigraphischen Geographiedatenbank.</i></p><p>Ihr "
 "<strong>Ziel</strong> liegt darin, die epigraphische Dokumentation der "
 "Provinzen des römischen Reiches bis zum Jahr 2020 (vorgesehenem "
 "Laufzeitende) so vollständig und zuverlässig wie möglich für online-"
@@ -3386,13 +3391,28 @@ msgstr ""
 #: edh_web_application/project/templates/project/project_content_bibliography.html:10
 msgid "Content bibliography page"
 msgstr ""
-"<p>Die Epigraphische Bibliographie ist neben der Epigraphischen Fotothek und der Epigraphischen Textdatenbank eine Teildatenbank der EDH.</p>"
-"<ul style='font-size:1.2em;'>"
-"<li>Sie enthält derzeit rund 16.600 Datensätze zu Monographien, Aufsätzen, Zeitschriften, Sammelbänden, Festschriften und Kongreßakten, die für die Bearbeitung der in L'Année Épigraphique zitierten Inschriften herangezogen worden sind.</li>"
-"<li>Fotokopien der in dieser bibliographischen Datenbank als Titel erfassten (nicht selten entlegenen) Fachliteratur liegen in den Räumen der Forschungsstelle als Kopie vor und sind dort konsultierbar.</li>"
-"</ul>"
-"<p>Der Nutzen für den Anwender liegt zum einen in der prinzipiellen Möglichkeit, auf eine umfassende Bibliographie zugreifen zu können, und auf diesem Wege Zugang zu einem reichen Fundus vielfach entlegener Literatur zu erhalten. Besonders attraktive Suchmöglichkeiten eröffnen sich über die Datenfelder „CIL“ und „sonstige Corpora“, mittels deren ein schneller auf passende Sekundärliteratur erfolgen kann.</p>"
-"<p>Darüber hinaus läßt sich mit Hilfe der Epigraphischen Bibliographie ohne weiteres etwa nach Literatur zu solchen Inschriften aus der AE recherchieren, die zwar bereits in die EDH aufgenommen sind, deren Referenzliteratur aber noch nicht ausgewertet und entsprechend zitiert ist, oder etwa durch eine Suchabfrage nach Corpus-Nummern die Sekundärliteratur ausfindig machen. Eine bequeme Druckfunktion ermöglicht das übersichtliche Ausdrucken einzelner Datensätze.</p>"
+"<p>Die Epigraphische Bibliographie ist neben der Epigraphischen Fotothek "
+"und der Epigraphischen Textdatenbank eine Teildatenbank der EDH.</p><ul "
+"style='font-size:1.2em;'><li>Sie enthält derzeit rund 16.600 Datensätze "
+"zu Monographien, Aufsätzen, Zeitschriften, Sammelbänden, Festschriften "
+"und Kongreßakten, die für die Bearbeitung der in L'Année Épigraphique "
+"zitierten Inschriften herangezogen worden sind.</li><li>Fotokopien der in"
+" dieser bibliographischen Datenbank als Titel erfassten (nicht selten "
+"entlegenen) Fachliteratur liegen in den Räumen der Forschungsstelle als "
+"Kopie vor und sind dort konsultierbar.</li></ul><p>Der Nutzen für den "
+"Anwender liegt zum einen in der prinzipiellen Möglichkeit, auf eine "
+"umfassende Bibliographie zugreifen zu können, und auf diesem Wege Zugang "
+"zu einem reichen Fundus vielfach entlegener Literatur zu erhalten. "
+"Besonders attraktive Suchmöglichkeiten eröffnen sich über die Datenfelder"
+" „CIL“ und „sonstige Corpora“, mittels deren ein schneller auf passende "
+"Sekundärliteratur erfolgen kann.</p><p>Darüber hinaus läßt sich mit Hilfe"
+" der Epigraphischen Bibliographie ohne weiteres etwa nach Literatur zu "
+"solchen Inschriften aus der AE recherchieren, die zwar bereits in die EDH"
+" aufgenommen sind, deren Referenzliteratur aber noch nicht ausgewertet "
+"und entsprechend zitiert ist, oder etwa durch eine Suchabfrage nach "
+"Corpus-Nummern die Sekundärliteratur ausfindig machen. Eine bequeme "
+"Druckfunktion ermöglicht das übersichtliche Ausdrucken einzelner "
+"Datensätze.</p>"
 
 #: edh_web_application/project/templates/project/project_content_fotos.html:10
 msgid "Content fotos page"
@@ -4573,7 +4593,4 @@ msgstr ""
 #: edh_web_application/templates/home.html:269
 msgid "Colleections of Grrek & Latin Inscriptions in the USA"
 msgstr ""
-
-#~ msgid "hlp_casesensitive"
-#~ msgstr ""
 

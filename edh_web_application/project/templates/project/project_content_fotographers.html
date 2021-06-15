@@ -1,0 +1,914 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
+
+
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <td style="text-align: center; vertical-align: middle;">
+                    <strong>Abkürzung / Abbreviation</strong></td>
+                <td style="text-align: center; vertical-align: middle;">
+                    <strong>Fotograf / Photographer</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.F.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Andreas Fassbender</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    AFMAAquileia</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Archivio Fotografico Museo Archeologico Aquileia</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    AFSR</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Archivio Fotografico Soprintendenza Roma</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    AFSP</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Archivio Fabbrica di S. Pietro</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.G.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    A. Germann</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    AG-OS</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Alte Geschichte Osnabrück</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.H.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Andreas Hensen</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.I.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Anna Illuminati</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.Is.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Azemine Istogu</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Anamarija Kurilić</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Attilio Mastino</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Anton Pavić</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Andrea Scheithauer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.Sch.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Anja Schäfer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.Schaff.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Angele Schaffner</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.Schü.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Antonia Schütz</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.Sz.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    A. Székely</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    A.T.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Annette Thoms</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    B.G.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Brigitte Gräf</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Carolin Breitkopf</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.C.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Charles Crowther</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.G.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Claudia Gatta</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.-G.A.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Cristina-Georgeta Alexandrescu</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Carlos Machado</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.-M.D.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    C.-M. Daniels</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.N.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Christof Nikolaus Schröder</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Cornelius Stöhr</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    CST</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Campo Santo Teutonico</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.t.V.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Claus te Vehne</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    C.W.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Christian Witschel</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    D.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Danilo Pivato</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    DAI-AEK</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Deutsches Archäologisches Institut, Kommission für Alte Geschichte und Epigraphik München</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    DAIR</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Deutsches Archäologisches Institut Rom</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    DAIM</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Deutsches Archäologisches Institut Madrid</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    D.F.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Darius Frackowiak</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    E.C.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Elena Cimarosti</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    E.G.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Edoardo Gatti</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    E.N.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Elisabeth Neubert</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    E.R.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Evelyn Roels</td>
+            </tr>
+            <tr>
+                            <td style="text-align: left; vertical-align: top;">
+                                    E.S.</td>
+                            <td style="text-align: left; vertical-align: top;">
+                                    Elke Schneider</td>
+                    </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    E.W.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ekkehard Weber</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Francesca Bigi</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.B./I.T.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Francesca Bigi / Ignazio Tantillo</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.C.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ferdinando Castagnoli</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.Ca.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Filippo Carlà</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.F.-G.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Francisca Feraudi-Gruénais</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.G.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Frank Grieshaber</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.H.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Florian Helmer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.J.A.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Francisco Javier Andreu Pintado</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Friedrich Krämer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.N.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Fara Nasti</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Felix Schulte</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    F.S.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Franz Stephan Pelgen</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.A.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Géza Alföldy</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Gunter Baumann</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.C.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Giuseppe Camodeca</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.L.G.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Gian Luca Gregori</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.L.I.O.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Giuseppe Luigi Ignazio Oppo</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Giovanni Mennella</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.Mae.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Gabriella Maetzke</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Gernot Picottini</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.W.-K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Gabriele Wesch-Klein</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    G.Z.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Gerhard Zimmer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    H.F.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Heide Frielinghaus</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    H.G.F.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Hans G. Frenz</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    H.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Hilmar Klinkott</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    H.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Hubert Mara</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    H.N.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Heike Niquet</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    H.P.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Helena Paula Kotarlić</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    H.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Heikki Solin</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    H.W.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Henning Wirth</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    I.D.S.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ivan Di Stefano Manzella</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    I.J.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ivan Jelisavčić</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    I.L.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ingrid Laube</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    I.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ivan Matijević</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    I.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ioan Piso</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    I.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Irene Somà</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    Ist.Epigr.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Istituto Epigrafico Roma</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    I.W.-H.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ingrid Weber-Hiden</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    J.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Joachim Brümmer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    J.D.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Jörg Dietze</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    J.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Jana Kepartová</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    J.M.A.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Juan Manuel Abascal Palazón</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    <span class="signature">J.P.T.</span></td>
+                <td style="text-align: left; vertical-align: top;">
+                    <span class="signature">Jan Piebe Tjepkema</span></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    J.-U.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Jens-Uwe Krause</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    J.V.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Judith Végh</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    K.B./T.W.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Katharina Bolle / Tim Wittenberg</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    K.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Krešimir Matijević</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    K.Me.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Katharina Meinecke</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    KMH</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Kurpfälzisches Museum Heidelberg</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    L.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Luigi Baldin</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    L.C.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Laura Chioffi</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    L.H.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Lennart Hildebrand</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    L.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Leszek Mrozewicz</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    L.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    L. Susits</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    L.T.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Luisa Tarabochia</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.A.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Matthias Aulenbacher</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Marco Buonocore</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.Be.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    M. Bertola</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.Bl.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Michael Blömer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.C.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Manfred Clauss</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.G.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Manfred G. Schmidt</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Matthias Klein</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Marko Matijević</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.May.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Marc Mayer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.N.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Marcel Niedzolka</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.N.H.A.Luxembourg</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Musée National d'Histoire et d'Art Luxembourg</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Martin Spannagel</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.Sp.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Michael Speidel</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.S.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Marjeta Šašel Kos</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    M.v.V.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Monika van Versendaal</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    N.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Niklas Bettermann</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    N.F.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Nina Fenn</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    N.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Norbert Kramer</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    NYCU</td>
+                <td style="text-align: left; vertical-align: top;">
+                    New York Columbia University</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    O.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ouadi Boubakeur</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    O.D.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ortwin Dally</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    O.F.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Or Fialkov</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    O.P.-V.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Olga Pelcer-Vujačić</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    P.B.H.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    P. Batlle Huguet</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    PCAS</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Pontificia Commissione di Archeologia Sacra</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    PIAC</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Pontificio Istituto di Archeologia Cristiana</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    P.d.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    P. di Manzano</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    P.L.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Paul Lawlor</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    R.A.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Robert Ajtai</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    R.B.H.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Ruurd Binnert Halbertsma</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    R.G.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    R. Giustini</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    R.G.v.H.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Romana Gräfin vom Hagen</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    R.H.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Rudolf Haensch</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    R.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Raffaella Marchesini</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    R.S.C.A.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    R.S.C. Allen</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    S.A.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Sigrid Alföldy</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    SANC</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Soprintendenza Archeologica della Provincia di Napoli e Caserta</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    SAR</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Soprintendenza Archeologica di Roma</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    S.B.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Susanne Bosche</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    S.C.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Stefano Castellani</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    S.O.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Silvia Orlandi</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    S.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Silvio Panciera</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    S.P.P.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Szilamér Péter Pánczél</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    T.L.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    <span class="st">Tomaž</span> Lauko</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    Th.L.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Thomas Ley</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    V.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Vincenza Morizio</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    W.E.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Werner Eck</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    W.K.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Wolfgang Kuhoff</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    W.S.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Wolfgang Strysio</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    W.Sc.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Walter Scott</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    Y.M.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Yvonne Mühleis</td>
+            </tr>
+            <tr>
+                <td style="text-align: left; vertical-align: top;">
+                    Z.V.</td>
+                <td style="text-align: left; vertical-align: top;">
+                    Zsolt Visy</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
