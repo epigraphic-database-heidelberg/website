@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-15 10:46+0200\n"
+"POT-Creation-Date: 2021-06-15 11:27+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -3027,6 +3027,7 @@ msgstr ""
 #: edh_web_application/project/routes.py:33
 #: edh_web_application/project/routes.py:38
 #: edh_web_application/project/routes.py:43
+#: edh_web_application/project/routes.py:48
 msgid "Project"
 msgstr "Projekt"
 
@@ -3039,30 +3040,34 @@ msgid "content - inscriptions"
 msgstr "Inhalt - Inschriften"
 
 #: edh_web_application/project/routes.py:18
+msgid "content - fotos"
+msgstr "Inhalt - Fotos"
+
+#: edh_web_application/project/routes.py:23
 msgid "history"
 msgstr "Geschichte"
 
-#: edh_web_application/project/routes.py:23
+#: edh_web_application/project/routes.py:28
 msgid "cooperations"
 msgstr "Kooperationen"
 
-#: edh_web_application/project/routes.py:28
+#: edh_web_application/project/routes.py:33
 msgid "research team members"
 msgstr "Mitarbeiter"
 
-#: edh_web_application/project/routes.py:33
+#: edh_web_application/project/routes.py:38
 msgid "presentations"
 msgstr "Veranstaltungen & Öffentlichkeitsarbeit"
 
-#: edh_web_application/project/routes.py:38
+#: edh_web_application/project/routes.py:43
 msgid "contact"
 msgstr "Kontakt"
 
-#: edh_web_application/project/routes.py:43
+#: edh_web_application/project/routes.py:48
 msgid "provinces"
 msgstr "Provinzen"
 
-#: edh_web_application/project/routes.py:48
+#: edh_web_application/project/routes.py:53
 #: edh_web_application/templates/base.html:60
 msgid "Links"
 msgstr "Links"
@@ -3373,43 +3378,81 @@ msgstr ""
 "class=\"fas fa-external-link-alt\"></i> <a href=\"mailto:epigraphische-"
 "datenbank@hadw-bw.de\">epigraphische-datenbank@hadw-bw.de</a></p>"
 
+#: edh_web_application/project/templates/project/project_content_fotos.html:10
+msgid "Content fotos page"
+msgstr ""
+"<p>Die Epigraphische Fotothek ist neben der Epigraphischen Textdatenbank und der Epigraphischen Bibliographie eine weitere umfangreiche Teildatenbank der EDH.</p>"
+"<ul style='font-size:1.2em;'>"
+"<li>Der Bestand an Digitalisaten und Metadaten umfasst derzeit rund 39.500 Bilddateien und Datensätze.</li>"
+"<li>Auf die Fotos (niedrigauflösende jpg-Dateien) kann über die Suchfunktionen der Epigraphischen Fotothek direkt zugegriffen werden. Bei Vorliegen entsprechender Datensätze in der Epigraphischen Textdatenbank existiert von dort eine direkte Verknüpfung auf die zugehörigen Fotos.</li></ul>"
+"<p>Das Material der Epigraphischen Fotothek ist zu einem großen Teil Ertrag von Forschungsreisen, die die Forschungsstellenleiter und Mitarbeiter des Projekts bzw. des Heidelberger Seminars für Alte Geschichte und Epigraphik unternommen haben. Zudem profitiert die Fotothek von großzügigen Schenkungen zahlreicher Fachgelehrter und Institutionen: Prof. Dr. Silvio Panciera / Istituto Epigrafico (Inschriften aus Rom), Prof. Dr. Marjeta Šašel Kos (Inschriften des Slowenischen Nationalmuseums Ljubljana), Prof. Dr. Ioan Piso (Inschriften der römischen Provinz Dacia), Prof. Dr. Juan Manuel Abascal Palazón (Inschriften aus Carthago Nova), Prof. Dr. Leszek Mrozewicz (Inschriften aus Novae), Dr. Charles V. Crowther (Inschriften des Ashmolean Museum Oxford), Dr. Ingrid Weber-Hiden (Inschriften aus Carnuntum und weiterer Fundorte im österreichischen Teil der römischen Provinz Pannonia superior).</p>"
+"<p>Außerdem wurde in den Jahren 2007/08 auf dem Wege einer vom Seminar für Alte Geschichte und Epigraphik der Universität Heidelberg finanzierten Kooperation mit dem Historischen Seminar (Abt. Alte Geschichte) der Universität Osnabrück ein großer Teil der dortigen umfangreichen Fotobestände digitalisiert und in die Epigraphische Fotothek integriert.</p>"
+"<p>Parallel zum Vorhandensein der Digitalisate als hochauflösende tif-Dateien, kann das seit den 1980-er Jahren erstellte und bei der EDH archivierte konventionelle Bildmaterial (Dias, Negative, Papierabzüge) etwa für qualitativ hochwertige Reproduktionen auch weiterhin nachgefragt werden.</p>"
+"<p>Im Rahmen diverser vernetzender Kooperationen zwischen EDH und anders gelagerten epigraphischen Text- bzw. Bilddatenbanken bestehen derzeit zudem rund 15.500 - zum Teil auch reziproke - Verlinkungen zwischen den Suchergebnissen der Epigraphischen Textdatenbank und den entsprechenden Datensätzen externer Datenbanken. Bisher sind hieran die Fotoarchive der spanischen Außenstelle des CIL, des U.S. Epigraphy Project, der Web-Plattform Ubi erat Lupa und von Die Inschriften von Philippi beteiligt. - Ferner sind bislang knapp 7.000 Bilddateien zu Inschriften der italischen Regionen für den direkten Zugriff über EDR freigeschaltet; die Ergebnisse von Textsuchen in EDR zeigen somit, sofern vorhanden, das entsprechende Fotomaterial der Epigraphischen Fotothek an.</p>"
+"<p>Das digitale Bildmaterial der Epigraphischen Fotothek ist, von einigen wenigen Ausnahmen abgesehen, unmittelbar zugänglich. Die bisher geübte Praxis, Bilddateien bei ungeklärten Verwertungsrechten nur als thumbnails wiederzugeben, wurde 2012 auf zunehmende Nachfrage der scientific community hin und mit Unterstützung der Heidelberger Akademie der Wissenschaften aufgegeben, da im Sinne einer nicht-kommerziellen Präsentation und Nutzung zu reinen Forschungszwecken ein diesbezügliches Einverständnis der die Inschriftenmonumente verwahrenden Einrichtungen (in der Regel Museen) erwartet werden darf (andernfalls ergeht die Bitte um entsprechende Meldung); über die genannte Nutzung hinaus gehende Rechte wie die der Publikation sind nicht automatisch eingeschlossen und bedürfen der gesonderten Erlaubnis durch Fotografen und Museen.</p>"
+"<p>&nbsp;</p>"
+
+
 #: edh_web_application/project/templates/project/project_content_inscriptions.html:10
 msgid "Content inscription page"
 msgstr ""
-"<p>Die Epigraphische Textdatenbank ist neben der Epigraphischen Fotothek und der Epigraphischen Bibliographie die komplexeste Teildatenbank der EDH.</p>"
-"<p><ul style="font-size:1.2em;">"
-"<li>Über die Funktionen der einfachen bzw. erweiterten Suche hat der Benutzer auf sämtliche, derzeit rund 82.000, in der EDH archivierten Inschriftentexte und deren Metadaten Zugriff.</li>"
-"<li>Die Transkriptionen werden als Majuskel- und als Minuskeltexte mit Auflösungen und Ergänzungen dargestellt.</li>"
-"<li>Soweit Korrespondenzen vorliegen, sind die Suchergebnisse mit Bildmaterial aus der Epigraphischen Fotothek bzw. mit Fotos externer Bildarchive verknüpft, was den direkten Vergleich von epigraphischem Befund und Lesung erleichtert.</li>"
-"<li>Grundsätzlich werden alle lateinischen und bilinguen (lateinisch-griechischen) Inschriften der Provinzen des römischen Reiches erfasst."
-"<ul><li>Keine systematische Aufnahme finden jedoch Militärdiplome, seriell gestempelte Inschriften (z.B. Ziegelstempel) sowie sehr stark fragmentierte Inschriftenreste.</li>"
-"<li>Auf der Grundlage einer Kooperationsvereinbarung innerhalb des Zusammenschlusses zum Portal Electronic Archive of Greek and Latin Epigraphy (EAGLE) aus dem Jahr 2003 erfolgt die systematische Bearbeitung der Inschriften Italiens durch das Projekt Epigraphic Database Rome (EDR), jene der hispanischen Provinzen durch Hispania Epigraphica Online (HEpOnl). Die bis dahin in die EDH aufgenommenen Inschriften der genannten italischen Regionen und der hispanischen Provinzen werden nicht mehr aktualisiert und ergänzt; ihre Datensätze verbleiben aber im Bestand der EDH und sind über Trismegistos ID mit den ggf. aktuelleren Datensätzen von EDR bzw. HEpOnl verlinkt.</li></ul>"
-"</ul></li></ul></p>"
-"<p>Leitlinie war und ist von Anfang an, Lesungen nicht ungeprüft aus Publikationen zu übernehmen, sondern diese nach Möglichkeit wenigstens anhand von Zeichnungen, Abklatschen und Fotos, im Idealfall auch per Autopsie zu verifizieren.</p>"
-"<p>Die verwendeten Vorlagen sind im Feld „Bearbeitungsstand“ ausgewiesen; auch vorläufig bearbeitete Inschriften (z.B. aus Regionen, die noch nicht im Fokus einer systematischen Aufnahme in die EDH standen) sind somit für den Benutzer auf Anhieb als solche zu erkennen ("provisorisch bearbeitet").</p>"
-"<p>Während der diversen Phasen der Projektgenese erfolgte die Bearbeitung und Aufnahme der Inschriften mit unterschiedlichen Schwerpunkten: zunächst weitgehend auf bibliographische Kriterien (nach L'Année Épigraphique) fokussiert, stehen seit dem Jahr 2005 geographische Ordnungsprinzipien (nach den römischen Provinzen) im Vordergrund. </p>"
-"<p>Vollständig aufgenommen sind dementsprechend die Inschriften der nachfolgend aufgeführten Provinzen (Jahr des Abschlusses der Aufnahme in Klammern), wobei in L'Année Épigraphique zitierte Publikationen genauso zugrunde gelegt worden sind, wie einschlägige Lokalcorpora und regionale Zeitschriftenreihen. Nach Abschluß der Aufnahme publizierte Inschriften werden sukzessive nachgearbeitet:</p>"
-"<p><ul style="font-size:1.2em;">"
-"<li>Achaia (2011)</li>"
-"<li>Alpes Graiae/Poeninae/Cottiae/Maritimae (2012/13)</li>"
-"<li>Britannia (2020)</li>"
-"<li>Dacia (2008)</li>"
-"<li>Dalmatia (2012)</li>"
-"<li>Epirus (2012)</li>"
-"<li>Germania Inferior (2020)</li>"
-"<li>Germania Superior (2020)</li>"
-"<li>Macedonia (2012)</li>"
-"<li>Moesia Inferior (2009)</li>"
-"<li>Moesia Superior (2008)</li>"
-"<li>Noricum (2014),</li>"
-"<li>Pannonia Inferior (2017)</li>"
-"<li>Pannonia Superior (2017)</li>"
-"<li>Raetia (2018)</li>"
-"<li>Thracia (2009)</li>"
-"</ul></p>"
-"<p>Zusätzlich sind vollständig die Inschriften aus den folgenden Corpora bzw. Inschriftensammlungen aufgenommen, welche Regionen außerhalb der o.g. Provinzen abdecken:</p>"
-"<p>CIL II<sup>2</sup> 5, CIL II<sup>2</sup> 7, CIL II<sup>2</sup> 14,1, CIL VI 8,2, CIL VI 8,3, CIL XVII 4</p>"
-"<p>&nbsp;</p>"
+"<p>Die Epigraphische Textdatenbank ist neben der Epigraphischen Fotothek "
+"und der Epigraphischen Bibliographie die komplexeste Teildatenbank der "
+"EDH.</p><p><ul style=\"font-size:1.2em;\"><li>Über die Funktionen der "
+"einfachen bzw. erweiterten Suche hat der Benutzer auf sämtliche, derzeit "
+"rund 82.000, in der EDH archivierten Inschriftentexte und deren Metadaten"
+" Zugriff.</li><li>Die Transkriptionen werden als Majuskel- und als "
+"Minuskeltexte mit Auflösungen und Ergänzungen dargestellt.</li><li>Soweit"
+" Korrespondenzen vorliegen, sind die Suchergebnisse mit Bildmaterial aus "
+"der Epigraphischen Fotothek bzw. mit Fotos externer Bildarchive "
+"verknüpft, was den direkten Vergleich von epigraphischem Befund und "
+"Lesung erleichtert.</li><li>Grundsätzlich werden alle lateinischen und "
+"bilinguen (lateinisch-griechischen) Inschriften der Provinzen des "
+"römischen Reiches erfasst.<ul><li>Keine systematische Aufnahme finden "
+"jedoch Militärdiplome, seriell gestempelte Inschriften (z.B. "
+"Ziegelstempel) sowie sehr stark fragmentierte "
+"Inschriftenreste.</li><li>Auf der Grundlage einer "
+"Kooperationsvereinbarung innerhalb des Zusammenschlusses zum Portal "
+"Electronic Archive of Greek and Latin Epigraphy (EAGLE) aus dem Jahr 2003"
+" erfolgt die systematische Bearbeitung der Inschriften Italiens durch das"
+" Projekt Epigraphic Database Rome (EDR), jene der hispanischen Provinzen "
+"durch Hispania Epigraphica Online (HEpOnl). Die bis dahin in die EDH "
+"aufgenommenen Inschriften der genannten italischen Regionen und der "
+"hispanischen Provinzen werden nicht mehr aktualisiert und ergänzt; ihre "
+"Datensätze verbleiben aber im Bestand der EDH und sind über Trismegistos "
+"ID mit den ggf. aktuelleren Datensätzen von EDR bzw. HEpOnl "
+"verlinkt.</li></ul></ul></li></ul></p><p>Leitlinie war und ist von Anfang"
+" an, Lesungen nicht ungeprüft aus Publikationen zu übernehmen, sondern "
+"diese nach Möglichkeit wenigstens anhand von Zeichnungen, Abklatschen und"
+" Fotos, im Idealfall auch per Autopsie zu verifizieren.</p><p>Die "
+"verwendeten Vorlagen sind im Feld „Bearbeitungsstand“ ausgewiesen; auch "
+"vorläufig bearbeitete Inschriften (z.B. aus Regionen, die noch nicht im "
+"Fokus einer systematischen Aufnahme in die EDH standen) sind somit für "
+"den Benutzer auf Anhieb als solche zu erkennen (\"provisorisch "
+"bearbeitet\").</p><p>Während der diversen Phasen der Projektgenese "
+"erfolgte die Bearbeitung und Aufnahme der Inschriften mit "
+"unterschiedlichen Schwerpunkten: zunächst weitgehend auf bibliographische"
+" Kriterien (nach L'Année Épigraphique) fokussiert, stehen seit dem Jahr "
+"2005 geographische Ordnungsprinzipien (nach den römischen Provinzen) im "
+"Vordergrund. </p><p>Vollständig aufgenommen sind dementsprechend die "
+"Inschriften der nachfolgend aufgeführten Provinzen (Jahr des Abschlusses "
+"der Aufnahme in Klammern), wobei in L'Année Épigraphique zitierte "
+"Publikationen genauso zugrunde gelegt worden sind, wie einschlägige "
+"Lokalcorpora und regionale Zeitschriftenreihen. Nach Abschluß der "
+"Aufnahme publizierte Inschriften werden sukzessive "
+"nachgearbeitet:</p><p><ul style=\"font-size:1.2em;\"><li>Achaia "
+"(2011)</li><li>Alpes Graiae/Poeninae/Cottiae/Maritimae "
+"(2012/13)</li><li>Britannia (2020)</li><li>Dacia (2008)</li><li>Dalmatia "
+"(2012)</li><li>Epirus (2012)</li><li>Germania Inferior "
+"(2020)</li><li>Germania Superior (2020)</li><li>Macedonia "
+"(2012)</li><li>Moesia Inferior (2009)</li><li>Moesia Superior "
+"(2008)</li><li>Noricum (2014),</li><li>Pannonia Inferior "
+"(2017)</li><li>Pannonia Superior (2017)</li><li>Raetia "
+"(2018)</li><li>Thracia (2009)</li></ul></p><p>Zusätzlich sind vollständig"
+" die Inschriften aus den folgenden Corpora bzw. Inschriftensammlungen "
+"aufgenommen, welche Regionen außerhalb der o.g. Provinzen "
+"abdecken:</p><p>CIL II<sup>2</sup> 5, CIL II<sup>2</sup> 7, CIL "
+"II<sup>2</sup> 14,1, CIL VI 8,2, CIL VI 8,3, CIL XVII 4</p><p>&nbsp;</p>"
 
 #: edh_web_application/project/templates/project/project_cooperations.html:10
 msgid "Cooperations Description"

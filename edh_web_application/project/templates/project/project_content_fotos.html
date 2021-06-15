@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}EDH: {{ title }} {% endblock %}
+{% endblock %}
+
+{% block app_content %}
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
+    <p>{{ _('Content fotos page') }}</p>
+{% endblock %}

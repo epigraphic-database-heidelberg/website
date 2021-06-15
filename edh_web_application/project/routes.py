@@ -13,6 +13,11 @@ def show_project_content_inscriptions_page():
     return render_template('project/project_content_inscriptions.html', title=_("Project"), subtitle=_("content - inscriptions"))
 
 
+@bp_project.route('/projekt/inhalt/fotos', strict_slashes=False)
+def show_project_content_fotos_page():
+    return render_template('project/project_content_fotos.html', title=_("Project"), subtitle=_("content - fotos"))
+
+
 @bp_project.route('/projekt/geschichte', strict_slashes=False)
 def show_project_history_page():
     return render_template('project/project_history.html', title=_("Project"), subtitle=_("history"))
