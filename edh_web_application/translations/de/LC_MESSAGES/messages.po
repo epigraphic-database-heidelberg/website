@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-05-31 16:46+0200\n"
+"POT-Creation-Date: 2021-06-15 10:46+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -33,7 +33,9 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_table.html:88
 #: edh_web_application/inscription/forms.py:55
 #: edh_web_application/inscription/templates/inscription/search.html:96
-#: edh_web_application/inscription/templates/inscription/search_results.html:360
+#: edh_web_application/inscription/templates/inscription/search_results.html:362
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:94
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:106
 msgid "Reset..."
 msgstr "Formular leeren..."
 
@@ -63,6 +65,7 @@ msgstr "Autor"
 #: edh_web_application/bibliography/templates/bibliography/last_updates.html:31
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:144
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:24
 msgid "title"
 msgstr "Titel"
 
@@ -139,7 +142,10 @@ msgstr "sonstige Corpora"
 #: edh_web_application/geography/templates/geography/search_results.html:285
 #: edh_web_application/inscription/forms.py:73
 #: edh_web_application/inscription/templates/inscription/search_results.html:16
-#: edh_web_application/inscription/templates/inscription/search_results.html:293
+#: edh_web_application/inscription/templates/inscription/search_results.html:295
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:16
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:27
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:39
 msgid "sort by"
 msgstr "sortieren nach"
 
@@ -156,7 +162,10 @@ msgstr "sortieren nach"
 #: edh_web_application/geography/templates/geography/search_results.html:296
 #: edh_web_application/inscription/forms.py:83
 #: edh_web_application/inscription/templates/inscription/search_results.html:17
-#: edh_web_application/inscription/templates/inscription/search_results.html:305
+#: edh_web_application/inscription/templates/inscription/search_results.html:307
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:17
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:39
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:51
 msgid "number of results/page"
 msgstr "Suchtreffer/Seite"
 
@@ -180,8 +189,10 @@ msgstr "Bibliographie Datenbank"
 #: edh_web_application/geography/routes.py:115
 #: edh_web_application/geography/routes.py:119
 #: edh_web_application/geography/routes.py:123
-#: edh_web_application/inscription/routes.py:78
 #: edh_web_application/inscription/routes.py:82
+#: edh_web_application/inscription/routes.py:86
+#: edh_web_application/inscription/routes.py:90
+#: edh_web_application/inscription/routes.py:94
 msgid "Search results"
 msgstr "Suchtreffer"
 
@@ -194,9 +205,9 @@ msgstr "Suche"
 #: edh_web_application/bibliography/routes.py:73
 #: edh_web_application/foto/routes.py:61 edh_web_application/foto/routes.py:77
 #: edh_web_application/geography/routes.py:66
-#: edh_web_application/inscription/routes.py:98
-#: edh_web_application/inscription/routes.py:109
-#: edh_web_application/inscription/routes.py:113
+#: edh_web_application/inscription/routes.py:110
+#: edh_web_application/inscription/routes.py:121
+#: edh_web_application/inscription/routes.py:125
 msgid "Detail View"
 msgstr "Detailansicht"
 
@@ -282,7 +293,7 @@ msgstr "andere Corpora"
 #: edh_web_application/geography/templates/geography/last_updates.html:20
 #: edh_web_application/geography/templates/geography/search_results.html:131
 #: edh_web_application/inscription/templates/inscription/last_updates.html:20
-#: edh_web_application/inscription/templates/inscription/search_results.html:132
+#: edh_web_application/inscription/templates/inscription/search_results.html:134
 msgid "Number"
 msgstr "Suchtreffer"
 
@@ -292,7 +303,7 @@ msgstr "Suchtreffer"
 #: edh_web_application/geography/templates/geography/last_updates.html:27
 #: edh_web_application/geography/templates/geography/search_results.html:138
 #: edh_web_application/inscription/templates/inscription/last_updates.html:22
-#: edh_web_application/inscription/templates/inscription/search_results.html:134
+#: edh_web_application/inscription/templates/inscription/search_results.html:136
 msgid "&ndash; open detailed view..."
 msgstr "&ndash; Detailansicht öffnen..."
 
@@ -315,6 +326,8 @@ msgstr "Jahre"
 #: edh_web_application/geography/templates/geography/search_results_table.html:10
 #: edh_web_application/inscription/templates/inscription/no_hits.html:10
 #: edh_web_application/inscription/templates/inscription/search_results.html:10
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:10
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:10
 msgid "The search for:"
 msgstr "Die Suche nach:"
 
@@ -330,6 +343,8 @@ msgstr "Die Suche nach:"
 #: edh_web_application/geography/templates/geography/search_results_table.html:12
 #: edh_web_application/inscription/templates/inscription/no_hits.html:12
 #: edh_web_application/inscription/templates/inscription/search_results.html:12
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:12
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:12
 msgid "resulted in"
 msgstr "ergab"
 
@@ -345,6 +360,8 @@ msgstr "ergab"
 #: edh_web_application/geography/templates/geography/search_results_table.html:12
 #: edh_web_application/inscription/templates/inscription/no_hits.html:12
 #: edh_web_application/inscription/templates/inscription/search_results.html:12
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:12
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:12
 msgid "hits."
 msgstr "Treffer."
 
@@ -379,6 +396,8 @@ msgstr "suchen..."
 #: edh_web_application/geography/templates/geography/search_results_map.html:13
 #: edh_web_application/geography/templates/geography/search_results_table.html:13
 #: edh_web_application/inscription/templates/inscription/search_results.html:13
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:13
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:13
 msgid "New Search"
 msgstr "neue Suche"
 
@@ -402,7 +421,11 @@ msgstr "B-Nr."
 #: edh_web_application/geography/templates/geography/search_results_table.html:16
 #: edh_web_application/geography/templates/geography/search_results_table.html:40
 #: edh_web_application/inscription/templates/inscription/search_results.html:18
-#: edh_web_application/inscription/templates/inscription/search_results.html:313
+#: edh_web_application/inscription/templates/inscription/search_results.html:315
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:18
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:47
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:16
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:59
 msgid "view"
 msgstr "Ansicht"
 
@@ -417,7 +440,9 @@ msgstr "Ansicht"
 #: edh_web_application/geography/templates/geography/search_results_map.html:25
 #: edh_web_application/geography/templates/geography/search_results_table.html:42
 #: edh_web_application/inscription/templates/inscription/search_results.html:18
-#: edh_web_application/inscription/templates/inscription/search_results.html:315
+#: edh_web_application/inscription/templates/inscription/search_results.html:317
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:49
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:61
 msgid "list"
 msgstr "Liste"
 
@@ -436,7 +461,11 @@ msgstr "Liste"
 #: edh_web_application/geography/templates/geography/search_results_table.html:17
 #: edh_web_application/geography/templates/geography/search_results_table.html:47
 #: edh_web_application/inscription/templates/inscription/search_results.html:19
-#: edh_web_application/inscription/templates/inscription/search_results.html:320
+#: edh_web_application/inscription/templates/inscription/search_results.html:322
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:19
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:54
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:17
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:66
 msgid "filter"
 msgstr "Filter"
 
@@ -451,7 +480,10 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_map.html:26
 #: edh_web_application/geography/templates/geography/search_results_table.html:16
 #: edh_web_application/geography/templates/geography/search_results_table.html:43
-#: edh_web_application/inscription/templates/inscription/search_results.html:316
+#: edh_web_application/inscription/templates/inscription/search_results.html:318
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:50
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:16
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:62
 msgid "table"
 msgstr "Tabelle"
 
@@ -462,55 +494,65 @@ msgstr "Tabelle"
 #: edh_web_application/geography/templates/geography/search_results.html:351
 #: edh_web_application/geography/templates/geography/search_results_map.html:70
 #: edh_web_application/geography/templates/geography/search_results_table.html:87
-#: edh_web_application/inscription/templates/inscription/search_results.html:359
+#: edh_web_application/inscription/templates/inscription/search_results.html:361
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:93
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:105
 msgid "Filter..."
 msgstr ""
 
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:109
-#: edh_web_application/geography/templates/geography/detail_view_province.html:135
+#: edh_web_application/geography/templates/geography/detail_view_province.html:148
 #: edh_web_application/geography/templates/geography/search_results_table.html:107
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:156
 msgid "all"
 msgstr "alle"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:111
-#: edh_web_application/geography/templates/geography/detail_view_province.html:137
+#: edh_web_application/geography/templates/geography/detail_view_province.html:150
 #: edh_web_application/geography/templates/geography/search_results_table.html:109
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:158
 msgid "dtbl_search"
 msgstr "Suchen:"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:112
-#: edh_web_application/geography/templates/geography/detail_view_province.html:138
+#: edh_web_application/geography/templates/geography/detail_view_province.html:151
 #: edh_web_application/geography/templates/geography/search_results_table.html:110
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:159
 msgid "dtbl_info"
 msgstr "_START_ bis _END_ von _TOTAL_ Einträgen"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:113
-#: edh_web_application/geography/templates/geography/detail_view_province.html:139
+#: edh_web_application/geography/templates/geography/detail_view_province.html:152
 #: edh_web_application/geography/templates/geography/search_results_table.html:111
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:160
 msgid "dtbl_menu"
 msgstr "_MENU_ Einträge anzeigen"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:114
-#: edh_web_application/geography/templates/geography/detail_view_province.html:140
+#: edh_web_application/geography/templates/geography/detail_view_province.html:153
 #: edh_web_application/geography/templates/geography/search_results_table.html:112
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:161
 msgid "dtbl_filter"
 msgstr "(gefiltert von _MAX_ Einträgen)"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:115
-#: edh_web_application/geography/templates/geography/detail_view_province.html:141
+#: edh_web_application/geography/templates/geography/detail_view_province.html:154
 #: edh_web_application/geography/templates/geography/search_results_table.html:113
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:162
 msgid "dtbl_zero"
 msgstr "Keine Einträge vorhanden"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:117
-#: edh_web_application/geography/templates/geography/detail_view_province.html:143
+#: edh_web_application/geography/templates/geography/detail_view_province.html:156
 #: edh_web_application/geography/templates/geography/search_results_table.html:115
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:164
 msgid "dtbl_previous"
 msgstr "zurück"
 
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:118
-#: edh_web_application/geography/templates/geography/detail_view_province.html:144
+#: edh_web_application/geography/templates/geography/detail_view_province.html:157
 #: edh_web_application/geography/templates/geography/search_results_table.html:116
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:165
 msgid "dtbl_next"
 msgstr "nächste"
 
@@ -719,8 +761,10 @@ msgstr "F-Nummer"
 #: edh_web_application/inscription/templates/inscription/detail_view.html:64
 #: edh_web_application/inscription/templates/inscription/last_updates.html:33
 #: edh_web_application/inscription/templates/inscription/search.html:101
-#: edh_web_application/inscription/templates/inscription/search_results.html:151
-#: edh_web_application/inscription/templates/inscription/search_results.html:296
+#: edh_web_application/inscription/templates/inscription/search_results.html:153
+#: edh_web_application/inscription/templates/inscription/search_results.html:298
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:30
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:42
 msgid "province"
 msgstr "Provinz"
 
@@ -741,8 +785,10 @@ msgstr "Provinz"
 #: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/detail_view.html:72
 #: edh_web_application/inscription/templates/inscription/last_updates.html:41
-#: edh_web_application/inscription/templates/inscription/search_results.html:159
-#: edh_web_application/inscription/templates/inscription/search_results.html:298
+#: edh_web_application/inscription/templates/inscription/search_results.html:161
+#: edh_web_application/inscription/templates/inscription/search_results.html:300
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:32
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:44
 msgid "ancient find spot"
 msgstr "Fundort antik"
 
@@ -761,10 +807,12 @@ msgstr "Fundort antik"
 #: edh_web_application/geography/templates/geography/search_results.html:291
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:76
-#: edh_web_application/inscription/templates/inscription/detail_view.html:76
+#: edh_web_application/inscription/templates/inscription/detail_view.html:82
 #: edh_web_application/inscription/templates/inscription/last_updates.html:45
-#: edh_web_application/inscription/templates/inscription/search_results.html:164
-#: edh_web_application/inscription/templates/inscription/search_results.html:299
+#: edh_web_application/inscription/templates/inscription/search_results.html:166
+#: edh_web_application/inscription/templates/inscription/search_results.html:301
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:33
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:45
 msgid "modern find spot"
 msgstr "Fundort modern"
 
@@ -774,7 +822,7 @@ msgstr "Fundort modern"
 #: edh_web_application/foto/templates/foto/search_results.html:157
 #: edh_web_application/foto/templates/foto/search_results.html:309
 #: edh_web_application/foto/templates/foto/search_results_grid.html:244
-#: edh_web_application/inscription/templates/inscription/detail_view.html:101
+#: edh_web_application/inscription/templates/inscription/detail_view.html:117
 msgid "present location"
 msgstr "Aufbewahrungsort"
 
@@ -852,8 +900,10 @@ msgstr "Aufschrift"
 #: edh_web_application/inscription/templates/inscription/detail_view.html:68
 #: edh_web_application/inscription/templates/inscription/last_updates.html:37
 #: edh_web_application/inscription/templates/inscription/search.html:102
-#: edh_web_application/inscription/templates/inscription/search_results.html:155
-#: edh_web_application/inscription/templates/inscription/search_results.html:297
+#: edh_web_application/inscription/templates/inscription/search_results.html:157
+#: edh_web_application/inscription/templates/inscription/search_results.html:299
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:31
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:43
 msgid "country"
 msgstr "Land"
 
@@ -889,7 +939,7 @@ msgid "Literature"
 msgstr "Literatur"
 
 #: edh_web_application/foto/templates/foto/detail_view.html:97
-#: edh_web_application/inscription/templates/inscription/detail_view.html:231
+#: edh_web_application/inscription/templates/inscription/detail_view.html:247
 msgid "Commentary"
 msgstr "Kommentar"
 
@@ -917,8 +967,12 @@ msgstr "weitere Fotos"
 #: edh_web_application/geography/templates/geography/search_results_table.html:55
 #: edh_web_application/inscription/templates/inscription/search.html:17
 #: edh_web_application/inscription/templates/inscription/search.html:23
-#: edh_web_application/inscription/templates/inscription/search_results.html:324
-#: edh_web_application/inscription/templates/inscription/search_results.html:328
+#: edh_web_application/inscription/templates/inscription/search_results.html:326
+#: edh_web_application/inscription/templates/inscription/search_results.html:330
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:58
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:62
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:70
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:74
 msgid "select one or more entries..."
 msgstr "einen oder mehrere Einträge auswählen..."
 
@@ -962,10 +1016,12 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:292
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
 #: edh_web_application/inscription/forms.py:76
-#: edh_web_application/inscription/templates/inscription/detail_view.html:80
+#: edh_web_application/inscription/templates/inscription/detail_view.html:92
 #: edh_web_application/inscription/templates/inscription/last_updates.html:49
-#: edh_web_application/inscription/templates/inscription/search_results.html:169
-#: edh_web_application/inscription/templates/inscription/search_results.html:300
+#: edh_web_application/inscription/templates/inscription/search_results.html:171
+#: edh_web_application/inscription/templates/inscription/search_results.html:302
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:34
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:46
 msgid "find spot"
 msgstr "Fundstelle"
 
@@ -1052,7 +1108,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:346
 #: edh_web_application/geography/templates/geography/search_results_map.html:65
 #: edh_web_application/geography/templates/geography/search_results_table.html:82
-#: edh_web_application/inscription/templates/inscription/detail_view.html:381
+#: edh_web_application/inscription/templates/inscription/detail_view.html:397
 #: edh_web_application/models/Place.py:1103
 #: edh_web_application/models/Place.py:1106
 #: edh_web_application/templates/home.html:62
@@ -1083,7 +1139,10 @@ msgstr "Mit dieser Provinz verknüpfte Fundorte"
 #: edh_web_application/geography/templates/geography/search_results_map.html:16
 #: edh_web_application/geography/templates/geography/search_results_map.html:27
 #: edh_web_application/geography/templates/geography/search_results_table.html:44
-#: edh_web_application/inscription/templates/inscription/search_results.html:317
+#: edh_web_application/inscription/templates/inscription/search_results.html:319
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:18
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:51
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:63
 msgid "map"
 msgstr "Karte"
 
@@ -1192,7 +1251,7 @@ msgid "type of inscription sort"
 msgstr "i_gattung_sort_de"
 
 #: edh_web_application/inscription/forms.py:77
-#: edh_web_application/inscription/templates/inscription/detail_view.html:114
+#: edh_web_application/inscription/templates/inscription/detail_view.html:130
 msgid "type of inscription"
 msgstr "Inschriftengattung"
 
@@ -1201,7 +1260,7 @@ msgid "type of monument sort"
 msgstr "denkmaltyp"
 
 #: edh_web_application/inscription/forms.py:78
-#: edh_web_application/inscription/templates/inscription/detail_view.html:132
+#: edh_web_application/inscription/templates/inscription/detail_view.html:148
 msgid "type of monument"
 msgstr "Inschriftträger"
 
@@ -1210,7 +1269,7 @@ msgid "material sort"
 msgstr "material_sort"
 
 #: edh_web_application/inscription/forms.py:79
-#: edh_web_application/inscription/templates/inscription/detail_view.html:138
+#: edh_web_application/inscription/templates/inscription/detail_view.html:154
 msgid "material"
 msgstr "Material"
 
@@ -1219,7 +1278,9 @@ msgid "date from sort"
 msgstr "dat_jahr_a"
 
 #: edh_web_application/inscription/forms.py:80
-#: edh_web_application/inscription/templates/inscription/search_results.html:301
+#: edh_web_application/inscription/templates/inscription/search_results.html:303
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:35
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:47
 msgid "date from"
 msgstr "Datierung Anfang"
 
@@ -1228,7 +1289,9 @@ msgid "date to sort"
 msgstr "dat_jahr_e"
 
 #: edh_web_application/inscription/forms.py:81
-#: edh_web_application/inscription/templates/inscription/search_results.html:302
+#: edh_web_application/inscription/templates/inscription/search_results.html:304
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:36
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:48
 msgid "date to"
 msgstr "Datierung Ende"
 
@@ -1238,34 +1301,37 @@ msgid "Search country"
 msgstr "Land <span class='hlp' id='hlp_land'><i class='fa fa-question'></i></span>"
 
 #: edh_web_application/inscription/routes.py:24
-#: edh_web_application/inscription/routes.py:77
 #: edh_web_application/inscription/routes.py:81
 #: edh_web_application/inscription/routes.py:85
-#: edh_web_application/inscription/routes.py:91
+#: edh_web_application/inscription/routes.py:89
+#: edh_web_application/inscription/routes.py:93
 #: edh_web_application/inscription/routes.py:97
-#: edh_web_application/inscription/routes.py:108
-#: edh_web_application/inscription/routes.py:113
-#: edh_web_application/inscription/routes.py:116
+#: edh_web_application/inscription/routes.py:103
+#: edh_web_application/inscription/routes.py:109
+#: edh_web_application/inscription/routes.py:120
+#: edh_web_application/inscription/routes.py:125
+#: edh_web_application/inscription/routes.py:128
 #: edh_web_application/templates/home.html:66
 msgid "Epigraphic Text Database"
 msgstr "Inschriften Datenbank"
 
-#: edh_web_application/inscription/routes.py:60
+#: edh_web_application/inscription/routes.py:63
 #: edh_web_application/models/convert/inscription.py:115
 msgid "beleg-"
 msgstr ""
 
-#: edh_web_application/inscription/routes.py:85
+#: edh_web_application/inscription/routes.py:97
 msgid "Simple Search"
 msgstr "Einfache Suche"
 
-#: edh_web_application/inscription/routes.py:91
+#: edh_web_application/inscription/routes.py:103
 msgid "Extended Search"
 msgstr "Erweiterte Suche"
 
 #: edh_web_application/inscription/templates/inscription/detail_view.html:27
 #: edh_web_application/inscription/templates/inscription/last_updates.html:29
-#: edh_web_application/inscription/templates/inscription/search_results.html:141
+#: edh_web_application/inscription/templates/inscription/search_results.html:143
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:24
 msgid "Transcription"
 msgstr "Transkription"
 
@@ -1275,202 +1341,203 @@ msgstr "Majuskeltext"
 
 #: edh_web_application/inscription/templates/inscription/detail_view.html:30
 #: edh_web_application/inscription/templates/inscription/last_updates.html:53
-#: edh_web_application/inscription/templates/inscription/search_results.html:173
+#: edh_web_application/inscription/templates/inscription/search_results.html:175
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:24
 msgid "Chronological Data"
 msgstr "Datierung"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:84
+#: edh_web_application/inscription/templates/inscription/detail_view.html:100
 msgid "modern region"
 msgstr "Region modern"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:89
+#: edh_web_application/inscription/templates/inscription/detail_view.html:105
 msgid "year of find"
 msgstr "Fundjahr"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:92
+#: edh_web_application/inscription/templates/inscription/detail_view.html:108
 msgid "before"
 msgstr "vor"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:108
+#: edh_web_application/inscription/templates/inscription/detail_view.html:124
 msgid "Type of inscription / language"
 msgstr "Inschriftengattung / Sprache"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:119
+#: edh_web_application/inscription/templates/inscription/detail_view.html:135
 msgid "language"
 msgstr "Sprache"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:126
+#: edh_web_application/inscription/templates/inscription/detail_view.html:142
 msgid "Type of monument"
 msgstr "Inschriftträger"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:144
+#: edh_web_application/inscription/templates/inscription/detail_view.html:160
 msgid "height"
 msgstr "Höhe"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:150
+#: edh_web_application/inscription/templates/inscription/detail_view.html:166
 msgid "width"
 msgstr "Breite"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:156
+#: edh_web_application/inscription/templates/inscription/detail_view.html:172
 msgid "depth"
 msgstr "Tiefe"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:162
+#: edh_web_application/inscription/templates/inscription/detail_view.html:178
 msgid "letter size"
 msgstr "Buchstabenhöhe"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:168
+#: edh_web_application/inscription/templates/inscription/detail_view.html:184
 msgid "decoration"
 msgstr "Dekoration"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:169
-#: edh_web_application/inscription/templates/inscription/detail_view.html:211
-#: edh_web_application/inscription/templates/inscription/detail_view.html:217
-#: edh_web_application/inscription/templates/inscription/detail_view.html:223
+#: edh_web_application/inscription/templates/inscription/detail_view.html:185
+#: edh_web_application/inscription/templates/inscription/detail_view.html:227
+#: edh_web_application/inscription/templates/inscription/detail_view.html:233
+#: edh_web_application/inscription/templates/inscription/detail_view.html:239
 msgid "present"
 msgstr "vorhanden"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:177
-#: edh_web_application/inscription/templates/inscription/detail_view.html:183
+#: edh_web_application/inscription/templates/inscription/detail_view.html:193
+#: edh_web_application/inscription/templates/inscription/detail_view.html:199
 msgid "Palaeography"
 msgstr "Schreibtechnik"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:189
+#: edh_web_application/inscription/templates/inscription/detail_view.html:205
 msgid "punctuation"
 msgstr "Interpunktion"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:198
+#: edh_web_application/inscription/templates/inscription/detail_view.html:214
 msgid "Historical relevant data"
 msgstr "Historisch relevante Hinweise"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:204
+#: edh_web_application/inscription/templates/inscription/detail_view.html:220
 msgid "religion"
 msgstr "Religion"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:210
+#: edh_web_application/inscription/templates/inscription/detail_view.html:226
 msgid "military"
 msgstr "Militär"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:216
+#: edh_web_application/inscription/templates/inscription/detail_view.html:232
 msgid "geography"
 msgstr "Geographie"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:222
+#: edh_web_application/inscription/templates/inscription/detail_view.html:238
 msgid "soziales"
 msgstr "Sozial- / Wirtschafts- / Rechtsgeschichte"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:244
+#: edh_web_application/inscription/templates/inscription/detail_view.html:260
 msgid "People"
 msgstr "Personen"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:254
+#: edh_web_application/inscription/templates/inscription/detail_view.html:270
 #: edh_web_application/person/templates/person/detail_view.html:22
 msgid "Name"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:259
+#: edh_web_application/inscription/templates/inscription/detail_view.html:275
 #: edh_web_application/person/templates/person/detail_view.html:27
 msgid "Praenomen"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:265
+#: edh_web_application/inscription/templates/inscription/detail_view.html:281
 #: edh_web_application/person/templates/person/detail_view.html:33
 msgid "Nomen"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:271
+#: edh_web_application/inscription/templates/inscription/detail_view.html:287
 #: edh_web_application/person/templates/person/detail_view.html:39
 msgid "Cognomen"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:277
+#: edh_web_application/inscription/templates/inscription/detail_view.html:293
 #: edh_web_application/person/templates/person/detail_view.html:45
 msgid "Supernomen"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:283
+#: edh_web_application/inscription/templates/inscription/detail_view.html:299
 #: edh_web_application/person/templates/person/detail_view.html:51
 msgid "Filiation"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:289
+#: edh_web_application/inscription/templates/inscription/detail_view.html:305
 #: edh_web_application/person/templates/person/detail_view.html:57
 msgid "Tribus"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:295
+#: edh_web_application/inscription/templates/inscription/detail_view.html:311
 #: edh_web_application/person/templates/person/detail_view.html:63
 msgid "Origo"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:301
+#: edh_web_application/inscription/templates/inscription/detail_view.html:317
 #: edh_web_application/person/templates/person/detail_view.html:69
 msgid "Gender"
 msgstr "Geschlecht"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:304
+#: edh_web_application/inscription/templates/inscription/detail_view.html:320
 #: edh_web_application/person/templates/person/detail_view.html:72
 msgid "female"
 msgstr "weiblich"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:306
+#: edh_web_application/inscription/templates/inscription/detail_view.html:322
 #: edh_web_application/person/templates/person/detail_view.html:74
 msgid "male"
 msgstr "männlich"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:313
+#: edh_web_application/inscription/templates/inscription/detail_view.html:329
 #: edh_web_application/person/templates/person/detail_view.html:81
 msgid "Status"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:319
+#: edh_web_application/inscription/templates/inscription/detail_view.html:335
 #: edh_web_application/person/templates/person/detail_view.html:87
 msgid "Beruf"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:326
+#: edh_web_application/inscription/templates/inscription/detail_view.html:342
 #: edh_web_application/person/templates/person/detail_view.html:94
 msgid "Age: Years"
 msgstr "Lebensalter: Jahre"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:332
+#: edh_web_application/inscription/templates/inscription/detail_view.html:348
 #: edh_web_application/person/templates/person/detail_view.html:100
 msgid "Age: Months"
 msgstr "Lebensalter: Monate"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:338
+#: edh_web_application/inscription/templates/inscription/detail_view.html:354
 #: edh_web_application/person/templates/person/detail_view.html:106
 msgid "Age: Days"
 msgstr "Lebensalter: Tage"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:344
+#: edh_web_application/inscription/templates/inscription/detail_view.html:360
 #: edh_web_application/person/templates/person/detail_view.html:112
 msgid "Age: Hours"
 msgstr "Lebensalter: Stunden"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:351
+#: edh_web_application/inscription/templates/inscription/detail_view.html:367
 #: edh_web_application/person/templates/person/detail_view.html:119
 msgid "External IDs"
 msgstr "Externe IDs"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:361
+#: edh_web_application/inscription/templates/inscription/detail_view.html:377
 #: edh_web_application/person/templates/person/detail_view.html:129
 msgid "PIR"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:373
+#: edh_web_application/inscription/templates/inscription/detail_view.html:389
 msgid "General Data"
 msgstr "Allgemeine Angaben"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:385
+#: edh_web_application/inscription/templates/inscription/detail_view.html:401
 msgid "Last Update"
 msgstr "Letzte Änderung"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:386
+#: edh_web_application/inscription/templates/inscription/detail_view.html:402
 msgid "by"
 msgstr "von"
 
-#: edh_web_application/inscription/templates/inscription/detail_view.html:389
+#: edh_web_application/inscription/templates/inscription/detail_view.html:405
 msgid "See Also"
 msgstr "Siehe auch"
 
@@ -1488,37 +1555,49 @@ msgstr "Jetzt HD-Nr."
 
 #: edh_web_application/inscription/templates/inscription/last_updates.html:57
 #: edh_web_application/inscription/templates/inscription/search.html:106
-#: edh_web_application/inscription/templates/inscription/search_results.html:177
+#: edh_web_application/inscription/templates/inscription/search_results.html:179
 msgid "literature"
 msgstr "Literatur"
 
 #: edh_web_application/inscription/templates/inscription/search.html:51
-#: edh_web_application/inscription/templates/inscription/search_results.html:347
+#: edh_web_application/inscription/templates/inscription/search_results.html:349
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:81
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:93
 msgid "year"
 msgstr "Datierung"
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
 #: edh_web_application/inscription/templates/inscription/search.html:147
-#: edh_web_application/inscription/templates/inscription/search_results.html:349
-#: edh_web_application/inscription/templates/inscription/search_results.html:460
-#: edh_web_application/models/Inscription.py:1050
-#: edh_web_application/models/Inscription.py:1052
-#: edh_web_application/models/Inscription.py:1060
+#: edh_web_application/inscription/templates/inscription/search_results.html:351
+#: edh_web_application/inscription/templates/inscription/search_results.html:462
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:83
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:212
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:95
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:195
+#: edh_web_application/models/Inscription.py:1053
+#: edh_web_application/models/Inscription.py:1055
+#: edh_web_application/models/Inscription.py:1063
 msgid "BC"
 msgstr "v. Chr."
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
 #: edh_web_application/inscription/templates/inscription/search.html:144
-#: edh_web_application/inscription/templates/inscription/search_results.html:349
-#: edh_web_application/inscription/templates/inscription/search_results.html:457
-#: edh_web_application/models/Inscription.py:1055
-#: edh_web_application/models/Inscription.py:1057
-#: edh_web_application/models/Inscription.py:1062
+#: edh_web_application/inscription/templates/inscription/search_results.html:351
+#: edh_web_application/inscription/templates/inscription/search_results.html:459
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:83
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:209
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:95
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:192
+#: edh_web_application/models/Inscription.py:1058
+#: edh_web_application/models/Inscription.py:1060
+#: edh_web_application/models/Inscription.py:1065
 msgid "AD"
 msgstr "n. Chr."
 
 #: edh_web_application/inscription/templates/inscription/search.html:58
-#: edh_web_application/inscription/templates/inscription/search_results.html:353
+#: edh_web_application/inscription/templates/inscription/search_results.html:355
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:87
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:99
 msgid "search string(s)"
 msgstr "Suchworte"
 
@@ -1629,13 +1708,17 @@ msgstr "Datierung"
 #: edh_web_application/inscription/templates/inscription/search.html:107
 msgid "hlp_datierung"
 msgstr ""
-"Datierung nach Jahren.<br /><br />Verschieben Sie die Schieberegler, bis die gewünschte Zeitspanne ausgewählt ist.<br /><br />"
-"Ohne Option \"erweitert\": "
-"<ul><li>genaue Jahreszahl</li><li>Zeiträume, die den angegebenen Zeitraum komplett abdecken, oder Jahre / Zeiträume, "
-"die innerhalb des angegebenen Zeitraums liegen</li><li>Jahre / Zeiträume, die nicht nach / vor dem angegebenen Jahr / Zeitraum liegen</li></ul>"
-"Mit Option \"erweitert\": "
-"<ul><li>Jahreszahl: findet alle Zeiträume, die die angegebene Jahreszahl mit beinhalten, sowie Jahre / Zeiträume, die nach bzw. vor dieser "
-"Jahreszahl liegen</li><li>Zeitspanne: findet zusätzlich Zeiträume, die sich nur teilweise mit dem angegebenen Zeitraum überschneiden</li></ul>"
+"Datierung nach Jahren.<br /><br />Verschieben Sie die Schieberegler, bis "
+"die gewünschte Zeitspanne ausgewählt ist.<br /><br />Ohne Option "
+"\"erweitert\": <ul><li>genaue Jahreszahl</li><li>Zeiträume, die den "
+"angegebenen Zeitraum komplett abdecken, oder Jahre / Zeiträume, die "
+"innerhalb des angegebenen Zeitraums liegen</li><li>Jahre / Zeiträume, die"
+" nicht nach / vor dem angegebenen Jahr / Zeitraum liegen</li></ul>Mit "
+"Option \"erweitert\": <ul><li>Jahreszahl: findet alle Zeiträume, die die "
+"angegebene Jahreszahl mit beinhalten, sowie Jahre / Zeiträume, die nach "
+"bzw. vor dieser Jahreszahl liegen</li><li>Zeitspanne: findet zusätzlich "
+"Zeiträume, die sich nur teilweise mit dem angegebenen Zeitraum "
+"überschneiden</li></ul>"
 
 #: edh_web_application/models/Foto.py:21 edh_web_application/models/Place.py:37
 msgid "land-ad"
@@ -2443,34 +2526,34 @@ msgstr "Datierung Anfang"
 msgid "dat_jahr_e"
 msgstr "Datierung Ende"
 
-#: edh_web_application/models/Inscription.py:1080
+#: edh_web_application/models/Inscription.py:1083
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1083
-#: edh_web_application/models/Inscription.py:1085
-#: edh_web_application/models/Inscription.py:1087
+#: edh_web_application/models/Inscription.py:1086
+#: edh_web_application/models/Inscription.py:1088
+#: edh_web_application/models/Inscription.py:1090
 msgid " from "
 msgstr " aus "
 
-#: edh_web_application/models/Inscription.py:1104
+#: edh_web_application/models/Inscription.py:1107
 msgid "schreibt-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1113
+#: edh_web_application/models/Inscription.py:1116
 msgid "interp-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1122
+#: edh_web_application/models/Inscription.py:1125
 msgid "rel-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1207
-#: edh_web_application/models/Inscription.py:1209
+#: edh_web_application/models/Inscription.py:1210
+#: edh_web_application/models/Inscription.py:1212
 msgid "yes"
 msgstr "ja"
 
-#: edh_web_application/models/Inscription.py:1209
+#: edh_web_application/models/Inscription.py:1212
 msgid "dat_erweitert"
 msgstr "erweitert"
 
@@ -2937,12 +3020,13 @@ msgid "Epigraphic Person Database: Detail View"
 msgstr ""
 
 #: edh_web_application/project/routes.py:9
-#: edh_web_application/project/routes.py:14
-#: edh_web_application/project/routes.py:19
-#: edh_web_application/project/routes.py:24
-#: edh_web_application/project/routes.py:29
-#: edh_web_application/project/routes.py:34
-#: edh_web_application/project/routes.py:39
+#: edh_web_application/project/routes.py:13
+#: edh_web_application/project/routes.py:18
+#: edh_web_application/project/routes.py:23
+#: edh_web_application/project/routes.py:28
+#: edh_web_application/project/routes.py:33
+#: edh_web_application/project/routes.py:38
+#: edh_web_application/project/routes.py:43
 msgid "Project"
 msgstr "Projekt"
 
@@ -2950,31 +3034,35 @@ msgstr "Projekt"
 msgid "concept"
 msgstr "Konzept"
 
-#: edh_web_application/project/routes.py:14
+#: edh_web_application/project/routes.py:13
+msgid "content - inscriptions"
+msgstr "Inhalt - Inschriften"
+
+#: edh_web_application/project/routes.py:18
 msgid "history"
 msgstr "Geschichte"
 
-#: edh_web_application/project/routes.py:19
+#: edh_web_application/project/routes.py:23
 msgid "cooperations"
 msgstr "Kooperationen"
 
-#: edh_web_application/project/routes.py:24
+#: edh_web_application/project/routes.py:28
 msgid "research team members"
 msgstr "Mitarbeiter"
 
-#: edh_web_application/project/routes.py:29
+#: edh_web_application/project/routes.py:33
 msgid "presentations"
 msgstr "Veranstaltungen & Öffentlichkeitsarbeit"
 
-#: edh_web_application/project/routes.py:34
+#: edh_web_application/project/routes.py:38
 msgid "contact"
 msgstr "Kontakt"
 
-#: edh_web_application/project/routes.py:39
+#: edh_web_application/project/routes.py:43
 msgid "provinces"
 msgstr "Provinzen"
 
-#: edh_web_application/project/routes.py:44
+#: edh_web_application/project/routes.py:48
 #: edh_web_application/templates/base.html:60
 msgid "Links"
 msgstr "Links"
@@ -3200,79 +3288,75 @@ msgstr ""
 #: edh_web_application/project/templates/project/project_concept.html:10
 msgid "Concept page"
 msgstr ""
-"<p>Die <strong>Aufgabe</strong> der <em>Epigraphischen Datenbank "
-"Heidelberg (EDH)</em> besteht in der systematischen Aufnahme der antiken "
+"<p>Die <strong>Aufgabe</strong> der <i>Epigraphischen Datenbank "
+"Heidelberg (EDH)</i> besteht in der systematischen Aufnahme der antiken "
 "lateinischen und bilinguen (dabei zumeist lateinisch-griechischen) "
 "Inschriften in einer komplexen Datenbank. Aufgrund ihrer interdisziplinär"
 " angelegen Konzeption und Arbeitsweise zählt sie zu den international "
 "führenden Datenbankvorhaben zur raschen Sammlung und zuverlässigen "
 "historischen Auswertung epigraphischer Zeugnisse. Die besonderen Merkmale"
 " der <i>EDH</i> liegen auf der <i class=\"fas fa-external-link-alt\"></i>"
-" <a href=\"./hilfe/liste/provinzen\">regionalen Systematik</a>, der "
+" <a href=\"./projekt/provinzen\">regionalen Systematik</a>, der "
 "beliebigen Kombinierbarkeit der gespeicherten Metainformationen und der "
 "wechselseitigen Verknüpfung der <i class=\"fas fa-external-link-"
-"alt\"></i> <a href=\"./inhalt/einfacheSuche\"><i>Epigraphischen Text-"
-"Datenbank</i></a>&nbsp; mit den drei weiteren Teildatenbanken der "
+"alt\"></i> <a href=\"./projekt/inhalt/inschriften\"><i>Epigraphischen "
+"Text-Datenbank</i></a>&nbsp; mit den drei weiteren Teildatenbanken der "
 "<i>EDH</i>, der <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./inhalt/bibliographie\"><i>Epigraphischen Bibliographie</i></a>, "
 "der <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./inhalt/fotos\"><i>Epigraphischen Fotothek</i></a> und der "
-"<em>Epigraphischen Geographiedatenbank.</em></p><p>Ihr "
+"<i>Epigraphischen Geographiedatenbank.</i></p><p>Ihr "
 "<strong>Ziel</strong> liegt darin, die epigraphische Dokumentation der "
 "Provinzen des römischen Reiches bis zum Jahr 2020 (vorgesehenem "
 "Laufzeitende) so vollständig und zuverlässig wie möglich für online-"
-"Recherchen zur Verfügung zu stellen. Auf Beschluß der <em>Commissione "
-"epigrafia e informatica</em> der <em>AIEGL</em> aus dem Jahr 2003 für die"
-" Errichtung der internationalen epigraphischen Datenbankföderation <i "
+"Recherchen zur Verfügung zu stellen. Auf Beschluß der <i>Commissione "
+"epigrafia e informatica</i> der <i>AIEGL</i> aus dem Jahr 2003 für die "
+"Errichtung der internationalen epigraphischen Datenbankföderation <i "
 "class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"./projekt/geschichte#anker11/2003\"><em>EAGLE</em></a> "
-"<em>(Electronic Archives of Greek and Latin Epigraphy</em><em><span style"
-"=\"font-style: normal;\">) obliegt der "
-"</span></em><em><i>EDH</i></em><em><span style=\"font-style: normal;\"> "
+"href=\"./projekt/geschichte\"><i>EAGLE</i></a> <i>(Electronic Archives of"
+" Greek and Latin Epigraphy</i><i><span style=\"font-style: normal;\">) "
+"obliegt der </span></i><i>EDH</i><span style=\"font-style: normal;\"> "
 "seitdem die Betreuung der Inschriften der <strong>römischen "
-"Provinzen</strong>, während die bis dahin über die "
-"</span></em><em><i>EDH</i></em><em><span style=\"font-style: normal;\"> "
-"bereits erfaßten Inschriften Italiens</span></em><em><span style=\"font-"
-"style: normal;\"> </span></em><em><span style=\"font-style: normal;\">der"
-" </span></em><em><i><i class=\"fas fa-external-link-alt\"></i> <a "
-"href=\"http://www.edr-edr.it/default/index.php\">Epigraphic Database Rome"
-" (EDR)</a></i></em><em><span style=\"font-style: normal;\"> "
-"</span></em><em><span style=\"font-style: normal;\">zur weiteren "
-"Bearbeitung und Vervollständigung des Datenbestandes durch letztere "
-"</span></em><em><span style=\"font-style: normal;\">überlassen worden "
-"sind. </span></em>Zweck der <em>EAGLE</em>-Föderation ist es, möglichst "
-"alle lateinischen und griechischen Inschriften der Antike nach "
-"einheitlichen Kriterien im Internet zugänglich zu machen.<em><span style"
-"=\"font-style: normal;\"> Die Gründung von</span></em><em><i> "
-"EDR</i></em><em><span style=\"font-style: normal;\"> "
-"</span></em><em><span style=\"font-style: normal;\">erfolgte zu diesem "
-"Zweck </span></em><em><span style=\"font-style: normal;\"> in enger "
-"Kooperation mit der </span></em><em><i>EDH</i></em><em><span style"
-"=\"font-style: normal;\"> und na</span></em><em><span style=\"font-style:"
-" normal;\">ch deren Modell</span></em>.</p><p><strong>Konzept</strong>: "
-"Die <em>Epigraphische Text-Datenbank</em> ist das Herzstück der "
-"<i>EDH</i> und umfaßt derzeit rund 82.000 Inschriften. Es handelt sich "
-"fast ausschließlich um bereits publizierte Texte, welche nicht nur in den"
-" großen - vielfach noch gültigen, aber modernen textkritischen Standards "
-"häufig nicht mehr genügenden - Inschriftencorpora ediert, sondern "
-"insbesondere auch in Tausenden von Fachartikeln veröffentlicht, revidiert"
-" und diskutiert worden sind. Texte und Metadaten der Inschriften werden "
-"somit vor dem Hintergrund des aktuellen Forschungsstandes präsentiert. Zu"
-" den Grundprinzipien der Arbeitsweise der <i>EDH</i> zählt es, Lesungen "
-"nicht ungeprüft aus Editionen und anderer Sekundärliteratur zu "
-"übernehmen. Soweit möglich werden diese vielmehr mindestens anhand von "
-"Zeichnungen oder Fotos - letztere weitgehend auch aus den Beständen der "
-"<em>Epigraphischen Fotothek</em> -, idealerweise auch per Autopsie "
+"Provinzen</strong>, während die bis dahin über die </span><i>EDH</i><span"
+" style=\"font-style: normal;\"> bereits erfaßten Inschriften "
+"Italiens</span><span style=\"font-style: normal;\"> </span><span style"
+"=\"font-style: normal;\">der </span><i><i class=\"fas fa-external-link-"
+"alt\"></i> <a href=\"http://www.edr-edr.it/default/index.php\">Epigraphic"
+" Database Rome (EDR)</a></i><span style=\"font-style: normal;\"> "
+"</span><span style=\"font-style: normal;\">zur weiteren Bearbeitung und "
+"Vervollständigung des Datenbestandes durch letztere </span><span style"
+"=\"font-style: normal;\">überlassen worden sind. </span>Zweck der "
+"<i>EAGLE</i>-Föderation ist es, möglichst alle lateinischen und "
+"griechischen Inschriften der Antike nach einheitlichen Kriterien im "
+"Internet zugänglich zu machen.<span style=\"font-style: normal;\"> Die "
+"Gründung von<i> EDR</i><span style=\"font-style: normal;\"> </span><span "
+"style=\"font-style: normal;\">erfolgte zu diesem Zweck </span><span style"
+"=\"font-style: normal;\"> in enger Kooperation mit der "
+"</span><i>EDH</i><span style=\"font-style: normal;\"> und nach deren "
+"Modell</span>.</p><p><strong>Konzept</strong>: Die <i>Epigraphische Text-"
+"Datenbank</i> ist das Herzstück der <i>EDH</i> und umfaßt derzeit rund "
+"82.000 Inschriften. Es handelt sich fast ausschließlich um bereits "
+"publizierte Texte, welche nicht nur in den großen - vielfach noch "
+"gültigen, aber modernen textkritischen Standards häufig nicht mehr "
+"genügenden - Inschriftencorpora ediert, sondern insbesondere auch in "
+"Tausenden von Fachartikeln veröffentlicht, revidiert und diskutiert "
+"worden sind. Texte und Metadaten der Inschriften werden somit vor dem "
+"Hintergrund des aktuellen Forschungsstandes präsentiert. Zu den "
+"Grundprinzipien der Arbeitsweise der <i>EDH</i> zählt es, Lesungen nicht "
+"ungeprüft aus Editionen und anderer Sekundärliteratur zu übernehmen. "
+"Soweit möglich werden diese vielmehr mindestens anhand von Zeichnungen "
+"oder Fotos - letztere weitgehend auch aus den Beständen der "
+"<i>Epigraphischen Fotothek</i> -, idealerweise auch per Autopsie "
 "verifiziert und dem Nutzer über das Feld \"Bearbeitungsstand\" die genaue"
 " Verifikationsgrundlage angezeigt.</p><p style=\"margin-bottom:2em;\">Die"
-" Bearbeitung der Inschriften für die <em>Epigraphische Text-"
-"Datenbank</em> stützt sich einerseits auf eine seit den Anfängen des "
-"Projekts stetig anwachsende umfangreiche Kartei, in der die in <i>L'Année"
-" Épigraphique</i> seit 1888 erfaßten Publikationen systematisch gesammelt"
-" werden, andererseits gemäß dem regionalen Arbeitsprinzip der <i>EDH</i> "
+" Bearbeitung der Inschriften für die <i>Epigraphische Text-Datenbank</i> "
+"stützt sich einerseits auf eine seit den Anfängen des Projekts stetig "
+"anwachsende umfangreiche Kartei, in der die in <i>L'Année "
+"Épigraphique</i> seit 1888 erfaßten Publikationen systematisch gesammelt "
+"werden, andererseits gemäß dem regionalen Arbeitsprinzip der <i>EDH</i> "
 "auf die einschlägigen <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./inhalt/einfacheSuche#ankerDivPhasen\">Corpora und "
-"Lokalpublikationen</a>. Daneben unterhält die <em>EDH</em> einen regen "
+"Lokalpublikationen</a>. Daneben unterhält die <i>EDH</i> einen regen "
 "Austausch mit in- und ausländischen Forschern und "
 "Forschungseinrichtungen, um gerade deren spezielles, auch regional "
 "ausgeprägtes Profil im Rahmen <i class=\"fas fa-external-link-alt\"></i> "
@@ -3288,6 +3372,44 @@ msgstr ""
 "39</p><h3>Fax</h3><p>+49 (0) 62 21 / 54 22 34</p><h3>Email</h3><p><i "
 "class=\"fas fa-external-link-alt\"></i> <a href=\"mailto:epigraphische-"
 "datenbank@hadw-bw.de\">epigraphische-datenbank@hadw-bw.de</a></p>"
+
+#: edh_web_application/project/templates/project/project_content_inscriptions.html:10
+msgid "Content inscription page"
+msgstr ""
+"<p>Die Epigraphische Textdatenbank ist neben der Epigraphischen Fotothek und der Epigraphischen Bibliographie die komplexeste Teildatenbank der EDH.</p>"
+"<p><ul style="font-size:1.2em;">"
+"<li>Über die Funktionen der einfachen bzw. erweiterten Suche hat der Benutzer auf sämtliche, derzeit rund 82.000, in der EDH archivierten Inschriftentexte und deren Metadaten Zugriff.</li>"
+"<li>Die Transkriptionen werden als Majuskel- und als Minuskeltexte mit Auflösungen und Ergänzungen dargestellt.</li>"
+"<li>Soweit Korrespondenzen vorliegen, sind die Suchergebnisse mit Bildmaterial aus der Epigraphischen Fotothek bzw. mit Fotos externer Bildarchive verknüpft, was den direkten Vergleich von epigraphischem Befund und Lesung erleichtert.</li>"
+"<li>Grundsätzlich werden alle lateinischen und bilinguen (lateinisch-griechischen) Inschriften der Provinzen des römischen Reiches erfasst."
+"<ul><li>Keine systematische Aufnahme finden jedoch Militärdiplome, seriell gestempelte Inschriften (z.B. Ziegelstempel) sowie sehr stark fragmentierte Inschriftenreste.</li>"
+"<li>Auf der Grundlage einer Kooperationsvereinbarung innerhalb des Zusammenschlusses zum Portal Electronic Archive of Greek and Latin Epigraphy (EAGLE) aus dem Jahr 2003 erfolgt die systematische Bearbeitung der Inschriften Italiens durch das Projekt Epigraphic Database Rome (EDR), jene der hispanischen Provinzen durch Hispania Epigraphica Online (HEpOnl). Die bis dahin in die EDH aufgenommenen Inschriften der genannten italischen Regionen und der hispanischen Provinzen werden nicht mehr aktualisiert und ergänzt; ihre Datensätze verbleiben aber im Bestand der EDH und sind über Trismegistos ID mit den ggf. aktuelleren Datensätzen von EDR bzw. HEpOnl verlinkt.</li></ul>"
+"</ul></li></ul></p>"
+"<p>Leitlinie war und ist von Anfang an, Lesungen nicht ungeprüft aus Publikationen zu übernehmen, sondern diese nach Möglichkeit wenigstens anhand von Zeichnungen, Abklatschen und Fotos, im Idealfall auch per Autopsie zu verifizieren.</p>"
+"<p>Die verwendeten Vorlagen sind im Feld „Bearbeitungsstand“ ausgewiesen; auch vorläufig bearbeitete Inschriften (z.B. aus Regionen, die noch nicht im Fokus einer systematischen Aufnahme in die EDH standen) sind somit für den Benutzer auf Anhieb als solche zu erkennen ("provisorisch bearbeitet").</p>"
+"<p>Während der diversen Phasen der Projektgenese erfolgte die Bearbeitung und Aufnahme der Inschriften mit unterschiedlichen Schwerpunkten: zunächst weitgehend auf bibliographische Kriterien (nach L'Année Épigraphique) fokussiert, stehen seit dem Jahr 2005 geographische Ordnungsprinzipien (nach den römischen Provinzen) im Vordergrund. </p>"
+"<p>Vollständig aufgenommen sind dementsprechend die Inschriften der nachfolgend aufgeführten Provinzen (Jahr des Abschlusses der Aufnahme in Klammern), wobei in L'Année Épigraphique zitierte Publikationen genauso zugrunde gelegt worden sind, wie einschlägige Lokalcorpora und regionale Zeitschriftenreihen. Nach Abschluß der Aufnahme publizierte Inschriften werden sukzessive nachgearbeitet:</p>"
+"<p><ul style="font-size:1.2em;">"
+"<li>Achaia (2011)</li>"
+"<li>Alpes Graiae/Poeninae/Cottiae/Maritimae (2012/13)</li>"
+"<li>Britannia (2020)</li>"
+"<li>Dacia (2008)</li>"
+"<li>Dalmatia (2012)</li>"
+"<li>Epirus (2012)</li>"
+"<li>Germania Inferior (2020)</li>"
+"<li>Germania Superior (2020)</li>"
+"<li>Macedonia (2012)</li>"
+"<li>Moesia Inferior (2009)</li>"
+"<li>Moesia Superior (2008)</li>"
+"<li>Noricum (2014),</li>"
+"<li>Pannonia Inferior (2017)</li>"
+"<li>Pannonia Superior (2017)</li>"
+"<li>Raetia (2018)</li>"
+"<li>Thracia (2009)</li>"
+"</ul></p>"
+"<p>Zusätzlich sind vollständig die Inschriften aus den folgenden Corpora bzw. Inschriftensammlungen aufgenommen, welche Regionen außerhalb der o.g. Provinzen abdecken:</p>"
+"<p>CIL II<sup>2</sup> 5, CIL II<sup>2</sup> 7, CIL II<sup>2</sup> 14,1, CIL VI 8,2, CIL VI 8,3, CIL XVII 4</p>"
+"<p>&nbsp;</p>"
 
 #: edh_web_application/project/templates/project/project_cooperations.html:10
 msgid "Cooperations Description"

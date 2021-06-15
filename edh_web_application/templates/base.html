@@ -52,10 +52,10 @@
                             <li><a href="./projekt/kontakt">{{ _('Contact') }}</a></li>
                         </ul>
                     </li>
-                    <li {% if '/inschrift' in request.path %} class="active" {% endif %}><a href="./inschrift/suche">{{ _('Inscriptions') }}</a></li>
-                    <li {% if '/foto' in request.path %} class="active" {% endif %}><a href="./foto/suche">{{ _('Photos') }}</a></li>
-                    <li {% if '/bibliographie' in request.path %} class="active" {% endif %}><a href="./bibliographie/suche">{{ _('Bibliography') }}</a></li>
-                    <li {% if '/geographie' in request.path %} class="active" {% endif %}><a href="./geographie/suche">{{ _('Geography') }}</a></li>
+                    <li {% if '/inschrift' in request.path and 'inhalt' not in request.path %} class="active" {% endif %}><a href="./inschrift/suche">{{ _('Inscriptions') }}</a></li>
+                    <li {% if '/foto' in request.path and 'inhalt' not in request.path %} class="active" {% endif %}><a href="./foto/suche">{{ _('Photos') }}</a></li>
+                    <li {% if '/bibliographie' in request.path and 'inhalt' not in request.path %} class="active" {% endif %}><a href="./bibliographie/suche">{{ _('Bibliography') }}</a></li>
+                    <li {% if '/geographie' in request.path and 'inhalt' not in request.path %} class="active" {% endif %}><a href="./geographie/suche">{{ _('Geography') }}</a></li>
                     <li {% if '/data' in request.path %} class="active" {% endif %}><a href="./data">{{ _('Data') }}</a></li>
                     <li {% if '/links' in request.path %} class="active" {% endif %}><a href="./links">{{ _('Links') }}</a></li>
                 </ul>
