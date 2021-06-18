@@ -35,7 +35,7 @@
     </div>
 </div>
 
-<div id="transcription_synoptic" style="display:none;">
+<div id="transcription_synoptic" style="display:none;margin-bottom:1.5em;">
     <div class="detail_block">
         <div class="inschrift-kurzansicht">
             <div id="data_p" class="" style="padding-left:5px;hyphens: none;width:100%;">
@@ -43,7 +43,7 @@
                     {% set atext_rows = data['atext'].split('/') %}
                     {% set btext_rows = data['btext'].split('/') %}
                     {% if atext_rows|length == btext_rows|length %}
-                        <table class="" style="table-layout: auto !important;">
+                        <table class="table table-striped" style="table-layout: auto !important;">
                             <thead>
                                 <td style="width: auto !important;vertical-align: top;padding:0px;padding-bottom:0px;"><strong>{{_('Transcription')}}</strong></td>
                                 <td style="width: auto !important;vertical-align: top;padding:0px;padding-bottom:0px;"><strong>{{_('Majuscle')}}</strong></td>
@@ -96,9 +96,9 @@
         <div class="detail_block_content">
             <div>
                 {% if data['gdb_id'] %}
-                <a href="./edh/geographie/{{ data['gdb_id'] }}"><div id="map_canvas" style="height:250px;min-width:300px;border:1px solid #ccc;margin-bottom:1em;"></div></a>
+                <a href="./edh/geographie/{{ data['gdb_id'] }}"><div id="map_canvas" style="height:250px;min-width:300px;border:1px solid #333;margin-bottom:1em;"></div></a>
                 {% else %}
-                <div id="map_canvas" style="height:250px;min-width:300px;border:1px solid #ccc;margin-bottom:1em;"></div>
+                <div id="map_canvas" style="height:250px;min-width:300px;border:1px solid #333;margin-bottom:1em;"></div>
                 {% endif %}
             </div>
         </div>
