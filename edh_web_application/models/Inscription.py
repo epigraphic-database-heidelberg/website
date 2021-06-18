@@ -596,6 +596,16 @@ class Inscription:
         """
         return inscription.to_xml(self)        
 
+
+    def get_hyphend_atext(self):
+        """
+        adds hyphen into transcription words with slash
+        """
+        atext = self.atext
+        atext = re.sub(r'(\S)\/(\S)', r'\1-/\2', atext)
+        return atext
+
+
     @classmethod
     def create_query_string(cls, form):
         """
