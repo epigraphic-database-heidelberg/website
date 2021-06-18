@@ -43,15 +43,19 @@
                     {% set atext_rows = data['atext'].split('/') %}
                     {% set btext_rows = data['btext'].split('/') %}
                     {% if atext_rows|length == btext_rows|length %}
-                        <table class="table table-striped" style="table-layout: auto !important;">
+                        <table class="" style="table-layout: auto !important;">
                             <thead>
                                 <td style="width: auto !important;vertical-align: top;padding:0px;padding-bottom:0px;"><strong>{{_('Transcription')}}</strong></td>
                                 <td style="width: auto !important;vertical-align: top;padding:0px;padding-bottom:0px;"><strong>{{_('Majuscle')}}</strong></td>
                             </thead>
                         {% for row in atext_rows %}
                             <tr style="vertical-align: top;padding:0px;">
-                                <td style="width: auto !important;vertical-align: top;padding:0px;padding-right:2em;">{% if row != "" %}{{ row|safe }} {% else %}&nbsp;{% endif %}</td>
-                                <td style="width: auto !important;vertical-align: top;padding:0px;">{{ btext_rows[loop.index-1]|safe }}</td>
+                                <td style="width: auto !important;vertical-align: top;padding:0px;padding-right:2em;border-top: 1px solid #ddd;{{ loop.cycle('background-color:#f9f9f9', 'background-color:#fff;') }}">
+                                    {% if row != "" %}{{ row|safe }} {% else %}&nbsp;{% endif %}
+                                </td>
+                                <td style="width: auto !important;vertical-align: top;padding:0px;border-top: 1px solid #ddd;{{ loop.cycle('background-color:#f9f9f9', 'background-color:#fff;') }}">
+                                    {{ btext_rows[loop.index-1]|safe }}
+                                </td>
                             </tr>
                         {% endfor %}
                         </table>
