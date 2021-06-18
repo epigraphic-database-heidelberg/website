@@ -18,14 +18,56 @@
     <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>
 </h3>
 
-<!--<div><span id="toggleLinebreaks" onClick="toggleLinebreaks()" style="cursor: pointer;font-size:.7em;">Show Linebreaks</span></div>-->
-
 <div>
+    <button id="toggleTranscriptionDisplay" class="btn btn-light" onClick="toggleTranscriptionDisplay()" style="cursor: pointer;font-size:.7em;margin-bottom:0px;margin-top:10px">
+        {{_('Toggle alternative transcription view')}}
+    </button>
+</div>
+
+<div id="transcription_standard">
     <div class="detail_block">
         <div class="inschrift-kurzansicht">
             <div id="data" class="" style="padding-left:5px;hyphens: none;">
                 <div style="margin-bottom:1em;"><strong>{{_('Transcription')}}</strong>:<br/>{{data['atext']|safe}}</div>
                 <div style="margin-bottom:1em;"><strong>{{_('Majuscle')}}</strong>:<br/>{{data['btext'] | replace("/", "<br/>" | safe)}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="transcription_synoptic" style="display:none;">
+    <div class="detail_block">
+        <div class="inschrift-kurzansicht">
+            <div id="data_p" class="" style="padding-left:5px;hyphens: none;width:100%;">
+                <div style="display:flex;">
+                    {% set atext_rows = data['atext'].split('/') %}
+                    {% set btext_rows = data['btext'].split('/') %}
+                    {% if atext_rows|length == btext_rows|length %}
+                        <table class="" style="table-layout: auto !important;">
+                            <thead>
+                                <td style="width: auto !important;vertical-align: top;padding:0px;padding-bottom:0px;"><strong>{{_('Transcription')}}</strong></td>
+                                <td style="width: auto !important;vertical-align: top;padding:0px;padding-bottom:0px;"><strong>{{_('Majuscle')}}</strong></td>
+                            </thead>
+                        {% for row in atext_rows %}
+                            <tr style="vertical-align: top;padding:0px;">
+                                <td style="width: auto !important;vertical-align: top;padding:0px;padding-right:2em;">{% if row != "" %}{{ row|safe }} {% else %}&nbsp;{% endif %}</td>
+                                <td style="width: auto !important;vertical-align: top;padding:0px;">{{ btext_rows[loop.index-1]|safe }}</td>
+                            </tr>
+                        {% endfor %}
+                        </table>
+                    {% else %}
+                        <p style="background-color: #aa2222;">Ungleiche Anzahl Zeilen in Transkription!!!</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="detail_block" style="margin-top: 0px;">
+        <div class="inschrift-kurzansicht">
+            <div id="data_m" class="" style="padding-left:5px;hyphens: none;">
                 {% if data['datierung'] %}
                     <div style="margin-bottom:1em;"><strong>{{_('Chronological Data')}}</strong>:<br/>{{data['datierung'] | safe}}</div>
                 {% endif%}
@@ -34,6 +76,7 @@
         </div>
     </div>
 </div>
+
 {% if data['foto_nr'] %}
 <hr/>
 <div>
@@ -423,17 +466,10 @@
 </div>
 
 <script>
-    function toggleLinebreaks() {
-        status = document.getElementById("toggleLinebreaks").innerHTML
-        if (status == "Show Linebreaks"){
-            document.getElementById("atext").innerHTML = "{{data['atext_br']}}"
-            document.getElementById("btext").innerHTML = "{{data['btext_br']}}"
-            document.getElementById("toggleLinebreaks").innerHTML = "Remove Linebreaks"
-        } else {
-            document.getElementById("atext").innerHTML = "{{data['atext']}}"
-            document.getElementById("btext").innerHTML = "{{data['btext']}}"
-            document.getElementById("toggleLinebreaks").innerHTML = "Show Linebreaks"
-        }
+    function toggleTranscriptionDisplay() {
+        console.log("huhu");
+        $('#transcription_standard').toggle();
+        $('#transcription_synoptic').toggle();
     }
 </script>
 
