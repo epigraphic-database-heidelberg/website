@@ -7,6 +7,18 @@
 {% block app_content %}
 <h1>{{ title }}</h1>
 <div class="row" style="padding-top:2em;">
+    <div class="col" style="padding-left:15px">
+        <p>
+            <a href="./links#general">{{_("General Links")}}</a><br />
+            <a href="./links#institutions">{{_("Institutions")}}</a><br />
+            <a href="./links#congresses">{{_("Congresses / Meetings / Workshops")}}</a><br />
+            <a href="./links#resources">{{_("Resources")}}</a><br />
+            <a href="./links#classical">{{_("Classical Antiquity Links")}}</a><br />
+        </p>
+    </div>
+</div>
+<h2><a id="general">{{_("General Links")}}</a></h2>
+<div class="row" style="padding-top:2em;">
     <div class="col-md-3">
         <div class="panel panel-default" style="height:75%">
             <a href="http://www2.uah.es/imagines_cilii">
@@ -181,7 +193,7 @@
     </div>
 </div>
 
-<h2>{{_("Institutions")}}</h2>
+<h2><a id="institutions">{{_("Institutions")}}</a></h2>
 <div class="row" style="padding-top:1em;">
     <div class="col-md-3">
         <div class="panel panel-default" style="height:75%">
@@ -228,7 +240,7 @@
     </div>
 </div>
 
-<h2>{{_("Congresses / Meetings / Workshops")}}</h2>
+<h2><a id="congresses">{{_("Congresses / Meetings / Workshops")}}</a></h2>
 <div class="row" style="padding-top:1em;">
     <div class="col-md-3">
         <div class="panel panel-default" style="height:75%">
@@ -310,7 +322,7 @@
 
 </div>
 
-<h2>{{_("Resources")}}</h2>
+<h2><a id="resources">{{_("Resources")}}</a></h2>
 <div class="row" style="padding-top:1em;">
     <div class="col-md-3">
         <div class="panel panel-default" style="height:75%">
@@ -346,7 +358,7 @@
     </div>
 </div>
 
-<h2>{{_("Classical Antiquity Links")}}</h2>
+<h2><a id="classical">{{_("Classical Antiquity Links")}}</a></h2>
 <div class="row" style="padding-top:1em;">
     <div class="col-md-3">
         <div class="panel panel-default" style="height:75%">
