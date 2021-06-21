@@ -1107,7 +1107,7 @@ msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view.html:128
 msgid "Inscriptions linked to this findspot"
-msgstr ""
+msgstr "inscription(s) from this findspot"
 
 #: edh_web_application/geography/templates/geography/detail_view_province.html:24
 msgid "Province Status"
@@ -1124,7 +1124,7 @@ msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view_province.html:67
 msgid "Findspots linked to this province"
-msgstr ""
+msgstr "findspot(s) in this province"
 
 #: edh_web_application/geography/templates/geography/search_results.html:308
 #: edh_web_application/geography/templates/geography/search_results_map.html:16

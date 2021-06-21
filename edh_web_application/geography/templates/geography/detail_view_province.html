@@ -64,7 +64,7 @@
             </section>
         </div>
     </div>
-    <div><h3>{{ _('Findspots linked to this province')}}</h3></div>
+    <div><h3>{{data['findspots']|length}} {{ _('Findspots linked to this province')}}</h3></div>
     <div class="table-responsive" style="100%; margin-bottom: 4rem;">
         <table id="tbl_findspot"  class="table-striped">
             <thead><th>ID</th><th>{{_('ancient find spot')}}</th><th>{{_('modern find spot')}}</th><th>{{_('find spot')}}</th><th>{{_('verw_bezirk')}}</th><th>{{_('country')}}</th></thead>

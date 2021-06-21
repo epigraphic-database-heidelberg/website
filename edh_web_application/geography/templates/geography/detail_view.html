@@ -125,7 +125,7 @@
             </section>
         </div>
     </div>
-    <div><h3>{{ _('Inscriptions linked to this findspot')}}</h3></div>
+    <div><h3>{{inscriptions_list|length}} {{ _('Inscriptions linked to this findspot')}}</h3></div>
     <div style="margin-bottom:2em;">
     {% for entry in inscriptions_list %}
     <i class="fas fa-external-link-alt"></i>

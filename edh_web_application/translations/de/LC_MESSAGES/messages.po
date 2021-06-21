@@ -1117,7 +1117,7 @@ msgstr "Bearbeitungsstand"
 
 #: edh_web_application/geography/templates/geography/detail_view.html:128
 msgid "Inscriptions linked to this findspot"
-msgstr "Mit diesem Fundort verknüpfte Inschriften"
+msgstr "Inschrift(en) von diesem Fundort"
 
 #: edh_web_application/geography/templates/geography/detail_view_province.html:24
 msgid "Province Status"
@@ -1133,7 +1133,7 @@ msgstr ""
 
 #: edh_web_application/geography/templates/geography/detail_view_province.html:67
 msgid "Findspots linked to this province"
-msgstr "Mit dieser Provinz verknüpfte Fundorte"
+msgstr "Fundort(e) in dieser Provinz"
 
 #: edh_web_application/geography/templates/geography/search_results.html:308
 #: edh_web_application/geography/templates/geography/search_results_map.html:16

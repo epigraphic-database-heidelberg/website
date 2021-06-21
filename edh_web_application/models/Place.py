@@ -660,7 +660,7 @@ class Place:
         """
         hits = kwargs.get('hits', None)
         start = 0  # index number of first record to retrieve
-        rows = 20  # number of receords to retrieve
+        rows = 20  # number of records to retrieve
         sort = "id asc"  # default
         if request.args.get('start'):
             start = request.args.get('start')

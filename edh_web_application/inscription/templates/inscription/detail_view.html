@@ -24,7 +24,7 @@
     </button>
 </div>
 
-<div id="transcription_standard">
+<div id="transcription_standard" style="display:none;">
     <div class="detail_block">
         <div class="inschrift-kurzansicht">
             <div id="data" class="" style="padding-left:5px;hyphens: none;">
@@ -35,7 +35,7 @@
     </div>
 </div>
 
-<div id="transcription_synoptic" style="display:none;margin-bottom:1.5em;">
+<div id="transcription_synoptic" style="margin-bottom:1.5em;">
     <div class="detail_block">
         <div class="inschrift-kurzansicht">
             <div id="data_p" class="" style="padding-left:5px;hyphens: none;width:100%;">
@@ -471,7 +471,6 @@
 
 <script>
     function toggleTranscriptionDisplay() {
-        console.log("huhu");
         $('#transcription_standard').toggle();
         $('#transcription_synoptic').toggle();
     }
