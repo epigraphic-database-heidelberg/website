@@ -131,7 +131,7 @@
 
     <div class="row">
         <div class="detail_block" style="display:flex;">
-            <div class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;"><a href="./edh/inschrift/{{ d['hd_nr'] }}" style="color: white">{{_('Number')}} &nbsp; {{count.value}}</a></div>
+            <div onclick="location.href='./edh/inschrift/{{ d['hd_nr'] }}';" class="col-pixel-width-100 rotate" style="display: inline-block; vertical-align: top;cursor:pointer;"><a href="./edh/inschrift/{{ d['hd_nr'] }}" style="color: white">{{_('Number')}} &nbsp; {{count.value}}</a></div>
             <div class="col">
                 <div><p style="text-align:left; vertical-align:top; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/inschrift/{{ d['hd_nr'] }}">{{ d['hd_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
                 <div class="edh-record-display">
