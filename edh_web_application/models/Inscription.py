@@ -3,6 +3,7 @@ import re
 import requests
 import json
 from datetime import datetime
+import urllib.parse
 
 import pysolr
 from babel.dates import format_date
@@ -1211,7 +1212,7 @@ def _get_query_params(args):
                 result_dict['land'] = result_dict['land'] + Place.country[c] + ", "
         elif key not in ('anzahl', 'sort', 'start', 'view', 'bearbeitet_abgeschlossen', 'bearbeitet_provisorisch', 'bool') and args[key] != "":
             # include years range only if not default value
-            if key == 'jahre' and (args['jahre'] == '600 v. Chr. - 1500 n. Chr.' or args['jahre'] == '600 BC - 1500 AD'):
+            if key == 'jahre' and (urllib.parse.unquote(args['jahre']).strip() == '600 v. Chr. - 1500 n. Chr.' or urllib.parse.unquote(args['jahre']).strip() == '600 BC - 1500 AD'):
                 continue
             else:
                 if key == 'jahre':
