@@ -30,24 +30,23 @@ def search_bibliography():
             results = Publication.query(query_string, hits=10000)
         else:
             results = Publication.query(query_string)
-        number_of_hits = Publication.get_number_of_hits_for_query(query_string)
         # return results to client
         if results['metadata']['number_of_hits'] > 0:
             if request.args.get('view') == 'table':
                 return render_template('bibliography/search_results_table.html', title=_("Bibliographic Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits, form=form)
+                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
             else:
                 return render_template('bibliography/search_results.html',
                                    title=_("Bibliographic Database"),
                                    subtitle=_("Search results"),
                                    form=form,
                                    data=results,
-                                   number_of_hits=number_of_hits)
+                                   number_of_hits=results['metadata']['number_of_hits'])
         else:
             return render_template('bibliography/no_hits.html', title=_("Bibliographic Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits, form=form)
+                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
     else:
         return render_template('bibliography/search.html', title=_("Bibliographic Database"), subtitle=_("Search"), form=form)
 

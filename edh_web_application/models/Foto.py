@@ -401,17 +401,6 @@ class Foto:
             return format_date(dt, 'd. MMM YYYY', locale='de_DE')
 
     @classmethod
-    def get_number_of_hits_for_query(cls, query_string):
-        """
-        returns number of hits for given query
-        :param query_string: Solr query string
-        :return:
-        """
-        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhFoto')
-        results = solr.search(query_string)
-        return format_decimal(results.hits, locale='de_DE')
-
-    @classmethod
     def get_autocomplete_entries(cls, ac_field, term, hits):
         """
         queries Solr core edhFoto for list of entries displayed in

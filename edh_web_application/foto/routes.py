@@ -29,24 +29,23 @@ def search_foto():
         # create query string
         query_string = Foto.create_query_string(request.args)
         results = Foto.query(query_string)
-        number_of_hits = Foto.get_number_of_hits_for_query(query_string)
         if results['metadata']['number_of_hits'] > 0:
             if request.args.get('view') == 'grid':
                 return render_template('foto/search_results_grid.html',
                         title=_("Foto Database"),
                         subtitle=_("Search results"),
                         data=results,
-                        number_of_hits=number_of_hits, form=form)
+                        number_of_hits=results['metadata']['number_of_hits'], form=form)
             else:
                 return render_template('foto/search_results.html',
                         title=_("Foto Database"),
                         subtitle=_("Search results"),
                         data=results,
-                        number_of_hits=number_of_hits, form=form)
+                        number_of_hits=results['metadata']['number_of_hits'], form=form)
         else:
             return render_template('foto/no_hits.html', title=_("Foto Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits, form=form)
+                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
     else:
         return render_template('foto/search.html', title=_("Foto Database"), subtitle=_("Search"), form=form)
 

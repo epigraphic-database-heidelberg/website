@@ -174,12 +174,6 @@ class Publication:
         return format_decimal(results.hits, locale='de_DE')
 
     @classmethod
-    def get_number_of_hits_for_query(cls, query_string):
-        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        results = solr.search(query_string)
-        return format_decimal(results.hits, locale='de_DE')
-
-    @classmethod
     def get_date_of_last_update(cls):
         """
         returns date of latest update to Solr Core edhBiblio
