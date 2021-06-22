@@ -13,8 +13,6 @@
 <a href="./inschrift/suche"><button type="button" class="btn">{{_('New Search')}}</button></a>
 <div class="row">
     <div class="col search-filter">
-        <button type="button" class="btn btn-info" id="sort-by" style="margin-left:0px;">{{_('sort by')}}: {% if request.args.get('sort') %}{{ _(request.args.get('sort')) }}{%else%}HD-Nr{%endif%}</button><br class="visible-xs" />
-        <button type="button" class="btn btn-info" id="hits-per-page">{{_('number of results/page')}}: {{data['metadata']['rows']}}</button><br class="visible-xs" />
         <button type="button" class="btn btn-info" id="view">{{_('view')}}: {{_('map')}}</button>
         <button type="button" class="btn btn-info" id="filter">{{_('filter')}}</button>
     </div>
@@ -156,7 +154,7 @@ $(document).ready(function() {
     var map = L.map('map', {
         center: [47, 11],
         zoom: 4,
-        layers: [streets],
+        layers: [pelagios],
         zoomControl: true,
         preferCanvas: true,
         scrollWheelZoom: false
