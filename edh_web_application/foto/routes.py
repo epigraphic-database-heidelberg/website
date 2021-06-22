@@ -1,8 +1,10 @@
 import json
 import re
+import io
+import csv
 import urllib.request
 
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, Response
 from flask_babel import _
 
 from . import bp_foto
@@ -30,18 +32,42 @@ def search_foto():
         query_string = Foto.create_query_string(request.args)
         results = Foto.query(query_string)
         if results['metadata']['number_of_hits'] > 0:
-            if request.args.get('view') == 'grid':
-                return render_template('foto/search_results_grid.html',
-                        title=_("Foto Database"),
-                        subtitle=_("Search results"),
-                        data=results,
-                        number_of_hits=results['metadata']['number_of_hits'], form=form)
+            # CSV export of results
+            if request.args.get('export') and request.args.get('export') == 'csv':
+                results = Foto.query(query_string, number_of_results=100000, start=0)
+                output = io.StringIO()
+                writer = csv.writer(output)
+                first_row = ['f-no.', 'province', 'country', 'ancient findspot', 
+                            'modern findspot', 'present location', 'date of photograph', 'cil', 'ae', 'other literature' ]
+                writer.writerow(first_row)
+                for i in results['items']:
+                    writer.writerow((
+                        i.f_nr,
+                        i.provinz,
+                        i.land,
+                        i.fo_antik,
+                        i.fo_modern,
+                        i.aufbewahrung,
+                        i.aufnahme_jahr,
+                        i.cil,
+                        i.ae,
+                        i.andere
+                    ))
+                output.seek(0)    
+                return Response(output, mimetype="text/csv", headers={"Content-Disposition":"attachment;filename=edh_foto.csv"})
             else:
-                return render_template('foto/search_results.html',
-                        title=_("Foto Database"),
-                        subtitle=_("Search results"),
-                        data=results,
-                        number_of_hits=results['metadata']['number_of_hits'], form=form)
+                if request.args.get('view') == 'grid':
+                    return render_template('foto/search_results_grid.html',
+                            title=_("Foto Database"),
+                            subtitle=_("Search results"),
+                            data=results,
+                            number_of_hits=results['metadata']['number_of_hits'], form=form)
+                else:
+                    return render_template('foto/search_results.html',
+                            title=_("Foto Database"),
+                            subtitle=_("Search results"),
+                            data=results,
+                            number_of_hits=results['metadata']['number_of_hits'], form=form)
         else:
             return render_template('foto/no_hits.html', title=_("Foto Database"),
                                    subtitle=_("Search results"), data=results,

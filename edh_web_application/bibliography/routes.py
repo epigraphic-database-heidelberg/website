@@ -39,7 +39,7 @@ def search_bibliography():
                 results = Publication.query(query_string, number_of_results=100000, start=0)
                 output = io.StringIO()
                 writer = csv.writer(output)
-                first_row = ['b_nr', 'author', 'title', 'publication', 
+                first_row = ['b-no.', 'author', 'title', 'publication', 
                             'volume', 'pages', 'place', 'ae', 'about ae', 'cil', 'other literature' ]
                 writer.writerow(first_row)
                 for i in results['items']:

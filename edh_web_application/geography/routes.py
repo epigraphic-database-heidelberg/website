@@ -111,7 +111,7 @@ def search_geography():
                 results = Place.query(query_string, number_of_results=100000, start=0)
                 output = io.StringIO()
                 writer = csv.writer(output)
-                first_row = ['geo-ID', 'province / Italic region', 'country', 'ancient find spot', 
+                first_row = ['geo-no', 'province / Italic region', 'country', 'ancient find spot', 
                             'modern find spot', 'findspot', 'region', 'comment', 'pleiades_id', 'tm_geo_id', 'geonames_id', 'coordinates (lat,lng)' ]
                 writer.writerow(first_row)
                 for i in results['items']:

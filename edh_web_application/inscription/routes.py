@@ -52,7 +52,7 @@ def simple_search():
                 results = Inscription.query(query_string, number_of_results=100000, no_highlighting=True, start=0)
                 output = io.StringIO()
                 writer = csv.writer(output)
-                first_row = ['HD-No.', 'transcription', 'work status', 'province / Italic region', 'country', 'ancient find spot', 
+                first_row = ['hd-no.', 'transcription', 'work status', 'province / Italic region', 'country', 'ancient find spot', 
                             'modern find spot', 'find spot (village, street, etc.)', 'chronological data', 'literature', 'coordinates (lat,lng)', 'type of monument', 'type of inscription', 'material']
                 writer.writerow(first_row)
                 for i in results['items']:
