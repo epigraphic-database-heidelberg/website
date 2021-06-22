@@ -1,7 +1,8 @@
 import json
 import re
-
-from flask import render_template, request, jsonify
+import io
+import csv
+from flask import render_template, request, jsonify, Response
 from flask_babel import _
 
 from . import bp_geography
@@ -105,18 +106,50 @@ def search_geography():
             results = Place.query(query_string)
         # return results to client
         if results['metadata']['number_of_hits'] > 0:
-            if request.args.get('view') == 'table':
-                return render_template('geography/search_results_table.html', title=_("Geographic Database"),
-                                   subtitle=_("Search results"), data=results,
-                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
-            elif request.args.get('view') == 'map':
-                return render_template('geography/search_results_map.html', title=_("Geographic Database"),
-                                   subtitle=_("Search results"), data=results,
-                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
+            # CSV export of results
+            if request.args.get('export') and request.args.get('export') == 'csv':
+                results = Place.query(query_string, number_of_results=100000, start=0)
+                output = io.StringIO()
+                writer = csv.writer(output)
+                first_row = ['geo-ID', 'province / Italic region', 'country', 'ancient find spot', 
+                            'modern find spot', 'findspot', 'region', 'comment', 'pleiades_id', 'tm_geo_id', 'geonames_id', 'coordinates (lat,lng)' ]
+                writer.writerow(first_row)
+                for i in results['items']:
+                    writer.writerow((
+                        i.id,
+                        i.provinz,
+                        i.land,
+                        i.fo_antik,
+                        i.fo_modern,
+                        i.fundstelle,
+                        i.verw_bezirk,
+                        i.kommentar,
+                        i.pleiades_id_1,
+                        i.trismegistos_geo_id,
+                        i.geonames_id_1,
+                        i.koordinaten_1,
+                    ))
+                output.seek(0)    
+                return Response(output, mimetype="text/csv", headers={"Content-Disposition":"attachment;filename=edh_geography.csv"})
             else:
-                return render_template('geography/search_results.html', title=_("Geographic Database"),
-                                   subtitle=_("Search results"), data=results,
-                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
+
+                if request.args.get('view') == 'table':
+                    return render_template('geography/search_results_table.html', title=_("Geographic Database"),
+                                    subtitle=_("Search results"), data=results,
+                                    number_of_hits=results['metadata']['number_of_hits'], form=form)
+                elif request.args.get('view') == 'map':
+                    return render_template('geography/search_results_map.html', title=_("Geographic Database"),
+                                    subtitle=_("Search results"), data=results,
+                                    number_of_hits=results['metadata']['number_of_hits'], form=form)
+                else:
+                    return render_template('geography/search_results.html', title=_("Geographic Database"),
+                                    subtitle=_("Search results"), data=results,
+                                    number_of_hits=results['metadata']['number_of_hits'], form=form)
+
+
+
+
+
         else:
             return render_template('geography/no_hits.html', title=_("Geographic Database"),
                                    subtitle=_("Search results"), data=results,
