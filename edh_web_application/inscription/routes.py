@@ -45,7 +45,6 @@ def simple_search():
             results = Inscription.query(query_string, hits=10000)
         else:
             results = Inscription.query(query_string)
-        number_of_hits = Inscription.get_number_of_hits_for_query(query_string)
         # return results to client
         if results['metadata']['number_of_hits'] > 0:
             # CSV export of results
@@ -80,19 +79,19 @@ def simple_search():
                 if request.args.get('view') == 'map':
                     return render_template('inscription/search_results_map.html', title=_("Epigraphic Text Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits, form=form)
+                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
                 if request.args.get('view') == 'table':
                     return render_template('inscription/search_results_table.html', title=_("Epigraphic Text Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits, form=form)
+                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
                 else:
                     return render_template('inscription/search_results.html', title=_("Epigraphic Text Database"),
                                     subtitle=_("Search results"), data=results,
-                                    number_of_hits=number_of_hits, form=form)
+                                    number_of_hits=results['metadata']['number_of_hits'], form=form)
         else:
             return render_template('inscription/no_hits.html', title=_("Epigraphic Text Database"),
                                    subtitle=_("Search results"), data=results,
-                                   number_of_hits=number_of_hits, form=form)
+                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
     else:
         return render_template('inscription/search.html', title=_("Epigraphic Text Database"), subtitle=_("Simple Search"), form=form)
 

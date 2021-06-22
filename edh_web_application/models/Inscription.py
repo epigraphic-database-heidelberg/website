@@ -897,17 +897,6 @@ class Inscription:
                     "items": query_result}
 
     @classmethod
-    def get_number_of_hits_for_query(cls, query_string):
-        """
-        returns number of hits for given query
-        :param query_string: Solr query string
-        :return:
-        """
-        solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
-        results = solr.search(query_string)
-        return format_decimal(results.hits, locale='de_DE')
-
-    @classmethod
     def get_number_of_records(cls):
         """
         returns number of inscription records from Solr Core edhText
