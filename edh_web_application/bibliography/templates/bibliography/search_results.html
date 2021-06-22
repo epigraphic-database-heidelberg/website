@@ -9,7 +9,7 @@
 <h2>{{ subtitle }}</h2>
 <p>{{_("The search for:")}}</p>
 <p style="margin-left: 2rem;">{% for param in data['metadata']['query_params'] %}<strong>{{ _(param) }}</strong>: {{ data['metadata']['query_params'][param] }}<br />{% endfor %}</p>
-<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}}</p>
+<p>{{_("resulted in")}} {{number_of_hits}} {{_("hits.")}} (<a href=".{{data['metadata']['url_without_pagination_parameters']}}&export=csv"><i class="fas fa-download" style="font-size:.8em"></i> CSV Download</a>)</p>
 <a href="./bibliographie/suche"><button type="button" class="btn">{{_('New Search')}}</button></a>
 <div class="row">
     <div class="col search-filter">

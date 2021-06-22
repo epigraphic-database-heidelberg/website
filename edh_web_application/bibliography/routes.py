@@ -1,9 +1,11 @@
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, Response
 from flask_babel import _
 from ..models.Publication import Publication
 from . import bp_bibliography
 from .forms import BibliographySearch
 import json
+import io
+import csv
 
 
 @bp_bibliography.route('/bibliographie/suche', methods=['GET', 'POST'], strict_slashes=False)
@@ -32,17 +34,42 @@ def search_bibliography():
             results = Publication.query(query_string)
         # return results to client
         if results['metadata']['number_of_hits'] > 0:
-            if request.args.get('view') == 'table':
-                return render_template('bibliography/search_results_table.html', title=_("Bibliographic Database"),
-                                   subtitle=_("Search results"), data=results,
-                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
+            # CSV export of results
+            if request.args.get('export') and request.args.get('export') == 'csv':
+                results = Publication.query(query_string, number_of_results=100000, start=0)
+                output = io.StringIO()
+                writer = csv.writer(output)
+                first_row = ['b_nr', 'author', 'title', 'publication', 
+                            'volume', 'pages', 'place', 'ae', 'about ae', 'cil', 'other literature' ]
+                writer.writerow(first_row)
+                for i in results['items']:
+                    writer.writerow((
+                        i.b_nr,
+                        i.autor,
+                        i.titel,
+                        i.publikation,
+                        i.band,
+                        i.seiten,
+                        i.ort,
+                        i.ae,
+                        i.zu_ae,
+                        i.cil,
+                        i.sonstigeCorpora
+                    ))
+                output.seek(0)    
+                return Response(output, mimetype="text/csv", headers={"Content-Disposition":"attachment;filename=edh_bibliography.csv"})
             else:
-                return render_template('bibliography/search_results.html',
-                                   title=_("Bibliographic Database"),
-                                   subtitle=_("Search results"),
-                                   form=form,
-                                   data=results,
-                                   number_of_hits=results['metadata']['number_of_hits'])
+                if request.args.get('view') == 'table':
+                    return render_template('bibliography/search_results_table.html', title=_("Bibliographic Database"),
+                                    subtitle=_("Search results"), data=results,
+                                    number_of_hits=results['metadata']['number_of_hits'], form=form)
+                else:
+                    return render_template('bibliography/search_results.html',
+                                    title=_("Bibliographic Database"),
+                                    subtitle=_("Search results"),
+                                    form=form,
+                                    data=results,
+                                    number_of_hits=results['metadata']['number_of_hits'])
         else:
             return render_template('bibliography/no_hits.html', title=_("Bibliographic Database"),
                                    subtitle=_("Search results"), data=results,
