@@ -41,15 +41,15 @@ def simple_search():
     if len(request.args) > 0:
         # create query string
         query_string = Inscription.create_query_string(request.args)
-        if request.args.get('view') == 'table' or request.args.get('view') == 'map':
-            results = Inscription.query(query_string, hits=10000)
+        if request.args.get('view') == 'table' or request.args.get('view') == 'map' or (request.args.get('export') and request.args.get('export') == 'csv'):
+            results = Inscription.query(query_string, number_of_results=100000, no_highlighting=True, start=0)
         else:
             results = Inscription.query(query_string)
         # return results to client
         if results['metadata']['number_of_hits'] > 0:
             # CSV export of results
             if request.args.get('export') and request.args.get('export') == 'csv':
-                results = Inscription.query(query_string, number_of_results=100000, no_highlighting=True, start=0)
+                #results = Inscription.query(query_string, number_of_results=100000, no_highlighting=True, start=0)
                 output = io.StringIO()
                 writer = csv.writer(output)
                 first_row = ['hd-no.', 'transcription', 'work status', 'province / Italic region', 'country', 'ancient find spot', 
