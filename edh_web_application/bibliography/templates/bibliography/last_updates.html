@@ -20,10 +20,12 @@
                 <section class="detail_block_content_row">
                     <div class="detail_block_content_row_header">{{ _('author') }}:</div>
                     <div class="detail_block_content_row_text">
-                    {% set author_list = entry['autor'].split(' - ') %}
-                    {% for author in author_list %}
-                        <i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?autor={{ author }}">{{ author }}</a> &nbsp;
-                    {% endfor %}
+                        {% if entry['autor'] %}
+                            {% set author_list = entry['autor'].split(' - ') %}
+                            {% for author in author_list %}
+                                <i class="fas fa-external-link-alt"></i> <a href="./bibliographie/suche?autor={{ author }}">{{ author }}</a> &nbsp;
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </section>
                 {% if entry['titel'] %}

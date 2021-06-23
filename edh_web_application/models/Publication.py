@@ -197,7 +197,7 @@ class Publication:
         :return: list of 50 entries
         """
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhBiblio')
-        results = solr.search("*:*", sort="datum desc", rows=50)
+        results = solr.search("autor:*", sort="datum desc", rows=50)
         for res in results:
             dt = datetime.strptime(res['datum'], '%Y-%m-%d').date()
             res['datum'] = format_date(dt, 'd. MMM YYYY', locale='de_DE')
