@@ -16,3 +16,4 @@ build/
 *~
 .directory
 .vscode
+infrastructure/data/edh_data_text_sample.csv
