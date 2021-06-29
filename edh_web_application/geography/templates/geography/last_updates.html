@@ -94,7 +94,7 @@
                 map.scrollWheelZoom.disable();
                 map.keyboard.disable();
                 {% if entry['koordinaten1str'] %}
-                var marker{{count.value}} = L.marker([{{entry['koordinaten1str']}}]).addTo(map);
+                var marker{{count.value}} = L.circleMarker([{{entry['koordinaten1str']}}], {color: '#ff0000', opacity: 1, fillColor: '#1F6B3B', fill: true, fillOpacity: .3}).addTo(map);
                 {% endif %}
         {% endfor %}
     {% endfor %}
