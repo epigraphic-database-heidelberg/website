@@ -181,7 +181,7 @@
     var overlays = {};
     L.control.layers(baseLayers, overlays, {position: 'topleft'}).addTo(map);
     {% if data['koordinaten_1'] %}
-    var marker = L.marker([{{data['koordinaten_1']}}]).addTo(map);
+    var marker = L.circleMarker([{{data['koordinaten_1']}}], {color: '#ff0000', opacity: 1, fillColor: '#1F6B3B', fill: true, fillOpacity: .3}).addTo(map);
     {% endif %}
 </script>
 {% endblock %}

@@ -515,7 +515,7 @@
     map.keyboard.disable();
     var overlays = {};
     {% if data['koordinaten1'] %}
-        var marker = L.marker([{{data['koordinaten1']}}]).addTo(map);
+        var marker = L.circleMarker([{{data['koordinaten1']}}], {color: '#ff0000', opacity: 1, fillColor: '#1F6B3B', fill: true, fillOpacity: .3}).addTo(map);
     {% endif %}
     $(".regular").slick({
         dots: true,
