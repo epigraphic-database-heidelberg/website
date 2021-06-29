@@ -88,7 +88,23 @@ def simple_search():
                                     subtitle=_("Search results"), data=results,
                                     number_of_hits=results['metadata']['number_of_hits'], form=form)
         else:
-            return render_template('inscription/no_hits.html', title=_("Epigraphic Text Database"),
+            # no results, test for redirects if query includes hd_nr parameter
+            if request.args.get('hd_nr') and request.args.get('hd_nr') != "":# and request.args.get('hd_nr') in Inscription.hd_nr_redirects:
+                hd_nr = request.args.get('hd_nr')
+                hd_nr = re.sub(r'HD0*?', r'', hd_nr, flags=re.IGNORECASE)
+                try:
+                    hd_nr = "HD" + "{:06d}".format(int(hd_nr))
+                except:
+                    hd_nr = form['hd_nr']
+                if hd_nr in Inscription.hd_nr_redirects:
+                    return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
+                               subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
+                else:
+                    return render_template('inscription/no_hits.html', title=_("Epigraphic Text Database"),
+                                   subtitle=_("Search results"), data=results,
+                                   number_of_hits=results['metadata']['number_of_hits'], form=form)
+            else:
+                return render_template('inscription/no_hits.html', title=_("Epigraphic Text Database"),
                                    subtitle=_("Search results"), data=results,
                                    number_of_hits=results['metadata']['number_of_hits'], form=form)
     else:
