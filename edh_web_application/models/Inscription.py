@@ -615,7 +615,7 @@ class Inscription:
         :return: query_string
         """
         logical_operater = "AND"
-        query_string = "NOT beleg:77 AND " # exclude redirects from query result 
+        query_string = ""
 
         if 'hd_nr' in form and form['hd_nr'] != "":
             hd_nr = form['hd_nr']
@@ -766,9 +766,9 @@ class Inscription:
                 hl_q = solr_index_field+':' + escape_value(request.args.get('atext1'))
             elif request.args.get('atext2') != "":
                 hl_q = solr_index_field+':' + escape_value(request.args.get('atext2'))
-            results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': solr_index_field, 'hl.method': 'unified', 'hl.q': hl_q, 'hl.fragsize': 0, 'hl.tag.pre': '@', 'hl.tag.post': '°'})
+            results = solr.search(query_string, **{'fq': '-beleg:77 AND -beleg:99', 'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': solr_index_field, 'hl.method': 'unified', 'hl.q': hl_q, 'hl.fragsize': 0, 'hl.tag.pre': '@', 'hl.tag.post': '°'})
         else:
-            results = solr.search(query_string, **{'rows': rows, 'start': start, 'sort': sort})
+            results = solr.search(query_string, **{'fq': '-beleg:77 AND -beleg:99', 'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
             # no results
             query_params = _get_query_params(request.args)
@@ -925,7 +925,7 @@ class Inscription:
         :return: list of 50 entries
         """
         solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
-        results = solr.search("*:* AND NOT beleg:77", sort="datum desc", rows=50)
+        results = solr.search("*:*", fq=["-beleg:77", "-beleg:99"], sort="datum desc", rows=50)
         for res in results:
             if 'dat_jahr_a' not in res:
                 res['dat_jahr_a'] = ""
@@ -992,6 +992,7 @@ class Inscription:
                 'facet.mincount': 1,
                 'facet.limit': hits,
                 'rows': '0',
+                'fq': '-beleg:77 AND -beleg:99',
             }
             query = ac_field + '_ac:"' + term + '"'
             solr = pysolr.Solr(current_app.config['SOLR_BASE_URL'] + 'edhText')
