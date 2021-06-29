@@ -159,7 +159,7 @@
                     <div class="detail_block_content_row_header">{{ _('find spot') }}:</div>
                     <div class="detail_block_content_row_text">
                         {% if d['fundstelle'] %}
-                            {{d['fundstelle']|replace("{","<span style='color:red'>")|replace("}","</span>")|safe}}
+                            {{d['fundstelle']|replace("{","<span style='color:#1F6B3B'>")|replace("}","</span>")|safe}}
                         {% else %}
                             &nbsp;
                         {% endif %}
