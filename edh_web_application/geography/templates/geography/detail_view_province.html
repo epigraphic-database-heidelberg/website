@@ -9,7 +9,7 @@
 <h2>{{ subtitle }}</h2>
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
-        <a href="https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['province_id']}}">https://edh-www.adw.uni-heidelberg.de/edh/geographie/{{data['province_id']}}</a>
+        <a href="./edh/geographie/{{data['province_id']}}">{{ request.url }}/edh/geographie/{{data['province_id']}}</a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
     </span>
     <span id="copy_button" style="color:#aa2222; font-size:0.7em"></span>

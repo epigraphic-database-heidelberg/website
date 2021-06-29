@@ -9,8 +9,8 @@
 <h2>{{ data['titel'] | safe }}</h2>
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
-        <a href="/edh/inschrift/{{data['hd_nr']}}">
-            https://edh-www.adw.uni-heidelberg.de/edh/inschrift/{{data['hd_nr']}}
+        <a href="./edh/inschrift/{{data['hd_nr']}}">
+            {{ request.url }}/edh/inschrift/{{data['hd_nr']}}
             ({{_('Last Updates')}}: {{data['datum']}}, {{data['bearbeiter']}})
         </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>

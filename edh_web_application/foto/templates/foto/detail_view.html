@@ -9,8 +9,8 @@
 <h2>{{ subtitle }}: {{data['results']['f_nr']}}</h2>
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
-        <a href="https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['results']['f_nr']}}">
-            https://edh-www.adw.uni-heidelberg.de/edh/foto/{{data['results']['f_nr']}}
+        <a href="./edh/foto/{{data['results']['f_nr']}}">
+            {{ request.url }}/edh/foto/{{data['results']['f_nr']}}
             ({% if data['results']['aufschrift'] %}{{data['results']['aufschrift']| safe}}. {%endif%}{{_('Last Updates')}}: {{data['results']['datum']}}, {{data['results']['bearbeiter']}})
         </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
