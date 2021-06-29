@@ -10,7 +10,7 @@
 <h3 class="uri">{{ _("Canonical URI") }}:<br class="visible-xs" />
     <span id="canonical_uri">
         <a href="./edh/geographie/{{data['id']}}">
-            {{ request.url }}/edh/geographie/{{data['id']}} ({{_('Last Updates')}}: {{data['datum']}}
+            {{ request.url }} ({{_('Last Updates')}}: {{data['datum']}}
             {% if data['bearbeiter'] != "Db2inst1" and data['bearbeitet'] %}, {{data['bearbeiter']}}{% else %}, {{_('provisionally worked out')}}{%endif%})
         </a>
         <i class="far fa-copy fa-lg" style="color:#1F6B3B; padding-bottom:0px; cursor:pointer; margin-left:.5em;margin-right:.5em" onclick="copy2clipboard('{{ _('copied!') }}')" alt="{{ _('Copy URI to clipboard')}}" title="{{ _('Copy URI to clipboard')}}"></i>
