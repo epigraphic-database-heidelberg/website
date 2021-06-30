@@ -512,7 +512,7 @@ catchall "text" field, and use that for searching.
     <fieldType name="atext_cs_nb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
                multiValued="false">
         <analyzer type="index">
-            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="30"/>
+            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="1" maxGramSize="30"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="[\[\]\(\)\{\}\\\!\?\/\-,]" replacement=""
                     replace="all"/>
@@ -537,7 +537,7 @@ catchall "text" field, and use that for searching.
     <fieldType name="atext_ci_wb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
                multiValued="false">
         <analyzer type="index">
-            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="30"/>
+            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="1" maxGramSize="30"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement=""
                     replace="all"/>
@@ -561,7 +561,7 @@ catchall "text" field, and use that for searching.
     <fieldType name="atext_cs_wb" class="solr.TextField" positionIncrementGap="100" stored="true" indexed="true"
                multiValued="false">
         <analyzer type="index">
-            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="30"/>
+            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="1" maxGramSize="30"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\{.+?\}" replacement="" replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement=""
                     replace="all"/>
@@ -580,7 +580,7 @@ catchall "text" field, and use that for searching.
     
     <fieldType name="text_ngram" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
-            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="2" maxGramSize="2"/>
+            <tokenizer class="solr.NGramTokenizerFactory" minGramSize="1" maxGramSize="2"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="[\\\!\?\/\-,]" replacement="" replace="all"/>
             <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all"/>
             <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
@@ -608,6 +608,26 @@ catchall "text" field, and use that for searching.
         <filter class="solr.ASCIIFoldingFilterFactory"/>
       </analyzer>
     </fieldType>
+    
+    <fieldType name="text_latin_fragment" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.PatternReplaceFilterFactory" pattern="[\(\)\{\}\\\!\?/]" replacement="" replace="all" />
+        <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all" />
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+        <filter class="solr.NGramFilterFactory" minGramSize="1" maxGramSize="1" />
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.PatternReplaceFilterFactory" pattern="[\(\)\{\}\\\!\?/]" replacement="" replace="all" />
+        <filter class="solr.PatternReplaceFilterFactory" pattern="\s+" replacement=" " replace="all" />
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <charFilter class="solr.MappingCharFilterFactory" mapping="mapping-ISOLatin1Accent.txt"/>
+        <filter class="solr.NGramFilterFactory" minGramSize="1" maxGramSize="1" />
+      </analyzer>
+    </fieldType>
+
 
     <fieldType name="text_general_sv" class="solr.TextField" positionIncrementGap="100" multiValued="false"
                stored="true" indexed="true">
@@ -653,7 +673,7 @@ catchall "text" field, and use that for searching.
     <field name="beziehung" type="text_general_sv"/>
     <field name="bh" type="text_general_sv"/>
     <field name="breite" type="pdouble"/>
-    <field name="btext" type="text_general_sv"/>
+    <field name="btext" type="text_latin_fragment"/>
     <field name="dat_jahr_a" type="plong"/>
     <field name="dat_jahr_e" type="plong"/>
     <field name="dat_monat" type="plong"/>

@@ -685,7 +685,7 @@ class Inscription:
             query_string += solr_index_field+':' + escape_value(form['atext2']) + ' ' + logical_operater + ' '
         
         if 'vollstaendig' in form and form['vollstaendig'] == 'y':
-            query_string += '(-atext_ci_wb:*\[* OR -atext_ci_wb:*\]*)' + ' ' + logical_operater + ' '
+            query_string += '(-atext_ci_wb:\[ OR -atext_ci_wb:\])' + ' ' + logical_operater + ' '
         
         # chronology
         if 'jahre' in form and not (form['jahre'] == "600 v. Chr. - 1500 n. Chr." or form['jahre'] == "600 BC - 1500 AD" ):
@@ -715,6 +715,7 @@ class Inscription:
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         if query_string == "":
             query_string = "hd_nr:*"
+        print(query_string)
         return query_string
 
     @classmethod
