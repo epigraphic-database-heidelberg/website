@@ -381,6 +381,14 @@
         {% endif %}
     </form>
 </div>
+<div id="dlg_hd_nr" title="{{_('HD-No.')}}">{{_("hlp_hd_nr")}}</div>
+<div id="dlg_provinz" title="{{_('province')}}">{{_("hlp_provinz")}}</div>
+<div id="dlg_land" title="{{_('country')}}">{{_("hlp_land")}}</div>
+<div id="dlg_fo_antik" title="{{_('fo_antik')}}">{{_("hlp_fo_antik")}}</div>
+<div id="dlg_fo_modern" title="{{_('fo_modern')}}">{{_("hlp_fo_modern")}}</div>
+<div id="dlg_fundstelle" title="{{_('fundstelle')}}">{{_("hlp_fundstelle")}}</div>
+<div id="dlg_literatur" title="{{_('literature')}}">{{_("hlp_literatur")}}</div>
+<div id="dlg_datierung" title="{{_('chronology')}}">{{_("hlp_datierung")}}</div>
 {% endblock %}
 {% block scripts %}
 {{ super() }}
@@ -448,6 +456,54 @@
         });
         $( "#filter" ).click(function() {
             $( "#dialog-filter" ).dialog( "open" );
+        });
+        $( "#dlg_hd_nr" ).dialog({
+            autoOpen: false
+        });
+        $( "#hlp_hd_nr" ).on( "click", function() {
+            $( "#dlg_hd_nr" ).dialog( "open" );
+        });
+        $( "#dlg_provinz" ).dialog({
+            autoOpen: false
+        });
+        $( "#hlp_provinz" ).on( "click", function() {
+            $( "#dlg_provinz" ).dialog( "open" );
+        });
+        $( "#dlg_land" ).dialog({
+            autoOpen: false
+        });
+        $( "#hlp_land" ).on( "click", function() {
+            $( "#dlg_land" ).dialog( "open" );
+        });
+        $( "#dlg_fo_antik" ).dialog({
+            autoOpen: false
+        });
+        $( "#hlp_fo_antik" ).on( "click", function() {
+            $( "#dlg_fo_antik" ).dialog( "open" );
+        });
+        $( "#dlg_fo_modern" ).dialog({
+            autoOpen: false
+        });
+        $( "#hlp_fo_modern" ).on( "click", function() {
+            $( "#dlg_fo_modern" ).dialog( "open" );
+        });
+        $( "#dlg_fundstelle" ).dialog({
+            autoOpen: false
+        });
+        $( "#hlp_fundstelle" ).on( "click", function() {
+            $( "#dlg_fundstelle" ).dialog( "open" );
+        });
+        $( "#dlg_literatur" ).dialog({
+            autoOpen: false
+        });
+        $( "#hlp_literatur" ).on( "click", function() {
+            $( "#dlg_literatur" ).dialog( "open" );
+        });
+        $( "#dlg_datierung" ).dialog({
+            autoOpen: false
+        });
+        $( "#hlp_datierung" ).on( "click", function() {
+            $( "#dlg_datierung" ).dialog( "open" );
         });
 
     });
