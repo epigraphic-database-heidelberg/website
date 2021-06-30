@@ -70,7 +70,24 @@
             <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
             <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
         </div>
-        <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
+        {% if request.args.get('view') %}
+        <input type="hidden" name="view" value="{{ request.args.get('view') }}">
+        {% endif %}
+        {% if request.args.get('sort') %}
+        <input type="hidden" name="sort" value="{{ request.args.get('sort') }}">
+        {% endif %}
+        {% if request.args.get('anzahl') %}
+        <input type="hidden" name="anzahl" value="{{ request.args.get('anzahl') }}">
+        {% endif %}
+        {% if request.args.get('pleiades_id') %}
+        <input type="hidden" name="pleiades_id" value="{{ request.args.get('pleiades_id') }}">
+        {% endif %}
+        {% if request.args.get('geonames_id') %}
+        <input type="hidden" name="geonames_id" value="{{ request.args.get('geonames_id') }}">
+        {% endif %}
+        {% if request.args.get('tm_geo_id') %}
+        <input type="hidden" name="tm_geo_id" value="{{ request.args.get('tm_geo_id') }}">
+        {% endif %}
     </form>
 </div>
 {% endblock %}
