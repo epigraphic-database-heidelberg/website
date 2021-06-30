@@ -68,6 +68,7 @@ class InscriptionSearch(FlaskForm):
     atext2 = StringField(_l('atext2'), render_kw=dict(maxlength=30))
     casesensitive = BooleanField(_l('casesensitive'))
     brackets = BooleanField(_l('brackets'))
+    beleg89 = BooleanField(_l('completed records only'))
     bool = SelectField(_l('bool'), choices=[('AND', _l('AND')), ('OR', _l('OR')), ('AND NOT', _l('AND NOT'))])
 
     sort = SelectField(_l('sort by'),

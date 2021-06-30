@@ -723,6 +723,7 @@ class Inscription:
         hits = kwargs.get('hits', None)
         start = 0  # index number of first record to retrieve
         rows = 20  # number of receords to retrieve
+        fq = "-beleg:77 AND -beleg:99" # fq parameter for Solr queries
         
         sort = "hd_nr asc"  # default
         if request.args.get('start'):
@@ -733,6 +734,8 @@ class Inscription:
             # show all hits on one page if start < rows
             if int(start) < rows:
                 start = 0
+        if request.args.get("beleg89"):
+            fq = "-beleg:77 AND -beleg:99 AND -beleg:89"
         # overide URL parameters for CSV exports
         if kwargs.get('start') == 0:
             start = 0
@@ -766,9 +769,9 @@ class Inscription:
                 hl_q = solr_index_field+':' + escape_value(request.args.get('atext1'))
             elif request.args.get('atext2') != "":
                 hl_q = solr_index_field+':' + escape_value(request.args.get('atext2'))
-            results = solr.search(query_string, **{'fq': '-beleg:77 AND -beleg:99', 'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': solr_index_field, 'hl.method': 'unified', 'hl.q': hl_q, 'hl.fragsize': 0, 'hl.tag.pre': '@', 'hl.tag.post': '°'})
+            results = solr.search(query_string, **{'fq': fq, 'rows': rows, 'start': start, 'sort': sort, 'hl': 'true', 'hl.fl': solr_index_field, 'hl.method': 'unified', 'hl.q': hl_q, 'hl.fragsize': 0, 'hl.tag.pre': '@', 'hl.tag.post': '°'})
         else:
-            results = solr.search(query_string, **{'fq': '-beleg:77 AND -beleg:99', 'rows': rows, 'start': start, 'sort': sort})
+            results = solr.search(query_string, **{'fq': fq, 'rows': rows, 'start': start, 'sort': sort})
         if len(results) == 0:
             # no results
             query_params = _get_query_params(request.args)
@@ -1211,6 +1214,8 @@ def _get_query_params(args):
                     result_dict[key] = _l('yes')
                 elif key == 'dat_erweitert':
                     result_dict[_l('dat_erweitert')] = _l('yes')
+                elif key == 'beleg89':
+                    result_dict[_l('completed records only')] = _l('yes')
                 else:
                     result_dict[key] = re.sub("\([0-9]+\)", "", args[key])
     if 'provinz' in result_dict:

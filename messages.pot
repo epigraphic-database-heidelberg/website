@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-23 11:26+0200\n"
+"POT-Creation-Date: 2021-06-30 11:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgid "author"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:12
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:31
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:33
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:144
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:24
@@ -70,7 +70,7 @@ msgstr ""
 
 #: edh_web_application/bibliography/forms.py:13
 #: edh_web_application/bibliography/forms.py:23
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:37
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:39
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:150
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:283
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
@@ -78,7 +78,7 @@ msgid "publication"
 msgstr ""
 
 #: edh_web_application/bibliography/forms.py:14
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:43
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:45
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:156
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "volume"
@@ -91,7 +91,7 @@ msgstr ""
 
 #: edh_web_application/bibliography/forms.py:16
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:58
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:55
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:57
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:168
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "pages"
@@ -139,7 +139,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:56
 #: edh_web_application/geography/templates/geography/search_results.html:16
 #: edh_web_application/geography/templates/geography/search_results.html:285
-#: edh_web_application/inscription/forms.py:73
+#: edh_web_application/inscription/forms.py:74
 #: edh_web_application/inscription/templates/inscription/search_results.html:16
 #: edh_web_application/inscription/templates/inscription/search_results.html:295
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:25
@@ -158,7 +158,7 @@ msgstr ""
 #: edh_web_application/geography/forms.py:61
 #: edh_web_application/geography/templates/geography/search_results.html:17
 #: edh_web_application/geography/templates/geography/search_results.html:296
-#: edh_web_application/inscription/forms.py:83
+#: edh_web_application/inscription/forms.py:84
 #: edh_web_application/inscription/templates/inscription/search_results.html:17
 #: edh_web_application/inscription/templates/inscription/search_results.html:307
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:37
@@ -186,10 +186,11 @@ msgstr ""
 #: edh_web_application/geography/routes.py:142
 #: edh_web_application/geography/routes.py:146
 #: edh_web_application/geography/routes.py:155
-#: edh_web_application/inscription/routes.py:81
-#: edh_web_application/inscription/routes.py:85
-#: edh_web_application/inscription/routes.py:89
-#: edh_web_application/inscription/routes.py:93
+#: edh_web_application/inscription/routes.py:80
+#: edh_web_application/inscription/routes.py:84
+#: edh_web_application/inscription/routes.py:88
+#: edh_web_application/inscription/routes.py:104
+#: edh_web_application/inscription/routes.py:108
 msgid "Search results"
 msgstr ""
 
@@ -202,9 +203,10 @@ msgstr ""
 #: edh_web_application/bibliography/routes.py:99
 #: edh_web_application/foto/routes.py:86 edh_web_application/foto/routes.py:102
 #: edh_web_application/geography/routes.py:67
-#: edh_web_application/inscription/routes.py:109
-#: edh_web_application/inscription/routes.py:120
-#: edh_web_application/inscription/routes.py:123
+#: edh_web_application/inscription/routes.py:101
+#: edh_web_application/inscription/routes.py:124
+#: edh_web_application/inscription/routes.py:135
+#: edh_web_application/inscription/routes.py:138
 msgid "Detail View"
 msgstr ""
 
@@ -304,7 +306,7 @@ msgstr ""
 msgid "&ndash; open detailed view..."
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:49
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:51
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:162
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:284
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
@@ -554,7 +556,7 @@ msgid "dtbl_next"
 msgstr ""
 
 #: edh_web_application/data/routes.py:9 edh_web_application/data/routes.py:14
-#: edh_web_application/data/routes.py:18
+#: edh_web_application/data/routes.py:26
 #: edh_web_application/templates/base.html:59
 #: edh_web_application/templates/home.html:61
 msgid "Data"
@@ -568,7 +570,7 @@ msgstr ""
 msgid "Application Programming Interface (API)"
 msgstr ""
 
-#: edh_web_application/data/routes.py:18
+#: edh_web_application/data/routes.py:26
 msgid "Download Data Dumps"
 msgstr ""
 
@@ -601,7 +603,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:141
 #: edh_web_application/geography/templates/geography/search_results.html:288
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:74
+#: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/detail_view.html:111
 #: edh_web_application/inscription/templates/inscription/last_updates.html:33
 #: edh_web_application/inscription/templates/inscription/search.html:101
@@ -626,7 +628,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:151
 #: edh_web_application/geography/templates/geography/search_results.html:290
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:75
+#: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:119
 #: edh_web_application/inscription/templates/inscription/last_updates.html:41
 #: edh_web_application/inscription/templates/inscription/search_results.html:161
@@ -650,7 +652,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:155
 #: edh_web_application/geography/templates/geography/search_results.html:291
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:76
+#: edh_web_application/inscription/forms.py:77
 #: edh_web_application/inscription/templates/inscription/detail_view.html:129
 #: edh_web_application/inscription/templates/inscription/last_updates.html:45
 #: edh_web_application/inscription/templates/inscription/search_results.html:166
@@ -705,7 +707,7 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/search_results.html:190
 #: edh_web_application/foto/templates/foto/search_results.html:310
 #: edh_web_application/foto/templates/foto/search_results_grid.html:245
-#: edh_web_application/inscription/forms.py:74
+#: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/search.html:100
 msgid "HD-No."
 msgstr ""
@@ -740,7 +742,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:146
 #: edh_web_application/geography/templates/geography/search_results.html:289
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:74
+#: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/detail_view.html:115
 #: edh_web_application/inscription/templates/inscription/last_updates.html:37
 #: edh_web_application/inscription/templates/inscription/search.html:102
@@ -859,7 +861,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:159
 #: edh_web_application/geography/templates/geography/search_results.html:292
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:76
+#: edh_web_application/inscription/forms.py:77
 #: edh_web_application/inscription/templates/inscription/detail_view.html:139
 #: edh_web_application/inscription/templates/inscription/last_updates.html:49
 #: edh_web_application/inscription/templates/inscription/search_results.html:171
@@ -1059,100 +1061,106 @@ msgid "brackets"
 msgstr ""
 
 #: edh_web_application/inscription/forms.py:71
+msgid "completed records only"
+msgstr ""
+
+#: edh_web_application/inscription/forms.py:72
 msgid "bool"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:71
+#: edh_web_application/inscription/forms.py:72
 msgid "AND"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:71
+#: edh_web_application/inscription/forms.py:72
 msgid "OR"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:71
+#: edh_web_application/inscription/forms.py:72
 msgid "AND NOT"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:77
+#: edh_web_application/inscription/forms.py:78
 msgid "type of inscription sort"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:77
+#: edh_web_application/inscription/forms.py:78
 #: edh_web_application/inscription/templates/inscription/detail_view.html:177
 msgid "type of inscription"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:78
+#: edh_web_application/inscription/forms.py:79
 msgid "type of monument sort"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:78
+#: edh_web_application/inscription/forms.py:79
 #: edh_web_application/inscription/templates/inscription/detail_view.html:195
 msgid "type of monument"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:79
+#: edh_web_application/inscription/forms.py:80
 msgid "material sort"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:79
+#: edh_web_application/inscription/forms.py:80
 #: edh_web_application/inscription/templates/inscription/detail_view.html:201
 msgid "material"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:80
+#: edh_web_application/inscription/forms.py:81
 msgid "date from sort"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:80
+#: edh_web_application/inscription/forms.py:81
 #: edh_web_application/inscription/templates/inscription/search_results.html:303
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:33
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:47
 msgid "date from"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:81
+#: edh_web_application/inscription/forms.py:82
 msgid "date to sort"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:81
+#: edh_web_application/inscription/forms.py:82
 #: edh_web_application/inscription/templates/inscription/search_results.html:304
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:34
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:48
 msgid "date to"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:88
-#: edh_web_application/inscription/forms.py:92
+#: edh_web_application/inscription/forms.py:89
+#: edh_web_application/inscription/forms.py:93
 msgid "Search country"
 msgstr ""
 
 #: edh_web_application/inscription/routes.py:24
-#: edh_web_application/inscription/routes.py:80
-#: edh_web_application/inscription/routes.py:84
-#: edh_web_application/inscription/routes.py:88
-#: edh_web_application/inscription/routes.py:92
-#: edh_web_application/inscription/routes.py:96
-#: edh_web_application/inscription/routes.py:102
-#: edh_web_application/inscription/routes.py:108
-#: edh_web_application/inscription/routes.py:119
+#: edh_web_application/inscription/routes.py:79
+#: edh_web_application/inscription/routes.py:83
+#: edh_web_application/inscription/routes.py:87
+#: edh_web_application/inscription/routes.py:100
+#: edh_web_application/inscription/routes.py:103
+#: edh_web_application/inscription/routes.py:107
+#: edh_web_application/inscription/routes.py:111
+#: edh_web_application/inscription/routes.py:117
 #: edh_web_application/inscription/routes.py:123
-#: edh_web_application/inscription/routes.py:128
+#: edh_web_application/inscription/routes.py:134
+#: edh_web_application/inscription/routes.py:138
+#: edh_web_application/inscription/routes.py:143
 #: edh_web_application/templates/home.html:66
 msgid "Epigraphic Text Database"
 msgstr ""
 
-#: edh_web_application/inscription/routes.py:62
+#: edh_web_application/inscription/routes.py:61
 #: edh_web_application/models/convert/inscription.py:115
 msgid "beleg-"
 msgstr ""
 
-#: edh_web_application/inscription/routes.py:96
+#: edh_web_application/inscription/routes.py:111
 msgid "Simple Search"
 msgstr ""
 
-#: edh_web_application/inscription/routes.py:102
+#: edh_web_application/inscription/routes.py:117
 msgid "Extended Search"
 msgstr ""
 
@@ -1408,9 +1416,9 @@ msgstr ""
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:210
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:95
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:195
-#: edh_web_application/models/Inscription.py:1053
-#: edh_web_application/models/Inscription.py:1055
-#: edh_web_application/models/Inscription.py:1063
+#: edh_web_application/models/Inscription.py:1054
+#: edh_web_application/models/Inscription.py:1056
+#: edh_web_application/models/Inscription.py:1064
 msgid "BC"
 msgstr ""
 
@@ -1422,9 +1430,9 @@ msgstr ""
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:207
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:95
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:192
-#: edh_web_application/models/Inscription.py:1058
-#: edh_web_application/models/Inscription.py:1060
-#: edh_web_application/models/Inscription.py:1065
+#: edh_web_application/models/Inscription.py:1059
+#: edh_web_application/models/Inscription.py:1061
+#: edh_web_application/models/Inscription.py:1066
 msgid "AD"
 msgstr ""
 
@@ -2294,34 +2302,34 @@ msgstr ""
 msgid "dat_jahr_e"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1083
+#: edh_web_application/models/Inscription.py:1084
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1086
-#: edh_web_application/models/Inscription.py:1088
-#: edh_web_application/models/Inscription.py:1090
+#: edh_web_application/models/Inscription.py:1087
+#: edh_web_application/models/Inscription.py:1089
+#: edh_web_application/models/Inscription.py:1091
 msgid " from "
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1107
+#: edh_web_application/models/Inscription.py:1108
 msgid "schreibt-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1116
+#: edh_web_application/models/Inscription.py:1117
 msgid "interp-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1125
+#: edh_web_application/models/Inscription.py:1126
 msgid "rel-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1210
-#: edh_web_application/models/Inscription.py:1212
+#: edh_web_application/models/Inscription.py:1211
+#: edh_web_application/models/Inscription.py:1213
 msgid "yes"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1212
+#: edh_web_application/models/Inscription.py:1213
 msgid "dat_erweitert"
 msgstr ""
 

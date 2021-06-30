@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-23 11:26+0200\n"
+"POT-Creation-Date: 2021-06-30 11:41+0200\n"
 "PO-Revision-Date: 2019-03-05 12:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -62,7 +62,7 @@ msgid "author"
 msgstr "Autor"
 
 #: edh_web_application/bibliography/forms.py:12
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:31
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:33
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:144
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:24
@@ -71,7 +71,7 @@ msgstr "Titel"
 
 #: edh_web_application/bibliography/forms.py:13
 #: edh_web_application/bibliography/forms.py:23
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:37
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:39
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:150
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:283
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
@@ -79,7 +79,7 @@ msgid "publication"
 msgstr "Publikation"
 
 #: edh_web_application/bibliography/forms.py:14
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:43
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:45
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:156
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "volume"
@@ -92,7 +92,7 @@ msgstr "Jahr"
 
 #: edh_web_application/bibliography/forms.py:16
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:58
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:55
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:57
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:168
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
 msgid "pages"
@@ -140,7 +140,7 @@ msgstr "sonstige Corpora"
 #: edh_web_application/geography/forms.py:56
 #: edh_web_application/geography/templates/geography/search_results.html:16
 #: edh_web_application/geography/templates/geography/search_results.html:285
-#: edh_web_application/inscription/forms.py:73
+#: edh_web_application/inscription/forms.py:74
 #: edh_web_application/inscription/templates/inscription/search_results.html:16
 #: edh_web_application/inscription/templates/inscription/search_results.html:295
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:25
@@ -159,7 +159,7 @@ msgstr "sortieren nach"
 #: edh_web_application/geography/forms.py:61
 #: edh_web_application/geography/templates/geography/search_results.html:17
 #: edh_web_application/geography/templates/geography/search_results.html:296
-#: edh_web_application/inscription/forms.py:83
+#: edh_web_application/inscription/forms.py:84
 #: edh_web_application/inscription/templates/inscription/search_results.html:17
 #: edh_web_application/inscription/templates/inscription/search_results.html:307
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:37
@@ -187,10 +187,11 @@ msgstr "Bibliographie Datenbank"
 #: edh_web_application/geography/routes.py:142
 #: edh_web_application/geography/routes.py:146
 #: edh_web_application/geography/routes.py:155
-#: edh_web_application/inscription/routes.py:81
-#: edh_web_application/inscription/routes.py:85
-#: edh_web_application/inscription/routes.py:89
-#: edh_web_application/inscription/routes.py:93
+#: edh_web_application/inscription/routes.py:80
+#: edh_web_application/inscription/routes.py:84
+#: edh_web_application/inscription/routes.py:88
+#: edh_web_application/inscription/routes.py:104
+#: edh_web_application/inscription/routes.py:108
 msgid "Search results"
 msgstr "Suchtreffer"
 
@@ -203,9 +204,10 @@ msgstr "Suche"
 #: edh_web_application/bibliography/routes.py:99
 #: edh_web_application/foto/routes.py:86 edh_web_application/foto/routes.py:102
 #: edh_web_application/geography/routes.py:67
-#: edh_web_application/inscription/routes.py:109
-#: edh_web_application/inscription/routes.py:120
-#: edh_web_application/inscription/routes.py:123
+#: edh_web_application/inscription/routes.py:101
+#: edh_web_application/inscription/routes.py:124
+#: edh_web_application/inscription/routes.py:135
+#: edh_web_application/inscription/routes.py:138
 msgid "Detail View"
 msgstr "Detailansicht"
 
@@ -305,7 +307,7 @@ msgstr "Suchtreffer"
 msgid "&ndash; open detailed view..."
 msgstr "&ndash; Detailansicht öffnen..."
 
-#: edh_web_application/bibliography/templates/bibliography/last_updates.html:49
+#: edh_web_application/bibliography/templates/bibliography/last_updates.html:51
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:162
 #: edh_web_application/bibliography/templates/bibliography/search_results.html:284
 #: edh_web_application/bibliography/templates/bibliography/search_results_table.html:23
@@ -555,7 +557,7 @@ msgid "dtbl_next"
 msgstr "nächste"
 
 #: edh_web_application/data/routes.py:9 edh_web_application/data/routes.py:14
-#: edh_web_application/data/routes.py:18
+#: edh_web_application/data/routes.py:26
 #: edh_web_application/templates/base.html:59
 #: edh_web_application/templates/home.html:61
 msgid "Data"
@@ -569,7 +571,7 @@ msgstr ""
 msgid "Application Programming Interface (API)"
 msgstr ""
 
-#: edh_web_application/data/routes.py:18
+#: edh_web_application/data/routes.py:26
 msgid "Download Data Dumps"
 msgstr ""
 
@@ -589,7 +591,8 @@ msgstr ""
 "href='/data/api#photo'>Fotos</a></li><li><a "
 "href='/data/api#biblio'>Bibliographie</a></li><li><a "
 "href='/data/api#geo'>Geography</a></li></ol></li><li>Response "
-"Format</li><li>Kontrollierte Vokabulare</li></ul><h3>Suchparameter</h3><h4><a name='inschrift'>1. "
+"Format</li><li>Kontrollierte "
+"Vokabulare</li></ul><h3>Suchparameter</h3><h4><a name='inschrift'>1. "
 "Inschriften</a></h4><p>Das allgemeine URI Muster für Suchanfragen "
 "lautet:</p><pre style='font-size: 1em;'>https://edh-www.adw.uni-"
 "heidelberg.de/data/api/inscriptions/search?par_1=value&par_2=value&par_n=value</pre><p>Suche"
@@ -602,10 +605,11 @@ msgstr ""
 " solvit&year_not_before=200</a><p style='margin-top:1.5em;'>Die folgenden"
 " Parameter stehen zur Verfügung:</p><ul><li><strong>hd_nr</strong> (HD-"
 "Nummer der Inschrift)</li><li><strong>province</strong> (case "
-"insensitive, vollständige Liste aller Werte  <a href='./data/api#provinzen'>unten</a>, case "
+"insensitive, vollständige Liste aller Werte  <a "
+"href='./data/api#provinzen'>unten</a>, case "
 "insensitive)</li><li><strong>country</strong> (case insensitive, "
-"vollständige Liste aller Werte <a href='./data/api#laender'>unten</a>, case "
-"insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
+"vollständige Liste aller Werte <a href='./data/api#laender'>unten</a>, "
+"case insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
 "vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case "
 "insensitive)</li><li><strong>findspot_ancient</strong> (Trunkierung "
 "vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case "
@@ -615,7 +619,8 @@ msgstr ""
 "Datierungen als negative Zahlen)</li><li><strong>tm_nr</strong> "
 "(Zahl)</li><li><strong>transcription</strong> (automatische Trunkierung "
 "vorne & hinten, Klammern werden ignoriert)</li><li><strong>type</strong> "
-"(Inschriftengattung, vollständige Liste aller Werte <a href='./data/api#igatt'>unten</a>, case "
+"(Inschriftengattung, vollständige Liste aller Werte <a "
+"href='./data/api#igatt'>unten</a>, case "
 "insensitive)</li><li><strong>bbox</strong> (Boundingbox; Format "
 "bbox=minLong , minLat , maxLong , maxLat , bspw.: <a href='https://edh-"
 "www.adw.uni-"
@@ -632,10 +637,10 @@ msgstr ""
 ".uni-heidelberg.de/data/api/fotos/search?country=de&cil=*</a></p><p style"
 "='margin-top:1.5em;'>Die folgenden Parameter stehen zur "
 "Verfügung:<ul><li><strong>province</strong> case insensitive, "
-"vollständige Liste aller Werte <a href='./data/api#provinzen'>unten</a>, case "
-"insensitive)</li><li><strong>country</strong> (case insensitive, "
-"vollständige Liste aller Werte <a href='./data/api#laender'>unten</a>, case "
-"insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
+"vollständige Liste aller Werte <a href='./data/api#provinzen'>unten</a>, "
+"case insensitive)</li><li><strong>country</strong> (case insensitive, "
+"vollständige Liste aller Werte <a href='./data/api#laender'>unten</a>, "
+"case insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
 "vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case "
 "insensitive)</li><li><strong>findspot_ancient</strong> (Trunkierung "
 "vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case "
@@ -673,10 +678,10 @@ msgstr ""
 "heidelberg.de/data/api/geography/search?bbox=11,47,12,48&country=de</a></p><p"
 " style='margin-top:1.5em;'>Die folgenden Parameter stehen zur "
 "Verfügung:</p><ul><li><strong>province</strong> (case insensitive, "
-"vollständige Liste aller Werte <a href='./data/api#provinzen'>unten</a>, case "
-"insensitive)</li><li><strong>country</strong> (case insensitive, "
-"vollständige Liste aller Werte <a href='./data/api#laender'>unten</a>, case "
-"insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
+"vollständige Liste aller Werte <a href='./data/api#provinzen'>unten</a>, "
+"case insensitive)</li><li><strong>country</strong> (case insensitive, "
+"vollständige Liste aller Werte <a href='./data/api#laender'>unten</a>, "
+"case insensitive)</li><li><strong>findspot_modern</strong> (Trunkierung "
 "vorne/hinten durch Sternchen *, bspw.: findspot_modern=köln*, case "
 "insensitive)</li><li><strong>findspot_ancient</strong> (Trunkierung "
 "vorne/hinten durch Sternchen *, bspw.: findspot_ancient=aquae*, case "
@@ -699,194 +704,114 @@ msgstr ""
 ".uni-"
 "heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100'>https"
 "://edh-www.adw.uni-"
-"heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100</a></p>"
-"<h3>Kontrollierte Vokabulare</h3>"
-"<h4><a id='provinzen'>Provinzen</a></h4>"
-"<table class='table table-sm'>"
-"<tr><th>Code</th><th>Provinz</th></tr>"
-"<tr><td>Ach</td><td>Achaia</td></tr><tr><td>"
-"Aeg</td><td>Aegyptus</td></tr><tr><td>"
-"Aem</td><td>Aemilia (Regio VIII)</td></tr><tr><td>"
-"Afr</td><td>Africa Proconsularis</td></tr><tr><td>"
-"AlC</td><td>Alpes Cottiae</td></tr><tr><td>"
-"AlG</td><td>Alpes Graiae</td></tr><tr><td>"
-"AlM</td><td>Alpes Maritimae</td></tr><tr><td>"
-"AlP</td><td>Alpes Poeninae</td></tr><tr><td>"
-"ApC</td><td>Apulia et Calabria (Regio II)</td></tr><tr><td>"
-"Aqu</td><td>Aquitania</td></tr><tr><td>"
-"Ara</td><td>Arabia</td></tr><tr><td>"
-"Arm</td><td>Armenia</td></tr><tr><td>"
-"Asi</td><td>Asia</td></tr><tr><td>"
-"Ass</td><td>Assyria</td></tr><tr><td>"
-"Bae</td><td>Baetica</td></tr><tr><td>"
-"Bar</td><td>Barbaricum</td></tr><tr><td>"
-"Bel</td><td>Belgica</td></tr><tr><td>"
-"BiP</td><td>Bithynia et Pontus</td></tr><tr><td>"
-"BrL</td><td>Bruttium et Lucania (Regio III)</td></tr><tr><td>"
-"Bri</td><td>Britannia</td></tr><tr><td>"
-"Cap</td><td>Cappadocia</td></tr><tr><td>"
-"Cil</td><td>Cilicia</td></tr><tr><td>"
-"Cor</td><td>Corsica</td></tr><tr><td>"
-"Cre</td><td>Creta</td></tr><tr><td>"
-"Cyp</td><td>Cyprus</td></tr><tr><td>"
-"Cyr</td><td>Cyrene</td></tr><tr><td>"
-"Dac</td><td>Dacia</td></tr><tr><td>"
-"Dal</td><td>Dalmatia</td></tr><tr><td>"
-"Epi</td><td>Epirus</td></tr><tr><td>"
-"Etr</td><td>Etruria (Regio VII)</td></tr><tr><td>"
-"Gal</td><td>Galatia</td></tr><tr><td>"
-"GeI</td><td>Germania inferior</td></tr><tr><td>"
-"GeS</td><td>Germania superior</td></tr><tr><td>"
-"HiC</td><td>Hispania citerior</td></tr><tr><td>"
-"Inc</td><td>Provincia incerta</td></tr><tr><td>"
-"Iud</td><td>Iudaea</td></tr><tr><td>"
-"LaC</td><td>Latium et Campania (Regio I)</td></tr><tr><td>"
-"Lig</td><td>Liguria (Regio IX)</td></tr><tr><td>"
-"Lug</td><td>Lugdunensis</td></tr><tr><td>"
-"Lus</td><td>Lusitania</td></tr><tr><td>"
-"LyP</td><td>Lycia et Pamphylia</td></tr><tr><td>"
-"MaC</td><td>Mauretania Caesariensis</td></tr><tr><td>"
-"MaT</td><td>Mauretania Tingitana</td></tr><tr><td>"
-"Mak</td><td>Macedonia</td></tr><tr><td>"
-"Mes</td><td>Mesopotamia</td></tr><tr><td>"
-"MoI</td><td>Moesia inferior</td></tr><tr><td>"
-"MoS</td><td>Moesia superior</td></tr><tr><td>"
-"Nar</td><td>Narbonensis</td></tr><tr><td>"
-"Nor</td><td>Noricum</td></tr><tr><td>"
-"Num</td><td>Numidia</td></tr><tr><td>"
-"PaI</td><td>Pannonia inferior</td></tr><tr><td>"
-"PaS</td><td>Pannonia superior</td></tr><tr><td>"
-"Pic</td><td>Picenum (Regio V)</td></tr><tr><td>"
-"Rae</td><td>Raetia</td></tr><tr><td>"
-"ReB</td><td>Regnum Bospori</td></tr><tr><td>"
-"Rom</td><td>Roma</td></tr><tr><td>"
-"Sam</td><td>Samnium (Regio IV)</td></tr><tr><td>"
-"Sar</td><td>Sardinia</td></tr><tr><td>"
-"Sic</td><td>Sicilia, Melita</td></tr><tr><td>"
-"Syr</td><td>Syria</td></tr><tr><td>"
-"Thr</td><td>Thracia</td></tr><tr><td>"
-"Tra</td><td>Transpadana (Regio XI)</td></tr><tr><td>"
-"Tri</td><td>Tripolitania</td></tr><tr><td>"
-"Umb</td><td>Umbria (Regio VI)</td></tr><tr><td>"
-"Val</td><td>Valeria</td></tr><tr><td>"
-"VeH</td><td>Venetia et Histria (Regio X)</td></tr>"
-"</table>"
-"<h4><a id='laender'>Länder</a></h4>"
-"<table class='table table-sm'>"
-"<tr><th>Code</th><th>Land</th></tr>"
-"<tr><td>ad</td><td>Andorra</td></tr>"
-"<tr><td>al</td><td>Albanien</td></tr>"
-"<tr><td>am</td><td>Armenien</td></tr>"
-"<tr><td>at</td><td>Österreich</td></tr>"
-"<tr><td>az</td><td>Aserbeidschan</td></tr>"
-"<tr><td>ba</td><td>Bosnien und Herzegowina</td></tr>"
-"<tr><td>be</td><td>Belgien</td></tr>"
-"<tr><td>bg</td><td>Bulgarien</td></tr>"
-"<tr><td>ch</td><td>Schweiz</td></tr>"
-"<tr><td>cy</td><td>Zypern</td></tr>"
-"<tr><td>cz</td><td>Tschechien</td></tr>"
-"<tr><td>de</td><td>Deutschland</td></tr>"
-"<tr><td>dk</td><td>Dänemark</td></tr>"
-"<tr><td>dz</td><td>Algerien</td></tr>"
-"<tr><td>eg</td><td>Ägypten</td></tr>"
-"<tr><td>es</td><td>Spanien</td></tr>"
-"<tr><td>fr</td><td>Frankreich</td></tr>"
-"<tr><td>gb</td><td>Großbritannien</td></tr>"
-"<tr><td>ge</td><td>Georgien</td></tr>"
-"<tr><td>gi</td><td>Gibraltar</td></tr>"
-"<tr><td>gr</td><td>Griechenland</td></tr>"
-"<tr><td>hr</td><td>Kroatien</td></tr>"
-"<tr><td>hu</td><td>Ungarn</td></tr>"
-"<tr><td>il</td><td>Israel</td></tr>"
-"<tr><td>iq</td><td>Irak</td></tr>"
-"<tr><td>it</td><td>Italien</td></tr>"
-"<tr><td>jo</td><td>Jordanien</td></tr>"
-"<tr><td>lb</td><td>Libanon</td></tr>"
-"<tr><td>li</td><td>Liechtenstein</td></tr>"
-"<tr><td>lu</td><td>Luxemburg</td></tr>"
-"<tr><td>ly</td><td>Libyen</td></tr>"
-"<tr><td>ma</td><td>Morokko</td></tr>"
-"<tr><td>mc</td><td>Monaco</td></tr>"
-"<tr><td>md</td><td>Moldovien</td></tr>"
-"<tr><td>me</td><td>Montenegro</td></tr>"
-"<tr><td>mk</td><td>Mazedonien</td></tr>"
-"<tr><td>mt</td><td>Malta</td></tr>"
-"<tr><td>nl</td><td>Niederlande</td></tr>"
-"<tr><td>pl</td><td>Polan</td></tr>"
-"<tr><td>pt</td><td>Portugal</td></tr>"
-"<tr><td>rks</td><td>Kosovo</td></tr>"
-"<tr><td>ro</td><td>Romanien</td></tr>"
-"<tr><td>rs</td><td>Serbien</td></tr>"
-"<tr><td>ru</td><td>Russland</td></tr>"
-"<tr><td>sa</td><td>Saudi Arabien</td></tr>"
-"<tr><td>sd</td><td>Sudan</td></tr>"
-"<tr><td>se</td><td>Schweden</td></tr>"
-"<tr><td>si</td><td>Slovenien</td></tr>"
-"<tr><td>sk</td><td>Slovakei</td></tr>"
-"<tr><td>sm</td><td>San Marino</td></tr>"
-"<tr><td>sy</td><td>Syrien</td></tr>"
-"<tr><td>tn</td><td>Tunisien</td></tr>"
-"<tr><td>tr</td><td>Turkei</td></tr>"
-"<tr><td>ua</td><td>Ukraine</td></tr>"
-"<tr><td>uz</td><td>Usbekistan</td></tr>"
-"<tr><td>va</td><td>Vatikanstadt</td></tr>"
-"<tr><td>ye</td><td>Jemen</td></tr>"
-"</table>"
-"<h4><a id='igatt'>Inschriftengattung</a></h4>"
-"<table class='table table-sm'>"
-"<tr><th>Code</th><th>Inschriftengattung</th></tr>"
-"<tr><td>brief</td><td>Brief</td></tr>"
-"<tr><td>diplmil</td><td>Militärdiplom</td></tr>"
-"<tr><td>elogium</td><td>Elogium</td></tr>"
-"<tr><td>fasti</td><td>Kalender</td></tr>"
-"<tr><td>indexlaterc</td><td>Verzeichnis</td></tr>"
-"<tr><td>miliarium</td><td>Meilen-/Leugenstein</td></tr>"
-"<tr><td>nota</td><td>Aufschrift</td></tr>"
-"<tr><td>oratio</td><td>Gebet</td></tr>"
-"<tr><td>titaccl</td><td>Akklamation</td></tr>"
-"<tr><td>titadnun</td><td>Adnuntiatio</td></tr>"
-"<tr><td>titadsig</td><td>Assignationsinschrift</td></tr>"
-"<tr><td>titdefix</td><td>Defixio</td></tr>"
-"<tr><td>tithon</td><td>Ehreninschrift</td></tr>"
-"<tr><td>titiurpriv</td><td>Rechtliche Verfügung, privat</td></tr>"
-"<tr><td>titiurpub</td><td>Rechtliche Verfügung, öffentlich</td></tr>"
-"<tr><td>titoppubpriv</td><td>Bau-/Stifterinschrift</td></tr>"
-"<tr><td>titpossfabr</td><td>Besitzer-/Herstellerinschrift</td></tr>"
-"<tr><td>titreiexpl</td><td>Beischrift</td></tr>"
-"<tr><td>titsac</td><td>Weihinschrift</td></tr>"
-"<tr><td>titsedspect</td><td>Sitzinschrift</td></tr>"
-"<tr><td>titsep</td><td>Grabinschrift</td></tr>"
-"<tr><td>titterm</td><td>Grenzmarkierung</td></tr>"
-"</table>"
+"heidelberg.de/data/api/inscriptions/search?province=ges&offset=300&limit=100</a></p><h3>Kontrollierte"
+" Vokabulare</h3><h4><a id='provinzen'>Provinzen</a></h4><table "
+"class='table table-"
+"sm'><tr><th>Code</th><th>Provinz</th></tr><tr><td>Ach</td><td>Achaia</td></tr><tr><td>Aeg</td><td>Aegyptus</td></tr><tr><td>Aem</td><td>Aemilia"
+" (Regio VIII)</td></tr><tr><td>Afr</td><td>Africa "
+"Proconsularis</td></tr><tr><td>AlC</td><td>Alpes "
+"Cottiae</td></tr><tr><td>AlG</td><td>Alpes "
+"Graiae</td></tr><tr><td>AlM</td><td>Alpes "
+"Maritimae</td></tr><tr><td>AlP</td><td>Alpes "
+"Poeninae</td></tr><tr><td>ApC</td><td>Apulia et Calabria (Regio "
+"II)</td></tr><tr><td>Aqu</td><td>Aquitania</td></tr><tr><td>Ara</td><td>Arabia</td></tr><tr><td>Arm</td><td>Armenia</td></tr><tr><td>Asi</td><td>Asia</td></tr><tr><td>Ass</td><td>Assyria</td></tr><tr><td>Bae</td><td>Baetica</td></tr><tr><td>Bar</td><td>Barbaricum</td></tr><tr><td>Bel</td><td>Belgica</td></tr><tr><td>BiP</td><td>Bithynia"
+" et Pontus</td></tr><tr><td>BrL</td><td>Bruttium et Lucania (Regio "
+"III)</td></tr><tr><td>Bri</td><td>Britannia</td></tr><tr><td>Cap</td><td>Cappadocia</td></tr><tr><td>Cil</td><td>Cilicia</td></tr><tr><td>Cor</td><td>Corsica</td></tr><tr><td>Cre</td><td>Creta</td></tr><tr><td>Cyp</td><td>Cyprus</td></tr><tr><td>Cyr</td><td>Cyrene</td></tr><tr><td>Dac</td><td>Dacia</td></tr><tr><td>Dal</td><td>Dalmatia</td></tr><tr><td>Epi</td><td>Epirus</td></tr><tr><td>Etr</td><td>Etruria"
+" (Regio "
+"VII)</td></tr><tr><td>Gal</td><td>Galatia</td></tr><tr><td>GeI</td><td>Germania"
+" inferior</td></tr><tr><td>GeS</td><td>Germania "
+"superior</td></tr><tr><td>HiC</td><td>Hispania "
+"citerior</td></tr><tr><td>Inc</td><td>Provincia "
+"incerta</td></tr><tr><td>Iud</td><td>Iudaea</td></tr><tr><td>LaC</td><td>Latium"
+" et Campania (Regio I)</td></tr><tr><td>Lig</td><td>Liguria (Regio "
+"IX)</td></tr><tr><td>Lug</td><td>Lugdunensis</td></tr><tr><td>Lus</td><td>Lusitania</td></tr><tr><td>LyP</td><td>Lycia"
+" et Pamphylia</td></tr><tr><td>MaC</td><td>Mauretania "
+"Caesariensis</td></tr><tr><td>MaT</td><td>Mauretania "
+"Tingitana</td></tr><tr><td>Mak</td><td>Macedonia</td></tr><tr><td>Mes</td><td>Mesopotamia</td></tr><tr><td>MoI</td><td>Moesia"
+" inferior</td></tr><tr><td>MoS</td><td>Moesia "
+"superior</td></tr><tr><td>Nar</td><td>Narbonensis</td></tr><tr><td>Nor</td><td>Noricum</td></tr><tr><td>Num</td><td>Numidia</td></tr><tr><td>PaI</td><td>Pannonia"
+" inferior</td></tr><tr><td>PaS</td><td>Pannonia "
+"superior</td></tr><tr><td>Pic</td><td>Picenum (Regio "
+"V)</td></tr><tr><td>Rae</td><td>Raetia</td></tr><tr><td>ReB</td><td>Regnum"
+" "
+"Bospori</td></tr><tr><td>Rom</td><td>Roma</td></tr><tr><td>Sam</td><td>Samnium"
+" (Regio "
+"IV)</td></tr><tr><td>Sar</td><td>Sardinia</td></tr><tr><td>Sic</td><td>Sicilia,"
+" "
+"Melita</td></tr><tr><td>Syr</td><td>Syria</td></tr><tr><td>Thr</td><td>Thracia</td></tr><tr><td>Tra</td><td>Transpadana"
+" (Regio "
+"XI)</td></tr><tr><td>Tri</td><td>Tripolitania</td></tr><tr><td>Umb</td><td>Umbria"
+" (Regio "
+"VI)</td></tr><tr><td>Val</td><td>Valeria</td></tr><tr><td>VeH</td><td>Venetia"
+" et Histria (Regio X)</td></tr></table><h4><a "
+"id='laender'>Länder</a></h4><table class='table table-"
+"sm'><tr><th>Code</th><th>Land</th></tr><tr><td>ad</td><td>Andorra</td></tr><tr><td>al</td><td>Albanien</td></tr><tr><td>am</td><td>Armenien</td></tr><tr><td>at</td><td>Österreich</td></tr><tr><td>az</td><td>Aserbeidschan</td></tr><tr><td>ba</td><td>Bosnien"
+" und "
+"Herzegowina</td></tr><tr><td>be</td><td>Belgien</td></tr><tr><td>bg</td><td>Bulgarien</td></tr><tr><td>ch</td><td>Schweiz</td></tr><tr><td>cy</td><td>Zypern</td></tr><tr><td>cz</td><td>Tschechien</td></tr><tr><td>de</td><td>Deutschland</td></tr><tr><td>dk</td><td>Dänemark</td></tr><tr><td>dz</td><td>Algerien</td></tr><tr><td>eg</td><td>Ägypten</td></tr><tr><td>es</td><td>Spanien</td></tr><tr><td>fr</td><td>Frankreich</td></tr><tr><td>gb</td><td>Großbritannien</td></tr><tr><td>ge</td><td>Georgien</td></tr><tr><td>gi</td><td>Gibraltar</td></tr><tr><td>gr</td><td>Griechenland</td></tr><tr><td>hr</td><td>Kroatien</td></tr><tr><td>hu</td><td>Ungarn</td></tr><tr><td>il</td><td>Israel</td></tr><tr><td>iq</td><td>Irak</td></tr><tr><td>it</td><td>Italien</td></tr><tr><td>jo</td><td>Jordanien</td></tr><tr><td>lb</td><td>Libanon</td></tr><tr><td>li</td><td>Liechtenstein</td></tr><tr><td>lu</td><td>Luxemburg</td></tr><tr><td>ly</td><td>Libyen</td></tr><tr><td>ma</td><td>Morokko</td></tr><tr><td>mc</td><td>Monaco</td></tr><tr><td>md</td><td>Moldovien</td></tr><tr><td>me</td><td>Montenegro</td></tr><tr><td>mk</td><td>Mazedonien</td></tr><tr><td>mt</td><td>Malta</td></tr><tr><td>nl</td><td>Niederlande</td></tr><tr><td>pl</td><td>Polan</td></tr><tr><td>pt</td><td>Portugal</td></tr><tr><td>rks</td><td>Kosovo</td></tr><tr><td>ro</td><td>Romanien</td></tr><tr><td>rs</td><td>Serbien</td></tr><tr><td>ru</td><td>Russland</td></tr><tr><td>sa</td><td>Saudi"
+" "
+"Arabien</td></tr><tr><td>sd</td><td>Sudan</td></tr><tr><td>se</td><td>Schweden</td></tr><tr><td>si</td><td>Slovenien</td></tr><tr><td>sk</td><td>Slovakei</td></tr><tr><td>sm</td><td>San"
+" "
+"Marino</td></tr><tr><td>sy</td><td>Syrien</td></tr><tr><td>tn</td><td>Tunisien</td></tr><tr><td>tr</td><td>Turkei</td></tr><tr><td>ua</td><td>Ukraine</td></tr><tr><td>uz</td><td>Usbekistan</td></tr><tr><td>va</td><td>Vatikanstadt</td></tr><tr><td>ye</td><td>Jemen</td></tr></table><h4><a"
+" id='igatt'>Inschriftengattung</a></h4><table class='table table-"
+"sm'><tr><th>Code</th><th>Inschriftengattung</th></tr><tr><td>brief</td><td>Brief</td></tr><tr><td>diplmil</td><td>Militärdiplom</td></tr><tr><td>elogium</td><td>Elogium</td></tr><tr><td>fasti</td><td>Kalender</td></tr><tr><td>indexlaterc</td><td>Verzeichnis</td></tr><tr><td>miliarium</td><td>Meilen-/Leugenstein</td></tr><tr><td>nota</td><td>Aufschrift</td></tr><tr><td>oratio</td><td>Gebet</td></tr><tr><td>titaccl</td><td>Akklamation</td></tr><tr><td>titadnun</td><td>Adnuntiatio</td></tr><tr><td>titadsig</td><td>Assignationsinschrift</td></tr><tr><td>titdefix</td><td>Defixio</td></tr><tr><td>tithon</td><td>Ehreninschrift</td></tr><tr><td>titiurpriv</td><td>Rechtliche"
+" Verfügung, privat</td></tr><tr><td>titiurpub</td><td>Rechtliche "
+"Verfügung, "
+"öffentlich</td></tr><tr><td>titoppubpriv</td><td>Bau-/Stifterinschrift</td></tr><tr><td>titpossfabr</td><td>Besitzer-/Herstellerinschrift</td></tr><tr><td>titreiexpl</td><td>Beischrift</td></tr><tr><td>titsac</td><td>Weihinschrift</td></tr><tr><td>titsedspect</td><td>Sitzinschrift</td></tr><tr><td>titsep</td><td>Grabinschrift</td></tr><tr><td>titterm</td><td>Grenzmarkierung</td></tr></table>"
 
 #: edh_web_application/data/templates/data/download.html:10
 msgid "download page"
 msgstr ""
 "Alle Daten des Open Data Repository der Epigraphischen Datenbank stehen "
-"unter der <i class=\"fas fa-external-link-alt\"></i>  <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC "
-"BY-SA 4.0 Lizenz</a>.<p><a href='http://creativecommons.org/licenses/by-"
+"unter der <i class=\"fas fa-external-link-alt\"></i>  <a "
+"href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0 "
+"Lizenz</a>.<p><a href='http://creativecommons.org/licenses/by-"
 "sa/4.0/deed.de'><img src='./static/img/CC-BY-SA_icon.png' style='margin-"
-"bottom:2em;' /></a></p>"
-"<h3>CSV</h3><p>"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edh_data_text.csv\">edh_data_text.csv</a> (Inschriften)<br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edh_data_foto.csv\">edh_data_foto.csv</a> (Foto Metadaten)<br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edh_data_biblio.csv\">edh_data_biblio.csv</a> (Bibliographie)<br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edh_data_geo.csv\">edh_data_geo.csv</a> (Geographie)<br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edh_data_pers.csv\">edh_data_pers.csv</a> (Prosopographie)<br /></p>"
-"<h3>EpiDoc XML (Inschriften)</h3><p>"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhEpidocDump_HD000001-HD010000.zip\">edhEpidocDump_HD000001-HD010000.zip</a><br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhEpidocDump_HD010001-HD020000.zip\">edhEpidocDump_HD010001-HD020000.zip</a><br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhEpidocDump_HD020001-HD030000.zip\">edhEpidocDump_HD020001-HD030000.zip</a><br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhEpidocDump_HD030001-HD040000.zip\">edhEpidocDump_HD030001-HD040000.zip</a><br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhEpidocDump_HD040001-HD050000.zip\">edhEpidocDump_HD040001-HD050000.zip</a><br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhEpidocDump_HD050001-HD060000.zip\">edhEpidocDump_HD050001-HD060000.zip</a><br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhEpidocDump_HD060001-HD070000.zip\">edhEpidocDump_HD060001-HD070000.zip</a><br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhEpidocDump_HD070001-HD082820.zip\">edhEpidocDump_HD070001-HD082820.zip</a><br /></p>"
-"<h3>Fotos (CIDOC CRM XML)</h3><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhFotoXMLDump.zip\">edhFotoXMLDump.zip</a> Foto Metadaten</p>"
-"<h3>Bibliographie (BiBTeX)</h3><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhBibliography.bib\">edhBibliography.bib</a></p>"
-"<h3>Geography (GeoJSON)</h3><p><i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edhGeographicData.json\">edhGeographicData.json</a><br />"
-"<i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/roman_province_boundaries.json\">roman_province_boundaries.json</a> Polygone der Provinzgrenzen teilweise von Pelagios übernommen (<i class=\"fas fa-external-link-alt\"></i> <a href="https://github.com/pelagios/magis-pleiades-regions">https://github.com/pelagios/magis-pleiades-regions</a>)</p>"
-"<h3>Linked Open Data (RDF)</h3><p style="margin-bottom:2em;"><i class=\"fas fa-external-link-alt\"></i> <a href=\"./data/download/edh_linked_data.zip\">edh_linked_data.zip</a> Inschriften einschließlich Prosopographie</p>"
+"bottom:2em;' /></a></p><h3>CSV</h3><p><i class=\"fas fa-external-link-"
+"alt\"></i> <a "
+"href=\"./data/download/edh_data_text.csv\">edh_data_text.csv</a> "
+"(Inschriften)<br /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edh_data_foto.csv\">edh_data_foto.csv</a> (Foto "
+"Metadaten)<br /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edh_data_biblio.csv\">edh_data_biblio.csv</a> "
+"(Bibliographie)<br /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edh_data_geo.csv\">edh_data_geo.csv</a> "
+"(Geographie)<br /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edh_data_pers.csv\">edh_data_pers.csv</a> "
+"(Prosopographie)<br /></p><h3>EpiDoc XML (Inschriften)</h3><p><i "
+"class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhEpidocDump_HD000001-HD010000.zip\">edhEpidocDump_HD000001-HD010000.zip</a><br"
+" /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhEpidocDump_HD010001-HD020000.zip\">edhEpidocDump_HD010001-HD020000.zip</a><br"
+" /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhEpidocDump_HD020001-HD030000.zip\">edhEpidocDump_HD020001-HD030000.zip</a><br"
+" /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhEpidocDump_HD030001-HD040000.zip\">edhEpidocDump_HD030001-HD040000.zip</a><br"
+" /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhEpidocDump_HD040001-HD050000.zip\">edhEpidocDump_HD040001-HD050000.zip</a><br"
+" /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhEpidocDump_HD050001-HD060000.zip\">edhEpidocDump_HD050001-HD060000.zip</a><br"
+" /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhEpidocDump_HD060001-HD070000.zip\">edhEpidocDump_HD060001-HD070000.zip</a><br"
+" /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhEpidocDump_HD070001-HD082820.zip\">edhEpidocDump_HD070001-HD082820.zip</a><br"
+" /></p><h3>Fotos (CIDOC CRM XML)</h3><p><i class=\"fas fa-external-link-"
+"alt\"></i> <a "
+"href=\"./data/download/edhFotoXMLDump.zip\">edhFotoXMLDump.zip</a> Foto "
+"Metadaten</p><h3>Bibliographie (BiBTeX)</h3><p><i class=\"fas fa-"
+"external-link-alt\"></i> <a "
+"href=\"./data/download/edhBibliography.bib\">edhBibliography.bib</a></p><h3>Geography"
+" (GeoJSON)</h3><p><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edhGeographicData.json\">edhGeographicData.json</a><br"
+" /><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/roman_province_boundaries.json\">roman_province_boundaries.json</a>"
+" Polygone der Provinzgrenzen teilweise von Pelagios übernommen (<i "
+"class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"https://github.com/pelagios/magis-pleiades-"
+"regions\">https://github.com/pelagios/magis-pleiades-"
+"regions</a>)</p><h3>Linked Open Data (RDF)</h3><p style=\"margin-"
+"bottom:2em;\"><i class=\"fas fa-external-link-alt\"></i> <a "
+"href=\"./data/download/edh_linked_data.zip\">edh_linked_data.zip</a> "
+"Inschriften einschließlich Prosopographie</p>"
 
 #: edh_web_application/data/templates/data/index.html:10
 msgid "data page"
@@ -899,10 +824,10 @@ msgstr ""
 " (Data Dumps) oder dynamische Abfragen über eine öffentliche "
 "Programmierschnittstelle (API): </p><h3>Download Data Dumps</h3><p>Die "
 "Daten der Teildatenbanken der Epigraphischen Datenbank Heidelberg stehen "
-"in den folgenden Formaten für den Download bereit:</p><ul><li>CSV (alle Datenbanken)</li><li>EpiDoc XML "
-"(Inschriften und Metadaten)</li><li>CIDOC CRM XML (Foto "
-"Metadaten)</li><li>BibTeX (Bibliographie)</li><li>RDF (Inschriften "
-"einschließlich Prosopographie)</li><li>GeoJSON "
+"in den folgenden Formaten für den Download bereit:</p><ul><li>CSV (alle "
+"Datenbanken)</li><li>EpiDoc XML (Inschriften und Metadaten)</li><li>CIDOC"
+" CRM XML (Foto Metadaten)</li><li>BibTeX (Bibliographie)</li><li>RDF "
+"(Inschriften einschließlich Prosopographie)</li><li>GeoJSON "
 "(Geographie)</li></ul><p>Zur detaillierten Auflistung aller Daten und "
 "Download-Links geht es <i class=\"fas fa-external-link-alt\"></i> <a "
 "href=\"./data/download\">hier</a>.</p><h3>Öffentliche "
@@ -930,7 +855,7 @@ msgstr "F-Nummer"
 #: edh_web_application/geography/templates/geography/search_results.html:141
 #: edh_web_application/geography/templates/geography/search_results.html:288
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:74
+#: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/detail_view.html:111
 #: edh_web_application/inscription/templates/inscription/last_updates.html:33
 #: edh_web_application/inscription/templates/inscription/search.html:101
@@ -955,7 +880,7 @@ msgstr "Provinz"
 #: edh_web_application/geography/templates/geography/search_results.html:151
 #: edh_web_application/geography/templates/geography/search_results.html:290
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:75
+#: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:119
 #: edh_web_application/inscription/templates/inscription/last_updates.html:41
 #: edh_web_application/inscription/templates/inscription/search_results.html:161
@@ -979,7 +904,7 @@ msgstr "Fundort antik"
 #: edh_web_application/geography/templates/geography/search_results.html:155
 #: edh_web_application/geography/templates/geography/search_results.html:291
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:76
+#: edh_web_application/inscription/forms.py:77
 #: edh_web_application/inscription/templates/inscription/detail_view.html:129
 #: edh_web_application/inscription/templates/inscription/last_updates.html:45
 #: edh_web_application/inscription/templates/inscription/search_results.html:166
@@ -1034,7 +959,7 @@ msgstr "Kommentar"
 #: edh_web_application/foto/templates/foto/search_results.html:190
 #: edh_web_application/foto/templates/foto/search_results.html:310
 #: edh_web_application/foto/templates/foto/search_results_grid.html:245
-#: edh_web_application/inscription/forms.py:74
+#: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/search.html:100
 msgid "HD-No."
 msgstr "HD-Nr."
@@ -1069,7 +994,7 @@ msgstr "Aufschrift"
 #: edh_web_application/geography/templates/geography/search_results.html:146
 #: edh_web_application/geography/templates/geography/search_results.html:289
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:74
+#: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/detail_view.html:115
 #: edh_web_application/inscription/templates/inscription/last_updates.html:37
 #: edh_web_application/inscription/templates/inscription/search.html:102
@@ -1188,7 +1113,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:159
 #: edh_web_application/geography/templates/geography/search_results.html:292
 #: edh_web_application/geography/templates/geography/search_results_table.html:23
-#: edh_web_application/inscription/forms.py:76
+#: edh_web_application/inscription/forms.py:77
 #: edh_web_application/inscription/templates/inscription/detail_view.html:139
 #: edh_web_application/inscription/templates/inscription/last_updates.html:49
 #: edh_web_application/inscription/templates/inscription/search_results.html:171
@@ -1404,100 +1329,106 @@ msgid "brackets"
 msgstr "Klammern beachten"
 
 #: edh_web_application/inscription/forms.py:71
+msgid "completed records only"
+msgstr "nur vollständig bearbeitete Datensätze"
+
+#: edh_web_application/inscription/forms.py:72
 msgid "bool"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:71
+#: edh_web_application/inscription/forms.py:72
 msgid "AND"
 msgstr "UND"
 
-#: edh_web_application/inscription/forms.py:71
+#: edh_web_application/inscription/forms.py:72
 msgid "OR"
 msgstr "ODER"
 
-#: edh_web_application/inscription/forms.py:71
+#: edh_web_application/inscription/forms.py:72
 msgid "AND NOT"
 msgstr "UND NICHT"
 
-#: edh_web_application/inscription/forms.py:77
+#: edh_web_application/inscription/forms.py:78
 msgid "type of inscription sort"
 msgstr "i_gattung_sort_de"
 
-#: edh_web_application/inscription/forms.py:77
+#: edh_web_application/inscription/forms.py:78
 #: edh_web_application/inscription/templates/inscription/detail_view.html:177
 msgid "type of inscription"
 msgstr "Inschriftengattung"
 
-#: edh_web_application/inscription/forms.py:78
+#: edh_web_application/inscription/forms.py:79
 msgid "type of monument sort"
 msgstr "denkmaltyp"
 
-#: edh_web_application/inscription/forms.py:78
+#: edh_web_application/inscription/forms.py:79
 #: edh_web_application/inscription/templates/inscription/detail_view.html:195
 msgid "type of monument"
 msgstr "Inschriftträger"
 
-#: edh_web_application/inscription/forms.py:79
+#: edh_web_application/inscription/forms.py:80
 msgid "material sort"
 msgstr "material_sort"
 
-#: edh_web_application/inscription/forms.py:79
+#: edh_web_application/inscription/forms.py:80
 #: edh_web_application/inscription/templates/inscription/detail_view.html:201
 msgid "material"
 msgstr "Material"
 
-#: edh_web_application/inscription/forms.py:80
+#: edh_web_application/inscription/forms.py:81
 msgid "date from sort"
 msgstr "dat_jahr_a"
 
-#: edh_web_application/inscription/forms.py:80
+#: edh_web_application/inscription/forms.py:81
 #: edh_web_application/inscription/templates/inscription/search_results.html:303
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:33
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:47
 msgid "date from"
 msgstr "Datierung Anfang"
 
-#: edh_web_application/inscription/forms.py:81
+#: edh_web_application/inscription/forms.py:82
 msgid "date to sort"
 msgstr "dat_jahr_e"
 
-#: edh_web_application/inscription/forms.py:81
+#: edh_web_application/inscription/forms.py:82
 #: edh_web_application/inscription/templates/inscription/search_results.html:304
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:34
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:48
 msgid "date to"
 msgstr "Datierung Ende"
 
-#: edh_web_application/inscription/forms.py:88
-#: edh_web_application/inscription/forms.py:92
+#: edh_web_application/inscription/forms.py:89
+#: edh_web_application/inscription/forms.py:93
 msgid "Search country"
 msgstr "Land <span class='hlp' id='hlp_land'><i class='fa fa-question'></i></span>"
 
 #: edh_web_application/inscription/routes.py:24
-#: edh_web_application/inscription/routes.py:80
-#: edh_web_application/inscription/routes.py:84
-#: edh_web_application/inscription/routes.py:88
-#: edh_web_application/inscription/routes.py:92
-#: edh_web_application/inscription/routes.py:96
-#: edh_web_application/inscription/routes.py:102
-#: edh_web_application/inscription/routes.py:108
-#: edh_web_application/inscription/routes.py:119
+#: edh_web_application/inscription/routes.py:79
+#: edh_web_application/inscription/routes.py:83
+#: edh_web_application/inscription/routes.py:87
+#: edh_web_application/inscription/routes.py:100
+#: edh_web_application/inscription/routes.py:103
+#: edh_web_application/inscription/routes.py:107
+#: edh_web_application/inscription/routes.py:111
+#: edh_web_application/inscription/routes.py:117
 #: edh_web_application/inscription/routes.py:123
-#: edh_web_application/inscription/routes.py:128
+#: edh_web_application/inscription/routes.py:134
+#: edh_web_application/inscription/routes.py:138
+#: edh_web_application/inscription/routes.py:143
 #: edh_web_application/templates/home.html:66
 msgid "Epigraphic Text Database"
 msgstr "Inschriften Datenbank"
 
-#: edh_web_application/inscription/routes.py:62
+#: edh_web_application/inscription/routes.py:61
 #: edh_web_application/models/convert/inscription.py:115
 msgid "beleg-"
 msgstr ""
 
-#: edh_web_application/inscription/routes.py:96
+#: edh_web_application/inscription/routes.py:111
 msgid "Simple Search"
 msgstr "Einfache Suche"
 
-#: edh_web_application/inscription/routes.py:102
+#: edh_web_application/inscription/routes.py:117
 msgid "Extended Search"
 msgstr "Erweiterte Suche"
 
@@ -1753,9 +1684,9 @@ msgstr "Datierung"
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:210
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:95
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:195
-#: edh_web_application/models/Inscription.py:1053
-#: edh_web_application/models/Inscription.py:1055
-#: edh_web_application/models/Inscription.py:1063
+#: edh_web_application/models/Inscription.py:1054
+#: edh_web_application/models/Inscription.py:1056
+#: edh_web_application/models/Inscription.py:1064
 msgid "BC"
 msgstr "v. Chr."
 
@@ -1767,9 +1698,9 @@ msgstr "v. Chr."
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:207
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:95
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:192
-#: edh_web_application/models/Inscription.py:1058
-#: edh_web_application/models/Inscription.py:1060
-#: edh_web_application/models/Inscription.py:1065
+#: edh_web_application/models/Inscription.py:1059
+#: edh_web_application/models/Inscription.py:1061
+#: edh_web_application/models/Inscription.py:1066
 msgid "AD"
 msgstr "n. Chr."
 
@@ -2705,34 +2636,34 @@ msgstr "Datierung Anfang"
 msgid "dat_jahr_e"
 msgstr "Datierung Ende"
 
-#: edh_web_application/models/Inscription.py:1083
+#: edh_web_application/models/Inscription.py:1084
 msgid "Inschrift"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1086
-#: edh_web_application/models/Inscription.py:1088
-#: edh_web_application/models/Inscription.py:1090
+#: edh_web_application/models/Inscription.py:1087
+#: edh_web_application/models/Inscription.py:1089
+#: edh_web_application/models/Inscription.py:1091
 msgid " from "
 msgstr " aus "
 
-#: edh_web_application/models/Inscription.py:1107
+#: edh_web_application/models/Inscription.py:1108
 msgid "schreibt-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1116
+#: edh_web_application/models/Inscription.py:1117
 msgid "interp-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1125
+#: edh_web_application/models/Inscription.py:1126
 msgid "rel-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1210
-#: edh_web_application/models/Inscription.py:1212
+#: edh_web_application/models/Inscription.py:1211
+#: edh_web_application/models/Inscription.py:1213
 msgid "yes"
 msgstr "ja"
 
-#: edh_web_application/models/Inscription.py:1212
+#: edh_web_application/models/Inscription.py:1213
 msgid "dat_erweitert"
 msgstr "erweitert"
 
