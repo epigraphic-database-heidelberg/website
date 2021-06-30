@@ -89,7 +89,18 @@
             <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
             <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
         </div>
-        <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
+        {% if request.args.get('view') %}
+        <input type="hidden" name="view" value="{{ request.args.get('view') }}">
+        {% endif %}
+        {% if request.args.get('sort') %}
+        <input type="hidden" name="sort" value="{{ request.args.get('sort') }}">
+        {% endif %}
+        {% if request.args.get('anzahl') %}
+        <input type="hidden" name="anzahl" value="{{ request.args.get('anzahl') }}">
+        {% endif %}
+        {% if request.args.get('seiten') %}
+        <input type="hidden" name="seiten" value="{{ request.args.get('seiten') }}">
+        {% endif %}
     </form>
 </div>
 {% endblock %}
