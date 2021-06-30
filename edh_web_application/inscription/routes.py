@@ -55,6 +55,12 @@ def simple_search():
                             'modern find spot', 'find spot (village, street, etc.)', 'chronological data', 'literature', 'coordinates (lat,lng)', 'type of monument', 'type of inscription', 'material']
                 writer.writerow(first_row)
                 for i in results['items']:
+                    literatur = i.literatur
+                    datierung = i.datierung
+                    if literatur:
+                        literatur = literatur.replace("#", "")
+                    if datierung:
+                        datierung = datierung.replace("&ndash;", "-")
                     writer.writerow((
                         i.hd_nr,
                         i.atext,
@@ -64,8 +70,8 @@ def simple_search():
                         i.fo_antik,
                         i.fo_modern,
                         i.fundstelle,
-                        i.datierung.replace("&ndash;", "-"),
-                        i.literatur.replace("#", ""),
+                        datierung,
+                        literatur,
                         i.koordinaten1,
                         i.i_traeger_str,
                         i.i_gattung_str,
