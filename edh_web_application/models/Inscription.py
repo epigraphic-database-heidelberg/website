@@ -625,9 +625,7 @@ class Inscription:
             except:
                 hd_nr = form['hd_nr']
             query_string += "hd_nr:" + hd_nr + " " + logical_operater + " "
-        else:
-            query_string += "hd_nr:* " + logical_operater + " "
-
+        
         if 'provinz' in form and form['provinz'] != "":
             # province is a multi value field
             query_string += "("
@@ -686,6 +684,9 @@ class Inscription:
         elif 'atext2' in form and form['atext2'] != "":
             query_string += solr_index_field+':' + escape_value(form['atext2']) + ' ' + logical_operater + ' '
         
+        if 'vollstaendig' in form and form['vollstaendig'] == 'y':
+            query_string += '(-atext_ci_wb:*\[* OR -atext_ci_wb:*\]*)' + ' ' + logical_operater + ' '
+        
         # chronology
         if 'jahre' in form and not (form['jahre'] == "600 v. Chr. - 1500 n. Chr." or form['jahre'] == "600 BC - 1500 AD" ):
             (jahr_a, jahr_e) = form['jahre'].strip().split(" - ")
@@ -712,6 +713,8 @@ class Inscription:
                     query_string += '(dat_jahr_a:['+jahr_a_mo+' TO ' + jahr_e_mo + '] AND dat_jahr_e:[' + jahr_a_mo + ' TO ' + jahr_e_mo + ']) ' + logical_operater + ' '
         # remove last " AND"
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
+        if query_string == "":
+            query_string = "hd_nr:*"
         return query_string
 
     @classmethod
@@ -1216,6 +1219,8 @@ def _get_query_params(args):
                     result_dict[_l('dat_erweitert')] = _l('yes')
                 elif key == 'beleg89':
                     result_dict[_l('completed records only')] = _l('yes')
+                elif key == 'vollstaendig':
+                    result_dict[_l('non fragmentary inscriptions only')] = _l('yes')
                 else:
                     result_dict[key] = re.sub("\([0-9]+\)", "", args[key])
     if 'provinz' in result_dict:

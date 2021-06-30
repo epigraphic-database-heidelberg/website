@@ -69,6 +69,7 @@ class InscriptionSearch(FlaskForm):
     casesensitive = BooleanField(_l('casesensitive'))
     brackets = BooleanField(_l('brackets'))
     beleg89 = BooleanField(_l('completed records only'))
+    vollstaendig = BooleanField(_l('non fragmentary inscriptions only'))
     bool = SelectField(_l('bool'), choices=[('AND', _l('AND')), ('OR', _l('OR')), ('AND NOT', _l('AND NOT'))])
 
     sort = SelectField(_l('sort by'),
