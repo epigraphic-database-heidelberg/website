@@ -368,6 +368,27 @@
             <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
             <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
         </div>
+        {% if request.args.get('view') %}
+        <input type="hidden" name="view" value="{{ request.args.get('view') }}">
+        {% endif %}
+        {% if request.args.get('sort') %}
+        <input type="hidden" name="sort" value="{{ request.args.get('sort') }}">
+        {% endif %}
+        {% if request.args.get('anzahl') %}
+        <input type="hidden" name="anzahl" value="{{ request.args.get('anzahl') }}">
+        {% endif %}
+        {% if request.args.get('vorlage') %}
+        <input type="hidden" name="vorlage" value="{{ request.args.get('vorlage') }}">
+        {% endif %}
+        {% if request.args.get('aufnahme_jahr') %}
+        <input type="hidden" name="aufnahme_jahr" value="{{ request.args.get('aufnahme_jahr') }}">
+        {% endif %}
+        {% if request.args.get('qualitaet') %}
+        <input type="hidden" name="qualitaet" value="{{ request.args.get('qualitaet') }}">
+        {% endif %}
+        {% if request.args.get('hd_nr') %}
+        <input type="hidden" name="hd_nr" value="{{ request.args.get('hd_nr') }}">
+        {% endif %}
     </form>
 </div>
 {% endblock %}
