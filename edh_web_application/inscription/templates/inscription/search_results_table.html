@@ -105,7 +105,24 @@
             <button type="submit" class="btn btn-primary btn-lg">{{ _('Filter...') }}</button>
             <button type="reset" id="reset" class="btn btn-secondary btn-lg" style="margin-left:1em;">{{ _('Reset...') }}</button>
         </div>
-        <input type="hidden" id="view_param" name="view" value="{{ request.args.get('view') }}">
+        {% if request.args.get('view') %}
+        <input type="hidden" name="view" value="{{ request.args.get('view') }}">
+        {% endif %}
+        {% if request.args.get('sort') %}
+        <input type="hidden" name="sort" value="{{ request.args.get('sort') }}">
+        {% endif %}
+        {% if request.args.get('anzahl') %}
+        <input type="hidden" name="anzahl" value="{{ request.args.get('anzahl') }}">
+        {% endif %}
+        {% if request.args.get('brackets') %}
+        <input type="hidden" name="brackets" value="{{ request.args.get('brackets') }}">
+        {% endif %}
+        {% if request.args.get('vollstaendig') %}
+        <input type="hidden" name="beleg89" value="{{ request.args.get('beleg89') }}">
+        {% endif %}
+        {% if request.args.get('vollstaendig') %}
+        <input type="hidden" name="vollstaendig" value="{{ request.args.get('vollstaendig') }}">
+        {% endif %}
     </form>
 </div>
 {% endblock %}
@@ -207,7 +224,7 @@ $(document).ready(function() {
         $( "#dat_str" ).val(dat_jahr_a + " - " + dat_jahr_e);
     });
 
-    $( "#dat_str" ).val(" {{ request.args.get('jahre') }} ");
+    $( "#dat_str" ).val("{{ request.args.get('jahre') }}");
 
     $('select').selectpicker();
     $('#reset').click(function(){
