@@ -125,37 +125,44 @@ def extended_search():
 
 @bp_inscription.route('/edh/inschrift/<hd_nr>/<format>', strict_slashes=False)
 def export(hd_nr, format):
+    """
+    exports detail view of inscription record as XML or JSON
+    """
     inscription = Inscription.query("hd_nr:" + hd_nr)
-
-    if format == "xml":
-        if hd_nr in Inscription.hd_nr_redirects:
-                return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
-                                    subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
-        
-        i = inscription['items'][0]
-        return_xml = i.toXml()
-        return Response(return_xml, mimetype='text/xml')
-    elif format == "json":
-        items_as_list_of_dict = Inscription.get_items_as_list_of_dicts(inscription)
-        return_dict = {
-            "limit" : 1,
-            "offset": 0,
-            "items" : items_as_list_of_dict,
-            "total" : 1
-        }
-        return_dict_json = jsonify(return_dict)
-        return_dict_json.headers.add('Access-Control-Allow-Origin', '*')
-        return return_dict_json
+    if inscription['metadata']['number_of_hits'] == 1:
+        if format == "xml":
+            if hd_nr in Inscription.hd_nr_redirects:
+                    return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
+                                        subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
+            i = inscription['items'][0]
+            return_xml = i.toXml()
+            return Response(return_xml, mimetype='text/xml')
+        elif format == "json":
+            items_as_list_of_dict = Inscription.get_items_as_list_of_dicts(inscription)
+            return_dict = {
+                "limit" : 1,
+                "offset": 0,
+                "items" : items_as_list_of_dict,
+                "total" : 1
+            }
+            return_dict_json = jsonify(return_dict)
+            return_dict_json.headers.add('Access-Control-Allow-Origin', '*')
+            return return_dict_json
+    else:
+        return render_template('inscription/no_hits.html', title=_("Epigraphic Text Database"), subtitle=_("Detail View"), data=inscription)
 
 
 @bp_inscription.route('/edh/inschrift/<hd_nr>', strict_slashes=False)
 def detail_view(hd_nr):
+    """
+    returns detail view of inscription record
+    """
     if hd_nr in Inscription.hd_nr_redirects:
         return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
                                subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
     results = Inscription.query("hd_nr:" + hd_nr)    
-    if results is None:
-        return render_template('inscription/detail_view.html', title=_("Epigraphic Text Database"), subtitle=_("Detail View"))
+    if results['metadata']['number_of_hits'] == 0:
+        return render_template('inscription/no_hits.html', title=_("Epigraphic Text Database"), subtitle=_("Detail View"), data=results)
     else:
         people = Person.query("hd_nr:" + hd_nr)
         see_also_urls = Inscription.get_see_also_urls_from_tm_api(hd_nr)
