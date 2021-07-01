@@ -1042,6 +1042,49 @@ class Inscription:
                             see_also_urls_dict[key] = r[key]
         return see_also_urls_dict
 
+    @classmethod
+    def get_items_as_list_of_dicts(cls, results):
+        """
+        returns list if dicionaries with data of inscriptions for JSON exports
+        :param results: resultset if inscription query
+        :return: list of dicts
+        """
+        items_list = []
+        for i in results['items']:
+            item = {}
+            item['id'] = i.hd_nr
+            item['commentary'] = i.kommentar
+            item['diplomatic_text'] = i.btext
+            item['country'] = i.land
+            item['year_of_find'] = i.fundjahr
+            item['present_location'] = i.aufbewahrung
+            item['work_status'] = _l("beleg-"+i.beleg)
+            item['width'] = i.breite + " cm" if i.breite is not None else None
+            item['depth'] = i.tiefe + " cm" if i.tiefe is not None else None
+            item['height'] = i.hoehe + " cm" if i.hoehe is not None else None
+            if i.literatur and '#' in i.literatur:
+                item['literature'] =  i.literatur.replace("#", ";")
+            else:
+                item['literature'] =  i.literatur
+            item['religion'] = i.religion_str
+            item['last_update'] = i.datum
+            item['findspot_modern'] = i.fo_modern
+            item['findspot_ancient'] = i.fo_antik
+            item['findspot'] = i.fundstelle
+            item['social_economic_legal_history'] = i.sowire
+            item['material'] = i.material
+            item['not_after'] = str(i.dat_jahr_a)
+            item['not_before'] = str(i.dat_jahr_e)
+            item['modern_region'] = i.verw_bezirk
+            item['language'] = i.nl_text
+            item['type_of_monument'] = i.i_traeger_str
+            item['type_of_inscription'] = i.i_gattung_str
+            item['transcription'] = i.atext
+            item['letter_size'] = i.bh + " cm" if i.bh is not None else None
+            item['responsible_individual'] = i.bearbeiter
+            item['trismegistos_uri'] = "https://www.trismegistos.org/text/"+str(i.tm_nr) if i.tm_nr is not None else None
+            items_list.append(item)
+        return items_list
 
 def _get_date_string(dat_jahr_a, dat_jahr_e, monat, tag):
     """
