@@ -715,7 +715,6 @@ class Inscription:
         query_string = re.sub(" " + logical_operater + " $", "", query_string)
         if query_string == "":
             query_string = "hd_nr:*"
-        print(query_string)
         return query_string
 
     @classmethod
@@ -741,11 +740,12 @@ class Inscription:
         if request.args.get("beleg89"):
             fq = "-beleg:77 AND -beleg:99 AND -beleg:89"
         # overide URL parameters for CSV exports
-        if kwargs.get('start') == 0:
-            start = 0
+        if kwargs.get('start'):
+            start = kwargs.get('start')
+            print("huhu")
         if kwargs.get('number_of_results'):
             rows = kwargs.get('number_of_results')
-
+        print("start "+str(start))
         if request.args.get('sort'):
             if request.args.get('sort') in ('fo_antik', 'fo_modern', 'fundstelle'):
                 sort = request.args.get('sort') + "_ci asc"
