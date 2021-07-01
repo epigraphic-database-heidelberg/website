@@ -1,4 +1,4 @@
-from flask import render_template, request, Response
+from flask import render_template, request, Response, jsonify
 from flask_babel import _
 import io
 import csv
@@ -123,16 +123,30 @@ def extended_search():
                            title=_("Epigraphic Text Database"), subtitle=_("Extended Search"))
 
 
-@bp_inscription.route('/edh/inschrift/<hd_nr>/xml', strict_slashes=False)
-def export_xml(hd_nr):
-    if hd_nr in Inscription.hd_nr_redirects:
-            return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
-                                subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
+@bp_inscription.route('/edh/inschrift/<hd_nr>/<format>', strict_slashes=False)
+def export(hd_nr, format):
     inscription = Inscription.query("hd_nr:" + hd_nr)
-    i = inscription['items'][0]
-    return_xml = i.toXml()
-    return Response(return_xml, mimetype='text/xml')
-    
+
+    if format == "xml":
+        if hd_nr in Inscription.hd_nr_redirects:
+                return render_template('inscription/detail_view_redirect.html', title=_("Epigraphic Text Database"),
+                                    subtitle=_("Detail View"), data=(hd_nr, Inscription.hd_nr_redirects[hd_nr]))
+        
+        i = inscription['items'][0]
+        return_xml = i.toXml()
+        return Response(return_xml, mimetype='text/xml')
+    elif format == "json":
+        items_as_list_of_dict = Inscription.get_items_as_list_of_dicts(inscription)
+        return_dict = {
+            "limit" : 1,
+            "offset": 0,
+            "items" : items_as_list_of_dict,
+            "total" : 1
+        }
+        return_dict_json = jsonify(return_dict)
+        return_dict_json.headers.add('Access-Control-Allow-Origin', '*')
+        return return_dict_json
+
 
 @bp_inscription.route('/edh/inschrift/<hd_nr>', strict_slashes=False)
 def detail_view(hd_nr):
