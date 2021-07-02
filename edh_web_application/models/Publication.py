@@ -270,42 +270,42 @@ class Publication:
         b_nr = b_nr.zfill(6)
         return "B" + b_nr
 
+
     @classmethod
-    def get_json_for_bib_record(cls, b_nr):
+    def get_items_as_list_of_dicts(cls, results):
         """
-        return record as json
-        :param b_nr: B-No of record
+        returns list if dicionaries with data of publication for JSON exports
+        :param results: resultset if publication query
+        :return: list of dicts
         """
-        pub = Publication.query("b_nr:" + b_nr)
-        if len(pub) > 0 and 'items' in pub:
-            for item in pub['items']:
-                item_dict = {'id': b_nr, 'uri': current_app.config['HOST'] + "/edh/bibliographie/" + b_nr}
-                if item.ort:
-                    item_dict['place'] = item.ort
-                if item.autor:
-                    item_dict['author'] = item.autor
-                if item.titel:
-                    item_dict['title'] = item.titel
-                if item.jahr:
-                    item_dict['year'] = item.jahr
-                if item.publikation:
-                    item_dict['publication'] = item.publikation
-                if item.band:
-                    item_dict['volume'] = item.band
-                if item.seiten:
-                    item_dict['pages'] = item.seiten
-                if item.ae:
-                    item_dict['ae'] = item.ae
-                if item.zu_ae:
-                    item_dict['about_ae'] = item.zu_ae
-                if item.cil:
-                    item_dict['cil'] = item.cil
-                if item.sonstigeCorpora:
-                    item_dict['other_corpora'] = item.sonstigeCorpora
-            pub_dict = {'items': [item_dict], 'limit': 20, 'total': 1}
-            return pub_dict
-        else:
-            return {'items': [], 'limit': 20, 'total': 0}
+        items_list = []
+        for i in results['items']:
+            item = {}
+            item['id'] = i.b_nr
+            if i.ort:
+                item['place'] = i.ort
+            if i.autor:
+                item['author'] = i.autor
+            if i.titel:
+                item['title'] = i.titel
+            if i.jahr:
+                item['year'] = i.jahr
+            if i.publikation:
+                item['publication'] = i.publikation
+            if i.band:
+                item['volume'] = i.band
+            if i.seiten:
+                item['pages'] = i.seiten
+            if i.ae:
+                item['ae'] = i.ae
+            if i.zu_ae:
+                item['about_ae'] = i.zu_ae
+            if i.cil:
+                item['cil'] = i.cil
+            if i.sonstigeCorpora:
+                item['other_corpora'] = i.sonstigeCorpora
+            items_list.append(item)
+        return items_list
 
 
 def _escape_value(val):
