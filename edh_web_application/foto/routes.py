@@ -102,8 +102,9 @@ def detail_view(f_nr, conv_format = ''):
                                    title=_("Foto Database"), subtitle=_("Detail View"),
                                    data={"results": results['items'][0], "image_size": img_size})
         else:
-            return_dict = Foto.get_json_for_foto_record(f_nr)
-            return_dict_json = jsonify(return_dict)
+            return_dict = Foto.get_items_as_list_of_dicts(results)
+            pub_dict = {'items': return_dict, 'limit': 1, 'total': 1}
+            return_dict_json = jsonify(pub_dict)
             return_dict_json.headers.add('Access-Control-Allow-Origin', '*')
             return return_dict_json
 

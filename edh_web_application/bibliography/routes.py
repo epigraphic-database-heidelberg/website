@@ -100,8 +100,6 @@ def detail_view(b_nr, conv_format=''):
                                data=results['items'][0])
         else:
             return_dict = Publication.get_items_as_list_of_dicts(results)
-            
-            
             pub_dict = {'items': return_dict, 'limit': 1, 'total': 1}
             return_dict_json = jsonify(pub_dict)
             return_dict_json.headers.add('Access-Control-Allow-Origin', '*')

@@ -485,6 +485,34 @@ class Foto:
             grouped_result[current_date].append(res)
         return grouped_result
 
+
+    @classmethod
+    def get_items_as_list_of_dicts(cls, results):
+        """
+        returns list if dicionaries with data of publication for JSON exports
+        :param results: resultset if publication query
+        :return: list of dicts
+        """
+        items_list = []
+        for i in results['items']:
+            item = {}
+            item['id'] = i.f_nr
+            item['last_update'] = i.datum
+            item['responsible_individual'] = i.bearbeiter
+            item['findspot_ancient'] = i.fo_antik
+            item['findspot_modern'] = i.fo_modern
+            item['province'] = i.provinz
+            item['country'] = i.land
+            item['present_location'] = i.aufbewahrung
+            item['year_of_foto'] = i.aufnahme_jahr
+            item['cil'] = i.cil
+            item['ae'] = i.ae
+            item['other_literature'] = i.andere
+            item['commentary'] = i.kommentar
+            items_list.append(item)
+        return items_list
+
+
     @classmethod
     def get_json_for_foto_record(cls, f_nr):
         record = Foto.query("f_nr:" + f_nr)
