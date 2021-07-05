@@ -72,8 +72,8 @@ class Publication:
         if hits:
             rows = hits
         # overide URL parameters for CSV exports
-        if kwargs.get('start') == 0:
-            start = 0
+        if kwargs.get('start'):
+            start = kwargs.get('start')
         if kwargs.get('number_of_results'):
             rows = kwargs.get('number_of_results')
         if request.args.get('sort') in ['autor', 'publikation', 'jahr']:

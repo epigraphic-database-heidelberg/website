@@ -742,10 +742,8 @@ class Inscription:
         # overide URL parameters for CSV exports
         if kwargs.get('start'):
             start = kwargs.get('start')
-            print("huhu")
         if kwargs.get('number_of_results'):
             rows = kwargs.get('number_of_results')
-        print("start "+str(start))
         if request.args.get('sort'):
             if request.args.get('sort') in ('fo_antik', 'fo_modern', 'fundstelle'):
                 sort = request.args.get('sort') + "_ci asc"

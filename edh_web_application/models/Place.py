@@ -673,8 +673,8 @@ class Place:
         if hits:
             rows = hits
         # overide URL parameters for CSV exports
-        if kwargs.get('start') == 0:
-            start = 0
+        if kwargs.get('start'):
+            start = kwargs.get('start')
         if kwargs.get('number_of_results'):
             rows = kwargs.get('number_of_results')
         if request.args.get('sort') in ['fo_antik', 'fo_modern', 'verw_bezirk']:
@@ -1029,6 +1029,35 @@ class Place:
             return pub_dict
         else:
             return {'items': [], 'limit': 20, 'total': 0}
+
+
+    @classmethod
+    def get_items_as_list_of_dicts(cls, results):
+        """
+        returns list if dicionaries with data of plac for JSON exports
+        :param results: resultset if place query
+        :return: list of dicts
+        """
+        items_list = []
+        for i in results['items']:
+            item = {}
+            item['id'] = i.id
+            item['last_update'] = i.datum
+            item['responsible_individual'] = i.bearbeiter
+            item['findspot_ancient'] = i.fo_antik
+            item['findspot_modern'] = i.fo_modern
+            item['findspot'] = i.fundstelle
+            item['province'] = i.provinz
+            item['country'] = i.land
+            item['commentary'] = i.kommentar
+            item['region'] = i.verw_bezirk
+            item['coordinates'] = i.koordinaten_1
+            item['geonames_id'] = i.geonames_id_1
+            item['pleiades_id'] = i.pleiades_id_1
+            item['trismegistos_id'] = i.trismegistos_geo_id
+            item['work_status'] = "completed" if i.bearbeitet else "provisional"
+            items_list.append(item)
+        return items_list
 
 
 def _get_url_without_pagination_parameters(url):
