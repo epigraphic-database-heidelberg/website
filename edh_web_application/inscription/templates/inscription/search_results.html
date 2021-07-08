@@ -136,7 +136,12 @@
                 <div><p style="text-align:left; vertical-align:top; border-bottom: 1px solid #ddd; font-size:1.2em;"><a href="./edh/inschrift/{{ d['hd_nr'] }}">{{ d['hd_nr'] }} {{ _('&ndash; open detailed view...') }}</a></p>
                 <div class="edh-record-display">
                     <div class="" style="width:200px; margin:0px 15px 15px 0px;vertical-align: middle;">
-                        <a href="./edh/inschrift/{{ d['hd_nr'] }}"><div id="map_canvas_{{ count.value }}" class="map_canvas"></div></a>
+                        <a href="./edh/inschrift/{{ d['hd_nr'] }}">
+                            <div id="map_canvas_{{ count.value }}" style="border: 1px solid #333;" class="map_canvas"></div>
+                            {% if d['foto_nr'][0] %}
+                            <div style="width: 100%"><img src="https://edh-www.adw.uni-heidelberg.de/fotos/{{ d['foto_nr'][0] }}.JPG" style="margin-top:15px; max-width: 240px; border: 1px solid #333;"/></div>
+                            {% endif %}
+                        </a>
                     </div>
                     <div>
                         <section class="detail_block_content_row">

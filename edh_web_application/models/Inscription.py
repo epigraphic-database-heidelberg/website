@@ -584,6 +584,7 @@ class Inscription:
             "atext_hl": None,
             "pl_ancient_loc1": None,
             "geo_id1": None,
+            "f_nr": None,
         }
         for (prop, default) in prop_defaults.items():
             setattr(self, prop, kwargs.get(prop, default))
@@ -789,7 +790,7 @@ class Inscription:
             for result in results:
                 props = {}
                 for key in result:
-                    if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg', 'foto_nr', 'atext', 'kommentar'):
+                    if key not in ('hd_nr', 'provinz', 'land', 'datum', 'beleg', 'atext', 'kommentar'):
                         props[key] = result[key]
                     if key == 'land':
                         if re.search(".+\?$", result[key]):
@@ -898,7 +899,7 @@ class Inscription:
                                     **props
                                     )
                 query_result.append(inscr)
-
+            
             return {"metadata": {"start": start, "rows": rows, "number_of_hits": number_of_hits,
                                  "url_without_pagination_parameters": _get_url_without_pagination_parameters(request.url), "url_without_sort_parameter": _get_url_without_sort_parameter(request.url),
                                  "url_without_view_parameter": _get_url_without_view_parameter(request.url), "query_params": query_params},
