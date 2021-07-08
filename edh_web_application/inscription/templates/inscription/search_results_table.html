@@ -123,6 +123,9 @@
         {% if request.args.get('vollstaendig') %}
         <input type="hidden" name="vollstaendig" value="{{ request.args.get('vollstaendig') }}">
         {% endif %}
+        {% if request.args.get('nurMitFoto') %}
+        <input type="hidden" name="nurMitFoto" value="{{ request.args.get('nurMitFoto') }}">
+        {% endif %}
     </form>
 </div>
 <div id="dlg_hd_nr" title="{{_('HD-No.')}}">{{_("hlp_hd_nr")}}</div>
