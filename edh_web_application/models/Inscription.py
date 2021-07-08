@@ -689,8 +689,11 @@ class Inscription:
             query_string += solr_index_field+':' + escape_value(form['atext2']) + ' ' + logical_operater + ' '
         
         if 'vollstaendig' in form and form['vollstaendig'] == 'y':
-            query_string += '(-atext_ci_wb:\[ OR -atext_ci_wb:\])' + ' ' + logical_operater + ' '
+            query_string += '(-atext_ci_wb:\[ OR -atext_ci_wb:\]) ' + logical_operater + ' '
         
+        if 'nurMitFoto' in form and form['nurMitFoto'] == 'y':
+            query_string += 'foto_nr:* ' + logical_operater + ' '
+
         # chronology
         if 'jahre' in form and not (form['jahre'] == "600 v. Chr. - 1500 n. Chr." or form['jahre'] == "600 BC - 1500 AD" ):
             (jahr_a, jahr_e) = form['jahre'].strip().split(" - ")
@@ -1275,6 +1278,8 @@ def _get_query_params(args):
                     result_dict[_l('completed records only')] = _l('yes')
                 elif key == 'vollstaendig':
                     result_dict[_l('non fragmentary inscriptions only')] = _l('yes')
+                elif key == 'nurMitFoto':
+                    result_dict[_l('records with images only')] = _l('yes')
                 else:
                     result_dict[key] = re.sub("\([0-9]+\)", "", args[key])
     if 'provinz' in result_dict:

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-30 13:51+0200\n"
+"POT-Creation-Date: 2021-07-08 15:05+0200\n"
 "PO-Revision-Date: 2019-03-05 14:18+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -32,8 +32,8 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_map.html:71
 #: edh_web_application/geography/templates/geography/search_results_table.html:88
 #: edh_web_application/inscription/forms.py:55
-#: edh_web_application/inscription/templates/inscription/search.html:111
-#: edh_web_application/inscription/templates/inscription/search_results.html:362
+#: edh_web_application/inscription/templates/inscription/search.html:105
+#: edh_web_application/inscription/templates/inscription/search_results.html:367
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:92
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:106
 msgid "Reset..."
@@ -142,7 +142,7 @@ msgstr "other corpora"
 #: edh_web_application/geography/templates/geography/search_results.html:285
 #: edh_web_application/inscription/forms.py:75
 #: edh_web_application/inscription/templates/inscription/search_results.html:16
-#: edh_web_application/inscription/templates/inscription/search_results.html:295
+#: edh_web_application/inscription/templates/inscription/search_results.html:300
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:25
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:39
 msgid "sort by"
@@ -161,7 +161,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:296
 #: edh_web_application/inscription/forms.py:85
 #: edh_web_application/inscription/templates/inscription/search_results.html:17
-#: edh_web_application/inscription/templates/inscription/search_results.html:307
+#: edh_web_application/inscription/templates/inscription/search_results.html:312
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:37
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:51
 msgid "number of results/page"
@@ -205,19 +205,20 @@ msgstr ""
 #: edh_web_application/foto/routes.py:86 edh_web_application/foto/routes.py:102
 #: edh_web_application/geography/routes.py:67
 #: edh_web_application/inscription/routes.py:107
-#: edh_web_application/inscription/routes.py:130
-#: edh_web_application/inscription/routes.py:141
-#: edh_web_application/inscription/routes.py:144
+#: edh_web_application/inscription/routes.py:136
+#: edh_web_application/inscription/routes.py:152
+#: edh_web_application/inscription/routes.py:162
+#: edh_web_application/inscription/routes.py:165
 msgid "Detail View"
 msgstr ""
 
-#: edh_web_application/bibliography/routes.py:117
+#: edh_web_application/bibliography/routes.py:118
 msgid "Bibliography Database"
 msgstr ""
 
-#: edh_web_application/bibliography/routes.py:118
+#: edh_web_application/bibliography/routes.py:119
 #: edh_web_application/bibliography/templates/bibliography/detail_view.html:14
-#: edh_web_application/foto/routes.py:160
+#: edh_web_application/foto/routes.py:161
 #: edh_web_application/foto/templates/foto/detail_view.html:14
 #: edh_web_application/geography/routes.py:22
 #: edh_web_application/geography/templates/geography/detail_view.html:13
@@ -370,7 +371,6 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/no_hits.html:13
 #: edh_web_application/geography/templates/geography/no_hits.html:14
 #: edh_web_application/inscription/templates/inscription/no_hits.html:13
-#: edh_web_application/inscription/templates/inscription/no_hits.html:14
 msgid "Start new search"
 msgstr ""
 
@@ -384,7 +384,7 @@ msgstr ""
 #: edh_web_application/bibliography/templates/bibliography/search.html:110
 #: edh_web_application/foto/templates/foto/search.html:111
 #: edh_web_application/geography/templates/geography/search.html:105
-#: edh_web_application/inscription/templates/inscription/search.html:111
+#: edh_web_application/inscription/templates/inscription/search.html:105
 msgid "Search..."
 msgstr ""
 
@@ -421,7 +421,7 @@ msgstr "B-No."
 #: edh_web_application/geography/templates/geography/search_results_table.html:16
 #: edh_web_application/geography/templates/geography/search_results_table.html:40
 #: edh_web_application/inscription/templates/inscription/search_results.html:18
-#: edh_web_application/inscription/templates/inscription/search_results.html:315
+#: edh_web_application/inscription/templates/inscription/search_results.html:320
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:16
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:45
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:16
@@ -440,7 +440,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_map.html:25
 #: edh_web_application/geography/templates/geography/search_results_table.html:42
 #: edh_web_application/inscription/templates/inscription/search_results.html:18
-#: edh_web_application/inscription/templates/inscription/search_results.html:317
+#: edh_web_application/inscription/templates/inscription/search_results.html:322
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:47
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:61
 msgid "list"
@@ -461,7 +461,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_table.html:17
 #: edh_web_application/geography/templates/geography/search_results_table.html:47
 #: edh_web_application/inscription/templates/inscription/search_results.html:19
-#: edh_web_application/inscription/templates/inscription/search_results.html:322
+#: edh_web_application/inscription/templates/inscription/search_results.html:327
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:17
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:52
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:17
@@ -480,7 +480,7 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_map.html:26
 #: edh_web_application/geography/templates/geography/search_results_table.html:16
 #: edh_web_application/geography/templates/geography/search_results_table.html:43
-#: edh_web_application/inscription/templates/inscription/search_results.html:318
+#: edh_web_application/inscription/templates/inscription/search_results.html:323
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:48
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:16
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:62
@@ -494,84 +494,84 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results.html:351
 #: edh_web_application/geography/templates/geography/search_results_map.html:70
 #: edh_web_application/geography/templates/geography/search_results_table.html:87
-#: edh_web_application/inscription/templates/inscription/search_results.html:361
+#: edh_web_application/inscription/templates/inscription/search_results.html:366
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:91
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:105
 msgid "Filter..."
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:109
+#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:120
 #: edh_web_application/geography/templates/geography/detail_view_province.html:148
-#: edh_web_application/geography/templates/geography/search_results_table.html:107
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:156
+#: edh_web_application/geography/templates/geography/search_results_table.html:124
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:229
 msgid "all"
 msgstr ""
 
-#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:111
+#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:122
 #: edh_web_application/geography/templates/geography/detail_view_province.html:150
-#: edh_web_application/geography/templates/geography/search_results_table.html:109
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:158
+#: edh_web_application/geography/templates/geography/search_results_table.html:126
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:231
 msgid "dtbl_search"
 msgstr "Search:"
 
-#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:112
+#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:123
 #: edh_web_application/geography/templates/geography/detail_view_province.html:151
-#: edh_web_application/geography/templates/geography/search_results_table.html:110
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:159
+#: edh_web_application/geography/templates/geography/search_results_table.html:127
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:232
 msgid "dtbl_info"
 msgstr "Showing _START_ to _END_ of _TOTAL_ entries"
 
-#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:113
+#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:124
 #: edh_web_application/geography/templates/geography/detail_view_province.html:152
-#: edh_web_application/geography/templates/geography/search_results_table.html:111
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:160
+#: edh_web_application/geography/templates/geography/search_results_table.html:128
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:233
 msgid "dtbl_menu"
 msgstr "Show _MENU_ entries"
 
-#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:114
+#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:125
 #: edh_web_application/geography/templates/geography/detail_view_province.html:153
-#: edh_web_application/geography/templates/geography/search_results_table.html:112
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:161
+#: edh_web_application/geography/templates/geography/search_results_table.html:129
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:234
 msgid "dtbl_filter"
 msgstr "(filtered from _MAX_ total entries)"
 
-#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:115
+#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:126
 #: edh_web_application/geography/templates/geography/detail_view_province.html:154
-#: edh_web_application/geography/templates/geography/search_results_table.html:113
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:162
+#: edh_web_application/geography/templates/geography/search_results_table.html:130
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:235
 msgid "dtbl_zero"
 msgstr "No matching records found"
 
-#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:117
+#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:128
 #: edh_web_application/geography/templates/geography/detail_view_province.html:156
-#: edh_web_application/geography/templates/geography/search_results_table.html:115
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:164
+#: edh_web_application/geography/templates/geography/search_results_table.html:132
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:237
 msgid "dtbl_previous"
 msgstr "previous"
 
-#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:118
+#: edh_web_application/bibliography/templates/bibliography/search_results_table.html:129
 #: edh_web_application/geography/templates/geography/detail_view_province.html:157
-#: edh_web_application/geography/templates/geography/search_results_table.html:116
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:165
+#: edh_web_application/geography/templates/geography/search_results_table.html:133
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:238
 msgid "dtbl_next"
 msgstr "next"
 
-#: edh_web_application/data/routes.py:9 edh_web_application/data/routes.py:14
-#: edh_web_application/data/routes.py:26
+#: edh_web_application/data/routes.py:13 edh_web_application/data/routes.py:154
+#: edh_web_application/data/routes.py:165
 #: edh_web_application/templates/base.html:59
 #: edh_web_application/templates/home.html:61
 msgid "Data"
 msgstr "Data"
 
-#: edh_web_application/data/routes.py:9
+#: edh_web_application/data/routes.py:13
 msgid "Open Data Repository"
 msgstr ""
 
-#: edh_web_application/data/routes.py:14
+#: edh_web_application/data/routes.py:154
 msgid "Application Programming Interface (API)"
 msgstr ""
 
-#: edh_web_application/data/routes.py:26
+#: edh_web_application/data/routes.py:165
 msgid "Download Data Dumps"
 msgstr ""
 
@@ -594,81 +594,89 @@ msgstr ""
 "1em;'>/data/api/inscriptions/search?par_1=value&par_2=value&par_n=value</pre><p>E.g."
 " query for inscriptions with \"votum solvit\" within the Latin "
 "transcription from both Germaniae that are dated after 200 AD:</p><a "
-"href='/data/api/inschrift/suche?provinz=ges&provinz=gei&atext1=votum"
-" solvit&jahr_a=200'>/data/api/inschrift/suche?provinz=ges&provinz=gei&atext1=votum"
-" solvit&jahr_a=200</a><p style='margin-top:1.5em;'>You can query"
-" for:</p><ul><li><strong>hd_nr</strong> (HD-No of "
-"inscription)</li><li><strong>provinz</strong> province (get list of valid values "
-"<a href='./data/api#provinzen'>below</a>, case "
-"insensitive)</li><li><strong>land</strong> country (get list of valid values "
-"<a href='./data/api#laender'>below</a>, case "
-"insensitive)</li><li><strong>fo_modern</strong> modern findspot (add leading and/or"
-" trailing truncation by asterisk *, e.g. fo_modern=köln*, case "
-"insensitive)</li><li><strong>fo_antik</strong> ancient findspot (add leading "
-"and/or trailing truncation by asterisk *, e.g. fo_antik=aquae*, "
-"case insensitive)</li><li><strong>dat_jahr_a</strong> year not before (integer, BC "
-"years are negative integers)</li><li><strong>dat_jahr_e</strong> "
-" year not after (integer, BC years are negative integers)</li><li><strong>tm_nr</strong> "
-" Trismegistos ID (integer value)</li><li><strong>atext1</strong> transcription (automatic leading"
-" & trailing truncation, brackets are "
-"ignored)</li><li><strong>inschriftgattung</strong> type of inscription, get list of "
-"values <a href='./data/api#igatt'>below</a>, case "
-"insensitive</li></ul><h4><a"
-" name='photo'>2. Photos</a></h4><p>The generic search pattern URI is the "
-"following:</p><pre style='font-size: 1em;'>/data/api/foto/suche?par_1=value&par_2=value&par_n=value</pre><p>E.g."
+"href='/data/api/inschrift/suche?provinz=ges&provinz=gei&atext1=votum "
+"solvit&jahr_a=200'>/data/api/inschrift/suche?provinz=ges&provinz=gei&atext1=votum"
+" solvit&jahr_a=200</a><p style='margin-top:1.5em;'>You can query "
+"for:</p><ul><li><strong>hd_nr</strong> (HD-No of "
+"inscription)</li><li><strong>provinz</strong> province (get list of valid"
+" values <a href='./data/api#provinzen'>below</a>, case "
+"insensitive)</li><li><strong>land</strong> country (get list of valid "
+"values <a href='./data/api#laender'>below</a>, case "
+"insensitive)</li><li><strong>fo_modern</strong> modern findspot (add "
+"leading and/or trailing truncation by asterisk *, e.g. fo_modern=köln*, "
+"case insensitive)</li><li><strong>fo_antik</strong> ancient findspot (add"
+" leading and/or trailing truncation by asterisk *, e.g. fo_antik=aquae*, "
+"case insensitive)</li><li><strong>dat_jahr_a</strong> year not before "
+"(integer, BC years are negative "
+"integers)</li><li><strong>dat_jahr_e</strong>  year not after (integer, "
+"BC years are negative integers)</li><li><strong>tm_nr</strong>  "
+"Trismegistos ID (integer value)</li><li><strong>atext1</strong> "
+"transcription (automatic leading & trailing truncation, brackets are "
+"ignored)</li><li><strong>inschriftgattung</strong> type of inscription, "
+"get list of values <a href='./data/api#igatt'>below</a>, case "
+"insensitive</li></ul><h4><a name='photo'>2. Photos</a></h4><p>The generic"
+" search pattern URI is the following:</p><pre style='font-size: "
+"1em;'>/data/api/foto/suche?par_1=value&par_2=value&par_n=value</pre><p>E.g."
 " query for photos of inscriptions from Germany that are part of the CIL "
-"corpus:</p><p><a href='/data/api/foto/suche?land=de&cil=*'>/data/api/foto/suche?land=de&cil=*</a></p><p style"
-"='margin-top:1.5em;'>You can query for:<ul><li><strong>provinz</strong> province "
-"(get list of valid values <a href='./data/api#provinzen'>below</a>, case "
-"insensitive)</li><li><strong>land</strong> country (get list of valid values "
-"<a href='./data/api#laender'>below</a>, case "
-"insensitive)</li><li><strong>fo_modern</strong> modern findspot (add leading and/or"
-" trailing truncation by asterisk *, e.g. fo_modern=köln*, case "
-"insensitive)</li><li><strong>fo_antik</strong> ancient findspot (add leading "
-"and/or trailing truncation by asterisk *, e.g. fo_antik=aquae*, "
+"corpus:</p><p><a "
+"href='/data/api/foto/suche?land=de&cil=*'>/data/api/foto/suche?land=de&cil=*</a></p><p"
+" style='margin-top:1.5em;'>You can query "
+"for:<ul><li><strong>provinz</strong> province (get list of valid values "
+"<a href='./data/api#provinzen'>below</a>, case "
+"insensitive)</li><li><strong>land</strong> country (get list of valid "
+"values <a href='./data/api#laender'>below</a>, case "
+"insensitive)</li><li><strong>fo_modern</strong> modern findspot (add "
+"leading and/or trailing truncation by asterisk *, e.g. fo_modern=köln*, "
+"case insensitive)</li><li><strong>fo_antik</strong> ancient findspot (add"
+" leading and/or trailing truncation by asterisk *, e.g. fo_antik=aquae*, "
 "case insensitive)</li><li><strong>cil</strong> CIL (automatic leading & "
 "trailing truncation)</li><li><strong>ae</strong> AE (automatic leading & "
-"trailing truncation)</li><li><strong>kommentar</strong> commentary (automatic "
-"leading & trailing truncation, case "
-"insensitive)</li><li><strong>aufbewahrung</strong> present location (automatic leading"
-" & trailing truncation, case insensitive)</li><li><strong>hd_nr</strong> "
-"(HD No. of inscription)</li></ul></p><h4><a name='biblio'>3. "
+"trailing truncation)</li><li><strong>kommentar</strong> commentary "
+"(automatic leading & trailing truncation, case "
+"insensitive)</li><li><strong>aufbewahrung</strong> present location "
+"(automatic leading & trailing truncation, case "
+"insensitive)</li><li><strong>hd_nr</strong> (HD No. of "
+"inscription)</li></ul></p><h4><a name='biblio'>3. "
 "Bibliography</a></h4><p>The generic search pattern URI is the "
-"following:</p><pre style='font-size: 1em;'>/data/api/bibliographie/suche?par_1=value&par_2=value&par_n=value</pre><p>E.g."
-" query for publications by Alföldy:</p><p><a href='/data/api/bibliographie/suche?autor=Alföldy'>/data/api/bibliographie/suche?autor=Alföldy</a></p><p style"
-"='margin-top:1.5em;'>You can query for:<ul><li><strong>autor</strong> author "
-"(automatic leading & trailing truncation)</li><li><strong>titel</strong> title "
-"(automatic leading & trailing "
-"truncation)</li><li><strong>jahr</strong> year </li><li><strong>publikation</strong> publication "
-" (automatic leading & trailing truncation)</li><li><strong>ae</strong> AE "
-"(automatic leading & trailing truncation)</li><li><strong>cil</strong> CIL "
-"(automatic leading & trailing "
-"truncation)</li><li><strong>sonstige</strong> other publication (automatic leading & "
-"trailing truncation)</li></ul></p><h4><a name='geo'>4. "
-"Geography</a></h4><p>The generic search pattern URI is the "
-"following:</p><pre style='font-size: 1em;'>/data/api/geographie/suche?par_1=value&par_2=value&par_n=value</pre><p>E.g."
-" query for all findspots filtered by "
-"country = Germany:</p><p><a href='/data/api/geographie/suche?land=de'>/data/api/geographie/suche?land=de</a></p><p"
+"following:</p><pre style='font-size: "
+"1em;'>/data/api/bibliographie/suche?par_1=value&par_2=value&par_n=value</pre><p>E.g."
+" query for publications by Alföldy:</p><p><a "
+"href='/data/api/bibliographie/suche?autor=Alföldy'>/data/api/bibliographie/suche?autor=Alföldy</a></p><p"
 " style='margin-top:1.5em;'>You can query "
-"for:</p><ul><li><strong>provinz</strong> province (get list of valid values <a "
-"href='./data/api#provinzen'>below</a>, case "
-"insensitive)</li><li><strong>land</strong> country (get list of valid values "
-"<a href='./data/api#laender'>below</a>, case "
-"insensitive)</li><li><strong>fo_modern</strong> modern findspot (add leading and/or"
-" trailing truncation by asterisk *, e.g. fo_modern=köln*, case "
-"insensitive)</li><li><strong>fot_antik</strong> ancient findspot (add leading "
-"and/or trailing truncation by asterisk *, e.g. fo_antik=aquae*, "
-"case insensitive)</li><li><strong>findspot</strong> findspot (level of village, "
-"street etc.; add leading and/or trailing truncation by asterisk *, e.g. "
-"findspot_modern=köln*, case insensitive)</li><li><strong>pleiades_id</strong>"
-" (Pleiades identifier of a place; integer "
-"value)</li><li><strong>geonames_id</strong> (Geonames identifier of a "
-"place; integer value)</li></ul><h3>Response format</h3><p>The API returns"
-" responses in JSON format:</p><pre>{\"total\" : 61,  \"limit\" : \"20\","
-"  \"items\" : [ ... ]}</pre><p>Results are paginated with a default of "
-"20 hits per page; you can change this with the limit-parameter, if needed"
-" you can also specify an offset e.g.:</p><p style='margin-bottom: "
-"2em;'><a href='/data/api/inschrift/suche?provinz=ges&offset=300&limit=100'>/data/api/inschrift/suche?provinz=ges&offset=300&limit=100</a></p><h3>Controlled"
+"for:<ul><li><strong>autor</strong> author (automatic leading & trailing "
+"truncation)</li><li><strong>titel</strong> title (automatic leading & "
+"trailing truncation)</li><li><strong>jahr</strong> year "
+"</li><li><strong>publikation</strong> publication  (automatic leading & "
+"trailing truncation)</li><li><strong>ae</strong> AE (automatic leading & "
+"trailing truncation)</li><li><strong>cil</strong> CIL (automatic leading "
+"& trailing truncation)</li><li><strong>sonstige</strong> other "
+"publication (automatic leading & trailing truncation)</li></ul></p><h4><a"
+" name='geo'>4. Geography</a></h4><p>The generic search pattern URI is the"
+" following:</p><pre style='font-size: "
+"1em;'>/data/api/geographie/suche?par_1=value&par_2=value&par_n=value</pre><p>E.g."
+" query for all findspots filtered by country = Germany:</p><p><a "
+"href='/data/api/geographie/suche?land=de'>/data/api/geographie/suche?land=de</a></p><p"
+" style='margin-top:1.5em;'>You can query "
+"for:</p><ul><li><strong>provinz</strong> province (get list of valid "
+"values <a href='./data/api#provinzen'>below</a>, case "
+"insensitive)</li><li><strong>land</strong> country (get list of valid "
+"values <a href='./data/api#laender'>below</a>, case "
+"insensitive)</li><li><strong>fo_modern</strong> modern findspot (add "
+"leading and/or trailing truncation by asterisk *, e.g. fo_modern=köln*, "
+"case insensitive)</li><li><strong>fot_antik</strong> ancient findspot "
+"(add leading and/or trailing truncation by asterisk *, e.g. "
+"fo_antik=aquae*, case insensitive)</li><li><strong>findspot</strong> "
+"findspot (level of village, street etc.; add leading and/or trailing "
+"truncation by asterisk *, e.g. findspot_modern=köln*, case "
+"insensitive)</li><li><strong>pleiades_id</strong> (Pleiades identifier of"
+" a place; integer value)</li><li><strong>geonames_id</strong> (Geonames "
+"identifier of a place; integer value)</li></ul><h3>Response "
+"format</h3><p>The API returns responses in JSON "
+"format:</p><pre>{\"total\" : 61,  \"limit\" : \"20\",  \"items\" : [ ... "
+"]}</pre><p>Results are paginated with a default of 20 hits per page; you "
+"can change this with the limit-parameter, if needed you can also specify "
+"an offset e.g.:</p><p style='margin-bottom: 2em;'><a "
+"href='/data/api/inschrift/suche?provinz=ges&offset=300&limit=100'>/data/api/inschrift/suche?provinz=ges&offset=300&limit=100</a></p><h3>Controlled"
 " Vocabularies</h3><h4><a id='provinzen'>Province</a></h4><table "
 "class='table table-"
 "sm'><tr><th>Code</th><th>Province</th></tr><tr><td>Ach</td><td>Achaia</td></tr><tr><td>Aeg</td><td>Aegyptus</td></tr><tr><td>Aem</td><td>Aemilia"
@@ -838,11 +846,14 @@ msgstr ""
 #: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:111
 #: edh_web_application/inscription/templates/inscription/last_updates.html:33
-#: edh_web_application/inscription/templates/inscription/search.html:116
-#: edh_web_application/inscription/templates/inscription/search_results.html:153
-#: edh_web_application/inscription/templates/inscription/search_results.html:298
+#: edh_web_application/inscription/templates/inscription/search.html:110
+#: edh_web_application/inscription/templates/inscription/search_results.html:158
+#: edh_web_application/inscription/templates/inscription/search_results.html:303
+#: edh_web_application/inscription/templates/inscription/search_results.html:390
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:28
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:115
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:42
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:129
 msgid "province"
 msgstr ""
 
@@ -863,8 +874,8 @@ msgstr ""
 #: edh_web_application/inscription/forms.py:77
 #: edh_web_application/inscription/templates/inscription/detail_view.html:119
 #: edh_web_application/inscription/templates/inscription/last_updates.html:41
-#: edh_web_application/inscription/templates/inscription/search_results.html:161
-#: edh_web_application/inscription/templates/inscription/search_results.html:300
+#: edh_web_application/inscription/templates/inscription/search_results.html:166
+#: edh_web_application/inscription/templates/inscription/search_results.html:305
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:30
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:44
 msgid "ancient find spot"
@@ -887,8 +898,8 @@ msgstr ""
 #: edh_web_application/inscription/forms.py:78
 #: edh_web_application/inscription/templates/inscription/detail_view.html:129
 #: edh_web_application/inscription/templates/inscription/last_updates.html:45
-#: edh_web_application/inscription/templates/inscription/search_results.html:166
-#: edh_web_application/inscription/templates/inscription/search_results.html:301
+#: edh_web_application/inscription/templates/inscription/search_results.html:171
+#: edh_web_application/inscription/templates/inscription/search_results.html:306
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:31
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:45
 msgid "modern find spot"
@@ -940,7 +951,10 @@ msgstr ""
 #: edh_web_application/foto/templates/foto/search_results.html:310
 #: edh_web_application/foto/templates/foto/search_results_grid.html:245
 #: edh_web_application/inscription/forms.py:76
-#: edh_web_application/inscription/templates/inscription/search.html:115
+#: edh_web_application/inscription/templates/inscription/search.html:109
+#: edh_web_application/inscription/templates/inscription/search_results.html:389
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:114
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:128
 msgid "HD-No."
 msgstr ""
 
@@ -950,7 +964,7 @@ msgstr ""
 
 #: edh_web_application/foto/forms.py:53
 #: edh_web_application/geography/forms.py:55
-#: edh_web_application/models/Place.py:1102
+#: edh_web_application/models/Place.py:1131
 msgid "responsible individual"
 msgstr "contributor"
 
@@ -977,11 +991,14 @@ msgstr ""
 #: edh_web_application/inscription/forms.py:76
 #: edh_web_application/inscription/templates/inscription/detail_view.html:115
 #: edh_web_application/inscription/templates/inscription/last_updates.html:37
-#: edh_web_application/inscription/templates/inscription/search.html:117
-#: edh_web_application/inscription/templates/inscription/search_results.html:157
-#: edh_web_application/inscription/templates/inscription/search_results.html:299
+#: edh_web_application/inscription/templates/inscription/search.html:111
+#: edh_web_application/inscription/templates/inscription/search_results.html:162
+#: edh_web_application/inscription/templates/inscription/search_results.html:304
+#: edh_web_application/inscription/templates/inscription/search_results.html:391
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:29
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:116
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:43
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:130
 msgid "country"
 msgstr ""
 
@@ -994,7 +1011,7 @@ msgstr "en"
 #: edh_web_application/foto/routes.py:61 edh_web_application/foto/routes.py:67
 #: edh_web_application/foto/routes.py:72 edh_web_application/foto/routes.py:76
 #: edh_web_application/foto/routes.py:86 edh_web_application/foto/routes.py:102
-#: edh_web_application/foto/routes.py:159
+#: edh_web_application/foto/routes.py:160
 msgid "Foto Database"
 msgstr ""
 
@@ -1045,8 +1062,8 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_table.html:55
 #: edh_web_application/inscription/templates/inscription/search.html:17
 #: edh_web_application/inscription/templates/inscription/search.html:23
-#: edh_web_application/inscription/templates/inscription/search_results.html:326
-#: edh_web_application/inscription/templates/inscription/search_results.html:330
+#: edh_web_application/inscription/templates/inscription/search_results.html:331
+#: edh_web_application/inscription/templates/inscription/search_results.html:335
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:56
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:60
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:70
@@ -1096,8 +1113,8 @@ msgstr ""
 #: edh_web_application/inscription/forms.py:78
 #: edh_web_application/inscription/templates/inscription/detail_view.html:139
 #: edh_web_application/inscription/templates/inscription/last_updates.html:49
-#: edh_web_application/inscription/templates/inscription/search_results.html:171
-#: edh_web_application/inscription/templates/inscription/search_results.html:302
+#: edh_web_application/inscription/templates/inscription/search_results.html:176
+#: edh_web_application/inscription/templates/inscription/search_results.html:307
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:32
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:46
 msgid "find spot"
@@ -1142,13 +1159,13 @@ msgstr "TM Geo ID"
 #: edh_web_application/geography/forms.py:53
 #: edh_web_application/geography/templates/geography/detail_view.html:121
 #: edh_web_application/models/Place.py:1023
-#: edh_web_application/models/Place.py:1097
+#: edh_web_application/models/Place.py:1126
 msgid "completed"
 msgstr ""
 
 #: edh_web_application/geography/forms.py:54
 #: edh_web_application/geography/templates/geography/detail_view.html:122
-#: edh_web_application/models/Place.py:1100
+#: edh_web_application/models/Place.py:1129
 msgid "provisional"
 msgstr ""
 
@@ -1187,8 +1204,8 @@ msgstr ""
 #: edh_web_application/geography/templates/geography/search_results_map.html:65
 #: edh_web_application/geography/templates/geography/search_results_table.html:82
 #: edh_web_application/inscription/templates/inscription/detail_view.html:444
-#: edh_web_application/models/Place.py:1097
-#: edh_web_application/models/Place.py:1100
+#: edh_web_application/models/Place.py:1126
+#: edh_web_application/models/Place.py:1129
 #: edh_web_application/templates/home.html:62
 msgid "Work Status"
 msgstr ""
@@ -1218,7 +1235,7 @@ msgstr "findspot(s) in this province"
 #: edh_web_application/geography/templates/geography/search_results_map.html:16
 #: edh_web_application/geography/templates/geography/search_results_map.html:27
 #: edh_web_application/geography/templates/geography/search_results_table.html:44
-#: edh_web_application/inscription/templates/inscription/search_results.html:319
+#: edh_web_application/inscription/templates/inscription/search_results.html:324
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:16
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:49
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:63
@@ -1310,27 +1327,32 @@ msgid "brackets"
 msgstr "brackets matter"
 
 #: edh_web_application/inscription/forms.py:71
-#: edh_web_application/models/Inscription.py:1218
+#: edh_web_application/models/Inscription.py:1275
 msgid "completed records only"
 msgstr ""
 
 #: edh_web_application/inscription/forms.py:72
+#: edh_web_application/models/Inscription.py:1277
 msgid "non fragmentary inscriptions only"
 msgstr ""
 
 #: edh_web_application/inscription/forms.py:73
+msgid "records with images only"
+msgstr ""
+
+#: edh_web_application/inscription/forms.py:74
 msgid "bool"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:73
+#: edh_web_application/inscription/forms.py:74
 msgid "AND"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:73
+#: edh_web_application/inscription/forms.py:74
 msgid "OR"
 msgstr ""
 
-#: edh_web_application/inscription/forms.py:73
+#: edh_web_application/inscription/forms.py:74
 msgid "AND NOT"
 msgstr ""
 
@@ -1366,7 +1388,7 @@ msgid "date from sort"
 msgstr "dat_jahr_a"
 
 #: edh_web_application/inscription/forms.py:82
-#: edh_web_application/inscription/templates/inscription/search_results.html:303
+#: edh_web_application/inscription/templates/inscription/search_results.html:308
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:33
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:47
 msgid "date from"
@@ -1377,7 +1399,7 @@ msgid "date to sort"
 msgstr "dat_jahr_e"
 
 #: edh_web_application/inscription/forms.py:83
-#: edh_web_application/inscription/templates/inscription/search_results.html:304
+#: edh_web_application/inscription/templates/inscription/search_results.html:309
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:34
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:48
 msgid "date to"
@@ -1399,15 +1421,17 @@ msgstr ""
 #: edh_web_application/inscription/routes.py:113
 #: edh_web_application/inscription/routes.py:117
 #: edh_web_application/inscription/routes.py:123
-#: edh_web_application/inscription/routes.py:129
-#: edh_web_application/inscription/routes.py:140
-#: edh_web_application/inscription/routes.py:144
-#: edh_web_application/inscription/routes.py:149
+#: edh_web_application/inscription/routes.py:135
+#: edh_web_application/inscription/routes.py:152
+#: edh_web_application/inscription/routes.py:161
+#: edh_web_application/inscription/routes.py:165
+#: edh_web_application/inscription/routes.py:170
 #: edh_web_application/templates/home.html:66
 msgid "Epigraphic Text Database"
 msgstr "Inscription Database"
 
 #: edh_web_application/inscription/routes.py:67
+#: edh_web_application/models/Inscription.py:1071
 #: edh_web_application/models/convert/inscription.py:115
 msgid "beleg-"
 msgstr ""
@@ -1427,7 +1451,7 @@ msgstr ""
 #: edh_web_application/inscription/templates/inscription/detail_view.html:31
 #: edh_web_application/inscription/templates/inscription/detail_view.html:48
 #: edh_web_application/inscription/templates/inscription/last_updates.html:29
-#: edh_web_application/inscription/templates/inscription/search_results.html:143
+#: edh_web_application/inscription/templates/inscription/search_results.html:148
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:24
 msgid "Transcription"
 msgstr ""
@@ -1439,7 +1463,7 @@ msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/detail_view.html:76
 #: edh_web_application/inscription/templates/inscription/last_updates.html:53
-#: edh_web_application/inscription/templates/inscription/search_results.html:175
+#: edh_web_application/inscription/templates/inscription/search_results.html:180
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:24
 msgid "Chronological Data"
 msgstr ""
@@ -1652,61 +1676,70 @@ msgid "Now HD no."
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/last_updates.html:57
-#: edh_web_application/inscription/templates/inscription/search.html:121
-#: edh_web_application/inscription/templates/inscription/search_results.html:179
+#: edh_web_application/inscription/templates/inscription/search.html:115
+#: edh_web_application/inscription/templates/inscription/search_results.html:184
+#: edh_web_application/inscription/templates/inscription/search_results.html:395
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:120
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:134
 msgid "literature"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:51
-#: edh_web_application/inscription/templates/inscription/search_results.html:349
+#: edh_web_application/inscription/templates/inscription/search_results.html:354
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:79
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:93
 msgid "year"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:162
-#: edh_web_application/inscription/templates/inscription/search_results.html:351
-#: edh_web_application/inscription/templates/inscription/search_results.html:462
+#: edh_web_application/inscription/templates/inscription/search.html:156
+#: edh_web_application/inscription/templates/inscription/search_results.html:356
+#: edh_web_application/inscription/templates/inscription/search_results.html:540
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:81
-#: edh_web_application/inscription/templates/inscription/search_results_map.html:210
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:283
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:95
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:195
-#: edh_web_application/models/Inscription.py:1057
-#: edh_web_application/models/Inscription.py:1059
-#: edh_web_application/models/Inscription.py:1067
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:268
+#: edh_web_application/models/Inscription.py:1114
+#: edh_web_application/models/Inscription.py:1116
+#: edh_web_application/models/Inscription.py:1124
 msgid "BC"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:53
-#: edh_web_application/inscription/templates/inscription/search.html:159
-#: edh_web_application/inscription/templates/inscription/search_results.html:351
-#: edh_web_application/inscription/templates/inscription/search_results.html:459
+#: edh_web_application/inscription/templates/inscription/search.html:153
+#: edh_web_application/inscription/templates/inscription/search_results.html:356
+#: edh_web_application/inscription/templates/inscription/search_results.html:537
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:81
-#: edh_web_application/inscription/templates/inscription/search_results_map.html:207
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:280
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:95
-#: edh_web_application/inscription/templates/inscription/search_results_table.html:192
-#: edh_web_application/models/Inscription.py:1062
-#: edh_web_application/models/Inscription.py:1064
-#: edh_web_application/models/Inscription.py:1069
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:265
+#: edh_web_application/models/Inscription.py:1119
+#: edh_web_application/models/Inscription.py:1121
+#: edh_web_application/models/Inscription.py:1126
 msgid "AD"
 msgstr ""
 
 #: edh_web_application/inscription/templates/inscription/search.html:58
-#: edh_web_application/inscription/templates/inscription/search_results.html:355
+#: edh_web_application/inscription/templates/inscription/search_results.html:360
 #: edh_web_application/inscription/templates/inscription/search_results_map.html:85
 #: edh_web_application/inscription/templates/inscription/search_results_table.html:99
 msgid "search string(s)"
 msgstr ""
 
-#: edh_web_application/inscription/templates/inscription/search.html:115
+#: edh_web_application/inscription/templates/inscription/search.html:109
+#: edh_web_application/inscription/templates/inscription/search_results.html:389
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:114
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:128
 msgid "hlp_hd_nr"
 msgstr ""
 "Enter the number of the inscription record in one of the following "
 "formats:<ul><li>HD004711</li><li>004711</li><li>4711</li></ul>Alternatively"
 " you can search for all records by entering the asterisk."
 
-#: edh_web_application/inscription/templates/inscription/search.html:116
+#: edh_web_application/inscription/templates/inscription/search.html:110
+#: edh_web_application/inscription/templates/inscription/search_results.html:390
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:115
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:129
 msgid "hlp_provinz"
 msgstr ""
 "Boundaries of the ancient provinces / Italic regions:<ul><li>As a rule "
@@ -1716,19 +1749,28 @@ msgstr ""
 " Late Antiquity are not used, but assigned geographically to the above "
 "mentioned provinces / regions.</li></ul>"
 
-#: edh_web_application/inscription/templates/inscription/search.html:117
+#: edh_web_application/inscription/templates/inscription/search.html:111
+#: edh_web_application/inscription/templates/inscription/search_results.html:391
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:116
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:130
 msgid "hlp_land"
 msgstr ""
 "Choosing multiple options will find all records that belong to at least "
 "one of chosen countries."
 
-#: edh_web_application/inscription/templates/inscription/search.html:118
+#: edh_web_application/inscription/templates/inscription/search.html:112
+#: edh_web_application/inscription/templates/inscription/search_results.html:392
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:117
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:131
 #: edh_web_application/models/Foto.py:160
 #: edh_web_application/models/Place.py:444
 msgid "fo_antik"
 msgstr "ancient find spot"
 
-#: edh_web_application/inscription/templates/inscription/search.html:118
+#: edh_web_application/inscription/templates/inscription/search.html:112
+#: edh_web_application/inscription/templates/inscription/search_results.html:392
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:117
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:131
 msgid "hlp_fo_antik"
 msgstr ""
 "Search with Entry or Choice "
@@ -1749,13 +1791,19 @@ msgstr ""
 "(Country: Hungary)  =  ancient fundort: Roma, aus? (Province / Italic "
 "Region: Latium et Campania)</li></ul>"
 
-#: edh_web_application/inscription/templates/inscription/search.html:119
+#: edh_web_application/inscription/templates/inscription/search.html:113
+#: edh_web_application/inscription/templates/inscription/search_results.html:393
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:118
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:132
 #: edh_web_application/models/Foto.py:161
 #: edh_web_application/models/Place.py:445
 msgid "fo_modern"
 msgstr "modern find spot"
 
-#: edh_web_application/inscription/templates/inscription/search.html:119
+#: edh_web_application/inscription/templates/inscription/search.html:113
+#: edh_web_application/inscription/templates/inscription/search_results.html:393
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:118
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:132
 msgid "hlp_fo_modern"
 msgstr ""
 "Politically independent municipality or city (cf. in contrast: town or "
@@ -1774,12 +1822,18 @@ msgstr ""
 "Genuine lack of clarity, which unfortunately often cannot be solved, "
 "results from imprecise findspot documentation."
 
-#: edh_web_application/inscription/templates/inscription/search.html:120
+#: edh_web_application/inscription/templates/inscription/search.html:114
+#: edh_web_application/inscription/templates/inscription/search_results.html:394
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:119
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:133
 #: edh_web_application/models/Place.py:446
 msgid "fundstelle"
 msgstr "findspot"
 
-#: edh_web_application/inscription/templates/inscription/search.html:120
+#: edh_web_application/inscription/templates/inscription/search.html:114
+#: edh_web_application/inscription/templates/inscription/search_results.html:394
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:119
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:133
 msgid "hlp_fundstelle"
 msgstr ""
 "<ul><li>Town or city quarter of a politically independent municipality or"
@@ -1788,7 +1842,10 @@ msgstr ""
 "findspot\")</li><li>Smaller geographic unit (e.g. street, area of land, "
 "mountain, river) or building (e.g. fort, city wall, church)</li></ul>"
 
-#: edh_web_application/inscription/templates/inscription/search.html:121
+#: edh_web_application/inscription/templates/inscription/search.html:115
+#: edh_web_application/inscription/templates/inscription/search_results.html:395
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:120
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:134
 msgid "hlp_literatur"
 msgstr ""
 "These are the special rules for citation for abbreviations, volume and "
@@ -1798,11 +1855,17 @@ msgstr ""
 "0384</li><li>Corpora</li><li>journals</li><li>other "
 "publications</li></ul>"
 
-#: edh_web_application/inscription/templates/inscription/search.html:122
+#: edh_web_application/inscription/templates/inscription/search.html:116
+#: edh_web_application/inscription/templates/inscription/search_results.html:396
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:121
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:135
 msgid "chronology"
 msgstr "Chronology"
 
-#: edh_web_application/inscription/templates/inscription/search.html:122
+#: edh_web_application/inscription/templates/inscription/search.html:116
+#: edh_web_application/inscription/templates/inscription/search_results.html:396
+#: edh_web_application/inscription/templates/inscription/search_results_map.html:121
+#: edh_web_application/inscription/templates/inscription/search_results_table.html:135
 msgid "hlp_datierung"
 msgstr ""
 "Dating by years.<br /><br />Move the sliders until you have defined the "
@@ -2623,35 +2686,36 @@ msgstr "date from"
 msgid "dat_jahr_e"
 msgstr "date to"
 
-#: edh_web_application/models/Inscription.py:1087
+#: edh_web_application/models/Inscription.py:1144
 msgid "Inschrift"
 msgstr "Inscription"
 
-#: edh_web_application/models/Inscription.py:1090
-#: edh_web_application/models/Inscription.py:1092
-#: edh_web_application/models/Inscription.py:1094
+#: edh_web_application/models/Inscription.py:1147
+#: edh_web_application/models/Inscription.py:1149
+#: edh_web_application/models/Inscription.py:1151
 msgid " from "
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1111
+#: edh_web_application/models/Inscription.py:1168
 msgid "schreibt-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1120
+#: edh_web_application/models/Inscription.py:1177
 msgid "interp-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1129
+#: edh_web_application/models/Inscription.py:1186
 msgid "rel-"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1214
-#: edh_web_application/models/Inscription.py:1216
-#: edh_web_application/models/Inscription.py:1218
+#: edh_web_application/models/Inscription.py:1271
+#: edh_web_application/models/Inscription.py:1273
+#: edh_web_application/models/Inscription.py:1275
+#: edh_web_application/models/Inscription.py:1277
 msgid "yes"
 msgstr ""
 
-#: edh_web_application/models/Inscription.py:1216
+#: edh_web_application/models/Inscription.py:1273
 msgid "dat_erweitert"
 msgstr "extended"
 

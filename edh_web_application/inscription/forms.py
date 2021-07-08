@@ -70,8 +70,8 @@ class InscriptionSearch(FlaskForm):
     brackets = BooleanField(_l('brackets'))
     beleg89 = BooleanField(_l('completed records only'))
     vollstaendig = BooleanField(_l('non fragmentary inscriptions only'))
+    nurMitFoto = BooleanField(_l('records with images only'))
     bool = SelectField(_l('bool'), choices=[('AND', _l('AND')), ('OR', _l('OR')), ('AND NOT', _l('AND NOT'))])
-
     sort = SelectField(_l('sort by'),
                        choices=[('hd_nr', _l('HD-No.')), ('provinz', _l('province')), ('land', _l('country')),
                                 ('fo_antik', _l('ancient find spot')),
