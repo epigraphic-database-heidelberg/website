@@ -604,8 +604,11 @@ class Inscription:
         adds hyphen into transcription words with slash
         """
         atext = self.atext
-        atext = re.sub(r'(\S)\/(\S)', r'\1-/\2', atext)
-        return atext
+        if atext:
+            atext = re.sub(r'(\S)\/(\S)', r'\1-/\2', atext)
+            return atext
+        else:
+            return ""
 
 
     @classmethod
@@ -885,13 +888,18 @@ class Inscription:
                 props['fundstelle_str'] = _get_findspot_string(props['fo_antik'], props['fo_modern'], props['fundstelle'])
                 if 'atext' in result:
                     atext_br = result['atext']
+                else:
+                    props['atext'] = ""
                 if results.highlighting and results.highlighting[result['hd_nr']]:
                     props['atext_hl'] = results.highlighting[result['hd_nr']]
                     props['atext_hl'] = _add_highlighting(_prepare_atext("".join(props['atext_hl'][solr_index_field])))
                 if 'atext_br' in result:
                     props['atext_br'] = Markup(re.sub("/","<br />", atext_br))
+                btext_br = ""
                 if 'btext' in result:
                     btext_br = result['btext']
+                else:
+                    props['btext'] = ""
                 props['btext_br'] = Markup(re.sub("/", "<br />", btext_br))
                 inscr = Inscription(result['hd_nr'],
                                     result['datum'],
